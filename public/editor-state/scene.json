@@ -116,11 +116,11 @@
     "imageX": -240,
     "imageY": 6,
     "theme": {
-      "base": "#ffffff",
+      "base": "#726e6e",
       "overlayColor": "#ffffff",
       "accent": "#cda55b",
       "text": "#efe7d7",
-      "overlayOpacity": 0,
+      "overlayOpacity": 7,
       "leadBrightness": 122,
       "imageOpacity": 34,
       "leftVeilOpacity": 1,
