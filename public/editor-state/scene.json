@@ -59,7 +59,10 @@
     "leftWidth": 40,
     "leftPadding": 10,
     "copyXPercent": 11.25,
-    "copyYPercent": -2.267
+    "copyYPercent": -2.267,
+    "profiles": {
+      "mobile": {}
+    }
   },
   "interlude": {
     "kicker": "Quiet Dialogue",
@@ -70,7 +73,10 @@
     "textXPercent": 6.313,
     "textYPercent": -13.733,
     "chatXPercent": -1,
-    "chatYPercent": 4.4
+    "chatYPercent": 4.4,
+    "profiles": {
+      "mobile": {}
+    }
   },
   "buddha": {
     "x": -95,
@@ -152,7 +158,10 @@
     "textXPercent": 15,
     "textYPercent": 2.133,
     "imageXPercent": -15,
-    "imageYPercent": 0.8
+    "imageYPercent": 0.8,
+    "profiles": {
+      "mobile": {}
+    }
   },
   "visual": {
     "ghostLabel": "PRESENCE",
@@ -160,7 +169,10 @@
     "imageAlt": "Abstract Light",
     "imageWidth": 77,
     "ghostRight": -1,
-    "ghostBottom": 10
+    "ghostBottom": 10,
+    "profiles": {
+      "mobile": {}
+    }
   },
   "quote": {
     "text": "\"Form is exactly emptiness, emptiness is exactly form. Sensation, thought, impulse, consciousness are also like this.\"",
@@ -173,7 +185,10 @@
     "philosophyLabel": "",
     "philosophyText": "",
     "xPercent": -19.875,
-    "yPercent": -27.6
+    "yPercent": -27.6,
+    "profiles": {
+      "mobile": {}
+    }
   },
   "footer": {
     "titleLine1": "Begin your",
