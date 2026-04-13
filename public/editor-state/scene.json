@@ -56,10 +56,10 @@
     "title": "Buddha Chat",
     "subtitle": "she whispers the ancient mantras he is hearing in his soul. showing the inspiration spirit channeling into the physical vessel.",
     "scrollLabel": "scroll to enter",
-    "copyX": 180,
-    "copyY": -17,
     "leftWidth": 40,
-    "leftPadding": 10
+    "leftPadding": 10,
+    "copyXPercent": 11.25,
+    "copyYPercent": -2.267
   },
   "interlude": {
     "kicker": "Quiet Dialogue",
@@ -67,10 +67,10 @@
     "note": "The second screen should stay mostly empty, with only a soft line of text and a single field below.",
     "placeholder": "Ask Buddha a question...",
     "actionLabel": "Offer",
-    "textX": 101,
-    "textY": -103,
-    "chatX": -16,
-    "chatY": 33
+    "textXPercent": 6.313,
+    "textYPercent": -13.733,
+    "chatXPercent": -1,
+    "chatYPercent": 4.4
   },
   "buddha": {
     "x": -95,
@@ -111,10 +111,6 @@
       "Folio",
       "Login"
     ],
-    "textX": 240,
-    "textY": 16,
-    "imageX": -240,
-    "imageY": 6,
     "theme": {
       "base": "#726e6e",
       "overlayColor": "#ffffff",
@@ -152,7 +148,11 @@
         "cardUrl": "/journal/card-3-foreground.png",
         "backgroundUrl": "/journal/card-3-background.webp"
       }
-    ]
+    ],
+    "textXPercent": 15,
+    "textYPercent": 2.133,
+    "imageXPercent": -15,
+    "imageYPercent": 0.8
   },
   "visual": {
     "ghostLabel": "PRESENCE",
@@ -165,15 +165,15 @@
   "quote": {
     "text": "\"Form is exactly emptiness, emptiness is exactly form. Sensation, thought, impulse, consciousness are also like this.\"",
     "maxWidth": 748,
-    "x": -318,
-    "y": -207,
     "backgroundOpacity": 11,
     "backgroundBlur": 49,
     "backgroundPadding": 15,
     "studioLabel": "",
     "studioText": "Kyoto / Zurich / Joshua Tree",
     "philosophyLabel": "",
-    "philosophyText": ""
+    "philosophyText": "",
+    "xPercent": -19.875,
+    "yPercent": -27.6
   },
   "footer": {
     "titleLine1": "Begin your",
