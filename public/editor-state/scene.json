@@ -23,11 +23,11 @@
       },
       {
         "id": "footer",
-        "visible": true
+        "visible": false
       },
       {
         "id": "archive",
-        "visible": true
+        "visible": false
       }
     ]
   },
