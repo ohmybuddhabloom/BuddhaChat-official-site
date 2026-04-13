@@ -381,6 +381,20 @@ function SunyataEditor({
               onChange={(value) => updateInterlude('actionLabel', value)}
             />
             <NumberField
+              label="对话文字 X"
+              min={-240}
+              max={240}
+              value={scene.interlude.textX ?? 0}
+              onChange={(value) => updateInterlude('textX', value)}
+            />
+            <NumberField
+              label="对话文字 Y"
+              min={-240}
+              max={240}
+              value={scene.interlude.textY ?? 0}
+              onChange={(value) => updateInterlude('textY', value)}
+            />
+            <NumberField
               label="对话框 X"
               min={-220}
               max={220}
@@ -523,6 +537,13 @@ function SunyataEditor({
                 max={100}
                 value={scene.journal.theme.overlayOpacity ?? 72}
                 onChange={(value) => updateJournalTheme('overlayOpacity', value)}
+              />
+              <NumberField
+                label="主卡亮度"
+                min={70}
+                max={140}
+                value={scene.journal.theme.leadBrightness ?? 104}
+                onChange={(value) => updateJournalTheme('leadBrightness', value)}
               />
               <NumberField
                 label="背景图透明度"
@@ -746,6 +767,27 @@ function SunyataEditor({
               max={320}
               value={scene.quote.y ?? 0}
               onChange={(value) => updateQuote('y', value)}
+            />
+            <NumberField
+              label="引文背景透明度"
+              min={0}
+              max={100}
+              value={scene.quote.backgroundOpacity ?? 20}
+              onChange={(value) => updateQuote('backgroundOpacity', value)}
+            />
+            <NumberField
+              label="引文背景模糊范围"
+              min={0}
+              max={120}
+              value={scene.quote.backgroundBlur ?? 44}
+              onChange={(value) => updateQuote('backgroundBlur', value)}
+            />
+            <NumberField
+              label="引文背景扩散"
+              min={0}
+              max={80}
+              value={scene.quote.backgroundPadding ?? 28}
+              onChange={(value) => updateQuote('backgroundPadding', value)}
             />
           </EditorSection>
 

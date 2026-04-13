@@ -18,11 +18,13 @@ function splitTitle(title) {
   ))
 }
 
-function WildernessCard({ item, index, isActive, style, onClick }) {
+function WildernessCard({ item, index, isActive, state, style, onClick }) {
   return (
     <button
       type="button"
-      className={`wilderness-card${isActive ? ' is-active' : ''}`}
+      className={`wilderness-card${isActive ? ' is-active' : ''}${
+        state ? ` is-${state}` : ''
+      }`}
       style={style}
       onClick={onClick}
       aria-label={`Open ${item.title}`}
@@ -193,9 +195,10 @@ function SunyataWildernessJournal({ journal }) {
 
       if (diff === 0) {
         return {
-          transform: 'translate3d(0px, 0px, 0px) scale(1)',
+          state: 'focus',
+          transform: 'translate3d(-12px, -8px, 0px) scale(1.05)',
           opacity: 1,
-          zIndex: 40,
+          zIndex: 50,
           filter: 'grayscale(0)',
           pointerEvents: 'auto',
         }
@@ -203,25 +206,28 @@ function SunyataWildernessJournal({ journal }) {
 
       if (diff === 1) {
         return {
-          transform: 'translate3d(118px, 34px, 0px) scale(0.88)',
-          opacity: 0.68,
+          state: 'glass',
+          transform: 'translate3d(138px, 38px, 0px) scale(0.87)',
+          opacity: 0.5,
           zIndex: 30,
-          filter: 'grayscale(0.24)',
+          filter: 'grayscale(0.35) saturate(0.82)',
           pointerEvents: 'auto',
         }
       }
 
       if (diff === 2) {
         return {
-          transform: 'translate3d(228px, 78px, 0px) scale(0.74)',
-          opacity: 0.26,
+          state: 'glass',
+          transform: 'translate3d(274px, 92px, 0px) scale(0.76)',
+          opacity: 0.2,
           zIndex: 20,
-          filter: 'grayscale(0.58)',
+          filter: 'grayscale(0.62) saturate(0.72)',
           pointerEvents: 'auto',
         }
       }
 
       return {
+        state: 'glass',
         transform: 'translate3d(308px, 108px, 0px) scale(0.62)',
         opacity: 0,
         zIndex: 10,
@@ -259,6 +265,7 @@ function SunyataWildernessJournal({ journal }) {
         '--journal-gold': journal.theme.accent,
         '--journal-cream': journal.theme.text,
         '--journal-overlay-opacity': `${(journal.theme.overlayOpacity ?? 72) / 100}`,
+        '--journal-lead-brightness': `${(journal.theme.leadBrightness ?? 104) / 100}`,
         '--journal-image-opacity': `${(journal.theme.imageOpacity ?? 34) / 100}`,
         '--journal-left-veil-opacity': `${(journal.theme.leftVeilOpacity ?? 98) / 100}`,
         '--journal-bottom-veil-opacity': `${(journal.theme.bottomVeilOpacity ?? 84) / 100}`,
@@ -329,6 +336,7 @@ function SunyataWildernessJournal({ journal }) {
                   item={item}
                   index={index}
                   isActive={index === safeCurrentIndex}
+                  state={cardStyles[index].state}
                   style={cardStyles[index]}
                   onClick={() => handleCardClick(index)}
                 />

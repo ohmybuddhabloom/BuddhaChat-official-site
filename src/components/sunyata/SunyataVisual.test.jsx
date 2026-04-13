@@ -15,6 +15,9 @@ describe('SunyataVisual', () => {
     const scene = createSceneSnapshot()
     scene.quote.x = 48
     scene.quote.y = -24
+    scene.quote.backgroundOpacity = 26
+    scene.quote.backgroundBlur = 52
+    scene.quote.backgroundPadding = 34
 
     const { container } = render(
       <SunyataVisual
@@ -22,6 +25,7 @@ describe('SunyataVisual', () => {
         ghostLabelRef={null}
         visual={scene.visual}
         quote={scene.quote}
+        quoteThemeColor="#20352c"
       />,
     )
 
@@ -36,6 +40,10 @@ describe('SunyataVisual', () => {
     expect(quoteOverlay).toHaveStyle({
       transform: 'translate3d(48px, -24px, 0px)',
       maxWidth: `${scene.quote.maxWidth}px`,
+      '--quote-bg-color': '#20352c',
+      '--quote-bg-opacity': '0.26',
+      '--quote-bg-blur': '52px',
+      '--quote-bg-padding': '34px',
     })
     expect(quoteOverlay.closest('.visual-anchor')).not.toBeNull()
     expect(container.querySelector('.visual-quote-wrap')).toBe(quoteOverlay)

@@ -11,7 +11,13 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
       data-stack="foreground"
       data-testid="conversation-interlude"
     >
-      <div className="interlude-copy">
+      <div
+        className="interlude-copy"
+        data-testid="interlude-copy"
+        style={{
+          transform: `translate3d(${interlude.textX ?? 0}px, ${interlude.textY ?? 0}px, 0px)`,
+        }}
+      >
         <p className="interlude-kicker">{interlude.kicker}</p>
         <h2 className="interlude-title">{interlude.title}</h2>
         <p className="interlude-note">{interlude.note}</p>

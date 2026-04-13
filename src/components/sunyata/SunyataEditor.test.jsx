@@ -59,6 +59,7 @@ describe('SunyataEditor', () => {
 
     expect(screen.getByLabelText('期刊遮罩颜色')).toBeInTheDocument()
     expect(screen.getByLabelText('期刊背景透明度')).toBeInTheDocument()
+    expect(screen.getByLabelText('主卡亮度')).toBeInTheDocument()
     expect(screen.getByLabelText('背景图透明度')).toBeInTheDocument()
     expect(screen.getByLabelText('左侧遮罩强度')).toBeInTheDocument()
     expect(screen.getByLabelText('底部遮罩强度')).toBeInTheDocument()
@@ -67,6 +68,9 @@ describe('SunyataEditor', () => {
     expect(screen.getByLabelText('卡片高度')).toBeInTheDocument()
     expect(screen.getByLabelText('引文 X')).toBeInTheDocument()
     expect(screen.getByLabelText('引文 Y')).toBeInTheDocument()
+    expect(screen.getByLabelText('引文背景透明度')).toBeInTheDocument()
+    expect(screen.getByLabelText('引文背景模糊范围')).toBeInTheDocument()
+    expect(screen.getByLabelText('引文背景扩散')).toBeInTheDocument()
     expect(screen.getAllByText(/期刊卡片 \d/)).toHaveLength(3)
     expect(screen.getByRole('button', { name: '上移 对话页' })).toBeInTheDocument()
     expect(

@@ -526,6 +526,7 @@ function SunyataLanding() {
           ghostLabelRef={ghostLabelRef}
           visual={scene.visual}
           quote={scene.quote}
+          quoteThemeColor={scene.journal.theme.overlayColor ?? scene.journal.theme.base}
         />
       ),
       footer: <SunyataFooter key="footer" footer={scene.footer} />,

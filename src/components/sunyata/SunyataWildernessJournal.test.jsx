@@ -25,6 +25,7 @@ describe('SunyataWildernessJournal', () => {
     scene.journal.theme.base = '#123456'
     scene.journal.theme.overlayColor = '#456789'
     scene.journal.theme.overlayOpacity = 54
+    scene.journal.theme.leadBrightness = 118
     scene.journal.theme.imageOpacity = 41
     scene.journal.theme.leftVeilOpacity = 88
     scene.journal.theme.bottomVeilOpacity = 67
@@ -39,6 +40,7 @@ describe('SunyataWildernessJournal', () => {
       '--journal-bg': '#123456',
       '--journal-overlay-color': '#456789',
       '--journal-overlay-opacity': '0.54',
+      '--journal-lead-brightness': '1.18',
       '--journal-image-opacity': '0.41',
       '--journal-left-veil-opacity': '0.88',
       '--journal-bottom-veil-opacity': '0.67',
@@ -47,5 +49,16 @@ describe('SunyataWildernessJournal', () => {
       '--journal-card-width': '368px',
       '--journal-card-height': '492px',
     })
+  })
+
+  it('gives the leading card a focus state and the trailing cards a glass state', () => {
+    const scene = createSceneSnapshot()
+
+    const { container } = render(<SunyataWildernessJournal journal={scene.journal} />)
+
+    const cards = container.querySelectorAll('.wilderness-card')
+    expect(cards[0]).toHaveClass('is-active', 'is-focus')
+    expect(cards[1]).toHaveClass('is-glass')
+    expect(cards[2]).toHaveClass('is-glass')
   })
 })

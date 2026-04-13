@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
 import { resolveJournalImageSource } from '../../lib/journalAssetStore.js'
 
-function SunyataVisual({ sectionRef, ghostLabelRef, visual, quote }) {
+function SunyataVisual({
+  sectionRef,
+  ghostLabelRef,
+  visual,
+  quote,
+  quoteThemeColor,
+}) {
   const [resolvedImageSrc, setResolvedImageSrc] = useState(visual.imageSrc)
 
   useEffect(() => {
@@ -55,6 +61,10 @@ function SunyataVisual({ sectionRef, ghostLabelRef, visual, quote }) {
           style={{
             maxWidth: `${quote.maxWidth}px`,
             transform: `translate3d(${quote.x ?? 0}px, ${quote.y ?? 0}px, 0px)`,
+            '--quote-bg-color': quoteThemeColor,
+            '--quote-bg-opacity': `${(quote.backgroundOpacity ?? 20) / 100}`,
+            '--quote-bg-blur': `${quote.backgroundBlur ?? 44}px`,
+            '--quote-bg-padding': `${quote.backgroundPadding ?? 28}px`,
           }}
         >
           <p className="quote-copy">{quote.text}</p>
