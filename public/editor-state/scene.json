@@ -67,10 +67,10 @@
     "note": "The second screen should stay mostly empty, with only a soft line of text and a single field below.",
     "placeholder": "Ask Buddha a question...",
     "actionLabel": "Offer",
-    "textX": 163,
-    "textY": 66,
+    "textX": 101,
+    "textY": -103,
     "chatX": -16,
-    "chatY": 132
+    "chatY": 33
   },
   "buddha": {
     "x": -95,
