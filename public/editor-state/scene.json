@@ -58,8 +58,6 @@
     "scrollLabel": "scroll to enter",
     "leftWidth": 40,
     "leftPadding": 10,
-    "copyXPercent": 11.25,
-    "copyYPercent": -2.267,
     "profiles": {
       "mobile": {
         "leftWidth": 100,
@@ -67,7 +65,9 @@
         "copyXPercent": 0,
         "copyYPercent": -8
       }
-    }
+    },
+    "copyXPercent": 11.25,
+    "copyYPercent": -2.267
   },
   "interlude": {
     "kicker": "Quiet Dialogue",
@@ -75,10 +75,6 @@
     "note": "The second screen should stay mostly empty, with only a soft line of text and a single field below.",
     "placeholder": "Ask Buddha a question...",
     "actionLabel": "Offer",
-    "textXPercent": 6.313,
-    "textYPercent": -13.733,
-    "chatXPercent": -1,
-    "chatYPercent": 4.4,
     "profiles": {
       "mobile": {
         "textXPercent": 0,
@@ -86,7 +82,11 @@
         "chatXPercent": 0,
         "chatYPercent": 0
       }
-    }
+    },
+    "textXPercent": 6.313,
+    "textYPercent": -13.733,
+    "chatXPercent": -1,
+    "chatYPercent": 4.4
   },
   "buddha": {
     "x": -95,
@@ -165,10 +165,6 @@
         "backgroundUrl": "/journal/card-3-background.webp"
       }
     ],
-    "textXPercent": 15,
-    "textYPercent": 2.133,
-    "imageXPercent": -15,
-    "imageYPercent": 0.8,
     "profiles": {
       "mobile": {
         "textXPercent": 0,
@@ -176,7 +172,11 @@
         "imageXPercent": 0,
         "imageYPercent": 0
       }
-    }
+    },
+    "textXPercent": 15,
+    "textYPercent": 2.133,
+    "imageXPercent": -15,
+    "imageYPercent": 0.8
   },
   "visual": {
     "ghostLabel": "PRESENCE",
@@ -203,15 +203,15 @@
     "studioText": "Kyoto / Zurich / Joshua Tree",
     "philosophyLabel": "",
     "philosophyText": "",
-    "xPercent": -19.875,
-    "yPercent": -27.6,
     "profiles": {
       "mobile": {
         "xPercent": 0,
         "yPercent": 0,
         "maxWidth": 340
       }
-    }
+    },
+    "xPercent": -19.875,
+    "yPercent": -27.6
   },
   "footer": {
     "titleLine1": "Begin your",
