@@ -65,19 +65,19 @@
         "leftWidth": 100,
         "leftPadding": 0,
         "copyXPercent": 0,
-        "copyYPercent": -14
+        "copyYPercent": 10
       },
       "mobile-md": {
         "leftWidth": 100,
         "leftPadding": 0,
         "copyXPercent": 0,
-        "copyYPercent": -8
+        "copyYPercent": 7
       },
       "mobile-lg": {
         "leftWidth": 100,
         "leftPadding": 0,
         "copyXPercent": 0,
-        "copyYPercent": -6
+        "copyYPercent": 4
       }
     }
   },
@@ -94,19 +94,19 @@
     "profiles": {
       "mobile-sm": {
         "textXPercent": 0,
-        "textYPercent": -8,
+        "textYPercent": -2,
         "chatXPercent": 0,
         "chatYPercent": 0
       },
       "mobile-md": {
         "textXPercent": 0,
-        "textYPercent": -4,
+        "textYPercent": 0,
         "chatXPercent": 0,
         "chatYPercent": 0
       },
       "mobile-lg": {
         "textXPercent": 0,
-        "textYPercent": -2,
+        "textYPercent": 1,
         "chatXPercent": 0,
         "chatYPercent": 0
       }
@@ -223,17 +223,17 @@
     "ghostBottom": 10,
     "profiles": {
       "mobile-sm": {
-        "imageWidth": 96,
+        "imageWidth": 88,
         "ghostRight": 1,
-        "ghostBottom": 10
+        "ghostBottom": 9
       },
       "mobile-md": {
-        "imageWidth": 90,
-        "ghostRight": -2,
+        "imageWidth": 84,
+        "ghostRight": -1,
         "ghostBottom": 8
       },
       "mobile-lg": {
-        "imageWidth": 84,
+        "imageWidth": 80,
         "ghostRight": -3,
         "ghostBottom": 7
       }
@@ -255,17 +255,17 @@
       "mobile-sm": {
         "xPercent": 0,
         "yPercent": 0,
-        "maxWidth": 292
+        "maxWidth": 276
       },
       "mobile-md": {
         "xPercent": 0,
         "yPercent": 0,
-        "maxWidth": 340
+        "maxWidth": 316
       },
       "mobile-lg": {
         "xPercent": 0,
         "yPercent": 0,
-        "maxWidth": 388
+        "maxWidth": 360
       }
     }
   },
