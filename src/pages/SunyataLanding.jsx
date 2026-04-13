@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import NoiseOverlay from '../components/sunyata/NoiseOverlay.jsx'
 import ScrollVideoBackground from '../components/sunyata/ScrollVideoBackground.jsx'
-import SunyataCards from '../components/sunyata/SunyataCards.jsx'
 import SunyataArchive from '../components/sunyata/SunyataArchive.jsx'
+import SunyataCards from '../components/sunyata/SunyataCards.jsx'
 import SunyataEditor from '../components/sunyata/SunyataEditor.jsx'
 import SunyataFooter from '../components/sunyata/SunyataFooter.jsx'
 import SunyataHero from '../components/sunyata/SunyataHero.jsx'
@@ -17,12 +17,19 @@ import {
   createSceneSnapshot,
   isSceneDefaultLike,
   normalizeJournalItems,
+  normalizeLayoutSections,
+  sanitizeScene,
 } from '../content/sunyata.js'
+import { loadProjectScene, saveProjectScene } from '../lib/editorSceneStore.js'
+import { isJournalAssetRef } from '../lib/journalAssetStore.js'
 
 function mergeScene(fallback, parsed) {
-  return {
+  const merged = {
     ...fallback,
     ...parsed,
+    layout: {
+      sections: normalizeLayoutSections(parsed.layout?.sections),
+    },
     nav: {
       ...fallback.nav,
       ...parsed.nav,
@@ -64,6 +71,8 @@ function mergeScene(fallback, parsed) {
       ...parsed.footer,
     },
   }
+
+  return sanitizeScene(merged)
 }
 
 function loadInitialScene() {
@@ -102,6 +111,26 @@ function loadInitialScene() {
   }
 }
 
+function countSavedAssetRefs(scene) {
+  let count = 0
+
+  if (isJournalAssetRef(scene?.visual?.imageSrc)) {
+    count += 1
+  }
+
+  for (const item of scene?.journal?.items ?? []) {
+    if (isJournalAssetRef(item?.cardUrl)) {
+      count += 1
+    }
+
+    if (isJournalAssetRef(item?.backgroundUrl)) {
+      count += 1
+    }
+  }
+
+  return count
+}
+
 function SunyataLanding() {
   const cursorRef = useRef(null)
   const heroSectionRef = useRef(null)
@@ -113,6 +142,7 @@ function SunyataLanding() {
   const visualSectionRef = useRef(null)
   const [scene, setScene] = useState(loadInitialScene)
   const [editorOpen, setEditorOpen] = useState(false)
+  const [projectSceneReady, setProjectSceneReady] = useState(false)
 
   useEffect(() => {
     if (
@@ -209,6 +239,63 @@ function SunyataLanding() {
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(scene))
   }, [scene])
+
+  useEffect(() => {
+    let active = true
+
+    const hydrateProjectScene = async () => {
+      const projectScene = await loadProjectScene()
+
+      if (!active) {
+        return
+      }
+
+      if (projectScene) {
+        const fallback = createSceneSnapshot()
+        const mergedProjectScene = mergeScene(fallback, projectScene)
+
+        setScene((current) => {
+          const currentAssetCount = countSavedAssetRefs(current)
+          const projectAssetCount = countSavedAssetRefs(mergedProjectScene)
+
+          if (
+            projectAssetCount > currentAssetCount ||
+            isSceneDefaultLike(current)
+          ) {
+            window.localStorage.setItem(
+              STORAGE_KEY,
+              JSON.stringify(mergedProjectScene),
+            )
+            return mergedProjectScene
+          }
+
+          return current
+        })
+      }
+
+      setProjectSceneReady(true)
+    }
+
+    hydrateProjectScene()
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!projectSceneReady) {
+      return undefined
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      saveProjectScene(scene).catch(() => {})
+    }, 220)
+
+    return () => {
+      window.clearTimeout(timeoutId)
+    }
+  }, [projectSceneReady, scene])
 
   const updateNavLogo = (value) => {
     setScene((current) => ({
@@ -348,9 +435,119 @@ function SunyataLanding() {
     }))
   }
 
+  const updateSectionOrder = (sectionId, direction) => {
+    setScene((current) => {
+      const nextSections = [...current.layout.sections]
+      const currentIndex = nextSections.findIndex(
+        (section) => section.id === sectionId,
+      )
+
+      if (currentIndex === -1) {
+        return current
+      }
+
+      const targetIndex =
+        direction === 'up' ? currentIndex - 1 : currentIndex + 1
+
+      if (targetIndex < 0 || targetIndex >= nextSections.length) {
+        return current
+      }
+
+      const [section] = nextSections.splice(currentIndex, 1)
+      nextSections.splice(targetIndex, 0, section)
+
+      return {
+        ...current,
+        layout: {
+          ...current.layout,
+          sections: nextSections,
+        },
+      }
+    })
+  }
+
+  const updateSectionVisibility = (sectionId, visible) => {
+    setScene((current) => ({
+      ...current,
+      layout: {
+        ...current.layout,
+        sections: current.layout.sections.map((section) =>
+          section.id === sectionId ? { ...section, visible } : section,
+        ),
+      },
+    }))
+  }
+
   const resetScene = () => {
     setScene(createSceneSnapshot())
   }
+
+  const interludeVisible = scene.layout.sections.some(
+    (section) => section.id === 'interlude' && section.visible,
+  )
+
+  const orderedSections = useMemo(() => {
+    const heroNode = (
+      <SunyataHero
+        key="hero"
+        sectionRef={heroSectionRef}
+        heroTitleRef={heroTitleRef}
+        devotionalRef={devotionalRef}
+        hero={scene.hero}
+        media={
+          <ScrollVideoBackground
+            heroSectionRef={heroSectionRef}
+            endSectionRef={interludeVisible ? interludeSectionRef : visualSectionRef}
+            stopTargetRef={interludeVisible ? interludeChatBarRef : null}
+            rangeKey={`${scene.interlude.chatX}:${scene.interlude.chatY}:${scene.buddha.stopViewportY}:${scene.layout.sections.map((section) => `${section.id}:${section.visible}`).join('|')}`}
+            scrollEndId="dialogue"
+            buddha={scene.buddha}
+          />
+        }
+      />
+    )
+
+    const sectionMap = {
+      hero: heroNode,
+      interlude: (
+        <SunyataInterlude
+          key="interlude"
+          sectionRef={interludeSectionRef}
+          chatBarRef={interludeChatBarRef}
+          interlude={scene.interlude}
+        />
+      ),
+      journal: <SunyataWildernessJournal key="journal" journal={scene.journal} />,
+      cards: <SunyataCards key="cards" cards={scene.cards} />,
+      visual: (
+        <SunyataVisual
+          key="visual"
+          sectionRef={visualSectionRef}
+          ghostLabelRef={ghostLabelRef}
+          visual={scene.visual}
+          quote={scene.quote}
+        />
+      ),
+      footer: <SunyataFooter key="footer" footer={scene.footer} />,
+      archive: <SunyataArchive key="archive" />,
+    }
+
+    return scene.layout.sections
+      .filter((section) => section.visible)
+      .map((section) => sectionMap[section.id])
+      .filter(Boolean)
+  }, [
+    interludeVisible,
+    scene.buddha,
+    scene.cards,
+    scene.footer,
+    scene.hero,
+    scene.interlude,
+    scene.journal,
+    scene.layout.sections,
+    scene.quote,
+    scene.visual,
+  ])
 
   return (
     <main className={`sunyata-page${editorOpen ? ' editor-open' : ''}`}>
@@ -375,42 +572,14 @@ function SunyataLanding() {
         updateVisual={updateVisual}
         updateQuote={updateQuote}
         updateFooter={updateFooter}
+        updateSectionOrder={updateSectionOrder}
+        updateSectionVisibility={updateSectionVisibility}
         onReset={resetScene}
       />
 
       <div className="sunyata-preview">
         <SunyataNav nav={scene.nav} />
-        <SunyataHero
-          sectionRef={heroSectionRef}
-          heroTitleRef={heroTitleRef}
-          devotionalRef={devotionalRef}
-          hero={scene.hero}
-          media={
-            <ScrollVideoBackground
-              heroSectionRef={heroSectionRef}
-              endSectionRef={interludeSectionRef}
-              stopTargetRef={interludeChatBarRef}
-              rangeKey={`${scene.interlude.chatX}:${scene.interlude.chatY}:${scene.buddha.stopViewportY}`}
-              scrollEndId="dialogue"
-              buddha={scene.buddha}
-            />
-          }
-        />
-        <SunyataInterlude
-          sectionRef={interludeSectionRef}
-          chatBarRef={interludeChatBarRef}
-          interlude={scene.interlude}
-        />
-        <SunyataWildernessJournal journal={scene.journal} />
-        <SunyataCards cards={scene.cards} />
-        <SunyataVisual
-          sectionRef={visualSectionRef}
-          ghostLabelRef={ghostLabelRef}
-          visual={scene.visual}
-          quote={scene.quote}
-        />
-        <SunyataFooter footer={scene.footer} />
-        <SunyataArchive />
+        {orderedSections}
       </div>
     </main>
   )

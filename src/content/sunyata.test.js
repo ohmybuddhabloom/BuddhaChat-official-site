@@ -1,5 +1,46 @@
 import { describe, expect, it } from 'vitest'
-import { normalizeJournalItems } from './sunyata.js'
+import {
+  createSceneSnapshot,
+  normalizeJournalItems,
+  normalizeLayoutSections,
+} from './sunyata.js'
+
+describe('sunyata content defaults', () => {
+  it('provides clean default copy and a full editable section layout', () => {
+    const scene = createSceneSnapshot()
+
+    expect(scene.nav.logo).toBe('Sūnyatā')
+    expect(scene.footer.copyrightLine1).toBe('© 2024 SŪNYATĀ COLLECTIVE')
+    expect(scene.layout.sections).toEqual([
+      { id: 'hero', visible: true },
+      { id: 'interlude', visible: true },
+      { id: 'journal', visible: true },
+      { id: 'cards', visible: true },
+      { id: 'visual', visible: true },
+      { id: 'footer', visible: true },
+      { id: 'archive', visible: true },
+    ])
+  })
+
+  it('normalizes saved section layouts, preserves explicit visibility, and appends missing sections', () => {
+    const normalized = normalizeLayoutSections([
+      { id: 'visual', visible: true },
+      { id: 'cards', visible: false },
+      { id: 'unknown', visible: false },
+      { id: 'hero', visible: true },
+    ])
+
+    expect(normalized).toEqual([
+      { id: 'visual', visible: true },
+      { id: 'cards', visible: false },
+      { id: 'hero', visible: true },
+      { id: 'interlude', visible: true },
+      { id: 'journal', visible: true },
+      { id: 'footer', visible: true },
+      { id: 'archive', visible: true },
+    ])
+  })
+})
 
 describe('normalizeJournalItems', () => {
   it('keeps only three cards and migrates legacy remote assets to local files', () => {

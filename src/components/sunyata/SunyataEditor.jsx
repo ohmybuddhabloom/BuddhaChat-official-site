@@ -1,9 +1,18 @@
 import { useEffect, useId, useState } from 'react'
 import {
-  isJournalAssetRef,
   resolveJournalImageSource,
   saveJournalImageFile,
 } from '../../lib/journalAssetStore.js'
+
+const SECTION_LABELS = {
+  hero: '第一屏首屏',
+  interlude: '对话页',
+  journal: '第三屏期刊',
+  cards: '三张卡片',
+  visual: '视觉图与引文',
+  footer: '页脚',
+  archive: '底部档案馆',
+}
 
 function TextField({ label, value, onChange, multiline = false }) {
   const Element = multiline ? 'textarea' : 'input'
@@ -26,14 +35,16 @@ function TextField({ label, value, onChange, multiline = false }) {
 }
 
 function NumberField({ label, value, min, max, step = 1, onChange }) {
+  const inputId = useId()
+
   return (
     <div className="editor-field">
-      <label className="editor-label" htmlFor={label}>
+      <label className="editor-label" htmlFor={inputId}>
         <span>{label}</span>
       </label>
       <div className="editor-range-row">
         <input
-          id={label}
+          id={inputId}
           className="editor-range"
           type="range"
           min={min}
@@ -93,6 +104,51 @@ function EditorSection({ title, children }) {
   )
 }
 
+function LayoutRow({
+  id,
+  label,
+  visible,
+  isFirst,
+  isLast,
+  onMove,
+  onToggle,
+}) {
+  return (
+    <div className="editor-layout-row">
+      <label className="editor-layout-toggle">
+        <input
+          type="checkbox"
+          checked={visible}
+          onChange={(event) => onToggle(id, event.target.checked)}
+          aria-label={`显示 ${label}`}
+        />
+        <span>{label}</span>
+      </label>
+
+      <div className="editor-layout-actions">
+        <button
+          type="button"
+          className="editor-mini-button"
+          onClick={() => onMove(id, 'up')}
+          disabled={isFirst}
+          aria-label={`上移 ${label}`}
+        >
+          上移
+        </button>
+        <button
+          type="button"
+          className="editor-mini-button"
+          onClick={() => onMove(id, 'down')}
+          disabled={isLast}
+          aria-label={`下移 ${label}`}
+        >
+          下移
+        </button>
+      </div>
+    </div>
+  )
+}
+
 function ImageField({ label, value, onChange }) {
   const inputId = useId()
   const [previewSrc, setPreviewSrc] = useState(value || '')
@@ -101,16 +157,6 @@ function ImageField({ label, value, onChange }) {
   useEffect(() => {
     let active = true
     let revoke = () => {}
-
-    if (!value) {
-      setPreviewSrc('')
-      return undefined
-    }
-
-    if (!isJournalAssetRef(value)) {
-      setPreviewSrc(value)
-      return undefined
-    }
 
     const hydratePreview = async () => {
       const resolved = await resolveJournalImageSource(value)
@@ -142,8 +188,8 @@ function ImageField({ label, value, onChange }) {
     setUploading(true)
 
     try {
-      const assetRef = await saveJournalImageFile(file)
-      onChange(assetRef)
+      const uploadedPath = await saveJournalImageFile(file)
+      onChange(uploadedPath)
     } finally {
       setUploading(false)
       event.target.value = ''
@@ -199,6 +245,8 @@ function SunyataEditor({
   updateVisual,
   updateQuote,
   updateFooter,
+  updateSectionOrder,
+  updateSectionVisibility,
   onReset,
 }) {
   return (
@@ -223,13 +271,28 @@ function SunyataEditor({
               <p className="editor-kicker">实时编辑</p>
               <h2>页面编辑器</h2>
               <p className="editor-note">
-                直接在这里调整文案、位置、图片和色调，页面会实时同步。
+                这里可以直接调整结构顺序、文案、位置、图片和颜色，右侧页面会实时同步。
               </p>
             </div>
             <button type="button" className="editor-ghost-button" onClick={onReset}>
               重置默认
             </button>
           </div>
+
+          <EditorSection title="页面结构">
+            {scene.layout.sections.map((section, index) => (
+              <LayoutRow
+                key={section.id}
+                id={section.id}
+                label={SECTION_LABELS[section.id] ?? section.id}
+                visible={section.visible}
+                isFirst={index === 0}
+                isLast={index === scene.layout.sections.length - 1}
+                onMove={updateSectionOrder}
+                onToggle={updateSectionVisibility}
+              />
+            ))}
+          </EditorSection>
 
           <EditorSection title="导航">
             <TextField label="品牌名称" value={scene.nav.logo} onChange={updateNavLogo} />
@@ -449,12 +512,47 @@ function SunyataEditor({
                 value={scene.journal.theme.base}
                 onChange={(value) => updateJournalTheme('base', value)}
               />
+              <ColorField
+                label="期刊遮罩颜色"
+                value={scene.journal.theme.overlayColor ?? scene.journal.theme.base}
+                onChange={(value) => updateJournalTheme('overlayColor', value)}
+              />
               <NumberField
                 label="期刊背景透明度"
                 min={0}
                 max={100}
                 value={scene.journal.theme.overlayOpacity ?? 72}
                 onChange={(value) => updateJournalTheme('overlayOpacity', value)}
+              />
+              <NumberField
+                label="背景图透明度"
+                min={0}
+                max={100}
+                value={scene.journal.theme.imageOpacity ?? 34}
+                onChange={(value) => updateJournalTheme('imageOpacity', value)}
+              />
+              <NumberField
+                label="左侧遮罩强度"
+                min={0}
+                max={100}
+                value={scene.journal.theme.leftVeilOpacity ?? 98}
+                onChange={(value) => updateJournalTheme('leftVeilOpacity', value)}
+              />
+              <NumberField
+                label="底部遮罩强度"
+                min={0}
+                max={100}
+                value={scene.journal.theme.bottomVeilOpacity ?? 84}
+                onChange={(value) => updateJournalTheme('bottomVeilOpacity', value)}
+              />
+              <NumberField
+                label="环境光强度"
+                min={0}
+                max={100}
+                value={scene.journal.theme.ambientGlowOpacity ?? 16}
+                onChange={(value) =>
+                  updateJournalTheme('ambientGlowOpacity', value)
+                }
               />
               <ColorField
                 label="点金色"
@@ -468,9 +566,34 @@ function SunyataEditor({
               />
             </div>
 
+            <div className="editor-subgroup">
+              <h3>版式与尺寸</h3>
+              <NumberField
+                label="正文最大宽度"
+                min={360}
+                max={760}
+                value={scene.journal.theme.copyMaxWidth ?? 560}
+                onChange={(value) => updateJournalTheme('copyMaxWidth', value)}
+              />
+              <NumberField
+                label="卡片宽度"
+                min={240}
+                max={420}
+                value={scene.journal.theme.cardWidth ?? 340}
+                onChange={(value) => updateJournalTheme('cardWidth', value)}
+              />
+              <NumberField
+                label="卡片高度"
+                min={320}
+                max={560}
+                value={scene.journal.theme.cardHeight ?? 460}
+                onChange={(value) => updateJournalTheme('cardHeight', value)}
+              />
+            </div>
+
             {scene.journal.items.map((item, index) => (
               <div className="editor-subgroup" key={`${item.title}-${index}`}>
-                <h3>期刊卡片 {index + 1}</h3>
+                <h3>{`期刊卡片 ${index + 1}`}</h3>
                 <TextField
                   label={`卡片 ${index + 1} 标签`}
                   value={item.tag}
@@ -508,7 +631,7 @@ function SunyataEditor({
           <EditorSection title="三张卡片">
             {scene.cards.map((card, index) => (
               <div className="editor-subgroup" key={`${card.number}-${index}`}>
-                <h3>卡片 {index + 1}</h3>
+                <h3>{`卡片 ${index + 1}`}</h3>
                 <TextField
                   label={`卡片 ${index + 1} 编号`}
                   value={card.number}
@@ -609,6 +732,20 @@ function SunyataEditor({
               max={1100}
               value={scene.quote.maxWidth}
               onChange={(value) => updateQuote('maxWidth', value)}
+            />
+            <NumberField
+              label="引文 X"
+              min={-360}
+              max={360}
+              value={scene.quote.x ?? 0}
+              onChange={(value) => updateQuote('x', value)}
+            />
+            <NumberField
+              label="引文 Y"
+              min={-320}
+              max={320}
+              value={scene.quote.y ?? 0}
+              onChange={(value) => updateQuote('y', value)}
             />
           </EditorSection>
 

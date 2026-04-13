@@ -1,6 +1,21 @@
 export const STORAGE_KEY = 'sunyata-editor-state-v1'
 export const MIGRATION_FLAG_KEY = 'sunyata-editor-migrated-v1'
 
+export const DEFAULT_LAYOUT_SECTIONS = [
+  { id: 'hero', visible: true },
+  { id: 'interlude', visible: true },
+  { id: 'journal', visible: true },
+  { id: 'cards', visible: true },
+  { id: 'visual', visible: true },
+  { id: 'footer', visible: true },
+  { id: 'archive', visible: true },
+]
+
+const CORRUPTED_DEFAULT_COPY = {
+  navLogo: 'S奴nyat膩',
+  footerCopyright: '漏 2024 S弄NYAT膧 COLLECTIVE',
+}
+
 const defaultJournalItems = [
   {
     title: 'Highlands',
@@ -32,6 +47,43 @@ function isLegacyJournalAsset(url) {
   return typeof url === 'string' && url.includes('images.unsplash.com')
 }
 
+export function normalizeLayoutSections(sections) {
+  const defaultsById = new Map(
+    DEFAULT_LAYOUT_SECTIONS.map((section) => [section.id, section]),
+  )
+  const normalized = []
+  const seen = new Set()
+
+  for (const section of sections ?? []) {
+    if (!section || typeof section.id !== 'string' || seen.has(section.id)) {
+      continue
+    }
+
+    const fallback = defaultsById.get(section.id)
+
+    if (!fallback) {
+      continue
+    }
+
+    normalized.push({
+      id: section.id,
+      visible:
+        typeof section.visible === 'boolean' ? section.visible : fallback.visible,
+    })
+    seen.add(section.id)
+  }
+
+  for (const fallback of DEFAULT_LAYOUT_SECTIONS) {
+    if (seen.has(fallback.id)) {
+      continue
+    }
+
+    normalized.push({ ...fallback })
+  }
+
+  return normalized
+}
+
 export function normalizeJournalItems(items) {
   return defaultJournalItems.map((fallbackItem, index) => {
     const currentItem = items?.[index]
@@ -54,6 +106,9 @@ export function normalizeJournalItems(items) {
 }
 
 export const defaultScene = {
+  layout: {
+    sections: normalizeLayoutSections(),
+  },
   nav: {
     logo: 'Sūnyatā',
     links: [
@@ -72,14 +127,6 @@ export const defaultScene = {
     copyY: 0,
     leftWidth: 40,
     leftPadding: 10,
-    mantraLeftX: 0,
-    mantraLeftY: 0,
-    mantraRightX: 0,
-    mantraRightY: 0,
-    mantraTop:
-      'नमोऽस्तु ते ॐ मणिपद्मे हूँ नमोऽस्तु ते ॐ मणिपद्मे हूँ नमोऽस्तु ते ॐ मणिपद्मे हूँ',
-    mantraBottom:
-      'ॐ शान्तिः शान्तिः शान्तिः ॐ शान्तिः शान्तिः शान्तिः',
   },
   interlude: {
     kicker: 'Quiet Dialogue',
@@ -126,9 +173,6 @@ export const defaultScene = {
     edition: 'Edition No. 04',
     brand: 'snapstory journal',
     actionLabel: 'Read Narrative',
-    requestLabel: 'Request Access',
-    requestPlaceholder: 'email address',
-    requestButton: 'Enter',
     links: ['Archive', 'Expeditions', 'Folio', 'Login'],
     textX: 0,
     textY: 0,
@@ -136,9 +180,17 @@ export const defaultScene = {
     imageY: 0,
     theme: {
       base: '#08130f',
+      overlayColor: '#08130f',
       accent: '#cda55b',
       text: '#efe7d7',
       overlayOpacity: 72,
+      imageOpacity: 34,
+      leftVeilOpacity: 98,
+      bottomVeilOpacity: 84,
+      ambientGlowOpacity: 16,
+      copyMaxWidth: 560,
+      cardWidth: 340,
+      cardHeight: 460,
     },
     items: defaultJournalItems,
   },
@@ -154,6 +206,8 @@ export const defaultScene = {
   quote: {
     text: '"Form is exactly emptiness, emptiness is exactly form. Sensation, thought, impulse, consciousness are also like this."',
     maxWidth: 800,
+    x: 0,
+    y: 0,
     studioLabel: 'The Studio',
     studioText: 'Kyoto / Zurich / Joshua Tree',
     philosophyLabel: 'Philosophy',
@@ -167,6 +221,29 @@ export const defaultScene = {
     copyrightLine1: '© 2024 SŪNYATĀ COLLECTIVE',
     copyrightLine2: 'ALL RIGHTS RESERVED IN THE VOID',
   },
+}
+
+function sanitizeLegacyCopy(scene) {
+  const nextScene = { ...scene }
+
+  if (nextScene.nav?.logo === CORRUPTED_DEFAULT_COPY.navLogo) {
+    nextScene.nav = {
+      ...nextScene.nav,
+      logo: defaultScene.nav.logo,
+    }
+  }
+
+  if (
+    nextScene.footer?.copyrightLine1 ===
+    CORRUPTED_DEFAULT_COPY.footerCopyright
+  ) {
+    nextScene.footer = {
+      ...nextScene.footer,
+      copyrightLine1: defaultScene.footer.copyrightLine1,
+    }
+  }
+
+  return nextScene
 }
 
 export function createSceneSnapshot() {
@@ -192,7 +269,7 @@ const recoveredLegacyOverrides = {
 export function createRecoveredLegacyScene() {
   const snapshot = createSceneSnapshot()
 
-  return {
+  return sanitizeLegacyCopy({
     ...snapshot,
     nav: {
       ...snapshot.nav,
@@ -206,9 +283,28 @@ export function createRecoveredLegacyScene() {
       ...snapshot.buddha,
       ...recoveredLegacyOverrides.buddha,
     },
+  })
+}
+
+export function sanitizeScene(scene) {
+  const snapshot = sanitizeLegacyCopy(scene)
+
+  return {
+    ...snapshot,
+    layout: {
+      sections: normalizeLayoutSections(snapshot.layout?.sections),
+    },
+    journal: {
+      ...snapshot.journal,
+      items: normalizeJournalItems(snapshot.journal?.items),
+    },
+    quote: {
+      ...defaultScene.quote,
+      ...snapshot.quote,
+    },
   }
 }
 
 export function isSceneDefaultLike(scene) {
-  return JSON.stringify(scene) === JSON.stringify(defaultScene)
+  return JSON.stringify(sanitizeScene(scene)) === JSON.stringify(defaultScene)
 }

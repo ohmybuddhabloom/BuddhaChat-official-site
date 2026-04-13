@@ -48,23 +48,26 @@ function SunyataVisual({ sectionRef, ghostLabelRef, visual, quote }) {
           className="main-visual"
           style={{ width: `${visual.imageWidth}%` }}
         />
-      </div>
+        <div
+          className="quote-wrap visual-quote-wrap"
+          id="silence"
+          data-testid="visual-quote-overlay"
+          style={{
+            maxWidth: `${quote.maxWidth}px`,
+            transform: `translate3d(${quote.x ?? 0}px, ${quote.y ?? 0}px, 0px)`,
+          }}
+        >
+          <p className="quote-copy">{quote.text}</p>
 
-      <div
-        className="quote-wrap visual-quote-wrap"
-        id="silence"
-        style={{ maxWidth: `${quote.maxWidth}px` }}
-      >
-        <p className="quote-copy">{quote.text}</p>
-
-        <div className="quote-details">
-          <div>
-            <h4>{quote.studioLabel}</h4>
-            <p>{quote.studioText}</p>
-          </div>
-          <div>
-            <h4>{quote.philosophyLabel}</h4>
-            <p>{quote.philosophyText}</p>
+          <div className="quote-details">
+            <div>
+              <h4>{quote.studioLabel}</h4>
+              <p>{quote.studioText}</p>
+            </div>
+            <div>
+              <h4>{quote.philosophyLabel}</h4>
+              <p>{quote.philosophyText}</p>
+            </div>
           </div>
         </div>
       </div>

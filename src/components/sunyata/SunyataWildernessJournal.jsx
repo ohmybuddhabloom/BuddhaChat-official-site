@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { resolveJournalImageSource } from '../../lib/journalAssetStore.js'
 
 const TEXT_SWAP_DELAY = 220
@@ -46,7 +46,7 @@ function WildernessCard({ item, index, isActive, style, onClick }) {
 }
 
 function SunyataWildernessJournal({ journal }) {
-  const categories = journal.items ?? []
+  const categories = useMemo(() => journal.items ?? [], [journal.items])
   const totalCategories = categories.length
   const [resolvedCategories, setResolvedCategories] = useState(categories)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -54,12 +54,19 @@ function SunyataWildernessJournal({ journal }) {
   const [textVisible, setTextVisible] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
   const currentIndexRef = useRef(0)
+  const activateIndexRef = useRef(() => {})
   const swapTimerRef = useRef(0)
   const unlockTimerRef = useRef(0)
   const autoplayTimerRef = useRef(0)
+  const safeCurrentIndex = totalCategories
+    ? Math.min(currentIndex, totalCategories - 1)
+    : 0
+  const safeDisplayIndex = totalCategories
+    ? Math.min(displayIndex, totalCategories - 1)
+    : 0
 
   const currentCategory =
-    resolvedCategories[displayIndex] ?? resolvedCategories[0]
+    resolvedCategories[safeDisplayIndex] ?? resolvedCategories[0]
 
   useEffect(() => {
     let active = true
@@ -99,21 +106,10 @@ function SunyataWildernessJournal({ journal }) {
   }, [categories])
 
   useEffect(() => {
-    currentIndexRef.current = currentIndex
-  }, [currentIndex])
+    currentIndexRef.current = safeCurrentIndex
+  }, [safeCurrentIndex])
 
-  useEffect(() => {
-    if (!totalCategories) {
-      return undefined
-    }
-
-    setCurrentIndex((previous) => Math.min(previous, totalCategories - 1))
-    setDisplayIndex((previous) => Math.min(previous, totalCategories - 1))
-
-    return undefined
-  }, [totalCategories])
-
-  const clearAnimationTimers = () => {
+  const clearAnimationTimers = useCallback(() => {
     if (swapTimerRef.current) {
       window.clearTimeout(swapTimerRef.current)
     }
@@ -121,9 +117,9 @@ function SunyataWildernessJournal({ journal }) {
     if (unlockTimerRef.current) {
       window.clearTimeout(unlockTimerRef.current)
     }
-  }
+  }, [])
 
-  const scheduleAutoplay = () => {
+  const scheduleAutoplay = useCallback(() => {
     if (autoplayTimerRef.current) {
       window.clearTimeout(autoplayTimerRef.current)
     }
@@ -133,11 +129,11 @@ function SunyataWildernessJournal({ journal }) {
     }
 
     autoplayTimerRef.current = window.setTimeout(() => {
-      activateIndex(currentIndexRef.current + 1)
+      activateIndexRef.current(currentIndexRef.current + 1)
     }, AUTOPLAY_DELAY)
-  }
+  }, [totalCategories])
 
-  const activateIndex = (nextIndex) => {
+  const activateIndex = useCallback((nextIndex) => {
     if (!totalCategories) {
       return
     }
@@ -168,7 +164,11 @@ function SunyataWildernessJournal({ journal }) {
     }, ANIMATION_LOCK_MS)
 
     scheduleAutoplay()
-  }
+  }, [clearAnimationTimers, isAnimating, scheduleAutoplay, totalCategories])
+
+  useEffect(() => {
+    activateIndexRef.current = activateIndex
+  }, [activateIndex])
 
   useEffect(() => {
     scheduleAutoplay()
@@ -180,12 +180,12 @@ function SunyataWildernessJournal({ journal }) {
         window.clearTimeout(autoplayTimerRef.current)
       }
     }
-  }, [totalCategories])
+  }, [clearAnimationTimers, scheduleAutoplay])
 
   const cardStyles = useMemo(() => {
     return resolvedCategories.map((_, index) => {
       const total = resolvedCategories.length
-      let diff = index - currentIndex
+      let diff = index - safeCurrentIndex
 
       while (diff < 0) {
         diff += total
@@ -229,14 +229,14 @@ function SunyataWildernessJournal({ journal }) {
         pointerEvents: 'none',
       }
     })
-  }, [resolvedCategories, currentIndex])
+  }, [resolvedCategories, safeCurrentIndex])
 
   const handleCardClick = (index) => {
     if (isAnimating) {
       return
     }
 
-    if (index === currentIndexRef.current) {
+    if (index === safeCurrentIndex) {
       activateIndex(currentIndexRef.current + 1)
       return
     }
@@ -255,9 +255,17 @@ function SunyataWildernessJournal({ journal }) {
       aria-label="Wilderness Journal"
       style={{
         '--journal-bg': journal.theme.base,
+        '--journal-overlay-color': journal.theme.overlayColor ?? journal.theme.base,
         '--journal-gold': journal.theme.accent,
         '--journal-cream': journal.theme.text,
         '--journal-overlay-opacity': `${(journal.theme.overlayOpacity ?? 72) / 100}`,
+        '--journal-image-opacity': `${(journal.theme.imageOpacity ?? 34) / 100}`,
+        '--journal-left-veil-opacity': `${(journal.theme.leftVeilOpacity ?? 98) / 100}`,
+        '--journal-bottom-veil-opacity': `${(journal.theme.bottomVeilOpacity ?? 84) / 100}`,
+        '--journal-glow-opacity': `${(journal.theme.ambientGlowOpacity ?? 16) / 100}`,
+        '--journal-copy-max-width': `${journal.theme.copyMaxWidth ?? 560}px`,
+        '--journal-card-width': `${journal.theme.cardWidth ?? 340}px`,
+        '--journal-card-height': `${journal.theme.cardHeight ?? 460}px`,
       }}
     >
       <div className="wilderness-backgrounds" aria-hidden="true">
@@ -265,7 +273,7 @@ function SunyataWildernessJournal({ journal }) {
           <div
             key={item.title}
             className={`wilderness-background${
-              index === currentIndex ? ' is-active' : ''
+              index === safeCurrentIndex ? ' is-active' : ''
             }`}
             style={{ backgroundImage: `url('${item.backgroundUrl}')` }}
           />
@@ -320,7 +328,7 @@ function SunyataWildernessJournal({ journal }) {
                   key={item.title}
                   item={item}
                   index={index}
-                  isActive={index === currentIndex}
+                  isActive={index === safeCurrentIndex}
                   style={cardStyles[index]}
                   onClick={() => handleCardClick(index)}
                 />

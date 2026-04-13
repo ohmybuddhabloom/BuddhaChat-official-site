@@ -1,0 +1,185 @@
+{
+  "layout": {
+    "sections": [
+      {
+        "id": "hero",
+        "visible": true
+      },
+      {
+        "id": "interlude",
+        "visible": true
+      },
+      {
+        "id": "journal",
+        "visible": true
+      },
+      {
+        "id": "cards",
+        "visible": true
+      },
+      {
+        "id": "visual",
+        "visible": true
+      },
+      {
+        "id": "footer",
+        "visible": true
+      },
+      {
+        "id": "archive",
+        "visible": false
+      }
+    ]
+  },
+  "nav": {
+    "logo": "Sūnyatā",
+    "links": [
+      {
+        "label": "The Path",
+        "href": "#path"
+      },
+      {
+        "label": "Sanctuary",
+        "href": "#sanctuary"
+      },
+      {
+        "label": "Vessels",
+        "href": "#vessels"
+      },
+      {
+        "label": "Silence",
+        "href": "#silence"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Buddha Chat",
+    "subtitle": "she whispers the ancient mantras he is hearing in his soul. showing the inspiration spirit channeling into the physical vessel.",
+    "scrollLabel": "scroll to enter",
+    "copyX": 180,
+    "copyY": -17,
+    "leftWidth": 40,
+    "leftPadding": 10
+  },
+  "interlude": {
+    "kicker": "Quiet Dialogue",
+    "title": "Place a question into the hush.",
+    "note": "The second screen should stay mostly empty, with only a soft line of text and a single field below.",
+    "placeholder": "Ask Buddha a question...",
+    "actionLabel": "Offer",
+    "textX": 165,
+    "textY": 160,
+    "chatX": -16,
+    "chatY": 132
+  },
+  "buddha": {
+    "x": -95,
+    "y": 0,
+    "travelY": 260,
+    "stopViewportY": 114,
+    "scale": 151,
+    "featherRange": 69,
+    "featherStrength": 68
+  },
+  "cards": [
+    {
+      "number": "01 / DHARMA",
+      "title": "Sacred Breath",
+      "description": "A guided transition into the stillness between thoughts. Our high-resolution sensory meditations utilize spatial audio and light frequency tuning.",
+      "offsetY": 50
+    },
+    {
+      "number": "02 / SANGHA",
+      "title": "Silent Retreats",
+      "description": "Architecture designed for nothingness. Private sanctuaries in the high desert where the horizon meets the mind.",
+      "offsetY": 0
+    },
+    {
+      "number": "03 / ARTIFACT",
+      "title": "Bronze Vessels",
+      "description": "Limited edition meditation tools cast in raw brass, hand-polished to a mirror finish to reflect the transient nature of the self.",
+      "offsetY": 80
+    }
+  ],
+  "journal": {
+    "edition": "Edition No. 04",
+    "brand": "snapstory journal",
+    "actionLabel": "Read Narrative",
+    "links": [
+      "Archive",
+      "Expeditions",
+      "Folio",
+      "Login"
+    ],
+    "textX": 240,
+    "textY": 16,
+    "imageX": -240,
+    "imageY": 6,
+    "theme": {
+      "base": "#ffffff",
+      "overlayColor": "#ffffff",
+      "accent": "#cda55b",
+      "text": "#efe7d7",
+      "overlayOpacity": 0,
+      "leadBrightness": 104,
+      "imageOpacity": 34,
+      "leftVeilOpacity": 1,
+      "bottomVeilOpacity": 11,
+      "ambientGlowOpacity": 26,
+      "copyMaxWidth": 522,
+      "cardWidth": 411,
+      "cardHeight": 453
+    },
+    "items": [
+      {
+        "title": "Highlands",
+        "tag": "Terrain Study",
+        "description": "Shadow play across the Scottish glens. A study in emerald and grey, where the clouds meet the earth in perpetual mist.",
+        "cardUrl": "/editor-assets/2026-04-13T04-30-05-514Z-kling_20260412_-_-_-1___393_0.png",
+        "backgroundUrl": "/journal/card-1-background.png"
+      },
+      {
+        "title": "The Taiga",
+        "tag": "Flora Folio",
+        "description": "Ancient conifers standing sentinel against the biting frost. Deep forest textures captured in the golden hour of sub-arctic winter.",
+        "cardUrl": "/editor-assets/2026-04-13T04-29-38-508Z-DSC01541.jpg",
+        "backgroundUrl": "/journal/card-2-background.jpg"
+      },
+      {
+        "title": "Basaltic",
+        "tag": "Volcanic Arc",
+        "description": "Geometric purity of volcanic structures. Where liquid fire solidified into obsidian pillars amidst the North Atlantic spray.",
+        "cardUrl": "/journal/card-3-foreground.png",
+        "backgroundUrl": "/journal/card-3-background.webp"
+      }
+    ]
+  },
+  "visual": {
+    "ghostLabel": "PRESENCE",
+    "imageSrc": "/editor-assets/2026-04-13T04-02-04-178Z-kling_20260412_-_-_-1__3298_0.png",
+    "imageAlt": "Abstract Light",
+    "imageWidth": 77,
+    "ghostRight": -1,
+    "ghostBottom": 10
+  },
+  "quote": {
+    "text": "\"Form is exactly emptiness, emptiness is exactly form. Sensation, thought, impulse, consciousness are also like this.\"",
+    "maxWidth": 800,
+    "x": -360,
+    "y": -270,
+    "backgroundOpacity": 20,
+    "backgroundBlur": 44,
+    "backgroundPadding": 28,
+    "studioLabel": "",
+    "studioText": "Kyoto / Zurich / Joshua Tree",
+    "philosophyLabel": "",
+    "philosophyText": ""
+  },
+  "footer": {
+    "titleLine1": "Begin your",
+    "titleLine2": "quietude.",
+    "ctaLabel": "Join the circle",
+    "copyrightLine1": "© 2024 SŪNYATĀ COLLECTIVE",
+    "copyrightLine2": "ALL RIGHTS RESERVED IN THE VOID"
+  }
+}

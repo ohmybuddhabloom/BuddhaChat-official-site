@@ -1,52 +1,15 @@
-const DB_NAME = 'sunyata-journal-assets'
-const STORE_NAME = 'images'
-const ASSET_PREFIX = 'asset:'
-
-export function createJournalAssetRef(id) {
-  return `${ASSET_PREFIX}${id}`
-}
-
-export function isJournalAssetRef(value) {
-  return typeof value === 'string' && value.startsWith(ASSET_PREFIX)
-}
-
 function readFileAsDataUrl(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.onload = () => resolve(reader.result)
-    reader.onerror = () => reject(reader.error ?? new Error('Failed to read file'))
+    reader.onerror = () =>
+      reject(reader.error ?? new Error('Failed to read file'))
     reader.readAsDataURL(file)
   })
 }
 
-function generateAssetId() {
-  if (globalThis.crypto?.randomUUID) {
-    return globalThis.crypto.randomUUID()
-  }
-
-  return `${Date.now()}-${Math.round(Math.random() * 1e9)}`
-}
-
-function openAssetDatabase() {
-  if (!('indexedDB' in globalThis)) {
-    return Promise.resolve(null)
-  }
-
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, 1)
-
-    request.onupgradeneeded = () => {
-      const database = request.result
-
-      if (!database.objectStoreNames.contains(STORE_NAME)) {
-        database.createObjectStore(STORE_NAME, { keyPath: 'id' })
-      }
-    }
-
-    request.onsuccess = () => resolve(request.result)
-    request.onerror = () =>
-      reject(request.error ?? new Error('Failed to open asset database'))
-  })
+export function isJournalAssetRef(value) {
+  return typeof value === 'string' && value.startsWith('/editor-assets/')
 }
 
 export async function saveJournalImageFile(file) {
@@ -54,76 +17,40 @@ export async function saveJournalImageFile(file) {
     throw new Error('Only image uploads are supported')
   }
 
-  const database = await openAssetDatabase()
-
-  if (!database) {
-    return readFileAsDataUrl(file)
+  if (typeof fetch !== 'function') {
+    throw new Error('Image uploads require a fetch-capable environment')
   }
 
-  const id = generateAssetId()
-
-  await new Promise((resolve, reject) => {
-    const transaction = database.transaction(STORE_NAME, 'readwrite')
-    const store = transaction.objectStore(STORE_NAME)
-
-    transaction.oncomplete = () => resolve()
-    transaction.onerror = () =>
-      reject(transaction.error ?? new Error('Failed to store image'))
-
-    store.put({
-      id,
-      blob: file,
+  const data = await readFileAsDataUrl(file)
+  const response = await fetch('/__editor/upload-image', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: file.name,
       type: file.type,
-      updatedAt: Date.now(),
-    })
+      data,
+    }),
   })
 
-  database.close()
-  return createJournalAssetRef(id)
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}))
+    throw new Error(payload.error ?? 'Failed to upload image')
+  }
+
+  const payload = await response.json()
+
+  if (!payload?.path || typeof payload.path !== 'string') {
+    throw new Error('Upload endpoint returned an invalid image path')
+  }
+
+  return payload.path
 }
 
 export async function resolveJournalImageSource(source) {
-  if (!isJournalAssetRef(source)) {
-    return {
-      src: source,
-      revoke() {},
-    }
-  }
-
-  const database = await openAssetDatabase()
-
-  if (!database) {
-    return {
-      src: '',
-      revoke() {},
-    }
-  }
-
-  const record = await new Promise((resolve, reject) => {
-    const transaction = database.transaction(STORE_NAME, 'readonly')
-    const store = transaction.objectStore(STORE_NAME)
-    const request = store.get(source.slice(ASSET_PREFIX.length))
-
-    request.onsuccess = () => resolve(request.result ?? null)
-    request.onerror = () =>
-      reject(request.error ?? new Error('Failed to read stored image'))
-  })
-
-  database.close()
-
-  if (!record?.blob) {
-    return {
-      src: '',
-      revoke() {},
-    }
-  }
-
-  const objectUrl = URL.createObjectURL(record.blob)
-
   return {
-    src: objectUrl,
-    revoke() {
-      URL.revokeObjectURL(objectUrl)
-    },
+    src: source || '',
+    revoke() {},
   }
 }
