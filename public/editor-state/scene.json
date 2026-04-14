@@ -84,7 +84,7 @@
       }
     },
     "textXPercent": 9.8,
-    "textYPercent": -13.733,
+    "textYPercent": 7.6,
     "chatXPercent": -0.9,
     "chatYPercent": 4.4
   },
@@ -94,8 +94,8 @@
     "travelY": 260,
     "stopViewportY": 112,
     "scale": 126,
-    "featherRange": 69,
-    "featherStrength": 68
+    "featherRange": 73,
+    "featherStrength": 72
   },
   "cards": [
     {
