@@ -127,13 +127,13 @@
   "cards": [
     {
       "number": "01 / DHARMA",
-      "title": "Whispers to the Buddha",
+      "title": "Sacred Breath",
       "description": "Share your burdens with the Buddha. Whether it concerns health, career, or wealth, every sigh is embraced by a dedicated guardian deity. We offer no generic platitudes—only compassionate guidance tailored to your unique state of soul.",
       "offsetY": 50
     },
     {
-      "number": "02 / SANGHA",
-      "title": "Silent Retreats",
+      "number": "Guidance from the Masters",
+      "title": "Guidance from the Masters",
       "description": "Architecture designed for nothingness. Private sanctuaries in the high desert where the horizon meets the mind.",
       "offsetY": 0
     },
