@@ -241,10 +241,10 @@
   },
   "quote": {
     "text": "\"A single seed brings a vast harvest; blessings ripple from every gift.\"",
-    "maxWidth": 748,
-    "backgroundOpacity": 11,
+    "maxWidth": 757,
+    "backgroundOpacity": 33,
     "backgroundBlur": 54,
-    "backgroundPadding": 16,
+    "backgroundPadding": 28,
     "backgroundFeather": 72,
     "studioLabel": "Eko dānaḥ sahasraphalaṃ dadāti; dānāt puṇyaṃ prajāyate.",
     "studioText": "Kyoto / Zurich / Joshua Tree",
