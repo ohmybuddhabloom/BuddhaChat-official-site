@@ -252,7 +252,7 @@
   },
   "quote": {
     "text": "\"A single seed brings a vast harvest; blessings ripple from every gift.\"",
-    "maxWidth": 757,
+    "maxWidth": 560,
     "backgroundOpacity": 33,
     "backgroundBlur": 38,
     "backgroundPadding": 28,
@@ -278,7 +278,7 @@
         "maxWidth": 360
       }
     },
-    "xPercent": -29.1,
+    "xPercent": -34,
     "yPercent": -27.6
   },
   "donation": {
