@@ -179,6 +179,7 @@
     },
     "items": [
       {
+        "slug": "children-of-scripture",
         "title": "Highlands",
         "tag": "Terrain Study",
         "description": "Shadow play across the Scottish glens. A study in emerald and grey, where the clouds meet the earth in perpetual mist.",
@@ -186,6 +187,7 @@
         "backgroundUrl": "/journal/card-1-background.png"
       },
       {
+        "slug": "journey-of-amethyst",
         "title": "The Taiga",
         "tag": "Flora Folio",
         "description": "Ancient conifers standing sentinel against the biting frost. Deep forest textures captured in the golden hour of sub-arctic winter.",
@@ -193,6 +195,7 @@
         "backgroundUrl": "/journal/card-2-background.jpg"
       },
       {
+        "slug": "a-life-in-thangka",
         "title": "Basaltic",
         "tag": "Volcanic Arc",
         "description": "Geometric purity of volcanic structures. Where liquid fire solidified into obsidian pillars amidst the North Atlantic spray.",
