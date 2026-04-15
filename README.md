@@ -1,16 +1,55 @@
-# React + Vite
+# BuddhaChat Official Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official landing page for [BuddhaChat](https://www.buddhachat.online/) — a contemplative AI experience rooted in Buddhist wisdom.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite 8**
+- Scroll-scrubbed video hero
+- 3D card carousel with physics-based momentum
+- Responsive layout with profile-aware offset system
+- No third-party animation libraries
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+npm run preview
+```
+
+## Testing
+
+```bash
+npm test
+```
+
+## Project Structure
+
+```
+src/
+├── components/sunyata/   # All page section components
+├── content/              # Scene configuration and story data
+├── lib/                  # Scroll math, responsive offsets, asset store
+├── pages/
+│   ├── SunyataLanding.jsx   # Main landing page
+│   └── StoryPage.jsx        # Story viewer (?story= query param)
+└── index.css             # Global styles and animations
+```
+
+## Editor Mode
+
+Append `?edit=1` to the URL to enable the visual scene editor for adjusting layout, positions, and content.
+
+## Performance Notes
+
+- Archive carousel RAF loop is gated behind `IntersectionObserver` — pauses when off-screen
+- Scroll-scrubbed video uses an easing loop with a `1/30s` settle threshold to minimize frame decodes
+- Noise overlay uses a CSS `background-image` data URI (rasterized once) instead of live SVG `feTurbulence`
+- Resize event handler is debounced at 150ms to prevent cascading re-renders
