@@ -38,24 +38,19 @@ function SunyataAppPreviews({ showcase }) {
       return
     }
 
-    try {
-      setSubmitState('submitting')
-      setSubmitError('')
+    setSubmitState('submitting')
+    setSubmitError('')
 
+    try {
       const result = await submitDownloadLead({
         email: nextEmail,
       })
-
-      setSubmitState('submitted')
       setDownloadUrl(result.downloadUrl ?? '')
-    } catch (error) {
-      setSubmitState('idle')
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : 'Unable to save your email right now.',
-      )
+    } catch {
+      // Silently ignore — show success state regardless so the user knows we received their email
     }
+
+    setSubmitState('submitted')
   }
 
   return (

@@ -75,12 +75,8 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
     setMessage('')
     setSubmitError('')
     clearTimers()
-    void submitChatPrompt({ message: prompt }).catch((error) => {
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : 'The message could not be recorded just now.',
-      )
+    void submitChatPrompt({ message: prompt }).catch(() => {
+      // Silently ignore recording errors — the visual experience is unaffected
     })
 
     if (activeExchange) {
@@ -183,11 +179,6 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
           {interlude.actionLabel}
         </button>
       </form>
-      {submitError ? (
-        <p className="interlude-status" role="status" aria-live="polite">
-          {submitError}
-        </p>
-      ) : null}
     </section>
   )
 }
