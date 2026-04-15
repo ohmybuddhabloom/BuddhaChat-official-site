@@ -2,8 +2,9 @@ import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import downloadSubmissionsHandler from './api/download-submissions.js'
 
 const projectRoot = fileURLToPath(new URL('./', import.meta.url))
 const editorAssetsDir = path.join(projectRoot, 'public', 'editor-assets')
@@ -201,29 +202,52 @@ function createEditorSceneHandler(scheduleGitSync) {
   }
 }
 
+function createApiRouteHandler(routePath, handler) {
+  return async (req, res, next) => {
+    const requestUrl = new URL(req.url ?? '/', 'http://localhost')
+
+    if (requestUrl.pathname !== routePath) {
+      next()
+      return
+    }
+
+    await handler(req, res)
+  }
+}
+
 function editorAssetsPlugin() {
   const scheduleGitSync = createGitSyncScheduler()
   const handler = createEditorAssetHandler(scheduleGitSync)
   const sceneHandler = createEditorSceneHandler(scheduleGitSync)
+  const downloadHandler = createApiRouteHandler(
+    '/api/download-submissions',
+    downloadSubmissionsHandler,
+  )
 
   return {
     name: 'editor-assets-plugin',
     configureServer(server) {
       server.middlewares.use(handler)
       server.middlewares.use(sceneHandler)
+      server.middlewares.use(downloadHandler)
     },
     configurePreviewServer(server) {
       server.middlewares.use(handler)
       server.middlewares.use(sceneHandler)
+      server.middlewares.use(downloadHandler)
     },
   }
 }
 
-export default defineConfig({
-  plugins: [react(), editorAssetsPlugin()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: './src/test/setup.js',
-  },
+export default defineConfig(({ mode }) => {
+  Object.assign(process.env, loadEnv(mode, projectRoot, ''))
+
+  return {
+    plugins: [react(), editorAssetsPlugin()],
+    test: {
+      environment: 'jsdom',
+      globals: true,
+      setupFiles: './src/test/setup.js',
+    },
+  }
 })

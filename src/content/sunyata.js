@@ -1,3 +1,5 @@
+import { SACRED_STORIES_BY_SLUG } from './sacredStories.js'
+
 export const STORAGE_KEY = 'sunyata-editor-state-v1'
 export const MIGRATION_FLAG_KEY = 'sunyata-editor-migrated-v1'
 
@@ -45,6 +47,12 @@ const defaultJournalItems = [
     cardUrl: '/journal/card-3-foreground.png',
   },
 ]
+
+const JOURNAL_TITLE_TO_STORY_SLUG = {
+  'Life in Thangka': 'a-life-in-thangka',
+  'Journey of Amethyst': 'journey-of-amethyst',
+  'Children of Scripture': 'children-of-scripture',
+}
 
 const defaultDonationGalleryItems = [
   {
@@ -111,9 +119,15 @@ export function normalizeLayoutSections(sections) {
 export function normalizeJournalItems(items) {
   return defaultJournalItems.map((fallbackItem, index) => {
     const currentItem = items?.[index]
+    const repairedSlugFromTitle =
+      JOURNAL_TITLE_TO_STORY_SLUG[currentItem?.title] ?? null
+    const requestedSlug = repairedSlugFromTitle ?? currentItem?.slug
+    const normalizedSlug = SACRED_STORIES_BY_SLUG[requestedSlug]
+      ? requestedSlug
+      : fallbackItem.slug
 
     return {
-      slug: currentItem?.slug ?? fallbackItem.slug,
+      slug: normalizedSlug,
       title: currentItem?.title ?? fallbackItem.title,
       tag: currentItem?.tag ?? fallbackItem.tag,
       description: currentItem?.description ?? fallbackItem.description,
@@ -177,10 +191,13 @@ export const defaultScene = {
     responseText:
       'Offer the question gently. The next clear step usually arrives before the full answer does.',
     responseDelayMs: 420,
+    fadeDurationMs: 320,
     textX: 0,
     textY: 0,
     chatX: 0,
     chatY: 0,
+    replyX: 0,
+    replyY: 0,
   },
   buddha: {
     x: 0,
@@ -309,6 +326,7 @@ export const defaultScene = {
       'Reduction as a path to abundance. We create the space where spirit manifests.',
   },
   donation: {
+    visible: false,
     eyebrow: 'Sacred Offering',
     heading: 'Manifest Compassion Through Dana',
     kicker: 'Circle of Giving',
@@ -328,9 +346,24 @@ export const defaultScene = {
       cardRadius: 28,
     },
     tiers: [
-      { amount: '0.99', label: '$0.99', description: 'Light a candle' },
-      { amount: '5.99', label: '$5.99', description: 'Open a gate' },
-      { amount: '12.99', label: '$12.99', description: 'Support a retreat' },
+      {
+        id: 'light-a-candle',
+        amount: '0.99',
+        label: '$0.99',
+        description: 'Light a candle',
+      },
+      {
+        id: 'open-a-gate',
+        amount: '5.99',
+        label: '$5.99',
+        description: 'Open a gate',
+      },
+      {
+        id: 'support-a-retreat',
+        amount: '12.99',
+        label: '$12.99',
+        description: 'Support a retreat',
+      },
     ],
     gallery: defaultDonationGalleryItems,
   },

@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { resolveJournalImageSource } from '../../lib/journalAssetStore.js'
-import { getStoryHref } from '../../content/sacredStories.js'
+import {
+  SACRED_STORIES,
+  SACRED_STORIES_BY_SLUG,
+  getStoryHref,
+} from '../../content/sacredStories.js'
 
 const TEXT_SWAP_DELAY = 220
 const ANIMATION_LOCK_MS = 1120
@@ -17,6 +21,26 @@ function splitTitle(title) {
       {index < words.length - 1 ? <br /> : null}
     </span>
   ))
+}
+
+function resolveCurrentStorySlug(item, index) {
+  if (item?.slug && SACRED_STORIES_BY_SLUG[item.slug]) {
+    return item.slug
+  }
+
+  const safeFallbackSlug = SACRED_STORIES[index]?.slug ?? SACRED_STORIES[0]?.slug
+
+  if (
+    import.meta.env.DEV &&
+    item?.slug &&
+    !SACRED_STORIES_BY_SLUG[item.slug]
+  ) {
+    console.warn(
+      `[SunyataWildernessJournal] Unknown story slug "${item.slug}" for card "${item.title}". Falling back to "${safeFallbackSlug}".`,
+    )
+  }
+
+  return safeFallbackSlug
 }
 
 function WildernessCard({ item, index, isActive, state, style, onClick }) {
@@ -74,11 +98,10 @@ function SunyataWildernessJournal({
 
   const currentCategory =
     resolvedCategories[safeDisplayIndex] ?? resolvedCategories[0]
-  const currentStorySlug = currentCategory?.slug
-    ? currentCategory.slug
-    : ['children-of-scripture', 'journey-of-amethyst', 'a-life-in-thangka'][
-        safeDisplayIndex
-      ]
+  const currentStorySlug = resolveCurrentStorySlug(
+    currentCategory,
+    safeDisplayIndex,
+  )
 
   useEffect(() => {
     let active = true

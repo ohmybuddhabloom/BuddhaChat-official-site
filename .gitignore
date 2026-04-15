@@ -53,6 +53,7 @@ tmp/
 .analysis/
 .claude/
 .omc/
+.omx/
 .gsd.migrating/
 .tmp-*
 .tmp-localstorage-copy/

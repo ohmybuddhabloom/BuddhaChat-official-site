@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+
 import SunyataVisual from './SunyataVisual.jsx'
 import { createSceneSnapshot } from '../../content/sunyata.js'
+import { createDonationIntent } from '../../lib/siteApi.js'
 
 vi.mock('../../lib/journalAssetStore.js', () => ({
   resolveJournalImageSource: vi.fn(async (source) => ({
@@ -10,7 +12,18 @@ vi.mock('../../lib/journalAssetStore.js', () => ({
   })),
 }))
 
+vi.mock('../../lib/siteApi.js', () => ({
+  createDonationIntent: vi.fn(async () => ({
+    ok: true,
+    checkoutUrl: 'https://pay.rev.cat/example',
+  })),
+}))
+
 describe('SunyataVisual', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('renders the quote content as an overlay inside the visual anchor', () => {
     const scene = createSceneSnapshot()
     scene.visual.imageX = 7.5
@@ -24,6 +37,7 @@ describe('SunyataVisual', () => {
     }
     scene.donation = {
       ...scene.donation,
+      visible: true,
       kicker: 'Circle of Giving',
       note: 'Offer a small blessing to help the app take root.',
       emailPlaceholder: 'your@email.com',
@@ -72,6 +86,7 @@ describe('SunyataVisual', () => {
     const scene = createSceneSnapshot()
     scene.donation = {
       ...scene.donation,
+      visible: true,
       eyebrow: 'Sacred Offering',
       heading: 'Manifest Compassion Through Dana',
       kicker: 'Circle of Giving',
@@ -114,5 +129,57 @@ describe('SunyataVisual', () => {
     expect(screen.getByText('Lapis Wisdom')).toBeInTheDocument()
     expect(screen.queryByText('Onyx Silence')).not.toBeInTheDocument()
     expect(screen.queryByText('Lotus Heart')).not.toBeInTheDocument()
+  })
+
+  it('creates a donation intent and redirects to the checkout link', async () => {
+    const scene = createSceneSnapshot()
+    scene.donation = {
+      ...scene.donation,
+      visible: true,
+    }
+
+    render(
+      <SunyataVisual
+        sectionRef={null}
+        ghostLabelRef={null}
+        visual={scene.visual}
+        quote={scene.quote}
+        donation={scene.donation}
+      />,
+    )
+
+    fireEvent.change(screen.getByPlaceholderText(scene.donation.emailPlaceholder), {
+      target: { value: 'donor@example.com' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: scene.donation.actionLabel }))
+
+    await waitFor(() => {
+      expect(createDonationIntent).toHaveBeenCalledWith({
+        email: 'donor@example.com',
+        selectedTierId: scene.donation.tiers[0].id,
+      })
+    })
+    expect(
+      screen.getByText(
+        new RegExp(scene.donation.successMessage.replace('.', '\\.'), 'i'),
+      ),
+    ).toBeInTheDocument()
+  })
+
+  it('hides the donation module when visibility is disabled', () => {
+    const scene = createSceneSnapshot()
+
+    render(
+      <SunyataVisual
+        sectionRef={null}
+        ghostLabelRef={null}
+        visual={scene.visual}
+        quote={scene.quote}
+        donation={scene.donation}
+      />,
+    )
+
+    expect(screen.queryByTestId('donation-shell')).toBeNull()
+    expect(screen.getByTestId('visual-quote-overlay')).toBeInTheDocument()
   })
 })

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import projectScene from '../../public/editor-state/scene.json'
 import {
   createSceneSnapshot,
   normalizeDonationGalleryItems,
@@ -29,6 +30,7 @@ describe('sunyata content defaults', () => {
     expect(scene.donation.gallery).toHaveLength(2)
     expect(scene.donation.gallery[0].title).toBe('Bodhi Seed Mala')
     expect(scene.donation.gallery[1].title).toBe('Lapis Wisdom')
+    expect(scene.donation.visible).toBe(false)
     expect(scene.donation.layout).toMatchObject({
       copyWidthPercent: 36,
       topSpacing: 92,
@@ -155,5 +157,27 @@ describe('normalizeJournalItems', () => {
       cardUrl: '/custom/card-one.png',
       backgroundUrl: '/custom/bg-one.png',
     })
+  })
+
+  it('keeps the project scene journal titles aligned with their story slugs', () => {
+    const pairs = projectScene.journal.items.map(({ title, slug }) => ({
+      title,
+      slug,
+    }))
+
+    expect(pairs).toEqual([
+      {
+        title: 'Life in Thangka',
+        slug: 'a-life-in-thangka',
+      },
+      {
+        title: 'Journey of Amethyst',
+        slug: 'journey-of-amethyst',
+      },
+      {
+        title: 'Children of Scripture',
+        slug: 'children-of-scripture',
+      },
+    ])
   })
 })

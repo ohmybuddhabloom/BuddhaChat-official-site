@@ -589,45 +589,90 @@ a {
   opacity: 0.62;
 }
 
-.interlude-thread {
-  width: min(860px, 100%);
-  margin: 24px auto 0;
-  display: grid;
-  gap: 18px;
-  position: relative;
-  z-index: 58;
+.interlude-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 92;
+  pointer-events: none;
 }
 
-.interlude-exchange {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
-
-.interlude-bubble {
-  max-width: min(100%, 30rem);
-  padding: 18px 20px;
-  border-radius: 28px;
-  border: 1px solid rgba(80, 60, 37, 0.12);
-  background:
-    linear-gradient(180deg, rgba(255, 252, 247, 0.88) 0%, rgba(249, 239, 225, 0.72) 100%);
+.interlude-floating-card {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(54, 41, 30, 0.9);
   box-shadow:
-    0 18px 36px rgba(123, 92, 54, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.74);
-  animation: interlude-message-rise 0.5s ease both;
+    0 18px 40px rgba(133, 108, 76, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  opacity: 0;
+  filter: blur(12px);
+  transition:
+    opacity 0.32s ease,
+    filter 0.32s ease,
+    transform 0.32s ease;
 }
 
-.interlude-bubble.is-user {
-  justify-self: start;
+.interlude-floating-card--entering,
+.interlude-floating-card--visible {
+  opacity: 1;
+  filter: blur(0);
 }
 
-.interlude-bubble.is-buddha {
-  justify-self: end;
-  border-color: rgba(82, 60, 32, 0.08);
-  background:
-    linear-gradient(180deg, rgba(74, 57, 39, 0.96) 0%, rgba(54, 41, 28, 0.94) 100%);
-  color: rgba(250, 244, 233, 0.94);
+.interlude-floating-card--exiting {
+  opacity: 0;
+  filter: blur(14px);
+}
+
+.interlude-floating-card--user {
+  bottom: calc(8vh + 112px);
+  left: clamp(34px, 8vw, 140px);
+  width: min(160px, 20vw);
+  min-width: 132px;
+  padding: 22px 26px;
+  border-radius: 34px;
+  transform: translate3d(-10px, 10px, 0);
+}
+
+.interlude-floating-card--user.interlude-floating-card--entering,
+.interlude-floating-card--user.interlude-floating-card--visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.interlude-floating-card--user.interlude-floating-card--exiting {
+  transform: translate3d(-10px, -8px, 0);
+}
+
+.interlude-floating-card--reply {
+  top: 14%;
+  right: clamp(34px, 8vw, 128px);
+  width: min(560px, 42vw);
+  min-width: 320px;
+  padding: 26px 30px;
+  border-radius: 36px;
+  transform: translate3d(18px, 10px, 0);
+}
+
+.interlude-floating-card--reply.interlude-floating-card--entering,
+.interlude-floating-card--reply.interlude-floating-card--visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.interlude-floating-card--reply.interlude-floating-card--exiting {
+  transform: translate3d(14px, -10px, 0);
+}
+
+.interlude-floating-card--reply:not(.is-visible) {
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.interlude-floating-card--reply.is-visible.interlude-floating-card--entering,
+.interlude-floating-card--reply.is-visible.interlude-floating-card--visible {
+  opacity: 1;
+  filter: blur(0);
 }
 
 .interlude-bubble-label {
@@ -639,10 +684,10 @@ a {
   opacity: 0.58;
 }
 
-.interlude-bubble p {
+.interlude-floating-card p {
   font-family: 'Playfair Display', serif;
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: clamp(0.98rem, 1.3vw, 1.18rem);
+  line-height: 1.48;
   text-wrap: balance;
 }
 
@@ -701,6 +746,14 @@ a {
 .interlude-submit:disabled {
   opacity: 0.45;
   transform: none;
+}
+
+.interlude-status {
+  align-self: center;
+  margin-top: 10px;
+  color: rgba(146, 57, 36, 0.88);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
 }
 
 .sr-only {
@@ -1210,7 +1263,8 @@ a {
 
 .app-previews-section {
   position: relative;
-  padding: 120px 40px;
+  margin-top: -1px;
+  padding: 48px 40px 120px;
   background:
     radial-gradient(circle at 12% 18%, rgba(213, 167, 84, 0.18), transparent 24%),
     radial-gradient(circle at 84% 78%, rgba(228, 212, 182, 0.48), transparent 28%),
@@ -1227,7 +1281,7 @@ a {
 
 .app-previews-showcase {
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  align-items: center;
+  align-items: start;
 }
 
 .app-previews-showcase-copy {
@@ -1517,11 +1571,11 @@ a {
 
 .app-previews-reserve {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
-  gap: 24px;
+  grid-template-columns: minmax(240px, 280px) minmax(460px, 1fr);
+  gap: 32px;
   align-items: center;
   margin-top: 14px;
-  padding: 28px 30px;
+  padding: 30px 34px;
   border: 1px solid rgba(180, 135, 57, 0.18);
   border-radius: 32px;
   background: rgba(255, 251, 245, 0.72);
@@ -1534,7 +1588,7 @@ a {
 
 .app-previews-reserve-copy {
   display: grid;
-  gap: 6px;
+  gap: 12px;
 }
 
 .app-previews-reserve-copy p {
@@ -1547,18 +1601,27 @@ a {
 
 .app-previews-reserve-copy span {
   color: rgba(47, 37, 29, 0.72);
-  font-size: 0.96rem;
+  max-width: 16ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.app-previews-reserve-panel {
+  display: grid;
+  gap: 12px;
+  align-items: center;
 }
 
 .app-previews-reserve-form {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) 162px;
+  gap: 16px;
+  align-items: center;
 }
 
 .app-previews-reserve-form input,
 .app-previews-reserve-confirmed {
-  min-height: 58px;
+  min-height: 60px;
   border-radius: 999px;
 }
 
@@ -1581,6 +1644,7 @@ a {
   border-radius: 999px;
   background: #cba04d;
   color: #241a14;
+  width: 100%;
   padding: 0 24px;
   font-size: 0.72rem;
   font-weight: 700;
@@ -1607,6 +1671,25 @@ a {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.app-previews-download-link {
+  display: inline-flex;
+  align-items: center;
+  color: #8f6623;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.app-previews-error {
+  min-height: 24px;
+  padding-left: 6px;
+  color: rgba(146, 57, 36, 0.88);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .content-section {
@@ -1760,7 +1843,7 @@ a {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 100px 10%;
+  padding: 0 10% 100px;
 }
 
 .visual-anchor {
@@ -1769,7 +1852,7 @@ a {
   min-height: min(72vh, 760px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: visible;
 }
 
@@ -2048,6 +2131,12 @@ a {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.donation-form-error {
+  color: rgba(146, 57, 36, 0.88);
+  font-size: 0.84rem;
+  line-height: 1.6;
 }
 
 .donation-support-note {
@@ -2799,20 +2888,26 @@ a {
     border-radius: 28px;
   }
 
-  .interlude-thread,
-  .interlude-exchange {
+  .interlude-overlay {
+    display: grid;
+    align-content: start;
     gap: 14px;
+    padding-top: clamp(22px, 7vw, 44px);
+    padding-inline: 24px;
   }
 
-  .interlude-exchange {
-    grid-template-columns: 1fr;
+  .interlude-floating-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: min(100%, 100%);
+    min-width: 0;
+    transform: none !important;
   }
 
-  .interlude-bubble {
-    max-width: 100%;
-  }
-
-  .interlude-bubble.is-buddha {
+  .interlude-floating-card--user,
+  .interlude-floating-card--reply {
     justify-self: stretch;
   }
 

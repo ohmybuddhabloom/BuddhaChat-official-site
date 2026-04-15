@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { submitChatPrompt } from '../../lib/siteApi.js'
+
 function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
   const [message, setMessage] = useState('')
-  const [exchanges, setExchanges] = useState([])
+  const [activeExchange, setActiveExchange] = useState(null)
+  const [submitError, setSubmitError] = useState('')
   const timersRef = useRef([])
 
   useEffect(() => {
@@ -11,6 +14,54 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
       timersRef.current = []
     }
   }, [])
+
+  const clearTimers = () => {
+    timersRef.current.forEach((timerId) => window.clearTimeout(timerId))
+    timersRef.current = []
+  }
+
+  const queueTimer = (callback, delay) => {
+    const timerId = window.setTimeout(() => {
+      timersRef.current = timersRef.current.filter((item) => item !== timerId)
+      callback()
+    }, delay)
+
+    timersRef.current.push(timerId)
+  }
+
+  const mountExchange = (prompt) => {
+    const exchangeId = `${Date.now()}-${Math.random().toString(16).slice(2)}`
+    const nextExchange = {
+      id: exchangeId,
+      prompt,
+      responded: false,
+      phase: 'entering',
+    }
+
+    setActiveExchange(nextExchange)
+
+    queueTimer(() => {
+      setActiveExchange((current) =>
+        current?.id === exchangeId
+          ? {
+              ...current,
+              phase: 'visible',
+            }
+          : current,
+      )
+    }, 30)
+
+    queueTimer(() => {
+      setActiveExchange((current) =>
+        current?.id === exchangeId
+          ? {
+              ...current,
+              responded: true,
+            }
+          : current,
+      )
+    }, interlude.responseDelayMs ?? 420)
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -21,27 +72,40 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
       return
     }
 
-    const exchangeId = `${Date.now()}-${Math.random().toString(16).slice(2)}`
-
-    setExchanges((current) => [
-      ...current.slice(-2),
-      {
-        id: exchangeId,
-        prompt,
-        responded: false,
-      },
-    ])
     setMessage('')
-
-    const timerId = window.setTimeout(() => {
-      setExchanges((current) =>
-        current.map((item) =>
-          item.id === exchangeId ? { ...item, responded: true } : item,
-        ),
+    setSubmitError('')
+    clearTimers()
+    void submitChatPrompt({ message: prompt }).catch((error) => {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'The message could not be recorded just now.',
       )
-    }, interlude.responseDelayMs ?? 420)
+    })
 
-    timersRef.current.push(timerId)
+    if (activeExchange) {
+      const outgoingId = activeExchange.id
+
+      setActiveExchange((current) =>
+        current
+          ? {
+              ...current,
+              phase: 'exiting',
+            }
+          : current,
+      )
+
+      queueTimer(() => {
+        setActiveExchange((current) =>
+          current?.id === outgoingId ? null : current,
+        )
+        mountExchange(prompt)
+      }, interlude.fadeDurationMs ?? 320)
+
+      return
+    }
+
+    mountExchange(prompt)
   }
 
   return (
@@ -64,25 +128,35 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
         <p className="interlude-note">{interlude.note}</p>
       </div>
 
-      <div className="interlude-thread" data-testid="interlude-thread">
-        {exchanges.map((exchange) => (
-          <div className="interlude-exchange" key={exchange.id}>
-            <article className="interlude-bubble is-user">
-              <span className="interlude-bubble-label">{interlude.actionLabel}</span>
-              <p>{exchange.prompt}</p>
-            </article>
+      {activeExchange ? (
+        <div
+          className={`interlude-overlay interlude-overlay--${activeExchange.phase}`}
+          data-testid="interlude-overlay"
+        >
+          <article
+            className={`interlude-floating-card interlude-floating-card--user interlude-floating-card--${activeExchange.phase}`}
+            data-testid="interlude-user-card"
+          >
+            <span className="interlude-bubble-label">{interlude.actionLabel}</span>
+            <p>{activeExchange.prompt}</p>
+          </article>
 
-            {exchange.responded ? (
-              <article className="interlude-bubble is-buddha">
-                <span className="interlude-bubble-label">
-                  {interlude.responseLabel}
-                </span>
-                <p>{interlude.responseText}</p>
-              </article>
-            ) : null}
-          </div>
-        ))}
-      </div>
+          <article
+            className={`interlude-floating-card interlude-floating-card--reply interlude-floating-card--${activeExchange.phase}${
+              activeExchange.responded ? ' is-visible' : ''
+            }`}
+            data-testid="interlude-reply-card"
+            style={{
+              transform: `translate3d(${interlude.replyX ?? 0}px, ${interlude.replyY ?? 0}px, 0px)`,
+            }}
+          >
+            <span className="interlude-bubble-label">
+              {interlude.responseLabel}
+            </span>
+            <p>{interlude.responseText}</p>
+          </article>
+        </div>
+      ) : null}
 
       <form
         ref={chatBarRef}
@@ -109,6 +183,11 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
           {interlude.actionLabel}
         </button>
       </form>
+      {submitError ? (
+        <p className="interlude-status" role="status" aria-live="polite">
+          {submitError}
+        </p>
+      ) : null}
     </section>
   )
 }

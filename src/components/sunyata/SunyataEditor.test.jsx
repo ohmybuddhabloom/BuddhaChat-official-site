@@ -199,4 +199,17 @@ describe('SunyataEditor', () => {
       )
     })
   })
+
+  it('shows a story mapping selector for each journal card and updates the slug', () => {
+    const { updateJournalItem } = renderEditor()
+
+    const selectors = screen.getAllByTestId('journal-story-slug-select')
+    expect(selectors).toHaveLength(3)
+
+    fireEvent.change(selectors[0], {
+      target: { value: 'a-life-in-thangka' },
+    })
+
+    expect(updateJournalItem).toHaveBeenCalledWith(0, 'slug', 'a-life-in-thangka')
+  })
 })

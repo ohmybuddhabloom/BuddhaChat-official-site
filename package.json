@@ -32,5 +32,21 @@
     "jsdom": "^29.0.2",
     "vite": "^8.0.4",
     "vitest": "^4.1.4"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmybuddhabloom/BulletChat-official-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohmybuddhabloom/BulletChat-official-site/issues"
+  },
+  "homepage": "https://github.com/ohmybuddhabloom/BulletChat-official-site#readme"
 }

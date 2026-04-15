@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from 'react'
+import { SACRED_STORIES } from '../../content/sacredStories.js'
 import {
   resolveJournalImageSource,
   saveJournalImageFile,
@@ -109,6 +110,38 @@ function ColorField({ label, value, onChange }) {
   )
 }
 
+function SelectField({
+  label,
+  value,
+  options,
+  onChange,
+  testId,
+}) {
+  const inputId = useId()
+
+  return (
+    <div className="editor-field">
+      <label className="editor-label" htmlFor={inputId}>
+        <span>{label}</span>
+      </label>
+      <select
+        id={inputId}
+        className="editor-input"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        aria-label={label}
+        data-testid={testId}
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  )
+}
+
 function EditorSection({ title, children }) {
   return (
     <details className="editor-section" open>
@@ -159,6 +192,22 @@ function LayoutRow({
           下移
         </button>
       </div>
+    </div>
+  )
+}
+
+function ToggleField({ label, checked, onChange }) {
+  return (
+    <div className="editor-field">
+      <label className="editor-layout-toggle">
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(event) => onChange(event.target.checked)}
+          aria-label={label}
+        />
+        <span>{label}</span>
+      </label>
     </div>
   )
 }
@@ -460,6 +509,20 @@ function SunyataEditor({
               value={getResponsiveValue(scene.interlude, 'chatYPercent')}
               onChange={(value) => updateInterlude('chatYPercent', value, true, responsiveProfile)}
             />
+            <NumberField
+              label="浣涚鍥炲 X"
+              min={-180}
+              max={180}
+              value={scene.interlude.replyX ?? 0}
+              onChange={(value) => updateInterlude('replyX', value)}
+            />
+            <NumberField
+              label="浣涚鍥炲 Y"
+              min={-180}
+              max={180}
+              value={scene.interlude.replyY ?? 0}
+              onChange={(value) => updateInterlude('replyY', value)}
+            />
           </EditorSection>
 
           <EditorSection title="佛像视频">
@@ -532,6 +595,16 @@ function SunyataEditor({
 
             {scene.journal.items.map((item, index) => (
               <div className="editor-subgroup" key={`${item.title}-${index}`}>
+                <SelectField
+                  label={`Story link ${index + 1}`}
+                  value={item.slug}
+                  options={SACRED_STORIES.map((story) => ({
+                    value: story.slug,
+                    label: `${story.shortTitle} (${story.slug})`,
+                  }))}
+                  onChange={(value) => updateJournalItem(index, 'slug', value)}
+                  testId="journal-story-slug-select"
+                />
                 <h3>{`期刊卡片 ${index + 1}`}</h3>
                 <TextField label={`卡片 ${index + 1} 标签`} value={item.tag} onChange={(value) => updateJournalItem(index, 'tag', value)} />
                 <TextField label={`卡片 ${index + 1} 标题`} value={item.title} onChange={(value) => updateJournalItem(index, 'title', value)} />
@@ -565,6 +638,11 @@ function SunyataEditor({
           </EditorSection>
 
           <EditorSection title="引文与捐助">
+            <ToggleField
+              label="Show donation / commerce module"
+              checked={Boolean(scene.donation.visible)}
+              onChange={(value) => updateDonation('visible', value)}
+            />
             <TextField label="引文文本" value={scene.quote.text} multiline onChange={(value) => updateQuote('text', value)} />
             <TextField label="工作室标签" value={scene.quote.studioLabel} onChange={(value) => updateQuote('studioLabel', value)} />
             <TextField label="工作室内容" value={scene.quote.studioText} onChange={(value) => updateQuote('studioText', value)} />
