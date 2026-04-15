@@ -6,9 +6,9 @@ import {
   getStoryHref,
 } from '../../content/sacredStories.js'
 
-const TEXT_SWAP_DELAY = 220
-const ANIMATION_LOCK_MS = 1120
-const AUTOPLAY_DELAY = 4600
+const TEXT_SWAP_DELAY = 280
+const ANIMATION_LOCK_MS = 1800
+const AUTOPLAY_DELAY = 5200
 
 
 function resolveCurrentStorySlug(item, index) {
@@ -208,18 +208,27 @@ function SunyataWildernessJournal({
   const cardStyles = useMemo(() => {
     return resolvedCategories.map((_, index) => {
       const total = resolvedCategories.length
-      let diff = index - safeCurrentIndex
 
+      // Transform / opacity use currentIndex (immediate start of animation)
+      let diff = index - safeCurrentIndex
       while (diff < 0) {
         diff += total
       }
+
+      // z-index uses displayIndex (delayed ~280ms) so transform starts before
+      // z-order swaps, eliminating the instant z-layer pop / flash effect
+      let zDiff = index - safeDisplayIndex
+      while (zDiff < 0) {
+        zDiff += total
+      }
+      const zIndex = zDiff === 0 ? 50 : zDiff === 1 ? 30 : zDiff === 2 ? 20 : 10
 
       if (diff === 0) {
         return {
           state: 'focus',
           transform: 'translate3d(-12px, -8px, 0px) scale(1.05)',
           opacity: 1,
-          zIndex: 50,
+          zIndex,
           filter: 'grayscale(0)',
           pointerEvents: 'auto',
         }
@@ -230,7 +239,7 @@ function SunyataWildernessJournal({
           state: 'glass',
           transform: 'translate3d(138px, 38px, 0px) scale(0.87)',
           opacity: 0.5,
-          zIndex: 30,
+          zIndex,
           filter: 'grayscale(0.35) saturate(0.82)',
           pointerEvents: 'auto',
         }
@@ -241,7 +250,7 @@ function SunyataWildernessJournal({
           state: 'glass',
           transform: 'translate3d(274px, 92px, 0px) scale(0.76)',
           opacity: 0.2,
-          zIndex: 20,
+          zIndex,
           filter: 'grayscale(0.62) saturate(0.72)',
           pointerEvents: 'auto',
         }
@@ -251,12 +260,12 @@ function SunyataWildernessJournal({
         state: 'glass',
         transform: 'translate3d(308px, 108px, 0px) scale(0.62)',
         opacity: 0,
-        zIndex: 10,
+        zIndex,
         filter: 'grayscale(1)',
         pointerEvents: 'none',
       }
     })
-  }, [resolvedCategories, safeCurrentIndex])
+  }, [resolvedCategories, safeCurrentIndex, safeDisplayIndex])
 
   const handleCardClick = (index) => {
     if (isAnimating) {
