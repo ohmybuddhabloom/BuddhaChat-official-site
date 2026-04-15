@@ -239,7 +239,7 @@ export const defaultScene = {
     primaryActionLabel: 'Download Now',
     secondaryActionLabel: 'Watch the Story',
     reserveHeading: 'Reserve Your Invite',
-    reserveNote: 'Leave your email and we will send the current app access path to your inbox.',
+    reserveNote: 'To ensure a truly serene experience, the Buddha Chat app is still being mindfully developed. Breathe and rest in the present—we will write to you the moment it arrives.',
     reserveEmailPlaceholder: 'Enter your email',
     reserveSubmitLabel: 'Submit',
     proofText: 'Joined by 12,000+ seekers worldwide',
