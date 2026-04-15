@@ -10,13 +10,13 @@ import {
 const TIME_EASING = 0.18
 const MIN_TIME_DELTA = 1 / 120
 
-function waitForMetadata(video) {
-  if (video.readyState >= 1) {
+function waitForVideoReady(video) {
+  if (video.readyState >= 3) {
     return Promise.resolve()
   }
 
   return new Promise((resolve) => {
-    video.addEventListener('loadedmetadata', resolve, { once: true })
+    video.addEventListener('canplay', resolve, { once: true })
   })
 }
 
@@ -57,7 +57,7 @@ function ScrollVideoBackground({
     let cancelled = false
 
     const hydrateVideo = async () => {
-      await waitForMetadata(video)
+      await waitForVideoReady(video)
 
       if (cancelled || !video.videoWidth || !video.videoHeight || !video.duration) {
         return
@@ -258,7 +258,7 @@ function ScrollVideoBackground({
         poster="/kling-buddha-scroll-poster.jpg"
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
       >
         <source src="/kling-buddha-scroll-scrub.mp4" type="video/mp4" />
       </video>
