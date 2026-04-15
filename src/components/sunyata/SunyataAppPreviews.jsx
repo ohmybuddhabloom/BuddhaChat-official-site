@@ -35,9 +35,11 @@ function SunyataAppPreviews({ showcase }) {
           </div>
           <div className="app-previews-proof">
             <div className="app-previews-proof-stack" aria-hidden="true">
-              <span />
-              <span />
-              <span />
+              {showcase.proofAvatars?.map((avatar, index) => (
+                <span key={`${avatar.src}-${index}`}>
+                  <img src={avatar.src} alt={avatar.alt} loading="lazy" />
+                </span>
+              ))}
             </div>
             <p>{showcase.proofText}</p>
           </div>

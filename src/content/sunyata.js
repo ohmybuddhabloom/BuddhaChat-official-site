@@ -222,6 +222,20 @@ export const defaultScene = {
     primaryActionLabel: 'Download Now',
     secondaryActionLabel: 'Watch the Story',
     proofText: 'Joined by 12,000+ seekers worldwide',
+    proofAvatars: [
+      {
+        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5BcCtipHMXi3CNEZdMB5V7Sa9HEt9olmb079PiiWwCuuoIW3YE6eV0yCYR2gGvmv5F17M4-Qad9_7Jnkt2RV6iYB9jPEoLMJYeWDS4XN5URc5BrPhnyRezaOWxSdQtxsY0eevSGwpPscFmMKurPlkGerZ5SizhEHsEpeOxtqRusF9IHbhTaOfgkmKmsypUpksB8dtQK-QjA1BRUdFSVFPsndp6o_Obko_5YRdnOFnqvONV-eAS-5HCnRNEqaRJrtb7QtT6rQUH30',
+        alt: 'Close-up portrait of a woman',
+      },
+      {
+        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDB1_kVUHFOoMKNX2rjc_IbyRya62SO9A71_WrqJuCu33WuwTms6oItmzcPPjk2GYKrDFPFm8iB4AFWV0IzTc41pogRb9U5GW515AMAY0Fr30z10hv5mwdemONWfyyKag7zbGYWfc265ofudqSQtPHwvGBoeu6v2owuLhstEez14FjY3-rTvDFGkNlYwlVKNFW4t56KMyguI86fCY87m0e4KwL6UbaSvWp_OMhmqnBpWkvUx60KA3j2OQpLuERAChfxrqfIoCbUT5M',
+        alt: 'Portrait of a man',
+      },
+      {
+        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCLvSLFYpG6B2imUbaVnvGdPcxC7QuRLDug4JAYKnAojVjK7zjBh0uhzORiuRj5nzcCIySQ_15ownvAgACbTvjBCStGRkqp3s8pTDUD7yqRhh7gnyn_VQvmVC0Hc--PI_Sctw4FCla-hMWW2i4KLaiIS4m5juH09qS8OTvgI4VlglePEVRCdMCp9-yoZlNsIDwquzw1QEZkUNnm5PQfiJAvqyL20gOAlSooTzMPeCtHCbyVqe5iUFpw0S71-ud199T1E5xDVVIYe8k',
+        alt: 'Portrait of a seeker',
+      },
+    ],
     phones: [
       {
         key: 'left',
@@ -407,6 +421,8 @@ export function sanitizeScene(scene) {
     appShowcase: {
       ...defaultScene.appShowcase,
       ...snapshot.appShowcase,
+      proofAvatars:
+        snapshot.appShowcase?.proofAvatars ?? defaultScene.appShowcase.proofAvatars,
       phones: snapshot.appShowcase?.phones ?? defaultScene.appShowcase.phones,
     },
     quote: {
