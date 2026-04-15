@@ -10,18 +10,6 @@ const TEXT_SWAP_DELAY = 220
 const ANIMATION_LOCK_MS = 1120
 const AUTOPLAY_DELAY = 4600
 
-function splitTitle(title) {
-  if (!title.includes(' ')) {
-    return title
-  }
-
-  return title.split(' ').map((word, index, words) => (
-    <span key={`${word}-${index}`}>
-      {word}
-      {index < words.length - 1 ? <br /> : null}
-    </span>
-  ))
-}
 
 function resolveCurrentStorySlug(item, index) {
   if (item?.slug && SACRED_STORIES_BY_SLUG[item.slug]) {
@@ -337,7 +325,7 @@ function SunyataWildernessJournal({
             {currentCategory.tag}
           </span>
           <h2 className={`wilderness-title${textVisible ? ' is-visible' : ''}`}>
-            {splitTitle(currentCategory.title)}
+            {currentCategory.title}
           </h2>
           <p
             className={`wilderness-description${

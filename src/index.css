@@ -990,8 +990,11 @@ a {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(4rem, 8vw, 6.5rem);
   font-weight: 400;
-  line-height: 0.94;
+  line-height: 1.0;
   letter-spacing: -0.04em;
+  max-width: var(--journal-copy-max-width);
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .wilderness-description {
@@ -1345,9 +1348,7 @@ a {
 }
 
 .app-previews-secondary {
-  border: 1px solid rgba(78, 58, 35, 0.14);
-  background: rgba(255, 255, 255, 0.64);
-  color: rgba(47, 37, 29, 0.82);
+  display: none;
 }
 
 .app-previews-proof {
@@ -1570,14 +1571,14 @@ a {
 }
 
 .app-previews-reserve {
-  display: grid;
-  grid-template-columns: minmax(240px, 280px) minmax(460px, 1fr);
-  gap: 32px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   margin-top: 14px;
-  padding: 30px 34px;
+  padding: 22px 26px 24px;
+  max-width: 500px;
   border: 1px solid rgba(180, 135, 57, 0.18);
-  border-radius: 32px;
+  border-radius: 24px;
   background: rgba(255, 251, 245, 0.72);
   box-shadow:
     0 22px 50px rgba(121, 94, 55, 0.08),
@@ -1587,23 +1588,23 @@ a {
 }
 
 .app-previews-reserve-copy {
-  display: grid;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .app-previews-reserve-copy p {
   color: #b48739;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
 .app-previews-reserve-copy span {
-  color: rgba(47, 37, 29, 0.72);
-  max-width: 16ch;
-  font-size: 0.98rem;
-  line-height: 1.55;
+  color: rgba(47, 37, 29, 0.66);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .app-previews-reserve-panel {
@@ -3019,8 +3020,8 @@ a {
   }
 
   .app-previews-reserve {
-    grid-template-columns: 1fr;
-    padding: 22px;
+    max-width: none;
+    padding: 20px 18px;
   }
 
   .app-previews-reserve-form {
