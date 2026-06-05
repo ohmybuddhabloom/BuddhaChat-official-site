@@ -3,9 +3,7 @@ import {
   buildAuthReturnUrl,
   fetchZentubeSession,
   getZentubeOrigin,
-  loginWithCode,
   logoutZentube,
-  sendLoginCode,
 } from '../lib/fusionAuth.js'
 
 const DEFAULT_SUTRA_ORIGIN = 'https://sutra.buddhachat.online'
@@ -186,105 +184,6 @@ function useSessionBridge() {
   return session
 }
 
-function SameOriginLoginForm({ navigate, returnUrl }) {
-  const [email, setEmail] = useState('')
-  const [code, setCode] = useState('')
-  const [step, setStep] = useState('email')
-  const [status, setStatus] = useState('idle')
-  const [message, setMessage] = useState('')
-
-  async function handleSendCode(event) {
-    event.preventDefault()
-    setStatus('submitting')
-    setMessage('')
-
-    try {
-      await sendLoginCode(email)
-      setStep('code')
-      setStatus('idle')
-      setMessage('Verification code sent. Check your email.')
-    } catch (error) {
-      setStatus('error')
-      setMessage(error?.message || 'Unable to send verification code.')
-    }
-  }
-
-  async function handleLogin(event) {
-    event.preventDefault()
-    setStatus('submitting')
-    setMessage('')
-
-    try {
-      await loginWithCode({ email, code })
-      navigate(returnUrl)
-    } catch (error) {
-      setStatus('error')
-      setMessage(error?.message || 'Unable to complete sign in.')
-    }
-  }
-
-  return (
-    <form
-      className="fusion-login-form"
-      onSubmit={step === 'email' ? handleSendCode : handleLogin}
-      aria-label="Email code sign in"
-    >
-      <label>
-        <span>Email</span>
-        <input
-          autoComplete="email"
-          inputMode="email"
-          name="email"
-          onChange={(event) => setEmail(event.target.value)}
-          required
-          type="email"
-          value={email}
-        />
-      </label>
-      {step === 'code' ? (
-        <label>
-          <span>Verification code</span>
-          <input
-            autoComplete="one-time-code"
-            inputMode="numeric"
-            maxLength={6}
-            name="code"
-            onChange={(event) => setCode(event.target.value)}
-            pattern="[0-9]{6}"
-            required
-            type="text"
-            value={code}
-          />
-        </label>
-      ) : null}
-      <button className="fusion-action-primary" disabled={status === 'submitting'} type="submit">
-        {status === 'submitting'
-          ? 'Working...'
-          : step === 'email'
-            ? 'Send code'
-            : 'Sign in'}
-      </button>
-      {step === 'code' ? (
-        <button
-          className="fusion-action-secondary"
-          disabled={status === 'submitting'}
-          onClick={() => {
-            setStep('email')
-            setCode('')
-            setMessage('')
-          }}
-          type="button"
-        >
-          Change email
-        </button>
-      ) : null}
-      {message ? (
-        <p className={`fusion-login-message ${status === 'error' ? 'is-error' : ''}`}>{message}</p>
-      ) : null}
-    </form>
-  )
-}
-
 function SameOriginAccountPanel({ navigate, session }) {
   const [logoutStatus, setLogoutStatus] = useState('idle')
 
@@ -394,7 +293,6 @@ function FusionRoutePage({ navigate = (href) => window.location.assign(href), ro
     routePath === '/auth/login'
       ? `${configuredPrimaryHref}?returnUrl=${encodeURIComponent(returnUrl)}`
       : configuredPrimaryHref
-  const isLoginRoute = routePath === '/auth/login' || routePath === '/login'
 
   return (
     <main className="fusion-page">
@@ -407,7 +305,7 @@ function FusionRoutePage({ navigate = (href) => window.location.assign(href), ro
           <a href="/videos">Videos</a>
           <a href="/sutra">Sutra</a>
           <a href="/me">Account</a>
-          <a href="/auth/login">Sign in</a>
+          {routePath === '/me' ? null : <a href="/login">Sign in</a>}
         </div>
       </nav>
 
@@ -416,9 +314,7 @@ function FusionRoutePage({ navigate = (href) => window.location.assign(href), ro
           <span className="fusion-eyebrow">{config.eyebrow}</span>
           <h1 id="fusion-title">{config.title}</h1>
           <p>{config.lead}</p>
-          {isLoginRoute ? (
-            <SameOriginLoginForm navigate={navigate} returnUrl={returnUrl} />
-          ) : (
+          {routePath === '/me' ? null : (
             <div className="fusion-actions">
               <a className="fusion-action-primary" href={primaryHref}>
                 {config.primaryLabel}

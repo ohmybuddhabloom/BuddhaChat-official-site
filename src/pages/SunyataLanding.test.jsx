@@ -75,6 +75,23 @@ describe('SunyataLanding layout controls', () => {
     expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/login')
   })
 
+  it('normalizes legacy login links instead of rendering duplicate sign-in entries', () => {
+    const scene = createSceneSnapshot()
+    scene.nav.links = [
+      { label: 'The Path', href: '#path' },
+      { label: 'Login', href: '/auth/login' },
+      { label: 'Sign in', href: '/login' },
+    ]
+
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(scene))
+
+    render(<SunyataLanding />)
+
+    const loginLinks = screen.getAllByRole('link', { name: 'Sign in' })
+    expect(loginLinks).toHaveLength(1)
+    expect(loginLinks[0]).toHaveAttribute('href', '/login')
+  })
+
   it('migrates legacy pixel offsets and rewrites storage with percentage fields', async () => {
     const scene = createSceneSnapshot()
     scene.hero.copyX = 180

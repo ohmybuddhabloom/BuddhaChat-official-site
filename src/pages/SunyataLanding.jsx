@@ -42,8 +42,35 @@ const REQUIRED_FUSION_NAV_LINKS = [
   { label: 'Sign in', href: '/login' },
 ]
 
+const LOGIN_NAV_LABELS = new Set(['login', 'log in', 'sign in'])
+
 function ensureFusionNavLinks(links = []) {
-  const normalizedLinks = [...links]
+  let hasLoginLink = false
+  const normalizedLinks = links
+    .filter((link) => {
+      const label = link?.label?.trim().toLowerCase()
+      const href = link?.href
+      const isLegacyLogin = LOGIN_NAV_LABELS.has(label) || href === '/auth/login' || href === '/login'
+
+      if (!isLegacyLogin) {
+        return true
+      }
+
+      if (hasLoginLink) {
+        return false
+      }
+
+      hasLoginLink = true
+      return true
+    })
+    .map((link) => {
+      const label = link?.label?.trim().toLowerCase()
+      const href = link?.href
+      const isLegacyLogin = LOGIN_NAV_LABELS.has(label) || href === '/auth/login' || href === '/login'
+
+      return isLegacyLogin ? { ...link, label: 'Sign in', href: '/login' } : link
+    })
+
   const existingHrefs = new Set(
     normalizedLinks
       .map((link) => link?.href)

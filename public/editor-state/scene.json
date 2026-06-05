@@ -60,7 +60,7 @@
       },
       {
         "label": "Sign in",
-        "href": "/auth/login"
+        "href": "/login"
       }
     ]
   },
