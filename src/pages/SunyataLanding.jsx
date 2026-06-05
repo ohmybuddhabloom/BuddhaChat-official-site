@@ -39,7 +39,7 @@ import {
 const REQUIRED_FUSION_NAV_LINKS = [
   { label: 'Videos', href: '/videos' },
   { label: 'Sutra', href: '/sutra' },
-  { label: 'Sign in', href: '/auth/login' },
+  { label: 'Sign in', href: '/login' },
 ]
 
 function ensureFusionNavLinks(links = []) {

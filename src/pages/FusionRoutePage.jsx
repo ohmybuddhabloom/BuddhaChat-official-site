@@ -63,7 +63,7 @@ const ROUTE_CONFIG = {
     title: 'Sign in once for video and scripture reading.',
     lead:
       'The account source-of-truth remains Zentube, but this www page talks to the same auth API through same-origin routes.',
-    primaryLabel: 'Use email code',
+    primaryLabel: 'Continue to Zentube login',
     primaryHref: '/auth/login',
     secondaryLabel: 'Back to home',
     secondaryHref: '/',
@@ -76,7 +76,7 @@ const ROUTE_CONFIG = {
     title: 'Sign in once for video and scripture reading.',
     lead:
       'The account source-of-truth remains Zentube, but this www page talks to the same auth API through same-origin routes.',
-    primaryLabel: 'Use email code',
+    primaryLabel: 'Continue to Zentube login',
     primaryHref: '/login',
     secondaryLabel: 'Back to home',
     secondaryHref: '/',
@@ -135,6 +135,12 @@ function getReturnUrl() {
 
   const returnPath = new URLSearchParams(window.location.search).get('returnUrl') || '/'
   return buildAuthReturnUrl(returnPath)
+}
+
+function buildZentubeLoginHref(returnUrl) {
+  const loginUrl = new URL('/auth/login', getZentubeHomeHref())
+  loginUrl.searchParams.set('returnUrl', returnUrl)
+  return loginUrl.toString()
 }
 
 const SESSION_COPY = {
@@ -333,11 +339,55 @@ function SameOriginAccountPanel({ navigate, session }) {
   )
 }
 
+function ExternalRedirectPage({ eyebrow, href, label, title }) {
+  return (
+    <main className="fusion-page fusion-redirect-page">
+      <meta httpEquiv="refresh" content={`0; url=${href}`} />
+      <div className="fusion-bg" aria-hidden="true" />
+      <section className="fusion-hero" aria-labelledby="fusion-title">
+        <div className="fusion-copy">
+          <span className="fusion-eyebrow">{eyebrow}</span>
+          <h1 id="fusion-title">{title}</h1>
+          <p>Taking you to the existing BuddhaChat experience.</p>
+          <div className="fusion-actions">
+            <a className="fusion-action-primary" href={href}>
+              {label}
+            </a>
+            <a className="fusion-action-secondary" href="/">
+              Back to official site
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
 function FusionRoutePage({ navigate = (href) => window.location.assign(href), routePath }) {
   const config = ROUTE_CONFIG[routePath] ?? ROUTE_CONFIG['/videos']
   const session = useSessionBridge()
   const sessionCopy = SESSION_COPY[session.status] ?? SESSION_COPY.unavailable
   const returnUrl = getReturnUrl()
+  const redirectHrefByRoute = {
+    '/videos': getZentubeHomeHref(),
+    '/zentube': getZentubeHomeHref(),
+    '/sutra': getSutraOrigin(),
+    '/auth/login': buildZentubeLoginHref(returnUrl),
+    '/login': buildZentubeLoginHref(returnUrl),
+  }
+  const redirectHref = redirectHrefByRoute[routePath]
+
+  if (redirectHref) {
+    return (
+      <ExternalRedirectPage
+        eyebrow={config.eyebrow}
+        href={redirectHref}
+        label={config.primaryLabel}
+        title={config.title}
+      />
+    )
+  }
+
   const configuredPrimaryHref =
     typeof config.primaryHref === 'function' ? config.primaryHref() : config.primaryHref
   const primaryHref =

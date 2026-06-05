@@ -5,6 +5,23 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    {
+      "source": "/videos",
+      "destination": "https://zentube.buddhachat.online",
+      "permanent": false
+    },
+    {
+      "source": "/zentube",
+      "destination": "https://zentube.buddhachat.online",
+      "permanent": false
+    },
+    {
+      "source": "/sutra",
+      "destination": "https://sutra.buddhachat.online",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/auth/:path*",

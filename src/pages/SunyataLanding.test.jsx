@@ -72,7 +72,7 @@ describe('SunyataLanding layout controls', () => {
 
     expect(screen.getByRole('link', { name: 'Videos' })).toHaveAttribute('href', '/videos')
     expect(screen.getByRole('link', { name: 'Sutra' })).toHaveAttribute('href', '/sutra')
-    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/auth/login')
+    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/login')
   })
 
   it('migrates legacy pixel offsets and rewrites storage with percentage fields', async () => {

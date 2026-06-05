@@ -54,6 +54,9 @@ describe('App routing', () => {
 
     render(<App />)
 
-    expect(screen.getByRole('form', { name: 'Email code sign in' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
+      'href',
+      'https://zentube.buddhachat.online/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
+    )
   })
 })

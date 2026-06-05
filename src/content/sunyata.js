@@ -171,7 +171,7 @@ export const defaultScene = {
       { label: 'Story', href: '#silence' },
       { label: 'Videos', href: '/videos' },
       { label: 'Sutra', href: '/sutra' },
-      { label: 'Sign in', href: '/auth/login' },
+      { label: 'Sign in', href: '/login' },
     ],
   },
   hero: {
