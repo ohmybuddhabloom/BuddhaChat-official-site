@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import { buildAuthReturnUrl, fetchZentubeSession, getZentubeOrigin } from '../lib/fusionAuth.js'
 
-const SUTRA_ORIGIN = 'https://sutra.buddhachat.online'
+const DEFAULT_SUTRA_ORIGIN = 'https://sutra.buddhachat.online'
+
+function getSutraOrigin() {
+  return (import.meta.env.VITE_SUTRA_ORIGIN || DEFAULT_SUTRA_ORIGIN).replace(/\/+$/, '')
+}
 
 function getZentubeHomeHref() {
   return getZentubeOrigin().replace(/\/+$/, '')
@@ -40,7 +44,7 @@ const ROUTE_CONFIG = {
     lead:
       'This route preserves the current 4467-book reader deployment and prepares the www shell for library, progress, notes, highlights, and reading preferences.',
     primaryLabel: 'Open current reader',
-    primaryHref: SUTRA_ORIGIN,
+    primaryHref: getSutraOrigin,
     secondaryLabel: 'View account area',
     secondaryHref: '/me',
     status: 'Safe link mode',

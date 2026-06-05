@@ -51,6 +51,18 @@ describe('FusionRoutePage', () => {
     )
   })
 
+  it('uses the configured Sutra origin for preview reader links', () => {
+    vi.stubEnv('VITE_SUTRA_ORIGIN', 'https://sutra-preview.example/')
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('blocked')))
+
+    render(<FusionRoutePage routePath="/sutra" />)
+
+    expect(screen.getByRole('link', { name: 'Open current reader' })).toHaveAttribute(
+      'href',
+      'https://sutra-preview.example',
+    )
+  })
+
   it('shows shared login status when the Zentube bridge is visible', async () => {
     vi.stubGlobal(
       'fetch',
