@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { buildAuthReturnUrl, fetchZentubeSession } from './fusionAuth.js'
+import { buildAuthReturnUrl, fetchZentubeSession, loginWithCode, sendLoginCode } from './fusionAuth.js'
 
 describe('fusion auth helpers', () => {
   it('checks Zentube session with credentials included', async () => {
@@ -23,6 +23,39 @@ describe('fusion auth helpers', () => {
       reason: '',
       user: { id: 7, displayName: 'Kevin' },
     })
+  })
+
+  it('defaults auth checks to same-origin www API routes', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true, user: { id: 7 } }),
+    })
+
+    await fetchZentubeSession({ fetchImpl })
+
+    expect(fetchImpl).toHaveBeenCalledWith(
+      '/api/auth/user',
+      expect.objectContaining({ credentials: 'include' }),
+    )
+  })
+
+  it('uses same-origin login endpoints with credentials included', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true }),
+    })
+
+    await sendLoginCode('kevin@example.com', { fetchImpl })
+    await loginWithCode({ email: 'kevin@example.com', code: '123456' }, { fetchImpl })
+
+    expect(fetchImpl).toHaveBeenCalledWith(
+      '/api/auth/send-login-code',
+      expect.objectContaining({ credentials: 'include', method: 'POST' }),
+    )
+    expect(fetchImpl).toHaveBeenCalledWith(
+      '/api/auth/login-with-code',
+      expect.objectContaining({ credentials: 'include', method: 'POST' }),
+    )
   })
 
   it('treats blocked session bridge requests as unavailable', async () => {

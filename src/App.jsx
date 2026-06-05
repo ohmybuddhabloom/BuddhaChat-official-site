@@ -22,6 +22,7 @@ const FUSION_ROUTES = new Set([
   '/sutra',
   '/me',
   '/auth/login',
+  '/login',
 ])
 
 function normalizePathname(pathname) {

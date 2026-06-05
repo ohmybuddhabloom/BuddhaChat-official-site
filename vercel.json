@@ -4,5 +4,19 @@
     "api/*.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/auth/:path*",
+      "destination": "https://zentube.buddhachat.online/api/auth/:path*"
+    },
+    {
+      "source": "/api/reader-sync",
+      "destination": "https://zentube.buddhachat.online/api/reader-sync"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }

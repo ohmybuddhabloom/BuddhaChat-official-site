@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
-import { buildAuthReturnUrl, fetchZentubeSession, getZentubeOrigin } from '../lib/fusionAuth.js'
+import {
+  buildAuthReturnUrl,
+  fetchZentubeSession,
+  getZentubeOrigin,
+  loginWithCode,
+  logoutZentube,
+  sendLoginCode,
+} from '../lib/fusionAuth.js'
 
 const DEFAULT_SUTRA_ORIGIN = 'https://sutra.buddhachat.online'
 
@@ -16,8 +23,8 @@ const ROUTE_CONFIG = {
     eyebrow: 'Unified Video',
     title: 'Master talks stay online while www becomes the front door.',
     lead:
-      'This preview route keeps the existing Zentube deployment intact and gives the official site a stable video entry point before any proxy or domain cutover.',
-    primaryLabel: 'Open current video site',
+      'This www path is the official video front door. The existing Zentube deployment stays online while account APIs move behind the same www origin.',
+    primaryLabel: 'Open existing video site',
     primaryHref: getZentubeHomeHref,
     secondaryLabel: 'Sign in first',
     secondaryHref: '/auth/login?returnUrl=/videos',
@@ -30,7 +37,7 @@ const ROUTE_CONFIG = {
     title: 'Master talks stay online while www becomes the front door.',
     lead:
       'This compatibility route maps the Zentube name to the same safe video entry, keeping the existing deployment intact before any proxy or domain cutover.',
-    primaryLabel: 'Open current video site',
+    primaryLabel: 'Open existing video site',
     primaryHref: getZentubeHomeHref,
     secondaryLabel: 'Sign in first',
     secondaryHref: '/auth/login?returnUrl=/zentube',
@@ -42,8 +49,8 @@ const ROUTE_CONFIG = {
     eyebrow: 'Scripture Reader',
     title: 'The sutra reader remains independent while account sync is added.',
     lead:
-      'This route preserves the current 4467-book reader deployment and prepares the www shell for library, progress, notes, highlights, and reading preferences.',
-    primaryLabel: 'Open current reader',
+      'This www path is the official reader front door. The current 4467-book reader stays online while reading data sync is routed through the www account bridge.',
+    primaryLabel: 'Open existing reader',
     primaryHref: getSutraOrigin,
     secondaryLabel: 'View account area',
     secondaryHref: '/me',
@@ -53,16 +60,29 @@ const ROUTE_CONFIG = {
   },
   '/auth/login': {
     eyebrow: 'Shared Account',
-    title: 'Login will be reused from Zentube, not rebuilt as a second account system.',
+    title: 'Sign in once for video and scripture reading.',
     lead:
-      'The first implementation keeps authentication source-of-truth in Zentube. The www route records the intended returnUrl and exposes the dependency before cookie-domain work begins.',
-    primaryLabel: 'Continue to Zentube login',
-    primaryHref: () => `${getZentubeHomeHref()}/auth/login`,
+      'The account source-of-truth remains Zentube, but this www page talks to the same auth API through same-origin routes.',
+    primaryLabel: 'Use email code',
+    primaryHref: '/auth/login',
     secondaryLabel: 'Back to home',
     secondaryHref: '/',
-    status: 'Auth bridge pending',
+    status: 'Same-origin auth',
     next:
-      'Next phase: expose /api/auth/user and logout through a same-site bridge with credentials included.',
+      'This path avoids new DNS and lets the official site verify the active account before reader sync.',
+  },
+  '/login': {
+    eyebrow: 'Shared Account',
+    title: 'Sign in once for video and scripture reading.',
+    lead:
+      'The account source-of-truth remains Zentube, but this www page talks to the same auth API through same-origin routes.',
+    primaryLabel: 'Use email code',
+    primaryHref: '/login',
+    secondaryLabel: 'Back to home',
+    secondaryHref: '/',
+    status: 'Same-origin auth',
+    next:
+      'This path avoids new DNS and lets the official site verify the active account before reader sync.',
   },
   '/me': {
     eyebrow: 'Account Hub',
@@ -104,7 +124,7 @@ const PLATFORM_LINKS = [
 
 const SAFETY_ITEMS = [
   'Existing video and sutra subdomains remain untouched.',
-  'No production alias, DNS record, or old-domain redirect is changed here.',
+  'No new preview subdomain or GoDaddy DNS record is required for this path-based slice.',
   'Secrets, cookies, signed media URLs, and service keys stay out of the browser bundle.',
 ]
 
@@ -160,7 +180,160 @@ function useSessionBridge() {
   return session
 }
 
-function FusionRoutePage({ routePath }) {
+function SameOriginLoginForm({ navigate, returnUrl }) {
+  const [email, setEmail] = useState('')
+  const [code, setCode] = useState('')
+  const [step, setStep] = useState('email')
+  const [status, setStatus] = useState('idle')
+  const [message, setMessage] = useState('')
+
+  async function handleSendCode(event) {
+    event.preventDefault()
+    setStatus('submitting')
+    setMessage('')
+
+    try {
+      await sendLoginCode(email)
+      setStep('code')
+      setStatus('idle')
+      setMessage('Verification code sent. Check your email.')
+    } catch (error) {
+      setStatus('error')
+      setMessage(error?.message || 'Unable to send verification code.')
+    }
+  }
+
+  async function handleLogin(event) {
+    event.preventDefault()
+    setStatus('submitting')
+    setMessage('')
+
+    try {
+      await loginWithCode({ email, code })
+      navigate(returnUrl)
+    } catch (error) {
+      setStatus('error')
+      setMessage(error?.message || 'Unable to complete sign in.')
+    }
+  }
+
+  return (
+    <form
+      className="fusion-login-form"
+      onSubmit={step === 'email' ? handleSendCode : handleLogin}
+      aria-label="Email code sign in"
+    >
+      <label>
+        <span>Email</span>
+        <input
+          autoComplete="email"
+          inputMode="email"
+          name="email"
+          onChange={(event) => setEmail(event.target.value)}
+          required
+          type="email"
+          value={email}
+        />
+      </label>
+      {step === 'code' ? (
+        <label>
+          <span>Verification code</span>
+          <input
+            autoComplete="one-time-code"
+            inputMode="numeric"
+            maxLength={6}
+            name="code"
+            onChange={(event) => setCode(event.target.value)}
+            pattern="[0-9]{6}"
+            required
+            type="text"
+            value={code}
+          />
+        </label>
+      ) : null}
+      <button className="fusion-action-primary" disabled={status === 'submitting'} type="submit">
+        {status === 'submitting'
+          ? 'Working...'
+          : step === 'email'
+            ? 'Send code'
+            : 'Sign in'}
+      </button>
+      {step === 'code' ? (
+        <button
+          className="fusion-action-secondary"
+          disabled={status === 'submitting'}
+          onClick={() => {
+            setStep('email')
+            setCode('')
+            setMessage('')
+          }}
+          type="button"
+        >
+          Change email
+        </button>
+      ) : null}
+      {message ? (
+        <p className={`fusion-login-message ${status === 'error' ? 'is-error' : ''}`}>{message}</p>
+      ) : null}
+    </form>
+  )
+}
+
+function SameOriginAccountPanel({ navigate, session }) {
+  const [logoutStatus, setLogoutStatus] = useState('idle')
+
+  async function handleLogout() {
+    setLogoutStatus('submitting')
+
+    try {
+      await logoutZentube()
+      navigate('/login')
+    } catch {
+      setLogoutStatus('error')
+    }
+  }
+
+  if (session.status === 'checking') {
+    return <p className="fusion-muted">Checking account state...</p>
+  }
+
+  if (!session.authenticated) {
+    return (
+      <div className="fusion-account-actions">
+        <p className="fusion-muted">No active account is visible from www.</p>
+        <a className="fusion-action-primary" href="/login?returnUrl=/me">
+          Sign in
+        </a>
+      </div>
+    )
+  }
+
+  return (
+    <div className="fusion-account-actions">
+      <dl className="fusion-account-list">
+        <div>
+          <dt>Name</dt>
+          <dd>{session.user?.displayName || session.user?.username || 'Signed in user'}</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd>{session.user?.email || 'Hidden'}</dd>
+        </div>
+      </dl>
+      <button
+        className="fusion-action-secondary"
+        disabled={logoutStatus === 'submitting'}
+        onClick={handleLogout}
+        type="button"
+      >
+        {logoutStatus === 'submitting' ? 'Signing out...' : 'Sign out'}
+      </button>
+      {logoutStatus === 'error' ? <p className="fusion-login-message is-error">Sign out failed.</p> : null}
+    </div>
+  )
+}
+
+function FusionRoutePage({ navigate = (href) => window.location.assign(href), routePath }) {
   const config = ROUTE_CONFIG[routePath] ?? ROUTE_CONFIG['/videos']
   const session = useSessionBridge()
   const sessionCopy = SESSION_COPY[session.status] ?? SESSION_COPY.unavailable
@@ -171,6 +344,7 @@ function FusionRoutePage({ routePath }) {
     routePath === '/auth/login'
       ? `${configuredPrimaryHref}?returnUrl=${encodeURIComponent(returnUrl)}`
       : configuredPrimaryHref
+  const isLoginRoute = routePath === '/auth/login' || routePath === '/login'
 
   return (
     <main className="fusion-page">
@@ -192,14 +366,18 @@ function FusionRoutePage({ routePath }) {
           <span className="fusion-eyebrow">{config.eyebrow}</span>
           <h1 id="fusion-title">{config.title}</h1>
           <p>{config.lead}</p>
-          <div className="fusion-actions">
-            <a className="fusion-action-primary" href={primaryHref}>
-              {config.primaryLabel}
-            </a>
-            <a className="fusion-action-secondary" href={config.secondaryHref}>
-              {config.secondaryLabel}
-            </a>
-          </div>
+          {isLoginRoute ? (
+            <SameOriginLoginForm navigate={navigate} returnUrl={returnUrl} />
+          ) : (
+            <div className="fusion-actions">
+              <a className="fusion-action-primary" href={primaryHref}>
+                {config.primaryLabel}
+              </a>
+              <a className="fusion-action-secondary" href={config.secondaryHref}>
+                {config.secondaryLabel}
+              </a>
+            </div>
+          )}
         </div>
 
         <aside className="fusion-status-panel" aria-label="Integration status">
@@ -216,6 +394,13 @@ function FusionRoutePage({ routePath }) {
           </div>
         </aside>
       </section>
+
+      {routePath === '/me' ? (
+        <section className="fusion-safety" aria-label="Account details">
+          <h2>Account state</h2>
+          <SameOriginAccountPanel navigate={navigate} session={session} />
+        </section>
+      ) : null}
 
       <section className="fusion-grid" aria-label="Unified platform map">
         {PLATFORM_LINKS.map((item) => (

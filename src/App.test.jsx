@@ -30,7 +30,7 @@ describe('App routing', () => {
 
     render(<App />)
 
-    expect(screen.getByRole('link', { name: 'Open current reader' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Open existing reader' })).toHaveAttribute(
       'href',
       'https://sutra.buddhachat.online',
     )
@@ -42,9 +42,18 @@ describe('App routing', () => {
 
     render(<App />)
 
-    expect(screen.getByRole('link', { name: 'Open current video site' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Open existing video site' })).toHaveAttribute(
       'href',
       'https://zentube.buddhachat.online',
     )
+  })
+
+  it('supports /login as the product login path', () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('blocked')))
+    window.history.pushState({}, '', '/login')
+
+    render(<App />)
+
+    expect(screen.getByRole('form', { name: 'Email code sign in' })).toBeInTheDocument()
   })
 })

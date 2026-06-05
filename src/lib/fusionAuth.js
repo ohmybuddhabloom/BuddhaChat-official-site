@@ -4,9 +4,52 @@ export function getZentubeOrigin() {
   return import.meta.env.VITE_ZENTUBE_ORIGIN || DEFAULT_ZENTUBE_ORIGIN
 }
 
+export function getZentubeApiOrigin() {
+  return import.meta.env.VITE_ZENTUBE_API_ORIGIN || ''
+}
+
+function buildApiUrl(path, origin = getZentubeApiOrigin()) {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`
+  const normalizedOrigin = origin.replace(/\/+$/, '')
+
+  return normalizedOrigin ? `${normalizedOrigin}${normalizedPath}` : normalizedPath
+}
+
+async function requestZentubeApi(path, { fetchImpl = globalThis.fetch, body, method = 'GET' } = {}) {
+  if (typeof fetchImpl !== 'function') {
+    throw new Error('fetch-unavailable')
+  }
+
+  const response = await fetchImpl(buildApiUrl(path), {
+    method,
+    credentials: 'include',
+    headers: {
+      Accept: 'application/json',
+      ...(body ? { 'Content-Type': 'application/json' } : {}),
+    },
+    ...(body ? { body: JSON.stringify(body) } : {}),
+  })
+
+  let payload = null
+  try {
+    payload = await response.json()
+  } catch {
+    payload = null
+  }
+
+  if (!response.ok || payload?.success === false) {
+    const error = new Error(payload?.message || `http-${response.status}`)
+    error.status = response.status
+    error.payload = payload
+    throw error
+  }
+
+  return payload
+}
+
 export async function fetchZentubeSession({
   fetchImpl = globalThis.fetch,
-  origin = getZentubeOrigin(),
+  origin = getZentubeApiOrigin(),
 } = {}) {
   if (typeof fetchImpl !== 'function') {
     return {
@@ -18,7 +61,7 @@ export async function fetchZentubeSession({
   }
 
   try {
-    const response = await fetchImpl(`${origin.replace(/\/+$/, '')}/api/auth/user`, {
+    const response = await fetchImpl(buildApiUrl('/api/auth/user', origin), {
       credentials: 'include',
       headers: {
         Accept: 'application/json',
@@ -51,6 +94,29 @@ export async function fetchZentubeSession({
       user: null,
     }
   }
+}
+
+export function sendLoginCode(email, { fetchImpl } = {}) {
+  return requestZentubeApi('/api/auth/send-login-code', {
+    fetchImpl,
+    method: 'POST',
+    body: { email },
+  })
+}
+
+export function loginWithCode({ email, code }, { fetchImpl } = {}) {
+  return requestZentubeApi('/api/auth/login-with-code', {
+    fetchImpl,
+    method: 'POST',
+    body: { email, code },
+  })
+}
+
+export function logoutZentube({ fetchImpl } = {}) {
+  return requestZentubeApi('/api/auth/logout', {
+    fetchImpl,
+    method: 'POST',
+  })
 }
 
 export function buildAuthReturnUrl(pathname, origin = window.location.origin) {
