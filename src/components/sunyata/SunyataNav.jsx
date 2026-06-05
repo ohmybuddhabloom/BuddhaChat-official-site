@@ -18,8 +18,7 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
       <div className="sunyata-logo">{nav.logo}</div>
       <div className="sunyata-nav-links">
         {nav.links.map((item, index) => {
-          const isStoryMenu =
-            index === 3 || item.label?.trim().toLowerCase() === 'story'
+          const isStoryMenu = item.label?.trim().toLowerCase() === 'story'
 
           if (isStoryMenu) {
             return (

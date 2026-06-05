@@ -169,6 +169,9 @@ export const defaultScene = {
       { label: 'Sanctuary', href: '#sanctuary' },
       { label: 'Vessels', href: '#vessels' },
       { label: 'Story', href: '#silence' },
+      { label: 'Videos', href: '/videos' },
+      { label: 'Sutra', href: '/sutra' },
+      { label: 'Sign in', href: '/auth/login' },
     ],
   },
   hero: {

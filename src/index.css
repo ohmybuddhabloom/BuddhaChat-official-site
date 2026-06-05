@@ -44,6 +44,303 @@ a {
   min-height: 100vh;
 }
 
+.fusion-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(96px, 11vw, 150px) clamp(18px, 6vw, 76px) 64px;
+  background:
+    linear-gradient(135deg, rgba(248, 238, 224, 0.96) 0%, rgba(223, 207, 183, 0.8) 48%, rgba(238, 229, 212, 0.94) 100%),
+    var(--bg);
+}
+
+.fusion-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 250, 239, 0.82) 0%, transparent 34%),
+    radial-gradient(circle at 82% 18%, rgba(185, 145, 85, 0.18) 0%, transparent 30%),
+    radial-gradient(circle at 64% 88%, rgba(80, 63, 43, 0.12) 0%, transparent 38%);
+}
+
+.fusion-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px clamp(18px, 6vw, 76px) 0;
+}
+
+.fusion-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.28em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fusion-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.fusion-nav-links a {
+  color: rgba(45, 35, 25, 0.62);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+
+.fusion-nav-links a:hover,
+.fusion-nav-links a:focus-visible {
+  color: var(--text);
+}
+
+.fusion-hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(34px, 7vw, 92px);
+  align-items: end;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.fusion-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.fusion-eyebrow {
+  width: fit-content;
+  border-top: 1px solid rgba(45, 35, 25, 0.36);
+  padding-top: 14px;
+  color: #8f6a32;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.fusion-copy h1 {
+  max-width: 12ch;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 8vw, 8.8rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.fusion-copy p {
+  max-width: 58ch;
+  color: rgba(45, 35, 25, 0.68);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.8;
+}
+
+.fusion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.fusion-action-primary,
+.fusion-action-secondary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.fusion-action-primary {
+  border: 1px solid rgba(45, 35, 25, 0.82);
+  background: rgba(45, 35, 25, 0.92);
+  color: #f9efe1;
+}
+
+.fusion-action-secondary {
+  border: 1px solid rgba(45, 35, 25, 0.16);
+  background: rgba(255, 250, 242, 0.48);
+  color: var(--text);
+}
+
+.fusion-action-primary:hover,
+.fusion-action-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.fusion-action-primary:active,
+.fusion-action-secondary:active {
+  transform: translateY(1px);
+}
+
+.fusion-status-panel {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid rgba(93, 71, 43, 0.12);
+  border-radius: 28px;
+  background: rgba(255, 248, 239, 0.42);
+  box-shadow:
+    0 28px 68px rgba(91, 68, 42, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.fusion-status-panel span {
+  color: #8f6a32;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.fusion-status-panel strong {
+  color: rgba(45, 35, 25, 0.78);
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.2rem, 2.1vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.fusion-session {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid rgba(93, 71, 43, 0.14);
+  padding-top: 18px;
+}
+
+.fusion-session span {
+  color: #6f7c4c;
+}
+
+.fusion-session strong {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.fusion-session small {
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(111, 124, 76, 0.12);
+  color: #4f5d32;
+  padding: 6px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.fusion-session[data-state='unavailable'] span {
+  color: #9a6a2f;
+}
+
+.fusion-grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 1fr 0.72fr;
+  gap: 12px;
+  margin: clamp(44px, 7vw, 82px) auto 0;
+}
+
+.fusion-link-tile {
+  min-height: 168px;
+  display: grid;
+  align-content: space-between;
+  gap: 22px;
+  border: 1px solid rgba(93, 71, 43, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 250, 242, 0.36);
+  padding: 22px;
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.fusion-link-tile:hover,
+.fusion-link-tile:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 250, 242, 0.62);
+}
+
+.fusion-link-tile span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.fusion-link-tile p {
+  color: rgba(45, 35, 25, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.fusion-safety {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1fr);
+  gap: clamp(22px, 5vw, 70px);
+  margin: clamp(34px, 6vw, 64px) auto 0;
+  border-top: 1px solid rgba(93, 71, 43, 0.18);
+  padding-top: 28px;
+}
+
+.fusion-safety h2 {
+  max-width: 10ch;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.fusion-safety ul {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+}
+
+.fusion-safety li {
+  color: rgba(45, 35, 25, 0.68);
+  line-height: 1.7;
+}
+
 .sunyata-page {
   min-height: 100vh;
   position: relative;
@@ -2854,6 +3151,38 @@ a {
     margin-top: 12px;
   }
 
+  .fusion-page {
+    padding-top: 132px;
+  }
+
+  .fusion-nav {
+    flex-direction: column;
+    padding-top: 24px;
+  }
+
+  .fusion-nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px 16px;
+  }
+
+  .fusion-hero,
+  .fusion-safety {
+    grid-template-columns: 1fr;
+  }
+
+  .fusion-copy h1 {
+    max-width: 9ch;
+  }
+
+  .fusion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fusion-link-tile {
+    min-height: 132px;
+  }
+
   .hero-container {
     flex-direction: column;
     justify-content: flex-start;
@@ -2953,6 +3282,8 @@ a {
   .wilderness-carousel-wrap {
     min-height: 440px;
     justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .wilderness-media-stack {
@@ -2962,11 +3293,19 @@ a {
   .wilderness-carousel {
     width: 100%;
     height: 440px;
+    overflow: hidden;
   }
 
   .wilderness-card {
     width: min(280px, 72vw);
     height: min(360px, 60vh);
+  }
+
+  .gold-circle {
+    width: min(450px, 100vw);
+    height: min(450px, 100vw);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .app-previews-section {

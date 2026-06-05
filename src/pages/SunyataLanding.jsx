@@ -36,6 +36,29 @@ import {
   useElementSize,
 } from '../lib/responsiveOffsets.js'
 
+const REQUIRED_FUSION_NAV_LINKS = [
+  { label: 'Videos', href: '/videos' },
+  { label: 'Sutra', href: '/sutra' },
+  { label: 'Sign in', href: '/auth/login' },
+]
+
+function ensureFusionNavLinks(links = []) {
+  const normalizedLinks = [...links]
+  const existingHrefs = new Set(
+    normalizedLinks
+      .map((link) => link?.href)
+      .filter((href) => typeof href === 'string'),
+  )
+
+  for (const requiredLink of REQUIRED_FUSION_NAV_LINKS) {
+    if (!existingHrefs.has(requiredLink.href)) {
+      normalizedLinks.push(requiredLink)
+    }
+  }
+
+  return normalizedLinks
+}
+
 function mergeScene(fallback, parsed) {
   const merged = {
     ...fallback,
@@ -46,7 +69,7 @@ function mergeScene(fallback, parsed) {
     nav: {
       ...fallback.nav,
       ...parsed.nav,
-      links: parsed.nav?.links ?? fallback.nav.links,
+      links: ensureFusionNavLinks(parsed.nav?.links ?? fallback.nav.links),
     },
     hero: {
       ...fallback.hero,

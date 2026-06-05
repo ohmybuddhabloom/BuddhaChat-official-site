@@ -26,6 +26,8 @@ vi.mock('../lib/editorSceneStore.js', () => ({
 
 describe('SunyataLanding layout controls', () => {
   it('renders the editor toggle', () => {
+    window.history.pushState({}, '', '/?edit=1')
+
     render(<SunyataLanding />)
 
     expect(screen.getByRole('button', { name: '打开编辑器' })).toBeInTheDocument()
@@ -55,6 +57,22 @@ describe('SunyataLanding layout controls', () => {
     expect(container.querySelector('.content-section')).toBeNull()
     expect(container.querySelector('.wilderness-journal-section')).toBeNull()
     expect(container.querySelector('.archive-section')).toBeNull()
+  })
+
+  it('preserves saved navigation while adding required fusion links', () => {
+    const scene = createSceneSnapshot()
+    scene.nav.links = [
+      { label: 'The Path', href: '#path' },
+      { label: 'Story', href: '#silence' },
+    ]
+
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(scene))
+
+    render(<SunyataLanding />)
+
+    expect(screen.getByRole('link', { name: 'Videos' })).toHaveAttribute('href', '/videos')
+    expect(screen.getByRole('link', { name: 'Sutra' })).toHaveAttribute('href', '/sutra')
+    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/auth/login')
   })
 
   it('migrates legacy pixel offsets and rewrites storage with percentage fields', async () => {
