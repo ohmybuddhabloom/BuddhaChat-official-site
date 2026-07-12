@@ -72,6 +72,7 @@ describe('SunyataLanding layout controls', () => {
 
     expect(screen.getByRole('link', { name: 'Videos' })).toHaveAttribute('href', '/videos')
     expect(screen.getByRole('link', { name: 'Sutra' })).toHaveAttribute('href', '/sutra')
+    expect(screen.getByRole('link', { name: 'Music' })).toHaveAttribute('href', '/music')
     expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/login')
   })
 

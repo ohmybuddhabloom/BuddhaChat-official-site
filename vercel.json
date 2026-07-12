@@ -20,6 +20,11 @@
       "source": "/sutra",
       "destination": "https://sutra.buddhachat.online",
       "permanent": false
+    },
+    {
+      "source": "/music",
+      "destination": "https://music.buddhachat.online",
+      "permanent": false
     }
   ],
   "rewrites": [
