@@ -15,11 +15,6 @@
       "source": "/zentube",
       "destination": "https://zentube.buddhachat.online",
       "permanent": false
-    },
-    {
-      "source": "/music",
-      "destination": "https://music.buddhachat.online",
-      "permanent": false
     }
   ],
   "rewrites": [
@@ -30,6 +25,14 @@
     {
       "source": "/sutra/:path*",
       "destination": "https://sutra.buddhachat.online/sutra/:path*"
+    },
+    {
+      "source": "/music",
+      "destination": "https://music.buddhachat.online/music/"
+    },
+    {
+      "source": "/music/:path*",
+      "destination": "https://music.buddhachat.online/music/:path*"
     },
     {
       "source": "/login",

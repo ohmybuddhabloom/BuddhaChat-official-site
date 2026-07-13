@@ -19,4 +19,20 @@ describe('website product routing', () => {
       },
     ]))
   })
+
+  test('keeps music under the website music path', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.redirects.some(({ source }) => source === '/music')).toBe(false)
+    expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/music',
+        destination: 'https://music.buddhachat.online/music/',
+      },
+      {
+        source: '/music/:path*',
+        destination: 'https://music.buddhachat.online/music/:path*',
+      },
+    ]))
+  })
 })
