@@ -17,17 +17,20 @@
       "permanent": false
     },
     {
-      "source": "/sutra",
-      "destination": "https://sutra.buddhachat.online",
-      "permanent": false
-    },
-    {
       "source": "/music",
       "destination": "https://music.buddhachat.online",
       "permanent": false
     }
   ],
   "rewrites": [
+    {
+      "source": "/sutra",
+      "destination": "https://sutra.buddhachat.online/sutra/"
+    },
+    {
+      "source": "/sutra/:path*",
+      "destination": "https://sutra.buddhachat.online/sutra/:path*"
+    },
     {
       "source": "/login",
       "destination": "/api/auth-redirect"
