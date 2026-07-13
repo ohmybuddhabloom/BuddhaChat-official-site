@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { trackCtaClick } from '../../lib/analytics.js'
 import { submitDownloadLead } from '../../lib/siteApi.js'
 
 function AppPreviewCard({ imageSrc, imageAlt, className }) {
@@ -42,6 +43,7 @@ function SunyataAppPreviews({ showcase }) {
     setSubmitError('')
 
     try {
+      trackCtaClick('app_download_request', 'app')
       const result = await submitDownloadLead({
         email: nextEmail,
       })
@@ -64,7 +66,10 @@ function SunyataAppPreviews({ showcase }) {
             <button
               type="button"
               className="app-previews-primary"
-              onClick={() => setReserveOpen((current) => !current)}
+              onClick={() => {
+                trackCtaClick('app_reserve_toggle', 'app')
+                setReserveOpen((current) => !current)
+              }}
             >
               {showcase.primaryActionLabel}
             </button>
@@ -110,6 +115,7 @@ function SunyataAppPreviews({ showcase }) {
                     href={downloadUrl}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackCtaClick('app_download_open', 'app')}
                   >
                     Open download link
                   </a>
