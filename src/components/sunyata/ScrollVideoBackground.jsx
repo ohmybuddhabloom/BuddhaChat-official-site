@@ -267,7 +267,7 @@ function ScrollVideoBackground({
         poster="/kling-buddha-scroll-poster.jpg"
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source src="/kling-buddha-scroll-scrub.mp4" type="video/mp4" />
       </video>
