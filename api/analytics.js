@@ -147,7 +147,7 @@ export default async function handler(req, res) {
     sendJson(res, 200, { ok: true })
   } catch (error) {
     if (isMissingConfigError(error)) {
-      sendError(res, 500, 'Analytics are not configured yet.', error.message)
+      sendError(res, 500, 'Analytics are not configured yet.')
       return
     }
 
@@ -155,7 +155,6 @@ export default async function handler(req, res) {
       res,
       500,
       'Unable to record the analytics event right now.',
-      error instanceof Error ? error.message : 'Unknown error',
     )
   }
 }
