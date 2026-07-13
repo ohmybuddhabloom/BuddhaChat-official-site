@@ -7,11 +7,6 @@
   },
   "redirects": [
     {
-      "source": "/videos",
-      "destination": "https://zentube.buddhachat.online",
-      "permanent": false
-    },
-    {
       "source": "/zentube",
       "destination": "https://zentube.buddhachat.online",
       "permanent": false
@@ -19,7 +14,31 @@
   ],
   "rewrites": [
     {
+      "source": "/videos",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/assets/:path*",
+      "destination": "https://zentube.buddhachat.online/assets/:path*"
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "destination": "https://zentube.buddhachat.online/locales/:path*"
+    },
+    {
+      "source": "/videos/:path*",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/:path*"
+    },
+    {
       "source": "/sutra",
+      "destination": "https://sutra.buddhachat.online/sutra/"
+    },
+    {
+      "source": "/sutra/",
       "destination": "https://sutra.buddhachat.online/sutra/"
     },
     {
@@ -28,6 +47,10 @@
     },
     {
       "source": "/music",
+      "destination": "https://music.buddhachat.online/music/"
+    },
+    {
+      "source": "/music/",
       "destination": "https://music.buddhachat.online/music/"
     },
     {
