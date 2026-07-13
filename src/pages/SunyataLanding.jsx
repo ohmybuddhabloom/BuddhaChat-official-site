@@ -446,7 +446,7 @@ function SunyataLanding() {
   }, [])
 
   useEffect(() => {
-    if (!projectSceneReady) {
+    if (!editorEnabled || !projectSceneReady) {
       return undefined
     }
 
@@ -457,7 +457,7 @@ function SunyataLanding() {
     return () => {
       window.clearTimeout(timeoutId)
     }
-  }, [persistedScene, projectSceneReady])
+  }, [editorEnabled, persistedScene, projectSceneReady])
 
   const updateNavLogo = (value) => {
     setScene((current) => ({
