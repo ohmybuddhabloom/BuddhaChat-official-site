@@ -6,9 +6,7 @@ export async function loadProjectScene() {
   }
 
   try {
-    const response = await fetch(PROJECT_SCENE_PATH, {
-      cache: 'no-store',
-    })
+    const response = await fetch(PROJECT_SCENE_PATH)
 
     if (!response.ok) {
       return null
