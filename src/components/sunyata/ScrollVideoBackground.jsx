@@ -53,7 +53,7 @@ function ScrollVideoBackground({
   const targetTimeRef = useRef(0)
   const renderedTimeRef = useRef(0)
   const rafRef = useRef(0)
-  const [frameAspectRatio, setFrameAspectRatio] = useState('4 / 5')
+  const [frameAspectRatio, setFrameAspectRatio] = useState('1024 / 682')
   const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {

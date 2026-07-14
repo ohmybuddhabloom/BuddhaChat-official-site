@@ -3221,9 +3221,17 @@ a {
   }
 
   .sunyata-story-menu-panel {
-    position: static;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    right: auto;
+    width: min(360px, calc(100vw - 36px));
     margin-top: 12px;
+  }
+
+  .hero-title {
+    animation: none;
+    filter: none;
+    opacity: 1;
   }
 
   .fusion-page {
