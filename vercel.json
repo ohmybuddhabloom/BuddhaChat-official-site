@@ -57,6 +57,31 @@
       "source": "/zentube",
       "destination": "https://zentube.buddhachat.online",
       "permanent": false
+    },
+    {
+      "source": "/video/:path*",
+      "destination": "/videos/video/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/search",
+      "destination": "/videos/search",
+      "permanent": false
+    },
+    {
+      "source": "/user/:path*",
+      "destination": "/videos/user/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/topics/:path*",
+      "destination": "/videos/topics/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/embed/:path*",
+      "destination": "/videos/embed/:path*",
+      "permanent": false
     }
   ],
   "rewrites": [
