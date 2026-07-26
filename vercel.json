@@ -74,6 +74,11 @@
       "permanent": false
     },
     {
+      "source": "/yuanhui",
+      "destination": "/videos/topics/yuanhui",
+      "permanent": false
+    },
+    {
       "source": "/topics/:path*",
       "destination": "/videos/topics/:path*",
       "permanent": false

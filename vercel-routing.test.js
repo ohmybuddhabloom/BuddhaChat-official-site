@@ -4,6 +4,16 @@ import process from 'node:process'
 import { describe, expect, test } from 'vitest'
 
 describe('website product routing', () => {
+  test('exposes the Yuanhui page at the short official URL', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.redirects).toContainEqual({
+      source: '/yuanhui',
+      destination: '/videos/topics/yuanhui',
+      permanent: false,
+    })
+  })
+
   test('keeps video under the website videos path', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 
