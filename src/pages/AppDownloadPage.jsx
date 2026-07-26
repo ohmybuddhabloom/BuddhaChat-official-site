@@ -162,7 +162,9 @@ export default function AppDownloadPage() {
           {PREVIEWS.map((preview) => (
             <figure key={preview.src}>
               <div className="campaign-download-preview-media">
-                <img src={preview.src} alt={preview.alt} />
+                <div className="campaign-download-phone-screen">
+                  <img src={preview.src} alt={preview.alt} />
+                </div>
               </div>
               <figcaption>
                 <h3>{preview.title}</h3>

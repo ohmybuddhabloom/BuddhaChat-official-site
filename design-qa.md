@@ -61,3 +61,33 @@
 - A separate crop was not needed: the normalized `390 × 844` side-by-side comparison keeps hero type, value icons, all three button states, and the gallery transition readable at 1:1.
 
 final result: passed
+
+## V3：整张 Hero 背景与标准手机框
+
+用户复查发现 V2 的佛像图片只覆盖介绍区，和页面底色形成“背景里再套背景”的色块；产品预览仍像长截图卡片，不像真实 APP 运行在手机中。
+
+V3 修订：
+
+- Hero 外层直接使用一张完整背景，品牌、文案、价值点、三个下载入口全部叠在同一张图上。
+- 手机使用 `1024×1536` 竖版背景；桌面使用 `1536×1024` 横版背景。
+- 两张背景从边到边使用官网 `#eadccf` 暖灰米色，不包含内嵌底板、文字、Logo、按钮或 APP UI。
+- 介绍区不再设置任何第二背景或蒙层。
+- 产品预览改为 `9:19.5` 标准手机外框，真实长截图在屏幕区域内自然裁切，并保留横向滑动。
+
+V3 证据：
+
+- 移动首屏：`evidence/app-download-mobile-v3-390x844.png`
+- 移动产品区：`evidence/app-download-gallery-phone-v3-390x844.png`
+- 桌面首屏：`evidence/app-download-desktop-v3-1280x720.png`
+- 竖版背景：`public/buddhachat-download-hero-mobile-v3.jpg`
+- 横版背景：`public/buddhachat-download-hero-desktop-v3.jpg`
+
+尺寸与运行结果：
+
+- `390×844` 下三个下载入口 bottom 分别为 `438 / 510 / 582px`，全部完整处于首屏。
+- 移动手机框为 `260×563px`；桌面手机框为 `252×546px`。
+- Hero 计算样式只引用对应 V3 背景；介绍区 `background-image: none`。
+- 页面控制台错误为 0。
+- 全量测试 97/97、production build 通过；ESLint 0 error，保留 2 个既有 warning。
+
+final result: passed

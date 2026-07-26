@@ -3669,7 +3669,7 @@ a {
 
 .campaign-download-page {
   --campaign-ink: #302b25;
-  --campaign-paper: #efede5;
+  --campaign-paper: #eadccf;
   --campaign-gold: #b79336;
   --campaign-line: rgba(118, 91, 43, 0.2);
   min-height: 100vh;
@@ -3686,7 +3686,10 @@ a {
 }
 
 .campaign-download-hero {
+  position: relative;
+  isolation: isolate;
   padding: 18px 20px 24px;
+  background: var(--campaign-paper) url('/buddhachat-download-hero-mobile-v3.jpg') center / cover no-repeat;
 }
 
 .campaign-download-header {
@@ -3720,16 +3723,6 @@ a {
   min-height: 302px;
   position: relative;
   padding-top: 42px;
-  background: url('/buddhachat-download-hero-v2.jpg') right center / cover no-repeat;
-}
-
-.campaign-download-intro::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(239, 237, 229, 0.12);
-  pointer-events: none;
 }
 
 .campaign-download-copy h1 {
@@ -3873,7 +3866,7 @@ a {
 
 .campaign-download-gallery {
   padding: 52px 0 64px;
-  background: #f8f6f0;
+  background: var(--campaign-paper);
 }
 
 .campaign-download-gallery-heading {
@@ -3937,14 +3930,9 @@ a {
 }
 
 .campaign-download-gallery figure {
-  width: min(68vw, 270px);
+  width: min(82vw, 310px);
   flex: 0 0 auto;
   margin: 0;
-  overflow: hidden;
-  border: 1px solid rgba(118, 91, 43, 0.1);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 14px 34px rgba(89, 68, 40, 0.07);
   scroll-snap-align: center;
 }
 
@@ -3953,21 +3941,51 @@ a {
 }
 
 .campaign-download-preview-media {
-  height: 320px;
+  width: min(calc(100% - 32px), 260px);
+  aspect-ratio: 9 / 19.5;
+  position: relative;
+  margin: 0 auto;
+  padding: 7px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 38px;
+  background: #1f1d1b;
+  box-shadow:
+    0 24px 48px rgba(70, 50, 30, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.campaign-download-preview-media::before {
+  content: '';
+  width: 34%;
+  height: 18px;
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  z-index: 2;
+  border-radius: 999px;
+  background: #161513;
+  transform: translateX(-50%);
+}
+
+.campaign-download-phone-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 31px;
   background: #fff;
 }
 
-.campaign-download-preview-media img {
+.campaign-download-phone-screen img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 .campaign-download-gallery figcaption {
-  min-height: 108px;
-  padding: 16px 18px 18px;
-  border-top: 1px solid rgba(118, 91, 43, 0.08);
+  min-height: 116px;
+  padding: 20px 18px 18px;
+  text-align: center;
 }
 
 .campaign-download-gallery figcaption h3,
@@ -4000,6 +4018,8 @@ a {
   .campaign-download-hero {
     min-height: 760px;
     padding: 30px 48px 48px;
+    background-image: url('/buddhachat-download-hero-desktop-v3.jpg');
+    background-position: center;
   }
 
   .campaign-download-header {
@@ -4077,7 +4097,7 @@ a {
   }
 
   .campaign-download-preview-media {
-    height: 380px;
+    width: min(calc(100% - 28px), 252px);
   }
 }
 
