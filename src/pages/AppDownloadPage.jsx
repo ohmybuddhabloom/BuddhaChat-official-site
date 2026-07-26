@@ -15,7 +15,7 @@ const DOWNLOADS = {
     url: import.meta.env.VITE_GOOGLE_PLAY_URL,
   },
   apk: {
-    label: 'Android APK 下载',
+    label: '安卓安装包',
     icon: '/download-icons/android.png',
     url: import.meta.env.VITE_ANDROID_APK_URL,
   },
@@ -134,14 +134,38 @@ export default function AppDownloadPage() {
                 <img src="/download-icons/heart.png" alt="" />
                 <div>
                   <h2>与佛祖进行心与心的沟通</h2>
-                  <p>说出困惑，获得当下回应</p>
+                  <p>随时倾诉与请教，在对话中获得启发</p>
+                </div>
+              </article>
+              <article>
+                <img src="/download-icons/book.png" alt="" />
+                <div>
+                  <h2>每日修行，日日精进</h2>
+                  <p>禅修、持咒、诵经、每日功课与修行记录</p>
+                </div>
+              </article>
+              <article>
+                <img src="/download-icons/heart.png" alt="" />
+                <div>
+                  <h2>与法师及师兄零距离沟通</h2>
+                  <p>直接向法师请教，在社区与师兄交流共修</p>
+                </div>
+              </article>
+              <article>
+                <img src="/download-icons/book.png" alt="" />
+                <div>
+                  <h2>经书、视频、佛乐，一站汇聚</h2>
+                  <p>4000+部免费经书、法师开示视频与冥想佛乐</p>
                 </div>
               </article>
             </div>
           </div>
         </div>
 
-        <div className="campaign-download-actions" aria-label="下载 BuddhaChat">
+        <div
+          className={`campaign-download-actions is-${platform}`}
+          aria-label="下载 BuddhaChat"
+        >
           <PlatformActions platform={platform} />
         </div>
 
