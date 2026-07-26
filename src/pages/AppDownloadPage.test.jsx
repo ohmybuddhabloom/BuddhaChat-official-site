@@ -38,7 +38,7 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('Google Play 下载')).toBeInTheDocument()
     expect(screen.getByText('安卓安装包')).toBeInTheDocument()
     expect(screen.queryByText(/已识别为/)).not.toBeInTheDocument()
-    expect(screen.getByRole('region', { name: /在 BuddhaChat，你可以/ })).toBeInTheDocument()
+    expect(screen.getByRole('region', { name: /探索 BuddhaChat/ })).toBeInTheDocument()
   })
 
   it('shows the five product advantages', () => {
@@ -49,6 +49,14 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('每日修行，日日精进')).toBeInTheDocument()
     expect(screen.getByText('与法师及师兄零距离沟通')).toBeInTheDocument()
     expect(screen.getByText('经书、视频、佛乐，一站汇聚')).toBeInTheDocument()
+  })
+
+  it('shows the three selected app experiences', () => {
+    render(<AppDownloadPage />)
+
+    expect(screen.getByText('持续修行')).toBeInTheDocument()
+    expect(screen.getByText('与大师沟通')).toBeInTheDocument()
+    expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
   })
 
   it('moves the app preview carousel with its controls', () => {

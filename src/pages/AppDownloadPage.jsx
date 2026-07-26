@@ -24,27 +24,21 @@ const DOWNLOADS = {
 const PREVIEWS = [
   {
     src: '/app-previews/foshuo-home.webp',
-    alt: 'BuddhaChat 首页与修习内容',
-    title: '每日修习',
-    description: '今天该做什么，一眼就能看清。',
+    alt: 'BuddhaChat 每日修行页面',
+    title: '持续修行',
+    description: '禅修、持咒、诵经与每日功课，都能在这里持续积累。',
   },
   {
     src: '/app-previews/qa-detail.webp',
-    alt: 'BuddhaChat 与佛祖对话页面',
-    title: '佛祖问答',
-    description: '把心里的困惑，慢慢说出来。',
+    alt: 'BuddhaChat 法师问答与共修页面',
+    title: '与大师沟通',
+    description: '直接向法师请教，也能和师兄们交流共修。',
   },
   {
-    src: '/app-previews/master-updates.webp',
-    alt: 'BuddhaChat 法师专属内容页面',
-    title: '法师专属内容',
-    description: '持续观看开示、课程与最新更新。',
-  },
-  {
-    src: '/app-previews/deepin-device.webp',
-    alt: 'BuddhaChat 修习设备页面',
-    title: '深入修习',
-    description: '把听闻、思考和练习沉淀下来。',
+    src: '/app-previews/ai-buddha-chat.png',
+    alt: 'BuddhaChat AI 佛祖对话页面',
+    title: 'AI 佛祖对话',
+    description: '随时倾诉与请教，在对话中获得启发。',
   },
 ]
 
@@ -119,15 +113,14 @@ export default function AppDownloadPage() {
 
         <div className="campaign-download-intro">
           <div className="campaign-download-copy">
-            <h1>静心，自在连接</h1>
-            <p className="campaign-download-lead">BuddhaChat · 观看 · 对话 · 修习</p>
+            <h1>一念连接，<br />万法相伴</h1>
 
-            <div className="campaign-download-values">
+            <div className="campaign-download-primary-values">
               <article>
                 <img src="/download-icons/book.png" alt="" />
                 <div>
                   <h2>诸位法师的专属内容</h2>
-                  <p>开示、课程与持续更新</p>
+                  <p>开示、课程与专属内容持续更新</p>
                 </div>
               </article>
               <article>
@@ -137,29 +130,26 @@ export default function AppDownloadPage() {
                   <p>随时倾诉与请教，在对话中获得启发</p>
                 </div>
               </article>
-              <article>
-                <img src="/download-icons/book.png" alt="" />
-                <div>
-                  <h2>每日修行，日日精进</h2>
-                  <p>禅修、持咒、诵经、每日功课与修行记录</p>
-                </div>
-              </article>
-              <article>
-                <img src="/download-icons/heart.png" alt="" />
-                <div>
-                  <h2>与法师及师兄零距离沟通</h2>
-                  <p>直接向法师请教，在社区与师兄交流共修</p>
-                </div>
-              </article>
-              <article>
-                <img src="/download-icons/book.png" alt="" />
-                <div>
-                  <h2>经书、视频、佛乐，一站汇聚</h2>
-                  <p>4000+部免费经书、法师开示视频与冥想佛乐</p>
-                </div>
-              </article>
             </div>
           </div>
+        </div>
+
+        <div className="campaign-download-secondary-values">
+          <article>
+            <img src="/download-icons/practice.png" alt="" />
+            <h2>每日修行，日日精进</h2>
+            <p>禅修、持咒、诵经、每日功课与修行记录</p>
+          </article>
+          <article>
+            <img src="/download-icons/community.png" alt="" />
+            <h2>与法师及师兄零距离沟通</h2>
+            <p>直接向法师请教，在社区与师兄交流共修</p>
+          </article>
+          <article>
+            <img src="/download-icons/library.png" alt="" />
+            <h2>经书、视频、佛乐，一站汇聚</h2>
+            <p>4000+部免费经书、法师开示视频与冥想佛乐</p>
+          </article>
         </div>
 
         <div
@@ -168,15 +158,11 @@ export default function AppDownloadPage() {
         >
           <PlatformActions platform={platform} />
         </div>
-
-        <a className="campaign-download-scroll-cue" href="#app-preview">
-          继续下滑，了解 BuddhaChat
-        </a>
       </section>
 
       <section className="campaign-download-gallery" id="app-preview" aria-labelledby="app-preview-title">
         <div className="campaign-download-gallery-heading">
-          <h2 id="app-preview-title">在 BuddhaChat，你可以</h2>
+          <h2 id="app-preview-title">探索 BuddhaChat</h2>
           <div className="campaign-download-gallery-controls" aria-label="切换应用预览">
             <button type="button" onClick={() => scrollPreviews(-1)}>上一张</button>
             <button type="button" onClick={() => scrollPreviews(1)}>下一张</button>
