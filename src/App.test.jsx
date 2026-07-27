@@ -64,7 +64,16 @@ describe('App routing', () => {
     )
   })
 
-  it('renders the source-hui campaign download route', () => {
+  it('renders the public app download route without a channel code', () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    window.history.pushState({}, '', '/download')
+
+    render(<App />)
+
+    expect(screen.getByTestId('app-download-page')).toBeInTheDocument()
+  })
+
+  it('keeps the old campaign download route as a compatibility alias', () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
     window.history.pushState({}, '', '/download/yuanhui?ch=yuanhui-poster-01')
 

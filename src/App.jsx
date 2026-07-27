@@ -40,11 +40,13 @@ function normalizePathname(pathname) {
 
 function App() {
   const pathname = normalizePathname(window.location.pathname)
+  const isDownloadPage =
+    pathname === '/download' || pathname === '/download/yuanhui'
 
   useEffect(() => {
     trackPageView(
-      pathname === '/download/yuanhui'
-        ? { scene: `yuanhui_download_${detectDownloadPlatform()}` }
+      isDownloadPage
+        ? { scene: `app_download_${detectDownloadPlatform()}` }
         : undefined,
     )
 
@@ -58,13 +60,13 @@ function App() {
 
     document.addEventListener('click', handleNavClick, true)
     return () => document.removeEventListener('click', handleNavClick, true)
-  }, [pathname])
+  }, [isDownloadPage, pathname])
 
   if (FUSION_ROUTES.has(pathname)) {
     return <FusionRoutePage routePath={pathname} />
   }
 
-  if (pathname === '/download/yuanhui') {
+  if (isDownloadPage) {
     return <AppDownloadPage />
   }
 

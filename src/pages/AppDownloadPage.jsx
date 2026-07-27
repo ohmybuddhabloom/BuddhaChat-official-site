@@ -62,7 +62,7 @@ function DownloadAction({ downloadKey }) {
     <a
       className="campaign-download-action"
       href={download.url}
-      onClick={() => trackCtaClick(`yuanhui_download_${downloadKey}`, 'app')}
+      onClick={() => trackCtaClick(`app_download_${downloadKey}`, 'app')}
       rel="noreferrer"
     >
       <img src={download.icon} alt="" />
