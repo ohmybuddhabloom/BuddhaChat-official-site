@@ -128,8 +128,8 @@ export function trackOfficialEvent(eventName, metadata = {}) {
   }).catch(() => undefined)
 }
 
-export function trackPageView() {
-  trackOfficialEvent('page_view')
+export function trackPageView(metadata) {
+  trackOfficialEvent('page_view', metadata)
 }
 
 export function trackNavClick(href, placement = 'primary_nav') {

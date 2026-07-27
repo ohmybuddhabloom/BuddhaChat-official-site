@@ -2,8 +2,11 @@ import { useEffect } from 'react'
 import SunyataLanding from './pages/SunyataLanding.jsx'
 import FusionRoutePage from './pages/FusionRoutePage.jsx'
 import StoryPage from './pages/StoryPage.jsx'
+import AppDownloadPage from './pages/AppDownloadPage.jsx'
+import LanguageToggle from './components/LanguageToggle.jsx'
 import { SACRED_STORIES_BY_SLUG } from './content/sacredStories.js'
 import { trackNavClick, trackPageView } from './lib/analytics.js'
+import { detectDownloadPlatform } from './lib/downloadPlatform.js'
 
 const STORY_NAV = {
   logo: 'Buddha Chat',
@@ -37,8 +40,16 @@ function normalizePathname(pathname) {
 }
 
 function App() {
+  const pathname = normalizePathname(window.location.pathname)
+  const isDownloadPage =
+    pathname === '/download' || pathname === '/download/yuanhui'
+
   useEffect(() => {
-    trackPageView()
+    trackPageView(
+      isDownloadPage
+        ? { scene: `app_download_${detectDownloadPlatform()}` }
+        : undefined,
+    )
 
     const handleNavClick = (event) => {
       const link = event.target.closest?.('nav a[href]')
@@ -50,12 +61,19 @@ function App() {
 
     document.addEventListener('click', handleNavClick, true)
     return () => document.removeEventListener('click', handleNavClick, true)
-  }, [])
-
-  const pathname = normalizePathname(window.location.pathname)
+  }, [isDownloadPage, pathname])
 
   if (FUSION_ROUTES.has(pathname)) {
     return <FusionRoutePage routePath={pathname} />
+  }
+
+  if (isDownloadPage) {
+    return (
+      <>
+        <LanguageToggle />
+        <AppDownloadPage />
+      </>
+    )
   }
 
   const params = new URLSearchParams(window.location.search)

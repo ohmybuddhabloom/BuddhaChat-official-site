@@ -54,6 +54,11 @@
   ],
   "redirects": [
     {
+      "source": "/master/:slug([a-z0-9-]+)",
+      "destination": "https://:slug.buddhachat.online",
+      "permanent": true
+    },
+    {
       "source": "/zentube",
       "destination": "https://zentube.buddhachat.online",
       "permanent": false
@@ -72,6 +77,11 @@
       "source": "/user/:path*",
       "destination": "/videos/user/:path*",
       "permanent": false
+    },
+    {
+      "source": "/yuanhui",
+      "destination": "https://yuanhui.buddhachat.online",
+      "permanent": true
     },
     {
       "source": "/topics/:path*",
