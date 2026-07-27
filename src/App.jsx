@@ -3,6 +3,7 @@ import SunyataLanding from './pages/SunyataLanding.jsx'
 import FusionRoutePage from './pages/FusionRoutePage.jsx'
 import StoryPage from './pages/StoryPage.jsx'
 import AppDownloadPage from './pages/AppDownloadPage.jsx'
+import LanguageToggle from './components/LanguageToggle.jsx'
 import { SACRED_STORIES_BY_SLUG } from './content/sacredStories.js'
 import { trackNavClick, trackPageView } from './lib/analytics.js'
 import { detectDownloadPlatform } from './lib/downloadPlatform.js'
@@ -67,7 +68,12 @@ function App() {
   }
 
   if (isDownloadPage) {
-    return <AppDownloadPage />
+    return (
+      <>
+        <LanguageToggle />
+        <AppDownloadPage />
+      </>
+    )
   }
 
   const params = new URLSearchParams(window.location.search)
