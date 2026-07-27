@@ -9,6 +9,17 @@ function resolveNavHref(href, currentStorySlug) {
     return `/${href}`
   }
 
+  if (href === '/login' || href === '/auth/login') {
+    const login = new URL('https://www.buddhachat.online/videos/auth/login')
+    login.searchParams.set(
+      'returnUrl',
+      currentStorySlug
+        ? `https://www.buddhachat.online/?story=${encodeURIComponent(currentStorySlug)}`
+        : 'https://www.buddhachat.online/',
+    )
+    return login.toString()
+  }
+
   return href
 }
 

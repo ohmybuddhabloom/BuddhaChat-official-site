@@ -567,7 +567,7 @@ export function useElementSize(ref) {
     return () => {
       window.removeEventListener('resize', updateSize)
     }
-  })
+  }, [ref])
 
   return size
 }

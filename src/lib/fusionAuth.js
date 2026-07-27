@@ -1,4 +1,4 @@
-export const DEFAULT_ZENTUBE_ORIGIN = 'https://zentube.buddhachat.online'
+export const DEFAULT_ZENTUBE_ORIGIN = 'https://www.buddhachat.online/videos'
 
 export function getZentubeOrigin() {
   return import.meta.env.VITE_ZENTUBE_ORIGIN || DEFAULT_ZENTUBE_ORIGIN

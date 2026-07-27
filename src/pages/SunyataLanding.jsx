@@ -834,7 +834,6 @@ function SunyataLanding() {
     scene.cards,
     scene.donation,
     scene.footer,
-    scene.journal,
     scene.layout.sections,
     scene.appShowcase,
   ])

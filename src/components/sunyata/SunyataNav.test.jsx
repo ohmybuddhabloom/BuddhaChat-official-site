@@ -14,5 +14,9 @@ describe('SunyataNav', () => {
     expect(screen.getByText('Children of Scripture')).toBeInTheDocument()
     expect(screen.getByText('Journey of Amethyst')).toBeInTheDocument()
     expect(screen.getByText('A Life in Thangka')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute(
+      'href',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
+    )
   })
 })

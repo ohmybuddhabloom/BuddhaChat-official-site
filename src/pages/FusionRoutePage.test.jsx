@@ -21,11 +21,11 @@ describe('FusionRoutePage', () => {
     ).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Open existing video site' })).toHaveAttribute(
       'href',
-      'https://zentube.buddhachat.online',
+      'https://www.buddhachat.online/videos',
     )
     expect(document.querySelector('meta[http-equiv="refresh"]')).toHaveAttribute(
       'content',
-      '0; url=https://zentube.buddhachat.online',
+      '0; url=https://www.buddhachat.online/videos',
     )
   })
 
@@ -37,7 +37,7 @@ describe('FusionRoutePage', () => {
 
     expect(screen.getByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
       'href',
-      'https://zentube.buddhachat.online/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2Fsutra',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2Fsutra',
     )
   })
 

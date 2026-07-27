@@ -6,7 +6,7 @@ import {
   logoutZentube,
 } from '../lib/fusionAuth.js'
 
-const DEFAULT_SUTRA_ORIGIN = 'https://sutra.buddhachat.online'
+const DEFAULT_SUTRA_ORIGIN = 'https://www.buddhachat.online/sutra'
 
 function getSutraOrigin() {
   return (import.meta.env.VITE_SUTRA_ORIGIN || DEFAULT_SUTRA_ORIGIN).replace(/\/+$/, '')
@@ -136,7 +136,7 @@ function getReturnUrl() {
 }
 
 function buildZentubeLoginHref(returnUrl) {
-  const loginUrl = new URL('/auth/login', getZentubeHomeHref())
+  const loginUrl = new URL(`${getZentubeHomeHref()}/auth/login`)
   loginUrl.searchParams.set('returnUrl', returnUrl)
   return loginUrl.toString()
 }
