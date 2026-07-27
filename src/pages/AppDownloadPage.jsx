@@ -15,7 +15,7 @@ const DOWNLOADS = {
     url: import.meta.env.VITE_GOOGLE_PLAY_URL,
   },
   apk: {
-    label: '安卓安装包',
+    label: '安卓安装包下载',
     icon: '/download-icons/android.png',
     url: import.meta.env.VITE_ANDROID_APK_URL,
   },
@@ -23,33 +23,60 @@ const DOWNLOADS = {
 
 const PREVIEWS = [
   {
+    src: '/app-previews/app-ai-buddha.png',
+    alt: 'BuddhaChat AI 佛祖对话真实页面',
+    title: 'AI 佛祖对话',
+    description: '随时倾诉与请教，AI 以佛法视角回应，陪你安顿身心。',
+  },
+  {
+    src: '/app-previews/app-home.png',
+    alt: 'BuddhaChat 首页真实页面',
+    title: '每日首页',
+    description: '每天打开，今日功课、法师更新与修行入口一目了然。',
+  },
+  {
+    src: '/app-previews/app-master-talks.png',
+    alt: 'BuddhaChat 法师开示真实页面',
+    title: '法师开示',
+    description: '源慧法师等法师的视频开示与修心内容，让心慢下来。',
+  },
+  {
     src: '/app-previews/app-practice.png',
     alt: 'BuddhaChat 每日修行真实页面',
     title: '持续修行',
-    description: '禅修、持咒、诵经与每日功课，都能在这里持续积累。',
+    description: '禅修、木鱼、诵经与连续天数记录，把修行变成每天的习惯。',
+  },
+  {
+    src: '/app-previews/app-scriptures.png',
+    alt: 'BuddhaChat 读经导航真实页面',
+    title: '读经藏书',
+    description: '从新手入门到系统研读，按经名、译者、部类搜索，安静读诵。',
   },
   {
     src: '/app-previews/app-community.png',
     alt: 'BuddhaChat 道场与共修社区真实页面',
     title: '道场共修',
-    description: '找到合适道场，与法师和师兄们一起交流共修。',
-  },
-  {
-    src: '/app-previews/app-ai-buddha.png',
-    alt: 'BuddhaChat AI 佛祖对话真实页面',
-    title: 'AI 佛祖对话',
-    description: '随时倾诉与请教，在对话中获得启发。',
+    description: '找到精选道场与推荐法师，和同修一起交流精进。',
   },
 ]
 
-function DownloadAction({ downloadKey }) {
+function DownloadAction({ downloadKey, forceNormal = false }) {
   const download = DOWNLOADS[downloadKey]
   const isReady = Boolean(download.url)
 
   if (!isReady) {
+    if (forceNormal) {
+      return (
+        <div className="campaign-download-action">
+          <img className={`is-${downloadKey}`} src={download.icon} alt="" />
+          <span>{download.label}</span>
+        </div>
+      )
+    }
+
     return (
       <div className="campaign-download-action is-disabled" aria-disabled="true">
-        <img src={download.icon} alt="" />
+        <img className={`is-${downloadKey}`} src={download.icon} alt="" />
         <span>
           {download.label}
           <small>下载地址配置中</small>
@@ -65,7 +92,7 @@ function DownloadAction({ downloadKey }) {
       onClick={() => trackCtaClick(`app_download_${downloadKey}`, 'app')}
       rel="noreferrer"
     >
-      <img src={download.icon} alt="" />
+      <img className={`is-${downloadKey}`} src={download.icon} alt="" />
       <span>{download.label}</span>
     </a>
   )
@@ -87,9 +114,9 @@ function PlatformActions({ platform }) {
 
   return (
     <>
-      <DownloadAction downloadKey="ios" />
-      <DownloadAction downloadKey="google" />
-      <DownloadAction downloadKey="apk" />
+      <DownloadAction downloadKey="ios" forceNormal />
+      <DownloadAction downloadKey="google" forceNormal />
+      <DownloadAction downloadKey="apk" forceNormal />
     </>
   )
 }
@@ -98,7 +125,12 @@ export default function AppDownloadPage() {
   const platform = detectDownloadPlatform()
   const previewTrackRef = useRef(null)
   const scrollPreviews = (direction) => {
-    previewTrackRef.current?.scrollBy({ left: direction * 300, behavior: 'smooth' })
+    const track = previewTrackRef.current
+    if (!track) return
+    const card = track.querySelector('figure')
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0
+    const step = card ? card.getBoundingClientRect().width + gap : 300
+    track.scrollBy({ left: direction * step, behavior: 'smooth' })
   }
 
   return (
@@ -183,7 +215,7 @@ export default function AppDownloadPage() {
             </figure>
           ))}
         </div>
-        <p className="campaign-download-gallery-hint">手指左右滑动，也可以使用上方按钮切换</p>
+        <p className="campaign-download-gallery-hint">可左右滑动浏览，也可以使用上方按钮切换</p>
       </section>
     </main>
   )

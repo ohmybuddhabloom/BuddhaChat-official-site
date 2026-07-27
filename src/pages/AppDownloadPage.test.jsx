@@ -22,7 +22,7 @@ describe('AppDownloadPage', () => {
       'https://apps.apple.com/app/id6762049050',
     )
     expect(screen.queryByText('Google Play 下载')).not.toBeInTheDocument()
-    expect(screen.queryByText('安卓安装包')).not.toBeInTheDocument()
+    expect(screen.queryByText('安卓安装包下载')).not.toBeInTheDocument()
   })
 
   it('shows Google Play and direct APK actions on Android', () => {
@@ -36,7 +36,7 @@ describe('AppDownloadPage', () => {
 
     expect(screen.queryByText('App Store 下载')).not.toBeInTheDocument()
     expect(screen.getByText('Google Play 下载')).toBeInTheDocument()
-    expect(screen.getByText('安卓安装包')).toBeInTheDocument()
+    expect(screen.getByText('安卓安装包下载')).toBeInTheDocument()
     expect(screen.queryByText(/已识别为/)).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: /探索 BuddhaChat/ })).toBeInTheDocument()
   })
@@ -51,15 +51,30 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('经书、视频、佛乐，一站汇聚')).toBeInTheDocument()
   })
 
-  it('shows the three selected app experiences', () => {
+  it('shows the six selected app experiences', () => {
     render(<AppDownloadPage />)
 
+    expect(screen.getByText('每日首页')).toBeInTheDocument()
     expect(screen.getByText('持续修行')).toBeInTheDocument()
+    expect(screen.getByText('读经藏书')).toBeInTheDocument()
+    expect(screen.getByText('法师开示')).toBeInTheDocument()
     expect(screen.getByText('道场共修')).toBeInTheDocument()
     expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'BuddhaChat 首页真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-home.png',
+    )
     expect(screen.getByRole('img', { name: 'BuddhaChat 每日修行真实页面' })).toHaveAttribute(
       'src',
       '/app-previews/app-practice.png',
+    )
+    expect(screen.getByRole('img', { name: 'BuddhaChat 读经导航真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-scriptures.png',
+    )
+    expect(screen.getByRole('img', { name: 'BuddhaChat 法师开示真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-master-talks.png',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 道场与共修社区真实页面' })).toHaveAttribute(
       'src',
@@ -75,10 +90,13 @@ describe('AppDownloadPage', () => {
     const scrollBy = vi.fn()
     Object.defineProperty(HTMLElement.prototype, 'scrollBy', { configurable: true, value: scrollBy })
 
-    render(<AppDownloadPage />)
+    const { container } = render(<AppDownloadPage />)
+    const card = container.querySelector('.campaign-download-gallery-track figure')
+    vi.spyOn(card, 'getBoundingClientRect').mockReturnValue({ width: 238 })
+
     fireEvent.click(screen.getByRole('button', { name: '下一张' }))
 
-    expect(scrollBy).toHaveBeenCalledWith({ left: 300, behavior: 'smooth' })
+    expect(scrollBy).toHaveBeenCalledWith({ left: 238, behavior: 'smooth' })
     Reflect.deleteProperty(HTMLElement.prototype, 'scrollBy')
   })
 })

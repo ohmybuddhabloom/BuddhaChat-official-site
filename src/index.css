@@ -3679,6 +3679,18 @@ a {
   font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
 }
 
+/* 官网全局 * { cursor: none } 隐藏了系统光标，而自定义光晕光标只在首页渲染；
+   下载页范围内恢复正常光标。 */
+.campaign-download-page,
+.campaign-download-page * {
+  cursor: auto;
+}
+
+.campaign-download-page a,
+.campaign-download-page button {
+  cursor: pointer;
+}
+
 .campaign-download-hero,
 .campaign-download-gallery {
   width: min(100%, 1180px);
@@ -3700,6 +3712,15 @@ a {
   background:
     var(--campaign-paper) url('/buddhachat-download-hero-mobile-v3.jpg')
     center -150px / auto 720px no-repeat;
+  /* 背景图边缘色与纸色存在色差，四周做渐隐遮罩消除接缝 */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 16%, #000 84%, transparent),
+    linear-gradient(to bottom, #000 58%, transparent 97%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 16%, #000 84%, transparent),
+    linear-gradient(to bottom, #000 58%, transparent 97%);
+  mask-composite: intersect;
 }
 
 .campaign-download-hero > * {
@@ -3731,6 +3752,7 @@ a {
   color: rgba(48, 43, 37, 0.68);
   font-size: 0.76rem;
   letter-spacing: 0.12em;
+  margin-right: 92px; /* keep clear of the fixed 简/繁 toggle */
 }
 
 .campaign-download-intro {
@@ -3762,7 +3784,7 @@ a {
 .campaign-download-primary-values article {
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: 12px;
 }
 
@@ -3779,6 +3801,7 @@ a {
 .campaign-download-secondary-values h2,
 .campaign-download-secondary-values p {
   margin: 0;
+  text-wrap: balance;
 }
 
 .campaign-download-primary-values h2 {
@@ -3789,7 +3812,7 @@ a {
 
 .campaign-download-primary-values p {
   margin-top: 4px;
-  color: rgba(93, 75, 49, 0.66);
+  color: rgba(93, 75, 49, 0.78);
   font-size: 0.72rem;
   line-height: 1.5;
 }
@@ -3811,11 +3834,15 @@ a {
 }
 
 .campaign-download-secondary-values img {
-  width: 42px;
-  height: 42px;
+  width: 54px;
+  height: 54px;
   display: block;
-  margin: 0 auto 8px;
+  margin: 0 auto 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--campaign-line);
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
   object-fit: contain;
   object-position: center;
 }
@@ -3829,7 +3856,7 @@ a {
 
 .campaign-download-secondary-values p {
   margin-top: 5px;
-  color: rgba(93, 75, 49, 0.64);
+  color: rgba(93, 75, 49, 0.78);
   font-size: 0.68rem;
   line-height: 1.5;
 }
@@ -3841,7 +3868,7 @@ a {
   margin-top: 22px;
 }
 
-.campaign-download-actions.is-other .campaign-download-action:first-child,
+.campaign-download-actions.is-other .campaign-download-action:last-child,
 .campaign-download-actions.is-ios .campaign-download-action {
   grid-column: 1 / -1;
 }
@@ -3862,7 +3889,6 @@ a {
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.campaign-download-actions.is-other .campaign-download-action:first-child,
 .campaign-download-actions.is-ios .campaign-download-action:first-child {
   min-height: 50px;
   border-color: #292826;
@@ -3893,6 +3919,11 @@ a {
   object-fit: contain;
   object-position: center;
   border-radius: 7px;
+  background: #fff;
+}
+
+.campaign-download-action img.is-ios {
+  background: #1c1c1e;
 }
 
 .campaign-download-action span {
@@ -3904,13 +3935,21 @@ a {
 }
 
 .campaign-download-action small {
-  color: rgba(105, 82, 47, 0.58);
+  color: rgba(105, 82, 47, 0.72);
   font-size: 0.56rem;
 }
 
 .campaign-download-action.is-disabled {
   color: rgba(74, 57, 36, 0.62);
   cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.45);
+  box-shadow: none;
+}
+
+.campaign-download-action.is-disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .campaign-download-gallery {
@@ -3991,7 +4030,6 @@ a {
 
 .campaign-download-preview-media {
   width: min(calc(100% - 18px), 208px);
-  aspect-ratio: 9 / 19.5;
   position: relative;
   margin: 0 auto;
   padding: 7px;
@@ -4002,19 +4040,6 @@ a {
   box-shadow:
     0 24px 48px rgba(70, 50, 30, 0.16),
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-.campaign-download-preview-media::before {
-  content: '';
-  width: 34%;
-  height: 14px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  z-index: 2;
-  border-radius: 999px;
-  background: #161513;
-  transform: translateX(-50%);
 }
 
 .campaign-download-phone-screen {
@@ -4050,14 +4075,14 @@ a {
 
 .campaign-download-gallery figcaption p {
   margin-top: 6px;
-  color: rgba(93, 75, 49, 0.62);
+  color: rgba(93, 75, 49, 0.76);
   font-size: 0.72rem;
   line-height: 1.65;
 }
 
 .campaign-download-gallery-hint {
   margin: 18px 20px 0;
-  color: rgba(93, 75, 49, 0.54);
+  color: rgba(93, 75, 49, 0.72);
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-align: center;
@@ -4073,6 +4098,9 @@ a {
     background:
       var(--campaign-paper) url('/buddhachat-download-hero-desktop-v3.jpg')
       center / cover no-repeat;
+    /* 桌面端 cover 铺满宽度，仅需底部渐隐消除与纸色的接缝 */
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
   }
 
   .campaign-download-header {
@@ -4119,8 +4147,9 @@ a {
   }
 
   .campaign-download-secondary-values img {
-    width: 48px;
-    height: 48px;
+    width: 62px;
+    height: 62px;
+    padding: 10px;
   }
 
   .campaign-download-secondary-values h2 {
@@ -4143,7 +4172,7 @@ a {
     min-height: 68px;
   }
 
-  .campaign-download-actions.is-other .campaign-download-action:first-child,
+  .campaign-download-actions.is-other .campaign-download-action:last-child,
   .campaign-download-actions.is-ios .campaign-download-action {
     grid-column: auto;
   }
@@ -4189,4 +4218,48 @@ a {
     scroll-behavior: auto;
     transition: none;
   }
+}
+
+/* 简 / 繁 language toggle, pinned top-right on every page */
+.language-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(146, 106, 40, 0.35);
+  background: rgba(255, 252, 246, 0.92);
+  box-shadow: 0 2px 10px rgba(60, 40, 8, 0.12);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+.language-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 4px 11px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b5220;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.language-toggle button:hover {
+  background: rgba(146, 106, 40, 0.12);
+}
+
+.language-toggle button.is-active {
+  background: #8a6a1f;
+  color: #fffaf0;
+}
+
+.language-toggle button:focus-visible {
+  outline: 2px solid #b48a2e;
+  outline-offset: -2px;
 }
