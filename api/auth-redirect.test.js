@@ -34,7 +34,7 @@ describe('api/auth-redirect', () => {
     expect(res.statusCode).toBe(307)
     expect(res.headers['Cache-Control']).toBe('no-store')
     expect(res.headers.Location).toBe(
-      'https://zentube.buddhachat.online/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2Fsutra',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2Fsutra',
     )
   })
 
@@ -53,7 +53,26 @@ describe('api/auth-redirect', () => {
     )
 
     expect(res.headers.Location).toBe(
-      'https://zentube.buddhachat.online/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
     )
+  })
+
+  it('keeps music and reader product returns instead of falling back to home', () => {
+    for (const returnUrl of [
+      'https://www.buddhachat.online/music',
+      'https://www.buddhachat.online/sutra?book=sutra-t0251',
+    ]) {
+      const res = createResponse()
+      handler(
+        {
+          url: `/login?returnUrl=${encodeURIComponent(returnUrl)}`,
+          headers: { host: 'www.buddhachat.online' },
+        },
+        res,
+      )
+      expect(new URL(res.headers.Location).searchParams.get('returnUrl')).toBe(
+        returnUrl,
+      )
+    }
   })
 })

@@ -36,7 +36,7 @@ describe('App routing', () => {
 
     expect(screen.getByRole('link', { name: 'Open existing reader' })).toHaveAttribute(
       'href',
-      'https://sutra.buddhachat.online',
+      'https://www.buddhachat.online/sutra',
     )
   })
 
@@ -48,7 +48,7 @@ describe('App routing', () => {
 
     expect(screen.getByRole('link', { name: 'Open existing video site' })).toHaveAttribute(
       'href',
-      'https://zentube.buddhachat.online',
+      'https://www.buddhachat.online/videos',
     )
   })
 
@@ -60,7 +60,7 @@ describe('App routing', () => {
 
     expect(screen.getByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
       'href',
-      'https://zentube.buddhachat.online/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
     )
   })
 

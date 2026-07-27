@@ -1,7 +1,10 @@
-const ZENTUBE_LOGIN_URL = 'https://zentube.buddhachat.online/auth/login'
+const CANONICAL_ORIGIN = 'https://www.buddhachat.online'
+const ZENTUBE_LOGIN_URL = `${CANONICAL_ORIGIN}/videos/auth/login`
 const ALLOWED_RETURN_ORIGINS = new Set([
-  'https://www.buddhachat.online',
+  CANONICAL_ORIGIN,
+  'https://buddhachat.online',
   'https://sutra.buddhachat.online',
+  'https://music.buddhachat.online',
 ])
 
 function getRequestOrigin(req) {
@@ -17,15 +20,15 @@ function getRequestOrigin(req) {
   return `${proto || 'https'}://${host}`
 }
 
-function resolveSafeReturnUrl(value, requestOrigin) {
+function resolveSafeReturnUrl(value) {
   if (typeof value !== 'string' || !value.trim()) {
-    return `${requestOrigin}/`
+    return `${CANONICAL_ORIGIN}/`
   }
 
   const candidate = value.trim()
 
   if (candidate.startsWith('/') && !candidate.startsWith('//')) {
-    return new URL(candidate, requestOrigin).toString()
+    return new URL(candidate, CANONICAL_ORIGIN).toString()
   }
 
   try {
@@ -34,10 +37,10 @@ function resolveSafeReturnUrl(value, requestOrigin) {
       return parsed.toString()
     }
   } catch {
-    return `${requestOrigin}/`
+    return `${CANONICAL_ORIGIN}/`
   }
 
-  return `${requestOrigin}/`
+  return `${CANONICAL_ORIGIN}/`
 }
 
 export default function handler(req, res) {
@@ -45,7 +48,6 @@ export default function handler(req, res) {
   const requestUrl = new URL(req.url ?? '/', requestOrigin)
   const returnUrl = resolveSafeReturnUrl(
     requestUrl.searchParams.get('returnUrl'),
-    requestOrigin,
   )
   const loginUrl = new URL(ZENTUBE_LOGIN_URL)
   loginUrl.searchParams.set('returnUrl', returnUrl)

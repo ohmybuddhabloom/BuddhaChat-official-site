@@ -73,7 +73,10 @@ describe('SunyataLanding layout controls', () => {
     expect(screen.getByRole('link', { name: 'Videos' })).toHaveAttribute('href', '/videos')
     expect(screen.getByRole('link', { name: 'Sutra' })).toHaveAttribute('href', '/sutra')
     expect(screen.getByRole('link', { name: 'Music' })).toHaveAttribute('href', '/music')
-    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/login')
+    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute(
+      'href',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
+    )
   })
 
   it('normalizes legacy login links instead of rendering duplicate sign-in entries', () => {
@@ -90,7 +93,10 @@ describe('SunyataLanding layout controls', () => {
 
     const loginLinks = screen.getAllByRole('link', { name: 'Sign in' })
     expect(loginLinks).toHaveLength(1)
-    expect(loginLinks[0]).toHaveAttribute('href', '/login')
+    expect(loginLinks[0]).toHaveAttribute(
+      'href',
+      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
+    )
   })
 
   it('migrates legacy pixel offsets and rewrites storage with percentage fields', async () => {
