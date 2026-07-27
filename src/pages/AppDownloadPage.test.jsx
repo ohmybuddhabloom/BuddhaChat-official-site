@@ -55,8 +55,20 @@ describe('AppDownloadPage', () => {
     render(<AppDownloadPage />)
 
     expect(screen.getByText('持续修行')).toBeInTheDocument()
-    expect(screen.getByText('与大师沟通')).toBeInTheDocument()
+    expect(screen.getByText('道场共修')).toBeInTheDocument()
     expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'BuddhaChat 每日修行真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-practice.png',
+    )
+    expect(screen.getByRole('img', { name: 'BuddhaChat 道场与共修社区真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-community.png',
+    )
+    expect(screen.getByRole('img', { name: 'BuddhaChat AI 佛祖对话真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-ai-buddha.png',
+    )
   })
 
   it('moves the app preview carousel with its controls', () => {

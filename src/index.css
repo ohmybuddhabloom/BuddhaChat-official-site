@@ -3689,11 +3689,22 @@ a {
   position: relative;
   isolation: isolate;
   padding: 16px 20px 24px;
-  background-color: var(--campaign-paper);
-  background-image: url('/buddhachat-download-hero-mobile-v3.jpg');
-  background-position: center -150px;
-  background-size: auto 720px;
-  background-repeat: no-repeat;
+}
+
+.campaign-download-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    var(--campaign-paper) url('/buddhachat-download-hero-mobile-v3.jpg')
+    center -150px / auto 720px no-repeat;
+}
+
+.campaign-download-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .campaign-download-header {
@@ -3759,7 +3770,8 @@ a {
   width: 36px;
   height: 36px;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .campaign-download-primary-values h2,
@@ -3804,8 +3816,8 @@ a {
   display: block;
   margin: 0 auto 8px;
   border-radius: 50%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
+  object-fit: contain;
+  object-position: center;
 }
 
 .campaign-download-secondary-values h2 {
@@ -3878,7 +3890,8 @@ a {
   height: 25px;
   flex: 0 0 auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: 7px;
 }
 
@@ -4054,9 +4067,12 @@ a {
   .campaign-download-hero {
     min-height: 760px;
     padding: 30px 48px 48px;
-    background-image: url('/buddhachat-download-hero-desktop-v3.jpg');
-    background-position: center;
-    background-size: cover;
+  }
+
+  .campaign-download-hero::before {
+    background:
+      var(--campaign-paper) url('/buddhachat-download-hero-desktop-v3.jpg')
+      center / cover no-repeat;
   }
 
   .campaign-download-header {

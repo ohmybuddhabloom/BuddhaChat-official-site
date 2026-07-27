@@ -23,20 +23,20 @@ const DOWNLOADS = {
 
 const PREVIEWS = [
   {
-    src: '/app-previews/foshuo-home.webp',
-    alt: 'BuddhaChat 每日修行页面',
+    src: '/app-previews/app-practice.png',
+    alt: 'BuddhaChat 每日修行真实页面',
     title: '持续修行',
     description: '禅修、持咒、诵经与每日功课，都能在这里持续积累。',
   },
   {
-    src: '/app-previews/qa-detail.webp',
-    alt: 'BuddhaChat 法师问答与共修页面',
-    title: '与大师沟通',
-    description: '直接向法师请教，也能和师兄们交流共修。',
+    src: '/app-previews/app-community.png',
+    alt: 'BuddhaChat 道场与共修社区真实页面',
+    title: '道场共修',
+    description: '找到合适道场，与法师和师兄们一起交流共修。',
   },
   {
-    src: '/app-previews/ai-buddha-chat.png',
-    alt: 'BuddhaChat AI 佛祖对话页面',
+    src: '/app-previews/app-ai-buddha.png',
+    alt: 'BuddhaChat AI 佛祖对话真实页面',
     title: 'AI 佛祖对话',
     description: '随时倾诉与请教，在对话中获得启发。',
   },
