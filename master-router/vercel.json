@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/videos",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/assets/:path*",
+      "destination": "https://zentube.buddhachat.online/assets/:path*"
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "destination": "https://zentube.buddhachat.online/locales/:path*"
+    },
+    {
+      "source": "/videos/:path*",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/api"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api"
+    }
+  ]
+}

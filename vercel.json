@@ -116,20 +116,6 @@
       "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/:path*"
     },
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www\\.buddhachat\\.online"
-        }
-      ],
-      "destination": "/index.html"
-    },
-    {
-      "source": "/",
-      "destination": "/api/master-router"
-    },
-    {
       "source": "/sutra",
       "destination": "https://sutra.buddhachat.online/sutra/"
     },

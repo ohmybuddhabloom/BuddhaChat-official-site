@@ -20,10 +20,13 @@ export function masterUpstreamUrl(slug, requestUrl = '/') {
 }
 
 export default async function handler(request, response) {
+  const requestUrl = new URL(request.url, 'https://placeholder.local')
   const slug = masterSlugFromHost(
     request.headers['x-forwarded-host'] || request.headers.host
   )
-  if (!slug) return response.status(404).send('Not Found')
+  if (!slug || requestUrl.pathname !== '/') {
+    return response.status(404).send('Not Found')
+  }
 
   const upstream = await fetch(masterUpstreamUrl(slug, request.url), {
     method: request.method === 'HEAD' ? 'HEAD' : 'GET',

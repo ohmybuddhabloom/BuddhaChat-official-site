@@ -2,7 +2,10 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { describe, expect, test } from 'vitest'
-import { masterSlugFromHost, masterUpstreamUrl } from './api/master-router.js'
+import {
+  masterSlugFromHost,
+  masterUpstreamUrl,
+} from './master-router/api/index.js'
 
 describe('website product routing', () => {
   test('redirects master entry points to their public subdomain', async () => {
@@ -22,17 +25,24 @@ describe('website product routing', () => {
     ]))
   })
 
-  test('rewrites a master subdomain root without replacing the public URL', async () => {
-    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
-    const homepageIndex = config.rewrites.findIndex(({ destination }) => destination === '/index.html')
-    const masterIndex = config.rewrites.findIndex(({ destination }) => destination === '/api/master-router')
+  test('routes a master subdomain through the dedicated edge project', async () => {
+    const config = JSON.parse(
+      await readFile(
+        path.join(process.cwd(), 'master-router/vercel.json'),
+        'utf8',
+      ),
+    )
 
-    expect(config.rewrites[masterIndex]).toEqual({
-      source: '/',
-      destination: '/api/master-router',
-    })
-    expect(homepageIndex).toBeGreaterThan(-1)
-    expect(homepageIndex).toBeLessThan(masterIndex)
+    expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/',
+        destination: '/api',
+      },
+      {
+        source: '/videos/:path*',
+        destination: 'https://zentube.buddhachat.online/__buddhachat_www/videos/:path*',
+      },
+    ]))
   })
 
   test('derives only master slugs and preserves the incoming query', () => {
