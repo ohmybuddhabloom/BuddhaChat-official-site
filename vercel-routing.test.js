@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { describe, expect, test } from 'vitest'
+import { masterSlugFromHost, masterUpstreamUrl } from './api/master-router.js'
 
 describe('website product routing', () => {
   test('redirects master entry points to their public subdomain', async () => {
@@ -24,18 +25,23 @@ describe('website product routing', () => {
   test('rewrites a master subdomain root without replacing the public URL', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
     const homepageIndex = config.rewrites.findIndex(({ destination }) => destination === '/index.html')
-    const masterIndex = config.rewrites.findIndex(({ destination }) => destination.endsWith('/topics/:slug'))
+    const masterIndex = config.rewrites.findIndex(({ destination }) => destination === '/api/master-router')
 
     expect(config.rewrites[masterIndex]).toEqual({
       source: '/',
-      has: [{
-        type: 'host',
-        value: '(?<slug>[a-z0-9-]+)\\.buddhachat\\.online',
-      }],
-      destination: 'https://zentube.buddhachat.online/__buddhachat_www/videos/topics/:slug',
+      destination: '/api/master-router',
     })
     expect(homepageIndex).toBeGreaterThan(-1)
     expect(homepageIndex).toBeLessThan(masterIndex)
+  })
+
+  test('derives only master slugs and preserves the incoming query', () => {
+    expect(masterSlugFromHost('yuanhui.buddhachat.online')).toBe('yuanhui')
+    expect(masterSlugFromHost('www.buddhachat.online')).toBeNull()
+    expect(masterSlugFromHost('attacker.example')).toBeNull()
+    expect(masterUpstreamUrl('yuanhui', '/?embedded=1&lang=zh-TW')).toBe(
+      'https://zentube.buddhachat.online/__buddhachat_www/videos/topics/yuanhui?embedded=1&lang=zh-TW',
+    )
   })
 
   test('keeps video under the website videos path', async () => {
