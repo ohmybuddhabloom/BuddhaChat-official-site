@@ -36,6 +36,57 @@ import {
   useElementSize,
 } from '../lib/responsiveOffsets.js'
 
+const REQUIRED_FUSION_NAV_LINKS = [
+  { label: 'Videos', href: '/videos' },
+  { label: 'Sutra', href: '/sutra' },
+  { label: 'Music', href: '/music' },
+  { label: 'Sign in', href: '/login' },
+]
+
+const LOGIN_NAV_LABELS = new Set(['login', 'log in', 'sign in'])
+
+function ensureFusionNavLinks(links = []) {
+  let hasLoginLink = false
+  const normalizedLinks = links
+    .filter((link) => {
+      const label = link?.label?.trim().toLowerCase()
+      const href = link?.href
+      const isLegacyLogin = LOGIN_NAV_LABELS.has(label) || href === '/auth/login' || href === '/login'
+
+      if (!isLegacyLogin) {
+        return true
+      }
+
+      if (hasLoginLink) {
+        return false
+      }
+
+      hasLoginLink = true
+      return true
+    })
+    .map((link) => {
+      const label = link?.label?.trim().toLowerCase()
+      const href = link?.href
+      const isLegacyLogin = LOGIN_NAV_LABELS.has(label) || href === '/auth/login' || href === '/login'
+
+      return isLegacyLogin ? { ...link, label: 'Sign in', href: '/login' } : link
+    })
+
+  const existingHrefs = new Set(
+    normalizedLinks
+      .map((link) => link?.href)
+      .filter((href) => typeof href === 'string'),
+  )
+
+  for (const requiredLink of REQUIRED_FUSION_NAV_LINKS) {
+    if (!existingHrefs.has(requiredLink.href)) {
+      normalizedLinks.push(requiredLink)
+    }
+  }
+
+  return normalizedLinks
+}
+
 function mergeScene(fallback, parsed) {
   const merged = {
     ...fallback,
@@ -46,7 +97,7 @@ function mergeScene(fallback, parsed) {
     nav: {
       ...fallback.nav,
       ...parsed.nav,
-      links: parsed.nav?.links ?? fallback.nav.links,
+      links: ensureFusionNavLinks(parsed.nav?.links ?? fallback.nav.links),
     },
     hero: {
       ...fallback.hero,
@@ -395,7 +446,7 @@ function SunyataLanding() {
   }, [])
 
   useEffect(() => {
-    if (!projectSceneReady) {
+    if (!editorEnabled || !projectSceneReady) {
       return undefined
     }
 
@@ -406,7 +457,7 @@ function SunyataLanding() {
     return () => {
       window.clearTimeout(timeoutId)
     }
-  }, [persistedScene, projectSceneReady])
+  }, [editorEnabled, persistedScene, projectSceneReady])
 
   const updateNavLogo = (value) => {
     setScene((current) => ({

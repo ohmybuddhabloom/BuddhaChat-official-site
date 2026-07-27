@@ -37,6 +37,7 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+.vercel/
 node_modules/
 .next/
 dist/
@@ -64,3 +65,5 @@ vite*.log
 findings.md
 progress.md
 task_plan.md
+.vercel
+.env*

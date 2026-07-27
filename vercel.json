@@ -4,5 +4,160 @@
     "api/*.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/kling-buddha-scroll-:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/journal/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/editor-state/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/editor-assets/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/master/:slug([a-z0-9-]+)",
+      "destination": "https://:slug.buddhachat.online",
+      "permanent": true
+    },
+    {
+      "source": "/zentube",
+      "destination": "https://zentube.buddhachat.online",
+      "permanent": false
+    },
+    {
+      "source": "/video/:path*",
+      "destination": "/videos/video/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/search",
+      "destination": "/videos/search",
+      "permanent": false
+    },
+    {
+      "source": "/user/:path*",
+      "destination": "/videos/user/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/yuanhui",
+      "destination": "https://yuanhui.buddhachat.online",
+      "permanent": true
+    },
+    {
+      "source": "/topics/:path*",
+      "destination": "/videos/topics/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/embed/:path*",
+      "destination": "/videos/embed/:path*",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/videos",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
+    },
+    {
+      "source": "/videos/assets/:path*",
+      "destination": "https://zentube.buddhachat.online/assets/:path*"
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "destination": "https://zentube.buddhachat.online/locales/:path*"
+    },
+    {
+      "source": "/videos/:path*",
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/:path*"
+    },
+    {
+      "source": "/sutra",
+      "destination": "https://sutra.buddhachat.online/sutra/"
+    },
+    {
+      "source": "/sutra/",
+      "destination": "https://sutra.buddhachat.online/sutra/"
+    },
+    {
+      "source": "/sutra/:path*",
+      "destination": "https://sutra.buddhachat.online/sutra/:path*"
+    },
+    {
+      "source": "/music",
+      "destination": "https://music.buddhachat.online/music/"
+    },
+    {
+      "source": "/music/",
+      "destination": "https://music.buddhachat.online/music/"
+    },
+    {
+      "source": "/music/:path*",
+      "destination": "https://music.buddhachat.online/music/:path*"
+    },
+    {
+      "source": "/login",
+      "destination": "/api/auth-redirect"
+    },
+    {
+      "source": "/auth/login",
+      "destination": "/api/auth-redirect"
+    },
+    {
+      "source": "/api/auth/:path*",
+      "destination": "https://zentube.buddhachat.online/api/auth/:path*"
+    },
+    {
+      "source": "/api/reader-sync",
+      "destination": "https://zentube.buddhachat.online/api/reader-sync"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }

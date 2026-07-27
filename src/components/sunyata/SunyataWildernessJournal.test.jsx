@@ -112,16 +112,16 @@ describe('SunyataWildernessJournal', () => {
 
     fireEvent.click(cards[1])
     act(() => {
-      vi.advanceTimersByTime(250)
+      vi.advanceTimersByTime(300)
     })
     expect(cta).toHaveAttribute('href', '/?story=journey-of-amethyst')
 
     act(() => {
-      vi.advanceTimersByTime(900)
+      vi.advanceTimersByTime(1800)
     })
     fireEvent.click(cards[2])
     act(() => {
-      vi.advanceTimersByTime(250)
+      vi.advanceTimersByTime(300)
     })
     expect(cta).toHaveAttribute('href', '/?story=children-of-scripture')
   })

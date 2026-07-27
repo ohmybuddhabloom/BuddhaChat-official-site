@@ -163,6 +163,16 @@ export async function insertDownloadSubmission(record) {
   return insertedRows?.[0]
 }
 
+export async function insertAnalyticsEvent(record) {
+  await supabaseRequest('buddhabloom_analytics_events', {
+    method: 'POST',
+    body: record,
+    headers: {
+      Prefer: 'return=minimal',
+    },
+  })
+}
+
 export async function insertDonationIntent(record) {
   const insertedRows = await supabaseRequest('donation_intents', {
     method: 'POST',

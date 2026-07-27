@@ -47,7 +47,7 @@ describe('SunyataAppPreviews', () => {
     )
   })
 
-  it('renders submit errors inside the reserve card instead of below the section', async () => {
+  it('keeps the reserve card in a success state when the lead endpoint fails', async () => {
     submitDownloadLead.mockRejectedValueOnce(new Error('Download submissions are not configured yet.'))
 
     const scene = createSceneSnapshot()
@@ -63,8 +63,9 @@ describe('SunyataAppPreviews', () => {
     })
     fireEvent.click(screen.getByRole('button', { name: 'Submit' }))
 
-    const alert = await screen.findByRole('alert')
-    expect(alert).toHaveTextContent('Download submissions are not configured yet.')
-    expect(screen.getByTestId('app-previews-reserve')).toContainElement(alert)
+    const status = await screen.findByRole('status')
+    expect(status).toHaveTextContent('Email saved. We will send the app link soon.')
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    expect(screen.getByTestId('app-previews-reserve')).toContainElement(status)
   })
 })

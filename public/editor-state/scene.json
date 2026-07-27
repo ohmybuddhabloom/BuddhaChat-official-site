@@ -49,6 +49,18 @@
       {
         "label": "Story",
         "href": "#silence"
+      },
+      {
+        "label": "Videos",
+        "href": "/videos"
+      },
+      {
+        "label": "Sutra",
+        "href": "/sutra"
+      },
+      {
+        "label": "Sign in",
+        "href": "/login"
       }
     ]
   },
@@ -153,6 +165,10 @@
     "lead": "Reconnect with your inner stillness. Foshuo translates ritual, wisdom, and ceremonial calm into a digital experience that feels weighted, luminous, and memorable.",
     "primaryActionLabel": "Download Now",
     "secondaryActionLabel": "Watch the Story",
+    "reserveHeading": "Reserve Your Invite",
+    "reserveNote": "To ensure a truly serene experience, the Buddha Chat app is still being mindfully developed. Breathe and rest in the present—we will write to you the moment it arrives.",
+    "reserveEmailPlaceholder": "Enter your email",
+    "reserveSubmitLabel": "Submit",
     "proofText": "Joined by 12,000+ seekers worldwide",
     "proofAvatars": [
       {

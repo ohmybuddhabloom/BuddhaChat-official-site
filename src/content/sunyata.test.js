@@ -126,17 +126,17 @@ describe('normalizeJournalItems', () => {
     expect(normalized).toHaveLength(3)
     expect(normalized[0]).toMatchObject({
       title: 'Custom One',
-      cardUrl: '/journal/card-1-foreground.png',
-      backgroundUrl: '/journal/card-1-background.png',
+      cardUrl: '/journal/card-1-foreground.webp',
+      backgroundUrl: '/journal/card-1-background.webp',
     })
     expect(normalized[1]).toMatchObject({
       title: 'Custom Two',
-      cardUrl: '/journal/card-2-foreground.png',
-      backgroundUrl: '/journal/card-2-background.jpg',
+      cardUrl: '/journal/card-2-foreground.webp',
+      backgroundUrl: '/journal/card-2-background.webp',
     })
     expect(normalized[2]).toMatchObject({
       title: 'Custom Three',
-      cardUrl: '/journal/card-3-foreground.png',
+      cardUrl: '/journal/card-3-foreground.webp',
       backgroundUrl: '/journal/card-3-background.webp',
     })
   })

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { trackCtaClick } from '../../lib/analytics.js'
 import { resolveJournalImageSource } from '../../lib/journalAssetStore.js'
 import { createDonationIntent } from '../../lib/siteApi.js'
 
@@ -70,6 +71,7 @@ function SunyataVisual({
 
     setSubmitState('submitting')
     setSubmitError('')
+    trackCtaClick('donation_submit', 'donation')
 
     createDonationIntent({
       email: trimmedEmail,
