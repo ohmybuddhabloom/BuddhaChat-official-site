@@ -4,14 +4,38 @@ import process from 'node:process'
 import { describe, expect, test } from 'vitest'
 
 describe('website product routing', () => {
-  test('exposes the Yuanhui page at the short official URL', async () => {
+  test('redirects master entry points to their public subdomain', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 
-    expect(config.redirects).toContainEqual({
-      source: '/yuanhui',
-      destination: '/videos/topics/yuanhui',
-      permanent: false,
+    expect(config.redirects).toEqual(expect.arrayContaining([
+      {
+        source: '/master/:slug([a-z0-9-]+)',
+        destination: 'https://:slug.buddhachat.online',
+        permanent: true,
+      },
+      {
+        source: '/yuanhui',
+        destination: 'https://yuanhui.buddhachat.online',
+        permanent: true,
+      },
+    ]))
+  })
+
+  test('rewrites a master subdomain root without replacing the public URL', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const homepageIndex = config.rewrites.findIndex(({ destination }) => destination === '/index.html')
+    const masterIndex = config.rewrites.findIndex(({ destination }) => destination.endsWith('/topics/:slug'))
+
+    expect(config.rewrites[masterIndex]).toEqual({
+      source: '/',
+      has: [{
+        type: 'host',
+        value: '(?<slug>[a-z0-9-]+)\\.buddhachat\\.online',
+      }],
+      destination: 'https://zentube.buddhachat.online/__buddhachat_www/videos/topics/:slug',
     })
+    expect(homepageIndex).toBeGreaterThan(-1)
+    expect(homepageIndex).toBeLessThan(masterIndex)
   })
 
   test('keeps video under the website videos path', async () => {

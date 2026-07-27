@@ -54,6 +54,11 @@
   ],
   "redirects": [
     {
+      "source": "/master/:slug([a-z0-9-]+)",
+      "destination": "https://:slug.buddhachat.online",
+      "permanent": true
+    },
+    {
       "source": "/zentube",
       "destination": "https://zentube.buddhachat.online",
       "permanent": false
@@ -75,8 +80,8 @@
     },
     {
       "source": "/yuanhui",
-      "destination": "/videos/topics/yuanhui",
-      "permanent": false
+      "destination": "https://yuanhui.buddhachat.online",
+      "permanent": true
     },
     {
       "source": "/topics/:path*",
@@ -109,6 +114,26 @@
     {
       "source": "/videos/:path*",
       "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/:path*"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.buddhachat\\.online"
+        }
+      ],
+      "destination": "/index.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<slug>[a-z0-9-]+)\\.buddhachat\\.online"
+        }
+      ],
+      "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/topics/:slug"
     },
     {
       "source": "/sutra",
