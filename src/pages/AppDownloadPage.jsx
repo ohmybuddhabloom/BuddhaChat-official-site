@@ -23,43 +23,43 @@ const DOWNLOADS = {
 
 const PREVIEWS = [
   {
-    src: '/app-previews/app-ai-buddha.png',
+    src: '/app-previews/app-ai-buddha-mobile.jpg',
     alt: 'BuddhaChat AI 佛祖对话真实页面',
     title: 'AI 佛祖对话',
     description: '随时倾诉与请教，AI 以佛法视角回应，陪你安顿身心。',
   },
   {
-    src: '/app-previews/app-home.png',
+    src: '/app-previews/app-home-mobile.jpg',
     alt: 'BuddhaChat 首页真实页面',
     title: '每日法师推荐',
     description: '每日推荐法师开示与最新内容，也可切换问答，找到当下关心的佛法回应。',
   },
   {
-    src: '/app-previews/app-master-talks.png',
+    src: '/app-previews/app-master-talks-mobile.jpg',
     alt: 'BuddhaChat 法师开示真实页面',
     title: '法师开示',
     description: '源慧法师等法师的视频开示与修心内容，让心慢下来。',
   },
   {
-    src: '/app-previews/app-practice.png',
+    src: '/app-previews/app-practice-mobile.jpg',
     alt: 'BuddhaChat 每日修行真实页面',
     title: '持续修行',
     description: '禅修、木鱼、诵经与连续天数记录，把修行变成每天的习惯。',
   },
   {
-    src: '/app-previews/app-music.png',
+    src: '/app-previews/app-music-mobile.jpg',
     alt: 'BuddhaChat 佛乐场景真实页面',
     title: '佛乐相伴',
     description: '按静心、睡眠、专注等场景聆听佛乐，让声音陪伴禅修与日常安住。',
   },
   {
-    src: '/app-previews/app-scriptures.png',
+    src: '/app-previews/app-scriptures-mobile.jpg',
     alt: 'BuddhaChat 读经导航真实页面',
     title: 'AI 解读与读经',
     description: '海量经文可检索阅读，支持 AI 白话解读与 AI 读经，让经典更易懂、更易坚持。',
   },
   {
-    src: '/app-previews/app-community.png',
+    src: '/app-previews/app-community-mobile.jpg',
     alt: 'BuddhaChat 道场与共修社区真实页面',
     title: '道场共修',
     description: '找到精选道场与推荐法师，和同修一起交流精进。',
