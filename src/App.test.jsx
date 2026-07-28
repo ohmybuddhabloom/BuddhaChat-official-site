@@ -14,6 +14,10 @@ vi.mock('./pages/AppDownloadPage.jsx', () => ({
   default: () => <div data-testid="app-download-page" />,
 }))
 
+vi.mock('./pages/YuanhuiUserGuidePage.jsx', () => ({
+  default: () => <div data-testid="yuanhui-user-guide-page" />,
+}))
+
 describe('App routing', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
@@ -80,5 +84,14 @@ describe('App routing', () => {
     render(<App />)
 
     expect(screen.getByTestId('app-download-page')).toBeInTheDocument()
+  })
+
+  it('renders the source teacher mobile user guide', () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    window.history.pushState({}, '', '/guide/yuanhui')
+
+    render(<App />)
+
+    expect(screen.getByTestId('yuanhui-user-guide-page')).toBeInTheDocument()
   })
 })

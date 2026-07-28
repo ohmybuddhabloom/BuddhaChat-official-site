@@ -3,6 +3,7 @@ import SunyataLanding from './pages/SunyataLanding.jsx'
 import FusionRoutePage from './pages/FusionRoutePage.jsx'
 import StoryPage from './pages/StoryPage.jsx'
 import AppDownloadPage from './pages/AppDownloadPage.jsx'
+import YuanhuiUserGuidePage from './pages/YuanhuiUserGuidePage.jsx'
 import LanguageToggle from './components/LanguageToggle.jsx'
 import { SACRED_STORIES_BY_SLUG } from './content/sacredStories.js'
 import { trackNavClick, trackPageView } from './lib/analytics.js'
@@ -43,11 +44,14 @@ function App() {
   const pathname = normalizePathname(window.location.pathname)
   const isDownloadPage =
     pathname === '/download' || pathname === '/download/yuanhui'
+  const isYuanhuiGuidePage = pathname === '/guide/yuanhui'
 
   useEffect(() => {
     trackPageView(
       isDownloadPage
         ? { scene: `app_download_${detectDownloadPlatform()}` }
+        : isYuanhuiGuidePage
+          ? { scene: 'yuanhui_user_guide' }
         : undefined,
     )
 
@@ -61,7 +65,7 @@ function App() {
 
     document.addEventListener('click', handleNavClick, true)
     return () => document.removeEventListener('click', handleNavClick, true)
-  }, [isDownloadPage, pathname])
+  }, [isDownloadPage, isYuanhuiGuidePage, pathname])
 
   if (FUSION_ROUTES.has(pathname)) {
     return <FusionRoutePage routePath={pathname} />
@@ -74,6 +78,10 @@ function App() {
         <AppDownloadPage />
       </>
     )
+  }
+
+  if (isYuanhuiGuidePage) {
+    return <YuanhuiUserGuidePage />
   }
 
   const params = new URLSearchParams(window.location.search)
