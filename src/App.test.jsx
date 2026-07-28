@@ -18,6 +18,10 @@ vi.mock('./pages/YuanhuiUserGuidePage.jsx', () => ({
   default: () => <div data-testid="yuanhui-user-guide-page" />,
 }))
 
+vi.mock('./pages/AppFaqGuidePage.jsx', () => ({
+  default: () => <div data-testid="app-faq-guide-page" />,
+}))
+
 describe('App routing', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
@@ -93,5 +97,14 @@ describe('App routing', () => {
     render(<App />)
 
     expect(screen.getByTestId('yuanhui-user-guide-page')).toBeInTheDocument()
+  })
+
+  it('renders the standalone app highlights and faq guide', () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    window.history.pushState({}, '', '/guide/app-faq')
+
+    render(<App />)
+
+    expect(screen.getByTestId('app-faq-guide-page')).toBeInTheDocument()
   })
 })
