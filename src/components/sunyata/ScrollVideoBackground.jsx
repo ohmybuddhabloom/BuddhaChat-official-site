@@ -54,9 +54,18 @@ function ScrollVideoBackground({
   const renderedTimeRef = useRef(0)
   const rafRef = useRef(0)
   const [frameAspectRatio, setFrameAspectRatio] = useState('1024 / 682')
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(() => window.scrollY > 0)
   const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {
+    if (shouldLoadVideo) return undefined
+    const loadOnScroll = () => setShouldLoadVideo(true)
+    window.addEventListener('scroll', loadOnScroll, { once: true, passive: true })
+    return () => window.removeEventListener('scroll', loadOnScroll)
+  }, [shouldLoadVideo])
+
+  useEffect(() => {
+    if (!shouldLoadVideo) return undefined
     const video = videoRef.current
 
     if (!video) {
@@ -64,6 +73,7 @@ function ScrollVideoBackground({
     }
 
     let cancelled = false
+    video.load()
 
     const hydrateVideo = async () => {
       await waitForVideoReady(video)
@@ -86,7 +96,7 @@ function ScrollVideoBackground({
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [shouldLoadVideo])
 
   useEffect(() => {
     const updateRange = () => {
@@ -267,7 +277,7 @@ function ScrollVideoBackground({
         poster="/kling-buddha-scroll-poster.jpg"
         muted
         playsInline
-        preload="metadata"
+        preload="none"
       >
         <source src="/kling-buddha-scroll-scrub.mp4" type="video/mp4" />
       </video>
