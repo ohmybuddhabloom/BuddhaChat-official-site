@@ -169,7 +169,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "/index.html"
+      "destination": "/spa.html"
     }
   ]
 }
