@@ -96,6 +96,18 @@
   ],
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/api/page-entry?page=home"
+    },
+    {
+      "source": "/download",
+      "destination": "/api/page-entry?page=download"
+    },
+    {
+      "source": "/download/yuanhui",
+      "destination": "/api/page-entry?page=download"
+    },
+    {
       "source": "/videos",
       "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
     },
