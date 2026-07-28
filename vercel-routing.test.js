@@ -59,6 +59,16 @@ describe('website product routing', () => {
     ]))
   })
 
+  test('serves future website routes through the default social-card endpoint', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const catchAllRewrite = config.rewrites.at(-1)
+
+    expect(catchAllRewrite).toEqual({
+      source: '/:path*',
+      destination: '/api/page-entry?path=:path*',
+    })
+  })
+
   test('routes a master subdomain through the dedicated edge project', async () => {
     const config = JSON.parse(
       await readFile(

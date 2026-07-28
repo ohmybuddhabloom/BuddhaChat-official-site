@@ -5,8 +5,9 @@ import { SACRED_STORIES_BY_SLUG } from '../src/content/sacredStories.js'
 
 const ORIGIN = 'https://www.buddhachat.online'
 const SITE_NAME = 'BuddhaChat'
+const DEFAULT_TITLE = 'BuddhaChat｜一念连接，万法相伴'
 const DEFAULT_DESCRIPTION =
-  'BuddhaChat connects Buddhist video teachings, scripture reading, music, and community in one calm digital space.'
+  '佛经全文、白话解释、大师朗读、法师开示视频与冥想佛乐，在 BuddhaChat 一站连接。'
 
 const STORY_IMAGES = {
   'children-of-scripture': '/share/children-of-scripture-card-v1.jpg',
@@ -34,6 +35,28 @@ const isYuanhuiGuidePage = (url) =>
   url.searchParams.get('page') === 'guide-yuanhui' ||
   url.pathname === '/guide/yuanhui' ||
   url.pathname === '/guide/yuanhui/'
+
+const canonicalPathFromUrl = (url) => {
+  const rewrittenPath = url.searchParams.get('path')?.trim()
+  const isInternalHomeEntry =
+    url.pathname === '/api/page-entry' &&
+    url.searchParams.get('page') === 'home'
+
+  if (isInternalHomeEntry) {
+    return `${ORIGIN}/`
+  }
+
+  const sourcePath = rewrittenPath
+    ? `/${rewrittenPath.replace(/^\/+/, '')}`
+    : url.pathname
+  const normalizedUrl = new URL(sourcePath || '/', ORIGIN)
+  const normalizedPath =
+    normalizedUrl.pathname === '/'
+      ? '/'
+      : normalizedUrl.pathname.replace(/\/+$/, '')
+
+  return `${ORIGIN}${normalizedPath}`
+}
 
 export function getPageMeta(url) {
   const storySlug = url.searchParams.get('story')?.trim()
@@ -72,9 +95,9 @@ export function getPageMeta(url) {
   }
 
   return {
-    title: SITE_NAME,
+    title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    canonicalUrl: `${ORIGIN}/`,
+    canonicalUrl: canonicalPathFromUrl(url),
     imageUrl: absoluteUrl('/share/official-card-v1.jpg'),
     type: 'website',
   }

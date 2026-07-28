@@ -181,7 +181,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "/spa.html"
+      "destination": "/api/page-entry?path=:path*"
     }
   ]
 }

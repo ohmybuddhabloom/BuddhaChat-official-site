@@ -29,7 +29,16 @@ describe('page social metadata', () => {
       new URL('https://www.buddhachat.online/?story=%3Cscript%3E'),
     )
 
-    expect(meta.title).toBe('BuddhaChat')
+    expect(meta.title).toBe('BuddhaChat｜一念连接，万法相伴')
+    expect(meta.canonicalUrl).toBe('https://www.buddhachat.online/')
+  })
+
+  it.each([
+    'https://www.buddhachat.online/',
+    'https://www.buddhachat.online/api/page-entry?page=home',
+  ])('keeps the public home URL for %s', (url) => {
+    const meta = getPageMeta(new URL(url))
+
     expect(meta.canonicalUrl).toBe('https://www.buddhachat.online/')
   })
 
@@ -96,4 +105,41 @@ describe('page social metadata', () => {
     expect(rendered).not.toContain('ch=poster')
     expect(rendered).not.toContain('campaign=temple')
   })
+
+  it.each([
+    [
+      'https://www.buddhachat.online/future-product/page?ch=poster&utm_source=whatsapp',
+      'https://www.buddhachat.online/future-product/page',
+    ],
+    [
+      'https://www.buddhachat.online/future-product/page/?campaign=temple',
+      'https://www.buddhachat.online/future-product/page',
+    ],
+    [
+      'https://www.buddhachat.online/api/page-entry?path=future-product%2Fpage&ch=poster',
+      'https://www.buddhachat.online/future-product/page',
+    ],
+  ])(
+    'uses the default large card for future route %s',
+    (url, canonicalUrl) => {
+      const meta = getPageMeta(new URL(url))
+      const rendered = injectPageMeta(html, meta)
+
+      expect(meta).toMatchObject({
+        title: 'BuddhaChat｜一念连接，万法相伴',
+        canonicalUrl,
+        imageUrl:
+          'https://www.buddhachat.online/share/official-card-v1.jpg',
+        type: 'website',
+      })
+      expect(rendered).toContain('property="og:image:width" content="1200"')
+      expect(rendered).toContain('property="og:image:height" content="630"')
+      expect(rendered).toContain(
+        'name="twitter:card" content="summary_large_image"',
+      )
+      expect(rendered).not.toContain('ch=poster')
+      expect(rendered).not.toContain('utm_source=whatsapp')
+      expect(rendered).not.toContain('campaign=temple')
+    },
+  )
 })
