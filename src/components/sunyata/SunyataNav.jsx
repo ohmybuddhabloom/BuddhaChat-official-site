@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SACRED_STORIES, getStoryHref } from '../../content/sacredStories.js'
 
 function resolveNavHref(href, currentStorySlug) {
@@ -26,7 +26,6 @@ function resolveNavHref(href, currentStorySlug) {
 
 function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) {
   const [storyMenuOpen, setStoryMenuOpen] = useState(false)
-  const storyMenuId = useId()
   const storyMenuRef = useRef(null)
   const storyTriggerRef = useRef(null)
 
@@ -64,7 +63,6 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
                 <button
                   type="button"
                   className="sunyata-story-trigger"
-                  aria-controls={storyMenuId}
                   aria-expanded={storyMenuOpen}
                   aria-haspopup="menu"
                   aria-label="Open story menu"
@@ -76,7 +74,6 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
                 <div
                   className={`sunyata-story-menu-panel${storyMenuOpen ? ' is-open' : ''}`}
                   hidden={!storyMenuOpen}
-                  id={storyMenuId}
                   role="menu"
                 >
                   {stories.map((story) => (
