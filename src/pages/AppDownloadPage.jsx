@@ -193,6 +193,7 @@ export default function AppDownloadPage() {
         <div
           className={`campaign-download-actions is-${platform}`}
           aria-label="下载 BuddhaChat"
+          role="group"
         >
           <PlatformActions platform={platform} />
         </div>
@@ -201,7 +202,11 @@ export default function AppDownloadPage() {
       <section className="campaign-download-gallery" id="app-preview" aria-labelledby="app-preview-title">
         <div className="campaign-download-gallery-heading">
           <h2 id="app-preview-title">探索 BuddhaChat</h2>
-          <div className="campaign-download-gallery-controls" aria-label="切换应用预览">
+          <div
+            className="campaign-download-gallery-controls"
+            aria-label="切换应用预览"
+            role="group"
+          >
             <button type="button" onClick={() => scrollPreviews(-1)}>上一张</button>
             <button type="button" onClick={() => scrollPreviews(1)}>下一张</button>
           </div>
