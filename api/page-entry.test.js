@@ -47,4 +47,28 @@ describe('page social metadata', () => {
     expect(rendered).toContain('property="og:image:alt"')
     expect(rendered).not.toContain('ch=poster')
   })
+
+  it.each([
+    'https://www.buddhachat.online/download',
+    'https://www.buddhachat.online/download/',
+    'https://www.buddhachat.online/download?ch=whatsapp',
+    'https://www.buddhachat.online/download/yuanhui?ch=poster',
+  ])('uses the same large download card for %s', (url) => {
+    const meta = getPageMeta(new URL(url))
+    const rendered = injectPageMeta(html, meta)
+
+    expect(meta).toMatchObject({
+      title: '下载 BuddhaChat｜一念连接，万法相伴',
+      description:
+        '经书、法师开示视频、冥想佛乐与每日修行，一站汇聚在 BuddhaChat。',
+      canonicalUrl: 'https://www.buddhachat.online/download',
+      imageUrl:
+        'https://www.buddhachat.online/share/download-card-v1.jpg',
+      type: 'website',
+    })
+    expect(rendered).toContain('property="og:image:width" content="1200"')
+    expect(rendered).toContain('property="og:image:height" content="630"')
+    expect(rendered).toContain('property="og:locale" content="zh_CN"')
+    expect(rendered).not.toContain('ch=')
+  })
 })

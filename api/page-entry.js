@@ -24,6 +24,12 @@ const escapeHtml = (value) =>
 
 const absoluteUrl = (pathname) => new URL(pathname, ORIGIN).toString()
 
+const isDownloadPage = (url) =>
+  url.searchParams.get('page') === 'download' ||
+  url.pathname === '/download' ||
+  url.pathname === '/download/' ||
+  url.pathname === '/download/yuanhui'
+
 export function getPageMeta(url) {
   const storySlug = url.searchParams.get('story')?.trim()
   const story = storySlug ? SACRED_STORIES_BY_SLUG[storySlug] : null
@@ -38,7 +44,7 @@ export function getPageMeta(url) {
     }
   }
 
-  if (url.searchParams.get('page') === 'download') {
+  if (isDownloadPage(url)) {
     return {
       title: '下载 BuddhaChat｜一念连接，万法相伴',
       description:
@@ -80,7 +86,9 @@ export function injectPageMeta(html, meta) {
     <meta property="og:type" content="${escapeHtml(meta.type)}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
+    <meta property="og:locale" content="zh_CN" />
     <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:image:url" content="${imageUrl}" />
     <meta property="og:image:secure_url" content="${imageUrl}" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
@@ -89,7 +97,8 @@ export function injectPageMeta(html, meta) {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${imageUrl}" />`
+    <meta name="twitter:image" content="${imageUrl}" />
+    <meta name="twitter:image:alt" content="${title}" />`
 
   return html.replace(/<head>([\s\S]*?)<\/head>/i, (_match, head) => {
     return `<head>${tags}${stripExistingMeta(head)}</head>`

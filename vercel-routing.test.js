@@ -25,6 +25,25 @@ describe('website product routing', () => {
     ]))
   })
 
+  test('serves every download entry through the social-card endpoint', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/download',
+        destination: '/api/page-entry?page=download',
+      },
+      {
+        source: '/download/',
+        destination: '/api/page-entry?page=download',
+      },
+      {
+        source: '/download/yuanhui',
+        destination: '/api/page-entry?page=download',
+      },
+    ]))
+  })
+
   test('routes a master subdomain through the dedicated edge project', async () => {
     const config = JSON.parse(
       await readFile(
