@@ -1,22 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo } from 'react'
 import { layout, prepare } from '@chenglou/pretext'
 import NoiseOverlay from '../components/sunyata/NoiseOverlay.jsx'
 import SunyataNav from '../components/sunyata/SunyataNav.jsx'
 import { SACRED_STORIES } from '../content/sacredStories.js'
-
-const STORY_MEDIA_LAYOUT_KEY = 'sacred-story-media-layout-v1'
-
-function loadStoryMediaLayout() {
-  if (typeof window === 'undefined') {
-    return {}
-  }
-
-  try {
-    return JSON.parse(window.localStorage.getItem(STORY_MEDIA_LAYOUT_KEY) ?? '{}')
-  } catch {
-    return {}
-  }
-}
 
 function renderInlineMarkdown(text) {
   const normalized = text.replace(/\u00a0/g, ' ')
@@ -78,84 +64,14 @@ function renderTextBlock(block, index) {
   return null
 }
 
-function DraggableStoryMedia({
-  mediaKey,
-  editable,
-  offset,
-  onOffsetChange,
-  children,
-}) {
-  const dragStateRef = useRef(null)
-
-  useEffect(() => {
-    if (!editable) {
-      return undefined
-    }
-
-    const handlePointerMove = (event) => {
-      const dragState = dragStateRef.current
-
-      if (!dragState) {
-        return
-      }
-
-      onOffsetChange(mediaKey, {
-        x: dragState.startOffset.x + (event.clientX - dragState.pointerX),
-        y: dragState.startOffset.y + (event.clientY - dragState.pointerY),
-      })
-    }
-
-    const handlePointerUp = () => {
-      dragStateRef.current = null
-    }
-
-    window.addEventListener('pointermove', handlePointerMove)
-    window.addEventListener('pointerup', handlePointerUp)
-
-    return () => {
-      window.removeEventListener('pointermove', handlePointerMove)
-      window.removeEventListener('pointerup', handlePointerUp)
-    }
-  }, [editable, mediaKey, onOffsetChange])
-
-  const handlePointerDown = (event) => {
-    if (!editable) {
-      return
-    }
-
-    dragStateRef.current = {
-      pointerX: event.clientX,
-      pointerY: event.clientY,
-      startOffset: offset,
-    }
-  }
-
-  return (
-    <div
-      className={`story-draggable-media${editable ? ' is-editable' : ''}`}
-      style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0px)` }}
-      onPointerDown={handlePointerDown}
-    >
-      {editable ? <span className="story-media-handle">Drag</span> : null}
-      {children}
-    </div>
-  )
-}
-
-function renderMediaBlock(block, index, editable, getOffset, onOffsetChange) {
+function renderMediaBlock(block, index) {
   if (block.type === 'image') {
     return (
-      <DraggableStoryMedia
-        key={`${block.type}-${index}`}
-        mediaKey={`media-${index}`}
-        editable={editable}
-        offset={getOffset(`media-${index}`)}
-        onOffsetChange={onOffsetChange}
-      >
+      <div key={`${block.type}-${index}`} className="story-draggable-media">
         <figure className="story-block-image">
           <img src={block.src} alt={block.alt} loading="lazy" />
         </figure>
-      </DraggableStoryMedia>
+      </div>
     )
   }
 
@@ -168,18 +84,12 @@ function renderMediaBlock(block, index, editable, getOffset, onOffsetChange) {
           3,
         )}`}
       >
-        {block.images.map((image, imageIndex) => (
-          <DraggableStoryMedia
-            key={image.src}
-            mediaKey={`media-${index}-${imageIndex}`}
-            editable={editable}
-            offset={getOffset(`media-${index}-${imageIndex}`)}
-            onOffsetChange={onOffsetChange}
-          >
+        {block.images.map((image) => (
+          <div key={image.src} className="story-draggable-media">
             <figure className="story-block-image">
               <img src={image.src} alt={image.alt} loading="lazy" />
             </figure>
-          </DraggableStoryMedia>
+          </div>
         ))}
       </div>
     )
@@ -313,13 +223,7 @@ function StoryTextGroup({ blocks }) {
   )
 }
 
-function StoryFlowItem({
-  item,
-  index,
-  editable,
-  getOffset,
-  onOffsetChange,
-}) {
+function StoryFlowItem({ item, index }) {
   if (item.type === 'heading') {
     return <h2 className="story-block-heading">{item.text}</h2>
   }
@@ -330,7 +234,7 @@ function StoryFlowItem({
 
   return (
     <div className={`story-flow-media${index % 2 === 0 ? ' is-wide' : ''}`}>
-      {renderMediaBlock(item.block, index, editable, getOffset, onOffsetChange)}
+      {renderMediaBlock(item.block, index)}
     </div>
   )
 }
@@ -338,8 +242,6 @@ function StoryFlowItem({
 function StoryPage({ nav, story }) {
   const sections = groupStorySections(story.blocks)
   const { title, subtitle } = splitStoryTitle(story.title)
-  const [imageEditorOpen, setImageEditorOpen] = useState(false)
-  const [mediaLayout, setMediaLayout] = useState(loadStoryMediaLayout)
   const storyFlow = sections.flatMap((section) => [
     { type: 'heading', text: section.heading },
     ...buildStoryFlow(section.blocks),
@@ -353,32 +255,6 @@ function StoryPage({ nav, story }) {
     }
   }, [title])
 
-  useEffect(() => {
-    window.localStorage.setItem(STORY_MEDIA_LAYOUT_KEY, JSON.stringify(mediaLayout))
-  }, [mediaLayout])
-
-  const handleMediaOffsetChange = useCallback((mediaKey, nextOffset) => {
-    setMediaLayout((current) => ({
-      ...current,
-      [story.slug]: {
-        ...(current[story.slug] ?? {}),
-        [mediaKey]: nextOffset,
-      },
-    }))
-  }, [story.slug])
-
-  const getMediaOffset = useCallback((mediaKey) => {
-    const storyOffsets = mediaLayout[story.slug] ?? {}
-    return storyOffsets[mediaKey] ?? { x: 0, y: 0 }
-  }, [mediaLayout, story.slug])
-
-  const resetStoryMediaLayout = () => {
-    setMediaLayout((current) => ({
-      ...current,
-      [story.slug]: {},
-    }))
-  }
-
   return (
     <main className="story-page">
       <div className="void-bg" aria-hidden="true" />
@@ -391,24 +267,6 @@ function StoryPage({ nav, story }) {
             titleMetrics.lineCount >= 3 ? ' is-compact' : ''
           }`}
         >
-          <div className="story-editor-actions">
-            <button
-              type="button"
-              className="story-editor-button"
-              onClick={() => setImageEditorOpen((current) => !current)}
-            >
-              {imageEditorOpen ? '完成编辑' : '编辑图片'}
-            </button>
-            {imageEditorOpen ? (
-              <button
-                type="button"
-                className="story-editor-button is-ghost"
-                onClick={resetStoryMediaLayout}
-              >
-                重置位置
-              </button>
-            ) : null}
-          </div>
           <a href="/#sanctuary" className="story-back-link">
             Return to journal
           </a>
@@ -429,9 +287,6 @@ function StoryPage({ nav, story }) {
                 key={`${item.type}-${index}`}
                 item={item}
                 index={index}
-                editable={imageEditorOpen}
-                getOffset={getMediaOffset}
-                onOffsetChange={handleMediaOffsetChange}
               />
             ))}
           </article>
