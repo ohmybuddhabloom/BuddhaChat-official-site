@@ -945,7 +945,7 @@ a {
   font-size: 0.72rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  opacity: 0.52;
+  color: #66584b;
 }
 
 .interlude-title {
@@ -960,7 +960,7 @@ a {
 .interlude-note {
   max-width: 48ch;
   font-size: 0.92rem;
-  opacity: 0.62;
+  color: #66584b;
 }
 
 .interlude-overlay {
@@ -1092,6 +1092,11 @@ a {
   padding: 16px 18px;
   font-size: 0.95rem;
   outline: none;
+}
+
+.interlude-input:focus-visible {
+  outline: 2px solid #79561f;
+  outline-offset: 2px;
 }
 
 .interlude-input::placeholder {
@@ -1394,7 +1399,7 @@ a {
   justify-content: center;
   border: 0;
   background: var(--journal-gold);
-  color: var(--journal-bg);
+  color: #2d2319;
   padding: 16px 36px;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.64rem;
@@ -1718,7 +1723,7 @@ a {
 
 .app-previews-primary {
   border: 0;
-  background: #b48739;
+  background: #79561f;
   color: #fff8f0;
   box-shadow: 0 18px 36px rgba(180, 135, 57, 0.2);
 }
@@ -2104,7 +2109,7 @@ a {
   margin-bottom: 20px;
   font-size: 0.6rem;
   letter-spacing: 0.3em;
-  opacity: 0.4;
+  color: #65584c;
 }
 
 .feature-card h3 {
@@ -2117,7 +2122,7 @@ a {
 .feature-card p {
   font-size: 0.85rem;
   font-weight: 300;
-  opacity: 0.6;
+  color: #65584c;
 }
 
 .cards-waitlist-panel {
@@ -2293,7 +2298,7 @@ a {
   gap: 60px;
 }
 
-.quote-details h4 {
+.quote-details h3 {
   margin-bottom: 10px;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -4485,14 +4490,14 @@ a {
 
 .campaign-download-gallery figcaption p {
   margin-top: 6px;
-  color: rgba(93, 75, 49, 0.76);
+  color: #654f37;
   font-size: 0.72rem;
   line-height: 1.65;
 }
 
 .campaign-download-gallery-hint {
   margin: 18px 20px 0;
-  color: rgba(93, 75, 49, 0.72);
+  color: #654f37;
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-align: center;
