@@ -99,7 +99,7 @@ export function injectPageMeta(html, meta) {
 export default async function handler(req, res) {
   const url = new URL(req.url, ORIGIN)
   const indexHtml = await readFile(
-    path.join(process.cwd(), 'dist/index.html'),
+    path.join(process.cwd(), 'dist/spa.html'),
     'utf8',
   )
 
