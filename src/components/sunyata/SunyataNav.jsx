@@ -1,3 +1,4 @@
+import { useEffect, useId, useRef, useState } from 'react'
 import { SACRED_STORIES, getStoryHref } from '../../content/sacredStories.js'
 
 function resolveNavHref(href, currentStorySlug) {
@@ -24,6 +25,20 @@ function resolveNavHref(href, currentStorySlug) {
 }
 
 function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) {
+  const [storyMenuOpen, setStoryMenuOpen] = useState(false)
+  const storyMenuId = useId()
+  const storyMenuRef = useRef(null)
+  const storyTriggerRef = useRef(null)
+
+  useEffect(() => {
+    if (!storyMenuOpen) return undefined
+    const closeOutside = (event) => {
+      if (!storyMenuRef.current?.contains(event.target)) setStoryMenuOpen(false)
+    }
+    document.addEventListener('pointerdown', closeOutside)
+    return () => document.removeEventListener('pointerdown', closeOutside)
+  }, [storyMenuOpen])
+
   return (
     <nav className="sunyata-nav" aria-label="Primary">
       <div className="sunyata-logo">{nav.logo}</div>
@@ -38,16 +53,32 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
                 className={`sunyata-story-menu${
                   currentStorySlug ? ' is-active' : ''
                 }`}
+                onKeyDown={(event) => {
+                  if (event.key !== 'Escape' || !storyMenuOpen) return
+                  event.preventDefault()
+                  setStoryMenuOpen(false)
+                  storyTriggerRef.current?.focus()
+                }}
+                ref={storyMenuRef}
               >
                 <button
                   type="button"
                   className="sunyata-story-trigger"
+                  aria-controls={storyMenuId}
+                  aria-expanded={storyMenuOpen}
                   aria-haspopup="menu"
                   aria-label="Open story menu"
+                  onClick={() => setStoryMenuOpen((open) => !open)}
+                  ref={storyTriggerRef}
                 >
                   {item.label || 'Story'}
                 </button>
-                <div className="sunyata-story-menu-panel">
+                <div
+                  className={`sunyata-story-menu-panel${storyMenuOpen ? ' is-open' : ''}`}
+                  hidden={!storyMenuOpen}
+                  id={storyMenuId}
+                  role="menu"
+                >
                   {stories.map((story) => (
                     <a
                       key={story.slug}
@@ -55,6 +86,8 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
                       className={
                         story.slug === currentStorySlug ? 'is-active' : ''
                       }
+                      onClick={() => setStoryMenuOpen(false)}
+                      role="menuitem"
                     >
                       <span>{story.kicker}</span>
                       <strong>{story.shortTitle}</strong>

@@ -684,8 +684,7 @@ a {
 
 .sunyata-nav-links a:hover,
 .sunyata-story-trigger:hover,
-.sunyata-story-menu:hover .sunyata-story-trigger,
-.sunyata-story-menu:focus-within .sunyata-story-trigger,
+.sunyata-story-trigger[aria-expanded='true'],
 .sunyata-story-menu.is-active .sunyata-story-trigger {
   opacity: 1;
 }
@@ -725,8 +724,7 @@ a {
     transform 0.22s ease;
 }
 
-.sunyata-story-menu:hover .sunyata-story-menu-panel,
-.sunyata-story-menu:focus-within .sunyata-story-menu-panel {
+.sunyata-story-menu-panel.is-open {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
