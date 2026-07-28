@@ -4331,7 +4331,9 @@ a {
 }
 
 .campaign-download-action img.is-ios {
-  background: #1c1c1e;
+  box-sizing: border-box;
+  padding: 4px;
+  background: #fff;
 }
 
 .campaign-download-action span {

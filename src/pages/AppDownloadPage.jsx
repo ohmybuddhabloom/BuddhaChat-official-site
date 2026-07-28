@@ -6,7 +6,7 @@ import { detectDownloadPlatform } from '../lib/downloadPlatform.js'
 const DOWNLOADS = {
   ios: {
     label: 'App Store 下载',
-    icon: '/download-icons/apple.png',
+    icon: '/download-icons/apple-official.svg',
     url: import.meta.env.VITE_APP_STORE_URL || 'https://apps.apple.com/app/id6762049050',
   },
   google: {
@@ -31,8 +31,8 @@ const PREVIEWS = [
   {
     src: '/app-previews/app-home.png',
     alt: 'BuddhaChat 首页真实页面',
-    title: '每日首页',
-    description: '每天打开，今日功课、法师更新与修行入口一目了然。',
+    title: '每日法师推荐',
+    description: '每日推荐法师开示与最新内容，也可切换问答，找到当下关心的佛法回应。',
   },
   {
     src: '/app-previews/app-master-talks.png',
@@ -47,10 +47,16 @@ const PREVIEWS = [
     description: '禅修、木鱼、诵经与连续天数记录，把修行变成每天的习惯。',
   },
   {
+    src: '/app-previews/app-music.png',
+    alt: 'BuddhaChat 佛乐场景真实页面',
+    title: '佛乐相伴',
+    description: '按静心、睡眠、专注等场景聆听佛乐，让声音陪伴禅修与日常安住。',
+  },
+  {
     src: '/app-previews/app-scriptures.png',
     alt: 'BuddhaChat 读经导航真实页面',
-    title: '读经藏书',
-    description: '从新手入门到系统研读，按经名、译者、部类搜索，安静读诵。',
+    title: 'AI 解读与读经',
+    description: '海量经文可检索阅读，支持 AI 白话解读与 AI 读经，让经典更易懂、更易坚持。',
   },
   {
     src: '/app-previews/app-community.png',

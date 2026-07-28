@@ -15,11 +15,15 @@ describe('AppDownloadPage', () => {
       maxTouchPoints: 1,
     })
 
-    render(<AppDownloadPage />)
+    const { container } = render(<AppDownloadPage />)
 
     expect(screen.getByRole('link', { name: /App Store 下载/ })).toHaveAttribute(
       'href',
       'https://apps.apple.com/app/id6762049050',
+    )
+    expect(container.querySelector('img.is-ios')).toHaveAttribute(
+      'src',
+      '/download-icons/apple-official.svg',
     )
     expect(screen.queryByText('Google Play 下载')).not.toBeInTheDocument()
     expect(screen.queryByText('安卓安装包下载')).not.toBeInTheDocument()
@@ -51,12 +55,13 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('经书、视频、佛乐，一站汇聚')).toBeInTheDocument()
   })
 
-  it('shows the six selected app experiences', () => {
+  it('shows the seven selected app experiences', () => {
     render(<AppDownloadPage />)
 
-    expect(screen.getByText('每日首页')).toBeInTheDocument()
+    expect(screen.getByText('每日法师推荐')).toBeInTheDocument()
     expect(screen.getByText('持续修行')).toBeInTheDocument()
-    expect(screen.getByText('读经藏书')).toBeInTheDocument()
+    expect(screen.getByText('佛乐相伴')).toBeInTheDocument()
+    expect(screen.getByText('AI 解读与读经')).toBeInTheDocument()
     expect(screen.getByText('法师开示')).toBeInTheDocument()
     expect(screen.getByText('道场共修')).toBeInTheDocument()
     expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
@@ -67,6 +72,10 @@ describe('AppDownloadPage', () => {
     expect(screen.getByRole('img', { name: 'BuddhaChat 每日修行真实页面' })).toHaveAttribute(
       'src',
       '/app-previews/app-practice.png',
+    )
+    expect(screen.getByRole('img', { name: 'BuddhaChat 佛乐场景真实页面' })).toHaveAttribute(
+      'src',
+      '/app-previews/app-music.png',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 读经导航真实页面' })).toHaveAttribute(
       'src',
