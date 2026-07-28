@@ -15,7 +15,7 @@ export default function LanguageToggle() {
   }, [variant])
 
   return (
-    <div className="language-toggle" data-no-convert role="group" aria-label="简体繁体切换">
+    <nav className="language-toggle" data-no-convert aria-label="简体繁体切换">
       <button
         type="button"
         className={variant === 'hans' ? 'is-active' : ''}
@@ -32,6 +32,6 @@ export default function LanguageToggle() {
       >
         繁
       </button>
-    </div>
+    </nav>
   )
 }

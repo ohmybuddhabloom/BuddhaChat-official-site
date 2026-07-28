@@ -137,7 +137,7 @@ function SunyataVisual({
             <div className="quote-details">
               {detailGroups.map((item) => (
                 <div key={`${item.label}-${item.text}`}>
-                  {item.label ? <h4>{item.label}</h4> : null}
+                  {item.label ? <h3>{item.label}</h3> : null}
                   {item.text ? <p>{item.text}</p> : null}
                 </div>
               ))}
