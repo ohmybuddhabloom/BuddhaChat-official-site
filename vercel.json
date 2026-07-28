@@ -112,6 +112,14 @@
       "destination": "/api/page-entry?page=download"
     },
     {
+      "source": "/guide/yuanhui",
+      "destination": "/api/page-entry?page=guide-yuanhui"
+    },
+    {
+      "source": "/guide/yuanhui/",
+      "destination": "/api/page-entry?page=guide-yuanhui"
+    },
+    {
       "source": "/videos",
       "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
     },

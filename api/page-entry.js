@@ -30,6 +30,11 @@ const isDownloadPage = (url) =>
   url.pathname === '/download/' ||
   url.pathname === '/download/yuanhui'
 
+const isYuanhuiGuidePage = (url) =>
+  url.searchParams.get('page') === 'guide-yuanhui' ||
+  url.pathname === '/guide/yuanhui' ||
+  url.pathname === '/guide/yuanhui/'
+
 export function getPageMeta(url) {
   const storySlug = url.searchParams.get('story')?.trim()
   const story = storySlug ? SACRED_STORIES_BY_SLUG[storySlug] : null
@@ -52,6 +57,17 @@ export function getPageMeta(url) {
       canonicalUrl: `${ORIGIN}/download`,
       imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
       type: 'website',
+    }
+  }
+
+  if (isYuanhuiGuidePage(url)) {
+    return {
+      title: 'BuddhaChat 手机端使用指南｜从扫码到源慧法师专区',
+      description:
+        '从官方下载、安装和首次使用，到每日修行及进入源慧法师专区，跟着指南一步一步完成。',
+      canonicalUrl: `${ORIGIN}/guide/yuanhui`,
+      imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
+      type: 'article',
     }
   }
 

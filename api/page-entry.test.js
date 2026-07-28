@@ -71,4 +71,29 @@ describe('page social metadata', () => {
     expect(rendered).toContain('property="og:locale" content="zh_CN"')
     expect(rendered).not.toContain('ch=')
   })
+
+  it.each([
+    'https://www.buddhachat.online/guide/yuanhui',
+    'https://www.buddhachat.online/guide/yuanhui/',
+    'https://www.buddhachat.online/guide/yuanhui?ch=poster',
+    'https://www.buddhachat.online/api/page-entry?page=guide-yuanhui&campaign=temple',
+  ])('uses the same large Yuanhui guide card for %s', (url) => {
+    const meta = getPageMeta(new URL(url))
+    const rendered = injectPageMeta(html, meta)
+
+    expect(meta).toMatchObject({
+      title: 'BuddhaChat 手机端使用指南｜从扫码到源慧法师专区',
+      description:
+        '从官方下载、安装和首次使用，到每日修行及进入源慧法师专区，跟着指南一步一步完成。',
+      canonicalUrl: 'https://www.buddhachat.online/guide/yuanhui',
+      imageUrl:
+        'https://www.buddhachat.online/share/download-card-v1.jpg',
+      type: 'article',
+    })
+    expect(rendered).toContain('property="og:image:width" content="1200"')
+    expect(rendered).toContain('property="og:image:height" content="630"')
+    expect(rendered).toContain('name="twitter:card" content="summary_large_image"')
+    expect(rendered).not.toContain('ch=poster')
+    expect(rendered).not.toContain('campaign=temple')
+  })
 })

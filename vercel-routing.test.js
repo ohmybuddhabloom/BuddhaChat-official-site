@@ -44,6 +44,21 @@ describe('website product routing', () => {
     ]))
   })
 
+  test('serves the Yuanhui guide through the social-card endpoint', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/guide/yuanhui',
+        destination: '/api/page-entry?page=guide-yuanhui',
+      },
+      {
+        source: '/guide/yuanhui/',
+        destination: '/api/page-entry?page=guide-yuanhui',
+      },
+    ]))
+  })
+
   test('routes a master subdomain through the dedicated edge project', async () => {
     const config = JSON.parse(
       await readFile(
