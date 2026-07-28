@@ -4,6 +4,13 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 vi.mock('./_lib/supabase.js', () => ({
   insertAnalyticsEvent: vi.fn(),
+  SupabaseRequestError: class SupabaseRequestError extends Error {
+    constructor(message, statusCode, details) {
+      super(message)
+      this.statusCode = statusCode
+      this.details = details
+    }
+  },
 }))
 
 import handler from './analytics.js'
@@ -95,5 +102,33 @@ describe('api/analytics', () => {
 
     expect(res.statusCode).toBe(400)
     expect(insertAnalyticsEvent).not.toHaveBeenCalled()
+  })
+
+  it('keeps the event when a channel code is not registered', async () => {
+    const { SupabaseRequestError } = await import('./_lib/supabase.js')
+    insertAnalyticsEvent
+      .mockRejectedValueOnce(
+        new SupabaseRequestError('foreign key', 409, {
+          code: '23503',
+          message: 'channel_code violates foreign key constraint',
+        }),
+      )
+      .mockResolvedValueOnce(undefined)
+    const req = createRequest({
+      body: {
+        eventName: 'page_view',
+        visitorId: 'visitor_123',
+        channelCode: 'unknown-channel',
+        path: '/',
+      },
+    })
+    const res = createResponse()
+
+    await handler(req, res)
+
+    expect(res.statusCode).toBe(200)
+    expect(insertAnalyticsEvent).toHaveBeenLastCalledWith(
+      expect.objectContaining({ channel_code: null }),
+    )
   })
 })
