@@ -4673,3 +4673,309 @@ a {
   outline: 2px solid #b48a2e;
   outline-offset: -2px;
 }
+
+/* Standalone app highlights and FAQ */
+.app-faq-page {
+  --faq-ink: #3a2a20;
+  --faq-muted: #745643;
+  --faq-clay: #a76740;
+  min-height: 100vh;
+  color: var(--faq-ink);
+  background: #ead8c2;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+.app-faq-page,
+.app-faq-page * {
+  box-sizing: border-box;
+}
+
+.app-faq-shell {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 56%, rgba(211, 161, 95, .16), transparent 24%),
+    linear-gradient(180deg, #f7eddf, #efddc7 55%, #f6ebdc);
+}
+
+.app-faq-hero {
+  position: relative;
+  min-height: 78svh;
+  padding: 30px 24px 40px;
+  background:
+    linear-gradient(180deg, rgba(249, 241, 227, .05), rgba(247, 237, 221, .12) 68%, #f4e7d6 100%),
+    url("/buddhachat-download-hero-mobile-v3.jpg") center 43% / cover no-repeat;
+}
+
+.app-faq-brand {
+  color: #694832;
+  font: 600 14px/1.2 Georgia, serif;
+  letter-spacing: 6px;
+  text-decoration: none;
+}
+
+.app-faq-hero-copy {
+  width: min(74%, 500px);
+  margin-top: 12vh;
+}
+
+.app-faq-hero-copy > span {
+  display: inline-block;
+  padding: 9px 14px;
+  border: 1px solid rgba(132, 82, 49, .2);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, .74);
+  color: #7e5135;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.app-faq-hero h1 {
+  margin: 20px 0 14px;
+  font: 700 clamp(40px, 11vw, 72px)/1.13 "Songti SC", "STSong", serif;
+  letter-spacing: 1px;
+}
+
+.app-faq-hero p {
+  margin: 0;
+  color: #684c3a;
+  font: clamp(17px, 4.7vw, 24px)/1.65 "Songti SC", "STSong", serif;
+}
+
+.app-faq-section {
+  padding: 42px 24px 20px;
+}
+
+.app-faq-heading {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.app-faq-heading > span {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  border: 6px solid #f3e5d3;
+  border-radius: 50%;
+  background: var(--faq-clay);
+  color: #fff8ed;
+  box-shadow: 0 8px 20px rgba(92, 54, 30, .16);
+  font: 700 15px/1 Georgia, serif;
+}
+
+.app-faq-heading h2 {
+  margin: 0;
+  font: 700 clamp(27px, 6.8vw, 40px)/1.25 "Songti SC", "STSong", serif;
+}
+
+.app-faq-features {
+  display: grid;
+  gap: 14px;
+}
+
+.app-faq-features article,
+.app-faq-questions details {
+  border: 1px solid rgba(145, 93, 55, .18);
+  border-radius: 22px;
+  background: rgba(255, 252, 246, .88);
+  box-shadow: 0 12px 34px rgba(86, 52, 30, .06);
+}
+
+.app-faq-features article {
+  padding: 22px;
+}
+
+.app-faq-features article > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 11px;
+}
+
+.app-faq-features article > div > span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(151, 100, 59, .22);
+  border-radius: 50%;
+  background: #efe0cd;
+  color: #985b35;
+  font: 700 20px/1 "Songti SC", "STSong", serif;
+}
+
+.app-faq-features h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.app-faq-features p,
+.app-faq-questions p {
+  margin: 0;
+  color: var(--faq-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.app-faq-questions {
+  display: grid;
+  gap: 12px;
+}
+
+.app-faq-questions details {
+  overflow: hidden;
+}
+
+.app-faq-questions summary {
+  display: grid;
+  grid-template-columns: 42px 1fr 28px;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.app-faq-questions summary::-webkit-details-marker {
+  display: none;
+}
+
+.app-faq-questions summary > b {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #aa6c42;
+  color: #fff9ed;
+  font: 700 13px/1 Georgia, serif;
+}
+
+.app-faq-questions summary > span {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.app-faq-questions summary::after {
+  content: "+";
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #efe0cd;
+  color: #875331;
+  font: 700 20px/1 Arial, sans-serif;
+  transition: transform .18s ease;
+}
+
+.app-faq-questions details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.app-faq-questions details[open] summary {
+  border-bottom: 1px solid rgba(145, 93, 55, .14);
+}
+
+.app-faq-questions details > p {
+  padding: 18px 24px 22px 72px;
+}
+
+.app-faq-finish {
+  margin: 34px 24px 0;
+  padding: 30px 26px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #9a603b, #75462f);
+  color: #fff8ed;
+  box-shadow: 0 18px 46px rgba(84, 47, 27, .18);
+}
+
+.app-faq-finish > span {
+  color: #efdcc5;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.app-faq-finish h2 {
+  margin: 12px 0 20px;
+  font: 700 25px/1.45 "Songti SC", "STSong", serif;
+}
+
+.app-faq-finish a {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: #fff8ed;
+  color: #7a482f;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-faq-brand:focus-visible,
+.app-faq-finish a:focus-visible,
+.app-faq-questions summary:focus-visible {
+  outline: 3px solid #bd8255;
+  outline-offset: 4px;
+}
+
+.app-faq-shell::after {
+  content: "BuddhaChat · 把修行带回每天的生活";
+  display: block;
+  padding: 36px 24px 60px;
+  color: #76543e;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .app-faq-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 761px) {
+  .app-faq-shell {
+    box-shadow: 0 0 80px rgba(89, 54, 31, .18);
+  }
+
+  .app-faq-hero {
+    min-height: 760px;
+    padding: 48px;
+  }
+
+  .app-faq-section {
+    padding-inline: 52px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-faq-hero,
+  .app-faq-section {
+    padding-inline: 18px;
+  }
+
+  .app-faq-questions details > p {
+    padding-left: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-faq-questions summary::after {
+    transition: none;
+  }
+}
