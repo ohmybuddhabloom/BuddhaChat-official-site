@@ -22,6 +22,16 @@
       "permanent": true
     },
     {
+      "source": "/support.html",
+      "destination": "/support",
+      "permanent": true
+    },
+    {
+      "source": "/child-safety.html",
+      "destination": "/child-safety",
+      "permanent": true
+    },
+    {
       "source": "/data-deletion",
       "destination": "/account-deletion",
       "permanent": true
@@ -39,6 +49,14 @@
     {
       "source": "/account-deletion",
       "destination": "/account-deletion.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html"
+    },
+    {
+      "source": "/child-safety",
+      "destination": "/child-safety.html"
     }
   ]
 }
