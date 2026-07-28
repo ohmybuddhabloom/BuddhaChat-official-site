@@ -159,15 +159,15 @@ describe('website product routing', () => {
     expect(config.rewrites).toEqual(expect.arrayContaining([
       {
         source: '/music',
-        destination: 'https://music.buddhachat.online/music/',
+        destination: 'https://buddhachat-music.vercel.app/music/',
       },
       {
         source: '/music/',
-        destination: 'https://music.buddhachat.online/music/',
+        destination: 'https://buddhachat-music.vercel.app/music/',
       },
       {
         source: '/music/:path*',
-        destination: 'https://music.buddhachat.online/music/:path*',
+        destination: 'https://buddhachat-music.vercel.app/music/:path*',
       },
     ]))
   })
