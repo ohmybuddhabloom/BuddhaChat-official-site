@@ -180,6 +180,10 @@
       "destination": "https://zentube.buddhachat.online/api/reader-sync"
     },
     {
+      "source": "/:path*/",
+      "destination": "/api/page-entry?path=:path*"
+    },
+    {
       "source": "/:path*",
       "destination": "/api/page-entry?path=:path*"
     }
