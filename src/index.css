@@ -724,6 +724,10 @@ a {
     transform 0.22s ease;
 }
 
+.sunyata-story-menu-panel[hidden] {
+  display: none;
+}
+
 .sunyata-story-menu-panel.is-open {
   opacity: 1;
   transform: translateY(0);
