@@ -3667,6 +3667,414 @@ a {
   }
 }
 
+/* Yuanhui mobile user guide */
+.user-guide-page {
+  --guide-ink: #39291f;
+  --guide-muted: #735643;
+  --guide-clay: #a76740;
+  min-height: 100vh;
+  color: var(--guide-ink);
+  background: #ead8c1;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+.user-guide-page,
+.user-guide-page * {
+  box-sizing: border-box;
+}
+
+.user-guide-shell {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 70%, rgba(211, 161, 95, .18), transparent 24%),
+    linear-gradient(180deg, #f7eddf, #efddc6 54%, #f6ebdc);
+}
+
+.user-guide-hero {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  padding: 30px 24px 36px;
+  background:
+    linear-gradient(180deg, rgba(249, 241, 227, .02), rgba(247, 237, 221, .1) 68%, #f4e7d6 100%),
+    url("/buddhachat-download-hero-mobile-v3.jpg") center top / cover no-repeat;
+}
+
+.user-guide-brand {
+  align-self: flex-start;
+  color: #694832;
+  font: 600 14px/1.2 Georgia, serif;
+  letter-spacing: 6px;
+  text-decoration: none;
+}
+
+.user-guide-hero-copy {
+  width: min(72%, 500px);
+  margin-top: 13vh;
+}
+
+.user-guide-hero-copy > span {
+  display: inline-block;
+  padding: 9px 14px;
+  border: 1px solid rgba(132, 82, 49, .2);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, .72);
+  color: #7e5135;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.user-guide-hero h1 {
+  margin: 20px 0 14px;
+  font: 700 clamp(40px, 11vw, 72px)/1.13 "Songti SC", "STSong", serif;
+  letter-spacing: 1px;
+}
+
+.user-guide-hero-copy p {
+  margin: 0;
+  color: #684c3a;
+  font: clamp(17px, 4.7vw, 24px)/1.65 "Songti SC", "STSong", serif;
+}
+
+.user-guide-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: auto;
+  padding: 18px 14px;
+  border: 1px solid rgba(129, 80, 47, .16);
+  border-radius: 24px;
+  background: rgba(255, 251, 244, .88);
+  box-shadow: 0 16px 45px rgba(80, 48, 27, .1);
+}
+
+.user-guide-route span {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #efdfca;
+  color: #674630;
+  font-size: clamp(11px, 3.2vw, 15px);
+  font-weight: 700;
+  text-align: center;
+}
+
+.user-guide-steps {
+  position: relative;
+  padding: 46px 24px 26px;
+}
+
+.user-guide-steps::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  bottom: 36px;
+  left: 43px;
+  width: 2px;
+  background: linear-gradient(rgba(164, 104, 64, .12), rgba(164, 104, 64, .48), rgba(164, 104, 64, .08));
+}
+
+.user-guide-step {
+  position: relative;
+  margin-bottom: 64px;
+  padding-left: 56px;
+}
+
+.user-guide-number {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -8px;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 6px solid #f3e5d3;
+  border-radius: 50%;
+  background: var(--guide-clay);
+  color: #fff8ed;
+  box-shadow: 0 8px 20px rgba(92, 54, 30, .16);
+  font: 700 16px/1 Georgia, serif;
+}
+
+.user-guide-kicker {
+  padding-top: 3px;
+  color: var(--guide-clay);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.user-guide-step h2 {
+  margin: 10px 0 22px;
+  font: 700 clamp(28px, 7vw, 42px)/1.2 "Songti SC", "STSong", serif;
+}
+
+.user-guide-card,
+.user-guide-device,
+.user-guide-list article {
+  border: 1px solid rgba(145, 93, 55, .18);
+  background: rgba(255, 252, 246, .88);
+  box-shadow: 0 12px 36px rgba(86, 52, 30, .06);
+}
+
+.user-guide-card {
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.user-guide-card > p,
+.user-guide-device p,
+.user-guide-list p,
+.user-guide-finish p {
+  margin: 0;
+  color: var(--guide-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.user-guide-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 15px 17px;
+  border-radius: 15px;
+  background: #efdfca;
+  color: #66452f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.user-guide-action b {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--guide-clay);
+  color: white;
+}
+
+.user-guide-button {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: #8f5737;
+  color: #fffaf2;
+  box-shadow: 0 10px 24px rgba(91, 52, 30, .16);
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.user-guide-button:hover {
+  background: #77452c;
+  transform: translateY(-1px);
+}
+
+.user-guide-button:focus-visible,
+.user-guide-brand:focus-visible {
+  outline: 3px solid #bd8255;
+  outline-offset: 4px;
+}
+
+.user-guide-device {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.user-guide-device > b {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  background: #e9d6bf;
+  color: #71492f;
+  font-size: 14px;
+}
+
+.user-guide-device h3,
+.user-guide-list h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.user-guide-warning {
+  margin: 16px 0 0;
+  padding: 16px 17px;
+  border-left: 4px solid #b87747;
+  border-radius: 10px 15px 15px 10px;
+  background: rgba(238, 220, 198, .72);
+  color: #72492f;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.user-guide-card .user-guide-warning {
+  margin-top: 18px;
+}
+
+.user-guide-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.user-guide-tags span {
+  padding: 9px 13px;
+  border: 1px solid rgba(130, 80, 49, .18);
+  border-radius: 999px;
+  background: #efdfcb;
+  color: #70482f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.user-guide-list {
+  display: grid;
+  gap: 14px;
+}
+
+.user-guide-list article {
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.user-guide-path {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  counter-reset: guide-path;
+  list-style: none;
+}
+
+.user-guide-path li {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 15px;
+  background: #f0e1ce;
+  color: #674630;
+  font-size: 16px;
+  font-weight: 700;
+  counter-increment: guide-path;
+}
+
+.user-guide-path li::before {
+  content: counter(guide-path);
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--guide-clay);
+  color: white;
+  font: 700 14px/1 Georgia, serif;
+}
+
+.user-guide-finish {
+  margin-left: 56px;
+  padding: 30px 26px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #9a603b, #75462f);
+  color: #fff8ed;
+  box-shadow: 0 18px 46px rgba(84, 47, 27, .18);
+}
+
+.user-guide-finish small {
+  color: #efdcc5;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.user-guide-finish h2 {
+  margin: 10px 0;
+  font: 700 27px/1.35 "Songti SC", "STSong", serif;
+}
+
+.user-guide-finish p {
+  color: #f4e5d2;
+}
+
+.user-guide-footer {
+  padding: 34px 80px 60px;
+  color: #76543e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (min-width: 761px) {
+  .user-guide-shell {
+    box-shadow: 0 0 80px rgba(89, 54, 31, .18);
+  }
+
+  .user-guide-hero {
+    min-height: 900px;
+    padding: 48px;
+  }
+
+  .user-guide-steps {
+    padding-inline: 52px;
+  }
+
+  .user-guide-steps::before {
+    left: 71px;
+  }
+}
+
+@media (max-width: 380px) {
+  .user-guide-hero {
+    padding-inline: 18px;
+  }
+
+  .user-guide-hero-copy {
+    width: 76%;
+  }
+
+  .user-guide-route {
+    padding-inline: 10px;
+  }
+
+  .user-guide-route span {
+    padding-inline: 7px;
+  }
+
+  .user-guide-steps {
+    padding-inline: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-guide-button {
+    transition: none;
+  }
+}
+
 .campaign-download-page {
   --campaign-ink: #302b25;
   --campaign-paper: #eadccf;
