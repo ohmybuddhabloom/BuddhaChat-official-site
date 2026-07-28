@@ -1,4 +1,7 @@
-import { insertAnalyticsEvent } from './_lib/supabase.js'
+import {
+  insertAnalyticsEvent,
+  SupabaseRequestError,
+} from './_lib/supabase.js'
 import {
   readJsonBody,
   sendError,
@@ -116,6 +119,14 @@ function isMissingConfigError(error) {
   )
 }
 
+function isUnknownChannelError(error) {
+  return (
+    error instanceof SupabaseRequestError &&
+    error.details?.code === '23503' &&
+    error.details?.message?.includes('channel_code')
+  )
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     sendMethodNotAllowed(res)
@@ -132,7 +143,7 @@ export default async function handler(req, res) {
       return
     }
 
-    await insertAnalyticsEvent({
+    const event = {
       product: 'official',
       event_name: eventName,
       visitor_id: visitorId,
@@ -142,7 +153,13 @@ export default async function handler(req, res) {
       referrer: cleanReferrer(body.referrer),
       user_agent: cleanString(body.userAgent, 512),
       metadata: cleanMetadata(body.metadata),
-    })
+    }
+    try {
+      await insertAnalyticsEvent(event)
+    } catch (error) {
+      if (!event.channel_code || !isUnknownChannelError(error)) throw error
+      await insertAnalyticsEvent({ ...event, channel_code: null })
+    }
 
     sendJson(res, 200, { ok: true })
   } catch (error) {
