@@ -115,10 +115,10 @@ run(coscli, [
 
 run(coscli, [
   'cp',
-  releaseObject,
+  apkPath,
   latestObject,
   '--meta',
-  'Content-Type:application/vnd.android.package-archive#Cache-Control:no-store,no-cache,must-revalidate#Content-Disposition:attachment; filename="BuddhaChat.apk"',
+  `Content-Type:application/vnd.android.package-archive#Cache-Control:no-store,no-cache,must-revalidate#Content-Disposition:attachment; filename="${releaseName}"`,
   '--disable-log',
 ])
 
