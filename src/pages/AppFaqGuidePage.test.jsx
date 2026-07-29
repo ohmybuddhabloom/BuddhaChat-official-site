@@ -17,5 +17,8 @@ it('shows six highlights and ten native questions without linking to the flow gu
   expect(screen.getByText(/佛经阅读、佛教视频与佛乐/)).toBeInTheDocument()
   expect(screen.getByText(/日常修学功能可免费使用/)).toBeInTheDocument()
   expect(screen.queryByText(/现阶段免费/)).not.toBeInTheDocument()
+  expect(screen.getByText(/打开 App Store，搜索“BuddhaChat”/)).toBeInTheDocument()
+  expect(screen.getByText(/在 Google Play 搜索“BuddhaChat”/)).toBeInTheDocument()
+  expect(screen.queryByText(/不需要自己在商店里搜索/)).not.toBeInTheDocument()
   expect(container.querySelector('a[href="/guide/yuanhui"]')).not.toBeInTheDocument()
 })
