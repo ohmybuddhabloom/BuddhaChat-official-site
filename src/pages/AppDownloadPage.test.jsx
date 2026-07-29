@@ -94,7 +94,7 @@ describe('AppDownloadPage', () => {
       'href',
       '/download/android/latest.apk',
     )
-    expect(screen.getByText('官网下载会出现安全确认')).toBeInTheDocument()
+    expect(screen.getByText('直接下载安装包会出现安全确认')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '安装前说明' })).toBeInTheDocument()
     expect(screen.queryByText(/已识别为/)).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: /探索 BuddhaChat/ })).toBeInTheDocument()
@@ -122,7 +122,11 @@ describe('AppDownloadPage', () => {
 
     expect(
       screen.getByRole('dialog', { name: '下载前，先确认这 4 项' }),
-    ).toBeInTheDocument()
+    ).toHaveAttribute('lang', 'zh-Hans')
+    expect(screen.getByRole('button', { name: '简' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
     expect(screen.getByText('1.3.1（11）')).toBeInTheDocument()
     expect(screen.getByText('BuddhaChat-1.3.1-11.apk')).toBeInTheDocument()
     expect(screen.getByText('com.chriskevin.buddhachat')).toBeInTheDocument()
@@ -140,11 +144,30 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('荣耀 / 华为')).toBeInTheDocument()
     expect(screen.getByText('vivo / iQOO')).toBeInTheDocument()
     expect(screen.getByText('三星 Galaxy')).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'BuddhaChat 商店版已通过 App Store 与 Google Play 官方验证。',
+      ),
+    ).toHaveClass('android-install-store-verification')
 
     fireEvent.click(screen.getByRole('button', { name: '复制校验值' }))
     await waitFor(() => {
       expect(writeText).toHaveBeenCalledWith(androidRelease.sha256)
     })
+
+    fireEvent.click(screen.getByRole('button', { name: '繁' }))
+    expect(
+      await screen.findByRole('dialog', { name: '下載前，先確認這 4 項' }),
+    ).toHaveAttribute('lang', 'zh-Hant')
+    expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: '简' }))
+    expect(
+      screen.getByRole('dialog', { name: '下载前，先确认这 4 项' }),
+    ).toBeInTheDocument()
   })
 
   it('keeps the WeChat browser handoff ahead of the APK installation guide', () => {

@@ -6,6 +6,20 @@ import { copyText } from '../../lib/copyText.js'
 const GOOGLE_PLAY_URL =
   'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat'
 
+let traditionalConverterPromise = null
+
+function loadTraditionalConverter() {
+  if (!traditionalConverterPromise) {
+    traditionalConverterPromise = import('opencc-js/cn2t').then((mod) =>
+      mod.Converter({ from: 'cn', to: 't' }),
+    ).catch((error) => {
+      traditionalConverterPromise = null
+      throw error
+    })
+  }
+  return traditionalConverterPromise
+}
+
 const INSTALL_STEPS = [
   {
     title: '浏览器提示“文件可能有害”',
@@ -63,7 +77,7 @@ export function AndroidDownloadNote({ release, onOpen }) {
   return (
     <aside className="android-download-note" aria-label="安卓安装说明">
       <div>
-        <strong>官网下载会出现安全确认</strong>
+        <strong>直接下载安装包会出现安全确认</strong>
         <span>
           {release.versionName ? `版本 ${release.versionName}` : '官方 Android 安装包'}
           {' · '}
@@ -78,6 +92,33 @@ export function AndroidDownloadNote({ release, onOpen }) {
 export default function AndroidInstallGuide({ release, onClose }) {
   const closeButtonRef = useRef(null)
   const [copyStatus, setCopyStatus] = useState('idle')
+  const [variant, setVariant] = useState('hans')
+  const [traditionalConverter, setTraditionalConverter] = useState(null)
+  const [languageLoading, setLanguageLoading] = useState(false)
+  const text =
+    variant === 'hant' && traditionalConverter
+      ? traditionalConverter
+      : (value) => value
+
+  const selectVariant = (nextVariant) => {
+    if (nextVariant === 'hans') {
+      setVariant('hans')
+      return
+    }
+    if (traditionalConverter) {
+      setVariant('hant')
+      return
+    }
+
+    setLanguageLoading(true)
+    void loadTraditionalConverter()
+      .then((converter) => {
+        setTraditionalConverter(() => converter)
+        setVariant('hant')
+      })
+      .catch(() => {})
+      .finally(() => setLanguageLoading(false))
+  }
 
   useEffect(() => {
     closeButtonRef.current?.focus()
@@ -103,55 +144,88 @@ export default function AndroidInstallGuide({ release, onClose }) {
     >
       <article
         className="android-install-guide"
+        data-no-convert
+        lang={variant === 'hant' ? 'zh-Hant' : 'zh-Hans'}
         role="dialog"
         aria-modal="true"
         aria-labelledby="android-install-title"
       >
         <header className="android-install-guide-header">
           <div>
-            <p>Android 官方安装包</p>
-            <h2 id="android-install-title">下载前，先确认这 4 项</h2>
+            <p>{text('Android 官方安装包')}</p>
+            <h2 id="android-install-title">{text('下载前，先确认这 4 项')}</h2>
           </div>
-          <button
-            ref={closeButtonRef}
-            type="button"
-            aria-label="关闭安装说明"
-            onClick={onClose}
-          >
-            ×
-          </button>
+          <div className="android-install-guide-controls">
+            <div
+              className="android-install-language-toggle"
+              role="group"
+              aria-label={text('安装说明语言')}
+            >
+              <button
+                type="button"
+                className={variant === 'hans' ? 'is-active' : ''}
+                aria-pressed={variant === 'hans'}
+                onClick={() => selectVariant('hans')}
+              >
+                简
+              </button>
+              <button
+                type="button"
+                className={variant === 'hant' ? 'is-active' : ''}
+                aria-pressed={variant === 'hant'}
+                disabled={languageLoading}
+                onClick={() => selectVariant('hant')}
+              >
+                繁
+              </button>
+            </div>
+            <button
+              ref={closeButtonRef}
+              className="android-install-guide-close"
+              type="button"
+              aria-label={text('关闭安装说明')}
+              onClick={onClose}
+            >
+              ×
+            </button>
+          </div>
         </header>
 
         <div className="android-install-guide-body">
           <p className="android-install-intro">
-            Android 会对从浏览器安装的 APK 增加安全确认。出现“可能有害”“未知来源”
-            或“敏感权限”等提示，不等于系统已经判定 BuddhaChat 有病毒，请先核对安装包信息。
+            {text(
+              'Android 会对从浏览器安装的 APK 增加安全确认。出现“可能有害”“未知来源”'
+              + '或“敏感权限”等提示，不等于系统已经判定 BuddhaChat 有病毒，请先核对安装包信息。',
+            )}
           </p>
 
           <dl className="android-install-verification">
             <div>
-              <dt>版本</dt>
+              <dt>{text('版本')}</dt>
               <dd>
                 {release.versionName && release.versionCode
                   ? `${release.versionName}（${release.versionCode}）`
-                  : '正在获取最新版本'}
+                  : text('正在获取最新版本')}
               </dd>
             </div>
             <div>
-              <dt>文件名</dt>
-              <dd>{releaseFileName(release)}</dd>
+              <dt>{text('文件名')}</dt>
+              <dd>{text(releaseFileName(release))}</dd>
             </div>
             <div>
-              <dt>官方来源</dt>
-              <dd>buddhachat.online（文件由 music.buddhachat.online 分发）</dd>
+              <dt>{text('官方来源')}</dt>
+              <dd>
+                buddhachat.online
+                {text('（文件由 music.buddhachat.online 分发）')}
+              </dd>
             </div>
             <div>
-              <dt>应用包名</dt>
+              <dt>{text('应用包名')}</dt>
               <dd>{release.packageName}</dd>
             </div>
             <div className="is-hash">
               <dt>SHA-256</dt>
-              <dd>{release.sha256 || '正在获取校验值'}</dd>
+              <dd>{release.sha256 || text('正在获取校验值')}</dd>
               {release.sha256 ? (
                 <button
                   type="button"
@@ -162,28 +236,37 @@ export default function AndroidInstallGuide({ release, onClose }) {
                   }}
                 >
                   {copyStatus === 'copied'
-                    ? '已复制'
+                    ? text('已复制')
                     : copyStatus === 'failed'
-                      ? '复制失败'
-                      : '复制校验值'}
+                      ? text('复制失败')
+                      : text('复制校验值')}
                 </button>
               ) : null}
             </div>
           </dl>
 
           <div className="android-install-safety-note">
-            <strong>什么情况下不要继续？</strong>
+            <strong>{text('什么情况下不要继续？')}</strong>
             <p>
-              如果系统明确显示“发现病毒”或“恶意应用”，或者域名、文件名、版本与上方信息不一致，
-              请取消安装。BuddhaChat 商店版本已通过 App Store 与 Google Play 审核；
-              官网 APK 在发布前还会自动校验包名和官方签名。
+              {text(
+                '如果系统明确显示“发现病毒”或“恶意应用”，或者域名、文件名、版本与上方信息不一致，'
+                + '请取消安装。',
+              )}
+              <span className="android-install-store-verification">
+                {text(
+                  'BuddhaChat 商店版已通过 App Store 与 Google Play 官方验证。',
+                )}
+              </span>
+              {text('官网 APK 在发布前还会自动校验包名和官方签名。')}
             </p>
           </div>
 
           <section className="android-install-steps" aria-labelledby="android-install-steps-title">
             <div className="android-install-section-heading">
-              <p>一加 / OPPO 示例</p>
-              <h3 id="android-install-steps-title">安装时，按顺序这样操作</h3>
+              <p>{text('一加 / OPPO 示例')}</p>
+              <h3 id="android-install-steps-title">
+                {text('安装时，按顺序这样操作')}
+              </h3>
             </div>
             <div className="android-install-step-track">
               {INSTALL_STEPS.map((step, index) => (
@@ -191,40 +274,46 @@ export default function AndroidInstallGuide({ release, onClose }) {
                   <div className="android-install-step-number">{index + 1}</div>
                   <img
                     src={step.image}
-                    alt={step.alt}
+                    alt={text(step.alt)}
                     width="1080"
                     height="2354"
                     loading="lazy"
                     decoding="async"
                   />
                   <figcaption>
-                    <strong>{step.title}</strong>
-                    <span>{step.action}</span>
+                    <strong>{text(step.title)}</strong>
+                    <span>{text(step.action)}</span>
                   </figcaption>
                 </figure>
               ))}
             </div>
-            <p className="android-install-swipe-hint">左右滑动查看 3 个步骤</p>
+            <p className="android-install-swipe-hint">
+              {text('左右滑动查看 3 个步骤')}
+            </p>
           </section>
 
           <details className="android-install-brand-help">
-            <summary>其他安卓品牌在哪里设置？</summary>
+            <summary>{text('其他安卓品牌在哪里设置？')}</summary>
             <div>
               <p>
-                不同机型的菜单名称会略有不同。优先在设置顶部搜索“安装未知应用”
-                或“外部来源应用”。
+                {text(
+                  '不同机型的菜单名称会略有不同。优先在设置顶部搜索“安装未知应用”'
+                  + '或“外部来源应用”。',
+                )}
               </p>
               <dl>
                 {BRAND_PATHS.map((brand) => (
                   <div key={brand.name}>
-                    <dt>{brand.name}</dt>
-                    <dd>{brand.path}</dd>
+                    <dt>{text(brand.name)}</dt>
+                    <dd>{text(brand.path)}</dd>
                   </div>
                 ))}
               </dl>
               <p className="android-install-brand-safety">
-                只允许本次使用的浏览器或文件管理器，安装完成后建议关闭该权限。
-                无需关闭 Play Protect 或整机安全扫描。
+                {text(
+                  '只允许本次使用的浏览器或文件管理器，安装完成后建议关闭该权限。'
+                  + '无需关闭 Play Protect 或整机安全扫描。',
+                )}
               </p>
             </div>
           </details>
@@ -235,10 +324,10 @@ export default function AndroidInstallGuide({ release, onClose }) {
             rel="noreferrer"
             onClick={() => trackCtaClick('app_download_apk_confirmed', 'app')}
           >
-            开始下载官方 APK
+            {text('开始下载官方 APK')}
           </a>
           <a href={GOOGLE_PLAY_URL} rel="noreferrer">
-            改用 Google Play
+            {text('改用 Google Play')}
           </a>
         </footer>
       </article>
