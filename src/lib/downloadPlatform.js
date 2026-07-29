@@ -13,3 +13,7 @@ export function detectDownloadPlatform(device = globalThis.navigator) {
 
   return 'other'
 }
+
+export function isWeChatBrowser(device = globalThis.navigator) {
+  return /MicroMessenger/i.test(device?.userAgent ?? '')
+}

@@ -29,6 +29,43 @@ describe('AppDownloadPage', () => {
     expect(screen.queryByText('安卓安装包下载')).not.toBeInTheDocument()
   })
 
+  it('guides iPhone WeChat users to open the download in a system browser', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (iPhone) AppleWebKit MicroMessenger/8.0.58',
+      platform: 'iPhone',
+      maxTouchPoints: 1,
+    })
+
+    render(<AppDownloadPage />)
+    fireEvent.click(screen.getByRole('link', { name: /App Store 下载/ }))
+
+    expect(screen.getByRole('dialog', { name: '请在浏览器中打开' })).toBeInTheDocument()
+    expect(screen.getByText(/在 Safari 中打开/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '仍然尝试打开' })).toHaveAttribute(
+      'href',
+      'https://apps.apple.com/app/id6762049050',
+    )
+  })
+
+  it('copies the blocked download link for WeChat users', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined)
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Linux; Android 15) MicroMessenger/8.0.58',
+      platform: 'Linux armv8l',
+      maxTouchPoints: 5,
+      clipboard: { writeText },
+    })
+
+    render(<AppDownloadPage />)
+    fireEvent.click(screen.getByRole('link', { name: /Google Play 下载/ }))
+    fireEvent.click(screen.getByRole('button', { name: '复制下载链接' }))
+
+    expect(writeText).toHaveBeenCalledWith(
+      'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat',
+    )
+    expect(await screen.findByRole('button', { name: '链接已复制' })).toBeInTheDocument()
+  })
+
   it('shows Google Play and direct APK actions on Android', () => {
     vi.stubGlobal('navigator', {
       userAgent: 'Mozilla/5.0 (Linux; Android 15)',
