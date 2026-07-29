@@ -214,10 +214,7 @@ export default function AndroidInstallGuide({ release, onClose }) {
             </div>
             <div>
               <dt>{text('官方来源')}</dt>
-              <dd>
-                buddhachat.online
-                {text('（文件由 music.buddhachat.online 分发）')}
-              </dd>
+              <dd>{text('BuddhaChat 官方服务器（buddhachat.online）')}</dd>
             </div>
             <div>
               <dt>{text('应用包名')}</dt>

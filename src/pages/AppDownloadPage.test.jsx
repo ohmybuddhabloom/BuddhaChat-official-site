@@ -129,6 +129,10 @@ describe('AppDownloadPage', () => {
     )
     expect(screen.getByText('1.3.1（11）')).toBeInTheDocument()
     expect(screen.getByText('BuddhaChat-1.3.1-11.apk')).toBeInTheDocument()
+    expect(
+      screen.getByText('BuddhaChat 官方服务器（buddhachat.online）'),
+    ).toBeInTheDocument()
+    expect(screen.queryByText(/music\.buddhachat\.online/)).not.toBeInTheDocument()
     expect(screen.getByText('com.chriskevin.buddhachat')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: '开始下载官方 APK' })).toHaveAttribute(
       'href',
