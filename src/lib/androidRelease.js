@@ -1,4 +1,5 @@
 const ENDPOINT = '/downloads/android/latest.json'
+const SHA256 = /^[a-f0-9]{64}$/i
 
 function isRelease(value) {
   if (!value || typeof value !== 'object') return false
@@ -8,6 +9,7 @@ function isRelease(value) {
     && value.versionCode > 0
     && typeof value.versionName === 'string'
     && typeof value.apkUrl === 'string'
+    && SHA256.test(value.sha256 ?? '')
 }
 
 export async function fetchAndroidRelease(fetchImpl = fetch) {

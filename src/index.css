@@ -4379,6 +4379,419 @@ a {
   box-shadow: none;
 }
 
+.android-download-note {
+  grid-column: 1 / -1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 2px 0;
+  color: rgba(74, 57, 36, 0.82);
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.android-download-note > div {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.android-download-note strong {
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.android-download-note span {
+  overflow-wrap: anywhere;
+  color: rgba(93, 75, 49, 0.72);
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+.android-download-note button {
+  flex: 0 0 auto;
+  padding: 5px 0;
+  border: 0;
+  color: #7a5c16;
+  background: transparent;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.android-install-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10030;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px 12px 0;
+  background: rgba(24, 22, 19, 0.68);
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.android-install-guide {
+  width: min(100%, 860px);
+  max-height: calc(100dvh - 20px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(183, 147, 54, 0.34);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  color: #332d26;
+  background: #fffdfa;
+  box-shadow: 0 24px 70px rgba(24, 22, 19, 0.36);
+}
+
+.android-install-guide-header {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(111, 86, 49, 0.14);
+  background: #fffdfa;
+}
+
+.android-install-guide-header p,
+.android-install-guide-header h2 {
+  margin: 0;
+}
+
+.android-install-guide-header p {
+  color: #8a6b20;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.android-install-guide-header h2 {
+  margin-top: 2px;
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.android-install-guide-header button {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #544b40;
+  background: #f3eee6;
+  font: inherit;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.android-install-guide-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px 16px 28px;
+  scrollbar-gutter: stable;
+}
+
+.android-install-intro {
+  margin: 0;
+  color: #665b4d;
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.android-install-verification {
+  margin: 16px 0 0;
+  border-block: 1px solid rgba(111, 86, 49, 0.14);
+}
+
+.android-install-verification > div {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.android-install-verification > div + div {
+  border-top: 1px solid rgba(111, 86, 49, 0.1);
+}
+
+.android-install-verification dt,
+.android-install-verification dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.android-install-verification dt {
+  color: #7a6d5d;
+}
+
+.android-install-verification dd {
+  overflow-wrap: anywhere;
+  color: #302b25;
+  font-weight: 600;
+}
+
+.android-install-verification .is-hash {
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+}
+
+.android-install-verification .is-hash dd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.63rem;
+  font-weight: 500;
+}
+
+.android-install-verification button {
+  align-self: start;
+  padding: 2px 0;
+  border: 0;
+  color: #7a5c16;
+  background: transparent;
+  font: inherit;
+  font-size: 0.67rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.android-install-safety-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 3px solid #b79336;
+  background: #f7f2e8;
+}
+
+.android-install-safety-note strong,
+.android-install-safety-note p {
+  margin: 0;
+}
+
+.android-install-safety-note strong {
+  display: block;
+  font-size: 0.78rem;
+}
+
+.android-install-safety-note p {
+  margin-top: 5px;
+  color: #665b4d;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+.android-install-primary-actions {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+  gap: 8px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(111, 86, 49, 0.14);
+  background: #fffdfa;
+  box-shadow: 0 -8px 20px rgba(55, 43, 29, 0.05);
+}
+
+.android-install-primary-actions a {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border: 1px solid #302b25;
+  border-radius: 6px;
+  color: #302b25;
+  background: #fffdfa;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+.android-install-primary-actions a:first-child {
+  color: #fff;
+  background: #302b25;
+}
+
+.android-install-steps {
+  margin-top: 28px;
+}
+
+.android-install-section-heading p,
+.android-install-section-heading h3 {
+  margin: 0;
+}
+
+.android-install-section-heading p {
+  color: #8a6b20;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.android-install-section-heading h3 {
+  margin-top: 3px;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.android-install-step-track {
+  display: grid;
+  grid-auto-columns: min(82%, 286px);
+  grid-auto-flow: column;
+  gap: 12px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  margin: 14px -16px 0;
+  padding: 0 16px 10px;
+}
+
+.android-install-step-track figure {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  margin: 0;
+  border: 1px solid rgba(111, 86, 49, 0.18);
+  border-radius: 8px;
+  background: #f7f4ee;
+}
+
+.android-install-step-track img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1080 / 2354;
+  display: block;
+  object-fit: contain;
+  background: #ece8e2;
+}
+
+.android-install-step-number {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(36, 32, 27, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.android-install-step-track figcaption {
+  min-height: 112px;
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  padding: 12px;
+}
+
+.android-install-step-track figcaption strong {
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.android-install-step-track figcaption span {
+  color: #665b4d;
+  font-size: 0.69rem;
+  line-height: 1.65;
+}
+
+.android-install-swipe-hint {
+  margin: 4px 0 0;
+  color: #817462;
+  font-size: 0.66rem;
+  text-align: center;
+}
+
+.android-install-brand-help {
+  margin-top: 22px;
+  border-block: 1px solid rgba(111, 86, 49, 0.16);
+}
+
+.android-install-brand-help summary {
+  padding: 15px 0;
+  color: #3f382f;
+  font-size: 0.8rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.android-install-brand-help > div {
+  padding: 0 0 16px;
+}
+
+.android-install-brand-help p {
+  margin: 0;
+  color: #665b4d;
+  font-size: 0.7rem;
+  line-height: 1.65;
+}
+
+.android-install-brand-help dl {
+  margin: 12px 0;
+}
+
+.android-install-brand-help dl > div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 10px;
+  padding: 9px 0;
+}
+
+.android-install-brand-help dl > div + div {
+  border-top: 1px solid rgba(111, 86, 49, 0.1);
+}
+
+.android-install-brand-help dt,
+.android-install-brand-help dd {
+  margin: 0;
+  font-size: 0.69rem;
+  line-height: 1.6;
+}
+
+.android-install-brand-help dt {
+  color: #3f382f;
+  font-weight: 650;
+}
+
+.android-install-brand-help dd {
+  color: #665b4d;
+}
+
+.android-install-brand-help .android-install-brand-safety {
+  padding: 10px 12px;
+  color: #3f5e45;
+  background: #edf5ed;
+}
+
+.android-download-note button:focus-visible,
+.android-install-guide button:focus-visible,
+.android-install-guide a:focus-visible,
+.android-install-brand-help summary:focus-visible {
+  outline: 2px solid var(--campaign-gold);
+  outline-offset: 3px;
+}
+
 .wechat-download-backdrop {
   position: fixed;
   inset: 0;
@@ -4630,6 +5043,66 @@ a {
 }
 
 @media (min-width: 761px) {
+  .android-install-backdrop {
+    align-items: center;
+    padding: 24px;
+  }
+
+  .android-install-guide {
+    max-height: calc(100dvh - 48px);
+    border-bottom: 1px solid rgba(183, 147, 54, 0.34);
+    border-radius: 8px;
+  }
+
+  .android-install-guide-header {
+    padding: 15px 24px;
+  }
+
+  .android-install-guide-body {
+    padding: 22px 24px 32px;
+  }
+
+  .android-install-guide-body {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+    column-gap: 32px;
+  }
+
+  .android-install-intro,
+  .android-install-verification,
+  .android-install-safety-note {
+    grid-column: 1;
+  }
+
+  .android-install-steps,
+  .android-install-brand-help {
+    grid-column: 2;
+  }
+
+  .android-install-steps {
+    grid-row: 1 / span 3;
+    margin-top: 0;
+  }
+
+  .android-install-brand-help {
+    grid-row: 4;
+  }
+
+  .android-install-primary-actions {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.45fr);
+    padding: 12px 24px;
+  }
+
+  .android-install-step-track {
+    grid-auto-columns: min(74%, 268px);
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .android-install-swipe-hint {
+    text-align: left;
+  }
+
   .wechat-download-backdrop {
     align-items: center;
   }
@@ -4759,7 +5232,8 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .campaign-download-action,
-  .campaign-download-gallery-track {
+  .campaign-download-gallery-track,
+  .android-install-step-track {
     scroll-behavior: auto;
     transition: none;
   }

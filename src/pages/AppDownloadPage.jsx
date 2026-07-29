@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
+import AndroidInstallGuide, {
+  AndroidDownloadNote,
+} from '../components/download/AndroidInstallGuide.jsx'
 import { trackCtaClick } from '../lib/analytics.js'
+import { copyText } from '../lib/copyText.js'
 import { detectDownloadPlatform, isWeChatBrowser } from '../lib/downloadPlatform.js'
 import { fetchAndroidRelease } from '../lib/androidRelease.js'
 
@@ -72,6 +76,7 @@ const PREVIEWS = [
 function DownloadAction({
   downloadKey,
   forceNormal = false,
+  onBeforeDownload,
   onWeChatDownload,
   url,
 }) {
@@ -108,6 +113,11 @@ function DownloadAction({
         if (onWeChatDownload) {
           event.preventDefault()
           onWeChatDownload(download)
+          return
+        }
+        if (onBeforeDownload) {
+          event.preventDefault()
+          onBeforeDownload()
         }
       }}
       rel="noreferrer"
@@ -118,7 +128,12 @@ function DownloadAction({
   )
 }
 
-function PlatformActions({ platform, apkUrl, onWeChatDownload }) {
+function PlatformActions({
+  platform,
+  release,
+  onApkDownload,
+  onWeChatDownload,
+}) {
   if (platform === 'ios') {
     return <DownloadAction downloadKey="ios" onWeChatDownload={onWeChatDownload} />
   }
@@ -129,8 +144,9 @@ function PlatformActions({ platform, apkUrl, onWeChatDownload }) {
         <DownloadAction downloadKey="google" onWeChatDownload={onWeChatDownload} />
         <DownloadAction
           downloadKey="apk"
+          onBeforeDownload={onApkDownload}
           onWeChatDownload={onWeChatDownload}
-          url={apkUrl}
+          url={release.apkUrl}
         />
       </>
     )
@@ -143,27 +159,12 @@ function PlatformActions({ platform, apkUrl, onWeChatDownload }) {
       <DownloadAction
         downloadKey="apk"
         forceNormal
+        onBeforeDownload={onApkDownload}
         onWeChatDownload={onWeChatDownload}
-        url={apkUrl}
+        url={release.apkUrl}
       />
     </>
   )
-}
-
-function copyText(value) {
-  if (navigator.clipboard?.writeText) {
-    return navigator.clipboard.writeText(value)
-  }
-
-  const textArea = document.createElement('textarea')
-  textArea.value = value
-  textArea.style.position = 'fixed'
-  textArea.style.opacity = '0'
-  document.body.appendChild(textArea)
-  textArea.select()
-  const copied = document.execCommand('copy')
-  textArea.remove()
-  return copied ? Promise.resolve() : Promise.reject(new Error('Copy failed'))
 }
 
 function WeChatDownloadGuide({ download, platform, onClose }) {
@@ -246,10 +247,18 @@ export default function AppDownloadPage() {
   const platform = detectDownloadPlatform()
   const inWeChat = isWeChatBrowser()
   const previewTrackRef = useRef(null)
-  const [apkUrl, setApkUrl] = useState(DOWNLOADS.apk.url)
+  const [androidRelease, setAndroidRelease] = useState({
+    platform: 'android',
+    packageName: 'com.chriskevin.buddhachat',
+    versionCode: null,
+    versionName: null,
+    apkUrl: DOWNLOADS.apk.url,
+    sha256: null,
+  })
+  const [androidGuideOpen, setAndroidGuideOpen] = useState(false)
   const [blockedDownload, setBlockedDownload] = useState(null)
   useEffect(() => {
-    void fetchAndroidRelease().then((release) => setApkUrl(release.apkUrl)).catch(() => {})
+    void fetchAndroidRelease().then(setAndroidRelease).catch(() => {})
   }, [])
   const scrollPreviews = (direction) => {
     const track = previewTrackRef.current
@@ -318,9 +327,25 @@ export default function AppDownloadPage() {
         >
           <PlatformActions
             platform={platform}
-            apkUrl={apkUrl}
+            release={androidRelease}
+            onApkDownload={inWeChat ? null : () => setAndroidGuideOpen(true)}
             onWeChatDownload={inWeChat ? setBlockedDownload : null}
           />
+          {platform !== 'ios' ? (
+            <AndroidDownloadNote
+              release={androidRelease}
+              onOpen={() => {
+                if (inWeChat) {
+                  setBlockedDownload({
+                    ...DOWNLOADS.apk,
+                    url: androidRelease.apkUrl,
+                  })
+                  return
+                }
+                setAndroidGuideOpen(true)
+              }}
+            />
+          ) : null}
         </div>
       </section>
 
@@ -365,6 +390,12 @@ export default function AppDownloadPage() {
           download={blockedDownload}
           platform={platform}
           onClose={() => setBlockedDownload(null)}
+        />
+      ) : null}
+      {androidGuideOpen ? (
+        <AndroidInstallGuide
+          release={androidRelease}
+          onClose={() => setAndroidGuideOpen(false)}
         />
       ) : null}
     </main>
