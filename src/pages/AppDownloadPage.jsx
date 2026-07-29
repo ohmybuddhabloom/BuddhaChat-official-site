@@ -1,7 +1,8 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { trackCtaClick } from '../lib/analytics.js'
 import { detectDownloadPlatform } from '../lib/downloadPlatform.js'
+import { fetchAndroidRelease } from '../lib/androidRelease.js'
 
 const DOWNLOADS = {
   ios: {
@@ -68,8 +69,8 @@ const PREVIEWS = [
   },
 ]
 
-function DownloadAction({ downloadKey, forceNormal = false }) {
-  const download = DOWNLOADS[downloadKey]
+function DownloadAction({ downloadKey, forceNormal = false, url }) {
+  const download = { ...DOWNLOADS[downloadKey], url: url ?? DOWNLOADS[downloadKey].url }
   const isReady = Boolean(download.url)
 
   if (!isReady) {
@@ -106,7 +107,7 @@ function DownloadAction({ downloadKey, forceNormal = false }) {
   )
 }
 
-function PlatformActions({ platform }) {
+function PlatformActions({ platform, apkUrl }) {
   if (platform === 'ios') {
     return <DownloadAction downloadKey="ios" />
   }
@@ -115,7 +116,7 @@ function PlatformActions({ platform }) {
     return (
       <>
         <DownloadAction downloadKey="google" />
-        <DownloadAction downloadKey="apk" />
+        <DownloadAction downloadKey="apk" url={apkUrl} />
       </>
     )
   }
@@ -124,7 +125,7 @@ function PlatformActions({ platform }) {
     <>
       <DownloadAction downloadKey="ios" forceNormal />
       <DownloadAction downloadKey="google" forceNormal />
-      <DownloadAction downloadKey="apk" forceNormal />
+      <DownloadAction downloadKey="apk" forceNormal url={apkUrl} />
     </>
   )
 }
@@ -132,6 +133,10 @@ function PlatformActions({ platform }) {
 export default function AppDownloadPage() {
   const platform = detectDownloadPlatform()
   const previewTrackRef = useRef(null)
+  const [apkUrl, setApkUrl] = useState(DOWNLOADS.apk.url)
+  useEffect(() => {
+    void fetchAndroidRelease().then((release) => setApkUrl(release.apkUrl)).catch(() => {})
+  }, [])
   const scrollPreviews = (direction) => {
     const track = previewTrackRef.current
     if (!track) return
@@ -197,7 +202,7 @@ export default function AppDownloadPage() {
           aria-label="下载 BuddhaChat"
           role="group"
         >
-          <PlatformActions platform={platform} />
+        <PlatformActions platform={platform} apkUrl={apkUrl} />
         </div>
       </section>
 

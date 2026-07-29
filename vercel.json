@@ -125,6 +125,14 @@
       "destination": "/api/page-entry?page=guide-yuanhui"
     },
     {
+      "source": "/downloads/android/latest.json",
+      "destination": "/api/android-release"
+    },
+    {
+      "source": "/downloads/android/latest.apk",
+      "destination": "/api/android-apk"
+    },
+    {
       "source": "/videos",
       "destination": "https://zentube.buddhachat.online/__buddhachat_www/videos/"
     },
