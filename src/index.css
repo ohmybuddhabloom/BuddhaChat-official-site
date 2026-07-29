@@ -3692,6 +3692,12 @@ a {
 .user-guide-page,
 .user-guide-page * {
   box-sizing: border-box;
+  cursor: auto;
+}
+
+.user-guide-page a,
+.user-guide-page button {
+  cursor: pointer;
 }
 
 .user-guide-shell {
@@ -4699,6 +4705,13 @@ a {
 .app-faq-page,
 .app-faq-page * {
   box-sizing: border-box;
+  cursor: auto;
+}
+
+.app-faq-page a,
+.app-faq-page button,
+.app-faq-page summary {
+  cursor: pointer;
 }
 
 .app-faq-shell {
