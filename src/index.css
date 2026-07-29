@@ -802,6 +802,10 @@ a {
   overflow: visible;
 }
 
+.sunyata-page:not(.scene-ready) .hero-right {
+  opacity: 0;
+}
+
 .devotional-space {
   position: relative;
   width: 100%;

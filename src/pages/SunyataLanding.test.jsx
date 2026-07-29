@@ -25,12 +25,15 @@ vi.mock('../lib/editorSceneStore.js', () => ({
 }))
 
 describe('SunyataLanding layout controls', () => {
-  it('renders the editor toggle', () => {
+  it('renders the editor toggle and reveals the hero after scene hydration', async () => {
     window.history.pushState({}, '', '/?edit=1')
 
-    render(<SunyataLanding />)
+    const { container } = render(<SunyataLanding />)
 
     expect(screen.getByRole('button', { name: '打开编辑器' })).toBeInTheDocument()
+    await waitFor(() => {
+      expect(container.querySelector('.sunyata-page')).toHaveClass('scene-ready')
+    })
   })
 
   it('renders sections in saved order and hides disabled sections', () => {

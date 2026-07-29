@@ -839,7 +839,7 @@ function SunyataLanding() {
   ])
 
   return (
-    <main className={`sunyata-page${editorEnabled && editorOpen ? ' editor-open' : ''}`}>
+    <main className={`sunyata-page${projectSceneReady ? ' scene-ready' : ''}${editorEnabled && editorOpen ? ' editor-open' : ''}`}>
       <div ref={cursorRef} className="sunyata-cursor" aria-hidden="true" />
       <NoiseOverlay />
       <div className="void-bg" aria-hidden="true" />
