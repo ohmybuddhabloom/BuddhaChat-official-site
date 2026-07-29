@@ -76,7 +76,6 @@ const PREVIEWS = [
 function DownloadAction({
   downloadKey,
   forceNormal = false,
-  onBeforeDownload,
   onWeChatDownload,
   url,
 }) {
@@ -115,10 +114,6 @@ function DownloadAction({
           onWeChatDownload(download)
           return
         }
-        if (onBeforeDownload) {
-          event.preventDefault()
-          onBeforeDownload()
-        }
       }}
       rel="noreferrer"
     >
@@ -131,7 +126,6 @@ function DownloadAction({
 function PlatformActions({
   platform,
   release,
-  onApkDownload,
   onWeChatDownload,
 }) {
   if (platform === 'ios') {
@@ -144,7 +138,6 @@ function PlatformActions({
         <DownloadAction downloadKey="google" onWeChatDownload={onWeChatDownload} />
         <DownloadAction
           downloadKey="apk"
-          onBeforeDownload={onApkDownload}
           onWeChatDownload={onWeChatDownload}
           url={release.apkUrl}
         />
@@ -159,7 +152,6 @@ function PlatformActions({
       <DownloadAction
         downloadKey="apk"
         forceNormal
-        onBeforeDownload={onApkDownload}
         onWeChatDownload={onWeChatDownload}
         url={release.apkUrl}
       />
@@ -328,7 +320,6 @@ export default function AppDownloadPage() {
           <PlatformActions
             platform={platform}
             release={androidRelease}
-            onApkDownload={inWeChat ? null : () => setAndroidGuideOpen(true)}
             onWeChatDownload={inWeChat ? setBlockedDownload : null}
           />
           {platform !== 'ios' ? (
