@@ -90,12 +90,19 @@ describe('AppDownloadPage', () => {
       'href',
       'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat',
     )
-    expect(screen.getByRole('link', { name: /安卓安装包下载/ })).toHaveAttribute(
+    const apkLink = screen.getByRole('link', { name: /安卓安装包下载/ })
+    expect(apkLink).toHaveAttribute(
       'href',
       '/download/android/latest.apk',
     )
     expect(screen.getByText('直接下载安装包会出现安全确认')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '安装前说明' })).toBeInTheDocument()
+    const clickEvent = new MouseEvent('click', { bubbles: true, cancelable: true })
+    apkLink.dispatchEvent(clickEvent)
+    expect(clickEvent.defaultPrevented).toBe(false)
+    expect(
+      screen.queryByRole('dialog', { name: '下载前，先确认这 4 项' }),
+    ).not.toBeInTheDocument()
     expect(screen.queryByText(/已识别为/)).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: /探索 BuddhaChat/ })).toBeInTheDocument()
   })
@@ -116,9 +123,11 @@ describe('AppDownloadPage', () => {
     render(<AppDownloadPage />)
 
     await waitFor(() => {
-      expect(screen.getByText('版本 1.3.1 · 官网直供 · SHA-256 可核验')).toBeInTheDocument()
+      expect(
+        screen.getByText('版本 1.3.1 · 官网直供 · 安装步骤可查看'),
+      ).toBeInTheDocument()
     })
-    fireEvent.click(screen.getByRole('link', { name: /安卓安装包下载/ }))
+    fireEvent.click(screen.getByRole('button', { name: '安装前说明' }))
 
     expect(
       screen.getByRole('dialog', { name: '下载前，先确认这 4 项' }),
@@ -153,6 +162,12 @@ describe('AppDownloadPage', () => {
         'BuddhaChat 商店版已通过 App Store 与 Google Play 官方验证。',
       ),
     ).toHaveClass('android-install-store-verification')
+
+    expect(screen.getByText('高级校验（可选）')).toBeInTheDocument()
+    expect(screen.getByText(androidRelease.sha256)).not.toBeVisible()
+    fireEvent.click(screen.getByText('高级校验（可选）'))
+    expect(screen.getByText(androidRelease.sha256)).toBeVisible()
+    expect(screen.getByText(/SHA-256 是安装包的数字指纹/)).toBeVisible()
 
     fireEvent.click(screen.getByRole('button', { name: '复制校验值' }))
     await waitFor(() => {

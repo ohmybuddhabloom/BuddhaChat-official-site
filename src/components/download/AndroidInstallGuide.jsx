@@ -81,7 +81,7 @@ export function AndroidDownloadNote({ release, onOpen }) {
         <span>
           {release.versionName ? `版本 ${release.versionName}` : '官方 Android 安装包'}
           {' · '}
-          官网直供 · SHA-256 可核验
+          官网直供 · 安装步骤可查看
         </span>
       </div>
       <button type="button" onClick={onOpen}>安装前说明</button>
@@ -220,27 +220,42 @@ export default function AndroidInstallGuide({ release, onClose }) {
               <dt>{text('应用包名')}</dt>
               <dd>{release.packageName}</dd>
             </div>
-            <div className="is-hash">
-              <dt>SHA-256</dt>
-              <dd>{release.sha256 || text('正在获取校验值')}</dd>
-              {release.sha256 ? (
-                <button
-                  type="button"
-                  onClick={() => {
-                    void copyText(release.sha256)
-                      .then(() => setCopyStatus('copied'))
-                      .catch(() => setCopyStatus('failed'))
-                  }}
-                >
-                  {copyStatus === 'copied'
-                    ? text('已复制')
-                    : copyStatus === 'failed'
-                      ? text('复制失败')
-                      : text('复制校验值')}
-                </button>
-              ) : null}
-            </div>
           </dl>
+
+          <details className="android-install-hash-help">
+            <summary>{text('高级校验（可选）')}</summary>
+            <div>
+              <p>
+                {text(
+                  'SHA-256 是安装包的数字指纹。普通用户无需操作；如需核验，'
+                  + '请用支持 SHA-256 的文件校验工具计算下载文件，并与下方数值逐字比较。',
+                )}
+              </p>
+              <div className="android-install-hash-value">
+                <span>SHA-256</span>
+                <code>{release.sha256 || text('正在获取校验值')}</code>
+                {release.sha256 ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void copyText(release.sha256)
+                        .then(() => setCopyStatus('copied'))
+                        .catch(() => setCopyStatus('failed'))
+                    }}
+                  >
+                    {copyStatus === 'copied'
+                      ? text('已复制')
+                      : copyStatus === 'failed'
+                        ? text('复制失败')
+                        : text('复制校验值')}
+                  </button>
+                ) : null}
+              </div>
+              <p>
+                {text('两者完全一致，表示下载文件与官网发布的安装包内容一致。')}
+              </p>
+            </div>
+          </details>
 
           <div className="android-install-safety-note">
             <strong>{text('什么情况下不要继续？')}</strong>
