@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { trackCtaClick } from '../lib/analytics.js'
-import { detectDownloadPlatform } from '../lib/downloadPlatform.js'
+import { detectDownloadPlatform, isWeChatBrowser } from '../lib/downloadPlatform.js'
 import { fetchAndroidRelease } from '../lib/androidRelease.js'
 
 const DOWNLOADS = {
@@ -69,7 +69,12 @@ const PREVIEWS = [
   },
 ]
 
-function DownloadAction({ downloadKey, forceNormal = false, url }) {
+function DownloadAction({
+  downloadKey,
+  forceNormal = false,
+  onWeChatDownload,
+  url,
+}) {
   const download = { ...DOWNLOADS[downloadKey], url: url ?? DOWNLOADS[downloadKey].url }
   const isReady = Boolean(download.url)
 
@@ -98,7 +103,13 @@ function DownloadAction({ downloadKey, forceNormal = false, url }) {
     <a
       className="campaign-download-action"
       href={download.url}
-      onClick={() => trackCtaClick(`app_download_${downloadKey}`, 'app')}
+      onClick={(event) => {
+        trackCtaClick(`app_download_${downloadKey}`, 'app')
+        if (onWeChatDownload) {
+          event.preventDefault()
+          onWeChatDownload(download)
+        }
+      }}
       rel="noreferrer"
     >
       <img className={`is-${downloadKey}`} src={download.icon} alt="" />
@@ -107,33 +118,136 @@ function DownloadAction({ downloadKey, forceNormal = false, url }) {
   )
 }
 
-function PlatformActions({ platform, apkUrl }) {
+function PlatformActions({ platform, apkUrl, onWeChatDownload }) {
   if (platform === 'ios') {
-    return <DownloadAction downloadKey="ios" />
+    return <DownloadAction downloadKey="ios" onWeChatDownload={onWeChatDownload} />
   }
 
   if (platform === 'android') {
     return (
       <>
-        <DownloadAction downloadKey="google" />
-        <DownloadAction downloadKey="apk" url={apkUrl} />
+        <DownloadAction downloadKey="google" onWeChatDownload={onWeChatDownload} />
+        <DownloadAction
+          downloadKey="apk"
+          onWeChatDownload={onWeChatDownload}
+          url={apkUrl}
+        />
       </>
     )
   }
 
   return (
     <>
-      <DownloadAction downloadKey="ios" forceNormal />
-      <DownloadAction downloadKey="google" forceNormal />
-      <DownloadAction downloadKey="apk" forceNormal url={apkUrl} />
+      <DownloadAction downloadKey="ios" forceNormal onWeChatDownload={onWeChatDownload} />
+      <DownloadAction downloadKey="google" forceNormal onWeChatDownload={onWeChatDownload} />
+      <DownloadAction
+        downloadKey="apk"
+        forceNormal
+        onWeChatDownload={onWeChatDownload}
+        url={apkUrl}
+      />
     </>
+  )
+}
+
+function copyText(value) {
+  if (navigator.clipboard?.writeText) {
+    return navigator.clipboard.writeText(value)
+  }
+
+  const textArea = document.createElement('textarea')
+  textArea.value = value
+  textArea.style.position = 'fixed'
+  textArea.style.opacity = '0'
+  document.body.appendChild(textArea)
+  textArea.select()
+  const copied = document.execCommand('copy')
+  textArea.remove()
+  return copied ? Promise.resolve() : Promise.reject(new Error('Copy failed'))
+}
+
+function WeChatDownloadGuide({ download, platform, onClose }) {
+  const closeButtonRef = useRef(null)
+  const [copyStatus, setCopyStatus] = useState('idle')
+
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [onClose])
+
+  const browserInstruction =
+    platform === 'ios' ? '在 Safari 中打开/在默认浏览器中打开' : '在浏览器中打开'
+
+  return (
+    <div
+      className="wechat-download-backdrop"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose()
+      }}
+    >
+      <section
+        className="wechat-download-guide"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="wechat-download-title"
+      >
+        <button
+          ref={closeButtonRef}
+          className="wechat-download-close"
+          type="button"
+          aria-label="关闭"
+          onClick={onClose}
+        >
+          ×
+        </button>
+        <div className="wechat-download-more" aria-hidden="true">•••</div>
+        <h2 id="wechat-download-title">请在浏览器中打开</h2>
+        <p>
+          微信可能会拦截应用商店和安装包。点击右上角“•••”，选择“{browserInstruction}”，
+          再点击下载按钮。
+        </p>
+        <div className="wechat-download-guide-actions">
+          <a href={download.url} rel="noreferrer">
+            仍然尝试打开
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              setCopyStatus('copying')
+              void copyText(download.url)
+                .then(() => setCopyStatus('copied'))
+                .catch(() => setCopyStatus('failed'))
+            }}
+          >
+            {copyStatus === 'copied'
+              ? '链接已复制'
+              : copyStatus === 'failed'
+                ? '复制失败，请长按链接'
+                : '复制下载链接'}
+          </button>
+        </div>
+        <p className="wechat-download-url">{download.url}</p>
+      </section>
+    </div>
   )
 }
 
 export default function AppDownloadPage() {
   const platform = detectDownloadPlatform()
+  const inWeChat = isWeChatBrowser()
   const previewTrackRef = useRef(null)
   const [apkUrl, setApkUrl] = useState(DOWNLOADS.apk.url)
+  const [blockedDownload, setBlockedDownload] = useState(null)
   useEffect(() => {
     void fetchAndroidRelease().then((release) => setApkUrl(release.apkUrl)).catch(() => {})
   }, [])
@@ -202,7 +316,11 @@ export default function AppDownloadPage() {
           aria-label="下载 BuddhaChat"
           role="group"
         >
-        <PlatformActions platform={platform} apkUrl={apkUrl} />
+          <PlatformActions
+            platform={platform}
+            apkUrl={apkUrl}
+            onWeChatDownload={inWeChat ? setBlockedDownload : null}
+          />
         </div>
       </section>
 
@@ -242,6 +360,13 @@ export default function AppDownloadPage() {
         </div>
         <p className="campaign-download-gallery-hint">可左右滑动浏览，也可以使用上方按钮切换</p>
       </section>
+      {blockedDownload ? (
+        <WeChatDownloadGuide
+          download={blockedDownload}
+          platform={platform}
+          onClose={() => setBlockedDownload(null)}
+        />
+      ) : null}
     </main>
   )
 }
