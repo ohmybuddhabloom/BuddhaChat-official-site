@@ -136,11 +136,11 @@ export default function YuanhuiUserGuidePage() {
           <section className="user-guide-finish">
             <small>完成</small>
             <h2>到这里，你已经走完整条使用流程</h2>
-            <p>以后打开 BuddhaChat，就可以继续每日修行、与 AI 佛祖对话、查看法师内容并参与道场共修。</p>
+            <p>以后打开 BuddhaChat，即可继续每日修行、与 AI 佛祖对话、阅读佛经、观看佛教视频、聆听佛乐、查看法师开示并参与道场共修。</p>
           </section>
         </div>
 
-        <footer className="user-guide-footer">BuddhaChat · 把修行带回每天的生活<br />下载后按页面提示开始使用。</footer>
+        <footer className="user-guide-footer">BuddhaChat · 把修行带回每天的生活</footer>
       </div>
     </main>
   )

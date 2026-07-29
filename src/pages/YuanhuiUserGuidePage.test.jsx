@@ -17,4 +17,7 @@ it('uses clickable buttons without the removed wording or exposed URLs', () => {
   expect(document.body).not.toHaveTextContent('现阶段免费')
   expect(document.body).not.toHaveTextContent('微信扫一扫')
   expect(document.body).not.toHaveTextContent('buddhachat.online/download?')
+  expect(document.body).toHaveTextContent('阅读佛经、观看佛教视频、聆听佛乐')
+  expect(document.body).toHaveTextContent('BuddhaChat · 把修行带回每天的生活')
+  expect(document.body).not.toHaveTextContent('下载后按页面提示开始使用')
 })
