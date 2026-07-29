@@ -39,8 +39,14 @@ describe('AppDownloadPage', () => {
     render(<AppDownloadPage />)
 
     expect(screen.queryByText('App Store 下载')).not.toBeInTheDocument()
-    expect(screen.getByText('Google Play 下载')).toBeInTheDocument()
-    expect(screen.getByText('安卓安装包下载')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Google Play 下载/ })).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat',
+    )
+    expect(screen.getByRole('link', { name: /安卓安装包下载/ })).toHaveAttribute(
+      'href',
+      '/download/android/latest.apk',
+    )
     expect(screen.queryByText(/已识别为/)).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: /探索 BuddhaChat/ })).toBeInTheDocument()
   })

@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "preview:bg": "node scripts/preview-daemon.mjs",
     "preview:status": "node scripts/preview-status.mjs",
-    "preview:stop": "node scripts/preview-stop.mjs"
+    "preview:stop": "node scripts/preview-stop.mjs",
+    "publish:android-apk": "node scripts/publish-android-apk.mjs"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.5",

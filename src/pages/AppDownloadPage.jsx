@@ -12,12 +12,14 @@ const DOWNLOADS = {
   google: {
     label: 'Google Play 下载',
     icon: '/download-icons/google-play.png',
-    url: import.meta.env.VITE_GOOGLE_PLAY_URL,
+    url:
+      import.meta.env.VITE_GOOGLE_PLAY_URL ||
+      'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat',
   },
   apk: {
     label: '安卓安装包下载',
     icon: '/download-icons/android.png',
-    url: import.meta.env.VITE_ANDROID_APK_URL,
+    url: import.meta.env.VITE_ANDROID_APK_URL || '/download/android/latest.apk',
   },
 }
 
