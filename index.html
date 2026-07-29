@@ -14,11 +14,13 @@
     <script>
       (() => {
         const isDownload = /^\/download(?:\/|$)/.test(location.pathname)
+        const isGuide = /^\/guide\/(?:yuanhui|app-faq)\/?$/.test(location.pathname)
+        const isCampaign = isDownload || isGuide
         const preload = document.createElement('link')
         preload.rel = 'preload'
         preload.as = 'image'
         preload.fetchPriority = 'high'
-        if (isDownload) {
+        if (isCampaign) {
           preload.href = matchMedia('(min-width: 761px)').matches
             ? '/buddhachat-download-hero-desktop-v3.avif'
             : '/buddhachat-download-hero-mobile-v3.avif'
@@ -27,7 +29,7 @@
         }
         document.head.append(preload)
 
-        if (!isDownload) {
+        if (!isCampaign) {
           const scene = document.createElement('link')
           scene.rel = 'preload'
           scene.as = 'fetch'
@@ -41,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link id="site-fonts" rel="stylesheet" media="not all" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800&display=swap" />
     <script>
-      if (!/^\/download(?:\/|$)/.test(location.pathname)) {
+      if (!/^\/(?:download(?:\/|$)|guide\/(?:yuanhui|app-faq)\/?$)/.test(location.pathname)) {
         document.getElementById('site-fonts').media = 'all'
       }
     </script>

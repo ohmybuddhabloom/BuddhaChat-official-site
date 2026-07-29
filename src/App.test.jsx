@@ -28,86 +28,94 @@ describe('App routing', () => {
     window.history.pushState({}, '', '/')
   })
 
-  it('keeps the official landing page on the home route', () => {
+  it('keeps the official landing page on the home route', async () => {
     window.history.pushState({}, '', '/')
 
     render(<App />)
 
-    expect(screen.getByTestId('landing-page')).toBeInTheDocument()
+    expect(await screen.findByTestId('landing-page')).toBeInTheDocument()
   })
 
-  it('renders fusion shell routes under www without replacing old subdomains', () => {
+  it('falls back to the official landing page for an unknown story', async () => {
+    window.history.pushState({}, '', '/?story=missing-story')
+
+    render(<App />)
+
+    expect(await screen.findByTestId('landing-page')).toBeInTheDocument()
+  })
+
+  it('renders fusion shell routes under www without replacing old subdomains', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('blocked')))
     window.history.pushState({}, '', '/sutra')
 
     render(<App />)
 
-    expect(screen.getByRole('link', { name: 'Open existing reader' })).toHaveAttribute(
+    expect(await screen.findByRole('link', { name: 'Open existing reader' })).toHaveAttribute(
       'href',
       'https://www.buddhachat.online/sutra',
     )
   })
 
-  it('keeps /zentube as a compatibility entry to the video site', () => {
+  it('keeps /zentube as a compatibility entry to the video site', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('blocked')))
     window.history.pushState({}, '', '/zentube')
 
     render(<App />)
 
-    expect(screen.getByRole('link', { name: 'Open existing video site' })).toHaveAttribute(
+    expect(await screen.findByRole('link', { name: 'Open existing video site' })).toHaveAttribute(
       'href',
       'https://www.buddhachat.online/videos',
     )
   })
 
-  it('supports /login as the product login path', () => {
+  it('supports /login as the product login path', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('blocked')))
     window.history.pushState({}, '', '/login')
 
     render(<App />)
 
-    expect(screen.getByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
+    expect(await screen.findByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
       'href',
       'https://www.buddhachat.online/videos/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
     )
   })
 
-  it('renders the public app download route without a channel code', () => {
+  it('renders the public app download route without a channel code', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
     window.history.pushState({}, '', '/download')
 
     render(<App />)
 
-    expect(screen.getByTestId('app-download-page')).toBeInTheDocument()
+    expect(await screen.findByTestId('app-download-page')).toBeInTheDocument()
   })
 
-  it('keeps the old campaign download route as a compatibility alias', () => {
+  it('keeps the old campaign download route as a compatibility alias', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
     window.history.pushState({}, '', '/download/yuanhui?ch=yuanhui-poster-01')
 
     render(<App />)
 
-    expect(screen.getByTestId('app-download-page')).toBeInTheDocument()
+    expect(await screen.findByTestId('app-download-page')).toBeInTheDocument()
   })
 
-  it('renders the source teacher mobile user guide', () => {
+  it('renders the source teacher mobile user guide', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
     window.history.pushState({}, '', '/guide/yuanhui')
 
     render(<App />)
 
-    expect(screen.getByTestId('yuanhui-user-guide-page')).toBeInTheDocument()
+    expect(await screen.findByTestId('yuanhui-user-guide-page')).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
   })
 
-  it('renders the standalone app highlights and faq guide', () => {
+  it('renders the standalone app highlights and faq guide', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
     window.history.pushState({}, '', '/guide/app-faq')
 
     render(<App />)
 
-    expect(screen.getByTestId('app-faq-guide-page')).toBeInTheDocument()
+    expect(await screen.findByTestId('app-faq-guide-page')).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
   })

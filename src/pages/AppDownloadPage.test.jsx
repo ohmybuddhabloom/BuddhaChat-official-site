@@ -73,31 +73,31 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'BuddhaChat 首页真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-home-mobile.jpg',
+      '/app-previews/app-home-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 每日修行真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-practice-mobile.jpg',
+      '/app-previews/app-practice-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 佛乐场景真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-music-mobile.jpg',
+      '/app-previews/app-music-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 读经导航真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-scriptures-mobile.jpg',
+      '/app-previews/app-scriptures-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 法师开示真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-master-talks-mobile.jpg',
+      '/app-previews/app-master-talks-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat 道场与共修社区真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-community-mobile.jpg',
+      '/app-previews/app-community-mobile.avif',
     )
     expect(screen.getByRole('img', { name: 'BuddhaChat AI 佛祖对话真实页面' })).toHaveAttribute(
       'src',
-      '/app-previews/app-ai-buddha-mobile.jpg',
+      '/app-previews/app-ai-buddha-mobile.avif',
     )
   })
 

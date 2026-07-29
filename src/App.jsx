@@ -1,14 +1,14 @@
-import { useEffect } from 'react'
-import SunyataLanding from './pages/SunyataLanding.jsx'
-import FusionRoutePage from './pages/FusionRoutePage.jsx'
-import StoryPage from './pages/StoryPage.jsx'
-import AppDownloadPage from './pages/AppDownloadPage.jsx'
-import YuanhuiUserGuidePage from './pages/YuanhuiUserGuidePage.jsx'
-import AppFaqGuidePage from './pages/AppFaqGuidePage.jsx'
+import { lazy, Suspense, useEffect } from 'react'
 import LanguageToggle from './components/LanguageToggle.jsx'
-import { SACRED_STORIES_BY_SLUG } from './content/sacredStories.js'
 import { trackNavClick, trackPageView } from './lib/analytics.js'
 import { detectDownloadPlatform } from './lib/downloadPlatform.js'
+
+const SunyataLanding = lazy(() => import('./pages/SunyataLanding.jsx'))
+const FusionRoutePage = lazy(() => import('./pages/FusionRoutePage.jsx'))
+const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
+const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
+const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
+const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
 
 const STORY_NAV = {
   logo: 'Buddha Chat',
@@ -49,15 +49,20 @@ function App() {
   const isAppFaqGuidePage = pathname === '/guide/app-faq'
 
   useEffect(() => {
-    trackPageView(
-      isDownloadPage
-        ? { scene: `app_download_${detectDownloadPlatform()}` }
-        : isYuanhuiGuidePage
-          ? { scene: 'yuanhui_user_guide' }
-          : isAppFaqGuidePage
-            ? { scene: 'app_faq_guide' }
-        : undefined,
+    const scene = isDownloadPage
+      ? { scene: `app_download_${detectDownloadPlatform()}` }
+      : isYuanhuiGuidePage
+        ? { scene: 'yuanhui_user_guide' }
+        : isAppFaqGuidePage
+          ? { scene: 'app_faq_guide' }
+          : undefined
+    const idleCallback = window.requestIdleCallback?.(
+      () => trackPageView(scene),
+      { timeout: 2500 },
     )
+    const fallbackTimer = idleCallback === undefined
+      ? window.setTimeout(() => trackPageView(scene), 1500)
+      : null
 
     const handleNavClick = (event) => {
       const link = event.target.closest?.('nav a[href]')
@@ -68,45 +73,62 @@ function App() {
     }
 
     document.addEventListener('click', handleNavClick, true)
-    return () => document.removeEventListener('click', handleNavClick, true)
+    return () => {
+      document.removeEventListener('click', handleNavClick, true)
+      if (idleCallback !== undefined) {
+        window.cancelIdleCallback?.(idleCallback)
+      }
+      if (fallbackTimer !== null) {
+        window.clearTimeout(fallbackTimer)
+      }
+    }
   }, [isAppFaqGuidePage, isDownloadPage, isYuanhuiGuidePage, pathname])
 
   if (FUSION_ROUTES.has(pathname)) {
-    return <FusionRoutePage routePath={pathname} />
+    return (
+      <Suspense fallback={null}>
+        <FusionRoutePage routePath={pathname} />
+      </Suspense>
+    )
   }
 
   if (isDownloadPage) {
     return (
-      <>
+      <Suspense fallback={null}>
         <LanguageToggle />
         <AppDownloadPage />
-      </>
+      </Suspense>
     )
   }
 
   if (isYuanhuiGuidePage) {
     return (
-      <>
+      <Suspense fallback={null}>
         <LanguageToggle />
         <YuanhuiUserGuidePage />
-      </>
+      </Suspense>
     )
   }
 
   if (isAppFaqGuidePage) {
     return (
-      <>
+      <Suspense fallback={null}>
         <LanguageToggle />
         <AppFaqGuidePage />
-      </>
+      </Suspense>
     )
   }
 
   const params = new URLSearchParams(window.location.search)
   const storySlug = params.get('story')
-  const story = storySlug ? SACRED_STORIES_BY_SLUG[storySlug] : null
 
-  return story ? <StoryPage nav={STORY_NAV} story={story} /> : <SunyataLanding />
+  return (
+    <Suspense fallback={null}>
+      {storySlug
+        ? <StoryRoutePage nav={STORY_NAV} storySlug={storySlug} />
+        : <SunyataLanding />}
+    </Suspense>
+  )
 }
 
 export default App
