@@ -85,11 +85,21 @@ function App() {
   }
 
   if (isYuanhuiGuidePage) {
-    return <YuanhuiUserGuidePage />
+    return (
+      <>
+        <LanguageToggle />
+        <YuanhuiUserGuidePage />
+      </>
+    )
   }
 
   if (isAppFaqGuidePage) {
-    return <AppFaqGuidePage />
+    return (
+      <>
+        <LanguageToggle />
+        <AppFaqGuidePage />
+      </>
+    )
   }
 
   const params = new URLSearchParams(window.location.search)

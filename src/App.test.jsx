@@ -97,6 +97,8 @@ describe('App routing', () => {
     render(<App />)
 
     expect(screen.getByTestId('yuanhui-user-guide-page')).toBeInTheDocument()
+    expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
   })
 
   it('renders the standalone app highlights and faq guide', () => {
@@ -106,5 +108,7 @@ describe('App routing', () => {
     render(<App />)
 
     expect(screen.getByTestId('app-faq-guide-page')).toBeInTheDocument()
+    expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
   })
 })
