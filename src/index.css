@@ -3708,7 +3708,7 @@ a {
   padding: 30px 24px 36px;
   background:
     linear-gradient(180deg, rgba(249, 241, 227, .02), rgba(247, 237, 221, .1) 68%, #f4e7d6 100%),
-    url("/buddhachat-download-hero-mobile-v3.jpg") center top / cover no-repeat;
+    url("/buddhachat-download-hero-mobile-v3.avif") center top / cover no-repeat;
 }
 
 .user-guide-brand {
@@ -4125,7 +4125,7 @@ a {
   z-index: -1;
   pointer-events: none;
   background:
-    var(--campaign-paper) url('/buddhachat-download-hero-mobile-v3.jpg')
+    var(--campaign-paper) url('/buddhachat-download-hero-mobile-v3.avif')
     center -150px / auto 720px no-repeat;
   /* 背景图边缘色与纸色存在色差，四周做渐隐遮罩消除接缝 */
   -webkit-mask-image:
@@ -4513,7 +4513,7 @@ a {
 
   .campaign-download-hero::before {
     background:
-      var(--campaign-paper) url('/buddhachat-download-hero-desktop-v3.jpg')
+      var(--campaign-paper) url('/buddhachat-download-hero-desktop-v3.avif')
       center / cover no-repeat;
     /* 桌面端 cover 铺满宽度，仅需底部渐隐消除与纸色的接缝 */
     -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
@@ -4713,7 +4713,7 @@ a {
   padding: 30px 24px 40px;
   background:
     linear-gradient(180deg, rgba(249, 241, 227, .05), rgba(247, 237, 221, .12) 68%, #f4e7d6 100%),
-    url("/buddhachat-download-hero-mobile-v3.jpg") center 43% / cover no-repeat;
+    url("/buddhachat-download-hero-mobile-v3.avif") center 43% / cover no-repeat;
 }
 
 .app-faq-brand {
