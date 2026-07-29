@@ -216,7 +216,14 @@ export default function AppDownloadPage() {
             <figure key={preview.src}>
               <div className="campaign-download-preview-media">
                 <div className="campaign-download-phone-screen">
-                  <img src={preview.src} alt={preview.alt} decoding="async" loading="lazy" />
+                  <img
+                    src={preview.src}
+                    alt={preview.alt}
+                    width="540"
+                    height="1122"
+                    decoding="async"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               <figcaption>
