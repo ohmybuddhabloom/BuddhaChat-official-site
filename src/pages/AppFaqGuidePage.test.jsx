@@ -20,5 +20,7 @@ it('shows six highlights and ten native questions without linking to the flow gu
   expect(screen.getByText(/打开 App Store，搜索“BuddhaChat”/)).toBeInTheDocument()
   expect(screen.getByText(/在 Google Play 搜索“BuddhaChat”/)).toBeInTheDocument()
   expect(screen.queryByText(/不需要自己在商店里搜索/)).not.toBeInTheDocument()
+  expect(screen.getByText('源慧法师专区里有什么？')).toBeInTheDocument()
+  expect(screen.queryByText('源慧专区里有什么？')).not.toBeInTheDocument()
   expect(container.querySelector('a[href="/guide/yuanhui"]')).not.toBeInTheDocument()
 })
