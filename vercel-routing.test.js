@@ -6,6 +6,7 @@ import {
   masterOriginForEnvironment,
   masterSlugFromHost,
   masterSlugFromPath,
+  masterUpstreamHeaders,
   masterUpstreamUrl,
 } from './master-router/api/index.js'
 
@@ -130,6 +131,16 @@ describe('website product routing', () => {
       'preview',
       'https://h5-zentube-git-staging.example',
     )).toBe('https://h5-zentube-git-staging.example')
+  })
+
+  test('passes the upstream protection bypass only in Preview', () => {
+    expect(masterUpstreamHeaders('text/html', 'production', 'secret')).toEqual({
+      accept: 'text/html',
+    })
+    expect(masterUpstreamHeaders('text/html', 'preview', 'secret')).toEqual({
+      accept: 'text/html',
+      'x-vercel-protection-bypass': 'secret',
+    })
   })
 
   test('keeps video under the website videos path', async () => {
