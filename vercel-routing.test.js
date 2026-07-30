@@ -107,14 +107,14 @@ describe('website product routing', () => {
     expect(masterSlugFromPath('/yuanhui', 'production')).toBeNull()
     expect(masterSlugFromPath('/videos', 'preview')).toBeNull()
     expect(masterUpstreamUrl('yuanhui', '/?embedded=1&lang=zh-TW')).toBe(
-      'https://zentube.buddhachat.online/__buddhachat_www/videos/topics/yuanhui?embedded=1&lang=zh-TW',
+      'https://zentube.buddhachat.online/?embedded=1&lang=zh-TW',
     )
     expect(masterUpstreamUrl(
       'yuanhui',
       '/?embedded=1',
       'https://zentube-staging.example',
     )).toBe(
-      'https://zentube-staging.example/__buddhachat_www/videos/topics/yuanhui?embedded=1',
+      'https://zentube-staging.example/?embedded=1',
     )
   })
 
@@ -137,8 +137,10 @@ describe('website product routing', () => {
     expect(masterUpstreamHeaders('text/html', 'production', 'secret')).toEqual({
       accept: 'text/html',
     })
-    expect(masterUpstreamHeaders('text/html', 'preview', 'secret')).toEqual({
+    expect(masterUpstreamHeaders('text/html', 'preview', 'secret', 'yuanhui')).toEqual({
       accept: 'text/html',
+      'x-forwarded-host': 'yuanhui.buddhachat.online',
+      'x-forwarded-proto': 'https',
       'x-vercel-protection-bypass': 'secret',
     })
   })

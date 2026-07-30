@@ -46,15 +46,20 @@ export function masterUpstreamUrl(
 ) {
   if (!origin) throw new Error('MASTER_ORIGIN is required for Preview')
   const query = new URL(requestUrl, 'https://placeholder.local').search
-  return `${origin}/__buddhachat_www/videos/topics/${slug}${query}`
+  return `${origin}/${query}`
 }
 
 export function masterUpstreamHeaders(
   accept = 'text/html',
   environment = process.env.VERCEL_ENV,
   bypass = process.env.UPSTREAM_PROTECTION_BYPASS,
+  slug,
 ) {
   const headers = { accept }
+  if (slug) {
+    headers['x-forwarded-host'] = `${slug}.buddhachat.online`
+    headers['x-forwarded-proto'] = 'https'
+  }
   if (environment === 'preview' && bypass) {
     headers['x-vercel-protection-bypass'] = bypass
   }
@@ -78,7 +83,7 @@ export default async function handler(request, response) {
 
   const upstream = await fetch(masterUpstreamUrl(slug, request.url, origin), {
     method: request.method === 'HEAD' ? 'HEAD' : 'GET',
-    headers: masterUpstreamHeaders(request.headers.accept || 'text/html'),
+    headers: masterUpstreamHeaders(request.headers.accept || 'text/html', undefined, undefined, slug),
   })
   const body =
     request.method === 'HEAD' ? null : Buffer.from(await upstream.arrayBuffer())
