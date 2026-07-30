@@ -8,7 +8,7 @@ import {
   masterSlugFromPath,
   masterUpstreamHeaders,
   masterUpstreamUrl,
-} from './master-router/api/index.js'
+} from './master-router/api/index.mjs'
 
 describe('website product routing', () => {
   test('redirects master entry points to their public subdomain', async () => {
@@ -96,7 +96,7 @@ describe('website product routing', () => {
         destination: 'https://zentube.buddhachat.online/__buddhachat_www/videos/:path*',
       },
     ]))
-    expect(config.functions['api/index.js'].regions).toEqual(['sin1'])
+    expect(config.functions['api/index.mjs'].regions).toEqual(['sin1'])
   })
 
   test('derives only master slugs and preserves the incoming query', () => {
