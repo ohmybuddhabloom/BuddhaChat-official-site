@@ -33,6 +33,12 @@ export default defineConfig([
     },
   },
   {
+    files: ['api/**/*.js', 'master-router/api/**/*.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
     files: ['**/*.test.{js,jsx}'],
     languageOptions: {
       globals: {

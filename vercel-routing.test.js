@@ -3,7 +3,10 @@ import path from 'node:path'
 import process from 'node:process'
 import { describe, expect, test } from 'vitest'
 import {
+  masterOriginForEnvironment,
   masterSlugFromHost,
+  masterSlugFromPath,
+  masterUpstreamHeaders,
   masterUpstreamUrl,
 } from './master-router/api/index.js'
 
@@ -93,15 +96,51 @@ describe('website product routing', () => {
         destination: 'https://zentube.buddhachat.online/__buddhachat_www/videos/:path*',
       },
     ]))
+    expect(config.functions['api/index.js'].regions).toEqual(['sin1'])
   })
 
   test('derives only master slugs and preserves the incoming query', () => {
     expect(masterSlugFromHost('yuanhui.buddhachat.online')).toBe('yuanhui')
     expect(masterSlugFromHost('www.buddhachat.online')).toBeNull()
     expect(masterSlugFromHost('attacker.example')).toBeNull()
+    expect(masterSlugFromPath('/yuanhui', 'preview')).toBe('yuanhui')
+    expect(masterSlugFromPath('/yuanhui', 'production')).toBeNull()
+    expect(masterSlugFromPath('/videos', 'preview')).toBeNull()
     expect(masterUpstreamUrl('yuanhui', '/?embedded=1&lang=zh-TW')).toBe(
       'https://zentube.buddhachat.online/__buddhachat_www/videos/topics/yuanhui?embedded=1&lang=zh-TW',
     )
+    expect(masterUpstreamUrl(
+      'yuanhui',
+      '/?embedded=1',
+      'https://zentube-staging.example',
+    )).toBe(
+      'https://zentube-staging.example/__buddhachat_www/videos/topics/yuanhui?embedded=1',
+    )
+  })
+
+  test('requires an isolated ZenTube origin in Preview', () => {
+    expect(masterOriginForEnvironment('production')).toBe(
+      'https://zentube.buddhachat.online',
+    )
+    expect(masterOriginForEnvironment('preview')).toBeNull()
+    expect(masterOriginForEnvironment(
+      'preview',
+      'https://zentube.buddhachat.online/',
+    )).toBeNull()
+    expect(masterOriginForEnvironment(
+      'preview',
+      'https://h5-zentube-git-staging.example',
+    )).toBe('https://h5-zentube-git-staging.example')
+  })
+
+  test('passes the upstream protection bypass only in Preview', () => {
+    expect(masterUpstreamHeaders('text/html', 'production', 'secret')).toEqual({
+      accept: 'text/html',
+    })
+    expect(masterUpstreamHeaders('text/html', 'preview', 'secret')).toEqual({
+      accept: 'text/html',
+      'x-vercel-protection-bypass': 'secret',
+    })
   })
 
   test('keeps video under the website videos path', async () => {

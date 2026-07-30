@@ -1,7 +1,15 @@
 import { Buffer } from 'node:buffer'
 
-const RESERVED_SUBDOMAINS = new Set(['www', 'music', 'im', 'zentube', 'sutra'])
-const MASTER_ORIGIN = 'https://zentube.buddhachat.online'
+const RESERVED_SUBDOMAINS = new Set([
+  'www',
+  'music',
+  'im',
+  'zentube',
+  'sutra',
+  'videos',
+  'api',
+])
+const PRODUCTION_MASTER_ORIGIN = 'https://zentube.buddhachat.online'
 
 export function masterSlugFromHost(host = '') {
   const match = host
@@ -14,23 +22,63 @@ export function masterSlugFromHost(host = '') {
   return slug && !RESERVED_SUBDOMAINS.has(slug) ? slug : null
 }
 
-export function masterUpstreamUrl(slug, requestUrl = '/') {
+export function masterSlugFromPath(pathname = '', environment = process.env.VERCEL_ENV) {
+  if (environment !== 'preview') return null
+  const slug = pathname.toLowerCase().match(/^\/([a-z0-9-]+)\/?$/)?.[1]
+  return slug && !RESERVED_SUBDOMAINS.has(slug) ? slug : null
+}
+
+export function masterOriginForEnvironment(
+  environment = process.env.VERCEL_ENV,
+  configuredOrigin = process.env.MASTER_ORIGIN,
+) {
+  const origin = configuredOrigin?.trim().replace(/\/+$/, '')
+  if (environment === 'preview' && (!origin || origin === PRODUCTION_MASTER_ORIGIN)) {
+    return null
+  }
+  return origin || PRODUCTION_MASTER_ORIGIN
+}
+
+export function masterUpstreamUrl(
+  slug,
+  requestUrl = '/',
+  origin = masterOriginForEnvironment(),
+) {
+  if (!origin) throw new Error('MASTER_ORIGIN is required for Preview')
   const query = new URL(requestUrl, 'https://placeholder.local').search
-  return `${MASTER_ORIGIN}/__buddhachat_www/videos/topics/${slug}${query}`
+  return `${origin}/__buddhachat_www/videos/topics/${slug}${query}`
+}
+
+export function masterUpstreamHeaders(
+  accept = 'text/html',
+  environment = process.env.VERCEL_ENV,
+  bypass = process.env.UPSTREAM_PROTECTION_BYPASS,
+) {
+  const headers = { accept }
+  if (environment === 'preview' && bypass) {
+    headers['x-vercel-protection-bypass'] = bypass
+  }
+  return headers
 }
 
 export default async function handler(request, response) {
   const requestUrl = new URL(request.url, 'https://placeholder.local')
-  const slug = masterSlugFromHost(
+  const hostSlug = masterSlugFromHost(
     request.headers['x-forwarded-host'] || request.headers.host
   )
-  if (!slug || requestUrl.pathname !== '/') {
+  const slug = hostSlug || masterSlugFromPath(requestUrl.pathname)
+  if (!slug || (hostSlug && requestUrl.pathname !== '/')) {
     return response.status(404).send('Not Found')
   }
 
-  const upstream = await fetch(masterUpstreamUrl(slug, request.url), {
+  const origin = masterOriginForEnvironment()
+  if (!origin) {
+    return response.status(503).send('Staging origin is not configured')
+  }
+
+  const upstream = await fetch(masterUpstreamUrl(slug, request.url, origin), {
     method: request.method === 'HEAD' ? 'HEAD' : 'GET',
-    headers: { accept: request.headers.accept || 'text/html' },
+    headers: masterUpstreamHeaders(request.headers.accept || 'text/html'),
   })
   const body =
     request.method === 'HEAD' ? null : Buffer.from(await upstream.arrayBuffer())
