@@ -49,6 +49,18 @@ export function masterUpstreamUrl(
   return `${origin}/__buddhachat_www/videos/topics/${slug}${query}`
 }
 
+export function masterUpstreamHeaders(
+  accept = 'text/html',
+  environment = process.env.VERCEL_ENV,
+  bypass = process.env.UPSTREAM_PROTECTION_BYPASS,
+) {
+  const headers = { accept }
+  if (environment === 'preview' && bypass) {
+    headers['x-vercel-protection-bypass'] = bypass
+  }
+  return headers
+}
+
 export default async function handler(request, response) {
   const requestUrl = new URL(request.url, 'https://placeholder.local')
   const hostSlug = masterSlugFromHost(
@@ -66,7 +78,7 @@ export default async function handler(request, response) {
 
   const upstream = await fetch(masterUpstreamUrl(slug, request.url, origin), {
     method: request.method === 'HEAD' ? 'HEAD' : 'GET',
-    headers: { accept: request.headers.accept || 'text/html' },
+    headers: masterUpstreamHeaders(request.headers.accept || 'text/html'),
   })
   const body =
     request.method === 'HEAD' ? null : Buffer.from(await upstream.arrayBuffer())
