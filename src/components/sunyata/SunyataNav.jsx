@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { SACRED_STORIES, getStoryHref } from '../../content/sacredStories.js'
+import { fetchZentubeSession } from '../../lib/fusionAuth.js'
 
 function resolveNavHref(href, currentStorySlug) {
   if (!href) {
@@ -26,8 +27,19 @@ function resolveNavHref(href, currentStorySlug) {
 
 function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) {
   const [storyMenuOpen, setStoryMenuOpen] = useState(false)
+  const [authUser, setAuthUser] = useState(null)
   const storyMenuRef = useRef(null)
   const storyTriggerRef = useRef(null)
+
+  useEffect(() => {
+    let active = true
+    fetchZentubeSession().then((session) => {
+      if (active) setAuthUser(session.user)
+    })
+    return () => {
+      active = false
+    }
+  }, [])
 
   useEffect(() => {
     if (!storyMenuOpen) return undefined
@@ -44,6 +56,10 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
       <div className="sunyata-nav-links">
         {nav.links.map((item, index) => {
           const isStoryMenu = item.label?.trim().toLowerCase() === 'story'
+          const isLoginLink =
+            ['login', 'log in', 'sign in'].includes(item.label?.trim().toLowerCase()) ||
+            item.href === '/login' ||
+            item.href === '/auth/login'
 
           if (isStoryMenu) {
             return (
@@ -96,8 +112,17 @@ function SunyataNav({ nav, stories = SACRED_STORIES, currentStorySlug = null }) 
           }
 
           return (
-            <a key={item.label} href={resolveNavHref(item.href, currentStorySlug)}>
-              {item.label}
+            <a
+              key={item.label}
+              href={
+                isLoginLink && authUser
+                  ? '/videos/me'
+                  : resolveNavHref(item.href, currentStorySlug)
+              }
+            >
+              {isLoginLink && authUser
+                ? authUser.displayName || authUser.username || 'Account'
+                : item.label}
             </a>
           )
         })}
