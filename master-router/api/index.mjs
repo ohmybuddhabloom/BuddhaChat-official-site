@@ -10,6 +10,15 @@ const RESERVED_SUBDOMAINS = new Set([
   'api',
 ])
 const PRODUCTION_MASTER_ORIGIN = 'https://zentube.buddhachat.online'
+const STAGING_SUBDOMAIN_PREFIX = 'staging-'
+
+function normalizeMasterSlug(slug) {
+  if (!slug) return null
+  const normalized = slug.startsWith(STAGING_SUBDOMAIN_PREFIX)
+    ? slug.slice(STAGING_SUBDOMAIN_PREFIX.length)
+    : slug
+  return normalized && !RESERVED_SUBDOMAINS.has(normalized) ? normalized : null
+}
 
 export function masterSlugFromHost(host = '') {
   const match = host
@@ -18,14 +27,13 @@ export function masterSlugFromHost(host = '') {
     .toLowerCase()
     .replace(/:\d+$/, '')
     .match(/^([a-z0-9-]+)\.buddhachat\.online$/)
-  const slug = match?.[1]
-  return slug && !RESERVED_SUBDOMAINS.has(slug) ? slug : null
+  return normalizeMasterSlug(match?.[1])
 }
 
 export function masterSlugFromPath(pathname = '', environment = process.env.VERCEL_ENV) {
   if (environment !== 'preview') return null
   const slug = pathname.toLowerCase().match(/^\/([a-z0-9-]+)\/?$/)?.[1]
-  return slug && !RESERVED_SUBDOMAINS.has(slug) ? slug : null
+  return normalizeMasterSlug(slug)
 }
 
 export function masterOriginForEnvironment(
