@@ -1,10 +1,10 @@
-import { Buffer } from 'node:buffer'
-import {
+const { Buffer } = require('node:buffer')
+const {
   isSmartLinkRequest,
   masterSlugFromHost,
   masterUpstreamUrl,
   smartLinkUpstreamUrl,
-} from '../lib/routing.js'
+} = require('../lib/routing.js')
 
 function requestHost(request) {
   return String(request.headers['x-forwarded-host'] || request.headers.host || '')
@@ -48,7 +48,7 @@ async function proxySmartLinkRequest(request, response) {
   return response.status(upstream.status).send(responseBody)
 }
 
-export default async function handler(request, response) {
+async function handler(request, response) {
   const requestUrl = new URL(request.url, 'https://placeholder.local')
   const host = requestHost(request)
   if (isSmartLinkRequest(host, requestUrl.pathname)) {
@@ -73,3 +73,5 @@ export default async function handler(request, response) {
   }
   return response.status(upstream.status).send(body)
 }
+
+module.exports = handler

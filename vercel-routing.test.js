@@ -2,10 +2,12 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { describe, expect, test } from 'vitest'
-import {
+import routing from './master-router/lib/routing.js'
+
+const {
   masterSlugFromHost,
   masterUpstreamUrl,
-} from './master-router/lib/routing.js'
+} = routing
 
 describe('website product routing', () => {
   test('redirects master entry points to their public subdomain', async () => {
