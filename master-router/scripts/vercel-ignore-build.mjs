@@ -9,6 +9,7 @@ if (process.env.VERCEL_ENV === "production" || ["main", "master", "production"].
 
 const watchedPaths = [
   "api/",
+  "lib/",
   "scripts/",
   "vercel.json",
 ];
