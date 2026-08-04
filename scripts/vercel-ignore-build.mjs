@@ -1,18 +1,12 @@
+#!/usr/bin/env node
 import { execFileSync } from "node:child_process";
 
 const ref = process.env.VERCEL_GIT_COMMIT_REF || "";
+const env = process.env.VERCEL_ENV || "";
 
-if (process.env.VERCEL_ENV === "production" || ["main", "master", "production"].includes(ref)) {
-  console.log("Build required for production/main deployment.");
-  process.exit(1);
-}
-
-const watchedPaths = [
+const relevantPatterns = [
   "api/",
-  "legal-site/",
-  "master-router/",
   "public/",
-  "scripts/",
   "src/",
   "index.html",
   "eslint.config",
@@ -20,13 +14,17 @@ const watchedPaths = [
   "package.json",
   "vite.config",
   "vercel-routing.test.js",
-  "vercel.json",
 ];
 
 const previousSha = process.env.VERCEL_GIT_PREVIOUS_SHA;
 
+if (env === "production" || ["main", "master", "production"].includes(ref)) {
+  console.log(`Building ${env || "preview"} deployment for ${ref || "unknown ref"}.`);
+  process.exit(1);
+}
+
 if (!previousSha) {
-  console.log("No previous SHA available; building to stay safe.");
+  console.log("No previous deployment SHA available; building.");
   process.exit(1);
 }
 
@@ -45,15 +43,17 @@ function changedFiles() {
   }
 }
 
-const changed = changedFiles();
-const shouldBuild = changed.some((file) =>
-  watchedPaths.some((path) => (path.endsWith("/") ? file.startsWith(path) : file === path || file.startsWith(path)))
-);
+function isRelevant(file) {
+  return relevantPatterns.some((pattern) => file === pattern || file.startsWith(pattern));
+}
 
-if (shouldBuild) {
-  console.log("Relevant project files changed; building.");
+const files = changedFiles();
+const relevant = files.filter(isRelevant);
+
+if (relevant.length > 0) {
+  console.log(`Building because relevant official-site files changed:\n${relevant.join("\n")}`);
   process.exit(1);
 }
 
-console.log("No relevant project files changed; skipping Vercel build.");
+console.log(`Skipping Vercel build; changed files do not affect official site output:\n${files.join("\n")}`);
 process.exit(0);
