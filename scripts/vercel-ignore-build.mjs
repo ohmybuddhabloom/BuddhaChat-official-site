@@ -3,7 +3,6 @@ import { execFileSync } from "node:child_process";
 
 const ref = process.env.VERCEL_GIT_COMMIT_REF || "";
 const env = process.env.VERCEL_ENV || "";
-const base = process.env.VERCEL_GIT_PREVIOUS_SHA || "HEAD^";
 
 const relevantPatterns = [
   "api/",
@@ -17,16 +16,29 @@ const relevantPatterns = [
   "vercel-routing.test.js",
 ];
 
+const previousSha = process.env.VERCEL_GIT_PREVIOUS_SHA;
+
+if (env === "production" || ["main", "master", "production"].includes(ref)) {
+  console.log(`Building ${env || "preview"} deployment for ${ref || "unknown ref"}.`);
+  process.exit(1);
+}
+
+if (!previousSha) {
+  console.log("No previous deployment SHA available; building.");
+  process.exit(1);
+}
+
 function changedFiles() {
   try {
-    return execFileSync("git", ["diff", "--name-only", base, "HEAD"], {
+    return execFileSync("git", ["diff", "--name-only", "--diff-filter=ACMRTUXB", `${previousSha}...HEAD`], {
       encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
     })
       .split("\n")
       .map((line) => line.trim())
       .filter(Boolean);
   } catch {
-    process.stderr.write("No previous deployment SHA available; building.\n");
+    console.log("Could not calculate changed files; building to stay safe.");
     process.exit(1);
   }
 }
@@ -35,18 +47,13 @@ function isRelevant(file) {
   return relevantPatterns.some((pattern) => file === pattern || file.startsWith(pattern));
 }
 
-if (env === "production" || ref === "main" || ref === "master") {
-  process.stderr.write(`Building ${env || "preview"} deployment for ${ref || "unknown ref"}.\n`);
-  process.exit(1);
-}
-
 const files = changedFiles();
 const relevant = files.filter(isRelevant);
 
 if (relevant.length > 0) {
-  process.stderr.write(`Building because relevant files changed:\n${relevant.join("\n")}\n`);
+  console.log(`Building because relevant official-site files changed:\n${relevant.join("\n")}`);
   process.exit(1);
 }
 
-process.stderr.write(`Skipping Vercel build; changed files do not affect official site output:\n${files.join("\n")}\n`);
+console.log(`Skipping Vercel build; changed files do not affect official site output:\n${files.join("\n")}`);
 process.exit(0);

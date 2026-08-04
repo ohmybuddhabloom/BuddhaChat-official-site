@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import SunyataNav from './SunyataNav.jsx'
 import { createSceneSnapshot } from '../../content/sunyata.js'
 import { SACRED_STORIES } from '../../content/sacredStories.js'
@@ -26,5 +26,27 @@ describe('SunyataNav', () => {
       'href',
       'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
     )
+  })
+
+  it('replaces the sign-in link with the current account', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          user: { displayName: 'Test User', username: 'test-user' },
+        }),
+      }),
+    )
+
+    const scene = createSceneSnapshot()
+    render(<SunyataNav nav={scene.nav} stories={SACRED_STORIES} />)
+
+    expect(await screen.findByRole('link', { name: 'Test User' })).toHaveAttribute(
+      'href',
+      '/videos/me',
+    )
+    vi.unstubAllGlobals()
   })
 })
