@@ -5,7 +5,7 @@ import { describe, expect, test } from 'vitest'
 import {
   masterSlugFromHost,
   masterUpstreamUrl,
-} from './master-router/api/index.js'
+} from './master-router/lib/routing.js'
 
 describe('website product routing', () => {
   test('redirects master entry points to their public subdomain', async () => {
