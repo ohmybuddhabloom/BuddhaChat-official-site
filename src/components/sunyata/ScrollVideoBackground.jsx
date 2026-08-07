@@ -198,14 +198,6 @@ function ScrollVideoBackground({
       return undefined
     }
 
-    // iOS Safari 等环境：从未播放过的视频频繁 seek 不刷新画面。
-    // 静音自动播放（muted + playsInline）后，每帧 seek 覆盖播放进度，
-    // 使 scrub 帧持续渲染；其他浏览器行为不变。
-    const playPromise = video.play()
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {})
-    }
-
     if (
       typeof window.matchMedia === 'function' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -229,8 +221,10 @@ function ScrollVideoBackground({
       if (Math.abs(delta) <= MIN_TIME_DELTA) {
         renderedTimeRef.current = targetTimeRef.current
         video.currentTime = renderedTimeRef.current
-        // 保持常驻，覆盖 play() 的自动推进，否则静止时会自行播完
-        rafRef.current = requestAnimationFrame(tick)
+        // 恢复 scrub 语义：目标帧就绪后暂停并停止追帧，
+        // 佛像静止在滚轮对应帧，而非持续播放
+        video.pause()
+        rafRef.current = 0
         return
       }
 
@@ -240,6 +234,16 @@ function ScrollVideoBackground({
     }
 
     const queueRender = () => {
+      // iOS Safari 等环境：暂停状态的视频高频 seek 可能不刷新画面。
+      // 滚动期间短暂恢复播放态以渲染 seek 帧；tick 收敛后会 pause()，
+      // 保证佛像始终跟随滚轮位置、静止时不再自行播放。
+      if (video.paused) {
+        const playPromise = video.play()
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {})
+        }
+      }
+
       applyFigureTransform(
         figureRef.current,
         buddha,
