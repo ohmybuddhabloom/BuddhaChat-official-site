@@ -11,6 +11,8 @@ describe('SunyataCards', () => {
 
     expect(screen.getByTestId('app-previews-section')).toBeInTheDocument()
     expect(screen.getByText('The Digital Sanctuary.')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Download Now' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: 'Download Now' }),
+    ).toHaveAttribute('href', '/download')
   })
 })

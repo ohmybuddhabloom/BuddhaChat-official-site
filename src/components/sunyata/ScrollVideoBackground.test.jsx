@@ -26,4 +26,31 @@ describe('ScrollVideoBackground', () => {
     fireEvent.scroll(window)
     await waitFor(() => expect(load).toHaveBeenCalledOnce())
   })
+
+  it('starts muted playback once the video hydrates so scrub frames render on iOS', async () => {
+    const load = vi.spyOn(HTMLMediaElement.prototype, 'load').mockImplementation(() => {})
+    const play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    const elementRef = { current: document.createElement('section') }
+
+    render(
+      <ScrollVideoBackground
+        heroSectionRef={elementRef}
+        endSectionRef={elementRef}
+        stopTargetRef={elementRef}
+        rangeKey="test"
+        buddha={{ x: 0, y: 0, scale: 100 }}
+      />,
+    )
+
+    fireEvent.scroll(window)
+    await waitFor(() => expect(load).toHaveBeenCalledOnce())
+
+    const video = screen.getByTestId('scroll-video')
+    Object.defineProperty(video, 'videoWidth', { value: 1024 })
+    Object.defineProperty(video, 'videoHeight', { value: 682 })
+    Object.defineProperty(video, 'duration', { value: 6 })
+    video.dispatchEvent(new Event('loadedmetadata'))
+
+    await waitFor(() => expect(play).toHaveBeenCalledOnce())
+  })
 })
