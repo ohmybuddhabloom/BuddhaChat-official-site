@@ -27,9 +27,10 @@ describe('ScrollVideoBackground', () => {
     await waitFor(() => expect(load).toHaveBeenCalledOnce())
   })
 
-  it('starts muted playback once the video hydrates so scrub frames render on iOS', async () => {
+  it('plays only while scrubbing and pauses once the target frame is reached', async () => {
     const load = vi.spyOn(HTMLMediaElement.prototype, 'load').mockImplementation(() => {})
     const play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    const pause = vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
     const elementRef = { current: document.createElement('section') }
 
     render(
@@ -51,6 +52,9 @@ describe('ScrollVideoBackground', () => {
     Object.defineProperty(video, 'duration', { value: 6 })
     video.dispatchEvent(new Event('loadedmetadata'))
 
+    // 滚动驱动渲染时短暂进入播放态
     await waitFor(() => expect(play).toHaveBeenCalledOnce())
+    // 目标帧就绪后立即暂停，恢复「跟随滚轮、静止不播」的 scrub 语义
+    await waitFor(() => expect(pause).toHaveBeenCalledOnce())
   })
 })
