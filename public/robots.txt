@@ -1,2 +1,18 @@
 User-agent: *
 Allow: /
+
+# 显式放行主流 AI 搜索爬虫（GPTBot/OAI-SearchBot/ClaudeBot/PerplexityBot/ByteSpider/Google-Extended）
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ByteSpider
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.buddhachat.online/sitemap.xml

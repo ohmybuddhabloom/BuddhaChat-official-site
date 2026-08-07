@@ -8,6 +8,64 @@ import { copyText } from '../lib/copyText.js'
 import { detectDownloadPlatform, isWeChatBrowser } from '../lib/downloadPlatform.js'
 import { fetchAndroidRelease } from '../lib/androidRelease.js'
 
+/**
+ * Campaign targets that map a `/download?target=...` URL to an in-app deep link.
+ * The APP resolves `buddhachat://l/<slug>` through its smart-link contract.
+ */
+const CAMPAIGN_DEEP_LINKS = {
+  'yuanhui-registration': 'buddhachat://l/yuanhui_registration',
+}
+
+function buildCampaignDeepLink() {
+  try {
+    const params = new URLSearchParams(window.location.search)
+    const target = params.get('target')
+    const activity = params.get('activity')
+    const slug = CAMPAIGN_DEEP_LINKS[target]
+    if (!slug) return null
+    if (!activity) return slug
+    const separator = slug.includes('?') ? '&' : '?'
+    return `${slug}${separator}activity=${encodeURIComponent(activity)}`
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Tries to open the campaign deep link when the APP is installed. On Android we
+ * route through an intent so Chrome can fall back to this page if the APP is
+ * missing; on iOS we fire the custom scheme and show a small hint. The download
+ * page itself always remains as the manual fallback.
+ */
+function useCampaignDeepLink() {
+  const [attempted, setAttempted] = useState(false)
+  useEffect(() => {
+    const deepLink = buildCampaignDeepLink()
+    if (!deepLink || attempted) return
+    setAttempted(true)
+
+    if (detectDownloadPlatform() === 'android' && !isWeChatBrowser()) {
+      // Chrome resolves custom-scheme intents natively; other Android browsers
+      // follow the javascript: navigation. WeChat blocks it, so skip there.
+      try {
+        const fallback = encodeURIComponent(window.location.href)
+        window.location.href = `intent://l/${deepLink.split('//')[1]}#Intent;scheme=buddhachat;S.browser_fallback_url=${fallback};end`
+      } catch {
+        // ignore — the page remains a download fallback
+      }
+      return
+    }
+
+    // iOS (and non-Chrome Android fallback): fire the scheme and let the app
+    // handler take over; if nothing handles it, the page just stays put.
+    try {
+      window.location.href = deepLink
+    } catch {
+      // ignore
+    }
+  }, [attempted])
+}
+
 const DOWNLOADS = {
   ios: {
     label: 'App Store 下载',
@@ -249,6 +307,7 @@ export default function AppDownloadPage() {
   })
   const [androidGuideOpen, setAndroidGuideOpen] = useState(false)
   const [blockedDownload, setBlockedDownload] = useState(null)
+  useCampaignDeepLink()
   useEffect(() => {
     void fetchAndroidRelease().then(setAndroidRelease).catch(() => {})
   }, [])
