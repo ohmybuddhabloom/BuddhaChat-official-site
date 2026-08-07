@@ -16,15 +16,34 @@ function waitForVideoReady(video) {
   }
 
   return new Promise((resolve) => {
-    const onReady = () => {
+    let settled = false
+
+    const settle = () => {
+      if (settled) {
+        return
+      }
+      settled = true
       window.clearTimeout(timeoutId)
+      video.removeEventListener('canplay', onCanPlay)
+      video.removeEventListener('loadedmetadata', onMetadata)
       resolve()
     }
-    video.addEventListener('canplay', onReady, { once: true })
-    // iOS fallback: canplay may not fire without user interaction
+
+    const onCanPlay = () => settle()
+    const onMetadata = () => settle()
+
+    video.addEventListener('canplay', onCanPlay, { once: true })
+    // loadedmetadata 保证 duration/videoWidth/videoHeight 就绪；iOS 与弱网下
+    // canplay 可能迟迟不触发（无用户交互时），metadata 到达即可安全进入 scrub
+    video.addEventListener('loadedmetadata', onMetadata, { once: true })
+
+    // 兜底：4 秒后 metadata 已到则放行；未到则继续等待 loadedmetadata，
+    // 绝不因单次超时而永久停在海报帧
     const timeoutId = window.setTimeout(() => {
-      video.removeEventListener('canplay', onReady)
-      resolve()
+      video.removeEventListener('canplay', onCanPlay)
+      if (video.readyState >= 1) {
+        settle()
+      }
     }, 4000)
   })
 }
@@ -78,8 +97,19 @@ function ScrollVideoBackground({
     const hydrateVideo = async () => {
       await waitForVideoReady(video)
 
-      if (cancelled || !video.videoWidth || !video.videoHeight || !video.duration) {
+      if (cancelled) {
         return
+      }
+
+      // 防御：超时放行但 metadata 仍未就绪时，等 loadedmetadata 再继续，
+      // 避免 videoReady 永远不触发、佛像永远停在海报帧
+      if (!video.videoWidth || !video.videoHeight || !video.duration) {
+        await new Promise((resolve) => {
+          video.addEventListener('loadedmetadata', resolve, { once: true })
+        })
+        if (cancelled) {
+          return
+        }
       }
 
       durationRef.current = video.duration
@@ -168,6 +198,14 @@ function ScrollVideoBackground({
       return undefined
     }
 
+    // iOS Safari 等环境：从未播放过的视频频繁 seek 不刷新画面。
+    // 静音自动播放（muted + playsInline）后，每帧 seek 覆盖播放进度，
+    // 使 scrub 帧持续渲染；其他浏览器行为不变。
+    const playPromise = video.play()
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {})
+    }
+
     if (
       typeof window.matchMedia === 'function' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -191,7 +229,8 @@ function ScrollVideoBackground({
       if (Math.abs(delta) <= MIN_TIME_DELTA) {
         renderedTimeRef.current = targetTimeRef.current
         video.currentTime = renderedTimeRef.current
-        rafRef.current = 0
+        // 保持常驻，覆盖 play() 的自动推进，否则静止时会自行播完
+        rafRef.current = requestAnimationFrame(tick)
         return
       }
 
