@@ -215,6 +215,57 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('经书、视频、佛乐，一站汇聚')).toBeInTheDocument()
   })
 
+  it('renders a fully English page while preserving downloads and installation guidance', async () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Linux; Android 15)',
+      platform: 'Linux armv8l',
+      maxTouchPoints: 5,
+      clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
+    })
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => androidRelease,
+    }))
+
+    const { container } = render(<AppDownloadPage locale="en" />)
+
+    expect(
+      await screen.findByText(
+        'Version 1.3.1 · Official source · Installation steps available',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /One Mindful Connection,.*Boundless Dharma by Your Side/,
+      }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Get it on Google Play/ })).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=com.chriskevin.buddhachat',
+    )
+    expect(screen.getByRole('link', { name: /Download Android APK/ })).toHaveAttribute(
+      'href',
+      androidRelease.apkUrl,
+    )
+    expect(container).not.toHaveTextContent(/[\u4e00-\u9fff]/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Installation Information' }))
+
+    const dialog = screen.getByRole('dialog', {
+      name: 'Confirm These 4 Details Before Downloading',
+    })
+    expect(dialog).toHaveAttribute('lang', 'en')
+    expect(dialog).not.toHaveTextContent(/[\u4e00-\u9fff]/)
+    expect(screen.queryByRole('button', { name: '简' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '繁' })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /OnePlus/ })).toHaveLength(3)
+    expect(screen.getByRole('link', { name: 'Download the Official APK' })).toHaveAttribute(
+      'href',
+      androidRelease.apkUrl,
+    )
+  })
+
   it('shows the seven selected app experiences', () => {
     render(<AppDownloadPage />)
 

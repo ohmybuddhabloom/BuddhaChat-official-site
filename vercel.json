@@ -118,6 +118,10 @@
       "destination": "/api/page-entry?page=download"
     },
     {
+      "source": "/download/en",
+      "destination": "/api/page-entry?page=download-en"
+    },
+    {
       "source": "/guide/yuanhui",
       "destination": "/api/page-entry?page=guide-yuanhui"
     },

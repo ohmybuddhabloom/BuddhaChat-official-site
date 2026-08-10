@@ -11,7 +11,9 @@ vi.mock('./pages/StoryPage.jsx', () => ({
 }))
 
 vi.mock('./pages/AppDownloadPage.jsx', () => ({
-  default: () => <div data-testid="app-download-page" />,
+  default: ({ locale = 'zh' }) => (
+    <div data-testid="app-download-page" data-locale={locale} />
+  ),
 }))
 
 vi.mock('./pages/YuanhuiUserGuidePage.jsx', () => ({
@@ -96,6 +98,21 @@ describe('App routing', () => {
     render(<App />)
 
     expect(await screen.findByTestId('app-download-page')).toBeInTheDocument()
+  })
+
+  it('renders the standalone English download route without the Chinese toggle', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    window.history.pushState({}, '', '/download/en')
+
+    render(<App />)
+
+    expect(await screen.findByTestId('app-download-page')).toHaveAttribute(
+      'data-locale',
+      'en',
+    )
+    expect(
+      screen.queryByRole('navigation', { name: '简体繁体切换' }),
+    ).not.toBeInTheDocument()
   })
 
   it('renders the source teacher mobile user guide', async () => {

@@ -4201,6 +4201,29 @@ a {
   letter-spacing: 0.01em;
 }
 
+.campaign-download-page[lang='en'] {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.campaign-download-page[lang='en'] .campaign-download-home-link {
+  margin-right: 0;
+}
+
+.campaign-download-page[lang='en'] .campaign-download-intro {
+  min-height: 410px;
+}
+
+.campaign-download-page[lang='en'] .campaign-download-copy h1 {
+  width: 72%;
+  font-size: clamp(1.85rem, 8vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.campaign-download-page[lang='en'] .campaign-download-primary-values {
+  margin-top: 36px;
+}
+
 .campaign-download-primary-values {
   width: 61%;
   position: relative;
@@ -5233,6 +5256,21 @@ a {
   .campaign-download-copy h1 {
     width: 54%;
     font-size: clamp(3.8rem, 6vw, 4.8rem);
+  }
+
+  .campaign-download-page[lang='en'] .campaign-download-copy h1 {
+    width: 70%;
+    font-size: clamp(2.9rem, 4.2vw, 3.45rem);
+    line-height: 1.12;
+  }
+
+  .campaign-download-page[lang='en'] .campaign-download-primary-values {
+    width: 52%;
+    margin-top: 36px;
+  }
+
+  .campaign-download-page[lang='en'] .campaign-download-secondary-values {
+    width: 78%;
   }
 
   .campaign-download-primary-values {
