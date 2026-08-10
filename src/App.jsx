@@ -43,8 +43,10 @@ function normalizePathname(pathname) {
 
 function App() {
   const pathname = normalizePathname(window.location.pathname)
-  const isDownloadPage =
+  const isChineseDownloadPage =
     pathname === '/download' || pathname === '/download/yuanhui'
+  const isEnglishDownloadPage = pathname === '/download/en'
+  const isDownloadPage = isChineseDownloadPage || isEnglishDownloadPage
   const isYuanhuiGuidePage = pathname === '/guide/yuanhui'
   const isAppFaqGuidePage = pathname === '/guide/app-faq'
 
@@ -95,8 +97,8 @@ function App() {
   if (isDownloadPage) {
     return (
       <Suspense fallback={null}>
-        <LanguageToggle />
-        <AppDownloadPage />
+        {isChineseDownloadPage ? <LanguageToggle /> : null}
+        <AppDownloadPage locale={isEnglishDownloadPage ? 'en' : 'zh'} />
       </Suspense>
     )
   }

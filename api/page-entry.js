@@ -31,6 +31,11 @@ const isDownloadPage = (url) =>
   url.pathname === '/download/' ||
   url.pathname === '/download/yuanhui'
 
+const isEnglishDownloadPage = (url) =>
+  url.searchParams.get('page') === 'download-en' ||
+  url.pathname === '/download/en' ||
+  url.searchParams.get('path') === 'download/en'
+
 const isYuanhuiGuidePage = (url) =>
   url.searchParams.get('page') === 'guide-yuanhui' ||
   url.pathname === '/guide/yuanhui' ||
@@ -69,6 +74,18 @@ export function getPageMeta(url) {
       canonicalUrl: `${ORIGIN}/?story=${encodeURIComponent(story.slug)}`,
       imageUrl: absoluteUrl(STORY_IMAGES[story.slug]),
       type: 'article',
+    }
+  }
+
+  if (isEnglishDownloadPage(url)) {
+    return {
+      title: 'Download BuddhaChat | One Mindful Connection, Boundless Dharma by Your Side',
+      description:
+        'Scriptures, Dharma talks, meditation music, and daily practice—all together in BuddhaChat.',
+      canonicalUrl: `${ORIGIN}/download/en`,
+      imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
+      type: 'website',
+      locale: 'en_US',
     }
   }
 
@@ -125,7 +142,7 @@ export function injectPageMeta(html, meta) {
     <meta property="og:type" content="${escapeHtml(meta.type)}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
-    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale" content="${escapeHtml(meta.locale ?? 'zh_CN')}" />
     <meta property="og:image" content="${imageUrl}" />
     <meta property="og:image:url" content="${imageUrl}" />
     <meta property="og:image:secure_url" content="${imageUrl}" />

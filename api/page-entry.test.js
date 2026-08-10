@@ -82,6 +82,28 @@ describe('page social metadata', () => {
   })
 
   it.each([
+    'https://www.buddhachat.online/download/en',
+    'https://www.buddhachat.online/api/page-entry?page=download-en',
+    'https://www.buddhachat.online/api/page-entry?path=download%2Fen',
+  ])('uses standalone English metadata for %s', (url) => {
+    const meta = getPageMeta(new URL(url))
+    const rendered = injectPageMeta(html, meta)
+
+    expect(meta).toMatchObject({
+      title: 'Download BuddhaChat | One Mindful Connection, Boundless Dharma by Your Side',
+      description:
+        'Scriptures, Dharma talks, meditation music, and daily practice—all together in BuddhaChat.',
+      canonicalUrl: 'https://www.buddhachat.online/download/en',
+      imageUrl:
+        'https://www.buddhachat.online/share/download-card-v1.jpg',
+      type: 'website',
+      locale: 'en_US',
+    })
+    expect(rendered).toContain('property="og:locale" content="en_US"')
+    expect(rendered).not.toMatch(/[\u4e00-\u9fff]/)
+  })
+
+  it.each([
     'https://www.buddhachat.online/guide/yuanhui',
     'https://www.buddhachat.online/guide/yuanhui/',
     'https://www.buddhachat.online/guide/yuanhui?ch=poster',
