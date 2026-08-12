@@ -24,6 +24,10 @@ vi.mock('./pages/AppFaqGuidePage.jsx', () => ({
   default: () => <div data-testid="app-faq-guide-page" />,
 }))
 
+vi.mock('./pages/AppOnboardingWelcomePage.jsx', () => ({
+  default: () => <div data-testid="app-onboarding-welcome-page" />,
+}))
+
 describe('App routing', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
@@ -135,5 +139,13 @@ describe('App routing', () => {
     expect(await screen.findByTestId('app-faq-guide-page')).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('renders the H5 app onboarding welcome route', async () => {
+    window.history.pushState({}, '', '/app/onboarding/v1')
+
+    render(<App />)
+
+    expect(await screen.findByTestId('app-onboarding-welcome-page')).toBeInTheDocument()
   })
 })
