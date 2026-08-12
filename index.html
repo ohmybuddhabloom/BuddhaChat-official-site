@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>BuddhaChat</title>
     <meta name="description" content="BuddhaChat connects Buddhist video teachings, scripture reading, music, and community in one calm digital space." />
     <meta property="og:image" content="https://www.buddhachat.online/share/official-card-v1.jpg" />
@@ -26,12 +26,15 @@
       (() => {
         const isDownload = /^\/download(?:\/|$)/.test(location.pathname)
         const isGuide = /^\/guide\/(?:yuanhui|app-faq)\/?$/.test(location.pathname)
+        const isOnboarding = /^\/app\/onboarding\/v1\/?$/.test(location.pathname)
         const isCampaign = isDownload || isGuide
         const preload = document.createElement('link')
         preload.rel = 'preload'
         preload.as = 'image'
         preload.fetchPriority = 'high'
-        if (isCampaign) {
+        if (isOnboarding) {
+          preload.href = '/app-onboarding/welcome-hero.webp'
+        } else if (isCampaign) {
           preload.href = matchMedia('(min-width: 761px)').matches
             ? '/buddhachat-download-hero-desktop-v3.avif'
             : '/buddhachat-download-hero-mobile-v3.avif'
@@ -40,7 +43,7 @@
         }
         document.head.append(preload)
 
-        if (!isCampaign) {
+        if (!isCampaign && !isOnboarding) {
           const scene = document.createElement('link')
           scene.rel = 'preload'
           scene.as = 'fetch'
@@ -50,12 +53,19 @@
         }
       })()
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link id="site-fonts" rel="stylesheet" media="not all" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800&display=swap" />
     <script>
-      if (!/^\/(?:download(?:\/|$)|guide\/(?:yuanhui|app-faq)\/?$)/.test(location.pathname)) {
-        document.getElementById('site-fonts').media = 'all'
+      if (!/^\/(?:download(?:\/|$)|guide\/(?:yuanhui|app-faq)\/?$|app\/onboarding\/v1\/?$)/.test(location.pathname)) {
+        for (const href of ['https://fonts.googleapis.com', 'https://fonts.gstatic.com']) {
+          const connection = document.createElement('link')
+          connection.rel = 'preconnect'
+          connection.href = href
+          if (href.endsWith('gstatic.com')) connection.crossOrigin = 'anonymous'
+          document.head.append(connection)
+        }
+        const fonts = document.createElement('link')
+        fonts.rel = 'stylesheet'
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800&display=swap'
+        document.head.append(fonts)
       }
     </script>
   </head>
