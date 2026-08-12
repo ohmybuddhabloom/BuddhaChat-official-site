@@ -48,7 +48,7 @@ describe('AppOnboardingWelcomePage', () => {
     expect(bridgeMessages(postMessage)[0].id).toBe('h5-00000000-0000-4000-8000-000000000001')
   })
 
-  it('sends bridge readiness once under React StrictMode', () => {
+  it('re-announces bridge readiness after React StrictMode remounts the page', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
     window.ReactNativeWebView = { postMessage }
@@ -56,7 +56,7 @@ describe('AppOnboardingWelcomePage', () => {
 
     render(<StrictMode><AppOnboardingWelcomePage /></StrictMode>)
 
-    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'bridge.ready')).toHaveLength(1)
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'bridge.ready')).toHaveLength(2)
   })
 
   it('applies a matching native bootstrap step, payload, locale, and capabilities', () => {
@@ -425,7 +425,7 @@ describe('AppOnboardingWelcomePage', () => {
     window.ReactNativeWebView = { postMessage }
     window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
     render(<StrictMode><AppOnboardingWelcomePage /></StrictMode>)
-    const ready = bridgeMessages(postMessage).find(({ event }) => event === 'bridge.ready')
+    const ready = bridgeMessages(postMessage).filter(({ event }) => event === 'bridge.ready').at(-1)
 
     act(() => sendNativeMessage({
       v: 1,
@@ -456,7 +456,7 @@ describe('AppOnboardingWelcomePage', () => {
     window.ReactNativeWebView = { postMessage }
     window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
     render(<StrictMode><AppOnboardingWelcomePage /></StrictMode>)
-    const ready = bridgeMessages(postMessage).find(({ event }) => event === 'bridge.ready')
+    const ready = bridgeMessages(postMessage).filter(({ event }) => event === 'bridge.ready').at(-1)
     act(() => sendNativeMessage({
       v: 1,
       type: 'bootstrap',
@@ -1123,7 +1123,7 @@ describe('AppOnboardingWelcomePage', () => {
     window.ReactNativeWebView = { postMessage }
     window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
     render(<StrictMode><AppOnboardingWelcomePage /></StrictMode>)
-    const ready = bridgeMessages(postMessage).find(({ event }) => event === 'bridge.ready')
+    const ready = bridgeMessages(postMessage).filter(({ event }) => event === 'bridge.ready').at(-1)
     act(() => sendNativeMessage({
       v: 1,
       type: 'bootstrap',

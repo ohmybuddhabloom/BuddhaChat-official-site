@@ -1007,6 +1007,9 @@ export default function AppOnboardingWelcomePage() {
       id,
       payload: {},
     }))
+    return () => {
+      bridgeReadySent.current = false
+    }
   }, [embedded])
 
   useEffect(() => {
