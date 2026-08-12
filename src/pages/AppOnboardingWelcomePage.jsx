@@ -60,7 +60,6 @@ const BRIDGE_EVENTS = new Set([
   'onboarding.complete',
   'onboarding.step_ready',
   'navigation.external',
-  'onboarding.restart',
 ])
 
 const NATIVE_STEP_TO_H5 = {
@@ -135,6 +134,15 @@ const CAPABILITY_KEYS = ['emailOtp', 'appleSignIn', 'googleSignIn', 'guest', 'gu
 
 const LEGACY_IMPROVEMENT_IDS = Object.fromEntries(IMPROVEMENTS.map(([id, label]) => [label, id]))
 const LEGACY_SUPPORT_IDS = Object.fromEntries(SUPPORTS.map(([id, label]) => [label, id]))
+
+function createBridgeMessageId(sequence) {
+  if (typeof window.crypto?.randomUUID === 'function') return `h5-${window.crypto.randomUUID()}`
+  if (typeof window.crypto?.getRandomValues === 'function') {
+    const words = window.crypto.getRandomValues(new Uint32Array(4))
+    return `h5-${Array.from(words, (word) => word.toString(16).padStart(8, '0')).join('')}`
+  }
+  return `h5-${Date.now()}-${sequence}`
+}
 
 function readJson(key, fallback) {
   try {
@@ -802,7 +810,7 @@ function PracticeScreen({ onBack, onMeet, onComplete, busy = false }) {
   )
 }
 
-function CompleteScreen({ guest = false, onRestart, busy = false }) {
+function CompleteScreen({ guest = false, onRestart, busy = false, embedded = false }) {
   return (
     <section className="onboarding-screen onboarding-screen--complete">
       <div className="onboarding-complete-halo"><LotusMark /></div>
@@ -811,8 +819,8 @@ function CompleteScreen({ guest = false, onRestart, busy = false }) {
         title={guest ? '游客体验已开启' : '你已经开始了'}
         subtitle={guest ? '你可以先浏览首页；进入问答时，我们会继续邀请你完成个性化设置。' : '你的个性化设置已经保存在此设备，接下来可以继续你的清净之旅。'}
       />
-      <PrimaryButton disabled={busy} aria-busy={busy} onClick={onRestart}>重新查看引导</PrimaryButton>
-      <a className="onboarding-home-link" href="/">返回官网首页</a>
+      {!embedded && <PrimaryButton disabled={busy} aria-busy={busy} onClick={onRestart}>重新查看引导</PrimaryButton>}
+      {!embedded && <a className="onboarding-home-link" href="/">返回官网首页</a>}
     </section>
   )
 }
@@ -849,7 +857,14 @@ export default function AppOnboardingWelcomePage() {
     const handleNativeMessage = (event) => {
       try {
         const message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data
-        if (message?.v !== 1 || typeof message.event !== 'string' || typeof message.id !== 'string') return
+        if (
+          message?.v !== 1
+          || typeof message.event !== 'string'
+          || typeof message.id !== 'string'
+          || !message.payload
+          || typeof message.payload !== 'object'
+          || Array.isArray(message.payload)
+        ) return
         if (message.type === 'ack' || message.type === 'error') {
           const pending = bridgeRequests.current.get(message.id)
           if (!pending || pending.event !== message.event) return
@@ -925,7 +940,7 @@ export default function AppOnboardingWelcomePage() {
     if (typeof window.ReactNativeWebView?.postMessage !== 'function') {
       return Promise.reject({ message: '无法连接到 App，请稍后重试' })
     }
-    const id = `h5-${Date.now()}-${++bridgeMessageNumber.current}`
+    const id = createBridgeMessageId(++bridgeMessageNumber.current)
     return new Promise((resolve, reject) => {
       const timer = window.setTimeout(() => {
         if (!bridgeRequests.current.delete(id)) return
@@ -983,7 +998,7 @@ export default function AppOnboardingWelcomePage() {
   useEffect(() => {
     if (!embedded || bridgeReadySent.current) return
     bridgeReadySent.current = true
-    const id = `h5-${Date.now()}-${++bridgeMessageNumber.current}`
+    const id = createBridgeMessageId(++bridgeMessageNumber.current)
     bridgeReadyId.current = id
     window.ReactNativeWebView?.postMessage(JSON.stringify({
       v: 1,
@@ -998,7 +1013,7 @@ export default function AppOnboardingWelcomePage() {
     const nativeStep = H5_STEP_TO_NATIVE[step]
     if (!embedded || !nativeBootstrap.ready || !nativeStep || lastReadyStep.current === nativeStep) return
     lastReadyStep.current = nativeStep
-    const id = `h5-${Date.now()}-${++bridgeMessageNumber.current}`
+    const id = createBridgeMessageId(++bridgeMessageNumber.current)
     try {
       window.ReactNativeWebView?.postMessage(JSON.stringify({
         v: 1,
@@ -1025,14 +1040,20 @@ export default function AppOnboardingWelcomePage() {
   }, [])
 
   useEffect(() => {
-    if (embedded && !nativeBootstrap.ready) return
+    if (embedded) {
+      window.localStorage.removeItem(STORAGE.step)
+      return
+    }
     window.localStorage.setItem(STORAGE.step, step)
-  }, [embedded, nativeBootstrap.ready, step])
+  }, [embedded, step])
 
   useEffect(() => {
-    if (embedded && !nativeBootstrap.ready) return
+    if (embedded) {
+      window.localStorage.removeItem(STORAGE.payload)
+      return
+    }
     window.localStorage.setItem(STORAGE.payload, JSON.stringify(payload))
-  }, [embedded, nativeBootstrap.ready, payload])
+  }, [embedded, payload])
 
   useEffect(() => {
     const shell = shellRef.current
@@ -1088,14 +1109,6 @@ export default function AppOnboardingWelcomePage() {
   }
 
   const restart = () => {
-    if (embedded) {
-      runNativeAction('onboarding.restart', {}, () => {
-        Object.values(STORAGE).forEach((key) => window.localStorage.removeItem(key))
-        setPayloadState(DEFAULT_PAYLOAD)
-        go('welcome', 'back')
-      })
-      return
-    }
     Object.values(STORAGE).forEach((key) => window.localStorage.removeItem(key))
     setPayloadState(DEFAULT_PAYLOAD)
     go('welcome', 'back')
@@ -1172,7 +1185,7 @@ export default function AppOnboardingWelcomePage() {
       embedded={embedded}
       capabilities={nativeBootstrap.capabilities}
       onBegin={() => runNativeAction('onboarding.persist', { step: 'quests', data: {} }, () => go('quests'))}
-      onEmail={() => go('email')}
+      onEmail={() => runNativeAction('onboarding.persist', { step: 'email', data: {} }, () => go('email'))}
       onSignIn={signIn}
       onLegal={openLegal}
       onGuest={exploreAsGuest}
@@ -1278,8 +1291,8 @@ export default function AppOnboardingWelcomePage() {
       onMeet={() => goBack('conversation')}
       onComplete={finishPractice}
     />,
-    complete: <CompleteScreen busy={pendingAction} onRestart={restart} />,
-    'guest-home': <CompleteScreen guest busy={pendingAction} onRestart={restart} />,
+    complete: <CompleteScreen embedded={embedded} busy={pendingAction} onRestart={restart} />,
+    'guest-home': <CompleteScreen embedded={embedded} guest busy={pendingAction} onRestart={restart} />,
   }
 
   useEffect(() => {

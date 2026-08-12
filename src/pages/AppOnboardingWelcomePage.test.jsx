@@ -36,6 +36,18 @@ describe('AppOnboardingWelcomePage', () => {
     })
   })
 
+  it('uses a cryptographically random native bridge request id when available', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    vi.spyOn(window.crypto, 'randomUUID').mockReturnValue('00000000-0000-4000-8000-000000000001')
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+
+    render(<AppOnboardingWelcomePage />)
+
+    expect(bridgeMessages(postMessage)[0].id).toBe('h5-00000000-0000-4000-8000-000000000001')
+  })
+
   it('sends bridge readiness once under React StrictMode', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
@@ -105,6 +117,58 @@ describe('AppOnboardingWelcomePage', () => {
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
 
+    expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
+  })
+
+  it('persists the embedded email branch before opening it', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
+    }))
+
+    const email = screen.getByRole('button', { name: '使用邮箱继续' })
+    fireEvent.click(email)
+    const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+
+    expect(persist?.payload).toEqual({ step: 'email', data: {} })
+    expect(email).toBeDisabled()
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
+    expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
+  })
+
+  it('ignores a matching native ACK with a malformed payload envelope', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: {} },
+    }))
+
+    fireEvent.click(screen.getByRole('button', { name: '开始探索' }))
+    const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id }))
+
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
     expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
   })
 
@@ -317,6 +381,8 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     fireEvent.change(screen.getByLabelText('邮箱地址'), { target: { value: 'user@example.com' } })
     fireEvent.click(screen.getByRole('button', { name: '发送验证码' }))
     await act(async () => vi.advanceTimersByTime(12_000))
@@ -815,6 +881,8 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     expect(bridgeMessages(postMessage)).toContainEqual(expect.objectContaining({
       event: 'onboarding.step_ready',
       payload: { step: 'email' },
@@ -839,6 +907,39 @@ describe('AppOnboardingWelcomePage', () => {
     expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
   })
 
+  it('keeps native onboarding answers out of H5 localStorage', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    window.localStorage.setItem('buddhachat:onboarding:step', 'birthdate')
+    window.localStorage.setItem('buddhachat:onboarding:payload', JSON.stringify({ birthdate: '1990-06-01' }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'birthdate',
+        payload: {
+          wishes: ['health'],
+          supportType: 'guidance',
+          birthdate: '1990-06-01',
+          birthTimeIncluded: true,
+          birthTime: '07:30',
+        },
+        locale: 'zh-Hans',
+        capabilities: {},
+      },
+    }))
+
+    expect(window.localStorage.getItem('buddhachat:onboarding:step')).toBeNull()
+    expect(window.localStorage.getItem('buddhachat:onboarding:payload')).toBeNull()
+  })
+
   it('retries progress sync without reusing a verified email code', async () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
@@ -855,6 +956,8 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     fireEvent.change(screen.getByLabelText('邮箱地址'), { target: { value: 'user@example.com' } })
     fireEvent.click(screen.getByRole('button', { name: '发送验证码' }))
     const sendOtp = bridgeMessages(postMessage).find(({ event }) => event === 'auth.email.send_otp')
@@ -905,7 +1008,7 @@ describe('AppOnboardingWelcomePage', () => {
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'navigation.external').at(-1).payload).toEqual({ target: 'privacy' })
   })
 
-  it('waits for native restart ACK before returning to welcome', async () => {
+  it('keeps an embedded completed recovery state inside the App', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
     window.ReactNativeWebView = { postMessage }
@@ -920,17 +1023,10 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'first_practice_completed', payload: { guardianType: 'amitabha' }, locale: 'zh-Hans', capabilities: {} },
     }))
 
-    const restart = screen.getByRole('button', { name: '重新查看引导' })
-    fireEvent.click(restart)
-    fireEvent.click(restart)
-    const requests = bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.restart')
-    expect(requests).toHaveLength(1)
-    expect(requests[0].payload).toEqual({})
-    expect(restart).toBeDisabled()
     expect(screen.getByRole('heading', { name: '你已经开始了' })).toBeInTheDocument()
-
-    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: requests[0].event, id: requests[0].id, payload: {} }))
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '重新查看引导' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '返回官网首页' })).not.toBeInTheDocument()
+    expect(bridgeMessages(postMessage).some(({ event }) => event === 'onboarding.restart')).toBe(false)
   })
 
   it('persists an embedded back target so native cold resume returns to the same screen', async () => {
@@ -1166,6 +1262,8 @@ describe('AppOnboardingWelcomePage', () => {
     fireEvent.click(screen.getByRole('button', { name: '完成' }))
 
     expect(screen.getByRole('heading', { name: '你已经开始了' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '重新查看引导' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '返回官网首页' })).toHaveAttribute('href', '/')
     expect(window.localStorage.getItem('buddhachat:onboarding:completed')).toBe('true')
   })
 })
