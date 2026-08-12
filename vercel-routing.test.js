@@ -10,6 +10,12 @@ const {
 } = routing
 
 describe('website product routing', () => {
+  test('keeps every Git push from creating a Vercel deployment', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.git).toEqual({ deploymentEnabled: false })
+  })
+
   test('redirects master entry points to their public subdomain', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 
