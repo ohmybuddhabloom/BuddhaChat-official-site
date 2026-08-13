@@ -35,5 +35,8 @@
       "source": "/:path*",
       "destination": "/api"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }

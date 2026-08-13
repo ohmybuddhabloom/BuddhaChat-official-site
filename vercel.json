@@ -205,5 +205,8 @@
       "source": "/:path*",
       "destination": "/api/page-entry?path=:path*"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }
