@@ -84,7 +84,7 @@ describe('AppOnboardingWelcomePage', () => {
     expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en-US')
   })
 
-  it('waits for one native ACK before advancing from welcome', async () => {
+  it('hides direct onboarding in the App and waits for one native ACK before opening email', async () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
     window.ReactNativeWebView = { postMessage }
@@ -96,10 +96,11 @@ describe('AppOnboardingWelcomePage', () => {
       type: 'bootstrap',
       event: 'bridge.bootstrap',
       id: ready.id,
-      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: {} },
+      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    const begin = screen.getByRole('button', { name: '开始探索' })
+    expect(screen.queryByRole('button', { name: '开始探索' })).not.toBeInTheDocument()
+    const begin = screen.getByRole('button', { name: '使用邮箱继续' })
     fireEvent.click(begin)
     fireEvent.click(begin)
     const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
@@ -109,7 +110,7 @@ describe('AppOnboardingWelcomePage', () => {
       type: 'event',
       event: 'onboarding.persist',
       id: expect.any(String),
-      payload: { step: 'quests', data: {} },
+      payload: { step: 'email', data: {} },
     })
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(1)
     expect(begin).toBeDisabled()
@@ -117,7 +118,7 @@ describe('AppOnboardingWelcomePage', () => {
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
 
-    expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
   })
 
   it('persists the embedded email branch before opening it', async () => {
@@ -159,17 +160,17 @@ describe('AppOnboardingWelcomePage', () => {
       type: 'bootstrap',
       event: 'bridge.bootstrap',
       id: ready.id,
-      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: {} },
+      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '开始探索' }))
+    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
     const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id }))
 
     expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
-    expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
   })
 
   it('persists the first survey with stable native IDs before advancing', async () => {
@@ -313,10 +314,10 @@ describe('AppOnboardingWelcomePage', () => {
       type: 'bootstrap',
       event: 'bridge.bootstrap',
       id: ready.id,
-      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: {} },
+      payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    const begin = screen.getByRole('button', { name: '开始探索' })
+    const begin = screen.getByRole('button', { name: '使用邮箱继续' })
     fireEvent.click(begin)
     await act(async () => vi.advanceTimersByTime(12_000))
 
@@ -1115,6 +1116,50 @@ describe('AppOnboardingWelcomePage', () => {
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: requests[0].event, id: requests[0].id, payload: {} }))
     expect(screen.getByRole('heading', { name: /告诉我们/ })).toBeInTheDocument()
+  })
+
+  it('restores real quest progress and opens the next unfinished quest', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'quests',
+        payload: {
+          wishes: ['health'],
+          supportType: 'guidance',
+          birthdate: '1990-06-15',
+          birthTimeIncluded: false,
+          birthTime: null,
+        },
+        locale: 'zh-Hans',
+        capabilities: {},
+      },
+    }))
+
+    expect(screen.getByText('已完成 2 / 3 个必做步骤')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '深化你的心愿' }))
+
+    expect(bridgeMessages(postMessage).find(({ event, payload }) => (
+      event === 'onboarding.persist' && payload?.step === 'wish_survey_2'
+    ))).toMatchObject({
+      payload: {
+        data: {
+          wishes: ['health'],
+          supportType: 'guidance',
+          birthdate: '1990-06-15',
+          birthTimeIncluded: false,
+          birthTime: null,
+        },
+      },
+    })
   })
 
   it('resolves a missing native guardian on cold resume before revealing it', async () => {
