@@ -369,7 +369,7 @@ function WelcomeScreen({ onBegin, onEmail, onGuest, onSignIn, onLegal, embedded 
           subtitle="用几分钟，找到与你此刻愿望相应的守护佛。"
         />
         <div className="onboarding-actions" data-motion-beat="actions">
-          <PrimaryButton disabled={busy} aria-busy={busy} onClick={onBegin}>开始探索</PrimaryButton>
+          {!embedded ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onBegin}>开始探索</PrimaryButton> : null}
           {!embedded || capabilities.emailOtp ? (
             <SecondaryButton disabled={busy} onClick={onEmail}>
               <img src="/app-onboarding/email-icon.svg" alt="" aria-hidden="true" />
@@ -505,22 +505,37 @@ function EmailScreen({ onBack, onSuccess, embedded = false, requestNative }) {
   )
 }
 
-function QuestsScreen({ onBack, onContinue, onWish, busy = false }) {
+function QuestsScreen({ onBack, onContinue, onSelectQuest, completedCount = 0, busy = false }) {
+  const quests = [
+    ['分享你的心愿', '澄清你所求，安放真实发心。'],
+    ['完善出生信息', '加深共鸣，让守护匹配更贴近你。'],
+    ['深化你的心愿', '选择你想要的陪伴、祝福与内在状态。'],
+  ]
+  const nextQuestIndex = Math.min(completedCount, 2)
+  const statusFor = (index) => index < completedCount ? 'completed' : index === nextQuestIndex ? 'active' : 'locked'
+
   return (
     <StandardScreen step="quests" onBack={onBack} className="onboarding-quests">
-      <Heading title={<>你的清净之路<br />从这里开始</>} subtitle="完成前两步即可揭晓你的守护佛，之后可选择下一段体验。" />
-      <div className="onboarding-progress"><i /></div>
-      <p className="onboarding-progress-copy">已完成 0 / 2 个必做步骤</p>
+      <Heading title={<>你的清净之路<br />从这里开始</>} subtitle="完成三步即可揭晓你的守护佛，之后可选择下一段体验。" />
+      <div className="onboarding-progress"><i style={{ width: `${Math.min(completedCount, 3) * (100 / 3)}%` }} /></div>
+      <p className="onboarding-progress-copy">已完成 {Math.min(completedCount, 3)} / 3 个必做步骤</p>
       <div className="onboarding-quest-list">
-        <button className="onboarding-quest is-active" type="button" disabled={busy} onClick={onWish} aria-label="分享你的心愿">
-          <b>01</b><span><strong>分享你的心愿</strong><small>澄清你所求，安放真实发心。</small></span><em>进行中</em>
-        </button>
-        <button className="onboarding-quest" type="button" disabled>
-          <b>02</b><span><strong>遇见你的守护佛</strong><small>完成心愿后解锁对应守护。</small></span><em>待解锁</em>
-        </button>
-        <button className="onboarding-quest" type="button" disabled>
-          <b>03</b><span><strong>首次练习</strong><small>匹配后开始 30 秒安定练习。</small></span><em>可选</em>
-        </button>
+        {quests.map(([title, description], index) => {
+          const status = statusFor(index)
+          return (
+            <button
+              key={title}
+              className={`onboarding-quest is-${status}`}
+              type="button"
+              disabled={busy || status === 'locked'}
+              onClick={() => onSelectQuest(index)}
+              aria-label={title}
+            >
+              <b>0{index + 1}</b><span><strong>{title}</strong><small>{description}</small></span>
+              <em>{status === 'completed' ? '已完成' : status === 'active' ? (index === 0 ? '进行中' : '可继续') : '待解锁'}</em>
+            </button>
+          )
+        })}
       </div>
       <div className="onboarding-zen-tip">
         <img src="/app-onboarding/zen-tip-landscape.webp" alt="晨光山水" loading="lazy" decoding="async" />
@@ -845,6 +860,7 @@ export default function AppOnboardingWelcomePage() {
   const [direction, setDirection] = useState('forward')
   const [payload, setPayloadState] = useState(() => embedded ? { ...DEFAULT_PAYLOAD } : readInitialPayload())
   const [nativeBootstrap, setNativeBootstrap] = useState({ ready: false, locale: 'zh-Hans', capabilities: {} })
+  const [completedQuests, setCompletedQuests] = useState(0)
   const [pendingAction, setPendingAction] = useState(false)
   const [bridgeError, setBridgeError] = useState('')
   const guardian = Object.values(GUARDIANS).find(({ id }) => id === payload.guardianType)
@@ -890,6 +906,7 @@ export default function AppOnboardingWelcomePage() {
         const blessing = OPTION_IDS.blessing.has(nativePayload.blessing) ? nativePayload.blessing : ''
         const innerState = OPTION_IDS.innerState.has(nativePayload.block) ? nativePayload.block : ''
         const prompt = OPTION_IDS.prompt.has(nativePayload.guardianPrompt) ? nativePayload.guardianPrompt : ''
+        setCompletedQuests(improvement && support ? (birthdate ? (pace && blessing && innerState ? 3 : 2) : 1) : 0)
         if (nextStep) setStep(nextStep)
         setPayloadState((current) => ({
           ...current,
@@ -1182,6 +1199,27 @@ export default function AppOnboardingWelcomePage() {
     runNativeAction('onboarding.complete', { firstPracticeDurationSeconds: 30 }, () => {})
   }
 
+  const selectQuest = (index) => {
+    const targets = [
+      ['wish_survey_1', {}, 'wish-one'],
+      ['birthdate', toNativeResumePayload('birthdate', payload), 'birthdate'],
+      ['wish_survey_2', toNativeResumePayload('wish_survey_2', payload), 'wish-two'],
+    ]
+    const [nativeStep, data, h5Step] = targets[index]
+    runNativeAction('onboarding.persist', { step: nativeStep, data }, () => go(h5Step))
+  }
+
+  const continueFromQuests = () => {
+    if (completedQuests < 3) {
+      selectQuest(completedQuests)
+      return
+    }
+    runNativeAction('onboarding.persist', {
+      step: 'presence_presence',
+      data: toNativeResumePayload('presence_presence', payload),
+    }, () => go('presence'))
+  }
+
   const screens = {
     welcome: <WelcomeScreen
       busy={pendingAction}
@@ -1204,9 +1242,10 @@ export default function AppOnboardingWelcomePage() {
     />,
     quests: <QuestsScreen
       busy={pendingAction}
+      completedCount={completedQuests}
       onBack={() => goBack('welcome')}
-      onWish={() => runNativeAction('onboarding.persist', { step: 'wish_survey_1', data: {} }, () => go('wish-one'))}
-      onContinue={() => runNativeAction('onboarding.persist', { step: 'wish_survey_1', data: {} }, () => go('wish-one'))}
+      onSelectQuest={selectQuest}
+      onContinue={continueFromQuests}
     />,
     'wish-one': <WishOneScreen
       payload={payload}
@@ -1216,7 +1255,10 @@ export default function AppOnboardingWelcomePage() {
       onContinue={() => runNativeAction('onboarding.persist', {
         step: 'wish_survey_1_completed',
         data: { wishes: [payload.improvement], supportType: payload.support },
-      }, () => go('birthdate'))}
+      }, () => {
+        setCompletedQuests((count) => Math.max(count, 1))
+        go('birthdate')
+      })}
     />,
     birthdate: <BirthdateScreen
       payload={payload}
@@ -1232,7 +1274,10 @@ export default function AppOnboardingWelcomePage() {
           birthTimeIncluded: payload.includeTime,
           birthTime: payload.includeTime ? payload.time : null,
         },
-      }, () => go('wish-two'))}
+      }, () => {
+        setCompletedQuests((count) => Math.max(count, 2))
+        go('wish-two')
+      })}
     />,
     'wish-two': <WishTwoScreen
       payload={payload}
@@ -1242,7 +1287,10 @@ export default function AppOnboardingWelcomePage() {
       onContinue={() => runNativeAction('onboarding.persist', {
         step: 'wish_survey_2_completed',
         data: toNativeResumePayload('wish_survey_2_completed', payload),
-      }, () => go('presence'))}
+      }, () => {
+        setCompletedQuests(3)
+        go('presence')
+      })}
     />,
     presence: <PresenceScreen
       reducedMotion={reducedMotion}

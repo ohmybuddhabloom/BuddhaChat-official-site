@@ -398,7 +398,7 @@
 /* Quests */
 .onboarding-quests .onboarding-heading { padding-top: 6px; }
 .onboarding-progress { height: 5px; overflow: hidden; margin: 0 8px 7px; border-radius: 999px; background: rgba(200, 164, 92, .18); }
-.onboarding-progress i { display: block; width: 18%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #d89e27, #efbf45); }
+.onboarding-progress i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #d89e27, #efbf45); transition: width .25s ease; }
 .onboarding-progress-copy { margin: 0 0 13px; color: var(--ob-muted); text-align: center; font-size: 11px; }
 .onboarding-quest-list { display: grid; gap: 9px; }
 .onboarding-quest {
@@ -421,6 +421,7 @@
 .onboarding-quest em { color: var(--ob-gold-deep); font-size: 10px; font-style: normal; }
 .onboarding-quest.is-active { border-color: #d9a22e; background: #fff9ec; box-shadow: 0 8px 20px rgba(174, 123, 31, .1); }
 .onboarding-quest.is-active > b { background: var(--ob-gold); color: #fff; }
+.onboarding-quest.is-completed > b { background: #f0d98b; color: #6c5117; }
 .onboarding-quest:disabled { opacity: .62; }
 .onboarding-zen-tip { position: relative; height: 70px; overflow: hidden; margin: 12px 0; border-radius: 15px; }
 .onboarding-zen-tip img { width: 100%; height: 100%; object-fit: cover; opacity: .42; }
