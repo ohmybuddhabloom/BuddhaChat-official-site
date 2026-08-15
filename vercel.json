@@ -1,8 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "git": {
-    "deploymentEnabled": false
-  },
   "ignoreCommand": "node scripts/vercel-ignore-build.mjs",
   "functions": {
     "api/*.js": {
@@ -208,5 +205,8 @@
       "source": "/:path*",
       "destination": "/api/page-entry?path=:path*"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }
