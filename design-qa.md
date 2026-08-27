@@ -56,3 +56,28 @@
 - P3: 若以后取得正式品牌莲花锁定标，可替换当前纯文字字标；本轮不新增未经确认的 Logo 资产。
 
 final result: passed
+
+---
+
+# APP 12 屏 H5 引导流程核对
+
+- 目标：以原 APP 的流程、素材和暖白金视觉体系实现完整 12 屏 H5 引导。
+- 路由：`/app/onboarding/v1`
+- 视口：Chrome 390×844。
+- Android API 35 全流程证据：`/Users/kevin/Documents/codex_screenshots/onboarding_h5_integration_20260812/`。
+- 结果：通过。12 屏无横向溢出，页面刷新可恢复当前步骤，浏览器返回与页内返回均能回到正确前序。
+- 交互：心愿和陪伴方式为必选；生日默认 1990-06-01 且要求年满 13 岁；三段仪式按 3 秒 / 4.2 秒 / 3 秒自动过渡；7 位守护佛按心愿动态匹配；首次修行支持开始、暂停、继续和 30 秒完成。
+- 登录：邮箱分邮箱与 6 位验证码两阶段，复用官网既有登录接口，并保留 60 秒重发倒计时与错误态。
+- 动效：复用 MengTo `animation-systems`、`ambient-section-particles` 和 `masked-reveal` 的方法；只使用 CSS 与少量 DOM 光尘，没有新增 Three.js 或动画依赖，并支持 `prefers-reduced-motion`。
+- 验证：页面、路由与登录专项 64 条通过，全仓 207 条通过；生产构建通过；Android API 35 上完整走过 12 屏、30 秒练习、完成后 Home、冷启保持、游客 Ask 门禁、邮箱返回与 Google 取消回退。
+- APP 嵌入态：所有登录、进度、守护佛、完成和 Ask/Home 跳转都通过版本化 bridge 交给原生真相层，收到 ACK 后才前进；独立浏览器仍保留网页内完成页。
+
+## 2026-08-12 动效与适配复盘
+
+- Skill 约束：使用 Ponytail、TDD、Accessibility、MengTo `animation-systems` / `ambient-section-particles` / `masked-reveal` 与完成前验证；不引入 Three.js 或新动画依赖。
+- 视觉节奏：冲击力集中在欢迎、佛的临在、祝福汇聚、守护佛揭晓四页；其余表单页保持克制，共鸣页仅增加当前项光扫。
+- 适配修复：补 `viewport-fit=cover`、安全区、44px 触控区、16px iOS 表单字号、系统鼠标，并将短屏/横屏的 Presence、Blessing、Guardian 改为可滚动可达。
+- 性能：`/app/onboarding/v1` 只预载欢迎图，不再预载首页 poster、scene.json 和远程字体。
+- 无障碍：进度条提供真实 `progressbar` 语义，换页后重置滚动并将焦点送到新标题；首次打开不抢占焦点；`prefers-reduced-motion` 下停止非必要动效但保留 3s / 4.2s / 3s 阅读时长。
+- 浏览器矩阵：`320×568`、`375×667`、`390×844`、`430×932`、`768×1024`、`844×390`均无横向溢出；横屏邮箱页与守护佛页底部操作可通过页内滚动完整到达。
+- 验证：48 条 onboarding 页面专项与 64 条路由/登录相关测试通过；全仓 207 条通过；`npx eslint src`、`git diff --check`、生产构建通过。
