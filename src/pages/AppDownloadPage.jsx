@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
 import AndroidInstallGuide, {
-  AndroidDownloadConfirmation,
   AndroidDownloadNote,
 } from '../components/download/AndroidInstallGuide.jsx'
 import { trackCtaClick } from '../lib/analytics.js'
@@ -195,7 +194,6 @@ function DownloadAction({
   copy,
   downloadKey,
   forceNormal = false,
-  onBeforeDownload,
   onWeChatDownload,
   url,
 }) {
@@ -227,22 +225,6 @@ function DownloadAction({
     )
   }
 
-  if (onBeforeDownload && !onWeChatDownload) {
-    return (
-      <button
-        className="campaign-download-action"
-        type="button"
-        onClick={() => {
-          trackCtaClick(`app_download_${downloadKey}`, 'app')
-          onBeforeDownload()
-        }}
-      >
-        <img className={`is-${downloadKey}`} src={download.icon} alt="" />
-        <span>{download.label}</span>
-      </button>
-    )
-  }
-
   return (
     <a
       className="campaign-download-action"
@@ -267,7 +249,6 @@ function PlatformActions({
   copy,
   platform,
   release,
-  onApkDownload,
   onWeChatDownload,
 }) {
   if (platform === 'ios') {
@@ -291,7 +272,6 @@ function PlatformActions({
         <DownloadAction
           copy={copy}
           downloadKey="apk"
-          onBeforeDownload={onApkDownload}
           onWeChatDownload={onWeChatDownload}
           url={release.apkUrl}
         />
@@ -317,7 +297,6 @@ function PlatformActions({
         copy={copy}
         downloadKey="apk"
         forceNormal
-        onBeforeDownload={onApkDownload}
         onWeChatDownload={onWeChatDownload}
         url={release.apkUrl}
       />
@@ -414,7 +393,6 @@ export default function AppDownloadPage({ locale = 'zh' }) {
     sha256: null,
   })
   const [androidGuideOpen, setAndroidGuideOpen] = useState(false)
-  const [androidDownloadConfirmOpen, setAndroidDownloadConfirmOpen] = useState(false)
   const [blockedDownload, setBlockedDownload] = useState(null)
   useCampaignDeepLink()
   useEffect(() => {
@@ -489,7 +467,6 @@ export default function AppDownloadPage({ locale = 'zh' }) {
             copy={copy}
             platform={platform}
             release={androidRelease}
-            onApkDownload={() => setAndroidDownloadConfirmOpen(true)}
             onWeChatDownload={inWeChat ? setBlockedDownload : null}
           />
           {platform !== 'ios' ? (
@@ -553,17 +530,6 @@ export default function AppDownloadPage({ locale = 'zh' }) {
           download={blockedDownload}
           platform={platform}
           onClose={() => setBlockedDownload(null)}
-        />
-      ) : null}
-      {androidDownloadConfirmOpen ? (
-        <AndroidDownloadConfirmation
-          locale={locale}
-          release={androidRelease}
-          onClose={() => setAndroidDownloadConfirmOpen(false)}
-          onViewGuide={() => {
-            setAndroidDownloadConfirmOpen(false)
-            setAndroidGuideOpen(true)
-          }}
         />
       ) : null}
       {androidGuideOpen ? (
