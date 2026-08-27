@@ -55,11 +55,6 @@
   ],
   "redirects": [
     {
-      "source": "/download/android/latest.apk",
-      "destination": "https://music.buddhachat.online/apk/BuddhaChat-latest.apk",
-      "permanent": false
-    },
-    {
       "source": "/videos/assets/:path*",
       "destination": "https://zentube.buddhachat.online/assets/:path*",
       "permanent": false
@@ -142,6 +137,10 @@
     {
       "source": "/downloads/android/latest.json",
       "destination": "/api/android-release"
+    },
+    {
+      "source": "/download/android/latest.apk",
+      "destination": "/api/android-apk"
     },
     {
       "source": "/downloads/android/latest.apk",

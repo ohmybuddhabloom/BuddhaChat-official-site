@@ -1,5 +1,17 @@
 # Buddha Chat Site Deployment
 
+## Mandatory Production release control
+
+All Staging and Production release work follows
+[`PRODUCTION_RELEASE_POLICY.md`](./PRODUCTION_RELEASE_POLICY.md). The authenticated BuddhaBloom admin
+release batch is the only release authority. Agents may prepare and verify Staging, but cannot use
+direct Vercel Production commands, mutate Production environment variables, move aliases, or act as
+the owner's backend approver. If the exact batch has not reached `production_accepted` through the
+owner's UI action, the release stops.
+
+Emergency rollback requires an explicit owner request and is limited to restoring the named prior
+deployment and configuration.
+
 ## Recommended topology
 
 - One Vercel project for this repo.
@@ -76,6 +88,9 @@ npx eslint api src/lib/siteApi.js src/lib/siteApi.test.js src/components/sunyata
 ```
 
 ## Production smoke checklist
+
+Run this checklist only after the backend has promoted an approved batch. Smoke testing is never
+permission to create or promote a Production deployment.
 
 1. Submit one Ask Buddha message and confirm a new `chat_prompts` row exists.
 2. Submit one download email and confirm `contacts` and `download_submissions` update.
