@@ -128,6 +128,106 @@ export function AndroidDownloadNote({ release, onOpen, locale = 'zh' }) {
   )
 }
 
+export function AndroidDownloadConfirmation({
+  release,
+  onClose,
+  onViewGuide,
+  locale = 'zh',
+}) {
+  const isEnglish = locale === 'en'
+  const closeButtonRef = useRef(null)
+  const version = release.versionName && release.versionCode
+    ? isEnglish
+      ? `BuddhaChat ${release.versionName} (${release.versionCode}) official APK`
+      : `BuddhaChat ${release.versionName}（${release.versionCode}）官方 APK`
+    : isEnglish
+      ? 'Official BuddhaChat APK'
+      : 'BuddhaChat 官方 APK'
+
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="android-install-backdrop"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose()
+      }}
+    >
+      <section
+        className="android-download-confirmation"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="android-download-confirmation-title"
+      >
+        <header>
+          <div>
+            <p>{version}</p>
+            <h2 id="android-download-confirmation-title">
+              {isEnglish
+                ? 'Confirm Before Downloading the Official APK'
+                : '下载官方 APK 前请确认'}
+            </h2>
+          </div>
+          <button
+            ref={closeButtonRef}
+            className="android-install-guide-close"
+            type="button"
+            aria-label={isEnglish ? 'Close download confirmation' : '关闭下载确认'}
+            onClick={onClose}
+          >
+            ×
+          </button>
+        </header>
+        <div className="android-download-confirmation-body">
+          <p>
+            {isEnglish
+              ? 'Your browser may later warn that the file might be harmful. This is Android’s standard warning for APKs outside an app store. Confirm the buddhachat.online source, then choose “Download anyway.”'
+              : '浏览器可能稍后提示“文件可能有害”。这是 Android 对非应用商店 APK 的通用提醒。确认来源为 buddhachat.online 后，请选择“仍然下载”。'}
+          </p>
+          <dl>
+            <div>
+              <dt>{isEnglish ? 'Official source' : '官方来源'}</dt>
+              <dd>buddhachat.online</dd>
+            </div>
+            <div>
+              <dt>{isEnglish ? 'App package' : '应用包名'}</dt>
+              <dd>{release.packageName}</dd>
+            </div>
+          </dl>
+        </div>
+        <footer>
+          <a
+            href={release.apkUrl}
+            rel="noreferrer"
+            onClick={() => trackCtaClick('app_download_apk_confirmed', 'app')}
+          >
+            {isEnglish ? 'Continue to Download the APK' : '继续下载官方 APK'}
+          </a>
+          <a href={GOOGLE_PLAY_URL} rel="noreferrer">
+            {isEnglish ? 'Use Google Play Instead' : '改用 Google Play'}
+          </a>
+          <button type="button" onClick={onViewGuide}>
+            {isEnglish ? 'View Full Installation Information' : '查看完整安装说明'}
+          </button>
+        </footer>
+      </section>
+    </div>
+  )
+}
+
 export default function AndroidInstallGuide({ release, onClose, locale = 'zh' }) {
   const isEnglish = locale === 'en'
   const closeButtonRef = useRef(null)
