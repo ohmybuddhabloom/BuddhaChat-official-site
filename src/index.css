@@ -2,7 +2,6 @@
   --bg: #eadccf;
   --text: #2d2319;
   --accent: #c8a97e;
-  --glow: rgba(255, 248, 235, 0.6);
   --transition: cubic-bezier(0.23, 1, 0.32, 1);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,7 +13,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none;
 }
 
 html {
@@ -440,22 +438,6 @@ a {
   transform: translateZ(0);
 }
 
-.sunyata-cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-  mix-blend-mode: soft-light;
-  transition:
-    width 0.3s ease,
-    height 0.3s ease;
-}
-
 .grain {
   position: fixed;
   inset: 0;
@@ -679,6 +661,8 @@ a {
 .sunyata-story-trigger {
   text-decoration: none;
   opacity: 0.5;
+  padding: 14px 6px;
+  margin: -14px -6px;
   transition: opacity 0.3s ease;
 }
 
@@ -3235,6 +3219,11 @@ a {
     gap: 12px 18px;
   }
 
+  .sunyata-nav-links a,
+  .sunyata-story-trigger {
+    margin: 0 -6px;
+  }
+
   .sunyata-story-menu-panel {
     position: absolute;
     left: 0;
@@ -3647,10 +3636,6 @@ a {
   * {
     cursor: auto;
   }
-
-  .sunyata-cursor {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3666,7 +3651,6 @@ a {
 
   .feature-card,
   .main-visual,
-  .sunyata-cursor,
   .cta-button,
   .sunyata-nav-links a,
   .sunyata-editor-toggle,
@@ -4108,8 +4092,6 @@ a {
   font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
 }
 
-/* 官网全局 * { cursor: none } 隐藏了系统光标，而自定义光晕光标只在首页渲染；
-   下载页范围内恢复正常光标。 */
 .campaign-download-page,
 .campaign-download-page * {
   cursor: auto;
