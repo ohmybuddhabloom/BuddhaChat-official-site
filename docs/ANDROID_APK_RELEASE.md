@@ -2,10 +2,16 @@
 
 The public download button always uses:
 
-`https://www.buddhachat.online/download/android/latest.apk`
+`https://www.buddhachat.online/downloads/android/latest.apk`
 
-Vercel redirects that stable URL to the no-cache `BuddhaChat-latest.apk` object served through
-the Tencent Cloud Nginx endpoint. Every release is also retained under `apk/releases/`.
+Vercel routes that stable URL through `api/android-apk`, which redirects to the environment-specific
+`ANDROID_APK_URL`. Production and staging must set that URL separately so APK delivery changes pass
+through staging before production. The legacy `/download/android/latest.apk` entry remains as a
+compatibility alias and uses the same API route.
+
+The old Tencent Cloud Nginx `music.buddhachat.online` APK URLs must stay reachable for at least
+14 days after a CDN migration, so already-started downloads, cached links, and rollback checks keep
+working. Every release is also retained under `apk/releases/`.
 
 ## Publish A New APK
 

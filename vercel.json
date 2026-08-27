@@ -55,11 +55,6 @@
   ],
   "redirects": [
     {
-      "source": "/download/android/latest.apk",
-      "destination": "https://music.buddhachat.online/apk/BuddhaChat-latest.apk",
-      "permanent": false
-    },
-    {
       "source": "/master/:slug([a-z0-9-]+)",
       "destination": "https://:slug.buddhachat.online",
       "permanent": true
@@ -132,6 +127,10 @@
     {
       "source": "/downloads/android/latest.json",
       "destination": "/api/android-release"
+    },
+    {
+      "source": "/download/android/latest.apk",
+      "destination": "/api/android-apk"
     },
     {
       "source": "/downloads/android/latest.apk",
