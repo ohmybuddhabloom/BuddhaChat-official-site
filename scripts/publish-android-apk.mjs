@@ -5,7 +5,7 @@ import { basename, join, resolve } from 'node:path'
 import { spawnSync } from 'node:child_process'
 
 const EXPECTED_PACKAGE = 'com.chriskevin.buddhachat'
-const EXPECTED_CERT_SHA1 = 'ccb2d8b5ac9961499ade9b4f3013cb718cd7dd0e'
+const EXPECTED_CERT_SHA1 = '32e0443c23274150f2d340b21f36f36fb14c605f'
 const BUCKET = 'cos://buddha-tokyo-1300001083'
 
 function fail(message) {
