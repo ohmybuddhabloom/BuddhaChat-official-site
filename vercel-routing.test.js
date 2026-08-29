@@ -46,6 +46,22 @@ describe('website product routing', () => {
     ]))
   })
 
+  test('routes APK downloads through the environment-controlled API', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+
+    expect(config.redirects.some(({ destination }) => /music\.buddhachat\.online/.test(destination))).toBe(false)
+    expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/download/android/latest.apk',
+        destination: '/api/android-apk',
+      },
+      {
+        source: '/downloads/android/latest.apk',
+        destination: '/api/android-apk',
+      },
+    ]))
+  })
+
   test('serves the Yuanhui guide through the social-card endpoint', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 
