@@ -7,5 +7,6 @@ This directory is the production source for `legal.buddhachat.online`.
 - Project root directory: `legal-site`
 - Public routes: `/privacy`, `/terms`, `/account-deletion`, `/support`, `/child-safety`
 
-Production releases are built by Vercel Git Integration from the merged
-GitHub commit. Do not deploy this directory from a local worktree.
+Vercel Git Integration deploys only the `staging` branch automatically.
+Production is created from the exact Owner-approved `main` SHA through the
+shared release console. Do not deploy this directory from a local worktree.
