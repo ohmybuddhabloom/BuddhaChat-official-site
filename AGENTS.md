@@ -11,8 +11,9 @@ App Store-related change must pass through the designated staging environment be
 
 1. Run the relevant automated tests, lint/static checks, and production build locally.
 2. Commit the candidate, push it to the remote repository, and record its exact Git SHA before
-   deployment. Deploy that exact SHA to staging; an unpushed working tree, local dev server, or
-   preview screenshot is not staging evidence.
+   deployment. Merge the exact candidate head into the existing `staging` branch; that push
+   automatically creates the Vercel Staging deployment. An unpushed working tree, local dev
+   server, or preview screenshot is not staging evidence.
 3. Verify the complete affected flow on staging using every relevant platform/device and retain
    fresh evidence. Download-flow verification must include displayed version/build, official
    source/domain, redirect target, user prompts, and artifact identity where applicable.
@@ -20,11 +21,11 @@ App Store-related change must pass through the designated staging environment be
    BuddhaBloom admin release workflow. Staging success is evidence, not Production authorization.
    Production authorization exists only when the admin release batch for this exact Git SHA records
    the required human approvals described below.
-5. Keep Vercel Git-triggered deployments disabled through `git.deploymentEnabled: false`. Use the
-   shared manual exact-SHA release workflow; do not re-enable automatic Preview or Production
-   deployment as a shortcut.
-6. Treat pushing `main` as a Production action whenever repository configuration is ever changed
-   to make `main` auto-deploy. In that setup, do not push `main` before staging succeeds.
+5. Keep Vercel Git-triggered deployment enabled only for `staging` through
+   `git.deploymentEnabled: { "staging": true, "*": false }`. Preview branches, `main`, and
+   Production remain disabled; Production still uses the shared manual exact-SHA release flow.
+6. Never configure `main` to auto-deploy. Merging or pushing `main` must not create a Production
+   deployment.
 7. If staging is unavailable or fails verification, stop the promotion and record the blocker.
    Never bypass staging by substituting local verification or deploying directly to Production.
 

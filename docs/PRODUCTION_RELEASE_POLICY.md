@@ -16,7 +16,8 @@ owner's behalf, or directly mutate Production. The owner records approval in the
 ## Required State Machine
 
 1. Push the exact candidate Git SHA and make it visible to the backend release workflow.
-2. Deploy that exact SHA to the designated Staging environment through the backend workflow.
+2. Merge that exact candidate head into `staging`; Vercel Git Integration automatically deploys
+   the exact final `staging` SHA to the designated Staging environment.
 3. Verify Staging and retain fresh evidence for every affected surface.
 4. The owner records Staging acceptance; the shared release batch reaches `staging_accepted`.
 5. The backend workflow performs `approve_main`; the batch reaches `main_ready`.
@@ -73,6 +74,6 @@ does not authorize a replacement release or allow the normal approval flow to be
 ## Enforcement
 
 `npm run check:release-policy` runs during every build and fails when repository automation contains
-direct Vercel Production commands, when Vercel Git auto-deployment is enabled, or when this policy is
-removed from the operating contract. This static guard supplements the backend state machine; it
-does not replace human approval.
+direct Vercel Production commands, when Vercel Git auto-deployment is enabled for any branch other
+than `staging`, or when this policy is removed from the operating contract. This static guard
+supplements the backend state machine; it does not replace human approval.
