@@ -33,8 +33,16 @@ if (!androidPolicy.includes('PRODUCTION_RELEASE_POLICY.md')) {
 }
 
 const vercel = JSON.parse(vercelSource)
-if (vercel.git?.deploymentEnabled !== false) {
-  fail('vercel.json must keep git.deploymentEnabled set to false')
+const deploymentEnabled = vercel.git?.deploymentEnabled
+const enabledBranches = deploymentEnabled && typeof deploymentEnabled === 'object'
+  ? Object.keys(deploymentEnabled)
+  : []
+if (
+  deploymentEnabled?.staging !== true ||
+  deploymentEnabled?.['*'] !== false ||
+  enabledBranches.some((branch) => !['staging', '*'].includes(branch))
+) {
+  fail('vercel.json must enable Git deployment only for staging')
 }
 
 const packageJson = JSON.parse(packageSource)
