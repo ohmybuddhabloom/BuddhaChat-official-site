@@ -39,8 +39,13 @@ for (const [name, source] of [
   ['legal-site/vercel.json', legalVercelSource],
   ['master-router/vercel.json', routerVercelSource],
 ]) {
-  if (JSON.parse(source).git?.deploymentEnabled !== false) {
-    fail(`${name} must disable Git-triggered deployments`)
+  const deploymentEnabled = JSON.parse(source).git?.deploymentEnabled
+  if (
+    deploymentEnabled?.staging !== true ||
+    deploymentEnabled?.['*'] !== false ||
+    Object.keys(deploymentEnabled).some((branch) => !['staging', '*'].includes(branch))
+  ) {
+    fail(`${name} must enable Git deployment only for staging`)
   }
 }
 

@@ -11,9 +11,9 @@ App Store-related change must pass through the designated staging environment be
 
 1. Run the relevant automated tests, lint/static checks, and production build locally.
 2. Commit the candidate, push it to the remote repository, and record its exact Git SHA before
-   deployment. Merge the exact candidate head into the existing `staging` branch, then use the
-   authenticated BuddhaBloom admin workflow to deploy that exact final Staging SHA. An unpushed
-   working tree, local dev server, or preview screenshot is not staging evidence.
+   deployment. Merge the exact candidate head into the existing `staging` branch; that push
+   automatically creates its Standard Vercel Staging deployment. An unpushed working tree, local
+   dev server, or preview screenshot is not staging evidence.
 3. Verify the complete affected flow on staging using every relevant platform/device and retain
    fresh evidence. Download-flow verification must include displayed version/build, official
    source/domain, redirect target, user prompts, and artifact identity where applicable.
@@ -21,8 +21,9 @@ App Store-related change must pass through the designated staging environment be
    BuddhaBloom admin release workflow. Staging success is evidence, not Production authorization.
    Production authorization exists only when the admin release batch for this exact Git SHA records
    the required human approvals described below.
-5. Keep Vercel Git-triggered deployments disabled through `git.deploymentEnabled: false`.
-   Staging and Production deployments both use the authenticated exact-SHA release workflow.
+5. Keep Vercel Git-triggered deployment enabled only for `staging` through
+   `git.deploymentEnabled: { "staging": true, "*": false }`. Preview branches, `main`, and
+   Production remain disabled; Production still uses the authenticated exact-SHA release flow.
 6. Never configure `main` to auto-deploy. Merging or pushing `main` must not create a Production
    deployment.
 7. If staging is unavailable or fails verification, stop the promotion and record the blocker.
@@ -35,8 +36,8 @@ App Store-related change must pass through the designated staging environment be
 The authenticated BuddhaBloom admin Staging/Release workflow is the only authority allowed to move
 this repository toward Production. This is a fail-closed rule, not a recommendation.
 
-1. An agent may prepare code, push the exact candidate SHA, deploy or verify Staging through the
-   backend workflow, and report evidence. The agent must stop at the next human approval gate.
+1. An agent may prepare code, push the exact candidate SHA, verify its automatic Staging deployment,
+   and report evidence. The agent must stop at the next human approval gate.
 2. The owner must personally record Staging acceptance and Production Candidate acceptance in the
    admin UI. A chat message such as "开始", "继续", "可以", "回到任务", or "上线" is not a backend
    approval record and must never be interpreted as permission to mutate Production.
