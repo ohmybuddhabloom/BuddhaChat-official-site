@@ -24,7 +24,7 @@ if (env === "production" || ["main", "master", "production"].includes(ref)) {
 }
 
 if (ref === "staging") {
-  console.log("Building the automatic Staging deployment.");
+  console.log("Building the backend-requested Staging deployment.");
   process.exit(1);
 }
 

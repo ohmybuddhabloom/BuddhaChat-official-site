@@ -13,11 +13,13 @@ function fail(message) {
   throw new Error(`Production release policy check failed: ${message}`)
 }
 
-const [agents, policy, androidPolicy, vercelSource, packageSource] = await Promise.all([
+const [agents, policy, androidPolicy, vercelSource, legalVercelSource, routerVercelSource, packageSource] = await Promise.all([
   read('AGENTS.md'),
   read('docs/PRODUCTION_RELEASE_POLICY.md'),
   read('docs/ANDROID_APK_RELEASE.md'),
   read('vercel.json'),
+  read('legal-site/vercel.json'),
+  read('master-router/vercel.json'),
   read('package.json'),
 ])
 
@@ -32,17 +34,14 @@ if (!androidPolicy.includes('PRODUCTION_RELEASE_POLICY.md')) {
   fail('the Android APK runbook is not bound to the Production release policy')
 }
 
-const vercel = JSON.parse(vercelSource)
-const deploymentEnabled = vercel.git?.deploymentEnabled
-const enabledBranches = deploymentEnabled && typeof deploymentEnabled === 'object'
-  ? Object.keys(deploymentEnabled)
-  : []
-if (
-  deploymentEnabled?.staging !== true ||
-  deploymentEnabled?.['*'] !== false ||
-  enabledBranches.some((branch) => !['staging', '*'].includes(branch))
-) {
-  fail('vercel.json must enable Git deployment only for staging')
+for (const [name, source] of [
+  ['vercel.json', vercelSource],
+  ['legal-site/vercel.json', legalVercelSource],
+  ['master-router/vercel.json', routerVercelSource],
+]) {
+  if (JSON.parse(source).git?.deploymentEnabled !== false) {
+    fail(`${name} must disable Git-triggered deployments`)
+  }
 }
 
 const packageJson = JSON.parse(packageSource)

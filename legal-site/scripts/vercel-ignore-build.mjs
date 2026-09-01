@@ -7,11 +7,6 @@ if (process.env.VERCEL_ENV === "production" || ["main", "master", "production"].
   process.exit(1);
 }
 
-if (ref === "staging") {
-  console.log("Building the automatic Staging deployment.");
-  process.exit(1);
-}
-
 const watchedPaths = [
   "account-deletion.html",
   "child-safety.html",
