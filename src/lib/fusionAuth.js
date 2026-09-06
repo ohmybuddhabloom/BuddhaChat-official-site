@@ -15,12 +15,22 @@ function buildApiUrl(path, origin = getZentubeApiOrigin()) {
   return normalizedOrigin ? `${normalizedOrigin}${normalizedPath}` : normalizedPath
 }
 
+async function fetchWithTimeout(fetchImpl, url, options) {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 15_000)
+  try {
+    return await fetchImpl(url, { ...options, signal: controller.signal })
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
 async function requestZentubeApi(path, { fetchImpl = globalThis.fetch, body, method = 'GET' } = {}) {
   if (typeof fetchImpl !== 'function') {
     throw new Error('fetch-unavailable')
   }
 
-  const response = await fetchImpl(buildApiUrl(path), {
+  const response = await fetchWithTimeout(fetchImpl, buildApiUrl(path), {
     method,
     credentials: 'include',
     headers: {
@@ -61,7 +71,7 @@ export async function fetchZentubeSession({
   }
 
   try {
-    const response = await fetchImpl(buildApiUrl('/api/auth/user', origin), {
+    const response = await fetchWithTimeout(fetchImpl, buildApiUrl('/api/auth/user', origin), {
       credentials: 'include',
       headers: {
         Accept: 'application/json',
@@ -104,6 +114,14 @@ export function sendLoginCode(email, { fetchImpl } = {}) {
   })
 }
 
+export function requestAccountCode(email, { fetchImpl } = {}) {
+  return requestZentubeApi('/api/auth/otp/send', { fetchImpl, method: 'POST', body: { email } })
+}
+
+export function verifyAccountCode({ email, token }, { fetchImpl } = {}) {
+  return requestZentubeApi('/api/auth/otp/verify', { fetchImpl, method: 'POST', body: { email, token } })
+}
+
 export function loginWithCode({ email, code }, { fetchImpl } = {}) {
   return requestZentubeApi('/api/auth/login-with-code', {
     fetchImpl,
@@ -126,13 +144,9 @@ export function buildAuthReturnUrl(pathname, origin = window.location.origin) {
     return fallback
   }
 
-  if (pathname.startsWith('/') && !pathname.startsWith('//')) {
-    return new URL(pathname, origin).toString()
-  }
-
   try {
-    const parsed = new URL(pathname)
-    if (parsed.origin === origin) {
+    const parsed = new URL(pathname, origin)
+    if (parsed.origin === origin && !parsed.username && !parsed.password) {
       return parsed.toString()
     }
   } catch {

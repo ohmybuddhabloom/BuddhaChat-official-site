@@ -10,6 +10,7 @@ const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
 const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
 const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
 const AppOnboardingWelcomePage = lazy(() => import('./pages/AppOnboardingWelcomePage.jsx'))
+const AccountLoginPage = lazy(() => import('./pages/AccountLoginPage.jsx'))
 
 const STORY_NAV = {
   logo: 'Buddha Chat',
@@ -89,6 +90,10 @@ function App() {
       }
     }
   }, [isAppFaqGuidePage, isAppOnboardingWelcomePage, isDownloadPage, isYuanhuiGuidePage, pathname])
+
+  if (pathname === '/login' || pathname === '/auth/login') {
+    return <Suspense fallback={null}><AccountLoginPage /></Suspense>
+  }
 
   if (FUSION_ROUTES.has(pathname)) {
     return (

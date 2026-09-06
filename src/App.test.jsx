@@ -80,10 +80,9 @@ describe('App routing', () => {
 
     render(<App />)
 
-    expect(await screen.findByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
-      'href',
-      'https://www.buddhachat.online/videos/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
-    )
+    expect(await screen.findByTestId('account-login')).toBeInTheDocument()
+    expect(screen.getByTestId('account-email')).toHaveAttribute('type', 'email')
+    expect(screen.getByTestId('account-submit')).toBeInTheDocument()
   })
 
   it('renders the public app download route without a channel code', async () => {

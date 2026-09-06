@@ -56,6 +56,18 @@
   "redirects": [
     {
       "source": "/videos/assets/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/assets/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/locales/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/videos/assets/:path*",
       "destination": "https://zentube.buddhachat.online/assets/:path*",
       "permanent": false
     },
@@ -106,6 +118,50 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/videos/assets/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/assets/:path*"
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/locales/:path*"
+    },
+    {
+      "source": "/videos/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/__buddhachat_www/videos/:path*"
+    },
+    {
+      "source": "/music/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/:path*"
+    },
+    {
+      "source": "/api/auth/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/api/auth/:path*"
+    },
+    {
+      "source": "/api/reader-sync",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/api/reader-sync"
+    },
+    {
+      "source": "/api/music/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/api/music/:path*"
+    },
+    {
+      "source": "/api/music/:path*",
+      "destination": "https://zentube.buddhachat.online/api/music/:path*"
+    },
+    {
+      "source": "/api/reader-sync/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://staging-zentube.buddhachat.online/api/reader-sync/:path*"
+    },
     {
       "source": "/",
       "destination": "/api/page-entry?page=home"
@@ -192,7 +248,7 @@
     },
     {
       "source": "/login",
-      "destination": "/api/auth-redirect"
+      "destination": "/spa.html"
     },
     {
       "source": "/auth/login",
@@ -205,6 +261,10 @@
     {
       "source": "/api/reader-sync",
       "destination": "https://zentube.buddhachat.online/api/reader-sync"
+    },
+    {
+      "source": "/api/reader-sync/:path*",
+      "destination": "https://zentube.buddhachat.online/api/reader-sync/:path*"
     },
     {
       "source": "/:path*/",
