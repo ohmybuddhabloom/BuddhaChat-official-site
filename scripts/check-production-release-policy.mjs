@@ -43,7 +43,8 @@ for (const [name, source] of [
   if (
     deploymentEnabled?.staging !== true ||
     deploymentEnabled?.['*'] !== false ||
-    Object.keys(deploymentEnabled).some((branch) => !['staging', '*'].includes(branch))
+    deploymentEnabled?.['**'] !== false ||
+    Object.keys(deploymentEnabled).some((branch) => !['staging', '*', '**'].includes(branch))
   ) {
     fail(`${name} must enable Git deployment only for staging`)
   }
