@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
+import { matchesGlob } from "node:path";
 import { test } from "node:test";
 
 for (const [name, script, config] of [
@@ -11,7 +12,19 @@ for (const [name, script, config] of [
   test(`${name} enables Git deployment only for staging`, () => {
     const deploymentEnabled = JSON.parse(readFileSync(config, "utf8")).git?.deploymentEnabled;
 
-    assert.deepEqual(deploymentEnabled, { staging: true, "*": false });
+    assert.deepEqual(deploymentEnabled, { staging: true, "*": false, "**": false });
+    // Vercel: unmatched defaults true; any matching true wins. '*' excludes '/'.
+    // https://vercel.com/docs/project-configuration/git-configuration
+    const deploys = (branch) => {
+      const matches = Object.entries(deploymentEnabled).filter(([pattern]) => matchesGlob(branch, pattern));
+      return matches.length === 0 || matches.some(([, enabled]) => enabled);
+    };
+    assert.equal(matchesGlob('codex/a/b', '*'), false);
+    assert.equal(matchesGlob('codex/a/b', '**'), true);
+    assert.equal(deploys('staging'), true);
+    for (const branch of ['main', 'production', 'feature', 'codex/a', 'codex/a/b', 'release/2026/09', 'staging/nested']) {
+      assert.equal(deploys(branch), false, `${branch} must not auto-deploy`);
+    }
   });
 
   test(`${name} always builds the staging branch`, () => {
