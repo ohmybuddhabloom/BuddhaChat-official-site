@@ -244,6 +244,21 @@
     },
     {
       "source": "/sutra",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://koodo-scripture-reader-env-staging-chenjunyu-1990s-projects.vercel.app/sutra/"
+    },
+    {
+      "source": "/sutra/",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://koodo-scripture-reader-env-staging-chenjunyu-1990s-projects.vercel.app/sutra/"
+    },
+    {
+      "source": "/sutra/:path*",
+      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
+      "destination": "https://koodo-scripture-reader-env-staging-chenjunyu-1990s-projects.vercel.app/sutra/:path*"
+    },
+    {
+      "source": "/sutra",
       "destination": "https://sutra.buddhachat.online/sutra/"
     },
     {
