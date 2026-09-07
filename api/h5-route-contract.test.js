@@ -2,6 +2,18 @@ import { describe, expect, it } from 'vitest'
 import routes from '../vercel.json'
 
 describe('canonical H5 routing', () => {
+  it.each(['/sutra', '/sutra/', '/sutra/:path*'])('keeps %s on the isolated reader while preserving production fallback', (source) => {
+    const candidates = routes.rewrites.filter((route) => route.source === source)
+    const resolve = (host) => candidates.find((route) => !route.has || route.has.every((condition) => condition.type === 'host' && new RegExp(`^${condition.value}$`).test(host)))
+    const suffix = source.includes(':path*') ? '/sutra/:path*' : '/sutra/'
+    for (const host of ['staging.buddhachat.online', 'buddha-chat-official-site-env-staging-chenjunyu-1990s-projects.vercel.app']) {
+      expect(resolve(host)?.destination).toBe(`https://koodo-scripture-reader-env-staging-chenjunyu-1990s-projects.vercel.app${suffix}`)
+      expect(resolve(host)?.has).toBeDefined()
+    }
+    expect(resolve('www.buddhachat.online')?.destination).toBe(`https://sutra.buddhachat.online${suffix}`)
+    expect(resolve('staging.buddhachat.online.evil.test')?.has).toBeUndefined()
+    expect(routes.redirects.some((route) => route.source === source)).toBe(false)
+  })
   it.each(['/music', '/music/', '/videos', '/videos/'])('pins the exact %s entry to Staging before production fallbacks', (source) => {
     const candidates = routes.rewrites.filter((route) => route.source === source)
     const resolve = (host) => candidates.find((route) => !route.has || route.has.every((condition) => condition.type === 'host' && new RegExp(`^${condition.value}$`).test(host)))
