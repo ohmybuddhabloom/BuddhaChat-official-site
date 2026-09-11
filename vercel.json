@@ -302,6 +302,18 @@
       "destination": "https://zentube.buddhachat.online/api/reader-sync/:path*"
     },
     {
+      "source": "/masters",
+      "destination": "/_masters/index.html"
+    },
+    {
+      "source": "/masters/",
+      "destination": "/_masters/index.html"
+    },
+    {
+      "source": "/masters/assets/:path*",
+      "destination": "/_masters/assets/:path*"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },
