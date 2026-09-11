@@ -21,7 +21,7 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "df15a0c1dce640359ca86520bb159262d056253ea10dd2cd227ae6de8aac047c",
+    "prototypes/masters-h5/src/Prototype.tsx": "e78f1650dc1314103467f345470dddeba2562c933bbfbbe855f2a216970dafeb",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
     "prototypes/masters-h5/src/content.ts": "ebc84545ec6585a4970e64ab90ab6d234a69c2dc38da7b9618881e3ef31203f2",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",

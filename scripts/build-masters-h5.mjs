@@ -17,7 +17,7 @@ console.log(`Verified ${Object.keys(manifest.files).length} Masters source files
 if (!process.argv.includes('--verify-only')) {
   const cwd = path.join(source, 'prototypes/masters-h5');
   for (const args of [['ci'], ['run', 'build:public']]) {
-    const result = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', args, { cwd, stdio: 'inherit' });
+    const result = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', args, { cwd, stdio: 'inherit', env: { ...process.env, VITE_MASTERS_APP_CONTENT_ENABLED: process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_GIT_COMMIT_REF === 'staging' ? 'true' : 'false' } });
     if (result.error) throw result.error;
     if (result.status !== 0) throw new Error(`Masters ${args.join(' ')} failed`);
   }

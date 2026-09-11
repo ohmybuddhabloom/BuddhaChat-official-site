@@ -17,3 +17,9 @@ npm test: 230 existing Vitest cases plus source-integrity protection pass. npm r
 Push the exact candidate, integrate with staging without discarding concurrent work, then verify the corresponding automatic deployment by SHA and deployment ID. Verify staged reading/playback/share paths on relevant devices. Account migration/RLS/synchronization still require the designated non-production Supabase project.
 
 After staging verification, the owner must personally record acceptance in the authenticated BuddhaBloom admin workflow. Do not invoke or simulate Production promotion, change Production aliases, or treat chat assent as the backend approval record.
+
+## Same-content App return candidate
+
+Must change: staging preview App gates link to the canonical masters content route so a shared article returns to the same native article. Must preserve: browser reading and history, old App-home fallback for production/unconfigured builds, public routing and release approval policy. Only VERCEL_ENV=preview with VERCEL_GIT_COMMIT_REF=staging enables the new link.
+
+Local validation: source integrity, lint, 230 Vitest tests and full build with those staging variables passed. Root H5 browser artifact tests passed in Chromium/WebKit with the flag enabled. Actual iOS Release system copy and Safari paste opened article xy-artcle69; Android system share contained the same URL. Online H5 return and both-platform lifecycle remain pending for this new candidate.
