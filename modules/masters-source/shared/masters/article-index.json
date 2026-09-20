@@ -18010,5 +18010,1165 @@
     "source_sha256": "766cfa64cc9c0f6fec11c86a233c835ca8c3aa67284d97e03c247e9576ff63d8",
     "source_order": 29,
     "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-10-001",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "86e2b462fd961c619addcc4597a93ce393043415f1b65963064548e657adac96",
+    "source_order": 1,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-10-002",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "慢活人生",
+    "author": "聖嚴法師",
+    "source_sha256": "6f564d82bc164765abc8ee9279ef84f511140dcba65bebfde98a22675b440a02",
+    "source_order": 2,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-003",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "境隨心轉能轉敗為勝",
+    "author": "聖嚴法師",
+    "source_sha256": "472739a36902f72d73edbb7dc936a825df3aa11cc19cdf09def7efbdf31de435",
+    "source_order": 3,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-004",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "如何認清自己？",
+    "author": "聖嚴法師",
+    "source_sha256": "2af7f438d20818596f04f42cb2f2a6d65c5c9fe277efc9e504eb36adfa6432ed",
+    "source_order": 4,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-005",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "對自己有交代",
+    "author": "聖嚴法師",
+    "source_sha256": "b184ae6b5fe3761133481888907f1269fca6bf652cc0a4c9aaebadd8d9d4db5a",
+    "source_order": 5,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-006",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "人生規畫",
+    "author": "聖嚴法師",
+    "source_sha256": "af36163e5f4a5833bc52f276bb14a666a297001bbcf3ed27b8e92bd39220ea0b",
+    "source_order": 6,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-007",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "懂得放下，才能自在",
+    "author": "聖嚴法師",
+    "source_sha256": "51e63408022e4e62966f1c0a8bc567bf8abf7386bf32bf70a925a7691c4763e1",
+    "source_order": 7,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-10-008",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "小心而不擔心",
+    "author": "聖嚴法師",
+    "source_sha256": "2e91abd61f81ced37fbea99b3f2c0f66d375e01e14f6e59387a9e2778afa11d4",
+    "source_order": 8,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-009",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "睡前放空自己",
+    "author": "聖嚴法師",
+    "source_sha256": "6937aadda27f42188dc0d1a1754de8504a7e9522652d7d0f4cfa03c76caf2e2d",
+    "source_order": 9,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-010",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "整形能轉運嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "32337363a1e3537b545f63f8a5adf2a2809eec53fa0fbd22b0a9a80881486d16",
+    "source_order": 10,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-011",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "恐怖的愛",
+    "author": "聖嚴法師",
+    "source_sha256": "b11117def6e50e93d590432a0dc380c33f322fb1caa7f3672bd529a73dada0e2",
+    "source_order": 11,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-012",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "愛情不是人生的唯一",
+    "author": "聖嚴法師",
+    "source_sha256": "c2967d8491a5598a9d28c1d471d7963e048ce6b2ada9a14374be8ff961426dc4",
+    "source_order": 12,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-013",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不要被愛情沖昏了頭",
+    "author": "聖嚴法師",
+    "source_sha256": "ee36df8e1086fac72ae72777545455bd3135655ad55bcb5d0c8d39f95f3e2a2d",
+    "source_order": 13,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-014",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "有條件的愛太辛苦",
+    "author": "聖嚴法師",
+    "source_sha256": "6d8f3a9714271624e5247c8c6b011a7c3a96ddc9e55e6d880e1fb7762c9c2d5f",
+    "source_order": 14,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-015",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "別玩劈腿遊戲",
+    "author": "聖嚴法師",
+    "source_sha256": "93895faaa42aa14b0c54e06c8c84db57af39adc6ddd2d2272e09d30a888352a5",
+    "source_order": 15,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-08-10-016",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "非結婚不可嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "ffc5f96c9e3f78834fb2f36d3732d38a71c08b203ab55dd42cddff7fff497bc0",
+    "source_order": 16,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-017",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "賺錢的福報",
+    "author": "聖嚴法師",
+    "source_sha256": "d38dafa28b8252edfa08ab813eb9f47dc59b772b77d34d05ba20662f0bf22d28",
+    "source_order": 17,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-018",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "辦公室的溝通智慧",
+    "author": "聖嚴法師",
+    "source_sha256": "9247d628a01169f9610e3df5e0def603205481b536ccc9e7ddf3ef7dbd302664",
+    "source_order": 18,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-019",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "讓人人都有飯吃",
+    "author": "聖嚴法師",
+    "source_sha256": "97dac6b8a4fcd6e96fec190b3e03f02342e1d241ed7c6ff9314e7802ccced323",
+    "source_order": 19,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-020",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "忙人時間最多",
+    "author": "聖嚴法師",
+    "source_sha256": "5c5893a643c8109d0b970df1d5b863399736e43340d414827d5dc61bbfc994bf",
+    "source_order": 20,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-021",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "心定就做事不亂",
+    "author": "聖嚴法師",
+    "source_sha256": "9c47796c875d9fb409911e117a6d7a60331f3f9b1846a8033b26690ae8e5417e",
+    "source_order": 21,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-022",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "穩重不是無能",
+    "author": "聖嚴法師",
+    "source_sha256": "b968e04934a4e97b2cc5cad065d0fe92154c537f80e516a49bb71ca9abc4cf42",
+    "source_order": 22,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-023",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "把弱者變強棒",
+    "author": "聖嚴法師",
+    "source_sha256": "8a98f4e3060cf9f392a7be906221af4514c9d2450871fe54c1671dc7eeede6fa",
+    "source_order": 23,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-024",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "遵守團體遊戲規則",
+    "author": "聖嚴法師",
+    "source_sha256": "88ae97e62084a9eb82a1a468b91a06032a2f8361b748142820cb2004c7974ab2",
+    "source_order": 24,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-025",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "老人也是公司的寶",
+    "author": "聖嚴法師",
+    "source_sha256": "ce5dcd556df1467b8306059d093d612a088bf0839bd38a7770c0cf87c6fd19c1",
+    "source_order": 25,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-026",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "事必躬親，累死自己",
+    "author": "聖嚴法師",
+    "source_sha256": "7543480a5679eea26239699eac6d30d94a9b4d08ca3f08852383d080aa0cf8a5",
+    "source_order": 26,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-027",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "和競爭對手做朋友",
+    "author": "聖嚴法師",
+    "source_sha256": "a3004a1b82e08f699f6d107a6325158ee46799e5abf94da0f9d42031c5002491",
+    "source_order": 27,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-10-028",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "面對貧窮的勇氣",
+    "author": "聖嚴法師",
+    "source_sha256": "aba6b087faa2d27ce18f6bff3b2e5fd051424e4478e2cdf0357bd7a95e610d91",
+    "source_order": 28,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-029",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "先做好人際關係",
+    "author": "聖嚴法師",
+    "source_sha256": "2b621a3ead0ac3a4b2c3541ab8dd03f48b2e90e7bedea173805f618af488796a",
+    "source_order": 29,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-030",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "失意得意一念間",
+    "author": "聖嚴法師",
+    "source_sha256": "58f9eb1dd8921532ab0d13741fec9f0c05a2d8bb1b01ac9d5e245daa317de0a4",
+    "source_order": 30,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-08-10-031",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "忍出工作好本領",
+    "author": "聖嚴法師",
+    "source_sha256": "c2885ae0284459c46d0f5e5b6f918847189b2d295ac0306a3bd5252d5f2ee54a",
+    "source_order": 31,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-032",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "中年別盲目轉業",
+    "author": "聖嚴法師",
+    "source_sha256": "3a855785ee66a12b28bf1347d9d968bb3db971868b3e147d87ea34de554e3275",
+    "source_order": 32,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-033",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "人到中年百事哀？",
+    "author": "聖嚴法師",
+    "source_sha256": "9eca3296a40e2a619f52993625c08783ffc0df9e1eda6ca0c6af454bab88b851",
+    "source_order": 33,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-034",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "中年不是三明治",
+    "author": "聖嚴法師",
+    "source_sha256": "e16c27dd4f1b211d0a448dff6ef8e6ff19e7d0c0e84eb74c2b3fd312cdda7ec0",
+    "source_order": 34,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-035",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "老年生活靠自己",
+    "author": "聖嚴法師",
+    "source_sha256": "3cdd2283559eeb406174314a2802355a66440c315099a15a4d478c0599bd7dfa",
+    "source_order": 35,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-10-036",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "如何準備老年生活？",
+    "author": "聖嚴法師",
+    "source_sha256": "050e39aacabde143c896e73f3c89817ab11dcd48203c547935b8bcda2ab33acc",
+    "source_order": 36,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-037",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "通靈預言可信嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "a54caf72cba9ce82525e619e0e93673df3461040bef88845fb86c5de9a5ee022",
+    "source_order": 37,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-038",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "演好人生大戲",
+    "author": "聖嚴法師",
+    "source_sha256": "b6c7a77be3ad52c24c083e32bede700652d4b0106c402adeb6633cf65e60aa93",
+    "source_order": 38,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-039",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "別為貪念打假球",
+    "author": "聖嚴法師",
+    "source_sha256": "622b54d92052c1d9f4c24a35ffe42a86d8b64e91584b3c05e71c3778333b813c",
+    "source_order": 39,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-040",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "拆穿詐騙集團謊言",
+    "author": "聖嚴法師",
+    "source_sha256": "8927ce9419c206bd8039479c641f9a42cc4bd8229f51c93c939fbac54934aa93",
+    "source_order": 40,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-08-10-041",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不放棄自己",
+    "author": "聖嚴法師",
+    "source_sha256": "8f29068570ed4b5f7411bf10cf14acef54f276d961267d064512216f8ddd4d1d",
+    "source_order": 41,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-042",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "分清楚該不該要",
+    "author": "聖嚴法師",
+    "source_sha256": "9f465cce8974cbf490cbc79a74a96c2f96f127a1ce8e231505ffa1028f2463d4",
+    "source_order": 42,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-043",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "買彩券行善",
+    "author": "聖嚴法師",
+    "source_sha256": "a586f5fdb82b1cb772339aca94dd72b5f667b7bf4c137374a57e28bd96c73f90",
+    "source_order": 43,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-044",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "可以開神的玩笑嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "80ba66150eac2dbd06eaea9f3d4c16e25dd6e8995f2bf6d8674a8f89ae19bcca",
+    "source_order": 44,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-045",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "以禪修戒毒",
+    "author": "聖嚴法師",
+    "source_sha256": "9efba3460553ebe0f625996644e4763f349966bf43a5a6a61850983104dfe243",
+    "source_order": 45,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-046",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "將心比心接納病人",
+    "author": "聖嚴法師",
+    "source_sha256": "bd8ce5af508a51e16d0105eafeca08642f5b13217369fbd85b02fe63d812d305",
+    "source_order": 46,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-047",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "善待外勞",
+    "author": "聖嚴法師",
+    "source_sha256": "e4d48a3901c4d137da0d4322ed035c47c03b91051fe6bd5ae148ead6582ddc6e",
+    "source_order": 47,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-048",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "與惡鄰和平相處",
+    "author": "聖嚴法師",
+    "source_sha256": "2061b8c8f87155a9bd426304f2ac612288a06b3377c97c09c5682a5ac85a55ad",
+    "source_order": 48,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-10-049",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "忍辱者多福",
+    "author": "聖嚴法師",
+    "source_sha256": "36b7abfdf3749fadb3474a36a360a6abf7bf34499253f793732964e590e12840",
+    "source_order": 49,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-050",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "難教的學生是活教材",
+    "author": "聖嚴法師",
+    "source_sha256": "b15ffc2e5d764574c9327f118b8258755580467e3f06b2069c69cb9dac4672c4",
+    "source_order": 50,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-051",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "擔憂學生請產假",
+    "author": "聖嚴法師",
+    "source_sha256": "06186b9ec8da4748f70565e87ec4558a86fcf273c4dd4b03ba5be4ffee738b57",
+    "source_order": 51,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-052",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "讓邊緣人進入社會核心",
+    "author": "聖嚴法師",
+    "source_sha256": "d86831b38ac41e4a9bafb07a362bebcf442ade5037d2fd195ff2020853f8f2e2",
+    "source_order": 52,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-053",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不必靠整形建立自信",
+    "author": "聖嚴法師",
+    "source_sha256": "806060a7ffdc67c249d8a56930cbb8f7e57c51c3a9a106b910e1e7844bd0cf1b",
+    "source_order": 53,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-054",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不棄養狗",
+    "author": "聖嚴法師",
+    "source_sha256": "86441127b0b2f12ab536b5b5eacd5363d7ba0601ada20955592a40151a8b6ff5",
+    "source_order": 54,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-055",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "節慶不是玩樂天",
+    "author": "聖嚴法師",
+    "source_sha256": "4d14b480d1ae6577f46e48bf6dd37b1eeef1bf7e76c0270ba5c849674daf11ef",
+    "source_order": 55,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-056",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "閏七月的鬼月禁忌",
+    "author": "聖嚴法師",
+    "source_sha256": "c191305940ae159368141b689e116117e6ea89c2246a4e856657e96d0713605d",
+    "source_order": 56,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-057",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "戒菸做善事",
+    "author": "聖嚴法師",
+    "source_sha256": "7178f3954d13a9232bc5d092a8cb25e0b885c2d1343b022855577aefaf9d4d93",
+    "source_order": 57,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-058",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "人人都當環保警察",
+    "author": "聖嚴法師",
+    "source_sha256": "093b567c1910fc4aa4d377681d0df1cd7169472c5ee34e28f10f23f4c2e34d85",
+    "source_order": 58,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-059",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "尊重彼此的政治選擇",
+    "author": "聖嚴法師",
+    "source_sha256": "6603b1c2f7f90efe167db0713d96cd25c4102dcc49d06a59e3312de234e648f3",
+    "source_order": 59,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-060",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "把仇恨留在過去",
+    "author": "聖嚴法師",
+    "source_sha256": "3db1862b378e162722f49c08433e81e73e26d32f5157ba0be8d8ff94af8054e9",
+    "source_order": 60,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-061",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "心靈環保解仇恨",
+    "author": "聖嚴法師",
+    "source_sha256": "d2a6602fddaa1f92480434beb0edf09fa5f891aaff51821d5deda46c6f78e840",
+    "source_order": 61,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-062",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "把怨仇一筆勾銷",
+    "author": "聖嚴法師",
+    "source_sha256": "558bedea23f3612f9e8dd8ea1cf6acc1398cdbfebd0e024f401c8aa1429371e1",
+    "source_order": 62,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-063",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "從兩岸伸出友誼的手",
+    "author": "聖嚴法師",
+    "source_sha256": "2f4d967d11ee1e699c0f618c8a66efce71c7f8defa0d881b3282c4be01e391ea",
+    "source_order": 63,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-064",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "到窮國當義工",
+    "author": "聖嚴法師",
+    "source_sha256": "8e902b28002399646ef831a54a89f296d4984097a17ac80b00677035b7851177",
+    "source_order": 64,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-065",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "小爸媽問題多",
+    "author": "聖嚴法師",
+    "source_sha256": "e542ae9c42f1cc8fbe0488f08b05fe2d2b63fc12a44714c43e289ddb69cb79bd",
+    "source_order": 65,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-066",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "奉子不離婚",
+    "author": "聖嚴法師",
+    "source_sha256": "84e8b7e351b7d907bf78d5b8a79a3e965933e6778d2988ac39e510f36c6a4f97",
+    "source_order": 66,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-067",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "讓孩子走自己的路",
+    "author": "聖嚴法師",
+    "source_sha256": "26294f0359d778ffe3b298ec5b32c9910c01fabf0dbdda061168bde551009fb0",
+    "source_order": 67,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-068",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "以佛心陪孩子成長",
+    "author": "聖嚴法師",
+    "source_sha256": "73b11d1df0b5a0b4c4fb8f9ec463cb19816be34c7e4919ffc0ee1be2e5c56c9e",
+    "source_order": 68,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-069",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "我不是小流氓",
+    "author": "聖嚴法師",
+    "source_sha256": "a972275fe2311a9d9ecdc702be969cb517fcf5abd6c96f23646af18c96fee395",
+    "source_order": 69,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-070",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "以勉勵代替責罵",
+    "author": "聖嚴法師",
+    "source_sha256": "898414ac747b1c1199ec77416ca270bde1a8480b2fef331cb181d279e2f63a3a",
+    "source_order": 70,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-071",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "尊重孩子的意願",
+    "author": "聖嚴法師",
+    "source_sha256": "e41b001104d049c08f153ec413f6ecacd41786a54872110994a59989d6b370eb",
+    "source_order": 71,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-072",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "悲哀小皇帝",
+    "author": "聖嚴法師",
+    "source_sha256": "298e4cd7091de0962a92737e44ba297a6f5941f7a468c548bc85af292ab91f2f",
+    "source_order": 72,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-073",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "青少年為何迷戀網路？",
+    "author": "聖嚴法師",
+    "source_sha256": "7857e0968218959c98a7c3099ba4fb0d8b80d32515c57b8109b2ec309bc47a9f",
+    "source_order": 73,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-10-074",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "化解兩代教養的爭執",
+    "author": "聖嚴法師",
+    "source_sha256": "0f98490a31defa5c00de317283bd1f84180e923a14b2a17bd048450b6ae01561",
+    "source_order": 74,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-075",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "行行都能出人頭地",
+    "author": "聖嚴法師",
+    "source_sha256": "94f788c99d6924cb457a97b7155dee9b5d1d5b50e73100171ae0d2569a1c73fe",
+    "source_order": 75,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-076",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "老來養孫負擔重",
+    "author": "聖嚴法師",
+    "source_sha256": "48050c1f641fe144947f88c726dd1e29e941c8ca8743d417545cca61ec25968d",
+    "source_order": 76,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-077",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "老人不堪尿布奶瓶",
+    "author": "聖嚴法師",
+    "source_sha256": "13a0b8cd2bf7982d1c7eaaf9f8d90e0218dd6d134edd5840f2021d0ed0ee244c",
+    "source_order": 77,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-078",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "接受同性戀兒子",
+    "author": "聖嚴法師",
+    "source_sha256": "955c082f95e2f273826c3d267100a4237450d4c06449088fef60812fc299d174",
+    "source_order": 78,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-079",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "單身者適合收養小孩嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "5e36fa2aaed4c9c00190bd8f68ad9ee71594ee269c8bad239de9f3cb680a0fc0",
+    "source_order": 79,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-080",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "無血緣的家庭聯合國",
+    "author": "聖嚴法師",
+    "source_sha256": "246ec86fc73a8038ecd2acfb3f0bc80f5a5a925a6132aa21049f5e48bde20270",
+    "source_order": 80,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-081",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "家庭主夫不丟臉",
+    "author": "聖嚴法師",
+    "source_sha256": "ac546dfbe509babb226ad06fe9bb931a8e3111dcb85c8afaf3c763e4cb82a02d",
+    "source_order": 81,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-082",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "做家事的福報",
+    "author": "聖嚴法師",
+    "source_sha256": "58195a5b121ec4e916fadac700e36269922d0c98f37622fd3811e3e07180a974",
+    "source_order": 82,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-083",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "家暴是前世報應？",
+    "author": "聖嚴法師",
+    "source_sha256": "c0c41f8c154bf6f8c5fc1e224f8bb144131c76a173b70089d2631da55b64de35",
+    "source_order": 83,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-084",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "太太為什麼不再是「知己」？",
+    "author": "聖嚴法師",
+    "source_sha256": "449b1d21de5611efc69088345e124435a1f3513d1907ace0065d344216ca9cf6",
+    "source_order": 84,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-085",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "外遇毀掉一家人",
+    "author": "聖嚴法師",
+    "source_sha256": "9cffb6d7cf7ab1e8096e9c04b912d2e953ec27ed280b55ca53847e5d97de5ae4",
+    "source_order": 85,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-086",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "娶外籍配偶無法解決問題",
+    "author": "聖嚴法師",
+    "source_sha256": "246c599f5695ed5698092f9583e7c537cf00b17261d6db6176106c403f72fec8",
+    "source_order": 86,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-087",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "娶外籍配偶要感恩",
+    "author": "聖嚴法師",
+    "source_sha256": "907badc21cf857d4d82c3ec7008ec69fa87026135acbed4a9dd108cc10e31c95",
+    "source_order": 87,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-088",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "晚年再婚",
+    "author": "聖嚴法師",
+    "source_sha256": "89c7bce7462858e07d2d3e3793fccb03825bda7c289006e0a1bb2de26ca0f19a",
+    "source_order": 88,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-089",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "為兒女留下「功德」遺產",
+    "author": "聖嚴法師",
+    "source_sha256": "567b8ed8cc09881cbb3c5f48ec97a9d8057c5c2f8e4bd384ddaa8ac96c92fff5",
+    "source_order": 89,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-090",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "父母是家裡的佛",
+    "author": "聖嚴法師",
+    "source_sha256": "335f55feefd464938ed669ed17bde0bb26c87063d82dec7cfb376fe3a0450d3e",
+    "source_order": 90,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-091",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "接納不負責任的父親",
+    "author": "聖嚴法師",
+    "source_sha256": "8c21d3328c6c315cfff2efed6592e1661080347f65f2f1d930eea5b8676820ed",
+    "source_order": 91,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-092",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "包容老人家的「寶貝」垃圾",
+    "author": "聖嚴法師",
+    "source_sha256": "f8c330b4e4004e6de60196b697fe5e3bd914f041d3ea87f300e0cba66a654855",
+    "source_order": 92,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-093",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "出世是來解決問題",
+    "author": "聖嚴法師",
+    "source_sha256": "094279254aa61bb0c93a52e24a14f92fd1a8510c671122cc368ccfefdbb7203d",
+    "source_order": 93,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-10-094",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "走出活路來",
+    "author": "聖嚴法師",
+    "source_sha256": "6f8ff88d8261ed3b9456bf5dcd35bc74a36d0b030398b190da8bfb7815393245",
+    "source_order": 94,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-095",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "複製人倫理",
+    "author": "聖嚴法師",
+    "source_sha256": "516b1c9fc842a5d627363a89026744d75290265a40ed7b2b9c004998109af735",
+    "source_order": 95,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-096",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "墮胎罪同殺人",
+    "author": "聖嚴法師",
+    "source_sha256": "57def63e60d7f9d9dfdb8a1a434172463403c853c891a35ddc157363789d6a1a",
+    "source_order": 96,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-097",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不能只生不養",
+    "author": "聖嚴法師",
+    "source_sha256": "a5ee0ef3e30d1318385e50324edd3150d2adc4b474a0c439c9e1129f9ded6cb9",
+    "source_order": 97,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-10-098",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "該不該多生小孩？",
+    "author": "聖嚴法師",
+    "source_sha256": "cdf958bcadad9ebee3c8ac58605855ca40ac6bacfcc6d94a423bed3741965456",
+    "source_order": 98,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-099",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "別帶孩子一起尋死",
+    "author": "聖嚴法師",
+    "source_sha256": "386af18f697ce2aedd53ce7abacfda1fe10a1bb54192f3fedb4f365a9e9782bd",
+    "source_order": 99,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-100",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "減少憂鬱的方法",
+    "author": "聖嚴法師",
+    "source_sha256": "bdc9c9f9634c12b40a4731ae1c36838416d61fcb36bae6e7e7bba52b95058e7c",
+    "source_order": 100,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-101",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "別衝動情殺",
+    "author": "聖嚴法師",
+    "source_sha256": "93f5d991e136f7159e3ddf54c969efb53581ed9ccfee282f9f9cbbf3445d1438",
+    "source_order": 101,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-102",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "莫棄養寵物",
+    "author": "聖嚴法師",
+    "source_sha256": "7c3b4ba8330026e2754d9deb1f70522d755e750a8e049a25fae37140c38f39db",
+    "source_order": 102,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-103",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "可憐惡人",
+    "author": "聖嚴法師",
+    "source_sha256": "39ac685af55ef59e2d6e7fb8e49583bdde8d38ed44ea9ecc60330b5174effb1e",
+    "source_order": 103,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-104",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "傷害動物的罪過",
+    "author": "聖嚴法師",
+    "source_sha256": "42e0c5ca9e46b9dba9624a92dd944eafb0f788ec9c92a0a2efe7a5614d392ff3",
+    "source_order": 104,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-105",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "不再穿皮草",
+    "author": "聖嚴法師",
+    "source_sha256": "8cfbd23379e2fa04725df7096456b7504ce79456379d507c76ef8db155fe81ff",
+    "source_order": 105,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-106",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "慈悲呵護動物",
+    "author": "聖嚴法師",
+    "source_sha256": "a9494dfeedb267da10091f8470f4a028338f2f77288d436bcb014d58480fe524",
+    "source_order": 106,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-107",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "盲目放生反而殺生",
+    "author": "聖嚴法師",
+    "source_sha256": "6254c62b56be059ae0a3838f8168acccb949f67f76bf812015121185a429e131",
+    "source_order": 107,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-108",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "動物生死順其自然",
+    "author": "聖嚴法師",
+    "source_sha256": "4f929e781b47d1af8869e6196c65b67ad4ee70293cb570cc64bdc5b50122fdab",
+    "source_order": 108,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-109",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "防癌的方法",
+    "author": "聖嚴法師",
+    "source_sha256": "8db0f3d60b4dc466374e694529cd645dabc9ff74d46b339d938748174c879c37",
+    "source_order": 109,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-10-110",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "可以代死者捐器官嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "81fe3d3ff4be0d77e981ba38b9ff554c580f2a1380bb121e5a20d02391c28c73",
+    "source_order": 110,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-111",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "如何告知病情？",
+    "author": "聖嚴法師",
+    "source_sha256": "35d7863947a4e8f518a56cdbc1abc6411c250ecb80b59b2966f4d2f8d364a2b0",
+    "source_order": 111,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-112",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "預立遺囑要及早",
+    "author": "聖嚴法師",
+    "source_sha256": "178b14216f4f40eef47ec4bb79f7fa5cdea188d96f460f9af614ad9b07f8959b",
+    "source_order": 112,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-113",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "最好的葬法",
+    "author": "聖嚴法師",
+    "source_sha256": "5c467a005bab5162fa69db39595f7bd29e99a4297cae89ebec3d1144bbddf324",
+    "source_order": 113,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-10-114",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "祈禱，讓受苦的人勇敢",
+    "author": "聖嚴法師",
+    "source_sha256": "a007d5795f196e393fc8559b288766bccde4ae72b958cf55348fcf254781dbac",
+    "source_order": 114,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-10-115",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "活不下去了？",
+    "author": "聖嚴法師",
+    "source_sha256": "61c9f0949f66ab2f30ed4b1fed43e581876cc3fe5194602342b1eca954554536",
+    "source_order": 115,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-10-116",
+    "book_id": "sy-08-10",
+    "person_id": "sheng-yen",
+    "title": "生死像睡一場覺",
+    "author": "聖嚴法師",
+    "source_sha256": "8e0904c73635d2b34a6e0cb8b1c55cb824684fa5deda32cc79e473f5b23408a3",
+    "source_order": 116,
+    "paragraph_count": 9
   }
 ]
