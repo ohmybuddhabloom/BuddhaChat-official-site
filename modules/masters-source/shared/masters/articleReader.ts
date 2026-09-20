@@ -1,4 +1,4 @@
-import { getArticle, getArticleSummary, type MastersArticle } from './catalog';
+import { getArticle, getArticleSummary, mastersTextVersion, type MastersArticle } from './catalog';
 
 export type FetchArticleBody = (id: string, version: string) => Promise<unknown>;
 
@@ -11,16 +11,18 @@ export function createArticleReader(fetchBody: FetchArticleBody) {
     if (!summary) throw new Error('Unknown article');
     const legacy = getArticle(id);
     if (legacy) return legacy;
-    const cached = cache.get(id);
+    const version = mastersTextVersion(summary);
+    const cacheKey = `${id}:${version}`;
+    const cached = cache.get(cacheKey);
     if (cached) return cached;
-    const running = pending.get(id);
+    const running = pending.get(cacheKey);
     if (running) return running;
     const request = (async () => {
-      const value = await fetchBody(id, summary.source_sha256);
+      const value = await fetchBody(id, version);
       if (!value || typeof value !== 'object') throw new Error('Article unavailable');
       const row = value as Record<string, unknown>;
       if (row.id !== id || row.book_id !== summary.book_id || row.person_id !== summary.person_id ||
-          row.source_sha256 !== summary.source_sha256 || row.text_version !== summary.source_sha256 ||
+          row.source_sha256 !== summary.source_sha256 || row.text_version !== version ||
           row.title !== summary.title || row.author !== summary.author ||
           !Array.isArray(row.paragraphs) || row.paragraphs.length !== summary.paragraph_count ||
           row.paragraphs.some(text => typeof text !== 'string' || !text.trim()) ||
@@ -34,11 +36,11 @@ export function createArticleReader(fetchBody: FetchArticleBody) {
         throw new Error('Invalid paragraph roles');
       }
       const article = row as unknown as MastersArticle;
-      cache.set(id, article);
+      cache.set(cacheKey, article);
       if (cache.size > 12) cache.delete(cache.keys().next().value!);
       return article;
     })();
-    pending.set(id, request);
-    try { return await request; } finally { pending.delete(id); }
+    pending.set(cacheKey, request);
+    try { return await request; } finally { pending.delete(cacheKey); }
   };
 }

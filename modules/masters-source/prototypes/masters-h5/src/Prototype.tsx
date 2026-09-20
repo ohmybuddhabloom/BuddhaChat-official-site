@@ -1,7 +1,7 @@
 import { profileCopy } from '../../../shared/masters/profileCopy';
 import { buildMastersAppLink, canonicalMastersContentRoute, h5LegacyRouteForMastersContent } from '../../../shared/masters/shareLinks';
 import { createArticleReader, type FetchArticleBody } from '../../../shared/masters/articleReader';
-import type { MastersArticle } from '../../../shared/masters/catalog';
+import { mastersTextVersion, type MastersArticle } from '../../../shared/masters/catalog';
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon, BookmarkIcon, ClockIcon, HeartIcon, MagnifyingGlassIcon, PlayIcon, ReaderIcon, ExternalLinkIcon, TrashIcon, Link2Icon, PersonIcon, Share1Icon } from '@radix-ui/react-icons';
 import { FlowStack, useFlow, MobileScroll, KeyboardInput, BottomSheet, type FlowScreen } from './mobile';
@@ -206,6 +206,7 @@ function Book({id}:{id:string}){const book=books.find(b=>b.id===id);const [q,set
 function Reading({id}:{id:string}){return <InlineReading id={id}/>;}
 function InlineReading({id}:{id:string}){
  const summary=articleSummary(id);const entry=chapters.find(c=>c.id===id);
+ const summaryVersion=summary?mastersTextVersion(summary):undefined;
  const flow=useFlow();const{state,dispatch}=useLibrary();const[size,setSize]=useState(18);
  const legacy=legacyArticles.find(c=>c.id===id) as MastersArticle|undefined;
  const[loaded,setLoaded]=useState<{id:string;article:MastersArticle|null;error:string}>({id,article:legacy||null,error:''});
@@ -220,17 +221,19 @@ function InlineReading({id}:{id:string}){
   setLoaded({id,article:null,error:''});
   readArticle(id).then(article=>{if(!stale)setLoaded({id,article,error:''});}).catch(error=>{if(!stale)setLoaded({id,article:null,error:error instanceof Error?error.message:'reader_failed'});});
   return()=>{stale=true;};
- },[id,active,retry,summary?.source_sha256]);
- const article=legacy||((loaded.id===id&&loaded.article)||null);
+ },[id,active,retry,summaryVersion]);
+ const loadedArticle=loaded.id===id?loaded.article:null;
+ const article=legacy&&mastersTextVersion(legacy)===summaryVersion?legacy:loadedArticle&&mastersTextVersion(loadedArticle)===summaryVersion?loadedArticle:null;
+ const textVersion=article?mastersTextVersion(article):undefined;
  useEffect(()=>{
   if(!active||!article||!bodyRef.current)return;
   const container=bodyRef.current.closest<HTMLElement>('[data-testid="mobile-scroll"]');
   const paragraphs=Array.from(bodyRef.current.querySelectorAll<HTMLElement>('article p'));
   if(!container||!paragraphs.length)return;
   const saved=latest.current.state.history.find(h=>h.id===id&&h.kind==='chapter');
-  const restored=saved?.kind==='chapter'&&saved.textVersion===article.source_sha256?Math.min(saved.paragraph??0,paragraphs.length-1):0;
+  const restored=saved?.kind==='chapter'&&saved.textVersion===textVersion?Math.min(saved.paragraph??0,paragraphs.length-1):0;
   let current=restored;let frame=0;
-  const save=(paragraph:number)=>latest.current.dispatch({type:'visit',id,kind:'chapter',visitedAt:Date.now(),paragraph,textVersion:article.source_sha256});
+  const save=(paragraph:number)=>latest.current.dispatch({type:'visit',id,kind:'chapter',visitedAt:Date.now(),paragraph,textVersion});
   const onScroll=()=>{
    const bounds=container.getBoundingClientRect();
    const next=paragraphs.findIndex(p=>p.getBoundingClientRect().bottom>bounds.top+12);
@@ -243,7 +246,7 @@ function InlineReading({id}:{id:string}){
    container.addEventListener('scroll',onScroll,{passive:true});
   });});
   return()=>{cancelAnimationFrame(frame);container.removeEventListener('scroll',onScroll);};
- },[id,active,article?.source_sha256]);
+ },[id,active,textVersion]);
  const bookId=article?.book_id||summary?.book_id||entry?.book_id;
  const siblings=bookId?collectionArticles(bookId):[];const index=siblings.findIndex(c=>c.id===id);
  const bookRoute=bookId==='yh-dayi-001'?'yuanhui-book':bookId?.startsWith('sy-')?'shengyen-book:'+bookId.slice(3):bookId?.startsWith('nhj-')?'external:'+bookId:'book:'+bookId;

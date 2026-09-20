@@ -7,13 +7,14 @@ export const authors = people;
 export const articles = readingContent.chapters;
 export type MastersArticleSummary = {
   id: string; book_id: string; person_id: string; title: string; author: string;
-  source_sha256: string; source_order: number; paragraph_count: number;
+  source_sha256: string; text_version?: string; source_order: number; paragraph_count: number;
 };
 export const articleSummaries: MastersArticleSummary[] = [
   ...articles.map(({ id, book_id, person_id, title, author, source_sha256, source_order, paragraphs }) =>
     ({ id, book_id, person_id, title, author, source_sha256, source_order, paragraph_count: paragraphs.length })),
   ...additionalArticles,
 ];
+export function mastersTextVersion(article: { source_sha256: string; text_version?: string }) { return article.text_version ?? article.source_sha256; }
 export function getArticleSummary(id: string) { return articleSummaries.find(article => article.id === id); }
 export function getCollectionArticleSummaries(id: string) {
   return articleSummaries.filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
