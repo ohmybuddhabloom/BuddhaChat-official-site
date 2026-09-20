@@ -3840,6 +3840,3666 @@
     "paragraph_count": 24
   },
   {
+    "id": "nhj-lunyu-biecai-preface-1976",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "南怀瑾自序（1976）",
+    "author": "南怀瑾",
+    "source_sha256": "d6ecb7e6c8b36de18f5a29d9ebc80b93efdec2f2ac94dddf4a7c22af1b41265b",
+    "source_order": 1,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-04",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "被忽视的道家",
+    "author": "南怀瑾",
+    "source_sha256": "cb13ef29cdd32c614273a01f74d9b2601f5db08789c909324d0b19d8cedfa4d1",
+    "source_order": 5,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-05",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "三家店卖的是什么",
+    "author": "南怀瑾",
+    "source_sha256": "85c9d1c010401dbcadbd852daece03baed440be764c269e13c083a8e4bf78810",
+    "source_order": 6,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-06",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "冤枉的一打",
+    "author": "南怀瑾",
+    "source_sha256": "040c2d84dafcb64c3558f0636d036ebed387da6faa6ad28f633385af87d9cdbb",
+    "source_order": 7,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-07",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "再论《论语》",
+    "author": "南怀瑾",
+    "source_sha256": "b27bf7e403e6ab2764c9e41f9ea3eb7bd128fcf0b13fcca0a4e0f14ca5e94649",
+    "source_order": 8,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-08",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学而有何乐",
+    "author": "南怀瑾",
+    "source_sha256": "0306c3115fb0845b1bf881a74b96d7af7a4f70adcdd2a949a3d684520bd7a74d",
+    "source_order": 9,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-09",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "真人和假人",
+    "author": "南怀瑾",
+    "source_sha256": "580161edb20e87d61009ab449f12e23ff263a6affdb8067730021bb3f91f3219",
+    "source_order": 10,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-10",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "寂寞的享受",
+    "author": "南怀瑾",
+    "source_sha256": "ae6b04325bf1aae49ebf331cf51505b38ab4d1d0d9662e85c38a50fcc4385ce8",
+    "source_order": 11,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-11",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "谁来了解你",
+    "author": "南怀瑾",
+    "source_sha256": "c0602ddd937a146ff676a4328ceccb89cae4e5847c84bffb0769cbf459a15eec",
+    "source_order": 12,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-12",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "爱与罪",
+    "author": "南怀瑾",
+    "source_sha256": "ba010cc648fa28b8dea5448ba8524da81e65e15a2189b537ad641fa55967a8c5",
+    "source_order": 13,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-13",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孝道是这样一个东西",
+    "author": "南怀瑾",
+    "source_sha256": "087974155644c180733bd04fc45fa50a036d18bf79217218dc8ca277f608d340",
+    "source_order": 14,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-14",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "秃头的十字架",
+    "author": "南怀瑾",
+    "source_sha256": "1bcd857989a60ed9b8aeeb2f3eb0c40e87a44148ce0165524208c191fc2d1f3e",
+    "source_order": 15,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-15",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "谁能忘情",
+    "author": "南怀瑾",
+    "source_sha256": "fac902d9c5289d54b1d9ccadacfb4feb4b3cef2c166595b69175c7f3ab507653",
+    "source_order": 16,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-16",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "花言巧语",
+    "author": "南怀瑾",
+    "source_sha256": "b8dad55b1627ca9238a7a1922d1c7dd04ef78981ac48f2749d1cd856d096ef1b",
+    "source_order": 17,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-17",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "三面镜子",
+    "author": "南怀瑾",
+    "source_sha256": "f46494dbf49e9f0335918766f4673438fc856282ddc64563008fd3d9185f20e0",
+    "source_order": 18,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-18",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "可爱的小学生",
+    "author": "南怀瑾",
+    "source_sha256": "530e01b3ab432265e9f4daee76a93c68d858333dc132f062307b86a7ea784cf2",
+    "source_order": 19,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-19",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "吕端大事不糊涂",
+    "author": "南怀瑾",
+    "source_sha256": "400c2e3f1c92f651c55c00bc8c96027dc016eadf5f9af37e09b6a1bd8c6cf0f1",
+    "source_order": 20,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-20",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "饮食男女",
+    "author": "南怀瑾",
+    "source_sha256": "859710d607bd71f2166014350d36da0ecef7b2f723dc9c26a2d9fe1e5f21b9a1",
+    "source_order": 21,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-21",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "没有朋友的上帝",
+    "author": "南怀瑾",
+    "source_sha256": "c8b3dd59a770941d1dbbb7abe6437617468343d89f779f91b5c3eea2b0ff6760",
+    "source_order": 22,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-22",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "种瓜者",
+    "author": "南怀瑾",
+    "source_sha256": "7aa9ac7bfc1c9780291a8faa9c520cde4a124bcb684afbc451703734771fca77",
+    "source_order": 23,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-23",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子的素描",
+    "author": "南怀瑾",
+    "source_sha256": "1443ac259c69ef3aefb72015b71265677e52182a848ed895a7a3a5f45975a5fe",
+    "source_order": 24,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-24",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "五字串通五经",
+    "author": "南怀瑾",
+    "source_sha256": "7f1f48861642777e0e72ea585d80780520061b14e28a02cb47356de06a2c41a6",
+    "source_order": 25,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-25",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "善知识与恶知识",
+    "author": "南怀瑾",
+    "source_sha256": "9dbe6744f2f4923f8ef85b6930f450df9de10366657a2716880be13e13fc7040",
+    "source_order": 26,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-26",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "老鼠生儿的孝道",
+    "author": "南怀瑾",
+    "source_sha256": "1ab4b038ef520166bd08694249552b429331c9910362186107749096e3bd17fb",
+    "source_order": 27,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-27",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "无所适从的礼俗",
+    "author": "南怀瑾",
+    "source_sha256": "8896bddd5fbaafcc1deacf9cbb2caff8a811f28c8332b2c81f10741c025d4df4",
+    "source_order": 28,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-28",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "上帝的外婆是谁",
+    "author": "南怀瑾",
+    "source_sha256": "1273f2eba08296d19b486f3cb1d6bf56e7c41dd5154942353773996d2c4a4939",
+    "source_order": 29,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-29",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "《三国演义》的幕后功劳",
+    "author": "南怀瑾",
+    "source_sha256": "9eaf98f052041772480223058d81ab3cd311c5efd6b2e673b8f9822542757fe0",
+    "source_order": 30,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-30",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "多才多艺的子贡",
+    "author": "南怀瑾",
+    "source_sha256": "bcc77ed6467c27690c84a7e8f3f3c329291d71f46fef691c42a64217fc0679c4",
+    "source_order": 31,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-31",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "诗的人生",
+    "author": "南怀瑾",
+    "source_sha256": "2f243480ff5b132500f2ef39e92d97f59fbecda890a62df95a20d136ba0b976a",
+    "source_order": 32,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-32",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子不谈政治",
+    "author": "南怀瑾",
+    "source_sha256": "2f096e852d41d9abe1a26bbebc93095c07869dda263f52f497c2008ed65d72f6",
+    "source_order": 33,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-33",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大政治家的风范",
+    "author": "南怀瑾",
+    "source_sha256": "029a71db0a0812c5ebee69695a48c6bf7dd89bdf5390fb18723c4df4cd712ca2",
+    "source_order": 34,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-34",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "星辰知多少",
+    "author": "南怀瑾",
+    "source_sha256": "43eac71e37334cf48b20b2344caf9e694eb4faabfb50a0ab335797248c39589c",
+    "source_order": 35,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-35",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "刘备上了曹操的当",
+    "author": "南怀瑾",
+    "source_sha256": "d536e250e8e1c50c72fc274460ecf257ad642d3c7d173984564fa4e276f64c4b",
+    "source_order": 36,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-36",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "从台风了解人生",
+    "author": "南怀瑾",
+    "source_sha256": "1a2d568d775b0d75874ed69c13082b32a3c91b9c8b5bb8c0280d4cdf32fa2351",
+    "source_order": 37,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-37",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人也势利吗？",
+    "author": "南怀瑾",
+    "source_sha256": "bb22cbd61b531a085023c1cabd22723c3595664d5249e814e25b52c0d9e05201",
+    "source_order": 38,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-38",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "悠美的情歌",
+    "author": "南怀瑾",
+    "source_sha256": "cfb010d0c26ede59ea346d9cd6cd124caac7435e8fc5837cfcd8fbd72dc24533",
+    "source_order": 39,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-39",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "诗的伟大",
+    "author": "南怀瑾",
+    "source_sha256": "f0e4e6678b240cfbf6815ee9380459bb9fa9324b060994867211202bfbd21f2a",
+    "source_order": 40,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-40",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "穷哉法治",
+    "author": "南怀瑾",
+    "source_sha256": "fc41fddde8b1e646276ba0c1023181bb1ad013af204f034d21125999115ef774",
+    "source_order": 41,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-41",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子的自剖",
+    "author": "南怀瑾",
+    "source_sha256": "7e822a58127fb9780bcce25265e2249e37606caaf7f4748494ef94260d88a5c1",
+    "source_order": 42,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-42",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "车上的一课",
+    "author": "南怀瑾",
+    "source_sha256": "26c93517cd3dcccb771ee87cfd3672a3e813954379d755235a3eb13a77332c0a",
+    "source_order": 43,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-43",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "以孝治天下",
+    "author": "南怀瑾",
+    "source_sha256": "c71137cdf778acf364f85d3c98a3727d400d28c0ea14e7feb09580201e9c10c0",
+    "source_order": 44,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-44",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "康麻子的教孝教忠",
+    "author": "南怀瑾",
+    "source_sha256": "3d1aecdf891b93ca42618e907234df2ca5572945786df60adf756c39f75d2bf3",
+    "source_order": 45,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-45",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "晚娘面孔难为人",
+    "author": "南怀瑾",
+    "source_sha256": "5c92983d71937a0c308b760f2e6478d4a5377cfdb2924bd36d8ddac27bbd3d6e",
+    "source_order": 46,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-46",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子也会看相",
+    "author": "南怀瑾",
+    "source_sha256": "bb5f30959d9e7ca7810736fb39fcac24b57bc6aa12a7b5eb94c1ca3c0dc67d98",
+    "source_order": 47,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-47",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "君子是什么东西",
+    "author": "南怀瑾",
+    "source_sha256": "f9f27d37fc4b27da0f93cfddf34672440bbe72572a85ae98dbb4d792e022d390",
+    "source_order": 48,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-48",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "异端与偏激",
+    "author": "南怀瑾",
+    "source_sha256": "4596cf6ad4777ae9783f3dca1f35ca7d1a7061ddc21927948dc78a697f540ce4",
+    "source_order": 49,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-49",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "由养士到考试",
+    "author": "南怀瑾",
+    "source_sha256": "0a9cb850e3553a5487b93c8debe92cd196561924a970191915be3554f6431ca5",
+    "source_order": 50,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-50",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "天下英雄入彀中",
+    "author": "南怀瑾",
+    "source_sha256": "1fd9edfe93885a6c3a3a5012b402fddacfb3104239f9b78a637466f0e66849f7",
+    "source_order": 51,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-51",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "千里求官只为财",
+    "author": "南怀瑾",
+    "source_sha256": "ccf955966d7cb3b3319dfc95fd914e6ffe1a3323d437a6eac68205a71c80d0ab",
+    "source_order": 52,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-52",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "治国难！齐家更难！",
+    "author": "南怀瑾",
+    "source_sha256": "5b17ff3c128bd2770792e8907f82ea0d57198d2b89f2ec6e059d3b2cac5d44cb",
+    "source_order": 53,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-53",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "高明之家鬼瞰其室",
+    "author": "南怀瑾",
+    "source_sha256": "e1129413dc4b79c82af1789ace58da32b345c625549afe264d1920151a830880",
+    "source_order": 54,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-54",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "礼乐衣冠",
+    "author": "南怀瑾",
+    "source_sha256": "2177de130b9adc82b7a719ca97de2aed6c841b2188a9e46c64b9df8a181a475b",
+    "source_order": 55,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-55",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "泰山之旅",
+    "author": "南怀瑾",
+    "source_sha256": "bded2a76ee8c763c5f02ab01708cbd0c4665250f060446875a57895dd716893a",
+    "source_order": 56,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-56",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "志在春秋",
+    "author": "南怀瑾",
+    "source_sha256": "e3d8fd7e92c287ddd5911b898621c90396ae270baa90d4f9212f0eb2dffc816f",
+    "source_order": 57,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-57",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "秉笔直书罪罪恶恶",
+    "author": "南怀瑾",
+    "source_sha256": "6d38903081c0804e3b1aa2672f77138a01a5ca961d56b832db0b1f4d4d986534",
+    "source_order": 58,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-58",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "承让领教",
+    "author": "南怀瑾",
+    "source_sha256": "8a5e328802451a9560eb5143fe6f322cfe825cef66bab0bbcb0f7bf039f303d0",
+    "source_order": 59,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-59",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "淡泊以明志",
+    "author": "南怀瑾",
+    "source_sha256": "d30d3d32dc88c1f07861e9d6a2acf8f3a9064d184825eec6efe7cc6a2da422c8",
+    "source_order": 60,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-60",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "穷源溯本",
+    "author": "南怀瑾",
+    "source_sha256": "8a0e31e909851f1911f999bf19e0e69fcee5587b61bf39a89428d30a8a340307",
+    "source_order": 61,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-61",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "心香一瓣诚则灵",
+    "author": "南怀瑾",
+    "source_sha256": "cf9312485752ff6534cb091bc2f6eb514dda6e8ae89ea24895bd973ca8dbabb0",
+    "source_order": 62,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-62",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "拍灶君的马屁",
+    "author": "南怀瑾",
+    "source_sha256": "cfa9b595233119a5b5681ed6e3bbce3199dc5f755ce8783bc6591a1972a1b43a",
+    "source_order": 63,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-63",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "量力而为谦虚好学",
+    "author": "南怀瑾",
+    "source_sha256": "477f717c72be408c54c1483029d4c45b440d76a276eda2d6e9e7a14832ec0cdb",
+    "source_order": 64,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-64",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "儒冠错换八卦袍的诸葛亮",
+    "author": "南怀瑾",
+    "source_sha256": "73335013d59291dba2b014d876365c9a89b99d5c7d27dc257c3b95907bc84241",
+    "source_order": 65,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-65",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子的换心术",
+    "author": "南怀瑾",
+    "source_sha256": "7c8d5086da564cbf16ee867a1434f56d49614239c0ebbd768aa3e1057d3ca4b2",
+    "source_order": 66,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-66",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "追的哲学",
+    "author": "南怀瑾",
+    "source_sha256": "d260d46942ae7358df2e71bd1b9ca3118984e23ac0a8795c3e72b9ab2d79cc15",
+    "source_order": 67,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-67",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "传统历史上的精神堡垒",
+    "author": "南怀瑾",
+    "source_sha256": "57794660ed92d12e5676c5fb10821713a67a73b27daceb442cb3a0d61c4d2622",
+    "source_order": 68,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-68",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "责备贤者",
+    "author": "南怀瑾",
+    "source_sha256": "2731e7f0b419ce9ee16795c99168dfb48b7c5b32ab2a4a9c654b9f337e0ad9f4",
+    "source_order": 69,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-69",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "敲响了的活礼乐",
+    "author": "南怀瑾",
+    "source_sha256": "e977db04692fd77b4bdbc4efa36971b9deb98f804fef2a6cd52b8d0a60dd54f7",
+    "source_order": 70,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-70",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "衰世的通病",
+    "author": "南怀瑾",
+    "source_sha256": "feb5914da8d9f18590551d15e91c1d471d47c1a9c817aaae8d2792f013a3f2e9",
+    "source_order": 71,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-71",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "那“仁”却在灯火阑珊处",
+    "author": "南怀瑾",
+    "source_sha256": "175e78cc2d3abe49ddea1203f8ebd47fd9e1b6cac44406318fa2d9e27ded58a0",
+    "source_order": 72,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-72",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "月是故乡明",
+    "author": "南怀瑾",
+    "source_sha256": "5f801e61b0338a827c1a38aeed615478610590545e3b38f185a3c87e9afe73d5",
+    "source_order": 73,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-73",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "照临万类的仁道",
+    "author": "南怀瑾",
+    "source_sha256": "59b03817caafbdb975a9126fc8fd4d0d04e726463f2e6211163af58461e4eaa4",
+    "source_order": 74,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-74",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "兼收并蓄见仁心",
+    "author": "南怀瑾",
+    "source_sha256": "41da7a209582b56ef29309081a5bdb0e47cda8d5c96c270913d209a3970cdbd4",
+    "source_order": 75,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-75",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "了知生死不相关",
+    "author": "南怀瑾",
+    "source_sha256": "1cee82f44b1a63464f765148a3406eeef219f3a20d7111b33764578c539b818e",
+    "source_order": 76,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-76",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "富贵不淫贫贱乐",
+    "author": "南怀瑾",
+    "source_sha256": "d1836037de596cc2224eb1a4ade34c290c34e65d5d755760f610ed37dfd3b414",
+    "source_order": 77,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-77",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "敝屣功名尊道义",
+    "author": "南怀瑾",
+    "source_sha256": "9f65c5a53517a9be3732a988dd9a6cba2ca956ef52ac94ec300cc2103a7b7c84",
+    "source_order": 78,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-78",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子四字禅",
+    "author": "南怀瑾",
+    "source_sha256": "4fdc3b280e072bc27e0b55590adc938a75f05c061373440951d458d1003a36db",
+    "source_order": 79,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-79",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "吉光片羽 稍纵即逝",
+    "author": "南怀瑾",
+    "source_sha256": "a3889163e7fec6a7d3b064a28254fc0d1a37985c08befbf74ab14c410869623c",
+    "source_order": 80,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-80",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "仁义值千金",
+    "author": "南怀瑾",
+    "source_sha256": "4319f0508903bc376a950d475477af875519cc6de765c8d7cc960497d4d2ab98",
+    "source_order": 81,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-81",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孝子仁人不二门",
+    "author": "南怀瑾",
+    "source_sha256": "43a48924e319f2bb3298859f33cf5ca18a1963dd50ec130ac519832009434eec",
+    "source_order": 82,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-82",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "仁者之言",
+    "author": "南怀瑾",
+    "source_sha256": "923fa164a4f6f53706eef2297a5ef723e1cf1d8360f402903fb48f2eb076e55a",
+    "source_order": 83,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-83",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子选女婿",
+    "author": "南怀瑾",
+    "source_sha256": "17e013e0573e7311be2b4d422234e9804f2b340e23a27e55d7d7b5a8777bff23",
+    "source_order": 84,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-84",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "高高山顶立",
+    "author": "南怀瑾",
+    "source_sha256": "973c3c148a0aeaee76ce3e211d1dbdf28232848f700d16a82335613e58eed5f3",
+    "source_order": 85,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-85",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "深深海底行",
+    "author": "南怀瑾",
+    "source_sha256": "679f1c63211d7d00333dc99db46a57d8ef3a091c24eeead50606d48bc223c363",
+    "source_order": 86,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-86",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "立己易 立人难",
+    "author": "南怀瑾",
+    "source_sha256": "ae5aadaea99d2f652bac5f5dfa9c69b97c33525a90b06e05205262ddd75706d2",
+    "source_order": 87,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-87",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子要出国",
+    "author": "南怀瑾",
+    "source_sha256": "650f26b37f718c549dd05fd6ffe81f1db0125575706bbd51b6f4bc06158db6f9",
+    "source_order": 88,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-88",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔门弟子画像",
+    "author": "南怀瑾",
+    "source_sha256": "3d2f429314f79be1aad4ea7fefaf42c322f8e0450f9650715e00bb3144a43509",
+    "source_order": 89,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-89",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "吾爱吾师",
+    "author": "南怀瑾",
+    "source_sha256": "15162143405dbfcb0144bf9b951f987ff0444d6e050cda2237ada3511de64ad4",
+    "source_order": 90,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-90",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "手倦抛书午梦长",
+    "author": "南怀瑾",
+    "source_sha256": "19ce3dccd267a2f539ead319242feecbdc8b6785fba9e74175275bfeb44d0039",
+    "source_order": 91,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-91",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "人到无求品自高",
+    "author": "南怀瑾",
+    "source_sha256": "7d948e1c68c774f24e3f0771a8e906daa24d590f6103cd76baa60b5dc810ff70",
+    "source_order": 92,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-92",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "推己及人难又难",
+    "author": "南怀瑾",
+    "source_sha256": "27751a1d2ea9fee0b16b520a222a0ebfabc1136b827e975e30f377806c402dd7",
+    "source_order": 93,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-93",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔门文武事功的二子",
+    "author": "南怀瑾",
+    "source_sha256": "53c7d1edad863a2cd0d8f2631269eb5f255a5d9509aaff85dbb10b56346492b3",
+    "source_order": 94,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-94",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "盖棺成定论",
+    "author": "南怀瑾",
+    "source_sha256": "113e691e8ba3b3a19cd86e3fb6c0ea545a51888f8ba2e31010f50fea00c26351",
+    "source_order": 95,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-95",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "名臣的典范",
+    "author": "南怀瑾",
+    "source_sha256": "980ea25206bddbef8eae63beb8174e654dd7ccd72b5ff62ff11c1aff9967b3e3",
+    "source_order": 96,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-96",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "玩物丧志",
+    "author": "南怀瑾",
+    "source_sha256": "471d752fef132f9b4190b112e5210c6b737fa13486ed3e7be3aa886ba3be04a5",
+    "source_order": 97,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-97",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "进退揖让之间",
+    "author": "南怀瑾",
+    "source_sha256": "33beaede93c5f2366f47711285663c6aa2b92b4ff5f02769d34e7c164c9b1286",
+    "source_order": 98,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-98",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "濯足沧浪哪得清",
+    "author": "南怀瑾",
+    "source_sha256": "6e7b1a792f8ee797ce5e3b38aa03b51ae7961084b9030d8f42893271834358da",
+    "source_order": 99,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-99",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "想得太过了",
+    "author": "南怀瑾",
+    "source_sha256": "54356a4ae62484c216ea19874f80b96723b281f9c5a1baf94524e6aae5c64f78",
+    "source_order": 100,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-100",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "难得糊涂",
+    "author": "南怀瑾",
+    "source_sha256": "a3565098cb927fae59500b575c66ff61ac0973dcc46ccc73b259fc30987a0cc1",
+    "source_order": 101,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-101",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不如归去",
+    "author": "南怀瑾",
+    "source_sha256": "f5c2a09e97181993b98debbeea9434e56b88b6ab4c83a660b05d18b21badaeb9",
+    "source_order": 102,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-102",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "一乐也的对话",
+    "author": "南怀瑾",
+    "source_sha256": "fa2d98f6709fdd77b6c777252d0c8315ab3efea2269d49d8a8eaf8b44a433b3b",
+    "source_order": 103,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-103",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "闲置帝王才",
+    "author": "南怀瑾",
+    "source_sha256": "afaa62d042e240fa3a125719552392b6b812b971183a4b5a4c6c53aaaa9b921d",
+    "source_order": 104,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-104",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "当皇帝的能受气",
+    "author": "南怀瑾",
+    "source_sha256": "05f4d060266e732a147242f3232c2e3afa35d3f8bc437146c9e06655159b4547",
+    "source_order": 105,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-105",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "周富济贫",
+    "author": "南怀瑾",
+    "source_sha256": "368cf639d9527514be83f9155f98a20beac0a14dd169f1daeabf0052bad29550",
+    "source_order": 106,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-106",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "天生我才必有用",
+    "author": "南怀瑾",
+    "source_sha256": "c0d038d7fb21a6677d6aaa9319076c4505cdba935fd85500810136ffa6d2eae1",
+    "source_order": 107,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-107",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "各有千秋",
+    "author": "南怀瑾",
+    "source_sha256": "d0306ed5b0ae9e91b9ca091dd610a91e13b5bcb5d78f6ccd211b0b2937ade6da",
+    "source_order": 108,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-108",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "爵禄不能移——闵子骞",
+    "author": "南怀瑾",
+    "source_sha256": "6aad813abf7eda34c654f4062acd22469889b42f98cbf43b5e57ed11c51639e8",
+    "source_order": 109,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-109",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "李斯的老鼠哲学",
+    "author": "南怀瑾",
+    "source_sha256": "297c949e9b2c50a1db9a9d600fe6914defb059b40b23344693a409da4bce75a5",
+    "source_order": 110,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-110",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不在愁中即病中",
+    "author": "南怀瑾",
+    "source_sha256": "8d30d4dce95c35247efaffb0e02dcce8f10b0f32bbcc404398312aaf7a654bd2",
+    "source_order": 111,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-111",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学问的鸿沟",
+    "author": "南怀瑾",
+    "source_sha256": "d7d4c4fe82c4b669a0502e89362b42047fabe17df526f604ba567f542a7caed7",
+    "source_order": 112,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-112",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "知人之明",
+    "author": "南怀瑾",
+    "source_sha256": "77f7d6eb6282a35c66252687652673adbcc44618abdaa83e6ebf4340845623ce",
+    "source_order": 113,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-113",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "功成身退",
+    "author": "南怀瑾",
+    "source_sha256": "7ea6bd4b9f55db6961890bdd1d46047b661a851e559aff8eda433c5aa6ad8afd",
+    "source_order": 114,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-114",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人也有牢骚吗？",
+    "author": "南怀瑾",
+    "source_sha256": "930d1480ae6196c31dd75934b743d2967c6ce198c6787207aeb6c918180bff39",
+    "source_order": 115,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-115",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "百无一用是书生",
+    "author": "南怀瑾",
+    "source_sha256": "b98ed72b86b3d9ad84d1b1ee869b624359e60ae217717b2f988774a974310e7b",
+    "source_order": 116,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-116",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "人性的基本问题",
+    "author": "南怀瑾",
+    "source_sha256": "805634dfeb4d54e1ec1948860d3450251845b234e5857bdce3caca58c8e80086",
+    "source_order": 117,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-117",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "还是老虎可爱",
+    "author": "南怀瑾",
+    "source_sha256": "3edd78164dd2e9f4ec269104f9685eeb219e4d184929bd23cbb2033d646fe64c",
+    "source_order": 118,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-118",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "楼下黄金楼上人",
+    "author": "南怀瑾",
+    "source_sha256": "9f18c53de6df7d65573c0d52a74bb58c5f1387f7baf5ecfc5c7cd8755d3abf3e",
+    "source_order": 119,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-119",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "我误聪明",
+    "author": "南怀瑾",
+    "source_sha256": "a8127fa4f3fab8df1c6f1e89be218cd4dce62e82029c5a80449b0d14d705fea1",
+    "source_order": 120,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-120",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "政治与宗教",
+    "author": "南怀瑾",
+    "source_sha256": "1ab90953f421026c4da60889b17066406a0e4d0d7b1f9cc396ae753cf43676ce",
+    "source_order": 121,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-121",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不在山水之间",
+    "author": "南怀瑾",
+    "source_sha256": "d83aaeb9f2bd2829d206baa5f0e3bacdc416f205cb2eb6236c1b01f5b4a6ca09",
+    "source_order": 122,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-122",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "变了形的文化样品",
+    "author": "南怀瑾",
+    "source_sha256": "af82d7f4551a18bfd8082303ce600fde41f9afc3f68235603507dfa7482be644",
+    "source_order": 123,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-123",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "君子可欺以其方",
+    "author": "南怀瑾",
+    "source_sha256": "9cb1cd8091147b4318882acaaa57af8e39ef99911b51e6c2fdbc32abfb379f63",
+    "source_order": 124,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-124",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "冲冠一“路”为红颜",
+    "author": "南怀瑾",
+    "source_sha256": "cca5a98a6560376a97f0b841f02a0e189d48d0f72dd3cfa1a255ebe3f4bc3e24",
+    "source_order": 125,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-125",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "此事古难全",
+    "author": "南怀瑾",
+    "source_sha256": "c76dccc95ebde55b84a5cc6bbb0012dc9c9fdf539eabe0d82bfa0ea3dc9a9c86",
+    "source_order": 126,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-126",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "一肩挑尽古今愁",
+    "author": "南怀瑾",
+    "source_sha256": "4fcd21c8f7e80dea094fad8699a688fab4b75deefccf380eca4d9e0009020905",
+    "source_order": 127,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-127",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "梦中的忧乐",
+    "author": "南怀瑾",
+    "source_sha256": "8e9b997dae922797674e489db2e5b7ac63474ca66fea6ede8b3f3f436ba7a053",
+    "source_order": 128,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-128",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "道德仁艺",
+    "author": "南怀瑾",
+    "source_sha256": "da8c439d27042014e970e28430fa44319a1a4d501820fd20e467278ee909f4df",
+    "source_order": 129,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-129",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子的学费问题",
+    "author": "南怀瑾",
+    "source_sha256": "5ae75c5080dee9ec645538ef1822d90e95914d9d91d52921c4774be2e21d9f31",
+    "source_order": 130,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-130",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "刺激和诱导的教育法",
+    "author": "南怀瑾",
+    "source_sha256": "bea3ec60e0dcee73ed3c7085d7943268853e9ba0d8a7b82ce0ca57adfc36f4fb",
+    "source_order": 131,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-131",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "千古艰难唯一死",
+    "author": "南怀瑾",
+    "source_sha256": "c2cdcab8028d0bf09b9120ec9930fba2cb894dec4bcee96d41e685452dced063",
+    "source_order": 132,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-132",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "男儿到此是英雄",
+    "author": "南怀瑾",
+    "source_sha256": "3f24868f10948eb3668109618b96fdbff119b17124933dba183754d737636ecd",
+    "source_order": 133,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-133",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "南面王不易也",
+    "author": "南怀瑾",
+    "source_sha256": "0346da679c12f6bdd2199622361be048a2a5468ed22674c5e2339ecb65660ed9",
+    "source_order": 134,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-134",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "进步和退步",
+    "author": "南怀瑾",
+    "source_sha256": "18c720f975fa64a6c34a4aa7590be1a8c34e992f477440030c40e6c01af83012",
+    "source_order": 135,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-135",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "聪明人的玩具",
+    "author": "南怀瑾",
+    "source_sha256": "29431b758ff08e37a0b413e061a93e648b54e95f5ce2a38d3d2206dc2ab6b5cc",
+    "source_order": 136,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-136",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "谦虚和自信",
+    "author": "南怀瑾",
+    "source_sha256": "56253c4aa677748dd497ebff6217aa12a8199bb7a8e652302e2ae2c03ca8db27",
+    "source_order": 137,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-137",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "时衰鬼弄人",
+    "author": "南怀瑾",
+    "source_sha256": "f645e996252e876133385a662b7391f395080703f3df67e5ac6526fe673dca0a",
+    "source_order": 138,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-138",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "虚字文章实事知",
+    "author": "南怀瑾",
+    "source_sha256": "c4a4b5096247b6e11d3e49f56167b95a263744813529abed7621c0bc9d851ac9",
+    "source_order": 139,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-139",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子的行谊",
+    "author": "南怀瑾",
+    "source_sha256": "2aad85e1658479c19898a1199bfc9c886785b3336c327e696b84cf2fbb70d4e3",
+    "source_order": 140,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-140",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "同姓不婚的优生学",
+    "author": "南怀瑾",
+    "source_sha256": "c850e9968207ca93471d85bbbff03a7e67c07483b289bfa5851115819965bc42",
+    "source_order": 141,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-141",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "生活的艺术",
+    "author": "南怀瑾",
+    "source_sha256": "3a65a1af0a205302e4aaa1411465ce81cc2f37194bdf77293d8f62f3e5c623f5",
+    "source_order": 142,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-142",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "凡圣之分",
+    "author": "南怀瑾",
+    "source_sha256": "e7c4297a88e8984895c55651c72db46c1b5ececf19146ce5fd0686dfb11f0d52",
+    "source_order": 143,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-143",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "祈祷是求救的信号",
+    "author": "南怀瑾",
+    "source_sha256": "7da58bb726a3dc9855c8ab41ec7eb67baff5617942402ee7ee3bdf77ec33c3a5",
+    "source_order": 144,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-144",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "要愁哪得工夫",
+    "author": "南怀瑾",
+    "source_sha256": "b06ed3cc88502dceae124fcea3d3c1d3d0a38d288fa7d680c2baff4f8ec7e48e",
+    "source_order": 145,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-145",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "光风霁月",
+    "author": "南怀瑾",
+    "source_sha256": "d3f2aba0ffb230c574b7467fad3684eb6f54731ce8063fdb20c32f960487771d",
+    "source_order": 146,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-146",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "薄帝王而不为",
+    "author": "南怀瑾",
+    "source_sha256": "c2d3f21140eee66712399367ecd6f60ca654535d17601d4dd57f543c378ba7cb",
+    "source_order": 147,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-147",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "贵为天子而友布衣",
+    "author": "南怀瑾",
+    "source_sha256": "55f286b215d22125c22614400daff4a0562e4337fee8b307dbf863e6a6b11eb6",
+    "source_order": 148,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-148",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "无愧平生事大难",
+    "author": "南怀瑾",
+    "source_sha256": "3178feab6faaf6a59a33f2dd78cf6b2d77325d8b86497bf2690733141e1b46e7",
+    "source_order": 149,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-150",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学问深时意气平",
+    "author": "南怀瑾",
+    "source_sha256": "9b7ea5a88466c2159a2b50b1615e3e98f0e4c3bd66d50da77b7ea2bbd738a4b4",
+    "source_order": 151,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-151",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "临大节而不可夺",
+    "author": "南怀瑾",
+    "source_sha256": "b5bcd9276157a0b97ec6479fd7f13efd217fb180c41099f20b0182d9a9750d62",
+    "source_order": 152,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-152",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "怎样才算知识分子",
+    "author": "南怀瑾",
+    "source_sha256": "918deb141e5dd184863e887fea1659c858d2ae690647c5a05954fb51ef53b3f2",
+    "source_order": 153,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-153",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "文章自己的好",
+    "author": "南怀瑾",
+    "source_sha256": "384837447044c71aafc9ee4649177cdf2cf7d5d0217d6c567d5af9cd49ee3324",
+    "source_order": 154,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-154",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "愚民政策",
+    "author": "南怀瑾",
+    "source_sha256": "6907f2f78bfb663aa6373a3e705c5e51281c25176638e1c75a9774db755aee58",
+    "source_order": 155,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-155",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "社会动乱之源",
+    "author": "南怀瑾",
+    "source_sha256": "afb7f91781e7598bf3bfeb05d3ad74afdd5694bca3365227003f6a6b0ed33284",
+    "source_order": 156,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-156",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "知人于微",
+    "author": "南怀瑾",
+    "source_sha256": "c74c1019d08be6cb212fe7fb2030a05bafbf7d4cc46ec2c6f1bd2819c71689e2",
+    "source_order": 157,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-157",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "求学的目的为什么",
+    "author": "南怀瑾",
+    "source_sha256": "1550a892045a52ef66a4801aa9336a29f814b75e85390346f4cddb65c84478db",
+    "source_order": 158,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-158",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "入山唯恐不深的隐士",
+    "author": "南怀瑾",
+    "source_sha256": "21935c21e3a82f716fb4b068b1fe3458114bafdedab6c405b5a48337bca245ba",
+    "source_order": 159,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-159",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "秀才未必知天下事",
+    "author": "南怀瑾",
+    "source_sha256": "214b198f6b0a25b6cc9d67594bd0442ba9812858c360bac9d97cfd9d60b312e0",
+    "source_order": 160,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-160",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "文化复兴运动",
+    "author": "南怀瑾",
+    "source_sha256": "92925fcb3fbf639b9438e608b2a7d66b222f37be4d720fdaf6d71d5f054fcfbf",
+    "source_order": 161,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-161",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "三代之治",
+    "author": "南怀瑾",
+    "source_sha256": "697ea3156eb8999c2e86d838f5825068b7e843d22199bd4589235020b3d8d17a",
+    "source_order": 162,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-162",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "接下来便说到帝尧",
+    "author": "南怀瑾",
+    "source_sha256": "03d181f170b85cf4f5613eb198b464e65798e393d6a04cfc63c892ec78cbea1a",
+    "source_order": 163,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-163",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "民主乎？专制乎？",
+    "author": "南怀瑾",
+    "source_sha256": "f2253f62135f8d7b77627c025194ef6b0bd9292f9ec047fbf9a40326f8bc381b",
+    "source_order": 164,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-164",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大禹和墨子",
+    "author": "南怀瑾",
+    "source_sha256": "f7db89f867f7859a5c050f1d23c81f95fa708e7f1bc989063bd22665c7791b25",
+    "source_order": 165,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-165",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "利害交关的生命意义",
+    "author": "南怀瑾",
+    "source_sha256": "5b06255bf6a1f2ad919ff92cc81fdc64da78d35f0f1706c059b8dedd616d4ff2",
+    "source_order": 166,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-166",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "历史文化先驱",
+    "author": "南怀瑾",
+    "source_sha256": "ebed3938e9632ecd6e4d8c5909ec38654bd025924b2f835367d0185c5ca0d27e",
+    "source_order": 167,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-167",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "礼的变态",
+    "author": "南怀瑾",
+    "source_sha256": "49beab828e5c0d83cd312ec0e6f71fc8c7dcc80ed8c5b11f717a5a1478727468",
+    "source_order": 168,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-168",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "良冶之门多钝铁",
+    "author": "南怀瑾",
+    "source_sha256": "2d18728fce065a247073e11cf94911ac65104a564d0961d11d57102e2cf4f167",
+    "source_order": 169,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-169",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "古之学者为己",
+    "author": "南怀瑾",
+    "source_sha256": "698541b941e3917982d79a55672b2982936da6128c1d3e11e2b6f58a58f16248",
+    "source_order": 170,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-170",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "行为心理学",
+    "author": "南怀瑾",
+    "source_sha256": "65ee12a7f99397db70e4c77804ee483359c8bab9991cd15e824241fef922228d",
+    "source_order": 171,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-171",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不见顶相",
+    "author": "南怀瑾",
+    "source_sha256": "e937c64a66be5791f7e68511e7032c074ae7bdc7c4685782494d8ac0adcbea53",
+    "source_order": 172,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-172",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "见与师齐 减师半德",
+    "author": "南怀瑾",
+    "source_sha256": "54b9fd1f7fd09ff64de73e257c869eb3fc412b987487dd66101c76688c277bfe",
+    "source_order": 173,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-173",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大丈夫当如是乎？",
+    "author": "南怀瑾",
+    "source_sha256": "0afc0a2740488c3553f52d024ca58c1100c78aad50aa3fff582ffdd69e2c0afa",
+    "source_order": 174,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-174",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "解脱生死",
+    "author": "南怀瑾",
+    "source_sha256": "2d7a88e7b460d5991de187e55698cd3ce86825daf33436e61e21feea52e032ab",
+    "source_order": 175,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-175",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "卖不出去的无价宝",
+    "author": "南怀瑾",
+    "source_sha256": "38f72849d72d2d168efbf37347f5921d09556b4922c53ab70089caf20a8ed699",
+    "source_order": 176,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-176",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不落醉梦中",
+    "author": "南怀瑾",
+    "source_sha256": "33d5ac5071b49ed596f33480601cb850e7c89062a89fa05fb4a6215a8ce0c261",
+    "source_order": 177,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-177",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "水流花谢两无情",
+    "author": "南怀瑾",
+    "source_sha256": "9d30ac561b3dcef68f058b50df1e0c5bafcbb8bf6fbc3f242d898faa7f6eac3f",
+    "source_order": 178,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-178",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "女人未必皆祸水",
+    "author": "南怀瑾",
+    "source_sha256": "189eb77d03b04a0d780b518013acd0f714051ac51aa384a750fabba0ea01c517",
+    "source_order": 179,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-179",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学而有成之难",
+    "author": "南怀瑾",
+    "source_sha256": "0c7f06ff7bd8956e67f82c5c32beddedacc142ff0d86c64d1ce30cc0a44f8df1",
+    "source_order": 180,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-180",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "勿轻后学",
+    "author": "南怀瑾",
+    "source_sha256": "a43c156aa8685bccc1c6903ea52932ac8573c09b10d218f72da707057a87fa61",
+    "source_order": 181,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-181",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "高帽压人低",
+    "author": "南怀瑾",
+    "source_sha256": "acc36961a7f1f813edcb0fbb9e466806f8970feb3a0eb9ae487920623f5f03c3",
+    "source_order": 182,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-182",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "意气凌云",
+    "author": "南怀瑾",
+    "source_sha256": "5498039a39e5504012bb2bcb563385566aa3674616da905c5f6f41f283948ab8",
+    "source_order": 183,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-183",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "三达德的重心",
+    "author": "南怀瑾",
+    "source_sha256": "0ecbe771f3077356d2fb1a2abc9e1293ca0f0a232a0a19dd9a7c17b4cded9618",
+    "source_order": 184,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-184",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人之道与才",
+    "author": "南怀瑾",
+    "source_sha256": "cde27bae12c9fb17552b29f1ad7d4e71338efae7accdc677655020a99951e900",
+    "source_order": 185,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-185",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "赞元禅师与王安石",
+    "author": "南怀瑾",
+    "source_sha256": "a065afc471101da3c733ac8dad2da86d8742cecf7c4ca49044ec97af36d38f49",
+    "source_order": 186,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-186",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "半部《论语》",
+    "author": "南怀瑾",
+    "source_sha256": "81d639a3b6dc0de226e7bf63c61ccf75f96e044c684c676110325f1c06260e1a",
+    "source_order": 187,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-187",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "素朴的美",
+    "author": "南怀瑾",
+    "source_sha256": "e015bffeb1295722e624f9713ca82a835219dd6ea1b5981e7f7fdc73b0c93b27",
+    "source_order": 188,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-188",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "知人论事",
+    "author": "南怀瑾",
+    "source_sha256": "ed7a6da118e80fcc91c13a220089d8c56a7a0ffb892ee984b6f072bd7cafae91",
+    "source_order": 189,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-189",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "听话的颜回",
+    "author": "南怀瑾",
+    "source_sha256": "97d8ced2c720228adc8b3accc5d8e673652b1d3473416f08624b8abc3929ec43",
+    "source_order": 190,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-190",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孝子闵子骞",
+    "author": "南怀瑾",
+    "source_sha256": "df9032d997bd91f8982a9d4716bb2484b797e2f1adbec26c40cd3f17849c8c67",
+    "source_order": 191,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-191",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "才命相妨的颜回",
+    "author": "南怀瑾",
+    "source_sha256": "e136f0750f04a4ba021e93fce9262c83378afad0f4be9e935ee339154fb23ce4",
+    "source_order": 192,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-192",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不问苍生问鬼神",
+    "author": "南怀瑾",
+    "source_sha256": "5580c3a96259de0c9ea2832a1310448956c00533f246a427e4e32aebad7f68e0",
+    "source_order": 193,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-193",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "生命的幽默",
+    "author": "南怀瑾",
+    "source_sha256": "afca15c79f5db56ead66d190927a1a2fe7800415ece6bb33673bec7f932e4e95",
+    "source_order": 194,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-194",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔门弟子的素描",
+    "author": "南怀瑾",
+    "source_sha256": "6157ea9b2442c4b8eb93e9ecccae4826136c609fe7a2a273bcaae7ffba0cf73c",
+    "source_order": 195,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-195",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "言语的艺术",
+    "author": "南怀瑾",
+    "source_sha256": "928e282e9f5c7fc7c3592cf4a2e58f42ee7d612d81440164a0c43255606d6044",
+    "source_order": 196,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-196",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "子路的琴学入门",
+    "author": "南怀瑾",
+    "source_sha256": "61856a3c734e4bfc4cef13dc83da10cfd8e988d93cdfbd2d77890a8ed3245613",
+    "source_order": 197,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-197",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "低昂失律的资质",
+    "author": "南怀瑾",
+    "source_sha256": "8137e0a3529d59f98f4203006d8ff5dea3a8bc9b84842ca6e39966f1ea83f5e1",
+    "source_order": 198,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-198",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "儒家四相",
+    "author": "南怀瑾",
+    "source_sha256": "ae2497f2d6535f7c10fee432136fda0418ea76e1d94c5348feb38549ea0f66c1",
+    "source_order": 199,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-199",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "颜回的空 子贡的有",
+    "author": "南怀瑾",
+    "source_sha256": "0636fc602b5a50b7c7d59abce90a09892b413b762b6ecd861dbbce1f0419b4f7",
+    "source_order": 200,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-200",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不着痕迹的善人",
+    "author": "南怀瑾",
+    "source_sha256": "e43958d6d88b5dc16dc1919a470fc093356ccd351a6f99e4aa0f41337dcc1dcb",
+    "source_order": 201,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-201",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "应机施教",
+    "author": "南怀瑾",
+    "source_sha256": "6ee60a85358fbcc17d39ac533cb9c7c0458eb1f74ac7397c4210913b6f24a216",
+    "source_order": 202,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-202",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "死有重于泰山",
+    "author": "南怀瑾",
+    "source_sha256": "8e8e18e96f75a8a5b29b5b479731256e7e93d17350b622a732922fcba412fd90",
+    "source_order": 203,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-203",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "历史人物典型的塑立",
+    "author": "南怀瑾",
+    "source_sha256": "7bbd764a56f2451efd50c99a68d695975d11374a36d182db501c930274cacd68",
+    "source_order": 204,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-204",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "从政与求学",
+    "author": "南怀瑾",
+    "source_sha256": "ccb6bfc87064f3960066656844ac5214ce62def6f46ae5f13f83f1d9e8e8955f",
+    "source_order": 205,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-205",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "力挽狂澜的子路",
+    "author": "南怀瑾",
+    "source_sha256": "6cd3721b5269a9f33a75efdc2d361f8bd09fd63df732a9beecdfb60f335e981d",
+    "source_order": 206,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-206",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "谦谦君子的冉求",
+    "author": "南怀瑾",
+    "source_sha256": "7ff0e96b39577bbbf164e1684e0ddfc5513026dde9d1f0d4ee43d4f05016c01a",
+    "source_order": 207,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-207",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "性天风月",
+    "author": "南怀瑾",
+    "source_sha256": "4edf5769699fd0cad53669d603c2d1a9fc07f5466c8853a61072d6575ab579d8",
+    "source_order": 208,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-208",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "春风化雨",
+    "author": "南怀瑾",
+    "source_sha256": "e79b063aab9b64fb72ed995dd21325b178c625e41b843883285519b4fa5c3a98",
+    "source_order": 209,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-209",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "天人合一",
+    "author": "南怀瑾",
+    "source_sha256": "311ba61b6a6e7d8d7e594b26e0dae88441df47fece321d1c836c9999463a9654",
+    "source_order": 210,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-210",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "静的修养",
+    "author": "南怀瑾",
+    "source_sha256": "82a6bb214bf74a118c0a28f25597e1d580074e50d0c0b333e6cb709a0a8beb08",
+    "source_order": 211,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-211",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "乾坤马一毛",
+    "author": "南怀瑾",
+    "source_sha256": "25daee4b965f50c83f6ea65d11b28ccd75e16f944e7d3afe3379dbdfac06dc96",
+    "source_order": 212,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-212",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大光明与复礼",
+    "author": "南怀瑾",
+    "source_sha256": "38a5b33c51a0f2f397e838bd41eaa58e77aef494ebe078756988a45aaac3b007",
+    "source_order": 213,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-213",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "无所住心",
+    "author": "南怀瑾",
+    "source_sha256": "a7830f612c63f6227910299a8ac4b4a723c848b34826cbcce5ee1644dce5b6db",
+    "source_order": 214,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-214",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "身非我有",
+    "author": "南怀瑾",
+    "source_sha256": "14a2187ff88f59420cb06bb48638a02fafac3e7cc4b2b9d174f0006c53586352",
+    "source_order": 215,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-215",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "梦幻空花非真无",
+    "author": "南怀瑾",
+    "source_sha256": "e3574bd58f3173198ffb716a9b0475103157462a0ef264257bbaa45e43ff607c",
+    "source_order": 216,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-216",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "顿悟与渐修",
+    "author": "南怀瑾",
+    "source_sha256": "521eb3a33f8797a4cc41195414e12a83fece43860117ffd2976cbe2a4cd6ddaa",
+    "source_order": 217,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-217",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "司马牛的问题",
+    "author": "南怀瑾",
+    "source_sha256": "59379241ed12eed8bbb9c39f2887e93094ed86aa222f3ce0accdf8ffa5ee0bd7",
+    "source_order": 218,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-218",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "四海之内皆兄弟",
+    "author": "南怀瑾",
+    "source_sha256": "5ae033fdc2e927793f6cfef46d74a621928680e64b1cb6d092973669416430ab",
+    "source_order": 219,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-219",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "自知者明",
+    "author": "南怀瑾",
+    "source_sha256": "8f04838e69d32e1a7e5ad9418d47c8cd0b1c677da8f8d8342985afaa1fa16138",
+    "source_order": 220,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-220",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "众志成城",
+    "author": "南怀瑾",
+    "source_sha256": "28d600e8321eded3c4ddd846f262e6bb4921c2690309ab76dfce4f515c7ee709",
+    "source_order": 221,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-221",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "内外兼修之谓美",
+    "author": "南怀瑾",
+    "source_sha256": "a8ef188434a2cff0ee06eddf99c81abbb2c305b042ad14b1fb338d2c36a646fc",
+    "source_order": 222,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-222",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "历代兴衰的趋势",
+    "author": "南怀瑾",
+    "source_sha256": "7a41412f172eec50044be06c605f2136b2e0c01efe33609ddfd992ae5fe3b794",
+    "source_order": 223,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-223",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "继绝传薪",
+    "author": "南怀瑾",
+    "source_sha256": "ff436b67599065c103d0cdcf64d4999f8ecd4f9abbe7e811369877457a460677",
+    "source_order": 224,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-224",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "书画琴棋诗酒花",
+    "author": "南怀瑾",
+    "source_sha256": "6c9245da3bcf2b8c12c6835a7b2106b1f81b78beebedfa6072d11f51835cf3cb",
+    "source_order": 225,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-225",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "吃饭大如天",
+    "author": "南怀瑾",
+    "source_sha256": "afc396df2fa8457f3ac2edc8ae252a0db63f488f74f12859ffcbda5404dc18d6",
+    "source_order": 226,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-226",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "知人易自知难",
+    "author": "南怀瑾",
+    "source_sha256": "b703f1c04d2b7f4d7ab0f8dae17ab9605a82e977a1f19229a4544da6b24ef6f9",
+    "source_order": 227,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-227",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "相对的人为政治",
+    "author": "南怀瑾",
+    "source_sha256": "802db9df8ddb414a93ed920efcdccbfcc80b7f18bcf51197f62cd9440ccaa776",
+    "source_order": 228,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-228",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "能平不平的子路",
+    "author": "南怀瑾",
+    "source_sha256": "33a11f6633785c4d0f3e7d97ec27de89b680661964d1c5dee7bee9a3e4c55b1a",
+    "source_order": 229,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-229",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "理难清",
+    "author": "南怀瑾",
+    "source_sha256": "f512d05ca7eb583acd7b4863c3a1c9a8ca46150a2ba92bec663e266a2445c483",
+    "source_order": 230,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-230",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "完美之不易",
+    "author": "南怀瑾",
+    "source_sha256": "12ff4db72a027c4db9b21cd8c398fad9ba3ccb3bc55bf51571636eeef13235ce",
+    "source_order": 231,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-231",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "上不正下便歪",
+    "author": "南怀瑾",
+    "source_sha256": "4d8a9b8de355346ec3871d6266c4a5dfe1ab1ca034e77269de4aa9ae6bec20c9",
+    "source_order": 232,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-232",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "风吹草动",
+    "author": "南怀瑾",
+    "source_sha256": "0ab5e97aeb8ea907b7b049646bb979e2d00bf640f184ed8a198515ca3d106ecf",
+    "source_order": 233,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-233",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "闻人与贤达",
+    "author": "南怀瑾",
+    "source_sha256": "8bee54deeeff6920733ab6655f07f0d6ac250bedc9b2f8c3d647b33e1f33d5b6",
+    "source_order": 234,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-234",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "修养上的三叉路口",
+    "author": "南怀瑾",
+    "source_sha256": "43f5ddb86de76f4564e50c1ce0ea64ba6527a1ebf8ca24cb3808c63ce2a96483",
+    "source_order": 235,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-235",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "樊迟问“知”“仁”",
+    "author": "南怀瑾",
+    "source_sha256": "8458d266080e9498b97d1b7780fb83203f2119facc4343d10366bea56707e3f5",
+    "source_order": 236,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-236",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "交友的艺术",
+    "author": "南怀瑾",
+    "source_sha256": "82a005c3850c5e4cd997dc49d8e12208d736aa2f2cd154771cc9a8d89c902ab8",
+    "source_order": 237,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-237",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "先天下之忧而忧",
+    "author": "南怀瑾",
+    "source_sha256": "110b41aa2c6d56354eff641b2165f505866d82da21460a9dd5dd09989e6ec1bb",
+    "source_order": 238,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-238",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "才难",
+    "author": "南怀瑾",
+    "source_sha256": "3bec1cbad58528696e8b85f4842434cd3af8923e6ed301908a7384e48329b7ba",
+    "source_order": 239,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-239",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子要正什么名",
+    "author": "南怀瑾",
+    "source_sha256": "4aaf9fbe194d9d66737f624c41ec28e1f729b13daaf9fb39abcbb893e60b7ce6",
+    "source_order": 240,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-240",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "问舍求田",
+    "author": "南怀瑾",
+    "source_sha256": "7e9f2b4a758ae3965d7f1c738eea26294ea21a40bfd6068ff21eff9249cf59e7",
+    "source_order": 241,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-241",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "斗屋升基之争",
+    "author": "南怀瑾",
+    "source_sha256": "f9ac689e55a4cf1471b57e244e4de8bc9818dab987b83972f766fa91158e7581",
+    "source_order": 242,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-242",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "政治、经济、文化",
+    "author": "南怀瑾",
+    "source_sha256": "406003dbddb39028fad301dc2bfe72470b5ab22d1302a0001c1ed6279e718e21",
+    "source_order": 243,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-243",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "仁德须加累积成",
+    "author": "南怀瑾",
+    "source_sha256": "cd0f33efeb3395d6efc9982dab972919e625b92c0450df55200bfd4b37289d9a",
+    "source_order": 244,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-244",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "正己而后正人",
+    "author": "南怀瑾",
+    "source_sha256": "0795a6984b23c0f0ee53716a1b64dcf68e7915547fc4ab6497e18c0e3a482dfd",
+    "source_order": 245,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-245",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "闲话一句",
+    "author": "南怀瑾",
+    "source_sha256": "03b7f2ea767abd55c7c855988574d666b0f181756edab358ef80a1701722ffef",
+    "source_order": 246,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-246",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "风头主义的英雄",
+    "author": "南怀瑾",
+    "source_sha256": "2c8cdf66aa8cfa423eb1b325436366e93f905581cdc25590687ba6406bbda991",
+    "source_order": 247,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-247",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "画龙点睛",
+    "author": "南怀瑾",
+    "source_sha256": "aba674e733419468e426454fd2b7a393f9aaea9322dced434114d77beb211d16",
+    "source_order": 248,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-248",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "是不是——士",
+    "author": "南怀瑾",
+    "source_sha256": "5e99d665cc9336b67b9859b8b13281e3615c04272122d33b1494bde07b7b7e1a",
+    "source_order": 249,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-250",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "乡愿之见",
+    "author": "南怀瑾",
+    "source_sha256": "6765198cf1517776ef6bb1935370d08013e54a6f7ba2449f11289bb529bb2cfe",
+    "source_order": 251,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-251",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "国防第一",
+    "author": "南怀瑾",
+    "source_sha256": "071d7714e2691ebcdc70b7c76d3200d103200b4bc044bf0509a4ce47b0a9472c",
+    "source_order": 252,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-252",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "侠隐中人——原宪",
+    "author": "南怀瑾",
+    "source_sha256": "1445835a2dc7864dfc32ad619358cc3321ed3617aa80382bb784e415e77fbabf",
+    "source_order": 253,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-253",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "名利浓于酒",
+    "author": "南怀瑾",
+    "source_sha256": "e9541963c415ab6e0ca4ce6cf68807af2f4ca8bce21f5ecdb805a3372ad58aa0",
+    "source_order": 254,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-254",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "隐痛诗人——吴梅村",
+    "author": "南怀瑾",
+    "source_sha256": "de0b75767747743f138818d1f9b0b77b4cf9a1553ef4fc4f2e9155798ee9dbd3",
+    "source_order": 255,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-255",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "草泽中自有经纶",
+    "author": "南怀瑾",
+    "source_sha256": "6a5f73afca98e034053f1d0635dfbef47f18d64b72f09c8202e3248065328bf7",
+    "source_order": 256,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-256",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "狼虎丛中安身",
+    "author": "南怀瑾",
+    "source_sha256": "6b000fa4ce4639bbf48d995713c54fd40dd146fa7aa53bd988a7fd04c020ae88",
+    "source_order": 257,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-257",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "度德不量力",
+    "author": "南怀瑾",
+    "source_sha256": "78de15fceeba1854c4d28556de7060e4aa2fa8ac3108c24d6bbba873dd3a43a5",
+    "source_order": 258,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-258",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "爱里生害",
+    "author": "南怀瑾",
+    "source_sha256": "aa7022ee07b341323906f50060ea615a986756a5a59a55516fd4dfe4eb8acb09",
+    "source_order": 259,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-259",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "为政难作人更难",
+    "author": "南怀瑾",
+    "source_sha256": "5f09c5f840698a52277a6b6a4cb6bd549d0bfb238f06171d2463a4993ac44da8",
+    "source_order": 260,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-260",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不学谓之贫",
+    "author": "南怀瑾",
+    "source_sha256": "3c0847317a50161533a197c7957827257ce582123f30a2c769f74e1989f17563",
+    "source_order": 261,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-261",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "识人难识己更难",
+    "author": "南怀瑾",
+    "source_sha256": "c44dc62d0fb9205911d308b3df74f091e93e48ebe462cf9a8fd2341b319ff998",
+    "source_order": 262,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-262",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "全才——智、清、勇、艺、礼",
+    "author": "南怀瑾",
+    "source_sha256": "8a7e885a46867e64a297883860ef17b36fc1ff6d84389b91dab1753790f966e2",
+    "source_order": 263,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-263",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "疑假疑真",
+    "author": "南怀瑾",
+    "source_sha256": "81e46df96ec52510f77e03900cb58847281176a5a0490e1954c8176401561d24",
+    "source_order": 264,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-264",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "挟兵自重",
+    "author": "南怀瑾",
+    "source_sha256": "e448408131e1a0e72018aea4f643ec792c28079f94d76571f55003b3d54a684e",
+    "source_order": 265,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-265",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "管鲍之交难",
+    "author": "南怀瑾",
+    "source_sha256": "82f031876de9dd5ed0a7d6a0ee1a8518d4f08895a58174f18c7b35f4109573c0",
+    "source_order": 266,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-266",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "死生亦大矣",
+    "author": "南怀瑾",
+    "source_sha256": "409c4a7834ae980f663724b448ffd5d6564c5cbce74425b363ade8a6c8245dd4",
+    "source_order": 267,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-267",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "人尽其才",
+    "author": "南怀瑾",
+    "source_sha256": "78c3a5f1bdbd60f5c3ba64a3e0a6e43ff1c2e6346c78b3ea023bd8563c6a5347",
+    "source_order": 268,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-268",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "为正义而言",
+    "author": "南怀瑾",
+    "source_sha256": "beb3af745fc73a10282a470bba06b22b90f1f113075bcefc26becedc078ff381",
+    "source_order": 269,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-269",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "风云际会",
+    "author": "南怀瑾",
+    "source_sha256": "5fb163b3d5d5e3b82d6a2398e98c33e89e994b2ce9bc0ee63ffe432def40c2a4",
+    "source_order": 270,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-270",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "为谁读书",
+    "author": "南怀瑾",
+    "source_sha256": "053c862cdd39151afaa8bdbf1a800eba2dbd77d0c4099e712067d9d1f7be1aa7",
+    "source_order": 271,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-271",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "称职的使者",
+    "author": "南怀瑾",
+    "source_sha256": "78506a0dd8aab8718698d5ff1875f4633b164192d1952a2c549ed83c05f161d3",
+    "source_order": 272,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-272",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "宿将还山不论兵",
+    "author": "南怀瑾",
+    "source_sha256": "768bd559fd9fcdfcbd9b8d63a957d5b61592a254b811347a70c3be296b91e582",
+    "source_order": 273,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-273",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "思无邪",
+    "author": "南怀瑾",
+    "source_sha256": "c8e73d73306d652bf6a0faf57fc6a8cce0038a8eac78018867f2f3edd80e1f59",
+    "source_order": 274,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-274",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "智、仁、勇",
+    "author": "南怀瑾",
+    "source_sha256": "4d629131ac0280226271d99dbfaccff3d01c98ea0d11653de6dd484cfba62ed9",
+    "source_order": 275,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-275",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "待人接物",
+    "author": "南怀瑾",
+    "source_sha256": "2eae78315bf20b5735f6482cd5f5f1d44e2deb41be2ce38f479b72ddf42fe8ba",
+    "source_order": 276,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-276",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "夫子何为者",
+    "author": "南怀瑾",
+    "source_sha256": "894e19a2c2dd5b36d6f131d53c46f792154bf386e65a3fe88b8f4a451e55d56f",
+    "source_order": 277,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-277",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "报怨与报德",
+    "author": "南怀瑾",
+    "source_sha256": "c0405564ac4e5ee5bce0abceaf313ccaa260028f1bbed5255446bcf7a1fb730a",
+    "source_order": 278,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-278",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "存心自有天知",
+    "author": "南怀瑾",
+    "source_sha256": "c62dd12be7cd2c1f889dbc6637ded80fd3563ba0d642c3510591fe020f482e5f",
+    "source_order": 279,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-279",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "入山未必心安",
+    "author": "南怀瑾",
+    "source_sha256": "2bbd6d365cd0bb44d46141ed1c1f065124cd5b45760be372f8899404ebf1bce8",
+    "source_order": 280,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-280",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大隐市朝",
+    "author": "南怀瑾",
+    "source_sha256": "6b31669e11cbb2c9447b7a1e0576d4f8f95c1002e8de01cfbeb2fde324191a06",
+    "source_order": 281,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-281",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "收场不易",
+    "author": "南怀瑾",
+    "source_sha256": "e434c7ebf9b0109676f3b5dcf7a3c3e8c57defed715ec2d7e2625750dea3a8da",
+    "source_order": 282,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-282",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "不合时宜",
+    "author": "南怀瑾",
+    "source_sha256": "55055a8e1b0733d76648e639e78d41106c780161ba0e4dc4c2266fbdfe899eb2",
+    "source_order": 283,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-283",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人头痛的事",
+    "author": "南怀瑾",
+    "source_sha256": "225139826862a6f6b043f25ddd01f5206a4192ea965be3b827ac08713e97c66f",
+    "source_order": 284,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-284",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "急功近利之徒",
+    "author": "南怀瑾",
+    "source_sha256": "4ef47b8f6b3f0b6397dea4ef35e571a2bf0c1d2a567aacbbf6efb1cf230d6258",
+    "source_order": 285,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-285",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "又说一贯",
+    "author": "南怀瑾",
+    "source_sha256": "8a2deffdcdb53e5c69873c73fb786e233380ba322bcafcb4c14969925a25b5ae",
+    "source_order": 286,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-286",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "使节的信条",
+    "author": "南怀瑾",
+    "source_sha256": "172e6532e37b4258ab7d6a3dc9f7c9427125dd12498943fbb952b6f3a2f2fb84",
+    "source_order": 287,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-287",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "长安居大不易",
+    "author": "南怀瑾",
+    "source_sha256": "d541bd16ea47bec128583383e962ff11c557bf5181134de58c0588121608b93e",
+    "source_order": 288,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-288",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "夏历与过年",
+    "author": "南怀瑾",
+    "source_sha256": "d6ea42eda825fef78c94015b41568fd7a495fede60a773e1090a767a87b8555f",
+    "source_order": 289,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-289",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "时空问题",
+    "author": "南怀瑾",
+    "source_sha256": "371c88f0eb0452aa622e9215e63523c72912a9da6e7b96ebee6a6535798056a7",
+    "source_order": 290,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-290",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "英雄无奈是多情",
+    "author": "南怀瑾",
+    "source_sha256": "acd592838b94d9db6f4d0b5500dbbba4f38a043396a2f3fe828604006c8df790",
+    "source_order": 291,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-291",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "精神失落的病态",
+    "author": "南怀瑾",
+    "source_sha256": "f949cb55b231b94ce2012b018633422cd81530e18c07c3bbb0187173a1e27a88",
+    "source_order": 292,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-292",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "反求诸己",
+    "author": "南怀瑾",
+    "source_sha256": "c0c2c9d884d146efff0eca48c32fd4531de422bb7ac3da36525ee3e96e48c58b",
+    "source_order": 293,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-293",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "多为别人想一想",
+    "author": "南怀瑾",
+    "source_sha256": "057140af38f6aa3e0d3a62aeac9d529d26add00c851fd74a75efa9d6e205de64",
+    "source_order": 294,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-294",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "毁与誉",
+    "author": "南怀瑾",
+    "source_sha256": "1eb299289d6b0292e9967337c82f2d2fc453054fc0953cdbb1df27bf43fb1188",
+    "source_order": 295,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-295",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "出入无车少马骑",
+    "author": "南怀瑾",
+    "source_sha256": "e706777e87e21ec00a6f7d2bf928c323b656b3fa89c237f11c25e4bc05041859",
+    "source_order": 296,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-296",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "小忍与大谋",
+    "author": "南怀瑾",
+    "source_sha256": "b6f2a553f04923c0126fe055e8c6bb1c628ae0637e589b1edbd0a2eca0ebb810",
+    "source_order": 297,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-297",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "几人忧道不忧贫",
+    "author": "南怀瑾",
+    "source_sha256": "fd5b9ff935fedb028a58b50df64c868c32f895d073d3b299da75b594e43fb03c",
+    "source_order": 298,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-298",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "器小易盈",
+    "author": "南怀瑾",
+    "source_sha256": "4efcd8d5b12d909e460d531a16411bd748110f7696b5ecd540e666e1e87ec285",
+    "source_order": 299,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-299",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "烫手的山芋",
+    "author": "南怀瑾",
+    "source_sha256": "5d8d7c6a18be03505501f4c494c5df00b3d764615ea4b30172491895e40335ca",
+    "source_order": 300,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-300",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "花果枝叶",
+    "author": "南怀瑾",
+    "source_sha256": "77c812386eb96489dfd77baab229ade7395422bc1c11674422fcb2db4c947ad6",
+    "source_order": 301,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-301",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "兴灭继绝",
+    "author": "南怀瑾",
+    "source_sha256": "60521d74fead3d5c37d839f17045209ae071eddf3fd79d0338d270ddbaae20ba",
+    "source_order": 302,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-303",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔孟曾颜的通天谱",
+    "author": "南怀瑾",
+    "source_sha256": "47bc136c73f38169bad3907eb295f228be05d1fdeaf8e7a1b63ae19096b2c732",
+    "source_order": 304,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-304",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "红蓝画线鬼哭神号",
+    "author": "南怀瑾",
+    "source_sha256": "0c9b922e4abe024a6ab2c25efde7e6e2cfd104ada50bb00ec96487693b69965b",
+    "source_order": 305,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-305",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "传统历史的资料",
+    "author": "南怀瑾",
+    "source_sha256": "748c20ca4bffd01c350c7414331d32a819850e3057ebf59ae5afe980faef9c7a",
+    "source_order": 306,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-306",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "侵略者的遁词",
+    "author": "南怀瑾",
+    "source_sha256": "139c864cd248a1a8401a1f0f312611251ec39e8f2d722b2b472db27db607343d",
+    "source_order": 307,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-307",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "老虎出笼珠宝完蛋",
+    "author": "南怀瑾",
+    "source_sha256": "a2d0646435b338c4bb3fe4d2a4d31c00e46733caa7e9aa2d255fc0331a75066f",
+    "source_order": 308,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-308",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子与冉求政略的论辩",
+    "author": "南怀瑾",
+    "source_sha256": "320af46afed0bcc249c0e6e8be4032f287643791ffa2f1e7847294852d0390d5",
+    "source_order": 309,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-309",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "先知的预言",
+    "author": "南怀瑾",
+    "source_sha256": "6b5bb5315ae5e5d9fb2f6d533b4d4757900f7b6b9840f4ba0071e5105a45027a",
+    "source_order": 310,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-310",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "朋友之道",
+    "author": "南怀瑾",
+    "source_sha256": "4164e83a35b8440068ffd8b11a9644a3feddd0ed4054d779b9ac1a76340ceb75",
+    "source_order": 311,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-311",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "说话难难说话",
+    "author": "南怀瑾",
+    "source_sha256": "e3d90aac33a77f4c2a52e3e011f5d2d4abca86317f2183b612793ea68619cbb3",
+    "source_order": 312,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-312",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "谁人肯向死前休",
+    "author": "南怀瑾",
+    "source_sha256": "104bfb3bab9ebb15338700c0fbe026a7572a7691d2cedb6466a551dbdac7925b",
+    "source_order": 313,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-313",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "怕的哲学",
+    "author": "南怀瑾",
+    "source_sha256": "e0f1a3d6efeb89d3681e0f79ad43fd386320c01afcaa39ef68c07e34ca01b4c3",
+    "source_order": 314,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-314",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学问的条件",
+    "author": "南怀瑾",
+    "source_sha256": "f992879ac0e6f2f832ad98db60ebef6f7850c024205bc26658674cebc092b2b4",
+    "source_order": 315,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-315",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "诗礼传家",
+    "author": "南怀瑾",
+    "source_sha256": "a3ce053e198c57c3886de141366abe3c57cb5c0b55d407b02a48fb614009cbb6",
+    "source_order": 316,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-316",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "称呼的礼节",
+    "author": "南怀瑾",
+    "source_sha256": "812a1a486e41ce581750f261e6756d86d2714d053b5c63e20b3c5f18e4c652b2",
+    "source_order": 317,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-317",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "阳货的火腿",
+    "author": "南怀瑾",
+    "source_sha256": "2420eb45ee8d194ab30fa4c495ff0fbbeb8d16185ea38b34030588154f3555f4",
+    "source_order": 318,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-318",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "《三字经》与孔子",
+    "author": "南怀瑾",
+    "source_sha256": "ca5c3646c4cba7091e5a49e6cdaa6860ea2b2bc63f8df0ecee9408c71ba3c1ff",
+    "source_order": 319,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-319",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔子与子路唱双簧",
+    "author": "南怀瑾",
+    "source_sha256": "58215ab19882cc165c3446c3b4c915ab2e0d1c7f1f3cb3b791ef58681a9498b0",
+    "source_order": 320,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-320",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "正反相依",
+    "author": "南怀瑾",
+    "source_sha256": "7f345b9838aeb78c26804481b89d81ffa83746b7630baee8842df5fe48f21062",
+    "source_order": 321,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-321",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "重论诗教",
+    "author": "南怀瑾",
+    "source_sha256": "0de17470b3c9f3020e59a500e0e8238a603054a44d705d644d5e4462cefe67e2",
+    "source_order": 322,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-322",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "面壁而立的悲叹",
+    "author": "南怀瑾",
+    "source_sha256": "d490303331cd06e613b551c4e73bc5fd5c14a38823b6e4870f1739ae62780fb0",
+    "source_order": 323,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-323",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "礼乐的基本精神",
+    "author": "南怀瑾",
+    "source_sha256": "aa5fc255d4c5c6ff0dc14f4dea793e4bc83ac43055227ef27d821c821aaf27a3",
+    "source_order": 324,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-324",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "摆虚架子",
+    "author": "南怀瑾",
+    "source_sha256": "66657cebbb1c76807ed738577e42dc3174c8dc018318d4ab1fd291198feb9e4f",
+    "source_order": 325,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-325",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "古老文化社会的通病",
+    "author": "南怀瑾",
+    "source_sha256": "b7afaa9aec372c45c6ebd33d10062eab6235babeb6688d13ec69947e689d52d0",
+    "source_order": 326,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-326",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "患得患失",
+    "author": "南怀瑾",
+    "source_sha256": "e135323c40a1aabf5a41a8efe27bb5194d549b4f1248e2dc15500267ad3e3c89",
+    "source_order": 327,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-327",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "今古人物论",
+    "author": "南怀瑾",
+    "source_sha256": "306224d7ad7f7cee9a2f15385aed9ff7c57ed176d2aae1a571c4c4dd9c2cd36c",
+    "source_order": 328,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-328",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "法尔如是",
+    "author": "南怀瑾",
+    "source_sha256": "68d19b855422cede175f076c533bec383f12457a447175f96f013aaa000e69ed",
+    "source_order": 329,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-329",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "手挥五弦目送归鸿",
+    "author": "南怀瑾",
+    "source_sha256": "9bbafb91496ca0f5d58056a7cea3ccd7391d9f3a5a958dc836442b11c52a5626",
+    "source_order": 330,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-330",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "爱的回报——孝",
+    "author": "南怀瑾",
+    "source_sha256": "1800dec4bf25aa45417ac834df69a229ae061be55a9b123b114f87a37a9f74ed",
+    "source_order": 331,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-331",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "麻将的学术思想",
+    "author": "南怀瑾",
+    "source_sha256": "d0549eaf7043baee1a97d6a2bb53b6de55c692e7fc63a62f3b79a4dd409694aa",
+    "source_order": 332,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-332",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "男人与女人",
+    "author": "南怀瑾",
+    "source_sha256": "9c57046e69ba881c165ae005d38000b2938e1a75303aa44cb14b1933a7b75e65",
+    "source_order": 333,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-333",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "隐士与历史文化",
+    "author": "南怀瑾",
+    "source_sha256": "515531e46e42ab445d563643110cf265ab0deef5a72dcf42ef7931728663d59d",
+    "source_order": 334,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-334",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "众鸟高飞尽",
+    "author": "南怀瑾",
+    "source_sha256": "f5c7aa99575f7f97f365ab813d9e0aafdfa002e01e5edc03e2fc315876c0f3d8",
+    "source_order": 335,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-335",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "王不留行",
+    "author": "南怀瑾",
+    "source_sha256": "73e57c1a81f757ab27e4fac8d8e4f6a464c6db52dc7f29ec8cf1270bb94376ba",
+    "source_order": 336,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-336",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "江山与美人",
+    "author": "南怀瑾",
+    "source_sha256": "5f71c7dd658559cef77d41339bdf59416786da0fa9e0c4781f87049084be7f65",
+    "source_order": 337,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-337",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "凤凰离乱不如鸡",
+    "author": "南怀瑾",
+    "source_sha256": "7c61308700f99e8e245096073996eeb9f26f6db36ef335b9ea5f3a8783aebe3f",
+    "source_order": 338,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-338",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "处处关津处处寒",
+    "author": "南怀瑾",
+    "source_sha256": "0c25604c44cf1fbbdba9f9a4b23a6861b08a6f2830bdf57bf40c9245ca8bbd87",
+    "source_order": 339,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-339",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "如此风波不可行",
+    "author": "南怀瑾",
+    "source_sha256": "70d8002d6a0515c214d22644e842e0d669775d74b0e824038a2c23c74e246496",
+    "source_order": 340,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-340",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "穷达行藏",
+    "author": "南怀瑾",
+    "source_sha256": "4665fd2f04ca2f82c482955c12a83ff61b3d24f4ef43ac007aaa88930b5f8983",
+    "source_order": 341,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-341",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "时衰鬼弄人",
+    "author": "南怀瑾",
+    "source_sha256": "6d7757229f47a55d467dac0d1746403b623e2ad92263cfa9047b651ff6d8e903",
+    "source_order": 342,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-342",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "周公遗训",
+    "author": "南怀瑾",
+    "source_sha256": "4f8ca22a66984439be39d8bdd6d4b95898430dcd7e564d087991c9ad183c56da",
+    "source_order": 343,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-343",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "有容德乃大",
+    "author": "南怀瑾",
+    "source_sha256": "194c87bb19c99990cdff12194b7363abdbac89698f89310c089be970322dabda",
+    "source_order": 344,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-344",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "雕虫小技大有可观",
+    "author": "南怀瑾",
+    "source_sha256": "94f8b099b4cad42979060737de6ad6357797078c260a7070991cae41c748f672",
+    "source_order": 345,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-345",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学问无尽 岁月难留",
+    "author": "南怀瑾",
+    "source_sha256": "e0b8e17a78cfbf4dac44b674fc9436b26beb0f248098bf7fe5891df6fa6fc9d8",
+    "source_order": 346,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-346",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "体相圆融 用之不穷",
+    "author": "南怀瑾",
+    "source_sha256": "840bf57d5fa534051df1c224cde004504fc8866fac167d33f0677c840b534435",
+    "source_order": 347,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-347",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "交浅不言深",
+    "author": "南怀瑾",
+    "source_sha256": "c7973f15b192920acc836155ac4e862411c7cd5b0b21ca64934d2d2d51cf1289",
+    "source_order": 348,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-348",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "大行与小节",
+    "author": "南怀瑾",
+    "source_sha256": "74dae42dc81891c983cec2060408c6df87d648950ff971a93e991bc72e8eea93",
+    "source_order": 349,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-349",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学与仕",
+    "author": "南怀瑾",
+    "source_sha256": "0e5238a5ac2c626624cf2e8564cbcad5e07e535d96a7b0657984b53924ecebf7",
+    "source_order": 350,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-350",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "办丧事不是演戏",
+    "author": "南怀瑾",
+    "source_sha256": "f8625f3e45e2cef4291560e5e4f87582646dd7f4bed0d4ac0cea684047ecbd80",
+    "source_order": 351,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-351",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "难能可贵",
+    "author": "南怀瑾",
+    "source_sha256": "23eef811dfea3736d639c53db9fd184e70271c33d4106a135bc079bf97e4d353",
+    "source_order": 352,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-352",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "继往开来",
+    "author": "南怀瑾",
+    "source_sha256": "364a7b0ac15fd340e86228109e5f244631dcde87c80abf4db42acfe74ba82eac",
+    "source_order": 353,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-353",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "法律不外人情",
+    "author": "南怀瑾",
+    "source_sha256": "dd11cddad3f2ce7832f718abc0ff842f692806d6bb5e789ca5be0258400b385f",
+    "source_order": 354,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-354",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "成败论英雄",
+    "author": "南怀瑾",
+    "source_sha256": "e0282395c5b182b5bcfb47210e60eb029a09c52c7cdca39aa3d9dccd21821b80",
+    "source_order": 355,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-355",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人无常师",
+    "author": "南怀瑾",
+    "source_sha256": "830bd0a9bad4715d8112e8f152bd1bfb648ae890e490d6df3b45b7a437f8d3ac",
+    "source_order": 356,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-356",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "宫墙外望",
+    "author": "南怀瑾",
+    "source_sha256": "8222f9af019d94d0f44f5c8ddbb89f613411db6efad2e16840727068db86a5df",
+    "source_order": 357,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-357",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "圣人心日月",
+    "author": "南怀瑾",
+    "source_sha256": "9a939c1d362a88bf9f58baf4e2e3b17dcfd4013097a84950d089a21ec980ab9d",
+    "source_order": 358,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-358",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "欲赞无词",
+    "author": "南怀瑾",
+    "source_sha256": "115fda6536986785a85b904c6a453935625c6ddef6093f3efd19ead2b4624318",
+    "source_order": 359,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-359",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "历史文化的重心——公天下",
+    "author": "南怀瑾",
+    "source_sha256": "264242736a0d3b8c98fda48a76c5066bd4cd4458d6481372bd1e2ff8c641cc10",
+    "source_order": 360,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-360",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "天人合一的气数",
+    "author": "南怀瑾",
+    "source_sha256": "681ebb828be4cade92953204bda9dad3b159f1cb41a6604d0759f6903038c928",
+    "source_order": 361,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-361",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "辨中边论",
+    "author": "南怀瑾",
+    "source_sha256": "e16ec61cabfbbe9de90dd2ae33899e7bc63f62d895efd9fae6390577d8b2d77c",
+    "source_order": 362,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-362",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "禹分九州",
+    "author": "南怀瑾",
+    "source_sha256": "0cda52edabe126cb7c1579b980f93012d8deb7abb1c3b6e806bdf80d6d1818bc",
+    "source_order": 363,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-363",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "周重九鼎",
+    "author": "南怀瑾",
+    "source_sha256": "7bd44534d068049810d3e8a3053a0012d34b3e91f062bc7eb2b5c3903ca7eaa0",
+    "source_order": 364,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-364",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "上古的政治经济",
+    "author": "南怀瑾",
+    "source_sha256": "0971f6ac9f665dd9c9a7d5535b46d505be701efba529dfe677af2bb7bc0c66bb",
+    "source_order": 365,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-365",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "人治法治并重",
+    "author": "南怀瑾",
+    "source_sha256": "5c76acd398a43abe898c8d05022c3cacaa91ab2a34150df13b0651813e85f888",
+    "source_order": 366,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-366",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "承先启后",
+    "author": "南怀瑾",
+    "source_sha256": "9c7db5f6d0be745be46aa21cca6a4610fbf50c295d29d110ce06513d78988242",
+    "source_order": 367,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-367",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "养生送死无憾",
+    "author": "南怀瑾",
+    "source_sha256": "f2f902a119e95b6d1af2de83104cf8601f52d22099ade473b18671d22ebf76ab",
+    "source_order": 368,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-368",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "从政典范论",
+    "author": "南怀瑾",
+    "source_sha256": "e4755de956e5c056afc02852be30acef49f1119542b607095ff68dc5bc8f92b7",
+    "source_order": 369,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-369",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "四恶",
+    "author": "南怀瑾",
+    "source_sha256": "2311c7569109993054e3954f0d712fc3d578499ca58cd08f5b2354d491299b3a",
+    "source_order": 370,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-370",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "学至三知的结论",
+    "author": "南怀瑾",
+    "source_sha256": "f60f76e3008131056f7e6bccbe124b7562756af6c8621fa40229985493400403",
+    "source_order": 371,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lunyu-biecai-chapter-372",
+    "book_id": "nhj-lunyu-biecai",
+    "person_id": "nan-huaijin",
+    "title": "孔学新语自序",
+    "author": "南怀瑾",
+    "source_sha256": "058c0066db6296e10e1460bfa950d2ba3a94ab7adb0a7eabd527e763888c54e4",
+    "source_order": 373,
+    "paragraph_count": 13
+  },
+  {
     "id": "sy-05-01-002",
     "book_id": "sy-05-01",
     "person_id": "sheng-yen",
