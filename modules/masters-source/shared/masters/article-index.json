@@ -1,0 +1,1372 @@
+[
+  {
+    "id": "sy-05-02-001",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "257a352ac470b5c4950213a1fec2e288e95505c671db115a12b5982cf17cc83f",
+    "source_order": 1,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-002",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "再序",
+    "author": "聖嚴法師",
+    "source_sha256": "fcc1675e16a8db69c1140181d6b7a29ef038d1cfe5b40f7e23b668720ecf745b",
+    "source_order": 2,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-006",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "宇宙和生命是從哪裡來的？",
+    "author": "聖嚴法師",
+    "source_sha256": "fb495e56dfe887f5605fd24b09b7317ea2aa4ea0f501539b537e077e4caf9b2b",
+    "source_order": 6,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-02-007",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "菩薩怎麼講？",
+    "author": "聖嚴法師",
+    "source_sha256": "f0a06be578f0e55c2ffcfe0cf7af75b266514e4d5e098cf098ce38811d430049",
+    "source_order": 7,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-008",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "什麼叫作大乘和小乘？",
+    "author": "聖嚴法師",
+    "source_sha256": "0d43bc08f2093952b4ca9465bca778b7be055490b91034f901744514de44c049",
+    "source_order": 8,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-02-009",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是世界性的宗教嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "75afc6d613b3fca039ed288b0f2c08f022e1de634f586fcd553a322095830f04",
+    "source_order": 9,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-05-02-010",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的基本教理是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "328562d748c5575f00857ed47393be2768cda5521bd396ae6a00946a1ea434c1",
+    "source_order": 10,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-02-012",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "信仰佛教必須吃素嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "62b5ddba27c9e8c20d695c177bb4a55c57858a9ba1e696cf0097ec7275228fb3",
+    "source_order": 12,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-02-013",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教對於菸酒賭博的看法怎樣？",
+    "author": "聖嚴法師",
+    "source_sha256": "98d6d5fc20794854ad6c5a2fb3228e40c2e249c1e29d67e796b7d602b9276059",
+    "source_order": 13,
+    "paragraph_count": 1
+  },
+  {
+    "id": "sy-05-02-014",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "信仰佛教必須出家嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "946b3ebc189ef125330e92d25cd2c11c6db6db56437450329cb6ec249c72677a",
+    "source_order": 14,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-02-015",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的信徒共有多少等級？",
+    "author": "聖嚴法師",
+    "source_sha256": "e050cb13b2df0499193080056099272f7fcd07bde25c06cf11b95d450ffd4ab6",
+    "source_order": 15,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-016",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "怎樣成為一個佛教徒呢？",
+    "author": "聖嚴法師",
+    "source_sha256": "0b32cd517915ba1b204925a71ab013d253597ac66af59f3aff8e3650bb902c42",
+    "source_order": 16,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-02-017",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教為什麼要信仰三寶？",
+    "author": "聖嚴法師",
+    "source_sha256": "674dbb62a055dbed0a109528d48a1520428dd06cf901aa5236e0024b38390b12",
+    "source_order": 17,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-05-02-018",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "娼妓屠宰漁獵販酒等人可以信佛嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "f41d0233b2527cffeebc91db9a3692d5fa52a1e8e95b97e1e77e3fc7152f9fe6",
+    "source_order": 18,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-019",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信懺悔嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "c211542f3f3e4c4754903849245199c79ceb73a1b4572f5fb7fe603eae62b36f",
+    "source_order": 19,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-020",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信天堂與地獄嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "63bb478a4cb7ae38a29e1eef23a703ec8969c30ed93e03b947bf130fc0745d8c",
+    "source_order": 20,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-021",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信閻王嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "74c3a885863b03d03586bbb2cce4bfa8d1ed12d560014645aaa52b01076be0a3",
+    "source_order": 21,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-022",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信超度亡靈的功用嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "f61ba5609693df9f9ac76a11fa48f03396a8769cc980b531d4a95f9082073ade",
+    "source_order": 22,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-02-023",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信功德可以迴向給他人嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "b2b6b93c56d575e2d84d520ab596fb88846f25704d62b878d6b9fb1010091199",
+    "source_order": 23,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-024",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信輪迴是確實的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6aad13e127524a1283d18ab875fb1cbe606c0bb4035b4b28ba0137ca70692987",
+    "source_order": 24,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-025",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信靈魂的實在嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "139a908edcdf8ac047069147ad0eb52c0b6f28b9d56edd9144ad7da5e87f02d5",
+    "source_order": 25,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-05-02-026",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教崇拜神鬼嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "d17008633416d81518efacbe35faecae5d69e8bbf1eac654438453064c9d74ef",
+    "source_order": 26,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-02-027",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒相信祈禱的功能嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7fec74a489899d5c82bca6846910a1ed3ffc1761a94e617a46df973f309b7380",
+    "source_order": 27,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-028",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是主張焚燒紙庫錫箔的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "64c790bcca4f1f14469dba4ed70e7a9b274efce7d3d33e188de08a6f8051a808",
+    "source_order": 28,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-02-029",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教深信因果定律的正確性嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "51f96592571badb035e4b4e67754f97cfdd5f02e4cb559fa498beee767bc7cb3",
+    "source_order": 29,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-030",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒都願往生極樂世界嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "a1fb83e425ae8442c40dacb38573523be48d2ed58d3d730f6e79ba9baf18e9ef",
+    "source_order": 30,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-031",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教重視神蹟嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "801c90de08a049827fc0753ca95916e57a263b091f42f90299a428b31d362e3d",
+    "source_order": 31,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-032",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是崇拜偶像的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "50c34c893035a392aa1e2bcbf261076dfbb9090853ff368a439b9bd828b4e4c3",
+    "source_order": 32,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-033",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒是反對自殺的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "88e49b49b42c7c185e9a0e81df57d82c28ada639ee44921a24aee0f28c947f62",
+    "source_order": 33,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-034",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是厭世與出世的宗教嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "eab07910cf50bb94dcb5cb558509f2a5775b49d6a42aa758c6ec2ca7fe1785b4",
+    "source_order": 34,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-035",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "從信佛到成佛需要多少時間呢？",
+    "author": "聖嚴法師",
+    "source_sha256": "c4a074ddf08b63f70965219d0769ac987fa791adbbcc79bdeaa4794a1e963dfa",
+    "source_order": 35,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-02-037",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教對於現實人間的前途是悲觀的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "d044712d53814a497d8168ebd759ffc36ad575f8212cf2ca4ac1d13022c38b31",
+    "source_order": 37,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-038",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "劫是什麼意思？",
+    "author": "聖嚴法師",
+    "source_sha256": "c22b8681dfc14e93c3bbc5dedaa5f5a58f5643dded4cf973cb561db60bf41630",
+    "source_order": 38,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-05-02-039",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "大千世界怎麼講？",
+    "author": "聖嚴法師",
+    "source_sha256": "8cf113dbcc9fd796444ea307f92cfb6648524745fe6281b83a9a0667df5d22e3",
+    "source_order": 39,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-05-02-040",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的修持方法是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "7168b3501b51880b7e4085ee34a479e7a4bfb3ed384150946eeae6d5fedd7ab0",
+    "source_order": 40,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-041",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是主張苦行的宗教嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "e79614a0b26cbd5cb842c474dae8b77162b45343c09983e40a73fd25e2b09cfb",
+    "source_order": 41,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-02-042",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "六根清淨怎麼講？",
+    "author": "聖嚴法師",
+    "source_sha256": "3379931556f43bb944ca079ebdb2375c1c4926188fab34ba06a9fe9645242434",
+    "source_order": 42,
+    "paragraph_count": 23
+  },
+  {
+    "id": "sy-05-02-043",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "四大皆空怎麼講？",
+    "author": "聖嚴法師",
+    "source_sha256": "806110fb26ab492f8e0d0f98e43b4a949868c68f5202c36f4a23fa9b6da578ee",
+    "source_order": 43,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-02-044",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒是不孝順父母的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "b075cf675f4eb10055b68722f3f4993eda23b6b5a24c0b01b46a5e68e7eea84a",
+    "source_order": 44,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-045",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是重男輕女的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "938a2bc6cacd9ca9477a6e96b5f1746dfac0c1fd2768981e09070b16c1b7532d",
+    "source_order": 45,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-046",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是反對家庭制度的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "650aec7882a6352de35fa401ffcf8a3b6f6f2beacc6a9496f7fb637691493dd1",
+    "source_order": 46,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-02-047",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒可跟異教徒通婚嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "2c88ae0558730d41cffcc5c5657cc9021d2eadcc5643f4df4ada1afc99e520a6",
+    "source_order": 47,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-02-048",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒必須要行佛化婚禮嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "8b7dfcc8088bae62b3140e25172a43d4343467ce24a55e4c830f2e0a2cb5615b",
+    "source_order": 48,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-049",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒可以離婚嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "c0c50f09b16db2119fb49d3fddafb859f5c474f958c82142eee2d6c93f38f978",
+    "source_order": 49,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-050",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教以為嬰兒可以信佛嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "b4e8eb22c5d5be1dc7db79642b9e699eb84250512dfacbd401d707368c217923",
+    "source_order": 50,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-051",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教反對節制生育嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "096a768a5aab09ef8b04b0933d1724d579fb594a7c8722101a51cf19fe09f943",
+    "source_order": 51,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-052",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒有國家觀念嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "308210e0763f68fbf9298ee7b6e7d3fc3e84155d666276c9e36b4383897dfe59",
+    "source_order": 52,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-02-053",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒能夠參加軍政工作嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "45b63b0b58fde6100fa3e98d5c3ab946407996556025a5d9662ae60c1a222933",
+    "source_order": 53,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-054",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是和平主義的宗教嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "51707947cd5710a10f34783d2b36ba6f759d0ec6035ad0313398358a3c28c673",
+    "source_order": 54,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-02-055",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教是主張人性本善論的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "9642b519e7fcd4956ec70827db2fb817af36350dc21a05613be41dfa15944302",
+    "source_order": 55,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-02-057",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "唯識就是唯心嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "98036074986572a2f0066ac826f9bd3e2123667bfeb0455ac30ac6fc5607e037",
+    "source_order": 57,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-058",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "禪宗就是禪定嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7f9c47d318afd551bc0a5f6f915a535f77c0c1c5c2655a54fab3f5c5d7df2a12",
+    "source_order": 58,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-02-059",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "什麼叫作頓與漸？",
+    "author": "聖嚴法師",
+    "source_sha256": "22cb2285603b28cdd38c4417350d9a0feeb41e775ab53446612e041c627c6242",
+    "source_order": 59,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-02-060",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "最好修學哪一宗？",
+    "author": "聖嚴法師",
+    "source_sha256": "e0b71a078528a6b892e4d3d7b2f87102ba30fee8a3082aa78c596c9481a3ee69",
+    "source_order": 60,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-02-061",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒對於全部佛經的態度怎樣呢？",
+    "author": "聖嚴法師",
+    "source_sha256": "cab8b815f737f1261e1f5e706d827ae18f6e3d08aca069bb5b34fb70ec4068fe",
+    "source_order": 61,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-062",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的典籍真是難懂難讀的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6f4b5b768e0ec8e65b497476180357d7448a33ec164bc795db23ed2df9be415a",
+    "source_order": 62,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-02-063",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教徒禁看異教的書籍嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "5dc806ed025da021331219d9c5a8edd479300c47ddacf2b218dd8fc6bb9bff55",
+    "source_order": 63,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-064",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教以為異教徒是罪人嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7287da210cf0d8ff9ff1ff14ada3c92446d065a7911a6731309074ff9bb652cf",
+    "source_order": 64,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-02-065",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的苦相當於基督教的罪嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "efc73c3d1a6642933fb1a0ac6e8f28d42fc45d5e715963c49408465a8b27d53b",
+    "source_order": 65,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-02-066",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教相信上帝的存在嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "a3d9b1ba5009e89966d69f8e686187e6f11217bcf4db0fcdbcb09bd62482efb3",
+    "source_order": 66,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-05-02-067",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教對於中國的貢獻是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "fc35e8ce4870151d16f1bfdfb5590929bab0c2a89465e20cff44145b5570858d",
+    "source_order": 67,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-02-068",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教的真理是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "b34e98a1f05f17661afe2456a1dd6dcbd6e16fbfae40a3243d6d8835516a0e59",
+    "source_order": 68,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-02-069",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "和尚、尼姑、居士是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "4dcd6e6d744f08043fcbfd741ced1bbcb30b545e7b0afe8c69055d17979796a3",
+    "source_order": 69,
+    "paragraph_count": 18
+  },
+  {
+    "id": "sy-05-02-070",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "禪師、律師、法師是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "69dee3af22a46418401c28b047a0a71fd5ad1c8343f8bb6f107709d87d1b3533",
+    "source_order": 70,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-02-072",
+    "book_id": "sy-05-02",
+    "person_id": "sheng-yen",
+    "title": "佛教有統一的行政組織嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "f7dee7b4a54fc1408c5f75fc846e02c3d4e8cf3baa504b6a516fcea15f367b4f",
+    "source_order": 72,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-001",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "24c024a934bc35eab8192b22e21a0545ee666c243438e4b9d54d75bd0aecff39",
+    "source_order": 1,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-005",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "在家信佛有禁忌嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "1f4cf864e58660441a89c9e2d433cdf1cf84e509fbe75069b7e547d679782f3c",
+    "source_order": 5,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-006",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "學佛是否必須放棄現有生活的享受？",
+    "author": "聖嚴法師",
+    "source_sha256": "a1286dd2cef850a93e2a5b4a6296d1c34668c0d4fa1ec48bc73653cda9c74380",
+    "source_order": 6,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-007",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "什麼是佛教徒的飲食觀？",
+    "author": "聖嚴法師",
+    "source_sha256": "87bbf7e8e9d8cbe2bc28b6a3c22863c3c9ab9c5131d860ed718cc8f8110b41fc",
+    "source_order": 7,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-008",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "殺生的定義和範圍是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "416317c3148ce1cb0ca03b5e0edfaafd81141d1819c8e15f533462964d34f55b",
+    "source_order": 8,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-03-009",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "為何放生？如何放生？",
+    "author": "聖嚴法師",
+    "source_sha256": "c60e51f1ce7ff92f762bedeafb8f3f05ff66a03ae60efedcd6eeb760f32f2198",
+    "source_order": 9,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-03-010",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教徒應以怎樣的態度來賺錢？",
+    "author": "聖嚴法師",
+    "source_sha256": "ed3dd8a22a0bbbf4379410db5f28e18f0623b35c35298657bf0a58551cca6932",
+    "source_order": 10,
+    "paragraph_count": 17
+  },
+  {
+    "id": "sy-05-03-011",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教徒可以有感情生活嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "4e47cc912e1f2fb3ef3702532f6d6c6f1caecae1958eb762c47e149b949165cb",
+    "source_order": 11,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-012",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教徒應該如何舉行喪葬儀式？",
+    "author": "聖嚴法師",
+    "source_sha256": "155c1c60bb4dffaadc5279efdff08ec72bacafa7cc342a314c52e7455ca3b496",
+    "source_order": 12,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-013",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "如何做佛事？",
+    "author": "聖嚴法師",
+    "source_sha256": "c9976c13d152816c8a1bfd67bfe00c908e7f68ffdfccc6c71c35480bcc37173f",
+    "source_order": 13,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-014",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "居士可接受寺院的餽贈嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7899c90c5e1550ab5ef880a8bf177f80b4c9a86a51bf284e5976f09c2c563ab1",
+    "source_order": 14,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-015",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "在家居士如何設佛壇？",
+    "author": "聖嚴法師",
+    "source_sha256": "8376452958b48eb6a305c84ff02d0404f25e534cfbb9389a2b68f0ed00793fdb",
+    "source_order": 15,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-016",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "在家學佛如何課誦？",
+    "author": "聖嚴法師",
+    "source_sha256": "5ceee1a564fbc5fba56776dd2c8eef261a231fa526c89121076d88db6dea28d4",
+    "source_order": 16,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-03-017",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "消災、延生是可能的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "ac5e01c5569a3912c03356d9c5b023f54b0e7fc86fd8906d9d8ebff3a91e8f68",
+    "source_order": 17,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-03-018",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "加持的功用是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "198496db37cb18e9410b86e22c4373194167c98a71c39c67f472d3779f1bf708",
+    "source_order": 18,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-019",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "大修行者能代眾生消業嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "be16eb38889c4c5bc8ddd763badd967ae46995fb79603b1372df6a63f2ccf0fa",
+    "source_order": 19,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-020",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "持咒有用嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "56b74dd61202df30c79a46b5b216d2978e3df896536eb317643c2dedd0443f74",
+    "source_order": 20,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-021",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教相信在劫難逃、在數難逃之說嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6733602144379d00f2d86fdb2c3c321a303fcca569834fe6969b41a9d985cc20",
+    "source_order": 21,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-022",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "如何使人相信三世因果？",
+    "author": "聖嚴法師",
+    "source_sha256": "0f7491402178ec428a6fa66b7f851e419ec07ab741e97f153644942fe3a25b38",
+    "source_order": 22,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-023",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對於命相、風水的看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "2b9ec112eef4f82cddebe2f3e0b054c4ac8aa940ed287f1b99145799134568b0",
+    "source_order": 23,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-024",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "「念佛一聲罪滅河沙」是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "10bdd44aeacea9aba72d51c43f7802c907609ac6c90b6bcd226e58f60dd951f9",
+    "source_order": 24,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-025",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "帶業往生等於逃債嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "cd6b0a8465624be4a80826dc9825b14f7564f142d5781c7c110cef55a642e208",
+    "source_order": 25,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-026",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "何謂念佛至一心不亂？",
+    "author": "聖嚴法師",
+    "source_sha256": "d90885b8f89d9491fee777830a0028574de9907a09fee4237e301eebfa13bdc4",
+    "source_order": 26,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-027",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "念佛的人見到瑞相怎麼辦？",
+    "author": "聖嚴法師",
+    "source_sha256": "d521cfd0ff5830b257e2ecb3dd148c04a9d02e55da85ac27166adbb400dfe77e",
+    "source_order": 27,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-028",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "臨命終時見瑞相就表示解脫嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "ccb27389eb6fc2ec8d79f3bc4fcbd0feeee2a4e882262054c48e5fb20b345ae6",
+    "source_order": 28,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-029",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "如何辨明臨命終時的魔境和接引？",
+    "author": "聖嚴法師",
+    "source_sha256": "726b8406c9b52b9fd3d7b15203864acd3363d1dabd873aebb5962cc64c475aba",
+    "source_order": 29,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-03-030",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "什麼是中陰身？",
+    "author": "聖嚴法師",
+    "source_sha256": "d777a43da1480904db488f89f9f040cfb54ef5f9e45b273143ac9ca590a7657b",
+    "source_order": 30,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-031",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "嬰靈作祟之說有根據嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "807ac3d9ce078e0a250cd9aded40570775b608d79f03649f409c5bc6f433e2a8",
+    "source_order": 31,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-032",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對靈媒的看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "260dcff2a8f8abfe7b20b1c9483edba3148723275840c2f6d120fbe999fbcb8b",
+    "source_order": 32,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-033",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對神通、異能看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "f0297eb6292d0afc729d9a6fe7c3a6d5649634ac958bba85c2d3a9620e2acb42",
+    "source_order": 33,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-034",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "什麼是五眼？",
+    "author": "聖嚴法師",
+    "source_sha256": "5e8ceae64b7bb64e088ee2d46ec08f55d1ed2a4c2ea1ac0910d6b39abb80818e",
+    "source_order": 34,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-035",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教的授記觀念是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "e6564ace55dc11ac525b25deb45afaed7ae31e0796d69b5e081057241779fe03",
+    "source_order": 35,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-036",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛是萬能的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "a6687710b475247b8410550636f9ce0ca9556e67dac42b5639d8a46c9bf7319d",
+    "source_order": 36,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-037",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "成佛以後也要受報嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "baeac6a4c9d3a46abed86abab0f1444ef2b57303a4b2d0ea18f141ec2523f225",
+    "source_order": 37,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-038",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "先度眾生還是先成佛？",
+    "author": "聖嚴法師",
+    "source_sha256": "0bf5a5f4724e0e4b68aa0d8600910ac72bceb2be48fbfc3b2ba1a05ceeed7dbe",
+    "source_order": 38,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-039",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛為什麼要度眾生？",
+    "author": "聖嚴法師",
+    "source_sha256": "1ae140d977de2c79eb6c9a7c435d8604e5952b1cf8f0e76cd6e9e18f108042ac",
+    "source_order": 39,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-040",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "廣結善緣怎麼講？",
+    "author": "聖嚴法師",
+    "source_sha256": "1a605b5b351ed695e798ddfb35a7e05a90692bb640307f081f857e9fa8fce7da",
+    "source_order": 40,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-041",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "「結緣」和「了緣」的意義何在？",
+    "author": "聖嚴法師",
+    "source_sha256": "da3651e3307a72b9998a95d7369c64356327e5ad35174726ac3beabed1364e97",
+    "source_order": 41,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-042",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "神道設教也是佛教嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "c3c4bc122314e9dfa3a22ab414016bed8128feafa93784d5364114fc92dee473",
+    "source_order": 42,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-043",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教稱為無神論的意思是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "d245ffca5dc63990478ea5cd4f8eff158b06bc02aa2d4d0b8f613398c9b2e485",
+    "source_order": 43,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-044",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "一神教的上帝是假的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "0538b5c67d35537afc28f1ded7f00cfc67afdbc174a6a5ac6b869337d20b9868",
+    "source_order": 44,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-045",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "密教是什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "e58f34bb681587c830ffa66aba5dec4305c7bb836de4e58f78270cb99622db32",
+    "source_order": 45,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-05-03-046",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "密教盛行佛教會滅亡嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6b85e1fa2eebd0b0e646bbdf789f7d235124da16742db22fbc7e2e740d392a36",
+    "source_order": 46,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-047",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對世界末日的看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "ac15db4ce3494efceec918c0937c0da929caef8e11a10f36078f3e4e661ce7ca",
+    "source_order": 47,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-048",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "您是佛教徒嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "51810c9b87f619a9994313c75287c3a12d78033f884437a531618be13912f096",
+    "source_order": 48,
+    "paragraph_count": 26
+  },
+  {
+    "id": "sy-05-03-049",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "怎樣辨明佛經的真偽？",
+    "author": "聖嚴法師",
+    "source_sha256": "496e0e62c42235eb04691b747507b2f291c957febf3aca2becae74b835f055d6",
+    "source_order": 49,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-050",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教如何適應民間信仰的要求？",
+    "author": "聖嚴法師",
+    "source_sha256": "b66db9c8460d02a64a143348267f9082a90fd5e023891ec717cce3f4ff446dcd",
+    "source_order": 50,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-051",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "逃避和出離有什麼不同？",
+    "author": "聖嚴法師",
+    "source_sha256": "9c3b00ace76ea0aace104227401ca8adcce8129474960b9893e81be69aa216bd",
+    "source_order": 51,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-03-052",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "個人自修和集體共修有什麼不同？",
+    "author": "聖嚴法師",
+    "source_sha256": "ffadab33ee9feec9c984ad4250ab614ccea8d5a682a6c0ad2ee1cfe4cc631612",
+    "source_order": 52,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-053",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "大修行人一定要閉關嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "16c7095ddcc1e6b409b0e8a055c82dabca34cc8bd4a22bcc55117da87ee3bc83",
+    "source_order": 53,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-054",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "魔考是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "2a68b3427c17ff1bdad71e04bc523e72e4de75f32e795ee7df93624d84d15056",
+    "source_order": 54,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-055",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "如何選擇明師？",
+    "author": "聖嚴法師",
+    "source_sha256": "7b926d34e50994f25b5afbf1c63bac6b825cc30eee2b707884c0d00690f852d9",
+    "source_order": 55,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-05-03-056",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "如何一門深入？",
+    "author": "聖嚴法師",
+    "source_sha256": "e8e276669e4b31974da38bac56c2baf9b7b28cf7a9c505f751e6b41ff70e7fe1",
+    "source_order": 56,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-03-057",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "何謂專修與雜修？",
+    "author": "聖嚴法師",
+    "source_sha256": "969d88bf1b1525cdc01e64910e801ab07fa739ab3eace1caff4b90bbd0656571",
+    "source_order": 57,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-058",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "什麼叫作易行道和難行道？",
+    "author": "聖嚴法師",
+    "source_sha256": "ad0860b3517bb3ea9ea5b394f5a7c9502dad9da470df2e1950b2af125685d113",
+    "source_order": 58,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-059",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "忍氣吞聲就是修忍辱行嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "4ad27bd3421ca4ef0e7ca87f09c768e122a9f90649a3c6a693677000f7df3f01",
+    "source_order": 59,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-060",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "學禪若終生不悟怎麼辦？",
+    "author": "聖嚴法師",
+    "source_sha256": "85c0953cfeeb8c3fd9b230149be309698e73b1328aa3e41c1bb861cb0e4daefb",
+    "source_order": 60,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-061",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "「此生不了道，披毛戴角還」是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "99e3dd1ce65fa48fbb54507f07d9ab247d6fcbb487ec27b80e60a764a9d34038",
+    "source_order": 61,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-05-03-062",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "「地獄門前僧道多」是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "b913f959d7b3b7015c4b623d19f2e05713a2c091fdd39ac5a7032d422258fb4a",
+    "source_order": 62,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-05-03-063",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "「學佛愈久，離佛愈遠」是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "5d1bd842c549cc00a6f7407ac671134be6d0349c9733ab458f6325013d78b4ff",
+    "source_order": 63,
+    "paragraph_count": 5
+  },
+  {
+    "id": "sy-05-03-065",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "蓮花在佛教表示什麼？",
+    "author": "聖嚴法師",
+    "source_sha256": "449cbc15d36065d3fec06f422311b672f38f103e78b870365405a61a296715f5",
+    "source_order": 65,
+    "paragraph_count": 2
+  },
+  {
+    "id": "sy-05-03-066",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "燃頂、燃臂、燃指有必要嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "450ef6006669b73c2ab26bd4888fa2b08c26ba9730ec947f52351ddaf220041c",
+    "source_order": 66,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-067",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "在家學佛與出家學佛的不同在哪裡？",
+    "author": "聖嚴法師",
+    "source_sha256": "3ae68061ffe91d08003139feb16217774d461e03e8e878aa84def5ef3c78b037",
+    "source_order": 67,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-05-03-068",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "以出家僧眾為佛教重心的傳統能繼續維持嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "fcbed5576a7aafee3dc6c53c8a630de242652baa7a9dd7e8dcba86640a0159bb",
+    "source_order": 68,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-05-03-069",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "未來的社會還有人出家嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7f18ed1b32269a1cdfa3cd43368299798120592281d4f04334721a1827bdabd5",
+    "source_order": 69,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-05-03-070",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對於女性地位的看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "94693b8f295705eb07e820a99d3f2a62db212ef3e2d6c8459b4ee289fcbf3b59",
+    "source_order": 70,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-071",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教對神祕現象的看法如何？",
+    "author": "聖嚴法師",
+    "source_sha256": "462033f073afdbad932ddcafc2f8b265ccf4883966ec8f266f4529dc32ddbe72",
+    "source_order": 71,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-05-03-072",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "可用物理現象來解釋神祕的經驗嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6542e3ec171908942efd46f9c534fa812ce8b00064e6d4c6de9890a8261a84b8",
+    "source_order": 72,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-05-03-073",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "應該用科學觀點解釋佛法嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "cd56d37dc4cd496e4868ad461e5014943a281cf766c9278d85189e81870ae9dd",
+    "source_order": 73,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-03-074",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教的生命觀是合乎科學的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "d007c44e51a92efc762b6852bc0d91f585c2457bb225138b9aae67592eaaafbb",
+    "source_order": 74,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-05-03-075",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛教的世界觀是合乎現代科學的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "7c3052cc265da55be5b93057287e7952a68f309e1a50ba52d68094b9d1215f0c",
+    "source_order": 75,
+    "paragraph_count": 1
+  },
+  {
+    "id": "sy-05-03-076",
+    "book_id": "sy-05-03",
+    "person_id": "sheng-yen",
+    "title": "佛說的「聖言量」禁得起考驗嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "6e80716d16f6066bf49815450aa979a34cb46a43bff41475c0d5cdd4a0f12d5e",
+    "source_order": 76,
+    "paragraph_count": 5
+  }
+]

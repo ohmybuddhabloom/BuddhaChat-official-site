@@ -1,6 +1,6 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
-  "baseCommit": "e93b676a4a1d0512aacf4bcc0022209b0a67ecc6",
+  "baseCommit": "fd8bb73dc0ab397085fbb44b98e3f223fec9e374",
   "sourceState": "working-tree-snapshot-not-a-release",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
@@ -21,9 +21,9 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "e78f1650dc1314103467f345470dddeba2562c933bbfbbe855f2a216970dafeb",
+    "prototypes/masters-h5/src/Prototype.tsx": "4a87088c4d90cbc406c733c42ab2dbb9dc44f8356a9624fab1d5baab9dc20a17",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "ebc84545ec6585a4970e64ab90ab6d234a69c2dc38da7b9618881e3ef31203f2",
+    "prototypes/masters-h5/src/content.ts": "1d826f59d8cb0579de723ab099fa465a5f13f087bcde55b9b1d2e9270119befb",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5c2c705503108078a897742b95e9b39816b50a709987b63aa6dd3c27b121b0eb",
@@ -58,12 +58,14 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/catalog.ts": "15655943b20f56f0b500b059f3d6a59d81fca0fa0da7021321d96adeb4f34f6d",
-    "shared/masters/libraryPolicy.ts": "fa15f30c4554dc7fab956a69a8ddc0128349e02f32e43e1b911867970f055535",
+    "shared/masters/article-index.json": "6a0e11da65dfa7f94edf0d1624df0e0a4d2a8bdff53788ca3dd077eda33590f3",
+    "shared/masters/articleReader.ts": "096a32d714ec1c7c8d9aa905a5e8849a83595542c83644cc6d607c34b176025a",
+    "shared/masters/catalog.ts": "855e9a77215db5c206d29c88feb59e2c40ce744a003ff80fc3b2423f11e18742",
+    "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "8d3dce2cd2bcc8ce44c35f83cefd732af4ba2a3b73bb4d08bafa3938124ce805",
     "shared/masters/profileCopy.ts": "1d3e803d08253d7986e71b4937a6cda9795dcdb9e30f6548dc8f41f6bb43c1d9",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "2650586217bac254741cdb8b0afca58fed48a5ce16d6d8b8e174f21a336d65ec",
+    "shared/masters/shareLinks.ts": "5690088acab2b27e6e4bc0244c981bcecb0d537216b959af59d157ec15582f83",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b"
   }

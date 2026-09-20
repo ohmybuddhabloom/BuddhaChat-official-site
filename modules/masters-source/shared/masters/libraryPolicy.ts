@@ -1,9 +1,9 @@
-import { getArticle, getCollection, getAuthor, videos } from './catalog';
+import { getArticleSummary, getCollection, getAuthor, videos } from './catalog';
 export type BookmarkKind = 'article' | 'collection' | 'video';
 export type Visit = { contentId: string; kind: 'article' | 'video'; paragraph?: number; textVersion?: string; seconds?: number; visitedAt: number };
 export function validateAuthor(id: string) { if (!getAuthor(id)) throw new Error('Unknown author'); }
 export function validateContent(id: string, kind: BookmarkKind) {
-  const found = kind === 'article' ? getArticle(id) : kind === 'collection' ? getCollection(id) : kind === 'video' ? videos.find(v => v.id === id) : undefined;
+  const found = kind === 'article' ? getArticleSummary(id) : kind === 'collection' ? getCollection(id) : kind === 'video' ? videos.find(v => v.id === id) : undefined;
   if (!found) throw new Error('Unknown content or content kind');
 }
 export function validateVisit(entry: Visit) {
@@ -12,8 +12,8 @@ export function validateVisit(entry: Visit) {
   if (!Number.isFinite(entry.visitedAt) || entry.visitedAt < 0 || entry.visitedAt > 8640000000000000) throw new Error('Invalid visit time');
   if (entry.kind === 'article') {
     if (entry.seconds !== undefined) throw new Error('Article cannot have playback progress');
-    const article = getArticle(entry.contentId)!;
-    if (entry.paragraph !== undefined && (!Number.isInteger(entry.paragraph) || entry.paragraph < 0 || entry.paragraph >= article.paragraphs.length)) throw new Error('Invalid paragraph');
+    const article = getArticleSummary(entry.contentId)!;
+    if (entry.paragraph !== undefined && (!Number.isInteger(entry.paragraph) || entry.paragraph < 0 || entry.paragraph >= article.paragraph_count)) throw new Error('Invalid paragraph');
     if (entry.textVersion !== undefined && !/^[a-f0-9]{64}$/.test(entry.textVersion)) throw new Error('Invalid text version');
     if (entry.paragraph !== undefined && entry.textVersion === undefined) throw new Error('Paragraph needs text version');
   } else {

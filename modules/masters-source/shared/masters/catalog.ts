@@ -1,8 +1,22 @@
+import additionalArticles from './article-index.json';
 import readingContent from './reading-content.json';
 import { people } from './people';
 
 export const authors = people;
 export const articles = readingContent.chapters;
+export type MastersArticleSummary = {
+  id: string; book_id: string; person_id: string; title: string; author: string;
+  source_sha256: string; source_order: number; paragraph_count: number;
+};
+export const articleSummaries: MastersArticleSummary[] = [
+  ...articles.map(({ id, book_id, person_id, title, author, source_sha256, source_order, paragraphs }) =>
+    ({ id, book_id, person_id, title, author, source_sha256, source_order, paragraph_count: paragraphs.length })),
+  ...additionalArticles,
+];
+export function getArticleSummary(id: string) { return articleSummaries.find(article => article.id === id); }
+export function getCollectionArticleSummaries(id: string) {
+  return articleSummaries.filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
+}
 export const collections = [
   { id: 'yh-dayi-001', title: '答疑解惑 · 第一期', person_id: 'yuanhui' },
   { id: 'sy-05-02', title: '正信的佛教', person_id: 'sheng-yen' },
@@ -37,7 +51,7 @@ export function getCollectionArticles(id: string) {
   return articles.filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
 }
 export function itemOwner(id: string): string | undefined {
-  return getAuthor(id)?.id ?? getArticle(id)?.person_id ?? getCollection(id)?.person_id ?? videos.find(video => video.id === id)?.person_id;
+  return getAuthor(id)?.id ?? getArticleSummary(id)?.person_id ?? getCollection(id)?.person_id ?? videos.find(video => video.id === id)?.person_id;
 }
 
 /** Resolve only known content. Route aliases never manufacture author or article identities. */
@@ -56,7 +70,7 @@ export function resolveMastersRoute(route: string): MastersRoute | null {
     return getCollection(collectionId) ? { kind: 'collection', id: collectionId } : null;
   }
   if (['collection', 'book', 'external'].includes(prefix) && getCollection(id)) return { kind: 'collection', id };
-  if (['article', 'chapter', 'reader'].includes(prefix) && getArticle(id)) return { kind: 'article', id };
+  if (['article', 'chapter', 'reader'].includes(prefix) && getArticleSummary(id)) return { kind: 'article', id };
   if (prefix === 'video' && videos.some(video => video.id === id)) return { kind: 'video', id };
   return null;
 }

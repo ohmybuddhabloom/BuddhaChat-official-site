@@ -23,3 +23,10 @@ After staging verification, the owner must personally record acceptance in the a
 Must change: staging preview App gates link to the canonical masters content route so a shared article returns to the same native article. Must preserve: browser reading and history, old App-home fallback for production/unconfigured builds, public routing and release approval policy. Only VERCEL_ENV=preview with VERCEL_GIT_COMMIT_REF=staging enables the new link.
 
 Local validation: source integrity, lint, 230 Vitest tests and full build with those staging variables passed. Root H5 browser artifact tests passed in Chromium/WebKit with the flag enabled. Actual iOS Release system copy and Safari paste opened article xy-artcle69; Android system share contained the same URL. Online H5 return and both-platform lifecycle remain pending for this new candidate.
+
+## 2026-09-20 remote chapter reading
+Must change: expose the 164 reviewed article entries from RN source fd8bb73d (full SHA in source manifest), retaining the 27 local articles and fetching new chapter bodies from the isolated staging public RPC on demand. Preserve internal reading, attribution disclosure, direct links, next/previous, App-gated account actions, download routes and Production gate.
+
+Source checks, ESLint and 230 site tests passed. H5 source typecheck/runtime lock and Chromium/WebKit reader tests passed in the source repository; anonymous staging RPC verified first/middle/last new chapters. Full hosted build is delegated to the existing Standard Vercel staging build because the local mandatory large-artifact volume is unavailable. This is not a claim of a local full-build pass. Exact native iOS/Android Release acceptance remains owner-deferred to 1.3.7.
+
+Only the existing custom staging environment receives VITE_MASTERS_SUPABASE_URL and VITE_MASTERS_SUPABASE_ANON_KEY. Generic server/service-role variables are never exposed to Vite. Environment scope was read back; no Production settings changed. Production authorization remains separate.

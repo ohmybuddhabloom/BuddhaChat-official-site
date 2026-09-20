@@ -1,6 +1,6 @@
 import {
   authors,
-  getArticle,
+  getArticleSummary,
   getCollection,
   resolveMastersRoute,
   type MastersRoute,
@@ -124,7 +124,7 @@ export function h5LegacyRouteForMastersContent(input: string | MastersRoute | nu
   if (!route) return null;
   if (route.kind === 'home') return 'home';
   if (route.kind === 'person') return authors.find(author => author.id === route.id)?.route ?? null;
-  if (route.kind === 'article') return getArticle(route.id) ? `reader:${route.id}` : null;
+  if (route.kind === 'article') return getArticleSummary(route.id) ? `reader:${route.id}` : null;
   if (route.kind === 'video') return `video:${route.id}`;
 
   const collection = getCollection(route.id);
