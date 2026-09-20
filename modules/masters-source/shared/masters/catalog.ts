@@ -1,4 +1,5 @@
 import additionalArticles from './article-index.json';
+import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
 import { people } from './people';
 
@@ -27,6 +28,7 @@ export const collections = [
   { id: 'nhj-lunyu-biecai', title: '论语别裁', person_id: 'nan-huaijin' },
   { id: 'nhj-laozi-tashuo', title: '老子他说', person_id: 'nan-huaijin' },
   { id: 'nhj-jingangjing-shuoshenme', title: '金刚经说什么', person_id: 'nan-huaijin' },
+  ...additionalCollections,
 ];
 export const videos = [
   { id: 'xy-video-W4438geBhss', person_id: 'hsing-yun', title: '金刚经大义（一）· 第 1 段', youtube: 'W4438geBhss', duration: 506 },
