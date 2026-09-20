@@ -38020,5 +38020,835 @@
     "source_sha256": "b644f8caeb49af17345a16071822544b19ffee9fb32e90a6ec91bf7f39d47946",
     "source_order": 62,
     "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-08-002",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "找回真正的自我",
+    "author": "聖嚴法師",
+    "source_sha256": "cf56c6940c4022ad1e05d26c22ea689cd1c0aa379e4b09f27936ec9164399142",
+    "source_order": 2,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-08-08-003",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "不再空虛無奈",
+    "author": "聖嚴法師",
+    "source_sha256": "23a12452fcf60b96d326411d5e6020941a71365aee23c350fc337e6d0b7b48b0",
+    "source_order": 3,
+    "paragraph_count": 15
+  },
+  {
+    "id": "sy-08-08-004",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "忙得快樂，累得歡喜",
+    "author": "聖嚴法師",
+    "source_sha256": "effafd7f2dd54102810c45cb2ccc20eef95e6e227de59f1de84d31a38157604e",
+    "source_order": 4,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-005",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "圓滿的生涯規畫",
+    "author": "聖嚴法師",
+    "source_sha256": "d79edb4b320f4442d740f27e562ca419fa6edfbd9e2ff0976e541a4ccf123119",
+    "source_order": 5,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-006",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "方向感",
+    "author": "聖嚴法師",
+    "source_sha256": "c86ef9dabbaae24f4d0a2f5f4c6ab35ac7ad25cce9e5228a108d3cbfd88b7353",
+    "source_order": 6,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-007",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "不再空虛的人生",
+    "author": "聖嚴法師",
+    "source_sha256": "82e0e2f69cf917a7be7385095338fb0c302c24ca6f1e85c07d5a17e3ab6cac18",
+    "source_order": 7,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-008",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "人生的目的、意義、價值",
+    "author": "聖嚴法師",
+    "source_sha256": "a79f817d9ae586ae789f75a13d744f7629cefd0ff9aba36c6da6d38fe762b650",
+    "source_order": 8,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-08-009",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "人生的願望",
+    "author": "聖嚴法師",
+    "source_sha256": "778867fe2916d0d21e51af7e3002f7bc70fb90c41da61496d72fe605b9e1a3eb",
+    "source_order": 9,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-010",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "找到生命的價值",
+    "author": "聖嚴法師",
+    "source_sha256": "63b620f7e30472e7170abdaf5fafe5ef086ce5427e88ab80e2e9422e0f19e83b",
+    "source_order": 10,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-011",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "享受人生，珍惜人生",
+    "author": "聖嚴法師",
+    "source_sha256": "0d270da4f1ef3809462ae1aab79e4bfee1f217856bc365d822e3d36a309f2b8f",
+    "source_order": 11,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-012",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "執著和固執",
+    "author": "聖嚴法師",
+    "source_sha256": "770cf1e0826e7dcd0be5da25eb393a820f83fd65941e42c632e45698bd2dbb70",
+    "source_order": 12,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-08-08-013",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "堅持的是原則還是偏見？",
+    "author": "聖嚴法師",
+    "source_sha256": "db2336513495c0ebbcb6c2e8d5b01723f7211db8175c6eed3e9fab12a215ca94",
+    "source_order": 13,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-014",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "積極的人生",
+    "author": "聖嚴法師",
+    "source_sha256": "42f9bbe3cb3c6b9e35749d88b4bcf24bc09581c57c5f0a71f80060fa866d178e",
+    "source_order": 14,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-015",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "改變時不違常理",
+    "author": "聖嚴法師",
+    "source_sha256": "38ce7b0b312e582ccdf6a6e58d056b6782c022b8c4dcaab857654a790c89782a",
+    "source_order": 15,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-016",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "放下真理，真自由",
+    "author": "聖嚴法師",
+    "source_sha256": "43c5df000d882317fae38c9bcc4d81d04d4faf610dfcca1270ad8532999e4858",
+    "source_order": 16,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-017",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "花開花謝，不執著",
+    "author": "聖嚴法師",
+    "source_sha256": "fe356f68ad9a3a2d8bb81290c5acc4a79a7294b0ead2a1cd871f2978bd601492",
+    "source_order": 17,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-018",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "開發智慧的潛能",
+    "author": "聖嚴法師",
+    "source_sha256": "535ec8655d6aa145f68272467a1457a938848f3f9177f503df764757633601c6",
+    "source_order": 18,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-08-019",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "好念頭、壞念頭",
+    "author": "聖嚴法師",
+    "source_sha256": "896b7d106e10833ebac7b6f516563bb6918244d36dcd3c79c21784f678e7cfca",
+    "source_order": 19,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-08-08-020",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "調和主觀和客觀",
+    "author": "聖嚴法師",
+    "source_sha256": "2b4930603a0a2476b2a97cae8a560b60f125461179be5e002a0f25a962cf24ab",
+    "source_order": 20,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-021",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "主動和被動",
+    "author": "聖嚴法師",
+    "source_sha256": "9b509a6f386a5721d4563cbece937be0b4ba9bf8a0744382359bd7db378aecee",
+    "source_order": 21,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-022",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "活在當下的積極",
+    "author": "聖嚴法師",
+    "source_sha256": "598761c9c5accc9cf67e7590076d09f80fe40774b0e2530223268b3019d9917a",
+    "source_order": 22,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-08-08-023",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "再論積極",
+    "author": "聖嚴法師",
+    "source_sha256": "395600e3629523dbaa23418bb1c3052c41a39765c3ed7f6fd7f3a935f8e69d98",
+    "source_order": 23,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-08-024",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "大鴨大路，小鴨小路",
+    "author": "聖嚴法師",
+    "source_sha256": "f9af44fe4097a6ef43365951d120df03412b7bdb96dd6087886f3a6a96be7684",
+    "source_order": 24,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-08-08-025",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "心安理得就是成功",
+    "author": "聖嚴法師",
+    "source_sha256": "006a659581e791c86a40164e8b26404c76b00fd57c600c5faec4b908f0c87809",
+    "source_order": 25,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-026",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "心與物的調和",
+    "author": "聖嚴法師",
+    "source_sha256": "92c1f752355d82b9b92ebadc9173199f7e3157b36b68d204c203e667f0a8b720",
+    "source_order": 26,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-027",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "不再執著七情六欲",
+    "author": "聖嚴法師",
+    "source_sha256": "9226df5566ae004de102b3fa2114424848975fa7acb0f93962dc2a5bd1e89c67",
+    "source_order": 27,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-08-028",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "良心",
+    "author": "聖嚴法師",
+    "source_sha256": "0ad3bafcdef31662df53f85c9b7e5e0d04cf4798ec1cad0750f30d198c9ec0aa",
+    "source_order": 28,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-029",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "自由和尊嚴",
+    "author": "聖嚴法師",
+    "source_sha256": "0dad98664313560acd1f8b95702980c35670c5f037574528e06929262ad1b718",
+    "source_order": 29,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-030",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "化「私我」為「無我」",
+    "author": "聖嚴法師",
+    "source_sha256": "2020a8c1ea193a8d7df2cacbf6050f3bb0f5d98321f7dbb00707843751e0365c",
+    "source_order": 30,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-031",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "這愚蠢的我是真的嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "f7fce264cf5fba88499e68309d2c713da8016f2366d9700b540308a3637d400a",
+    "source_order": 31,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-032",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "轉自私自利的我為功德的我",
+    "author": "聖嚴法師",
+    "source_sha256": "2cb52694e450a6a7756a698cc0c94854ba54024872500569a2127b80653200f6",
+    "source_order": 32,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-033",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "自我而非我",
+    "author": "聖嚴法師",
+    "source_sha256": "13541da7bc7c5ecda267b7f52e4be070f4467b5f52d14ae3d3d8491cdfcb9d01",
+    "source_order": 33,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-08-034",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "自知之明的自信",
+    "author": "聖嚴法師",
+    "source_sha256": "78eb0b7611489adcac9a8d3181116512934a6b3cbd32c0a1f572d33758151901",
+    "source_order": 34,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-035",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "認識自己才能獲致成長",
+    "author": "聖嚴法師",
+    "source_sha256": "7bd0cd744d2221bce3adfd45705b8e33ebd72a2fc0ce2e2051cad0702f20eb38",
+    "source_order": 35,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-036",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "讓智慧和慈悲永不止息",
+    "author": "聖嚴法師",
+    "source_sha256": "1377a1af2d4ab65747e1b5389a9361239147ba8ddbec4fbf917f0297abf0b89a",
+    "source_order": 36,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-08-037",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "有什麼值得自誇的呢？",
+    "author": "聖嚴法師",
+    "source_sha256": "e3a62602209cd9fff9c1fa185c33a92ae65fcdfae28d319120bcb7173a472b3f",
+    "source_order": 37,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-08-038",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "別不知不覺浪費了生命",
+    "author": "聖嚴法師",
+    "source_sha256": "d1364ba2a8a72ee162e6bcdc3539791c1e30017415be3c17774b7a50796064b5",
+    "source_order": 38,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-08-039",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "用慚愧和謙虛來消融自我",
+    "author": "聖嚴法師",
+    "source_sha256": "91bb1232d00227135e5fc227095ac19b8c5310e28aab56a1211dea2cba711f39",
+    "source_order": 39,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-08-040",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "懺悔與負責任",
+    "author": "聖嚴法師",
+    "source_sha256": "f87c3c8957cbd308efbce10783c70577c57cc4a20648a3abb5f4c34068718ae9",
+    "source_order": 40,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-08-041",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "永遠的功課",
+    "author": "聖嚴法師",
+    "source_sha256": "575f314f20cdabea41d4208a2a9f3fafe46b1b3f101f70751437ca686dbf585d",
+    "source_order": 41,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-08-042",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "控制情緒而不壓抑情緒",
+    "author": "聖嚴法師",
+    "source_sha256": "961691df2e6f66b880993219b206f6f9a3621c7e242e33debbadc493127f54a1",
+    "source_order": 42,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-08-043",
+    "book_id": "sy-08-08",
+    "person_id": "sheng-yen",
+    "title": "時時懷抱感恩的心",
+    "author": "聖嚴法師",
+    "source_sha256": "fbc0e4b36f61364d623b1a9e874ab2869ecab96064b0af795d626f51d63c02a8",
+    "source_order": 43,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-09-002",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "溝通的方法",
+    "author": "聖嚴法師",
+    "source_sha256": "eb65e8ffdab77cefeb244c3c9466f36e3def8acd16311cf1f963b73623c237e1",
+    "source_order": 2,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-003",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "先接納別人才能溝通",
+    "author": "聖嚴法師",
+    "source_sha256": "08f846f28946bcf9ae3cabcc3bcc79f3db978b9d56dc088e5b46caf4060ff3fb",
+    "source_order": 3,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-004",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "存好心，說好話",
+    "author": "聖嚴法師",
+    "source_sha256": "259c605da7e89abc7989b0f1de4b372baa618aa4d6c0f6064ed7bdc5242fd0fc",
+    "source_order": 4,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-005",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "實話實說為上策",
+    "author": "聖嚴法師",
+    "source_sha256": "520106aeab104c246886dd08df9f626e42ed0b757296673a2ebd36396fa40e64",
+    "source_order": 5,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-006",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "討好的話不一定是好話",
+    "author": "聖嚴法師",
+    "source_sha256": "d7769f4fd55f6ebc7f7b2a58070d3f84a3e41a49c5587771c6a74c5b31a8d7ae",
+    "source_order": 6,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-007",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "謠言止於智者",
+    "author": "聖嚴法師",
+    "source_sha256": "0bf28a07c9993c30ec9caebccfc2b73cfea482dd6631b80b0e00ba1595a34a46",
+    "source_order": 7,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-09-008",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "不要只是抱怨，要處理抱怨",
+    "author": "聖嚴法師",
+    "source_sha256": "5dea65383317a5b5f86b17558c11bcff229edaeb7c89e216ce4beabe0e62e5f9",
+    "source_order": 8,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-009",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "白色謊言該不該說？",
+    "author": "聖嚴法師",
+    "source_sha256": "1df494fea540fd9b3890b2518ae95e5187a165109c46bc922f9fb7ae03b1407e",
+    "source_order": 9,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-010",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "不要讓「重話」變成「惡口」",
+    "author": "聖嚴法師",
+    "source_sha256": "f487ae42a71d4738f97d320cd58d213bf3cf783c26dc3fe61ebeacb0694023b6",
+    "source_order": 10,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-011",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "少一分爭奪，多一分和諧",
+    "author": "聖嚴法師",
+    "source_sha256": "6b3f00220939d7e10ccf7f4132746163dbe3f4bf89478dcd52337cf7727068ed",
+    "source_order": 11,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-012",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "走自己的路，不必比較",
+    "author": "聖嚴法師",
+    "source_sha256": "5972b46355e1551eb07f1c70ff3a49d8834429ede19eb75da45f5efd81e72994",
+    "source_order": 12,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-013",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "學習原諒與寬恕",
+    "author": "聖嚴法師",
+    "source_sha256": "6f7bbeebeab8db36f4e904429e2b4ca7e656ff88ce05ac109b1f338753f1d556",
+    "source_order": 13,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-014",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "你可以微笑",
+    "author": "聖嚴法師",
+    "source_sha256": "3141fd40c1dc9ac4129dddf91a6cc30a9c83a914d40668c184241f3dc7aabf7e",
+    "source_order": 14,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-015",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "嫉妒有害而無益",
+    "author": "聖嚴法師",
+    "source_sha256": "9b9f32e40d260dcd5b78572217326cfb20bdf6158474cd4a4cb3e9601e848a5c",
+    "source_order": 15,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-09-016",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "感同身受，化解嫉妒心",
+    "author": "聖嚴法師",
+    "source_sha256": "2720c5883f68ca2ea90af0b06bc954e4d8bede0c0f60aa49182b6e1e7fa9cc0c",
+    "source_order": 16,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-017",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "如何消除嫉妒心",
+    "author": "聖嚴法師",
+    "source_sha256": "9e23aa37368fd68f82502f6d442f8a04937416fc533016435e1e13a6b4fa0d8e",
+    "source_order": 17,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-018",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "結恩不結怨",
+    "author": "聖嚴法師",
+    "source_sha256": "0fced133c22a1c44c405bf8ed4a5380e6207c6d9a58b392d9691e47832083a5b",
+    "source_order": 18,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-09-019",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "用感恩的心消除怨恨",
+    "author": "聖嚴法師",
+    "source_sha256": "583e4c814016511dc35810745662252208042bec6aa9d9f0a1099570fda4fa32",
+    "source_order": 19,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-09-020",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "如何和不喜歡的人相處",
+    "author": "聖嚴法師",
+    "source_sha256": "33a3e1c0d33db82d7f37b4913c8a20b6768728754415d58a838a0f9b20565863",
+    "source_order": 20,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-09-021",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "卸除心防，從轉化煩惱開始",
+    "author": "聖嚴法師",
+    "source_sha256": "565e0ee50151cce3dc2079acd6c6174314f01c387513a6929a9a4f9c3271c556",
+    "source_order": 21,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-022",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "別當狡猾的人",
+    "author": "聖嚴法師",
+    "source_sha256": "7b0b1c6589c6c88431e8d5205b4a5d869588f6324872873fd70a1daa3f4747a7",
+    "source_order": 22,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-08-09-023",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "遠離兩面人",
+    "author": "聖嚴法師",
+    "source_sha256": "6d0c0c6dc77ed56498c62d9962bda60a6d7d096a469a19fa027fbc80235a8b59",
+    "source_order": 23,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-024",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "好人比較吃虧嗎？",
+    "author": "聖嚴法師",
+    "source_sha256": "28f10037d5d57a71a394f52d04b4b4cf9ad928fb15d09b523a0d1eef0f3680c3",
+    "source_order": 24,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-09-025",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "如何幫助自卑的人",
+    "author": "聖嚴法師",
+    "source_sha256": "01a8e3099ffd75297358fa33ed7cf23352b604d96f9a044028810e0d0931a812",
+    "source_order": 25,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-026",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "不只關懷，更要包容",
+    "author": "聖嚴法師",
+    "source_sha256": "d805288d03eb3b71209758ffb855477b4b8c86dadccb56b98cead5fbe9c26091",
+    "source_order": 26,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-027",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "要包容不要包庇",
+    "author": "聖嚴法師",
+    "source_sha256": "e798319db68172600a092f929b52bb82ed4134b895c05c9662f2f31be3b04f30",
+    "source_order": 27,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-028",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "包容的尺度與智慧",
+    "author": "聖嚴法師",
+    "source_sha256": "144ea5912deb1ee8c4a784d3453298a1191b942f38fd3efa93590c2077c9ebd3",
+    "source_order": 28,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-029",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "真正的柔軟",
+    "author": "聖嚴法師",
+    "source_sha256": "e044fb3c6ef8f5b2268f6474a15a75f0ac3a08d05e2a38bbf97154862551ab3d",
+    "source_order": 29,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-030",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "因為柔軟，所以堅強",
+    "author": "聖嚴法師",
+    "source_sha256": "4b816e291945cfe99580fa5b5165be2b8891b1d861beac357adc94c57908ea84",
+    "source_order": 30,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-08-09-031",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "結真正的善緣",
+    "author": "聖嚴法師",
+    "source_sha256": "da249d2ecebba62176f4dc1ad7f65e7ef99d00f978430aefbb1147e55bc5dd05",
+    "source_order": 31,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-032",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "不被自己障礙住",
+    "author": "聖嚴法師",
+    "source_sha256": "04c61508ecd248ea64f096d9539acf825dad23a09eca7e93ffbe37f6325fca6e",
+    "source_order": 32,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-08-09-033",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "網路社會不等於疏離",
+    "author": "聖嚴法師",
+    "source_sha256": "ec4cf678695ed932c8281023cd1fb17139e512c9041a85e2b3e0d0dce035987a",
+    "source_order": 33,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-034",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "善知識、惡知識",
+    "author": "聖嚴法師",
+    "source_sha256": "4e6619d6dbe50f266bd65db44823c632d424c1babb7b88f61edec6864fd9e480",
+    "source_order": 34,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-08-09-035",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "做個真正的貴人",
+    "author": "聖嚴法師",
+    "source_sha256": "67281e609edab6b0b6ed1a2c92d853fc2b1ac8a42d5756639a6fb4ecb3a4ca50",
+    "source_order": 35,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-08-09-036",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "布施——真正的救苦救難",
+    "author": "聖嚴法師",
+    "source_sha256": "88e515ba6b77aedbf8fcd6cdba84cdfc464664d2c69e5e4adfec7e208f938442",
+    "source_order": 36,
+    "paragraph_count": 4
+  },
+  {
+    "id": "sy-08-09-037",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "愛語——讓人歡喜聽你說",
+    "author": "聖嚴法師",
+    "source_sha256": "ce86f0609a6713d3cbff13c55f3bddbcf388b9c1f1b982e0b0b292f5ce4fc9b2",
+    "source_order": 37,
+    "paragraph_count": 9
+  },
+  {
+    "id": "sy-08-09-038",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "利行——最有號召力的行動方式",
+    "author": "聖嚴法師",
+    "source_sha256": "dbf5ca68d7f90370c7827a47d35fed1efbb291319165484d66e0347a5e283ed0",
+    "source_order": 38,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-039",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "同事——有願者同行",
+    "author": "聖嚴法師",
+    "source_sha256": "36bee6ee37c0d3ff7af8e6ef7ed3e069e70bbfd9438236b568ca6ae281d6bccb",
+    "source_order": 39,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-040",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "慈悲他人的方法與智慧",
+    "author": "聖嚴法師",
+    "source_sha256": "48cef186b876918b0830a2913e70453c352071932749088e1863193cb997ea1c",
+    "source_order": 40,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-041",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "慈悲沒有敵人，智慧不起煩惱",
+    "author": "聖嚴法師",
+    "source_sha256": "1b198e07abfebf0c30f8d06ef5ec0bb81912aac03ba5f7ad36724341a6267f3f",
+    "source_order": 41,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-08-09-042",
+    "book_id": "sy-08-09",
+    "person_id": "sheng-yen",
+    "title": "化敵為友最好的方法",
+    "author": "聖嚴法師",
+    "source_sha256": "609e9a12147dfb25798d3f03a87900dea4217d789322b9e6927b3b29c180d4f9",
+    "source_order": 42,
+    "paragraph_count": 9
   }
 ]
