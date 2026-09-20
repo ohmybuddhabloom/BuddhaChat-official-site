@@ -1368,5 +1368,375 @@
     "source_sha256": "6e80716d16f6066bf49815450aa979a34cb46a43bff41475c0d5cdd4a0f12d5e",
     "source_order": 76,
     "paragraph_count": 5
+  },
+  {
+    "id": "xy-artcle1078",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "四說‧佛陀紀念館的風雲錄",
+    "author": "星雲大師",
+    "source_sha256": "311c00b1d6c2ce44d1081de5aea2bb7a6344a542ebd999de7b7d7c7d6ee2d87b",
+    "source_order": 5,
+    "paragraph_count": 19
+  },
+  {
+    "id": "xy-artcle1079",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "五說‧雲水僧與雲水書車",
+    "author": "星雲大師",
+    "source_sha256": "3cae59418848eca270b477ede1e26244d2c2e2874b85ad09616d3f67040a9f63",
+    "source_order": 6,
+    "paragraph_count": 27
+  },
+  {
+    "id": "xy-artcle1080",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "六說‧佛光山「館」的奇緣",
+    "author": "星雲大師",
+    "source_sha256": "538557855ae6ed9ecd36df2af9782e4444ed4428abbf995f647de3d9a740b60c",
+    "source_order": 7,
+    "paragraph_count": 36
+  },
+  {
+    "id": "xy-artcle1081",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "七說‧我的歡喜樂觀從哪裡來？",
+    "author": "星雲大師",
+    "source_sha256": "2b6320da245901dd13d0b9c3917fd886ca27a76eef522b00382ecbe6c15e8aba",
+    "source_order": 8,
+    "paragraph_count": 107
+  },
+  {
+    "id": "xy-artcle1082",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "八說‧人間因緣的重要",
+    "author": "星雲大師",
+    "source_sha256": "2b172e519ea8419ce1f09c2f0edd2bc1394900fafd117271792e55ecb136199f",
+    "source_order": 9,
+    "paragraph_count": 43
+  },
+  {
+    "id": "xy-artcle1083",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "九說‧我怎樣走上國際的道路？",
+    "author": "星雲大師",
+    "source_sha256": "78da1d688b81eec8b72276894bceab7b170dcbe88270082fb1430f30881a31e4",
+    "source_order": 10,
+    "paragraph_count": 36
+  },
+  {
+    "id": "xy-artcle1084",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十說‧我弘講的因緣",
+    "author": "星雲大師",
+    "source_sha256": "f4ed5211a258b0412f02b11128eb90359ad93c9124d010adb59b1bef38ba12b4",
+    "source_order": 11,
+    "paragraph_count": 92
+  },
+  {
+    "id": "xy-artcle1085",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十一說‧貧僧受難記",
+    "author": "星雲大師",
+    "source_sha256": "73366f338e95229644ad79d823b6bd8cc85fdb774761fa9fd7de44360d2e340a",
+    "source_order": 12,
+    "paragraph_count": 48
+  },
+  {
+    "id": "xy-artcle1086",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十二說‧貧僧兩岸往來記",
+    "author": "星雲大師",
+    "source_sha256": "00b50bbcd79c87989975c371936a2b954b9a3a558121536f1139cf836df73f30",
+    "source_order": 13,
+    "paragraph_count": 36
+  },
+  {
+    "id": "xy-artcle1087",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十三說‧我被稱為「大師」的緣由",
+    "author": "星雲大師",
+    "source_sha256": "95f4b620c86ff397ec45c175af474958d65d477cd2ad33b9f892bac3cd0a519e",
+    "source_order": 14,
+    "paragraph_count": 36
+  },
+  {
+    "id": "xy-artcle1088",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十四說‧我的新佛教改革初步",
+    "author": "星雲大師",
+    "source_sha256": "f4a3b6a89e59987526b6adf93114e768fec03e63e457b61f80e3cf354f513af7",
+    "source_order": 15,
+    "paragraph_count": 44
+  },
+  {
+    "id": "xy-artcle1089",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十五說‧媒體可以救台灣",
+    "author": "星雲大師",
+    "source_sha256": "30bb9cb4edf1ddfdcf9457491829aeef0197dd96b69d158dbe8ec9b2734cc0bd",
+    "source_order": 16,
+    "paragraph_count": 52
+  },
+  {
+    "id": "xy-artcle1090",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十六說‧我主張「問政不干治」",
+    "author": "星雲大師",
+    "source_sha256": "9906ef78dbfd6baf81cb895da18fe44009c2cbf0c630b4deaad69121041deb89",
+    "source_order": 17,
+    "paragraph_count": 47
+  },
+  {
+    "id": "xy-artcle1091",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十七說‧神明朝山聯誼會",
+    "author": "星雲大師",
+    "source_sha256": "158cfaf9d90e729e083293916f477211689dfdb2e138b1a8adc015096f52a904",
+    "source_order": 18,
+    "paragraph_count": 36
+  },
+  {
+    "id": "xy-artcle1092",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十八說‧我的小小動物緣",
+    "author": "星雲大師",
+    "source_sha256": "ff23df3828395834f8aca31fd0af11aac5ddb9676c3c6fabb6da3177d51a9f4d",
+    "source_order": 19,
+    "paragraph_count": 75
+  },
+  {
+    "id": "xy-artcle1093",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "十九說‧青年應有的愛情觀",
+    "author": "星雲大師",
+    "source_sha256": "fe04e707775ba0829539cf6a2cdc731dda3662e086af20ab4ea3511d9c0bdfa2",
+    "source_order": 20,
+    "paragraph_count": 55
+  },
+  {
+    "id": "xy-artcle1094",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二十說‧夫妻相處之道",
+    "author": "星雲大師",
+    "source_sha256": "dd20be8065cea6c8aac10764c1deecca83bf77494fa2ccef38f07aa37d1de472",
+    "source_order": 21,
+    "paragraph_count": 94
+  },
+  {
+    "id": "xy-artcle1095",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二一說‧我的管理模式",
+    "author": "星雲大師",
+    "source_sha256": "20bbc1320c770f8859952fc32b12b452aed0aaaa772a99363e483a104e4d3992",
+    "source_order": 22,
+    "paragraph_count": 60
+  },
+  {
+    "id": "xy-artcle1096",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二二說‧我一直生活在「眾」中",
+    "author": "星雲大師",
+    "source_sha256": "c0e5fabf619407e5dcd4cf2581d7d5479c1db9de51ddb43e154569cfea780ff1",
+    "source_order": 23,
+    "paragraph_count": 37
+  },
+  {
+    "id": "xy-artcle1097",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二三說‧我的平等性格",
+    "author": "星雲大師",
+    "source_sha256": "0fa212315bb0f4e9c604172ee1a96cc72b0917287e353a0262f8b93cb9ce3060",
+    "source_order": 24,
+    "paragraph_count": 57
+  },
+  {
+    "id": "xy-artcle1098",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二四說‧我要養成「佛教靠我」的理念",
+    "author": "星雲大師",
+    "source_sha256": "cdbf3e9406a770edc76d956077bb174b83441f6ed3e484fe950729d22373ed2c",
+    "source_order": 25,
+    "paragraph_count": 38
+  },
+  {
+    "id": "xy-artcle1099",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二五說‧我是一個垃圾桶",
+    "author": "星雲大師",
+    "source_sha256": "7dbc1147c1d7a2a7cbe0b717e80964dbcfe26ce4d4fe4c4b6c09c0b542cd37f4",
+    "source_order": 26,
+    "paragraph_count": 37
+  },
+  {
+    "id": "xy-artcle1100",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二六說‧我的恩怨情仇",
+    "author": "星雲大師",
+    "source_sha256": "38da51ce343af297e72479b908aa7e61949da3fcc8d285b46e94690a3e6c7e50",
+    "source_order": 27,
+    "paragraph_count": 45
+  },
+  {
+    "id": "xy-artcle1101",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二七說‧「可」與「不可」",
+    "author": "星雲大師",
+    "source_sha256": "555dbe46e6bf474b2f0b92119fb9b89168e8fb1712cf671f513c73a5b4c86a23",
+    "source_order": 28,
+    "paragraph_count": 56
+  },
+  {
+    "id": "xy-artcle1102",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二八說‧我解決困難的方法",
+    "author": "星雲大師",
+    "source_sha256": "062ff097dd5da83d43999424a13951c5f6756fea97df8aebb5b682df9008e2a9",
+    "source_order": 29,
+    "paragraph_count": 76
+  },
+  {
+    "id": "xy-artcle1103",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "二九說‧我對問題的回答",
+    "author": "星雲大師",
+    "source_sha256": "c69db5fe6ce5d974c3f8143401a9aefa38a67cf7192bea00dfd64c897465e1c6",
+    "source_order": 30,
+    "paragraph_count": 120
+  },
+  {
+    "id": "xy-artcle1104",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三十說‧我訂定佛教新戒條",
+    "author": "星雲大師",
+    "source_sha256": "64ea8349eae70d5b98cd8b0c4306bd661d657c9e770de00fa60a314c09a20335",
+    "source_order": 31,
+    "paragraph_count": 86
+  },
+  {
+    "id": "xy-artcle1105",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三一說‧我的自學過程",
+    "author": "星雲大師",
+    "source_sha256": "93d7e2a337e33f204f6fb38104bf153494e74ea86fdf8257fae0f0850390708d",
+    "source_order": 32,
+    "paragraph_count": 47
+  },
+  {
+    "id": "xy-artcle1106",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三二說‧僧侶修持的回憶",
+    "author": "星雲大師",
+    "source_sha256": "d255b9bf5250e82815f09755dfcdccfb7b7b8810268cc22c1d72938fe6696ad1",
+    "source_order": 33,
+    "paragraph_count": 35
+  },
+  {
+    "id": "xy-artcle1107",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三三說‧我的發心立願",
+    "author": "星雲大師",
+    "source_sha256": "9ee8cb4a7fefd6f95274a3abbb464c1c6a40ec9585f5bf1a41d8cfad93bf7a9a",
+    "source_order": 34,
+    "paragraph_count": 55
+  },
+  {
+    "id": "xy-artcle1108",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三四說‧我寫作的因緣",
+    "author": "星雲大師",
+    "source_sha256": "320de4f7949c382a1480794b71ce58a01b42501a82f8f1c2f922be7700c984f2",
+    "source_order": 35,
+    "paragraph_count": 74
+  },
+  {
+    "id": "xy-artcle1109",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三五說‧我的生活衣食住行",
+    "author": "星雲大師",
+    "source_sha256": "a6ed0ea88744bf200147fb6464831a8e5a2adf36d9d80a033bbb05d3773095a2",
+    "source_order": 36,
+    "paragraph_count": 46
+  },
+  {
+    "id": "xy-artcle1110",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三六說‧我修學讚歎法門",
+    "author": "星雲大師",
+    "source_sha256": "ecb4fc05d1f6526a721d42dcef55d36bcb73f3db6d794c807749bd3526da4b05",
+    "source_order": 37,
+    "paragraph_count": 47
+  },
+  {
+    "id": "xy-artcle1111",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三七說‧我一生「與病為友」",
+    "author": "星雲大師",
+    "source_sha256": "19a8d2741a601f22c79dc29d2d5d20a26cb10ec79ad6d7af234eb19d3812dd21",
+    "source_order": 38,
+    "paragraph_count": 105
+  },
+  {
+    "id": "xy-artcle1112",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三八說‧我對生死的看法",
+    "author": "星雲大師",
+    "source_sha256": "447c73c8d5af5475ae50e2245958f27ca0a5a6ad41ed85a368adb11f84f1dc28",
+    "source_order": 39,
+    "paragraph_count": 49
+  },
+  {
+    "id": "xy-artcle1113",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "三九說‧我要創造「人生三百歲」",
+    "author": "星雲大師",
+    "source_sha256": "c5ec25c408620ab163d823e19e1c38a3b6cd54dd470379598f522736261261fb",
+    "source_order": 40,
+    "paragraph_count": 73
+  },
+  {
+    "id": "xy-artcle1114",
+    "book_id": "xy-pinseng",
+    "person_id": "hsing-yun",
+    "title": "四十說‧真誠的告白──我最後的囑咐",
+    "author": "星雲大師",
+    "source_sha256": "c90089aeb096e18d5e4a7d1e8b096ac19ec78e5a9619bf216b2f9aa0854c5872",
+    "source_order": 41,
+    "paragraph_count": 50
   }
 ]

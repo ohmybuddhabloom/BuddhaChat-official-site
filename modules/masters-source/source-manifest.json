@@ -1,6 +1,6 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
-  "baseCommit": "fd8bb73dc0ab397085fbb44b98e3f223fec9e374",
+  "baseCommit": "b28806ec64cc8f9dced1964c8d58833bd2f6aacf",
   "sourceState": "working-tree-snapshot-not-a-release",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
@@ -58,7 +58,7 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "6a0e11da65dfa7f94edf0d1624df0e0a4d2a8bdff53788ca3dd077eda33590f3",
+    "shared/masters/article-index.json": "cac25871e5c359dbbe5073c1490bb4eaafd255a268417a45e2f998d7fe4883b9",
     "shared/masters/articleReader.ts": "096a32d714ec1c7c8d9aa905a5e8849a83595542c83644cc6d607c34b176025a",
     "shared/masters/catalog.ts": "855e9a77215db5c206d29c88feb59e2c40ce744a003ff80fc3b2423f11e18742",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
