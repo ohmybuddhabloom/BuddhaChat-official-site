@@ -4770,16 +4770,6 @@
     "paragraph_count": 14
   },
   {
-    "id": "sy-05-08-2-010",
-    "book_id": "sy-05-08-2",
-    "person_id": "sheng-yen",
-    "title": "佛法的三個層次：信仰、理解、實踐  ——從信仰入手、明因果到超越",
-    "author": "聖嚴法師",
-    "source_sha256": "dabd7aade5720a3feb1729846eb8f99fff8cfb9f50fb81f4a454fe485cf4fdd4",
-    "source_order": 10,
-    "paragraph_count": 48
-  },
-  {
     "id": "sy-05-08-2-011",
     "book_id": "sy-05-08-2",
     "person_id": "sheng-yen",
@@ -5060,16 +5050,6 @@
     "paragraph_count": 6
   },
   {
-    "id": "sy-05-08-2-040",
-    "book_id": "sy-05-08-2",
-    "person_id": "sheng-yen",
-    "title": "信仰的價值",
-    "author": "聖嚴法師",
-    "source_sha256": "8a4499b8fa36e70ca1464581106911afd306a136b0c70f7542c6f259cae6115e",
-    "source_order": 40,
-    "paragraph_count": 21
-  },
-  {
     "id": "sy-05-09-001",
     "book_id": "sy-05-09",
     "person_id": "sheng-yen",
@@ -5238,46 +5218,6 @@
     "source_sha256": "67ea2631e1b671664376dbf655f9effc2fba036cbde8f07db12892d190a6e5cc",
     "source_order": 17,
     "paragraph_count": 56
-  },
-  {
-    "id": "sy-05-09-018",
-    "book_id": "sy-05-09",
-    "person_id": "sheng-yen",
-    "title": "附錄一 《心經》 唐．三藏法師玄奘譯",
-    "author": "聖嚴法師",
-    "source_sha256": "3e8979576718045a726a1ad1b646a297080ec823395b0f88ab0be61ab90d6429",
-    "source_order": 18,
-    "paragraph_count": 2
-  },
-  {
-    "id": "sy-05-09-019",
-    "book_id": "sy-05-09",
-    "person_id": "sheng-yen",
-    "title": "附錄二 〈觀世音菩薩普門品〉 姚秦．三藏法師鳩摩羅什譯",
-    "author": "聖嚴法師",
-    "source_sha256": "a3ea9b94db442c2e32b785a3cdafbbffec2e6a6f5f6a7639f60b9afb687f8f2a",
-    "source_order": 19,
-    "paragraph_count": 29
-  },
-  {
-    "id": "sy-05-09-020",
-    "book_id": "sy-05-09",
-    "person_id": "sheng-yen",
-    "title": "附錄三 《大悲懺》（含〈大悲咒〉）",
-    "author": "聖嚴法師",
-    "source_sha256": "82b10b2b9495d272f3f663bee22e383fc6ce5ba723a6e30e1c6c5291ee144b87",
-    "source_order": 20,
-    "paragraph_count": 80
-  },
-  {
-    "id": "sy-05-10-001",
-    "book_id": "sy-05-10",
-    "person_id": "sheng-yen",
-    "title": "編者序",
-    "author": "聖嚴法師",
-    "source_sha256": "1429d9a899d818a1b81102208b4187be9b2506c5c4c59e22bcf5866511453304",
-    "source_order": 1,
-    "paragraph_count": 6
   },
   {
     "id": "sy-05-10-003",
@@ -5520,13 +5460,333 @@
     "paragraph_count": 4
   },
   {
-    "id": "sy-05-10-032",
+    "id": "sy-05-01-001",
+    "book_id": "sy-05-01",
+    "person_id": "sheng-yen",
+    "title": "如何理解佛教？",
+    "author": "聖嚴法師",
+    "source_sha256": "2f56ce7b5c140a6dca9f9604b060cda27bf30f17b54acca0aed28f8be7bcc05d",
+    "source_order": 1,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-05-01-008",
+    "book_id": "sy-05-01",
+    "person_id": "sheng-yen",
+    "title": "佛教的信仰與教義",
+    "author": "聖嚴法師",
+    "source_sha256": "4c529452f192c0d58e82164cf3491f323bd6ee3082e37de26f56a19dae11e3dd",
+    "source_order": 8,
+    "paragraph_count": 47
+  },
+  {
+    "id": "sy-05-01-012",
+    "book_id": "sy-05-01",
+    "person_id": "sheng-yen",
+    "title": "學佛與日常生活",
+    "author": "聖嚴法師",
+    "source_sha256": "7570070b1dc8488b8082ea88e93e73c1ee2d5936f1e75c6179692c3989cbd03e",
+    "source_order": 12,
+    "paragraph_count": 37
+  },
+  {
+    "id": "sy-05-01-018",
+    "book_id": "sy-05-01",
+    "person_id": "sheng-yen",
+    "title": "念佛與助念",
+    "author": "聖嚴法師",
+    "source_sha256": "d2e4cd7f2d57520ec7d02e8d780c0ecabde81ca8690d970164c7d775487071e5",
+    "source_order": 18,
+    "paragraph_count": 95
+  },
+  {
+    "id": "sy-05-08-2-002",
+    "book_id": "sy-05-08-2",
+    "person_id": "sheng-yen",
+    "title": "學佛五示",
+    "author": "聖嚴法師",
+    "source_sha256": "0fa4e13bd68e2bb2acd4995e5aa836ff8a743951751bb316853dea2ed30515c2",
+    "source_order": 2,
+    "paragraph_count": 49
+  },
+  {
+    "id": "sy-05-08-2-016",
+    "book_id": "sy-05-08-2",
+    "person_id": "sheng-yen",
+    "title": "念念是新念頭，念念是好念頭",
+    "author": "聖嚴法師",
+    "source_sha256": "17dc966bd045e8ba2ff91e861c4d734c4f93f5c6b4809d584e1f8454083a21bd",
+    "source_order": 16,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-05-10-002",
     "book_id": "sy-05-10",
     "person_id": "sheng-yen",
-    "title": "〈慈雲懺主淨土文〉  宋．慈雲懺主作",
+    "title": "第一章　修學佛法的基本原則：教、理、行、果",
     "author": "聖嚴法師",
-    "source_sha256": "10bfc58fd7428556915148512add09419f4a711029e66f6d3c599575d9ce4fbe",
-    "source_order": 32,
-    "paragraph_count": 9
+    "source_sha256": "da92d40c2a62bf850f5c03e331859caa89a770e2a3972301197aeed2e93c3ff6",
+    "source_order": 2,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-05-10-011",
+    "book_id": "sy-05-10",
+    "person_id": "sheng-yen",
+    "title": "第一章　阿彌陀佛與淨土法門",
+    "author": "聖嚴法師",
+    "source_sha256": "d6d1aaa9f21aae189d0edd93f4da4a9b0cb0ee08d3692198fd903d4a7e0cbd3d",
+    "source_order": 11,
+    "paragraph_count": 28
+  },
+  {
+    "id": "sy-05-10-017",
+    "book_id": "sy-05-10",
+    "person_id": "sheng-yen",
+    "title": "第一章　何謂念佛禪",
+    "author": "聖嚴法師",
+    "source_sha256": "5a1b4ca97f0b95e4bb1e3ae0e06bf0f1f13dc0208d0a76ebaaf914e1c6bafe67",
+    "source_order": 17,
+    "paragraph_count": 44
+  },
+  {
+    "id": "sy-05-10-019",
+    "book_id": "sy-05-10",
+    "person_id": "sheng-yen",
+    "title": "第三章　念佛禪的修行方法：念佛禪的三種文獻",
+    "author": "聖嚴法師",
+    "source_sha256": "4524e589bef84560bf95eaef092bc4db406c66c5db82c31d987c9d8f8c1988b0",
+    "source_order": 19,
+    "paragraph_count": 274
+  },
+  {
+    "id": "sy-05-10-021",
+    "book_id": "sy-05-10",
+    "person_id": "sheng-yen",
+    "title": "第一章　簡介",
+    "author": "聖嚴法師",
+    "source_sha256": "8a2bee7f675102a340323419d4fe685f93f80d5cbb54ed505059ce4b8bd061ec",
+    "source_order": 21,
+    "paragraph_count": 6
+  },
+  {
+    "id": "xy-artcle97",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "二、教團成立",
+    "author": "星雲大師",
+    "source_sha256": "93c4743b272028d67b1e2034132ea32935190122998cfc02b7138c0fb5a4fa7f",
+    "source_order": 6,
+    "paragraph_count": 30
+  },
+  {
+    "id": "xy-artcle98",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "三、一日生活",
+    "author": "星雲大師",
+    "source_sha256": "4444dd5fce4a447e057d8db95c075edecb2c23b0bbeac9f58e073f9407e32db4",
+    "source_order": 7,
+    "paragraph_count": 27
+  },
+  {
+    "id": "xy-artcle99",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "四、度化弟子",
+    "author": "星雲大師",
+    "source_sha256": "91dcff071c1144a3e75045fcd806a4c2c830a47d1f45ea52f68db668db42d505",
+    "source_order": 8,
+    "paragraph_count": 40
+  },
+  {
+    "id": "xy-artcle100",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "五、利生服務",
+    "author": "星雲大師",
+    "source_sha256": "2a16228dce59d2bc17b37a9fdaab4a28fd28102351d05a6aad2c32f1e2d2f0ec",
+    "source_order": 9,
+    "paragraph_count": 42
+  },
+  {
+    "id": "xy-artcle101",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "一、苦空無常的究竟實義",
+    "author": "星雲大師",
+    "source_sha256": "683368947c060d053fc7e5d839660eda7e89bc5306c44ba86c7170d2a5d0df7d",
+    "source_order": 10,
+    "paragraph_count": 88
+  },
+  {
+    "id": "xy-artcle102",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "二、大乘佛法的圓滿修行",
+    "author": "星雲大師",
+    "source_sha256": "512b71b0e6fb38a9b9c6f7fffb7dc8a75af3f4a734eafb5e2153d94343b64683",
+    "source_order": 11,
+    "paragraph_count": 41
+  },
+  {
+    "id": "xy-artcle103",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "三、人間佛教的神聖真理",
+    "author": "星雲大師",
+    "source_sha256": "95b26c1e93af047b6cc012fbbbd85616bf5e9154d5c2c15e62cd062da2c57465",
+    "source_order": 12,
+    "paragraph_count": 15
+  },
+  {
+    "id": "xy-artcle104",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "四、遍滿虛空的人間佛陀",
+    "author": "星雲大師",
+    "source_sha256": "fe38eecc5b27ef82cb003cd8ada18ae64c9b870c19ee94e48fcdc617d9eecc21",
+    "source_order": 13,
+    "paragraph_count": 20
+  },
+  {
+    "id": "xy-artcle105",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "一、人間佛教的生活行儀",
+    "author": "星雲大師",
+    "source_sha256": "3e3a2031acc1d5b5a5c5b3d2d72d284c4048cb235a3e750f0b04c497b0252ef6",
+    "source_order": 14,
+    "paragraph_count": 42
+  },
+  {
+    "id": "xy-artcle106",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "二、人間佛教的社會慈善公益",
+    "author": "星雲大師",
+    "source_sha256": "f818fa6263ed8e35535401282b7b530858bafd8cb38b02fe917a08daa7e47c1e",
+    "source_order": 15,
+    "paragraph_count": 44
+  },
+  {
+    "id": "xy-artcle107",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "三、人間佛教藝術的成就",
+    "author": "星雲大師",
+    "source_sha256": "d5b3b03ef788a63f1a977438479c46f3eacfa885b598e70726aa1394cb3d1eb8",
+    "source_order": 16,
+    "paragraph_count": 37
+  },
+  {
+    "id": "xy-artcle109",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "四、人間佛教與文人的往來",
+    "author": "星雲大師",
+    "source_sha256": "c938d2074fe65731e22b970f02fa76fa680293ef3adeee630b904e54f9393974",
+    "source_order": 17,
+    "paragraph_count": 40
+  },
+  {
+    "id": "xy-artcle113",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "五、人間佛教與政治的關係",
+    "author": "星雲大師",
+    "source_sha256": "0e8e664145d98bdc9a59fed3d136db70c4688aedd70d27829508744b3e7dc098",
+    "source_order": 18,
+    "paragraph_count": 35
+  },
+  {
+    "id": "xy-artcle117",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "六、人間佛教的語言文字",
+    "author": "星雲大師",
+    "source_sha256": "194ebb85621430becabe46f5e1fad961be419c744fd64fbdb6ef5f6221ab6f63",
+    "source_order": 19,
+    "paragraph_count": 192
+  },
+  {
+    "id": "xy-artcle121",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "七、中國佛教衰微的原因",
+    "author": "星雲大師",
+    "source_sha256": "e3db1ca284f0e2505e1a3e52ccec0e9e38f13e7bd43ebdfed97dcb30dd2d3b6e",
+    "source_order": 20,
+    "paragraph_count": 65
+  },
+  {
+    "id": "xy-artcle131",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "一、   文化出版",
+    "author": "星雲大師",
+    "source_sha256": "4f7dac8af1d4188fc69d1bbe691a24e4777a69a076bec4857cf11061c9e03e80",
+    "source_order": 21,
+    "paragraph_count": 37
+  },
+  {
+    "id": "xy-artcle132",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "二、   教育辦學",
+    "author": "星雲大師",
+    "source_sha256": "767f59831bd0e981cc4df6dfb366a09a60e454d1a3bf5532c4d8358485f6ec68",
+    "source_order": 22,
+    "paragraph_count": 32
+  },
+  {
+    "id": "xy-artcle133",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "三、   弘法活動",
+    "author": "星雲大師",
+    "source_sha256": "bec74606ad80b9abb375962ec4568193de2a747ebabaa17f6128e2849b4fb6bf",
+    "source_order": 23,
+    "paragraph_count": 91
+  },
+  {
+    "id": "xy-artcle134",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "四、   慈善事業",
+    "author": "星雲大師",
+    "source_sha256": "b614503e1604a03c160f9dff71c00a8f2679b8b3c086e020d853ff91f598cd74",
+    "source_order": 24,
+    "paragraph_count": 35
+  },
+  {
+    "id": "xy-artcle135",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "五、   國際弘法",
+    "author": "星雲大師",
+    "source_sha256": "0498adc04be61d6fb37b9d3d9a3fe8ff341c038b761815f3f5d91568b3371723",
+    "source_order": 25,
+    "paragraph_count": 33
+  },
+  {
+    "id": "xy-artcle87",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "第六章   總結",
+    "author": "星雲大師",
+    "source_sha256": "cfd4b92621e2f2473b7163926abc91d50c70cde3d059aec7596a4a69ddfb271f",
+    "source_order": 26,
+    "paragraph_count": 145
+  },
+  {
+    "id": "xy-artcle89",
+    "book_id": "xy-renjianfojiao",
+    "person_id": "hsing-yun",
+    "title": "【附錄】   佛陀一生重要記事",
+    "author": "星雲大師",
+    "source_sha256": "2ccbec2d9392c5168bb4e7314909b3371904346cdf75655ea150ff328f1f744d",
+    "source_order": 27,
+    "paragraph_count": 77
   }
 ]
