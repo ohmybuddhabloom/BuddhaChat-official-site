@@ -9,7 +9,7 @@ import {
 import nan from './nan-huaijin-candidates.json';
 export const nanItems = nan.first_batch_candidates;
 import catalog from './hsingyun-catalog.json';
-export const books = catalog.books.map((b, i) => ({ ...b, title: ['迷悟之间', '贫僧有话要说', '人间佛教佛陀本怀'][i], label: ['生活随笔', '自述与回望', '佛法入门'][i], intro: ['从日常处境进入佛法的思考。先读一篇，再慢慢走进全书。', '从大师自己的讲述中，了解其生命经历与弘法理念。', '从佛陀的教化与现实生活，理解人间佛教的立场。'][i], sample: catalog.first_batch_chapter_ids[i] }));
+export const books = catalog.books.map((b, i) => ({ ...b, title: ['迷悟之间', '贫僧有话要说', '人间佛教佛陀本怀', '人间万事'][i], label: ['生活随笔', '自述与回望', '佛法入门', '人间生活'][i], intro: ['从日常处境进入佛法的思考。先读一篇，再慢慢走进全书。', '从大师自己的讲述中，了解其生命经历与弘法理念。', '从佛陀的教化与现实生活，理解人间佛教的立场。', '从生活中的人和事，阅读大师对人间的观察与思考。'][i], sample: catalog.first_batch_chapter_ids[i] }));
 export const chapters = catalog.chapters;
 export type Chapter = typeof chapters[number];
 export type ArticleSummary = MastersArticleSummary;
