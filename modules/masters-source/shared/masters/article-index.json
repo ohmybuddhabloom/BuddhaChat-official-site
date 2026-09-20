@@ -1738,5 +1738,2105 @@
     "source_sha256": "c90089aeb096e18d5e4a7d1e8b096ac19ec78e5a9619bf216b2f9aa0854c5872",
     "source_order": 41,
     "paragraph_count": 50
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-04",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、文字般若",
+    "author": "南怀瑾",
+    "source_sha256": "73f35584cd2f1d8bb17aa318f5a2e3427498744a14240975930670db141ce10c",
+    "source_order": 4,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-05",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、方便般若",
+    "author": "南怀瑾",
+    "source_sha256": "48e9dd16497a73a8a4d1cd2cf4093ffea61d32be8e4ea73e281313cef22db0d3",
+    "source_order": 5,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-06",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、眷属般若",
+    "author": "南怀瑾",
+    "source_sha256": "9dd5e5d4be1203e0d8f901f5ec816dc065f79ffc009c6cdff59bdbeed9e02399",
+    "source_order": 6,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-07",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、无坚不摧",
+    "author": "南怀瑾",
+    "source_sha256": "fd1de218769eb5848dce2182561c44c68cc725ab329b484ed5704164c4127e8a",
+    "source_order": 7,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-08",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、鸠摩罗什和武则天",
+    "author": "南怀瑾",
+    "source_sha256": "58ed60556badb403822f82c851120e6a1581c6efef02b4e44446f9067fd18f48",
+    "source_order": 8,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-09",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、佛这样说",
+    "author": "南怀瑾",
+    "source_sha256": "f4785fd21a8e92965bb8127dde4a7c15949bf15a14ae9490e255b211580df519",
+    "source_order": 9,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-10",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、那个时侯",
+    "author": "南怀瑾",
+    "source_sha256": "fb3f0fb8c29b6427876d2c677d93160519ffed6b4753999687fe816f9bad60de",
+    "source_order": 10,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-11",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、舍卫国的讲堂",
+    "author": "南怀瑾",
+    "source_sha256": "1b6556cdd0fb02fbf208cd51da5015d558116f996550cf8d059e135469d6ac72",
+    "source_order": 11,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-12",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、千二百五十人",
+    "author": "南怀瑾",
+    "source_sha256": "bfed225611abfb74085565d91d277f64ac82a3ed8996e20dc6f53ce48c24446d",
+    "source_order": 12,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-13",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、世间与大千世界",
+    "author": "南怀瑾",
+    "source_sha256": "3f8bbb3a3f1506e6a286022e5d62131e762bb64e1fed4089dfaeed39a5d0a0ad",
+    "source_order": 13,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-14",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、吃饭穿衣",
+    "author": "南怀瑾",
+    "source_sha256": "853ae63076709b1abd2be9516874cc71323551c2df9e359ef2cd06c0dab6890e",
+    "source_order": 14,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-15",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、乞士生活威仪",
+    "author": "南怀瑾",
+    "source_sha256": "20a4cd87b04ae86299ac7fdbd2f4dfffaba274b14875b32ee04eba55f671f2d9",
+    "source_order": 15,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-16",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、善现须菩提",
+    "author": "南怀瑾",
+    "source_sha256": "d5a396efe9156ddda82f97392d951214933a52db1a5f581ff6902e2080ebb91e",
+    "source_order": 16,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-17",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、如来 菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "1800e41616056b9486061a4656fb0e60b1ca09d10921818321314837a908355f",
+    "source_order": 17,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-18",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、六祖和《金刚经》",
+    "author": "南怀瑾",
+    "source_sha256": "8c6b7b0efa8fb03606a0698ec4a50c06310c6353cd318da973abd9a9ff04c90f",
+    "source_order": 18,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-19",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、善护念",
+    "author": "南怀瑾",
+    "source_sha256": "e4427df9815cf7f1ba55b1711b821be840394ba55a91b001621d8c4f19dc25b3",
+    "source_order": 19,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-20",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、寻愁觅恨",
+    "author": "南怀瑾",
+    "source_sha256": "624a27a2442a6a730dfeb6674d242f200cf1377d3efba4395a81b315eaae6b0c",
+    "source_order": 20,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-21",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、金刚眼和发心",
+    "author": "南怀瑾",
+    "source_sha256": "98f80a8f884e7ddd7bf57c58e754d888e65cbd19b67ffd4a8bb0aef07421cb81",
+    "source_order": 21,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-22",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、无权威 无主宰",
+    "author": "南怀瑾",
+    "source_sha256": "1ffaf5c9d9491e0e6e86f09de401dfa866f214ffbb64207a6b6525b42393f8a7",
+    "source_order": 22,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-23",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、此心如何住",
+    "author": "南怀瑾",
+    "source_sha256": "45eeba78304cc49b9946f9cc19602486cda1ea088d1f94a819ff909b2855bdf6",
+    "source_order": 23,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-24",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、止住的持名念佛",
+    "author": "南怀瑾",
+    "source_sha256": "9eeacbee6142ba3dbcb62eebe2b8569619d2af6f316cf26914c5e4835d6a3734",
+    "source_order": 24,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-25",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "10、百千三昧的定境",
+    "author": "南怀瑾",
+    "source_sha256": "01a81d47e68eec9ab1313cab6502cd6dc4332d02bf2ab101961203595e729888",
+    "source_order": 25,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-26",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "11、三步曲",
+    "author": "南怀瑾",
+    "source_sha256": "0deb914629eb7bb1712ca660349a5bd7af7bb65c23edee251e74d0e50686378b",
+    "source_order": 26,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-27",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "12、如何住和无所住",
+    "author": "南怀瑾",
+    "source_sha256": "9ec0c1586fccfca68dfc292cfec0fc83ee8fe3397b85cfb3c01b024544ad7632",
+    "source_order": 27,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-28",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、一切众生",
+    "author": "南怀瑾",
+    "source_sha256": "286b3133123e94c12c4df883401e31765636343a02854bc0776c4e10985b642f",
+    "source_order": 28,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-29",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、谭子《化书》",
+    "author": "南怀瑾",
+    "source_sha256": "5d7c2a446ab5621775325e9877c10762d16f4c389eaa250dff5b13455d1efd24",
+    "source_order": 29,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-30",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、有色无色的众生",
+    "author": "南怀瑾",
+    "source_sha256": "e5188974ed2775cc829ea15be815c89b8e806997a991babe1172312faeb808bd",
+    "source_order": 30,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-31",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、有想无想的众生",
+    "author": "南怀瑾",
+    "source_sha256": "4d3c8aec1fb7b347f8281206852a16136c497a9a24957c80d3ec168b0b770de8",
+    "source_order": 31,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-32",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、鸿福　清福",
+    "author": "南怀瑾",
+    "source_sha256": "e22f37a9740894e9c456ebcfe9de45858b90e3b12afa1822e50b8fd1b2834401",
+    "source_order": 32,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-33",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、罗汉的涅槃",
+    "author": "南怀瑾",
+    "source_sha256": "10496b9fd2d8c5232a6e16883efb668f227fa9506b67fc5344f808cc0c806c8b",
+    "source_order": 33,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-34",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、佛的涅槃",
+    "author": "南怀瑾",
+    "source_sha256": "d46baab525a4c6fc44ce5bdf4c77f93b56c7735133bcb998a8b5394947e53006",
+    "source_order": 34,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-35",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、四相和我的观念",
+    "author": "南怀瑾",
+    "source_sha256": "3743a60142a3d42d24a6dc5188364b6a56521ebb03a10894e4116c34d360a47b",
+    "source_order": 35,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-36",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、三轮体空布施",
+    "author": "南怀瑾",
+    "source_sha256": "be3472011d1bbe7ac83ff29940d0072ff4e6d7a8b3f284583defbde63843669e",
+    "source_order": 36,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-37",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "10、快乐痛苦皆无住",
+    "author": "南怀瑾",
+    "source_sha256": "d646f641fdc2b57c88e69074966842539141b53d00053554745d81c738c8dcdc",
+    "source_order": 37,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-38",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "11、转化十二类生",
+    "author": "南怀瑾",
+    "source_sha256": "81e390a53ee5f62da69fd37c4fcc6da0b267940b7684ccd7e012c4cb2ea498a0",
+    "source_order": 38,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-39",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "12、说三十二品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "f705fd637a8adfeac502c15c79bbcdc8401e0d0ae78d8ab510931e65e20eee0c",
+    "source_order": 39,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-40",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "13、第一品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "38831678bb916359e7796d68db29662c16fefff731e78ac50095aac8083179f3",
+    "source_order": 40,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-41",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "14、第二品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "70bdb02ff67d7dd59d1a06efcc89c819646cd3bc55476a9a57ada5b3ce74d671",
+    "source_order": 41,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-42",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "15、第三品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "8d86cb3cb6f7bf998d92ad92aa1efe5607469dcff9ba5fd689a4b4de6eaee84f",
+    "source_order": 42,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-43",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、第一等和次等",
+    "author": "南怀瑾",
+    "source_sha256": "685155f160d7968a0fc304a0eb990ac99643b8e6e3fd86b9f7f2a6b0a595ba7b",
+    "source_order": 43,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-44",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、无所住",
+    "author": "南怀瑾",
+    "source_sha256": "29ad344c5db8105ef3ec4024858be6a6c545af3b034800e062342252102839b3",
+    "source_order": 44,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-45",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、不住色",
+    "author": "南怀瑾",
+    "source_sha256": "a603c600625aee87b192073e884e6cc75dbcbed50bc4340f9db16b14263c992b",
+    "source_order": 45,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-46",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、不住声香味",
+    "author": "南怀瑾",
+    "source_sha256": "f512fa5b9e94cf6f3e4fca83fff2aa94eba6acfcd44f7d94273c82f38fda1bb7",
+    "source_order": 46,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-47",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、内触妙乐的菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "3205db80758457eb93ddf216b77d09d293d1a51f5742e78ed63e57c5d3741324",
+    "source_order": 47,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-48",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、雁过长空",
+    "author": "南怀瑾",
+    "source_sha256": "176fd9f2d387174e4447906862eb467b50b59965fef7d075e179037a250c053a",
+    "source_order": 48,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-49",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、功德和福德",
+    "author": "南怀瑾",
+    "source_sha256": "bb199d8bb4c5f5b82986c4de5637e9af28ca8a4ed4914c29ba7aaf1716135ff5",
+    "source_order": 49,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-50",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、东方佛西方佛",
+    "author": "南怀瑾",
+    "source_sha256": "7373b5cd07a01a180128a70dc1812e53eca2d99af9dcc02e91b702cf7e38abf1",
+    "source_order": 50,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-51",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、阿育王的沙子",
+    "author": "南怀瑾",
+    "source_sha256": "0a27f1fd2f1d14cc4dd293244535ff27514b44499603fee2e8283783b65ce9d5",
+    "source_order": 51,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-52",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "10、周利盘陀伽的扫帚",
+    "author": "南怀瑾",
+    "source_sha256": "3857ff1bf9219d25814a92ea2f7b98cea26b30ce83227875dca31706ccc5c3c1",
+    "source_order": 52,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-53",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "11、第四品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "01f2e4614c05c6f57d3631d8e6822b12f00d41e42dc6f70630bd333adf310a83",
+    "source_order": 53,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-54",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、非相和空",
+    "author": "南怀瑾",
+    "source_sha256": "a2527a9570af40751f49d8902a01d8100dca00d4ccfcae5fe573d1d6d943bc4a",
+    "source_order": 54,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-55",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、法报化 体相用",
+    "author": "南怀瑾",
+    "source_sha256": "79ea8bd3ed79df1609b67e4222fa1ee61bb652b0b952a8d252a59a7ac34580cc",
+    "source_order": 55,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-56",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、莲花生",
+    "author": "南怀瑾",
+    "source_sha256": "47a92ff7edf5925e0a83cc6eaa94468943ea80d05e96f90851fdc8ee78e299b0",
+    "source_order": 56,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-57",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、身相的执着",
+    "author": "南怀瑾",
+    "source_sha256": "9487aea0893e58330a57ba816d38efe709063644c0e4638ee34d0028a6aa8c95",
+    "source_order": 57,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-58",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、第五品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "3883695d8400471b7aa1925d00f0446378d722590c91415ef9ae9ba41fcdaf15",
+    "source_order": 58,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-59",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、文喜和文殊",
+    "author": "南怀瑾",
+    "source_sha256": "34c3c9b7cf9289a74a462e2a82c0047d82c9b0713d10b1459e9b9f25a9b70b23",
+    "source_order": 59,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-60",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、烧佛的和尚",
+    "author": "南怀瑾",
+    "source_sha256": "9bc884be59cc5fcb0e620127a9c31fc6d11712d4ecb92999ce0e1f84970e3678",
+    "source_order": 60,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-61",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、五百年后",
+    "author": "南怀瑾",
+    "source_sha256": "b84685a7356e1ca992f4fc0a27672372f4f26e5e86834b7b2a297b2aa1adde1b",
+    "source_order": 61,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-62",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、善行 功德 智慧",
+    "author": "南怀瑾",
+    "source_sha256": "3d065147ffbcbb7af5af68fe6e5627ffa444c3be54cb6c56beb5cca79f05aa26",
+    "source_order": 62,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-63",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、净信和无所住",
+    "author": "南怀瑾",
+    "source_sha256": "c4456a4dcfee05714a031c9e8d59f7f66af3fb7476cdc609a519cf21799c22ea",
+    "source_order": 63,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-64",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、真　非真",
+    "author": "南怀瑾",
+    "source_sha256": "b546a57e8e31b1eabd2326cd2c6a1b3eecc8d0663a665f5a73335aa6a93246b9",
+    "source_order": 64,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-65",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、何处是岸",
+    "author": "南怀瑾",
+    "source_sha256": "63b11733a8de7077959e20ad8240bedb39c71bb5bd2c56585ba9725dc7edaaff",
+    "source_order": 65,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-66",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、第六品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "9c2143cf1aa5f4dfb0e75892a540bc1ac742a4f2a192969d013cb309bfebbdce",
+    "source_order": 66,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-67",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、得什么 说什么",
+    "author": "南怀瑾",
+    "source_sha256": "50b79e1d20f832294de3c36f7b6c000c221799a4b754401eb9d71dfac77cc659",
+    "source_order": 67,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-68",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、程度的差别",
+    "author": "南怀瑾",
+    "source_sha256": "2fb338b5602cb9697be6e95718dc6d1ed9935b8c07e761541254974ef668feb5",
+    "source_order": 68,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-69",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、入世出世平等",
+    "author": "南怀瑾",
+    "source_sha256": "b5de51bc743d44a7df4ae3f1e5630d0479f5adfe017ff0ef222bdf6fca105d94",
+    "source_order": 69,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-70",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、圣贤之别",
+    "author": "南怀瑾",
+    "source_sha256": "80ab08de98a8355aa684a2352416ee55026d5a58a8b1a5bc05a1a55ab971b751",
+    "source_order": 70,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-71",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、第七品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "fcb656e7d803a2f742f647d99272c05f28d37709c25aea1f58058388f5bbea1e",
+    "source_order": 71,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-72",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、一切佛与《金刚经》",
+    "author": "南怀瑾",
+    "source_sha256": "82709870e04936d58a6539e916793b6d5206329345e841647ebc855048b487a8",
+    "source_order": 72,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-73",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、佛法非佛法",
+    "author": "南怀瑾",
+    "source_sha256": "63565e1a5499b5a71a0bdf6cd8d45f5bae0fd175e927ffd8e84c8a058864fbcb",
+    "source_order": 73,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-74",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第八品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "6f5da2e6f7dab0ebd12d6e287e13d674676cbf186e9f198529a7524421d13de7",
+    "source_order": 74,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-75",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、见思惑",
+    "author": "南怀瑾",
+    "source_sha256": "d0f24cb5d37500c13f1156b80ac653c4bf73e0118a0588c248d6300d01652885",
+    "source_order": 75,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-76",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、谁不嗔 谁不痴慢疑",
+    "author": "南怀瑾",
+    "source_sha256": "847f308fc604d1db21215486bd74c74490e6e81b6134999ae7b30f005b103bd9",
+    "source_order": 76,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-77",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、话说再来人",
+    "author": "南怀瑾",
+    "source_sha256": "3574b55969c55dda48690e3b81282e00b4f421ff7b12f2b7c6afb1d6059b5344",
+    "source_order": 77,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-78",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、不来行吗",
+    "author": "南怀瑾",
+    "source_sha256": "61c6b202b8b3a6d283e0bcf1442ce2b393af2574ee04638760ae47c104db9970",
+    "source_order": 78,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-79",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、三界的天人",
+    "author": "南怀瑾",
+    "source_sha256": "862772a00f246942a843ffe786c0fe0c5f3f3fff98f3fb68074c010e2f18ff81",
+    "source_order": 79,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-80",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、解结去惑",
+    "author": "南怀瑾",
+    "source_sha256": "0ad968473dc6a1ee66501cef8ab0ca55454af4ca5848dfc3ca04ef0c1bc9380c",
+    "source_order": 80,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-81",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、初果的罗汉",
+    "author": "南怀瑾",
+    "source_sha256": "3d38977f5a62b4d3b53586667b0a890eea3f6159861e91dd47133ff09045b878",
+    "source_order": 81,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-82",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、迦叶起舞　毕陵慢心",
+    "author": "南怀瑾",
+    "source_sha256": "b2f94818ac3980957a2a78abcd16f085251389e28edcfe194721b812183675f9",
+    "source_order": 82,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-83",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、二果三果作什么",
+    "author": "南怀瑾",
+    "source_sha256": "06f92505436e661b014fa73036c0a5c3d239062f6498ae6a22a8f5919f7aec78",
+    "source_order": 83,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-84",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "10、罗汉的前途",
+    "author": "南怀瑾",
+    "source_sha256": "5f83493757d37b6a6b615260546ea2ff0dda44417dd70b564b73df4e3544d47e",
+    "source_order": 84,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-85",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "11、世上的第一名",
+    "author": "南怀瑾",
+    "source_sha256": "f6d559cc5828a6411f827b2aea30f39fb59eaa6ebb77e4e104d750c867838e87",
+    "source_order": 85,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-86",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "12、第九品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "050fcca36a969133dc53d80eb77b14250f2e89d26d641a9f6cca53c442dba074",
+    "source_order": 86,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-87",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "13、小偷与越狱的人",
+    "author": "南怀瑾",
+    "source_sha256": "740c4acfb15a517994bf429e030c04d2fa4447f713a6b670bcf4dc51dec61857",
+    "source_order": 87,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-88",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、心空及第归",
+    "author": "南怀瑾",
+    "source_sha256": "8cd0bd4b1c911d63882ec9e65baff4611da4d479700a8383cffe18b474453dca",
+    "source_order": 88,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-89",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、庄严佛土在那里",
+    "author": "南怀瑾",
+    "source_sha256": "5e4c0e6230c02b78dd08f8b294d94d6f8076d787e46fd2a8ded898b6cbe398a8",
+    "source_order": 89,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-90",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、打火机",
+    "author": "南怀瑾",
+    "source_sha256": "b0cf27f96af3f0fee98cb09a41cbee710f301210ff9371b5af67f6ec7eceb7e2",
+    "source_order": 90,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-91",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、因师而瞎的眼",
+    "author": "南怀瑾",
+    "source_sha256": "7ec92a188c3765b5683823c13d76643127c4c758b0548cedf7c5a16a7a33a560",
+    "source_order": 91,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-92",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "第十品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "056cf5c7d247d7a868f6b3cc5cab0385e1a3f4d06e078424eab1865cceb82598",
+    "source_order": 92,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-93",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、不可数的福",
+    "author": "南怀瑾",
+    "source_sha256": "388fbce28c39b8c454123bdb898f413ba939d9ecedd838e9d31199601f4f4cb4",
+    "source_order": 93,
+    "paragraph_count": 17
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-94",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、受持四句偈",
+    "author": "南怀瑾",
+    "source_sha256": "a1e3bca626b733ef92a9057ce9cd4943dee84c414487393da22674f244d8aefa",
+    "source_order": 94,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-95",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、资粮",
+    "author": "南怀瑾",
+    "source_sha256": "19637d53516f8c88dada3e2bd26d2e7e138ce9fb3f65001f74fa23c67fc0508e",
+    "source_order": 95,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-96",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、第十一品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "be14bb260fc1e5ac733ff62938d2337a2552ca64b784009778214ca9c5ab1f33",
+    "source_order": 96,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-97",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、放《金刚经》的地方",
+    "author": "南怀瑾",
+    "source_sha256": "57ccbc3bf63f2ccffdcf862ac095bf7da9d4534a7fabb42a12207f7c7a484266",
+    "source_order": 97,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-98",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、《金刚经》放在何处",
+    "author": "南怀瑾",
+    "source_sha256": "1e795254cb1b4fae016941871a2c378b89aa7bfc6b99fb750e09f73ac41d6a01",
+    "source_order": 98,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-99",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第十二品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "5da687b07702b8f1d5609d06ce5bc2eef714292540dbbb3c8da9ac93ce0ce046",
+    "source_order": 99,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-100",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、再说大智慧",
+    "author": "南怀瑾",
+    "source_sha256": "9ec66abbaf657d3aaa6915b3785a723153f8a3a7fd4b51c743eb6737e484aadf",
+    "source_order": 100,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-101",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、黄山谷与晦堂",
+    "author": "南怀瑾",
+    "source_sha256": "3e977dafbef5f2339d766a6c3876d62b7160c9cad026b3d7f4ad7c301fef7096",
+    "source_order": 101,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-102",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、黄山谷与黄龙死心悟新",
+    "author": "南怀瑾",
+    "source_sha256": "54fbfb844201dfd9a1135e149c0ba9c1b4a296ac8622d216064867c3a6477e5f",
+    "source_order": 102,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-103",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、微尘　外色尘　内色尘",
+    "author": "南怀瑾",
+    "source_sha256": "1efbef7e56e074f29edf97ee91cc171cf3709c0b155da21786b73478638b9f91",
+    "source_order": 103,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-104",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、你我的三十二相",
+    "author": "南怀瑾",
+    "source_sha256": "f92c7875e7d86e32cd50e31ab1382105fff9153b7bcc736ceab769f4327a3786",
+    "source_order": 104,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-105",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、夹山大师",
+    "author": "南怀瑾",
+    "source_sha256": "3af87b0b85641d0cccdea888e3d7afca369e4a2eb8a8645e6ea48e6c84baa154",
+    "source_order": 105,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-106",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、夹山见船子",
+    "author": "南怀瑾",
+    "source_sha256": "944368922f12f3301d6ec1638eb652f11adb44534aca119d29f18737d86a0b32",
+    "source_order": 106,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-107",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、大的功德",
+    "author": "南怀瑾",
+    "source_sha256": "1c2bf086b52d67ffae5cede94fe8085bef497225a22d702f4400a387b2cb8bfa",
+    "source_order": 107,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-108",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、第十三品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "db472d471acc98366657906f64d213af01a3a976950b00ca955667280a071bbe",
+    "source_order": 108,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-109",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、解悟 喜极而泣",
+    "author": "南怀瑾",
+    "source_sha256": "36e5eafcc8f5a398bc74f880f7659336f8e8e25ce9908da3ad0bb5b3adea4742",
+    "source_order": 109,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-110",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、信心清净",
+    "author": "南怀瑾",
+    "source_sha256": "549e365eb1c21a862f45105903197c7e7b05890e7e9886af881ae6f78dc00cc5",
+    "source_order": 110,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-111",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、希有的功德",
+    "author": "南怀瑾",
+    "source_sha256": "0a36eeeec176086a0916a96c16d725977d2eb6e87d21e5f4f55474ee3f39bb19",
+    "source_order": 111,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-112",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、谁是五百年后希有人",
+    "author": "南怀瑾",
+    "source_sha256": "30ba1a14abc8944c787d0173e263d2553512dac856eff8cffb279e2b3c4f3c42",
+    "source_order": 112,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-113",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、为什么我不是我",
+    "author": "南怀瑾",
+    "source_sha256": "76fae10f7cb0f0828a0434d6aff66a4343c5f09d0f89144e9bc6cc54cd1d302a",
+    "source_order": 113,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-114",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、如何见佛",
+    "author": "南怀瑾",
+    "source_sha256": "aa8075aa240762323370f5e17acafba9743e861bd722b6c162747296bf6489d8",
+    "source_order": 114,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-115",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、难得的人",
+    "author": "南怀瑾",
+    "source_sha256": "3affb1f593d76362833ce27c4aaf8d4495728a3ecce4b3d7654f24e57057d7eb",
+    "source_order": 115,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-116",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、什么是忍辱",
+    "author": "南怀瑾",
+    "source_sha256": "504426fda36ea6270bf955cdb015a8191e77eb897430d76a27d06423cce1b9a2",
+    "source_order": 116,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-117",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "09、忍辱的榜样",
+    "author": "南怀瑾",
+    "source_sha256": "a9f5d3df72238f5956de8bebc58b4b363e13c50fc5b45ec1c59f65f66a69d6d2",
+    "source_order": 117,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-118",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "10、达摩与苏格拉底",
+    "author": "南怀瑾",
+    "source_sha256": "4656af9af174828abdb0a716c4f81fa9fde0b56b69eed4ff386f9eee37114ea8",
+    "source_order": 118,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-119",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "11、忍辱的功夫",
+    "author": "南怀瑾",
+    "source_sha256": "290a36c39a28749c857b36474e6c7a9285ad29d9a47dc06530f5beebf5857c54",
+    "source_order": 119,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-120",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "12、无所住的心",
+    "author": "南怀瑾",
+    "source_sha256": "e8f954ccdf7d62cbcae8c5f46c1243f3f366b8fbc6660362f6e5c13f677c7ba9",
+    "source_order": 120,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-121",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "13、如何布施",
+    "author": "南怀瑾",
+    "source_sha256": "adb7b08da94569fcc2d4777a290d3e93b3e93d092a5003d9baaef57e5a9c9f4a",
+    "source_order": 121,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-122",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "14、佛怎么说话",
+    "author": "南怀瑾",
+    "source_sha256": "cd49ea4848bd06d02353d82c709690b8b1d8177a8a32634e6cb1d27f713ecc51",
+    "source_order": 122,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-123",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "15、无实亦无虚",
+    "author": "南怀瑾",
+    "source_sha256": "a5223ee9677c9023ebd5b7976ccc77b20f74e9d707ca55a24dbfee0a2306f457",
+    "source_order": 123,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-124",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "16、无量无边的功德",
+    "author": "南怀瑾",
+    "source_sha256": "5e94ba747bcb654127248b229a02e4086cf790e3a820361496ef6ca13e525288",
+    "source_order": 124,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-125",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "17、第十四品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "a0d8471e26df031d73bc47d770492861354125828df74cb9ac951145e0acf016",
+    "source_order": 125,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-126",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、最难的布施",
+    "author": "南怀瑾",
+    "source_sha256": "7688dc30f45a0a280c14181f2c79ca62f24b706662bcfad09529361ec0b8239d",
+    "source_order": 126,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-127",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、老人的救生圈",
+    "author": "南怀瑾",
+    "source_sha256": "620293c2ac47f89a68f32a90a9c36198b360ada04deba2c5ac547c6b54bc839b",
+    "source_order": 127,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-128",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、信心不逆的福报",
+    "author": "南怀瑾",
+    "source_sha256": "d2669460a2e68b9a7d0d6313f37ea05c3128ecd24a064fa0ea8fa707a941317d",
+    "source_order": 128,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-129",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、如来说给谁",
+    "author": "南怀瑾",
+    "source_sha256": "a1f332d0b900a5f95ffdac01069b5240c2f18018350dfaad27e8eba30af4288e",
+    "source_order": 129,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-130",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、你喜欢小法吗",
+    "author": "南怀瑾",
+    "source_sha256": "e06b163d04d1cd16ebc5e3db731eb57a19bbdbe76af05e81074042aa95a8c945",
+    "source_order": 130,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-131",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第十五品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "06c55df55103d02b7dcf80f8c4d4be28c433cdd7d0db8344dd6045912c9b39ae",
+    "source_order": 131,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-132",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、被轻贱的前因后果",
+    "author": "南怀瑾",
+    "source_sha256": "a9ac477e42ae26f2ff6994e01a929696d433f6193864da718582649c585bda2b",
+    "source_order": 132,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-133",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、诚敬努力的人",
+    "author": "南怀瑾",
+    "source_sha256": "528c17cd7ed462fba7f9c32cbc692cc9a2d8b8034d14ebe8447f5f9dadaedcc3",
+    "source_order": 133,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-134",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、不可思议的果报",
+    "author": "南怀瑾",
+    "source_sha256": "c649b1144c3fa7ffadc489c1ba1623842b63ea19d8a975aa68af8b693733fb0d",
+    "source_order": 134,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-135",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、第十六品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "85d41af360cea96b779f31d394e612ab14fcd6c63f104648c0303440cc796455",
+    "source_order": 135,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-136",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、发什么愿",
+    "author": "南怀瑾",
+    "source_sha256": "b8c237f732ed3d8bee06c119c0a90752a4aa8d4f148b680d5f4f07f9bc2bd6d2",
+    "source_order": 136,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-137",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、燃灯佛所得什么",
+    "author": "南怀瑾",
+    "source_sha256": "ac86a9315b3f24044f33145f7007611837f63d5bd9557eaa07980c1b01e7a46e",
+    "source_order": 137,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-138",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、燃灯佛为什么授记",
+    "author": "南怀瑾",
+    "source_sha256": "6a1a7a85521d7184a58007767d0457649dece6e8d537fc544df545d7a44044c8",
+    "source_order": 138,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-139",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、一切都是佛法",
+    "author": "南怀瑾",
+    "source_sha256": "ad90bddad43004908feda66e1543350b04770dc5239e98d3457a2fde1a908564",
+    "source_order": 139,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-140",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、什么都没有的菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "565fde70b182a778a320e2827750977f10dee136bb5727b5e14e06a8a094e724",
+    "source_order": 140,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-141",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、无我的菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "eee06945d99398e4013b0cd5d318da88ec7c6f30169a3d5919791b2a3b13f0c7",
+    "source_order": 141,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-142",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、第十七品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "fc59d1885f9c35e4a01120f3350ad76f760f49a86e0c72c3f6394793fcbce925",
+    "source_order": 142,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-143",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、眼者心之机",
+    "author": "南怀瑾",
+    "source_sha256": "7825592b90bfa6e495ce787676c72c607797eae5104493397bdf93177fb3f541",
+    "source_order": 143,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-144",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、天眼是什么",
+    "author": "南怀瑾",
+    "source_sha256": "92175359d636545ddf53e937c560f1b710101ba862e7cb0bed8a9a92ca457d52",
+    "source_order": 144,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-145",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、慧眼　法眼　佛眼",
+    "author": "南怀瑾",
+    "source_sha256": "e1f84ef9554b6549fdd83d9d6558f4bb5247b20f209dfc94eac8ead7228ca4c7",
+    "source_order": 145,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-146",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、无量数的宇宙世界",
+    "author": "南怀瑾",
+    "source_sha256": "ee4df079143f0e6bdf074fdf858c2cff44305eba2477bb2dc377f491977f3c8c",
+    "source_order": 146,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-147",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、无数量的心",
+    "author": "南怀瑾",
+    "source_sha256": "e1909c2fa2a2d1f8116f247b334817461ec3774510cad3c80fe4e7f2bb862ef9",
+    "source_order": 147,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-148",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、你的心",
+    "author": "南怀瑾",
+    "source_sha256": "23d85f86f7fbc52eea525e3700c1eebd8bf0a41b79c2b2b01e21e964ffff9b63",
+    "source_order": 148,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-149",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "07、永远得不到的心",
+    "author": "南怀瑾",
+    "source_sha256": "d975e748d9d6961e0cbbc28c0bd1289f8c3bef77dcb20c4af1738333f2683d5c",
+    "source_order": 149,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-150",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "08、第十八品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "03d619e8b482c7718b90b3338b2144e0309d0a0d3085f251b0ef1c0ea6c4eb9b",
+    "source_order": 150,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-151",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、福德不可得",
+    "author": "南怀瑾",
+    "source_sha256": "d5599db9e7bdac577acbd8650855554d948006e0cd555f53a019abf9b378224e",
+    "source_order": 151,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-152",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、无人希罕的福",
+    "author": "南怀瑾",
+    "source_sha256": "9771766d3f895c1d1c4889f18df592703e0645f706d1375817a1134b9d7e9f84",
+    "source_order": 152,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-153",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第十九品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "d3b01173989ae2cf0e6877c3e3526fbdb08ab18a77df8852d543db55dc5c1b2e",
+    "source_order": 153,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-154",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、大丈夫相",
+    "author": "南怀瑾",
+    "source_sha256": "b142cc27a35b8452bf80121e097e3bae635864b077ec8eb56e363c8492842d81",
+    "source_order": 154,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-155",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、世上的肉身菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "8c3a68e86c576b3f7f70835c3974e3868aa31662414313d122bbcd6cc6e34d53",
+    "source_order": 155,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-156",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第二十品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "336698a191b0ec4d89aada3c254b3e6e54b20f95623eba7e57681f688f2840a9",
+    "source_order": 156,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-157",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、什么都没说",
+    "author": "南怀瑾",
+    "source_sha256": "788eaed8a5792880a6d4c68f8fabac6c70c2906ad1e16965b805f1d4cd500c04",
+    "source_order": 157,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-158",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、迦叶笑了",
+    "author": "南怀瑾",
+    "source_sha256": "13c1e3a1234a463a32c429094c6ef394b19394a0011fb332361704679ac85493",
+    "source_order": 158,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-159",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、须菩提与佛对答",
+    "author": "南怀瑾",
+    "source_sha256": "3abceab7b4dc26d5271b2711869eb615683f7edf0f28afab20ccf0f969b20081",
+    "source_order": 159,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-160",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、顽石点头为什么",
+    "author": "南怀瑾",
+    "source_sha256": "a3275b579700cd839c0b26b02dfa74b0ad589f155b0356cf1e377bb01aed7136",
+    "source_order": 160,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-161",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、众生与佛",
+    "author": "南怀瑾",
+    "source_sha256": "915d27c90db6c621c14c831116d905d07f104ab85e34b7d87a3227cd256f156b",
+    "source_order": 161,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-162",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第二十一品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "ed8ac481e531dc7acba21b0c4dd8bee29e6ca1ff59001fd0bacee5f01d2f312a",
+    "source_order": 162,
+    "paragraph_count": 17
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-163",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、一指禅",
+    "author": "南怀瑾",
+    "source_sha256": "4d8afcd0482466abd423c0a530abb4d2f897da9870514deeab1ba1a40a7fb15e",
+    "source_order": 163,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-164",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、第二十二品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "62e646c3c54f521433fa264667912e6efb7b52bbee0250def5e70ca77b681fbb",
+    "source_order": 164,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-165",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、修一切善法",
+    "author": "南怀瑾",
+    "source_sha256": "ae01ce8d68fdf425035a99622814b791307cf378fe9749f54821ea2aeabf7b90",
+    "source_order": 165,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-166",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、南山高　北山低",
+    "author": "南怀瑾",
+    "source_sha256": "9a3f60a767b66191196dac5c0473f28f0cd0b6ae42a8dc6aa6478d6253925d6a",
+    "source_order": 166,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-167",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第二十三品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "0b159a30c011a11da9b0bd671f7793636e94df7e78412614914a6154e6e5d0ee",
+    "source_order": 167,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-168",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、修资粮",
+    "author": "南怀瑾",
+    "source_sha256": "db4d7b4d18390a35d63b54c433b6c5f0642c786315a328c1c1ebda4be1f975e6",
+    "source_order": 168,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-169",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、受持读诵",
+    "author": "南怀瑾",
+    "source_sha256": "80550661fdf5afd31c697c8d0d45850222a203cc50dbdf698bc3488fb13201ed",
+    "source_order": 169,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-170",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、真教化的功德",
+    "author": "南怀瑾",
+    "source_sha256": "dd4a9611d1db195af18383200d708421b9233c84a32e94f5116b75a7fa0e4b2a",
+    "source_order": 170,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-171",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、第二十四品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "80cd0cedf8522efa1bafe5ba63c2e6a0931999b7b1865da00a06b6d0f7610525",
+    "source_order": 171,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-172",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、有教无类",
+    "author": "南怀瑾",
+    "source_sha256": "4d73868f070486c13a3fbae06817f10d7bb34d8b8915bf59bd6d92d6fe4c8593",
+    "source_order": 172,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-173",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、自己的解脱",
+    "author": "南怀瑾",
+    "source_sha256": "2ed7a75896cdd97c8698156c35e23bb3e03bac113f8790ccf37fd682bbfa2f61",
+    "source_order": 173,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-174",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、无我以后",
+    "author": "南怀瑾",
+    "source_sha256": "019f0b2313afe11dd53940feee5982fcad2167184163e31ebf1611532f7ce25e",
+    "source_order": 174,
+    "paragraph_count": 17
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-175",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、第二十五品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "d8e0bd5512991c23d6592f085342207c06819e86192f3429aef53e68193dc15b",
+    "source_order": 175,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-176",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、见佛与观佛",
+    "author": "南怀瑾",
+    "source_sha256": "f32f951ba2a02f40de50f183f3a3c860768bb99bec179d92cf309f6660e1728e",
+    "source_order": 176,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-177",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、声色与邪道",
+    "author": "南怀瑾",
+    "source_sha256": "5e7f4b82f8f6b459a137e42a1e52d90807610fa86dce7a84704b981fadaf868b",
+    "source_order": 177,
+    "paragraph_count": 23
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-178",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、转轮圣王",
+    "author": "南怀瑾",
+    "source_sha256": "fa59004e84b6c0f9961e2c8e91601c733e3ae8be84ca6f8aab193d3346408537",
+    "source_order": 178,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-179",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、十地菩萨与转轮圣王",
+    "author": "南怀瑾",
+    "source_sha256": "c92cb7c94ee1fbb58ac85a4c6824f4f58827385ed81788a046d4e2a912c8f198",
+    "source_order": 179,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-180",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、第二十六品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "607e00a312a808c8dc6d099f391d4b1c89c50f16ab3ff48dcd63237109e9ac3c",
+    "source_order": 180,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-181",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、悬崖撒手",
+    "author": "南怀瑾",
+    "source_sha256": "3153fbeab2202ed54f03defc023c2012cfc9d538f3e6b12b96c1d4590fe057f2",
+    "source_order": 181,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-182",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、三界六道之外",
+    "author": "南怀瑾",
+    "source_sha256": "0244b1e1943d45e4b4c0c8d8872d2c52c90aa414f831790c7c6a581ea2accc35",
+    "source_order": 182,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-183",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、断灭见",
+    "author": "南怀瑾",
+    "source_sha256": "87f95b333476576b40acd0b2a9fc2b4d607b4ab8b0be2c6f42f1e7dbc0e79ff0",
+    "source_order": 183,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-184",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、不说断灭相",
+    "author": "南怀瑾",
+    "source_sha256": "061a6c15903a3f4006bd304203e4464afa03959dbbd04ffd4726c92a16342414",
+    "source_order": 184,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-185",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、第二十七品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "6ef0f2a1369c43f5d67bf9b3ba6c1ab40ce5d3f99f4d85e23b1af8d36b94fcd2",
+    "source_order": 185,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-186",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、爱布施的菩萨",
+    "author": "南怀瑾",
+    "source_sha256": "f45cb91717cafd7007f868d7e47ec6a32c928508b76e0489dcb4c23c16cac66c",
+    "source_order": 186,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-187",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、一切法无我",
+    "author": "南怀瑾",
+    "source_sha256": "895533994a421de26d2f19dfe2c67a3095409d61c26339aba317656117270bc6",
+    "source_order": 187,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-188",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、定与忍",
+    "author": "南怀瑾",
+    "source_sha256": "4b74e196b77fe1574ba4f5436d09806959ea873b7a155c3ea8946adff5ae8d8c",
+    "source_order": 188,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-189",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、张拙的故事",
+    "author": "南怀瑾",
+    "source_sha256": "c9e1bc219a5e10a8d2d0677014509836717d29a5291736807d60338bf4b0171f",
+    "source_order": 189,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-190",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、有求就有住吗",
+    "author": "南怀瑾",
+    "source_sha256": "8dd69c77eb0ffb140b8ea0295c9f6bbd6787ac8f76635b092eef95395c453dda",
+    "source_order": 190,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-191",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第二十八品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "c7c006d60ca418a6b147eaee3fedb432df2eee7cc78e58950eed3f0e086e3ef7",
+    "source_order": 191,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-192",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、无来亦无去",
+    "author": "南怀瑾",
+    "source_sha256": "1c0662c2bdcfcf58a0af253e05d30b5317754c66b082aedfbd7f818451f69029",
+    "source_order": 192,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-193",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、如来的境界",
+    "author": "南怀瑾",
+    "source_sha256": "4340b78deffbd2a8721efa236379841582cdce141ba787b71936d3b3cea17b09",
+    "source_order": 193,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-194",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第二十九品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "11d976dd520215f2dfc15059721b62b9225fc2631bedaf2f824c0da7ab527b62",
+    "source_order": 194,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-195",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、碎为微尘之后",
+    "author": "南怀瑾",
+    "source_sha256": "015fc9124660798091e1d1cf4ce74d1e8e4904f89626201b313e19d2b3cf8a72",
+    "source_order": 195,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-196",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、什么是合相",
+    "author": "南怀瑾",
+    "source_sha256": "8a7c7810b0c59325c01bdf57c61032bd5750a002b67a31934db8056f46625e82",
+    "source_order": 196,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-197",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、第八识和种性",
+    "author": "南怀瑾",
+    "source_sha256": "047cbe9d3bdcddce6392be1135387e2b08c488db2a79bc0dcc19e03e551e4a4a",
+    "source_order": 197,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-198",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、心念如暴流",
+    "author": "南怀瑾",
+    "source_sha256": "45d26ef81586b867b162318a7f0394eeef7687d1f79ab2a7cb318c4327e26af4",
+    "source_order": 198,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-199",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、真空如何生妙有",
+    "author": "南怀瑾",
+    "source_sha256": "9a4437f0b2ccbcd744083b8c502ff5b3e1d06b39f221dfc61ed5b7da49547932",
+    "source_order": 199,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-200",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第三十品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "ceb40b313f15fdcc6377def19cfad81e9ced6c722ca692acd356a1706bd81c5b",
+    "source_order": 200,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-201",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、见不是见",
+    "author": "南怀瑾",
+    "source_sha256": "fa03735cb90862795d0695ea4df3309a1ceef3148650c7e9ccee06ab4c4a22e6",
+    "source_order": 201,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-202",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、知即无明本",
+    "author": "南怀瑾",
+    "source_sha256": "faae995ac3642c912c2960c63621d3b7ad0267e0fe08c3b0c77bf3ddcb26d4be",
+    "source_order": 202,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-203",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、如是知见",
+    "author": "南怀瑾",
+    "source_sha256": "3de82ace65bc4c2435d2011e27c5d6705886c2b379142fa693ecaa65e1182def",
+    "source_order": 203,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-204",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、我们自己的法相",
+    "author": "南怀瑾",
+    "source_sha256": "4290b4a58544e85dffc2bf691645283bd84ede169b9506007f4214d2a933fd72",
+    "source_order": 204,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-205",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、我要过去 你过来",
+    "author": "南怀瑾",
+    "source_sha256": "2816d9c804468d5e6e3beca8403e34571a44fc469d5473d9e8c1494c90ff3a0f",
+    "source_order": 205,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-206",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第三十一品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "0e5c0a46d55664ceac21b1f63c7631fff7eb90c5726773fb7da3b27452b0547c",
+    "source_order": 206,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-207",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "01、应化非真",
+    "author": "南怀瑾",
+    "source_sha256": "a335648a55f5dc7a0f35ed132078fb36c7c464fe42e151daebfd533a54cac3f4",
+    "source_order": 207,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-208",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "02、内圣外王菩提心",
+    "author": "南怀瑾",
+    "source_sha256": "488213e5f48a4a19716f6bb1799f745bedd9af306c496c04af41220609365b55",
+    "source_order": 208,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-209",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "03、学佛的懒人",
+    "author": "南怀瑾",
+    "source_sha256": "cb301155be30a96a729e3270bcfae1ea936d9cd4c123606edaa0cf19d433ab8b",
+    "source_order": 209,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-210",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "04、离经的四句偈",
+    "author": "南怀瑾",
+    "source_sha256": "5fe720f75d3af23be3da0b0b6506248ecc2a1ec44bc23c7c8598883c8f132698",
+    "source_order": 210,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-211",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "05、梦幻中如如不动",
+    "author": "南怀瑾",
+    "source_sha256": "728f3d7e5deea23bbf982c8cfab98241758fca0f20a8ba214ec7224f2ca81c6c",
+    "source_order": 211,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-212",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "06、第三十二品偈颂",
+    "author": "南怀瑾",
+    "source_sha256": "a1f0526b3d7782cfb0fd88d26cad599030ab96a1a8310d258328cba678eb8760",
+    "source_order": 212,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-jingangjing-shuoshenme-chapter-213",
+    "book_id": "nhj-jingangjing-shuoshenme",
+    "person_id": "nan-huaijin",
+    "title": "总结论",
+    "author": "南怀瑾",
+    "source_sha256": "3869b061035c6eea100a2103e7f2ef6a9ec165e6cf484eb0ae3b1cbb8cb0b992",
+    "source_order": 213,
+    "paragraph_count": 24
   }
 ]
