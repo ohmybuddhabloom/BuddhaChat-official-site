@@ -7500,6 +7500,2256 @@
     "paragraph_count": 13
   },
   {
+    "id": "nhj-laozi-tashuo-chapter-04",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "拨乱反正的趣谈",
+    "author": "南怀瑾",
+    "source_sha256": "ab71e5907043ef46e90dae3dca33fc75e8da6f4dbb4b5b5fd280ed97133cbdc5",
+    "source_order": 4,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-05",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "太上老君与李老子",
+    "author": "南怀瑾",
+    "source_sha256": "3bf71a8bb6c6fda4d37b7744132288b29d9bc44b8a33611c79e4a559ec83ec98",
+    "source_order": 5,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-06",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "汉文帝善用老子的法宝",
+    "author": "南怀瑾",
+    "source_sha256": "50a006d0e7b03f9bfea68a92c188875a3aa7213084ce21bd0a99a13a21093274",
+    "source_order": 6,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-07",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "半壁江山一纸书",
+    "author": "南怀瑾",
+    "source_sha256": "cb2d3edeb2b8424c5cd92fdbe70403cc130bfa0db333890fd2760fa9b48f034d",
+    "source_order": 7,
+    "paragraph_count": 28
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-08",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子吃瘪",
+    "author": "南怀瑾",
+    "source_sha256": "e213dc9591b1427971efe01c1c79cc05a3ede93f1c9544a292248d944abd5cbb",
+    "source_order": 8,
+    "paragraph_count": 18
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-09",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "曾国藩与屠羊说",
+    "author": "南怀瑾",
+    "source_sha256": "9e4f30356acb54cd1f9a50a196ef95d1b09321b0ca91c3c666a9a68dbd659fa7",
+    "source_order": 9,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-10",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "王阳明与曾国藩",
+    "author": "南怀瑾",
+    "source_sha256": "c3859bb0bd432adb701af5aede0c3d1262286593ee79ef65245942e07d0833fa",
+    "source_order": 10,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-11",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "阴柔不是阴谋",
+    "author": "南怀瑾",
+    "source_sha256": "25ad22a7ebfb822192889972db0bfd9cd4d4a4132023f2e7cf9626c7d1029349",
+    "source_order": 11,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-12",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子还他老样子",
+    "author": "南怀瑾",
+    "source_sha256": "ab06cc513e92215f702d95bfc1130dded3653dad597d7b4e4fc1d7c09db376ab",
+    "source_order": 12,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-13",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子五千文过关",
+    "author": "南怀瑾",
+    "source_sha256": "351aa2202c88f2723d2126d77b1c10a02fb9abf01292e51136b49350f1c89599",
+    "source_order": 13,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-14",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "头头是道",
+    "author": "南怀瑾",
+    "source_sha256": "2d01992eb4d50cd9b36aa7822bd1e7f7559445c0c0017db4e5856dfb8a475cb4",
+    "source_order": 14,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-15",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "有无主宾",
+    "author": "南怀瑾",
+    "source_sha256": "82f5f4bf845f6e721dae1831b68d1996854faa9978523d79974c1c36c2b25ba6",
+    "source_order": 15,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-16",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "玄元之妙",
+    "author": "南怀瑾",
+    "source_sha256": "c1eb6ec8a6b48cd7a39ed5eaa4a2658c8e0532f8827efd71f83941f42d269c43",
+    "source_order": 16,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-17",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "真善美的价值定论何在？",
+    "author": "南怀瑾",
+    "source_sha256": "58b32ed1ead84baf24e7993bb1b068f29f725faf0ce8a481c70a23972c567650",
+    "source_order": 17,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-18",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "善反而不美",
+    "author": "南怀瑾",
+    "source_sha256": "6e52f732c4d22724e410ec08426f247512342aacb247c8fccfa572eaef35e54a",
+    "source_order": 18,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-19",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "有无相生",
+    "author": "南怀瑾",
+    "source_sha256": "0b73dffc92c82b9e061f0a4b09f474878cb24c46cb12d05a7eb0a3cd07a0b176",
+    "source_order": 19,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-20",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子背上历史的烂账",
+    "author": "南怀瑾",
+    "source_sha256": "e21e4e10d0a3eed1f6195adfd8a7d02c5d29738706f403d8a22755d34d6ea9e9",
+    "source_order": 20,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-21",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "流水行云永不居",
+    "author": "南怀瑾",
+    "source_sha256": "15389cec39ce04230d368f46e61b230b1a072322712a0a985c94bbed6a9f97f7",
+    "source_order": 21,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-22",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子薄视时贤",
+    "author": "南怀瑾",
+    "source_sha256": "2022b1f6bb08f99166a39a4381af9ead698eb0fdcf6c8f9880574da15caf041b",
+    "source_order": 22,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-23",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "贤与不贤的君子小人之辨",
+    "author": "南怀瑾",
+    "source_sha256": "7d3d2e7a4c8b6b36320a30177207ff72cec547d81b6c63b2fdc2692761ad4d02",
+    "source_order": 23,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-24",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "道家与法家的辨贤",
+    "author": "南怀瑾",
+    "source_sha256": "e48346793b61654d3df356e515c986c8f2ccc2412bc5acf0f728229a00394976",
+    "source_order": 24,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-25",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "现代化好人与老人的表扬法",
+    "author": "南怀瑾",
+    "source_sha256": "6bfa77e5c5f1db916417d3f5f28137d7f55bdf6306a5737a35813c7ea412e5e5",
+    "source_order": 25,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-26",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "盗机与哲学",
+    "author": "南怀瑾",
+    "source_sha256": "88ea7136a52df2c10a3f8cc09f779801db6bc093b3324be724489a3c9c4d223c",
+    "source_order": 26,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-27",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "历史上严禁工业科技发展的死结",
+    "author": "南怀瑾",
+    "source_sha256": "23023b8f38763a6cb78d86a5e5004ff7e99858fb065508879c2bd077af211005",
+    "source_order": 27,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-28",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "劫灰和人类的物质文明",
+    "author": "南怀瑾",
+    "source_sha256": "561083220ae2ba46b483ce4c07d34c777a4979b04f3159f06f65e9b3189bfa59",
+    "source_order": 28,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-29",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "世上无如人欲险",
+    "author": "南怀瑾",
+    "source_sha256": "2482c5405db49ea080a4f9885d330bf5c69299d341cd95fe6cfc2d275b992277",
+    "source_order": 29,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-30",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "虚心实腹与鼓气",
+    "author": "南怀瑾",
+    "source_sha256": "3df7ea8a9f748d24e3558acd028dc9f391e709e1aa2a119f13751a3ced77ec10",
+    "source_order": 30,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-31",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "道家虚心养气的真传",
+    "author": "南怀瑾",
+    "source_sha256": "ec64e08abca060b6a3c1a486d0b7180a89713f595b7a418cdf020d903f5897e4",
+    "source_order": 31,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-32",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "赵宋是再次的南北朝",
+    "author": "南怀瑾",
+    "source_sha256": "1793b955687fdb765b0e8ba69fe895a37fe431cee9597f0dcd8df13dd327fb67",
+    "source_order": 32,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-33",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "寇准的胆识",
+    "author": "南怀瑾",
+    "source_sha256": "75954978f48f3c475fbe627d92e29e477d6ee319ba2d972378fdfca9c06e19eb",
+    "source_order": 33,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-34",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "宋真宗贿赂宰相",
+    "author": "南怀瑾",
+    "source_sha256": "e58d694ac4dc9b1cd8a6434b6800f74a64b7a5b2295146b563278aa9a4e5f315",
+    "source_order": 34,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-35",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "道与存在不存在间",
+    "author": "南怀瑾",
+    "source_sha256": "ad5de389a72c03f4e62b51a5c81ebc4fb58859e6c3e19c2ce5115aa63591913f",
+    "source_order": 35,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-36",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "汉文帝、康熙、郭子仪",
+    "author": "南怀瑾",
+    "source_sha256": "511b73bfc4cd9dc9faf839437f569f02cc2a89a43db55d43e6fc1d4ea471bd7c",
+    "source_order": 36,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-37",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "郭子仪与鱼朝恩",
+    "author": "南怀瑾",
+    "source_sha256": "508d9d648cde07b973e4cf963730659596d06f3bf7ee0829a283b65021430e6f",
+    "source_order": 37,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-38",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "卢杞、李白与郭子仪",
+    "author": "南怀瑾",
+    "source_sha256": "9f1c83073e4291ff1050e6168b2339dbba6a9475593705bb4b721269e510ceca",
+    "source_order": 38,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-39",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "半个芋头 十年宰相",
+    "author": "南怀瑾",
+    "source_sha256": "ac6442e7e129b4c2b5b0d9031e9a8d40e68e3a73220d417cc886647b1e38f73d",
+    "source_order": 39,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-40",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "白衣山人——李泌",
+    "author": "南怀瑾",
+    "source_sha256": "d287e85f3ca1d738fa9907695b723a5d7122ff06f401d40f630ecd1e945b1170",
+    "source_order": 40,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-41",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "山人自有妙计",
+    "author": "南怀瑾",
+    "source_sha256": "4b6a6cb96cfa4684ea785d9e3662d08d885fd1d6c0b65ec188e9441c80461b69",
+    "source_order": 41,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-42",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "英雄退步学神仙",
+    "author": "南怀瑾",
+    "source_sha256": "ff68b6fda67d583dce0936d2b17d5531451e210fc6bb3863c3d3ca4e507765d1",
+    "source_order": 42,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-43",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "圣人与刍狗",
+    "author": "南怀瑾",
+    "source_sha256": "f57fb698c1e25f5df78fb764cab4aabbdb0a029f85ec43bae1bcf6e9da23e1fd",
+    "source_order": 43,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-44",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "正言若反",
+    "author": "南怀瑾",
+    "source_sha256": "ad4296f8be6aaee79dafdbe653845aabd413ef446ea956a47582902c4e4206c1",
+    "source_order": 44,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-45",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "风箱式的说话艺术",
+    "author": "南怀瑾",
+    "source_sha256": "96f5152db3be938c5b86f762f8d47920686922064f39cbf4f48dce27f4fccf46",
+    "source_order": 45,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-46",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "吹毛用了急须磨",
+    "author": "南怀瑾",
+    "source_sha256": "6b23899be73765c028df036bf82b4bd7f8981c145414b1a71dc1c8ce9a5fa56c",
+    "source_order": 46,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-47",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "人为神的守护人",
+    "author": "南怀瑾",
+    "source_sha256": "a7b70744f596e2bbfd1fd916f31a353545f233ff528a41ed8a4eb53f5b24f932",
+    "source_order": 47,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-48",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子的不自偷生",
+    "author": "南怀瑾",
+    "source_sha256": "8e74526d203f7fe45020db41165affda63fdb72a69c9369870bf5bead3d658d4",
+    "source_order": 48,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-49",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "水的人生艺术",
+    "author": "南怀瑾",
+    "source_sha256": "97557086f48aa602a6d42b6ccbf789a47b5c979d7eedbe074c42931b8dbbf68b",
+    "source_order": 49,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-50",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "富贵难保的反面文章",
+    "author": "南怀瑾",
+    "source_sha256": "d7cf8f03aecc04bb6271038a3030c5cb89e4d0b525c59506bfc91919c278d8a8",
+    "source_order": 50,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-51",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "中外历史上的悲剧",
+    "author": "南怀瑾",
+    "source_sha256": "a91441c4375731082bb7e900efcea03caaa050aa64a3fbb383f80631448db144",
+    "source_order": 51,
+    "paragraph_count": 18
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-52",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "进退存亡之际",
+    "author": "南怀瑾",
+    "source_sha256": "0a7e05fdb7374989d423fd11f5cdedd20f88b4ad32bb673c8230102ccc0373e4",
+    "source_order": 52,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-53",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "急流勇退的类型",
+    "author": "南怀瑾",
+    "source_sha256": "d8e97a5b66fe62b06e6e989cf3568dad119339ea704373de92462874c7f022be",
+    "source_order": 53,
+    "paragraph_count": 20
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-54",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "魂魄精神一担装",
+    "author": "南怀瑾",
+    "source_sha256": "7a68c3d5caa7579f153d1f2d229416227fb4769ffacdda37e9eb9608eaabba35",
+    "source_order": 54,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-55",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "养气与修心",
+    "author": "南怀瑾",
+    "source_sha256": "b0ffec3331bd09f4e1bff50dbd742e592cf301f0f551ae4a6a2d1c93e273eae0",
+    "source_order": 55,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-56",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "为政治国的哲学",
+    "author": "南怀瑾",
+    "source_sha256": "93908801c76a6f3b6380137b3e7c5b2ed98afe751cbedce87bdd72355b7f5fa3",
+    "source_order": 56,
+    "paragraph_count": 17
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-57",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "《老子他说》11章 三十辐共一毂",
+    "author": "南怀瑾",
+    "source_sha256": "4a3cb0b780eae23b479712b4615d4092b13ed6fa864a374dd4c52ed0ee32f999",
+    "source_order": 57,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-58",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "花花世界奈聋盲",
+    "author": "南怀瑾",
+    "source_sha256": "e3f7b854849b9ce29f5ac65a8e984a4373cc8354b313434bbc386833f46c2501",
+    "source_order": 58,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-59",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "宠辱谁能不动心",
+    "author": "南怀瑾",
+    "source_sha256": "3ec2c1f0dac64beb098fc9f4eeea2471c0c405118cc112dc0e97109a3d8dc6f8",
+    "source_order": 59,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-60",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "天下由来轻两臂",
+    "author": "南怀瑾",
+    "source_sha256": "6c72b1cd4bc9357d7ff3c4d477ab612f2d8e9586a33712516b745a94355472c5",
+    "source_order": 60,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-61",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "时空心物与道的体用",
+    "author": "南怀瑾",
+    "source_sha256": "97a5034737fe13bad815e1b14fc3c5fa9184d0208352d6f35070500d057d4b1e",
+    "source_order": 61,
+    "paragraph_count": 18
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-62",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子的“士”的内涵",
+    "author": "南怀瑾",
+    "source_sha256": "0e81596385bbd3de3aa325c8a2b3cbd5c0a7019b72c07c7a679412786ead6e93",
+    "source_order": 62,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-63",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "濯足浊流人自清",
+    "author": "南怀瑾",
+    "source_sha256": "954a65ea1c6a65e567c5807e61343214331d008faa88d8a97f4ff355c5c65cab",
+    "source_order": 63,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-64",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "动的哲学",
+    "author": "南怀瑾",
+    "source_sha256": "dfa467d5a0d9362c4dbeb625c0c6613ea950aa21889c30348f8369ee92e82cc9",
+    "source_order": 64,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-67",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "人生哲学与道的层面",
+    "author": "南怀瑾",
+    "source_sha256": "ef385e952c9deeed33467c5013ff627ab2a3d5e19556c7c6ffde9a1ed5217bbd",
+    "source_order": 67,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-68",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "忠臣孝子的伪装",
+    "author": "南怀瑾",
+    "source_sha256": "0f589aefdbe454154eaca0db0ea148693a408920808fad52355be1310bf0791f",
+    "source_order": 68,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-69",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "春秋两大名医——老子与孔子",
+    "author": "南怀瑾",
+    "source_sha256": "e4fa44733dec1630d1b1b174627340f02867dbc4547c692a865ea1fedfc94bff",
+    "source_order": 69,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-70",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "“王”“贼”并列的烂账",
+    "author": "南怀瑾",
+    "source_sha256": "e1daf25746b1332deeca27340e80da86cc08c0f96fd8a654eb0d1c7bc09d1b34",
+    "source_order": 70,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-71",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "唯大英雄能本色",
+    "author": "南怀瑾",
+    "source_sha256": "7d5ed66112d74dd292c1bf91272c9817eb1ca77f8ec46f39d5a6758350247515",
+    "source_order": 71,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-72",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "知识是烦恼的根源",
+    "author": "南怀瑾",
+    "source_sha256": "61b09f4f1cb134aced3055582f1d6441a8d9b4d1407a48bafd5cd9bc46aa7017",
+    "source_order": 72,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-73",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子素描修道者的人生",
+    "author": "南怀瑾",
+    "source_sha256": "5b98c8111f8ead82533f073a3308c2c2a648410c317f34570ef20ddb47202caa",
+    "source_order": 73,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-74",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "只是同流不下流",
+    "author": "南怀瑾",
+    "source_sha256": "e70160cb462843ff1938b47af8fecd1371b309489a0fd3535863592aae383ae9",
+    "source_order": 74,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-75",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子处世哲学的人证",
+    "author": "南怀瑾",
+    "source_sha256": "81c829a9812ea771b89f1aeb9b0e843dea44c3e320ec284863b571433d76752b",
+    "source_order": 75,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-76",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子的物是什么东西",
+    "author": "南怀瑾",
+    "source_sha256": "3f013ee9ff80936d5fc334a8139f7019381736ec56f81668367e0020ac8cc6b8",
+    "source_order": 76,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-77",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "春秋时代南北文学的境界",
+    "author": "南怀瑾",
+    "source_sha256": "42b6a45caf6b3e04d6b686397944d398471d3e68c8598587167536a933a02ae4",
+    "source_order": 77,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-78",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "此精不是那精",
+    "author": "南怀瑾",
+    "source_sha256": "dc41d7897f1b43329ba0dba26e05ce9ddc547cbc7fef6ee83671e521293fa653",
+    "source_order": 78,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-79",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "孟子的证道",
+    "author": "南怀瑾",
+    "source_sha256": "561903197d182cddaa671322a3a81ade00c04555efbf55b69ab3d09e1fbd1bdf",
+    "source_order": 79,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-80",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "曲直分明转一圈",
+    "author": "南怀瑾",
+    "source_sha256": "841938607ef74c3f3f6ec346e6426afacd73b41883258b2877c1b283afcffa5d",
+    "source_order": 80,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-81",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "尧的儿子，汉武帝的奶妈",
+    "author": "南怀瑾",
+    "source_sha256": "a9b737ce2c6da4ba3f1f385e2f4680797a330c0d177f74add8a024984b25a002",
+    "source_order": 81,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-82",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "刘备的淫具，齐景公的刽子手",
+    "author": "南怀瑾",
+    "source_sha256": "398b44d20c9147ee2d29865336714751f4b387185dba0683fb87d7f3c2f9016d",
+    "source_order": 82,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-83",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "枉则直的教育法",
+    "author": "南怀瑾",
+    "source_sha256": "a5da03cc99b486bf80acfa46e0cd2d97e02afadea771a0cc296dc02f8ff4c0ff",
+    "source_order": 83,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-84",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "狐狸、豹皮的吸引力",
+    "author": "南怀瑾",
+    "source_sha256": "63ccf3f972a5ca1ade3910955e0c07045ca3c5aa51954fa64e057ac2f2821227",
+    "source_order": 84,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-85",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "有了富贵，失去欢乐",
+    "author": "南怀瑾",
+    "source_sha256": "c4bc48629dcdaf8b784753578edf9ebda159ad00583066627da3c7bb2840753c",
+    "source_order": 85,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-86",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "四不的领导学",
+    "author": "南怀瑾",
+    "source_sha256": "62fff94dd7341507afd9dc0ffe5b688205a1a0f41de734391406ada2c3ddbeea",
+    "source_order": 86,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-87",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "这自然不是那自然",
+    "author": "南怀瑾",
+    "source_sha256": "bc06b3d27ea620098f2c39821e159d563f979baf300e2ea0f330eb8e18f9fd61",
+    "source_order": 87,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-88",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "非人力所及的因果变灭律",
+    "author": "南怀瑾",
+    "source_sha256": "ad0c97e748b808944ddf511776dc11a0442969b882d31f6154673a58fc43d28a",
+    "source_order": 88,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-89",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "企鹅的步伐，猩猩的醉舞",
+    "author": "南怀瑾",
+    "source_sha256": "36d1981709b22976b7a694764309a34df9e36e415b752bc83cb4bb19be3b427e",
+    "source_order": 89,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-90",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "投鞭断流的苻坚",
+    "author": "南怀瑾",
+    "source_sha256": "23fabf93de47f270ad00ca2d6b3ca7d43b3ec13b977a5720b6a28dd89fb76a93",
+    "source_order": 90,
+    "paragraph_count": 22
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-91",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "山泉绕屋知深浅",
+    "author": "南怀瑾",
+    "source_sha256": "2fe8de72769a5bd52f0afe757ed692106754b84dd84ec83c12a4f278c10b839c",
+    "source_order": 91,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-92",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "天下大老母",
+    "author": "南怀瑾",
+    "source_sha256": "45c1bcb60a0b9788a2add60e04109a6523c2332ece891f140a1571b2493a9b2a",
+    "source_order": 92,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-93",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "万道不离王道与人道",
+    "author": "南怀瑾",
+    "source_sha256": "417435da235dc0fb5daa68a63f282e72f6fce19cbf89a972e94df1bada0b01d0",
+    "source_order": 93,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-94",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "好不容易自然",
+    "author": "南怀瑾",
+    "source_sha256": "634e4e3a03bb9d4f34a4868323f72678a1e31d278773f72c8c3adeff1e34b2cf",
+    "source_order": 94,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-95",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "念天地之悠悠",
+    "author": "南怀瑾",
+    "source_sha256": "ad6846b18ec18704b5352d11a47cbecad697a35399c4179e5b4d932a8e9bc7db",
+    "source_order": 95,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-96",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "自然神仙",
+    "author": "南怀瑾",
+    "source_sha256": "c4df8ff0868b8dc09ec645f0abf8d84a4ced8bd3f6fa58e29e86eac534d6d9ce",
+    "source_order": 96,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-97",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "一肩挑尽古今愁",
+    "author": "南怀瑾",
+    "source_sha256": "0c69d6b7f2cdb54e06bee78f5caab0bc83ae04915fd00803cab77d5524d59bfd",
+    "source_order": 97,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-98",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "谁肯放下自私的包袱",
+    "author": "南怀瑾",
+    "source_sha256": "9c59f15b3da28f49f1d43c58e1377a46477a33bfa4ceffb51d83dfdaaa440b3b",
+    "source_order": 98,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-99",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "两臂重于天下",
+    "author": "南怀瑾",
+    "source_sha256": "b0bc7fc20c2a835afbed21277433a05dce4915980f8f3df1c72c2ba7e77dbacf",
+    "source_order": 99,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-100",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "超然轻重的历史故事",
+    "author": "南怀瑾",
+    "source_sha256": "d6f9fbccb21779da11735f17d40c1e7111ce791b40137644283950c7c142a8db",
+    "source_order": 100,
+    "paragraph_count": 21
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-101",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "不着痕迹的善行",
+    "author": "南怀瑾",
+    "source_sha256": "8b2d5a7c8b29518af0b2b480fe494abb4dc8377dd9ddddf45ba96fd2adf64894",
+    "source_order": 101,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-102",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "会说 会做 又会教",
+    "author": "南怀瑾",
+    "source_sha256": "435b15225bf14230ed90b2a5c35ca899ced1ae7e65c577583ef04014e1b427c2",
+    "source_order": 102,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-103",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "知阴阳乾坤善恶而后",
+    "author": "南怀瑾",
+    "source_sha256": "638f97ca8ed4fc82a91684de7294e5726ad63bbec8ab90bcf4ce2490bc9eae0d",
+    "source_order": 103,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-104",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "回复本来面目",
+    "author": "南怀瑾",
+    "source_sha256": "688154d2c3769bad74c75ba7d9fff53b192e2d8b7f892b6c8b749b4f863b8324",
+    "source_order": 104,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-105",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "生理 心理 行为三方面修养",
+    "author": "南怀瑾",
+    "source_sha256": "6e4a2308e509d71e86dc450cf929dab66b3603f27c953764b2cd88f114e37a8a",
+    "source_order": 105,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-106",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "私心取天下的后果",
+    "author": "南怀瑾",
+    "source_sha256": "bc6bb1342afb31473ded5a9173bc823836994534381f94cb2eda8e57b10a8209",
+    "source_order": 106,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-107",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "圣人的作为",
+    "author": "南怀瑾",
+    "source_sha256": "b6d55b4078d88db61dcea91b73cc09779a6463d35fbddaa2c07702c370ceb33a",
+    "source_order": 107,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-108",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子的军事哲学思想",
+    "author": "南怀瑾",
+    "source_sha256": "e721d2a9e642e0ea3fb4bf6097c5f1ab2234e442f774849415d7f21e1a92cbf5",
+    "source_order": 108,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-109",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "兵不血刃而取胜",
+    "author": "南怀瑾",
+    "source_sha256": "68ae98766d28846fb882aec26ccefb3ceccb95a4bb574332fd0d17ff202ff520",
+    "source_order": 109,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-110",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "为何以丧礼纪念胜利",
+    "author": "南怀瑾",
+    "source_sha256": "78bf87530f15f822842307cae00eef5bd9247aa960aaa931fa056a1025909d4b",
+    "source_order": 110,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-111",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "军事哲学的另一面观点",
+    "author": "南怀瑾",
+    "source_sha256": "ad1abe2d87555bb6e18bca978950dcc322cbcaee65e97fa2e5a48588c397d539",
+    "source_order": 111,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-112",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "楚庄王和周武王的道家思想",
+    "author": "南怀瑾",
+    "source_sha256": "0722cc116407234f540b6f84a7e391968a28af806b849d6cda73e26e88a9487d",
+    "source_order": 112,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-113",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "仁政重于武力",
+    "author": "南怀瑾",
+    "source_sha256": "d779a0264fafe458637ca884afc8e21336be436089450cd76d694ec97d93f818",
+    "source_order": 113,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-114",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "朴实无华的精神",
+    "author": "南怀瑾",
+    "source_sha256": "883f14a9c9aa0fe5c5c33175de308460182dc4d9ee200de86e2c5e0f514ec5a0",
+    "source_order": 114,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-115",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "自知之明 知人之智",
+    "author": "南怀瑾",
+    "source_sha256": "283cd6bf660d092a7485cb395e202337da1e5cfc3cae5b888aa17d792a3be93e",
+    "source_order": 115,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-116",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "什么是大，什么是小",
+    "author": "南怀瑾",
+    "source_sha256": "2a235be5b9f07c880a6b76b3ef11e2f708d0ea5e20ad5271cd6233186b2fa5ad",
+    "source_order": 116,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-117",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "掌握天地万象的法则",
+    "author": "南怀瑾",
+    "source_sha256": "b3d935d0f306877dace91c651d5ca417348bf70137b3248d55632c859fcd75f3",
+    "source_order": 117,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-119",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "从微细而明了重点",
+    "author": "南怀瑾",
+    "source_sha256": "f4dceac5e6ec7590560254036912ea28ddcee97a6b5578081f5ec663a2f0469f",
+    "source_order": 119,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-120",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "柔弱胜刚强",
+    "author": "南怀瑾",
+    "source_sha256": "dbce24835f12f1893336e26921a80577c1e72fe2b2f3bd838199bb6f7bbd770f",
+    "source_order": 120,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-121",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "无为而无所不为的道",
+    "author": "南怀瑾",
+    "source_sha256": "a8a69f50eb0fbd1bcb363fd6edc555939818e1dc419c31a29ac58517db0b331f",
+    "source_order": 121,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-122",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "天为 无欲 无名",
+    "author": "南怀瑾",
+    "source_sha256": "0c21fc500f9c6e728bcfffde13fb044a38465949167f6a77ff6d30dac840b7cf",
+    "source_order": 122,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-123",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "上德下德 上仁上义上礼",
+    "author": "南怀瑾",
+    "source_sha256": "070c6834e2f5201ee7ad48347f2b73e5bbf399faa068c5d674ef1634273b0b69",
+    "source_order": 123,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-124",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "德仁义礼失后该若何",
+    "author": "南怀瑾",
+    "source_sha256": "675f6337852cfd105232defb1d49fe5fc644b6d93534d1d5905bd267067377db",
+    "source_order": 124,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-125",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "得一与不二",
+    "author": "南怀瑾",
+    "source_sha256": "8d53158a20d7e107f66371a717c60f8e20d34d176a09f2e2baed6ce0796ab5fd",
+    "source_order": 125,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-126",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "从低下为基础的高贵",
+    "author": "南怀瑾",
+    "source_sha256": "6b32e09b95647a73dfc22930b426fe54b2d1e127ffb388787222f5966492b265",
+    "source_order": 126,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-127",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "反者道之动 弱者道之用",
+    "author": "南怀瑾",
+    "source_sha256": "44a5642e1f49a6b78b861e560c644a6f08a1aca0cab00d7f2c63ad3dbe92aec9",
+    "source_order": 127,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-128",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "三品闻道的人",
+    "author": "南怀瑾",
+    "source_sha256": "fc70c599c8a47f44c62e23883074f35d49fe3af8fa832e8a5aea24726b0ed26c",
+    "source_order": 128,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-129",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "黎明前的黑暗",
+    "author": "南怀瑾",
+    "source_sha256": "68acd44493fb1fe7ba023745bc674aee4afc6ac372d016dc64cfb86116b74952",
+    "source_order": 129,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-130",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "真正有修养的人",
+    "author": "南怀瑾",
+    "source_sha256": "d45c72cc6f110b2da0c3b9663e69f187cec15b3090f4d11e39c4a57a542e3533",
+    "source_order": 130,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-131",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "大器晚成 小时了了",
+    "author": "南怀瑾",
+    "source_sha256": "b19f78fa09ff6a5aecf218148e66859770e26e4c97276e1394922d34f098e4bf",
+    "source_order": 131,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-132",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "声音 形象 见道",
+    "author": "南怀瑾",
+    "source_sha256": "c0069f8ad8a06f12ae38a667a9cb26726da2bd42e72bf8faa5677475f9c5dee1",
+    "source_order": 132,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-133",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "一二三的奥秘",
+    "author": "南怀瑾",
+    "source_sha256": "ffa1f60ae5b5cc82c9b19df8bdc4bcdf4cd97679b5a81751530830e6eb013244",
+    "source_order": 133,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-134",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "自身阴阳须调和",
+    "author": "南怀瑾",
+    "source_sha256": "fe9d18d815fbc01712659a1686fe1e06f44f1bf6f8553000426e13243e6fffd8",
+    "source_order": 134,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-135",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "好恶与损益",
+    "author": "南怀瑾",
+    "source_sha256": "178c11d6512f12170f06ab3ec75aa38771e6cea4254f1fc1b0b5811d80084d9b",
+    "source_order": 135,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-136",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "过刚则易折",
+    "author": "南怀瑾",
+    "source_sha256": "f7546ced0b8317860ac2ece198a2faebdfbcd931071e659e45ca54a7a79397b1",
+    "source_order": 136,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-137",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "柔、水、空，无坚不摧",
+    "author": "南怀瑾",
+    "source_sha256": "061eca558399bf13e1593bbdd0feec8c0bc8a7ff4a74bf3b7cf1fd93f6c422f4",
+    "source_order": 137,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-138",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "人生最重要的是什么",
+    "author": "南怀瑾",
+    "source_sha256": "aaafea6544951ae150e747c5d79581aa5572a7ff2f6deb667bccb01f953f241a",
+    "source_order": 138,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-139",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "如何达到无为",
+    "author": "南怀瑾",
+    "source_sha256": "970e93fa0df84f76639c55cd2e70b2727897bb8fe81cf7862bbd85d33a46d669",
+    "source_order": 139,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-140",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "欲望造成祸乱",
+    "author": "南怀瑾",
+    "source_sha256": "44be580db95ac9ec30540b861e10d48457c5eab8acf7dc5424b6c758b0fc0f1c",
+    "source_order": 140,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-141",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "智慧的成就",
+    "author": "南怀瑾",
+    "source_sha256": "d9ea9a15438ab362cc79de87b3eed81282dcbc2317fe4d0617c307c4af147b19",
+    "source_order": 141,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-142",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "为学要加 修道要减",
+    "author": "南怀瑾",
+    "source_sha256": "3d5b0f92820dfeb1297fa7145ce6744d874f6a93e58cce7c5153b8998a1a4739",
+    "source_order": 142,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-143",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "圣人以道德行为得天下",
+    "author": "南怀瑾",
+    "source_sha256": "d99267fd38adf3df25d8485d7d6aed115549a7c14f434a86736cbcb97e3ae879",
+    "source_order": 143,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-144",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "圣人的菩萨心肠",
+    "author": "南怀瑾",
+    "source_sha256": "4e824d2a135aa2bb8e71170af6515588020c8dbae8d553e204b5a06437048026",
+    "source_order": 144,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-145",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "生死是什么",
+    "author": "南怀瑾",
+    "source_sha256": "68bfe32c5d7e531541c9b05993a59f4ef453a8c09fea1f0cad417e905c4f082c",
+    "source_order": 145,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-146",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "谁掌握生命的去留",
+    "author": "南怀瑾",
+    "source_sha256": "0d37749958dedf555a044425b7b9f6bf4e755c692ce0849544939dafe6e2e8e1",
+    "source_order": 146,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-147",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "善于摄生的神仙",
+    "author": "南怀瑾",
+    "source_sha256": "d7462227e723723f532f1f6797c910f13138b243cb962e8e3b7b9e5027a1ebd4",
+    "source_order": 147,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-148",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "摄生处世之道 四两拨千斤",
+    "author": "南怀瑾",
+    "source_sha256": "2c06565f91081bafb484a8621f2c601fa11126fd74639a048796f8fec36b495d",
+    "source_order": 148,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-149",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "道之尊，德之贵，不是乡愿",
+    "author": "南怀瑾",
+    "source_sha256": "638974acffce173c4381f0e19ab6045e749b67ec77082ededc5cce261da7ef8d",
+    "source_order": 149,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-150",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "天地自然的道德功效",
+    "author": "南怀瑾",
+    "source_sha256": "50fbb720701c787704b15e48e3a10d0711ebff76cf9f118b5623312d4c51ce45",
+    "source_order": 150,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-151",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "回归宇宙的根源——天下母",
+    "author": "南怀瑾",
+    "source_sha256": "88f07a15d9407cebd87e3fecd9cb221a8474fb5c28c2511a8829f96de255d346",
+    "source_order": 151,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-152",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "如何减少生命的消耗",
+    "author": "南怀瑾",
+    "source_sha256": "4f21da0f572943d264b5134e25ad40a0a91c4c3181957fd61396fc6bef47eb15",
+    "source_order": 152,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-153",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "接受布施的严重性",
+    "author": "南怀瑾",
+    "source_sha256": "f58769670947576674d5001215eb489fab7a862ac6cb8c785453e2cac99ac835",
+    "source_order": 153,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-154",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "爱抄小路取巧自利的人们",
+    "author": "南怀瑾",
+    "source_sha256": "d368776a0a6b0d60c2923829fe34b1a4a779f5812d26b99322057eb6f7728a9e",
+    "source_order": 154,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-155",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "善于把握生命的中心则不辍",
+    "author": "南怀瑾",
+    "source_sha256": "fc14de3ad8648b60b6bc56176cbc5c0ba206b4bcdb7ff740d045939f304d8e08",
+    "source_order": 155,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-156",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "身修 修家 修乡 修国 修天下",
+    "author": "南怀瑾",
+    "source_sha256": "c651a88c03a5fd9d7d1cb2de045389ef41c4c8db9b9cf270956d669b65029475",
+    "source_order": 156,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-157",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "从观身到观天下",
+    "author": "南怀瑾",
+    "source_sha256": "b504dfd5524e2ee049fe681ef6578552c470d2a975bfd63733d8292bc3572271",
+    "source_order": 157,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-158",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "生命如何走向结局",
+    "author": "南怀瑾",
+    "source_sha256": "d2c030a7c1e690f5e6daf32741f721295b51c6d68d5b9b932105f1c2c50d93b3",
+    "source_order": 158,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-159",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "纯厚自然的赤子",
+    "author": "南怀瑾",
+    "source_sha256": "f40e5ff0ce29060bfd728966f79a88b36a5febeb04d948d64b5f7444657f4931",
+    "source_order": 159,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-160",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "婴儿的精之至",
+    "author": "南怀瑾",
+    "source_sha256": "ad0b07743517d799e9fb1dfa6d4a910ef9a74170aa068d3e559191588fe56004",
+    "source_order": 160,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-161",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "保持气的平和",
+    "author": "南怀瑾",
+    "source_sha256": "2cbbd1138b8393f4493d8952cee1bb1abb219efc630df79352f51b946c51cd18",
+    "source_order": 161,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-162",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "生命来之不易",
+    "author": "南怀瑾",
+    "source_sha256": "7cb02972b79cbed92ace7b82f3a6a0d5493f922f8489db6e9bd55a5410ea743a",
+    "source_order": 162,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-163",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "先来后去的失命之灵",
+    "author": "南怀瑾",
+    "source_sha256": "aa6201293a09b852a574e9751a4a4c5c0f007bb0e1ec9a2818b1d1b6a123bf3f",
+    "source_order": 163,
+    "paragraph_count": 11
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-164",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "意识的形成",
+    "author": "南怀瑾",
+    "source_sha256": "12ce09471b053ef612acfb8bb5838776da4eccc7330df5a48b4acd2f245357d9",
+    "source_order": 164,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-166",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "养生处世该如何",
+    "author": "南怀瑾",
+    "source_sha256": "4ac820736b5b849e24425d14283e8c9c4132f163303505e8d8205f3483990394",
+    "source_order": 166,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-167",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "以正治国 以奇用兵",
+    "author": "南怀瑾",
+    "source_sha256": "da3b9e61fcc689ea3ac88d51b26d41b6f3ca103aee22e7354477348da3321ee0",
+    "source_order": 167,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-168",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "给日本公民的一封公开信",
+    "author": "南怀瑾",
+    "source_sha256": "58cbf71763f919d7d57f0cd6ffb631f3721c0bb5c712274a2a8593db1b934f83",
+    "source_order": 168,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-169",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "以正为奇 天下归心",
+    "author": "南怀瑾",
+    "source_sha256": "a29b0b901709adc7861e9b20494346ac66801ab19370a6231e7273bc50dd141d",
+    "source_order": 169,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-170",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "忌讳造成的影响",
+    "author": "南怀瑾",
+    "source_sha256": "5e2a1250c9c25c8fdfe08b1036b6284531bf22ebf49d80d7fdd8308f42dbe38a",
+    "source_order": 170,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-171",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "科技愈发达 精神愈昏扰",
+    "author": "南怀瑾",
+    "source_sha256": "4ce11675244c25424ddefa62ccc606de25709ff773acc0cfa4f5f3716e15cf81",
+    "source_order": 171,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-172",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "法令多 犯法的人更多",
+    "author": "南怀瑾",
+    "source_sha256": "8baef5d241f51f3b34286800a91507c46f3027982e6036ee97663501275f0fd3",
+    "source_order": 172,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-173",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "无为、好静、无事、无欲",
+    "author": "南怀瑾",
+    "source_sha256": "f635bdb6ef0e4d73c11994addd9b9872d1b28aefaeea3ecc70ee66df5f35c390",
+    "source_order": 173,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-174",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "对社会人民有益的领导",
+    "author": "南怀瑾",
+    "source_sha256": "da5c06597286299b40b6e83e99deff405744f8161badc1c72109153fbf4d1563",
+    "source_order": 174,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-175",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "宋太祖的理想和作风",
+    "author": "南怀瑾",
+    "source_sha256": "84d863b333cb1365386104d5039be2754ef0e86bcd97fe855b06ad4979327350",
+    "source_order": 175,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-176",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "铁面无私 包公又若何",
+    "author": "南怀瑾",
+    "source_sha256": "a318d938dc3a0d2cea7358ccc4262ac723ac70bb5764b472af1ba0ab659c811e",
+    "source_order": 176,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-177",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "铁面御史 潇洒沐春风",
+    "author": "南怀瑾",
+    "source_sha256": "207fe3b45748f901dcfbdc7dd9bc1153a8a323ab5523fe53e0be4de6278fca7c",
+    "source_order": 177,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-178",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "察见渊鱼的颜回",
+    "author": "南怀瑾",
+    "source_sha256": "6796dde78db80de18c6707f6ed2dbec0a9db7031ab04267c2b924d92d0bfeafa",
+    "source_order": 178,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-179",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "是偏是正 祸福相倚伏",
+    "author": "南怀瑾",
+    "source_sha256": "1cf0f723ec1ada5ed8ab79a5eeb351977e5195fe1db7afbc41b164d53d633e30",
+    "source_order": 179,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-180",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "令人生厌的修行人",
+    "author": "南怀瑾",
+    "source_sha256": "c466958089809934de342fd8bd4633b1a5b758e6f1e6d71ae700c18cc9678f6f",
+    "source_order": 180,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-181",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "谁最悭吝",
+    "author": "南怀瑾",
+    "source_sha256": "3c45a0b1f6aaf246906f4349d8c9c7cc8e63484a5baf5f94dfd54e8c10ca26d0",
+    "source_order": 181,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-182",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "节省精气神的消耗",
+    "author": "南怀瑾",
+    "source_sha256": "f1204a7b11dc921e43ceeb8c23b4079b6c07432309903f6d504eaad7fbae459e",
+    "source_order": 182,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-183",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "简化及善行积德的重要",
+    "author": "南怀瑾",
+    "source_sha256": "40729608c8bd585d84c1776d33b79e2d3f4d6ef5b9bfc390af0dcaff163469c7",
+    "source_order": 183,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-184",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "啬的真正精神",
+    "author": "南怀瑾",
+    "source_sha256": "6b59e279c2f93808912352202f39749cc7827956ac4cb34e5bdc4cbf44bdf8d9",
+    "source_order": 184,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-185",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "什么是长生久视",
+    "author": "南怀瑾",
+    "source_sha256": "2166c84e07bfd86ed3077e8198645eea967b243efa4020f3761a0953b2894960",
+    "source_order": 185,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-186",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "烹小鲜的道理安在",
+    "author": "南怀瑾",
+    "source_sha256": "1dc0340cb6f9d86fc6d06942031ae3e61e2058eb8b2b6c7243957a84060a54b3",
+    "source_order": 186,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-188",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "水唯能下方成海",
+    "author": "南怀瑾",
+    "source_sha256": "6eff00f148e05776296153f0ff78b531b7b382aee6c663242ff3a70efee8f677",
+    "source_order": 188,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-189",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "风尘三侠的故事",
+    "author": "南怀瑾",
+    "source_sha256": "f3b1972156ce08f499b185d96faa5af5f9c9d49fcc1ff1308650d13662012f4a",
+    "source_order": 189,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-190",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "大小相处之道",
+    "author": "南怀瑾",
+    "source_sha256": "bf7850f4119e64ff67e37419e94d029ed70f7f3b4f0153b8e39885df719d7d2a",
+    "source_order": 190,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-191",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "好人要救助，坏人更要救助",
+    "author": "南怀瑾",
+    "source_sha256": "57ee6c292731bb916e9f6b7c59c0749497c1b8f9e3c1404834c346bf2ca841b5",
+    "source_order": 191,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-192",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "财富名位比不上坐进此道",
+    "author": "南怀瑾",
+    "source_sha256": "470c65d263ecd3f44a7bc982c441e63db07e414b49dccb5624c4432276bf8825",
+    "source_order": 192,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-193",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "如何消免自己的罪过",
+    "author": "南怀瑾",
+    "source_sha256": "0849374335362f18c612a0e4ead043b740644aa704f2e2781fd0e11a62361fb8",
+    "source_order": 193,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-194",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "平淡处事的一流人才",
+    "author": "南怀瑾",
+    "source_sha256": "c784723f85fbf71913f414d6ee09b61355642306165586cbfdef861bb832cb35",
+    "source_order": 194,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-195",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "对人生茫然的人们",
+    "author": "南怀瑾",
+    "source_sha256": "a57f0f6c2aca36ee7fc2aecc148d2cc56ffcaabf590c524930191d1b30c84341",
+    "source_order": 195,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-196",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "以德报怨的问题",
+    "author": "南怀瑾",
+    "source_sha256": "90d927e53f2c28af834bd0eef8b39494ac16c5a58480eb85e217b00b3411019d",
+    "source_order": 196,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-197",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "大事不难，小事不易",
+    "author": "南怀瑾",
+    "source_sha256": "48e1f36ff49d08b77db98e921b97e245eb841fa8dcc37b7432381d175a4dd282",
+    "source_order": 197,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-198",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "谁是轻诺寡信的人",
+    "author": "南怀瑾",
+    "source_sha256": "84ab36906cd59ed948cd1e082ddb335072f521d674305059566fbe02da8bbd78",
+    "source_order": 198,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-199",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "宜未雨而绸缪 勿临渴而掘井",
+    "author": "南怀瑾",
+    "source_sha256": "ea534e86f3df709c12a8c20f0e969486b532c5fa53b6968e1b746e45ca106098",
+    "source_order": 199,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-200",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "闲棋一着",
+    "author": "南怀瑾",
+    "source_sha256": "0f0aee4b8fb21106a142b88fd37565b2862cd44b49fdc9df781a4565a2369e93",
+    "source_order": 200,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-201",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "万丈高楼从地起",
+    "author": "南怀瑾",
+    "source_sha256": "c6cabbb74ad2ab26e3f0ae61a3bb56c015f4cc603359ea23b3ff1ffe08cefe77",
+    "source_order": 201,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-202",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "智慧 从势 待时",
+    "author": "南怀瑾",
+    "source_sha256": "48cdd6ae07f2f977fed684fe704f8c4d32fd55f13d70366f189e59379d80f90b",
+    "source_order": 202,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-203",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "将成功时反致失败",
+    "author": "南怀瑾",
+    "source_sha256": "f54efaed591507eb21fc6aede42ee953b361272c2fec653213c8d89d39669b5f",
+    "source_order": 203,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-204",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "圣人的欲望是什么",
+    "author": "南怀瑾",
+    "source_sha256": "60cd5c61c99a42cc1fec4ff5da5dda729749db74c4252459cf97007f0ed2d85e",
+    "source_order": 204,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-205",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "智与愚",
+    "author": "南怀瑾",
+    "source_sha256": "e0435dcdc01291583d4c37de282f1165dccb5edaa5a647f14d19c50ebb33bbec",
+    "source_order": 205,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-206",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "从商鞅到刘邦到文景之治",
+    "author": "南怀瑾",
+    "source_sha256": "6ddacec205165401db5c7f9227b4ca4e45c30eca40bdaa66d726eae6ed21d166",
+    "source_order": 206,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-207",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "了解楷式 知道变通",
+    "author": "南怀瑾",
+    "source_sha256": "16764b41cd5a5d2276a20753d305ed669f456b30133e2c1e0ecf6d2938d42839",
+    "source_order": 207,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-208",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "谦和慈悲又不争的领导",
+    "author": "南怀瑾",
+    "source_sha256": "046a6c89476ace7e2009aecf22306abba9f07d4e764ed0df81cdfa1c4b4b9797",
+    "source_order": 208,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-209",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子的道与三宝",
+    "author": "南怀瑾",
+    "source_sha256": "7571395dcbabeb01260375964ec0f9669f51e0508698a89e324b1a42744f50ca",
+    "source_order": 209,
+    "paragraph_count": 21
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-210",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "打胜仗的主帅",
+    "author": "南怀瑾",
+    "source_sha256": "682a762bbf5a9593b0f7edf6ba0b6e2f475b60e6c1218f2c7121c4b7a31ed1a2",
+    "source_order": 210,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-211",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "武士的精神和修养",
+    "author": "南怀瑾",
+    "source_sha256": "c77a4d4221186484e16ebd15b88ce483677c153cdca0558a0b69abac2a35f327",
+    "source_order": 211,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-212",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "从静制动 借力使力",
+    "author": "南怀瑾",
+    "source_sha256": "79b9cd4f30b03b4feb94f84952ee5c690d30b15674f3bcac86df2891a2b609c7",
+    "source_order": 212,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-213",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "兵法中的道德应用",
+    "author": "南怀瑾",
+    "source_sha256": "c1f681ccc66b027baf38f38d151b65a1d299afa01d3a9bd2ec55c6d07b24258a",
+    "source_order": 213,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-214",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "不战而胜 轻敌致祸",
+    "author": "南怀瑾",
+    "source_sha256": "472b572cfc49e49a912c8ed80e05c6f12ff3fe4e124f83ca90910380ebdf20bc",
+    "source_order": 214,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-215",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "平凡的老子，难懂的老子",
+    "author": "南怀瑾",
+    "source_sha256": "e5f3f913cb57b46a626be63da5247d920fe9e639f19282ee63a1f98dd850add3",
+    "source_order": 215,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-216",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子与佛教的因明",
+    "author": "南怀瑾",
+    "source_sha256": "56bdaba8eedd0d21355ab6b4a8c5a8513887e7756ce68e3a37e34f7f691f63c9",
+    "source_order": 216,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-217",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "无知的智慧是什么",
+    "author": "南怀瑾",
+    "source_sha256": "d7388db8137e54851cc5bd6e8ffd25fd61154d73d7f3d68068eb218c2789a11e",
+    "source_order": 217,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-218",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子《参同契》隐士",
+    "author": "南怀瑾",
+    "source_sha256": "cebdecba73d0bb59ec3840f9b64746db71a344fb69d5d47cb93e18e31b7b8cf4",
+    "source_order": 218,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-219",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "强不知为知 毛病真大",
+    "author": "南怀瑾",
+    "source_sha256": "595b1dad00f79b022082bd02ea85737aa4425c0d851519262d08473b6a3f6fb1",
+    "source_order": 219,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-220",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "装聋作哑 自在无争",
+    "author": "南怀瑾",
+    "source_sha256": "7845237e28416beb47a042356141cd367e96a9feb6159d4a0199cef4390ad549",
+    "source_order": 220,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-221",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "不愚弄社会人民 自爱而不自贵",
+    "author": "南怀瑾",
+    "source_sha256": "f720d035f69de2a03ab69915d258933d72adc9b0a83b6b72397329e906f9e65c",
+    "source_order": 221,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-222",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "敢与不敢的勇气",
+    "author": "南怀瑾",
+    "source_sha256": "04b4e40a0853f7f1b3a0e29f676f1fbe5255a33f4173ad820ebf0e1b8a5d3fcb",
+    "source_order": 222,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-223",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "那股冥冥不可知的力量",
+    "author": "南怀瑾",
+    "source_sha256": "3e8388a25ad055b347e86cdd9043a695537059e879b593190a7db71cfb06284d",
+    "source_order": 223,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-224",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "如何做到不争、不言、不召",
+    "author": "南怀瑾",
+    "source_sha256": "09b855ff6152adf7e710335314ca66ad4970db75b3c3593398f037b760e0989e",
+    "source_order": 224,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-225",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "一切都是自己的作为",
+    "author": "南怀瑾",
+    "source_sha256": "9d8f5a89a7cd2602d9302ce39b24b5d2f61d63a79f79f32656b2d4a6f5dd6c98",
+    "source_order": 225,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-226",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "生杀大权不可取代",
+    "author": "南怀瑾",
+    "source_sha256": "7e3ffc0a53923dca5c8e5f16c276f0f0122c82b501fa3a3dcf3996f9f0377eda",
+    "source_order": 226,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-227",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "老子所处的悲惨时代",
+    "author": "南怀瑾",
+    "source_sha256": "ffefc0b49bfd0b489241f6fbc6c0d3a2fc77b02f1199bbe3f5bc7524e4e5e587",
+    "source_order": 227,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-228",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "要活就要软 想死就强硬",
+    "author": "南怀瑾",
+    "source_sha256": "87573c509d90c71ed755cc9c3040844292956d0c08a8d2bb66b809ad9db66b9d",
+    "source_order": 228,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-229",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "什么是天之道",
+    "author": "南怀瑾",
+    "source_sha256": "db504d48d169435ccf5687add0156d0abd55bdef0fb413a132ce4f43032a54b9",
+    "source_order": 229,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-230",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "你能做到以柔克刚吗",
+    "author": "南怀瑾",
+    "source_sha256": "be118ea676a520d6b0bfff41cf3974540401b3db47b70d0d442b3dc21765c1cb",
+    "source_order": 230,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-231",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "把握原则 不求至善尽美",
+    "author": "南怀瑾",
+    "source_sha256": "bb3b560d6141732c70352575c6161cb03bce30f3c8352025ed76280deb650c3e",
+    "source_order": 231,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-232",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "小国寡民就是地方自治",
+    "author": "南怀瑾",
+    "source_sha256": "f4f0ebc733445d8d34319626bddef06ff8d4fdb559c80d8eda11af0e7e4efbc9",
+    "source_order": 232,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-laozi-tashuo-chapter-233",
+    "book_id": "nhj-laozi-tashuo",
+    "person_id": "nan-huaijin",
+    "title": "不美言、不争辩、不积财、多付出、效法天地",
+    "author": "南怀瑾",
+    "source_sha256": "18234030d41b144904a18b6e6dc75f07600f368c5ac451002ab4a5bc5ac5f656",
+    "source_order": 233,
+    "paragraph_count": 4
+  },
+  {
     "id": "sy-05-01-002",
     "book_id": "sy-05-01",
     "person_id": "sheng-yen",
