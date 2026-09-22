@@ -1,4 +1,5 @@
 import { getArticle, getArticleSummary, mastersTextVersion, type MastersArticle } from './catalog';
+import { parseArticleFigures } from './articleFigures';
 
 export type FetchArticleBody = (id: string, version: string) => Promise<unknown>;
 
@@ -35,7 +36,10 @@ export function createArticleReader(fetchBody: FetchArticleBody) {
           row.paragraph_roles.some(role => !['paragraph', 'question', 'answer'].includes(role)))) {
         throw new Error('Invalid paragraph roles');
       }
-      const article = row as unknown as MastersArticle;
+      // Inline figures and tables are part of the pinned body: reject a malformed list instead of
+      // rendering a version reviewed against different bytes.
+      const figures = parseArticleFigures(row.figures, row.paragraphs.length);
+      const article = { ...(row as unknown as MastersArticle), ...(figures.length ? { figures } : {}) };
       cache.set(cacheKey, article);
       if (cache.size > 12) cache.delete(cache.keys().next().value!);
       return article;
