@@ -20,3 +20,14 @@ export function routeFromUrl(raw, allowedRoutes, canonicalRoutes = {}) {
 }
 export const downloadUrl = 'https://www.buddhachat.online/download';
 export const appHomeUrl = 'buddhachat://l/home';
+
+// Only the canonical Stage site should invoke the separately installed Stage app.
+export function appUrlForPage(appUrl, pageUrl) {
+  try {
+    if (new URL(pageUrl).origin !== 'https://staging.buddhachat.online') return appUrl;
+    const target = new URL(appUrl);
+    if (target.protocol !== 'buddhachat:') return appUrl;
+    target.protocol = 'buddhachat-staging:';
+    return target.toString();
+  } catch { return appUrl; }
+}

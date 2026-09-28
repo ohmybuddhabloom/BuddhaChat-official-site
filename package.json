@@ -15,7 +15,7 @@
     "preview:status": "node scripts/preview-status.mjs",
     "preview:stop": "node scripts/preview-stop.mjs",
     "publish:android-apk": "node scripts/publish-android-apk.mjs",
-    "check:masters": "node scripts/check-masters-routing.mjs && node scripts/build-masters-h5.mjs --verify-only && node --test scripts/masters-source.check.mjs"
+    "check:masters": "node scripts/check-masters-routing.mjs && node scripts/build-masters-h5.mjs --verify-only && node --test scripts/masters-source.check.mjs scripts/masters-app-return.check.cjs"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.5",
