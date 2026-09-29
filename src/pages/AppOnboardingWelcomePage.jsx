@@ -525,7 +525,9 @@ function QuestsScreen({ copy, onBack, onContinue, onSelectQuest, completedCount 
         })}
       </div>
       <div className="onboarding-zen-tip">
-        <img src="/app-onboarding/zen-tip-landscape.webp" alt={copy.quests.tipAlt} loading="lazy" decoding="async" />
+        <div className="onboarding-zen-tip__art" aria-hidden="true">
+          <img src="/app-onboarding/zen-tip-landscape.webp" alt="" loading="lazy" decoding="async" />
+        </div>
         <span><b>{copy.quests.tipTitle}</b>{copy.quests.tipBody}</span>
       </div>
       <PrimaryButton disabled={busy} aria-busy={busy} onClick={onContinue}>{copy.quests.continue}</PrimaryButton>
