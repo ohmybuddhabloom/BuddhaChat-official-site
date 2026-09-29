@@ -80,8 +80,64 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }) })))
 
-    expect(screen.getByRole('heading', { name: '阿弥陀佛' })).toBeInTheDocument()
-    expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en-US')
+    expect(screen.getByRole('heading', { name: 'Amitabha Buddha' })).toBeInTheDocument()
+    expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en')
+  })
+
+  it('renders English onboarding copy from the native bootstrap locale', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: { initialStep: 'welcome', payload: {}, locale: 'en', capabilities: { emailOtp: true, guest: true } },
+    }))
+
+    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue with email' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue as guest' })).toBeInTheDocument()
+    expect(screen.queryByText('开启你的清净之旅')).not.toBeInTheDocument()
+    expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Continue with email' }))
+    const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
+
+    expect(screen.getByRole('heading', { name: 'Continue with email' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Email address')).toBeInTheDocument()
+  })
+
+  it('renders Traditional Chinese labels while keeping native answer IDs stable', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: { initialStep: 'wish_survey_1', payload: {}, locale: 'zh-Hant', capabilities: {} },
+    }))
+
+    fireEvent.click(screen.getByRole('button', { name: '智慧' }))
+    fireEvent.click(screen.getByRole('button', { name: '清明' }))
+    fireEvent.click(screen.getByRole('button', { name: '繼續' }))
+    const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'wish_survey_1_completed')
+
+    expect(screen.getByRole('heading', { name: /告訴我們/ })).toBeInTheDocument()
+    expect(persist.payload.data).toEqual({ wishes: ['wisdom'], supportType: 'clarity' })
+    expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'zh-Hant')
   })
 
   it('hides direct onboarding in the App and waits for one native ACK before opening email', async () => {
@@ -539,7 +595,7 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     expect(screen.getByRole('heading', { name: '佛的临在' })).toBeInTheDocument()
-    expect(screen.getByRole('alert')).toHaveTextContent('保存失败')
+    expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
     fireEvent.click(screen.getByRole('button', { name: '重试' }))
     expect(bridgeMessages(postMessage).filter(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'presence_transition')).toHaveLength(2)
   })
@@ -833,7 +889,7 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
-    expect(screen.getByRole('alert')).toHaveTextContent('登录已取消')
+    expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
   })
 
