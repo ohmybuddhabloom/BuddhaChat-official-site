@@ -9,6 +9,7 @@ import App from '/src/pages/AppOnboardingWelcomePage.jsx'
 const params = new URLSearchParams(location.search)
 const locale = params.get('locale') || 'en'
 const step = params.get('step') || 'welcome'
+const scenario = params.get('scenario') || ''
 // Local fixture only. No authentication, persistence, or network-backed native actions.
 window.ReactNativeWebView = { postMessage(raw) {
   const message = JSON.parse(raw)
@@ -25,21 +26,46 @@ createRoot(document.getElementById('root')).render(React.createElement(App))
 const run = document.createElement('button')
 run.textContent = 'Check layout'
 run.style.cssText = 'position:fixed;top:0;right:0;z-index:9999;font-size:10px'
-run.onclick = () => {
+const waitFrame = () => new Promise(resolve => requestAnimationFrame(resolve))
+async function driveScenario() {
+  if (scenario !== 'overview-back-welcome') return
+  if (document.querySelector('.onboarding-screen--welcome')) return
+  window.dispatchEvent(new Event('buddhachat:native-back'))
+  for (let index = 0; index < 6 && !document.querySelector('.onboarding-screen--welcome'); index += 1) {
+    await waitFrame()
+  }
+}
+run.onclick = async () => {
+  await driveScenario()
+  // Measure settled controls, after finite entrance animations finish.
+  await Promise.all(document.getAnimations().filter(animation =>
+    animation.effect?.getComputedTiming().iterations !== Infinity
+  ).map(animation => animation.finished.catch(() => {})))
   const welcome = document.querySelector('.onboarding-screen--welcome')
-  if (welcome && /auto|scroll/.test(getComputedStyle(welcome).overflowY)) welcome.scrollTop = welcome.scrollHeight
+  const scroller = document.querySelector('.onboarding-welcome-scroll') || welcome
+  if (scroller && /auto|scroll/.test(getComputedStyle(scroller).overflowY)) scroller.scrollTop = scroller.scrollHeight
   requestAnimationFrame(() => {
     const targets = [...document.querySelectorAll('.onboarding-actions button,.onboarding-legal a')]
     const root = welcome?.getBoundingClientRect()
     const legal = document.querySelector('.onboarding-legal')?.getBoundingClientRect()
     const guest = targets.find(node => /guest|游客|訪客/.test(node.textContent))?.getBoundingClientRect()
+    const visibleBottom = root ? Math.min(root.bottom, innerHeight) : innerHeight
+    const guestBottomClearance = guest ? visibleBottom - guest.bottom : null
+    const legalBottomClearance = legal ? visibleBottom - legal.bottom : null
     const art = document.querySelector('.onboarding-zen-tip__art')
     const img = art?.querySelector('img')
     const visibleFraction = art && img ? art.clientWidth / img.getBoundingClientRect().width : null
-    const result = { locale, step, viewport: [innerWidth, innerHeight],
-      scrollTop: welcome?.scrollTop,
-      guestReachable: guest ? guest.top >= root.top && guest.bottom <= root.bottom : null,
-      legalReachable: legal ? legal.top >= root.top && legal.bottom <= root.bottom : null,
+    const result = { locale, step, scenario, viewport: [innerWidth, innerHeight],
+      activeStep: document.querySelector('.onboarding-screen')?.dataset.step || (welcome ? 'welcome' : null),
+      scrollOwner: scroller?.className || null,
+      scrollTop: scroller?.scrollTop,
+      guestReachable: guest && root ? guest.top >= root.top && guest.bottom <= visibleBottom : null,
+      legalReachable: legal && root ? legal.top >= root.top && legal.bottom <= visibleBottom : null,
+      guestBottomClearance,
+      legalBottomClearance,
+      welcomeBottomClearance: guestBottomClearance !== null && legalBottomClearance !== null
+        ? guestBottomClearance >= 8 && legalBottomClearance >= 8
+        : null,
       // Original bitmap lettering starts beyond 50%; only the landscape's left 43% may show.
       artworkTextExcluded: visibleFraction === null ? false : visibleFraction <= 0.44,
       horizontalOverflow: document.documentElement.scrollWidth > innerWidth }

@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Onboarding viewport matrix</title></head><body>
+<button id="run">Run welcome checks</button><pre id="results">Not run</pre><div id="frames" style="display:flex;gap:12px;flex-wrap:wrap"></div>
+<script>
+const cases=['en','zh-Hans','zh-Hant'].flatMap(locale=>[647,760].map(height=>({locale,height})));
+for(const item of cases){const frame=document.createElement('iframe');frame.title=`${item.locale} 375x${item.height}`;frame.width='375';frame.height=item.height;frame.src=`./onboarding-layout.html?embedded=1&locale=${item.locale}&step=quests&scenario=overview-back-welcome`;document.querySelector('#frames').append(frame);}
+document.querySelector('#run').onclick=()=>{for(const frame of document.querySelectorAll('iframe'))frame.contentDocument.querySelector('button[style]').click();setTimeout(()=>{document.querySelector('#results').textContent=JSON.stringify([...document.querySelectorAll('iframe')].map(f=>({title:f.title,result:JSON.parse(f.contentDocument.body.dataset.layoutResult||'null')})),null,2)},2000)};
+</script></body></html>

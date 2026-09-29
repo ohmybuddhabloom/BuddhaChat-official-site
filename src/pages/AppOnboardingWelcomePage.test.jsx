@@ -89,6 +89,8 @@ describe('AppOnboardingWelcomePage', () => {
     const postMessage = vi.fn()
     window.ReactNativeWebView = { postMessage }
     window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    const pushState = vi.spyOn(window.history, 'pushState')
+    const replaceState = vi.spyOn(window.history, 'replaceState')
     render(<AppOnboardingWelcomePage />)
     const ready = bridgeMessages(postMessage)[0]
 
@@ -105,6 +107,8 @@ describe('AppOnboardingWelcomePage', () => {
     expect(screen.getByRole('button', { name: 'Continue as guest' })).toBeInTheDocument()
     expect(screen.queryByText('开启你的清净之旅')).not.toBeInTheDocument()
     expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en')
+    pushState.mockClear()
+    replaceState.mockClear()
 
     fireEvent.click(screen.getByRole('button', { name: 'Continue with email' }))
     const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
@@ -112,6 +116,8 @@ describe('AppOnboardingWelcomePage', () => {
 
     expect(screen.getByRole('heading', { name: 'Continue with email' })).toBeInTheDocument()
     expect(screen.getByLabelText('Email address')).toBeInTheDocument()
+    expect(pushState).not.toHaveBeenCalled()
+    expect(replaceState).not.toHaveBeenCalled()
   })
 
   it('renders Traditional Chinese labels while keeping native answer IDs stable', async () => {
@@ -1145,6 +1151,184 @@ describe('AppOnboardingWelcomePage', () => {
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: back.event, id: back.id, payload: {} }))
     expect(screen.getByRole('heading', { name: /出生信息会加深/ })).toBeInTheDocument()
+  })
+
+  it('keeps embedded forward and back navigation out of browser history until native ACKs', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    const replaceState = vi.spyOn(window.history, 'replaceState')
+    const pushState = vi.spyOn(window.history, 'pushState')
+    const historyBack = vi.spyOn(window.history, 'back')
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'welcome',
+        payload: {},
+        locale: 'en',
+        capabilities: { emailOtp: true, guest: true },
+      },
+    }))
+
+    replaceState.mockClear()
+    pushState.mockClear()
+    historyBack.mockClear()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Continue with email' }))
+    const emailPersist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    expect(emailPersist?.payload.data).toEqual({})
+    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(replaceState).not.toHaveBeenCalled()
+    expect(pushState).not.toHaveBeenCalled()
+    expect(historyBack).not.toHaveBeenCalled()
+
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailPersist.event, id: emailPersist.id, payload: {} }))
+    expect(screen.getByRole('heading', { name: 'Continue with email' })).toBeInTheDocument()
+    expect(pushState).not.toHaveBeenCalled()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Back' }))
+    const welcomePersist = bridgeMessages(postMessage).filter(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'welcome').at(-1)
+    expect(welcomePersist?.payload.data).toEqual({})
+    expect(screen.getByRole('heading', { name: 'Continue with email' })).toBeInTheDocument()
+    expect(replaceState).not.toHaveBeenCalled()
+    expect(pushState).not.toHaveBeenCalled()
+    expect(historyBack).not.toHaveBeenCalled()
+
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: welcomePersist.event, id: welcomePersist.id, payload: {} }))
+    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(replaceState).not.toHaveBeenCalled()
+    expect(pushState).not.toHaveBeenCalled()
+    expect(historyBack).not.toHaveBeenCalled()
+  })
+
+  it('keeps standalone web onboarding history replace, push, and back semantics', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    window.history.replaceState({}, '', '/app/onboarding/v1')
+    const replaceState = vi.spyOn(window.history, 'replaceState')
+    const pushState = vi.spyOn(window.history, 'pushState')
+    const historyBack = vi.spyOn(window.history, 'back').mockImplementation(() => {
+      window.dispatchEvent(new PopStateEvent('popstate', { state: { onboardingStep: 'welcome', onboardingDepth: 0 } }))
+    })
+    render(<AppOnboardingWelcomePage />)
+
+    expect(replaceState).toHaveBeenCalledWith({ onboardingStep: 'welcome', onboardingDepth: 0 }, '')
+
+    fireEvent.click(screen.getByRole('button', { name: '开始探索' }))
+    expect(pushState).toHaveBeenCalledWith({ onboardingStep: 'quests', onboardingDepth: 1 }, '')
+    expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '返回' }))
+    expect(historyBack).toHaveBeenCalledOnce()
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+  })
+
+  it('does not auto-persist or advance after embedded birthdate bootstrap', async () => {
+    vi.useFakeTimers()
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'birthdate',
+        payload: { wishes: ['emotional_peace'], supportType: 'listening' },
+        locale: 'zh-Hans',
+        capabilities: {},
+      },
+    }))
+    await act(async () => { await vi.advanceTimersByTimeAsync(20_000) })
+
+    expect(document.querySelector('.onboarding-screen--standard')).toHaveAttribute('data-step', 'birthdate')
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
+  })
+
+  it('does not auto-persist or advance after embedded wish-two bootstrap', async () => {
+    vi.useFakeTimers()
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'wish_survey_2',
+        payload: {
+          wishes: ['emotional_peace'],
+          supportType: 'listening',
+          birthdate: '1990-06-01',
+          birthTimeIncluded: false,
+          birthTime: null,
+        },
+        locale: 'zh-Hans',
+        capabilities: {},
+      },
+    }))
+    await act(async () => { await vi.advanceTimersByTimeAsync(20_000) })
+
+    expect(document.querySelector('.onboarding-screen--standard')).toHaveAttribute('data-step', 'wish-two')
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
+  })
+
+  it('returns from embedded overview to the English welcome controls after native back', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    const pushState = vi.spyOn(window.history, 'pushState')
+    const replaceState = vi.spyOn(window.history, 'replaceState')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'quests',
+        payload: {},
+        locale: 'en',
+        capabilities: { emailOtp: true, appleSignIn: true, googleSignIn: true, guest: true },
+      },
+    }))
+
+    expect(screen.getByRole('heading', { name: /Your clear path/ })).toBeInTheDocument()
+    pushState.mockClear()
+    replaceState.mockClear()
+
+    act(() => window.dispatchEvent(new Event('buddhachat:native-back')))
+    const back = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'welcome')
+    expect(back?.payload.data).toEqual({})
+    expect(screen.getByRole('heading', { name: /Your clear path/ })).toBeInTheDocument()
+
+    await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: back.event, id: back.id, payload: {} }))
+
+    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(document.querySelector('.onboarding-welcome-scroll')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue with email' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue with Apple' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue with Google' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue as guest' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Terms of Service' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Privacy Policy' })).toBeInTheDocument()
+    expect(pushState).not.toHaveBeenCalled()
+    expect(replaceState).not.toHaveBeenCalled()
   })
 
   it('persists the first survey entry before leaving quests', async () => {

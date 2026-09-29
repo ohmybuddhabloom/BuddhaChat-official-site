@@ -285,7 +285,19 @@
 .onboarding-note--gold { margin: 17px 0; background: #fff3d2; color: #80621f; }
 
 /* Welcome */
-.onboarding-screen--welcome { display: grid; grid-template-rows: minmax(310px, 54dvh) auto; overflow-y: auto; overscroll-behavior: contain; }
+.onboarding-screen--welcome { display: grid; grid-template-rows: minmax(0, 1fr); overflow: hidden; }
+
+.onboarding-welcome-scroll {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(310px, 54dvh) auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.onboarding-welcome-scroll::-webkit-scrollbar { display: none; }
 
 .onboarding-welcome-hero {
   --hero-x: 0px;
@@ -626,10 +638,11 @@
 }
 
 @media (max-height: 720px) {
-  .onboarding-screen--welcome { grid-template-rows: 292px auto; overflow-y: auto; }
-  .onboarding-welcome-content { gap: 9px; padding-top: 12px; }
-  .onboarding-welcome-content .onboarding-heading h1 { font-size: 28px; }
+  .onboarding-welcome-scroll { grid-template-rows: minmax(220px, 40dvh) auto; }
+  .onboarding-welcome-content { gap: 8px; padding-top: 10px; padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 18px)); }
+  .onboarding-welcome-content .onboarding-heading h1 { font-size: 27px; }
   .onboarding-button { min-height: 47px; }
+  .onboarding-screen--welcome .onboarding-button { min-height: 46px; }
   .onboarding-heading h1 { font-size: 27px; }
   .onboarding-heading { padding-bottom: 12px; }
   .onboarding-flow-header { min-height: 54px; }
@@ -651,7 +664,7 @@
 }
 
 @media (max-height: 640px) {
-  .onboarding-screen--welcome { grid-template-rows: minmax(190px, 42dvh) auto; }
+  .onboarding-welcome-scroll { grid-template-rows: minmax(190px, 42dvh) auto; }
   .onboarding-welcome-content { padding-bottom: max(18px, env(safe-area-inset-bottom)); }
 
   .onboarding-email__brand { margin: 10px 0 8px; }
