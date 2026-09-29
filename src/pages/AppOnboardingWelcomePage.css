@@ -285,7 +285,7 @@
 .onboarding-note--gold { margin: 17px 0; background: #fff3d2; color: #80621f; }
 
 /* Welcome */
-.onboarding-screen--welcome { display: grid; grid-template-rows: minmax(310px, 54dvh) auto; }
+.onboarding-screen--welcome { display: grid; grid-template-rows: minmax(310px, 54dvh) auto; overflow-y: auto; overscroll-behavior: contain; }
 
 .onboarding-welcome-hero {
   --hero-x: 0px;
@@ -423,9 +423,11 @@
 .onboarding-quest.is-active > b { background: var(--ob-gold); color: #fff; }
 .onboarding-quest.is-completed > b { background: #f0d98b; color: #6c5117; }
 .onboarding-quest:disabled { opacity: .62; }
-.onboarding-zen-tip { position: relative; height: 70px; overflow: hidden; margin: 12px 0; border-radius: 15px; }
-.onboarding-zen-tip img { width: 100%; height: 100%; object-fit: cover; opacity: .42; }
-.onboarding-zen-tip span { position: absolute; inset: 0; display: grid; align-content: center; gap: 3px; padding-left: 18px; color: #55483d; font-size: 11px; }
+.onboarding-zen-tip { position: relative; min-height: 70px; overflow: hidden; margin: 12px 0; border-radius: 15px; background: #f4ead8; }
+.onboarding-zen-tip__art { position: absolute; inset: 0 auto 0 0; width: 30%; overflow: hidden; }
+/* Only the bitmap's left landscape is decorative; its baked-in English stays outside the crop. */
+.onboarding-zen-tip__art img { width: 235%; max-width: none; height: 100%; object-fit: fill; opacity: .7; }
+.onboarding-zen-tip span { position: relative; display: grid; align-content: center; min-height: 70px; gap: 3px; padding: 10px 12px 10px calc(30% + 12px); color: #55483d; font-size: 11px; }
 
 /* Surveys */
 .onboarding-survey .onboarding-heading { padding-top: 4px; }

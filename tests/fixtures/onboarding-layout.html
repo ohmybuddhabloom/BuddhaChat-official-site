@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>Onboarding layout regression</title></head>
+<body style="margin:0"><div id="root"></div>
+<script type="module">
+import '/src/index.css'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from '/src/pages/AppOnboardingWelcomePage.jsx'
+const params = new URLSearchParams(location.search)
+const locale = params.get('locale') || 'en'
+const step = params.get('step') || 'welcome'
+// Local fixture only. No authentication, persistence, or network-backed native actions.
+window.ReactNativeWebView = { postMessage(raw) {
+  const message = JSON.parse(raw)
+  const reply = message.event === 'bridge.ready'
+    ? { v: 1, type: 'bootstrap', event: 'bridge.bootstrap', id: message.id,
+        payload: { locale, initialStep: step, payload: {}, capabilities: {
+          guest: true, emailOtp: true, appleSignIn: true, googleSignIn: true,
+        } } }
+    : { v: 1, type: 'ack', event: message.event, id: message.id, payload: {} }
+  document.body.dataset.lastNativeAction = message.event
+  setTimeout(() => window.dispatchEvent(new MessageEvent('message', { data: JSON.stringify(reply) })), 0)
+} }
+createRoot(document.getElementById('root')).render(React.createElement(App))
+const run = document.createElement('button')
+run.textContent = 'Check layout'
+run.style.cssText = 'position:fixed;top:0;right:0;z-index:9999;font-size:10px'
+run.onclick = () => {
+  const welcome = document.querySelector('.onboarding-screen--welcome')
+  if (welcome && /auto|scroll/.test(getComputedStyle(welcome).overflowY)) welcome.scrollTop = welcome.scrollHeight
+  requestAnimationFrame(() => {
+    const targets = [...document.querySelectorAll('.onboarding-actions button,.onboarding-legal a')]
+    const root = welcome?.getBoundingClientRect()
+    const legal = document.querySelector('.onboarding-legal')?.getBoundingClientRect()
+    const guest = targets.find(node => /guest|游客|訪客/.test(node.textContent))?.getBoundingClientRect()
+    const art = document.querySelector('.onboarding-zen-tip__art')
+    const img = art?.querySelector('img')
+    const visibleFraction = art && img ? art.clientWidth / img.getBoundingClientRect().width : null
+    const result = { locale, step, viewport: [innerWidth, innerHeight],
+      scrollTop: welcome?.scrollTop,
+      guestReachable: guest ? guest.top >= root.top && guest.bottom <= root.bottom : null,
+      legalReachable: legal ? legal.top >= root.top && legal.bottom <= root.bottom : null,
+      // Original bitmap lettering starts beyond 50%; only the landscape's left 43% may show.
+      artworkTextExcluded: visibleFraction === null ? false : visibleFraction <= 0.44,
+      horizontalOverflow: document.documentElement.scrollWidth > innerWidth }
+    document.body.dataset.layoutResult = JSON.stringify(result)
+    run.textContent = 'Check layout'
+  })
+}
+document.body.append(run)
+</script></body></html>

@@ -78,3 +78,16 @@ describe('localized native bootstrap across the complete flow', () => {
     expect(shape(ONBOARDING_COPY['zh-Hant'])).toEqual(shape(ONBOARDING_COPY['zh-Hans']))
   })
 })
+
+describe('localized zen tip artwork', () => {
+  it.each(['en', 'zh-Hans', 'zh-Hant'])('%s keeps one readable tip and a separate decorative landscape', locale => {
+    const { container } = boot(locale, 'quests')
+    const tip = container.querySelector('.onboarding-zen-tip')
+    const art = tip.querySelector('.onboarding-zen-tip__art')
+    expect(art).toHaveAttribute('aria-hidden', 'true')
+    expect(art.querySelector('img')).toHaveAttribute('alt', '')
+    expect(tip.querySelectorAll('b')).toHaveLength(1)
+    expect(tip.textContent).toContain(ONBOARDING_COPY[locale].quests.tipTitle)
+    expect(tip.textContent).toContain(ONBOARDING_COPY[locale].quests.tipBody)
+  })
+})
