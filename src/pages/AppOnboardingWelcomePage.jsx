@@ -329,54 +329,56 @@ function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onLegal, emb
 
   return (
     <section className="onboarding-screen onboarding-screen--welcome" aria-labelledby="onboarding-welcome-title">
-      <div
-        ref={heroRef}
-        className="onboarding-welcome-hero"
-        data-motion-sequence="welcome"
-        onPointerMove={handlePointerMove}
-        onPointerLeave={() => {
-          heroRef.current?.style.setProperty('--hero-x', '0px')
-          heroRef.current?.style.setProperty('--hero-y', '0px')
-        }}
-      >
-        <div className="onboarding-welcome-hero__glow" data-motion-beat="glow" aria-hidden="true" />
-        <img
-          className="onboarding-welcome-hero__image"
-          src="/app-onboarding/welcome-hero.webp"
-          alt={copy.welcome.heroAlt}
-          fetchPriority="high"
-          decoding="async"
-          data-motion-beat="visual"
-        />
-        <div className="onboarding-welcome-hero__veil" data-motion-beat="veil" aria-hidden="true" />
-        <LotusMark className="onboarding-welcome-hero__lotus" />
-        <div className="onboarding-light-dust" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
-      </div>
-
-      <div className="onboarding-welcome-content" data-motion-sequence="welcome-copy">
-        <Heading
-          motionBeat="copy"
-          title={<span id="onboarding-welcome-title">{copy.welcome.title}</span>}
-          subtitle={copy.welcome.subtitle}
-        />
-        <div className="onboarding-actions" data-motion-beat="actions">
-          {!embedded ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onBegin}>{copy.welcome.begin}</PrimaryButton> : null}
-          {!embedded || capabilities.emailOtp ? (
-            <SecondaryButton disabled={busy} onClick={onEmail}>
-              <img src="/app-onboarding/email-icon.svg" alt="" aria-hidden="true" />
-              {copy.welcome.email}
-            </SecondaryButton>
-          ) : null}
-          {embedded && capabilities.appleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('apple')}>{copy.welcome.apple}</SecondaryButton> : null}
-          {embedded && capabilities.googleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('google')}>{copy.welcome.google}</SecondaryButton> : null}
-          {!embedded || capabilities.guest ? <SecondaryButton disabled={busy} onClick={onGuest}>{copy.welcome.guest}</SecondaryButton> : null}
+      <div className="onboarding-welcome-scroll">
+        <div
+          ref={heroRef}
+          className="onboarding-welcome-hero"
+          data-motion-sequence="welcome"
+          onPointerMove={handlePointerMove}
+          onPointerLeave={() => {
+            heroRef.current?.style.setProperty('--hero-x', '0px')
+            heroRef.current?.style.setProperty('--hero-y', '0px')
+          }}
+        >
+          <div className="onboarding-welcome-hero__glow" data-motion-beat="glow" aria-hidden="true" />
+          <img
+            className="onboarding-welcome-hero__image"
+            src="/app-onboarding/welcome-hero.webp"
+            alt={copy.welcome.heroAlt}
+            fetchPriority="high"
+            decoding="async"
+            data-motion-beat="visual"
+          />
+          <div className="onboarding-welcome-hero__veil" data-motion-beat="veil" aria-hidden="true" />
+          <LotusMark className="onboarding-welcome-hero__lotus" />
+          <div className="onboarding-light-dust" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
         </div>
-        <p className="onboarding-legal" data-motion-beat="legal">
-          {copy.welcome.legalPrefix}
-          <a href="https://legal.buddhachat.online/terms" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'terms')}>{copy.welcome.terms}</a>
-          {copy.welcome.legalJoin}
-          <a href="https://legal.buddhachat.online/privacy" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'privacy')}>{copy.welcome.privacy}</a>
-        </p>
+
+        <div className="onboarding-welcome-content" data-motion-sequence="welcome-copy">
+          <Heading
+            motionBeat="copy"
+            title={<span id="onboarding-welcome-title">{copy.welcome.title}</span>}
+            subtitle={copy.welcome.subtitle}
+          />
+          <div className="onboarding-actions" data-motion-beat="actions">
+            {!embedded ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onBegin}>{copy.welcome.begin}</PrimaryButton> : null}
+            {!embedded || capabilities.emailOtp ? (
+              <SecondaryButton disabled={busy} onClick={onEmail}>
+                <img src="/app-onboarding/email-icon.svg" alt="" aria-hidden="true" />
+                {copy.welcome.email}
+              </SecondaryButton>
+            ) : null}
+            {embedded && capabilities.appleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('apple')}>{copy.welcome.apple}</SecondaryButton> : null}
+            {embedded && capabilities.googleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('google')}>{copy.welcome.google}</SecondaryButton> : null}
+            {!embedded || capabilities.guest ? <SecondaryButton disabled={busy} onClick={onGuest}>{copy.welcome.guest}</SecondaryButton> : null}
+          </div>
+          <p className="onboarding-legal" data-motion-beat="legal">
+            {copy.welcome.legalPrefix}
+            <a href="https://legal.buddhachat.online/terms" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'terms')}>{copy.welcome.terms}</a>
+            {copy.welcome.legalJoin}
+            <a href="https://legal.buddhachat.online/privacy" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'privacy')}>{copy.welcome.privacy}</a>
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -1058,8 +1060,9 @@ export default function AppOnboardingWelcomePage() {
   }, [guardian.id])
 
   useEffect(() => {
+    if (embedded) return
     window.history.replaceState({ onboardingStep: initialStep.current, onboardingDepth: 0 }, '')
-  }, [])
+  }, [embedded])
 
   useEffect(() => {
     if (embedded) {
@@ -1088,10 +1091,11 @@ export default function AppOnboardingWelcomePage() {
 
   const setPayload = (patch) => setPayloadState((current) => ({ ...current, ...patch }))
   const go = (next, nextDirection = 'forward') => {
-    const nextDepth = historyDepth.current + 1
-    historyDepth.current = nextDepth
     setDirection(nextDirection)
     setStep(next)
+    if (embedded) return
+    const nextDepth = historyDepth.current + 1
+    historyDepth.current = nextDepth
     window.history.pushState({ onboardingStep: next, onboardingDepth: nextDepth }, '')
   }
 
@@ -1103,7 +1107,6 @@ export default function AppOnboardingWelcomePage() {
       }, () => {
         setDirection('back')
         setStep(previous)
-        window.history.replaceState({ onboardingStep: previous, onboardingDepth: historyDepth.current }, '')
       })
       return
     }
