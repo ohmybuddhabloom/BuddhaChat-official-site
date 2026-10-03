@@ -21,7 +21,7 @@ async function probeDatabase(env, fetchImpl) {
   if (!supabaseUrl || !serviceRoleKey) return false
 
   try {
-    const response = await fetchImpl(`${supabaseUrl}/rest/v1/admin_settings?select=key&limit=1`, {
+    const response = await fetchImpl(`${supabaseUrl}/rest/v1/release_batches?select=id&limit=1`, {
       method: 'GET',
       headers: {
         apikey: serviceRoleKey,
@@ -45,7 +45,7 @@ export async function getReleaseHealth({
     environment,
     supabaseHost: hostOf(env.SUPABASE_URL),
     expectedSupabaseHost: String(env.RELEASE_EXPECTED_SUPABASE_HOST ?? '').trim().toLowerCase(),
-    releaseControlPlane: 'admin_settings:v1',
+    releaseControlPlane: 'release_batches:v2',
   }
   const checks = {
     environmentMatches: ['staging', 'production'].includes(environment),
