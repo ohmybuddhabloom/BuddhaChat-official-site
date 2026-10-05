@@ -864,7 +864,45 @@ describe('AppOnboardingWelcomePage', () => {
     expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
   })
 
-  it('stays on welcome when native sign-in is cancelled', async () => {
+  it('quietly stays on welcome when native sign-in reports typed cancellation', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'welcome',
+        payload: {},
+        locale: 'zh-Hans',
+        capabilities: { googleSignIn: true },
+      },
+    }))
+
+    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
+    await act(async () => sendNativeMessage({
+      v: 1,
+      type: 'error',
+      event: auth.event,
+      id: auth.id,
+      payload: { code: 'auth_cancelled', message: '登录已取消', retryable: false },
+    }))
+
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
+    expect(screen.getByRole('button', { name: '使用 Google 继续' })).toBeEnabled()
+    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
+  })
+
+  it('keeps retry visible when native sign-in reports the legacy cancellation failure', async () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
     window.ReactNativeWebView = { postMessage }
@@ -897,6 +935,43 @@ describe('AppOnboardingWelcomePage', () => {
     expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
     expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
+    fireEvent.click(screen.getByRole('button', { name: '重试' }))
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
+  })
+
+  it('does not swallow auth_cancelled errors from non-auth actions', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1,
+      type: 'bootstrap',
+      event: 'bridge.bootstrap',
+      id: ready.id,
+      payload: {
+        initialStep: 'welcome',
+        payload: {},
+        locale: 'zh-Hans',
+        capabilities: { emailOtp: true },
+      },
+    }))
+
+    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
+    await act(async () => sendNativeMessage({
+      v: 1,
+      type: 'error',
+      event: persist.event,
+      id: persist.id,
+      payload: { code: 'auth_cancelled', message: 'Unexpected cancel', retryable: true },
+    }))
+
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
+    expect(bridgeMessages(postMessage).filter(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')).toHaveLength(1)
   })
 
   it('waits for native guest ACK without showing the standalone completion screen', async () => {

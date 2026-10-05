@@ -993,6 +993,10 @@ export default function AppOnboardingWelcomePage() {
       await onAck(response)
       retryAction.current = null
     } catch (error) {
+      if (event === 'auth.sign_in' && error?.code === 'auth_cancelled') {
+        retryAction.current = null
+        return
+      }
       if (mounted.current) setBridgeError(getBridgeErrorMessage(error, copy))
     } finally {
       actionPending.current = false
