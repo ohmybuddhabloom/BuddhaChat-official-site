@@ -989,7 +989,16 @@ export default function AppOnboardingWelcomePage() {
     setPendingAction(true)
     setBridgeError('')
     try {
-      const response = await requestNative(event, requestPayload)
+      let response
+      try {
+        response = await requestNative(event, requestPayload)
+      } catch (error) {
+        if (event === 'auth.sign_in' && error?.code === 'auth_cancelled') {
+          retryAction.current = null
+          return
+        }
+        throw error
+      }
       await onAck(response)
       retryAction.current = null
     } catch (error) {
