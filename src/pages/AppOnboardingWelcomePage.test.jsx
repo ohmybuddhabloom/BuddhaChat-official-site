@@ -939,6 +939,41 @@ describe('AppOnboardingWelcomePage', () => {
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
   })
 
+  it.each(['auth_cancelled', 'action_failed'])('keeps post-auth persistence failure %s visible and retryable', async (code) => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    const postMessage = vi.fn()
+    window.ReactNativeWebView = { postMessage }
+    window.history.replaceState({}, '', '/app/onboarding/v1?embedded=1')
+    render(<AppOnboardingWelcomePage />)
+    const ready = bridgeMessages(postMessage)[0]
+    act(() => sendNativeMessage({
+      v: 1, type: 'bootstrap', event: 'bridge.bootstrap', id: ready.id,
+      payload: {
+        initialStep: 'welcome', payload: {}, locale: 'zh-Hans',
+        capabilities: { googleSignIn: true },
+      },
+    }))
+
+    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
+    await act(async () => sendNativeMessage({
+      v: 1, type: 'ack', event: auth.event, id: auth.id,
+      payload: { authenticated: true },
+    }))
+    const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
+    expect(persist.payload).toEqual({ step: 'quests', data: {} })
+    await act(async () => sendNativeMessage({
+      v: 1, type: 'error', event: persist.event, id: persist.id,
+      payload: { code, message: 'Persistence failed', retryable: true },
+    }))
+
+    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
+    expect(screen.getByRole('button', { name: '使用 Google 继续' })).toBeEnabled()
+    fireEvent.click(screen.getByRole('button', { name: '重试' }))
+    expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
+  })
+
   it('does not swallow auth_cancelled errors from non-auth actions', async () => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     const postMessage = vi.fn()
