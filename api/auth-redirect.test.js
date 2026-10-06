@@ -17,7 +17,7 @@ function createResponse() {
 }
 
 describe('api/auth-redirect', () => {
-  it('redirects to Zentube login with a same-origin absolute return URL', () => {
+  it('redirects legacy login to the shared account page with a same-origin return URL', () => {
     const res = createResponse()
 
     handler(
@@ -34,7 +34,7 @@ describe('api/auth-redirect', () => {
     expect(res.statusCode).toBe(307)
     expect(res.headers['Cache-Control']).toBe('no-store')
     expect(res.headers.Location).toBe(
-      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2Fsutra',
+      'https://www.buddhachat.online/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2Fsutra',
     )
   })
 
@@ -53,7 +53,7 @@ describe('api/auth-redirect', () => {
     )
 
     expect(res.headers.Location).toBe(
-      'https://www.buddhachat.online/videos/auth/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
+      'https://www.buddhachat.online/login?returnUrl=https%3A%2F%2Fwww.buddhachat.online%2F',
     )
   })
 
@@ -73,6 +73,23 @@ describe('api/auth-redirect', () => {
       expect(new URL(res.headers.Location).searchParams.get('returnUrl')).toBe(
         returnUrl,
       )
+    }
+  })
+
+  it('keeps candidate login and its return on staging', () => {
+    const res = createResponse()
+    handler({ url: '/auth/login?returnUrl=/music/', headers: { host: 'staging.buddhachat.online' } }, res, { env: { VERCEL_TARGET_ENV: 'staging' } })
+    const target = new URL(res.headers.Location)
+    expect(target.origin).toBe('https://staging.buddhachat.online')
+    expect(target.pathname).toBe('/login')
+    expect(target.searchParams.get('returnUrl')).toBe('https://staging.buddhachat.online/music/')
+  })
+
+  it('rejects backslash redirects, userinfo and cross-environment return targets', () => {
+    for (const returnUrl of ['/\\evil.example/path', 'https://user@www.buddhachat.online/sutra/', 'https://staging.buddhachat.online/sutra/']) {
+      const res = createResponse()
+      handler({ url: `/auth/login?returnUrl=${encodeURIComponent(returnUrl)}`, headers: { host: 'www.buddhachat.online', 'x-forwarded-host': 'evil.example' } }, res, { env: { VERCEL_TARGET_ENV: 'production' } })
+      expect(new URL(res.headers.Location).searchParams.get('returnUrl')).toBe('https://www.buddhachat.online/')
     }
   })
 })

@@ -34,6 +34,9 @@ jobs:
       - name: Enforce backend-only Production approval
         run: npm run check:release-policy
 
+      - name: Enforce Staging-only Vercel automation
+        run: node --test scripts/vercel-ignore-build.node-test.mjs
+
       - name: Lint source
         run: npx eslint src
 

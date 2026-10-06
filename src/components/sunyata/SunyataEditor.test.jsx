@@ -13,8 +13,31 @@ vi.mock('../../lib/journalAssetStore.js', () => ({
 
 function noop() {}
 
+function withoutEditorPreviewImages(scene) {
+  for (const phone of scene.appShowcase.phones) {
+    phone.imageSrc = ''
+  }
+
+  for (const item of scene.journal.items) {
+    item.cardUrl = ''
+    item.backgroundUrl = ''
+  }
+
+  scene.visual.imageSrc = ''
+
+  for (const item of scene.donation.gallery) {
+    item.imageSrc = ''
+  }
+
+  return scene
+}
+
+function getEditorControl(container, label) {
+  return container.querySelector(`[aria-label="${label}"]`)
+}
+
 function renderEditor(overrides = {}) {
-  const scene = createSceneSnapshot()
+  const scene = withoutEditorPreviewImages(createSceneSnapshot())
   const updateNavLogo = vi.fn()
   const updateNavLink = vi.fn()
   const updateHero = vi.fn()
@@ -39,7 +62,7 @@ function renderEditor(overrides = {}) {
   const onReset = vi.fn()
   const onResponsiveProfileChange = vi.fn()
 
-  render(
+  const result = render(
     <SunyataEditor
       editorOpen
       onToggle={noop}
@@ -73,6 +96,7 @@ function renderEditor(overrides = {}) {
   )
 
   return {
+    container: result.container,
     updateNavLogo,
     updateNavLink,
     updateHero,
@@ -101,41 +125,41 @@ function renderEditor(overrides = {}) {
 
 describe('SunyataEditor', () => {
   it('restores the full editable panel with previous core controls and new content controls', () => {
-    renderEditor()
+    const { container } = renderEditor()
 
-    expect(screen.getByLabelText('品牌名称')).toBeInTheDocument()
-    expect(screen.getByLabelText('首屏标题')).toBeInTheDocument()
-    expect(screen.getByLabelText('佛像大小')).toBeInTheDocument()
-    expect(screen.getByLabelText('期刊遮罩颜色')).toBeInTheDocument()
-    expect(screen.getAllByLabelText('卡片 1 标题')).toHaveLength(2)
-    expect(screen.getByLabelText('视觉图地址')).toBeInTheDocument()
-    expect(screen.getByLabelText('视觉图左右（%）')).toBeInTheDocument()
-    expect(screen.getByLabelText('佛像羽化强度')).toBeInTheDocument()
-    expect(screen.getByLabelText('固定回复内容')).toBeInTheDocument()
-    expect(screen.getByLabelText('展示标题')).toBeInTheDocument()
-    expect(screen.getByLabelText('手机 1 图片')).toBeInTheDocument()
-    expect(screen.getByLabelText('捐助主标题')).toBeInTheDocument()
-    expect(screen.getByLabelText('捐助导语')).toBeInTheDocument()
-    expect(screen.getByLabelText('左栏宽度（%）')).toBeInTheDocument()
-    expect(screen.getByLabelText('捐助图 1 图片')).toBeInTheDocument()
-    expect(screen.getByLabelText('版权第一行')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '上移 对话页' })).toBeInTheDocument()
-  }, 15000)
+    expect(getEditorControl(container, '品牌名称')).toBeInTheDocument()
+    expect(getEditorControl(container, '首屏标题')).toBeInTheDocument()
+    expect(getEditorControl(container, '佛像大小')).toBeInTheDocument()
+    expect(getEditorControl(container, '期刊遮罩颜色')).toBeInTheDocument()
+    expect(container.querySelectorAll('[aria-label="卡片 1 标题"]')).toHaveLength(2)
+    expect(getEditorControl(container, '视觉图地址')).toBeInTheDocument()
+    expect(getEditorControl(container, '视觉图左右（%）')).toBeInTheDocument()
+    expect(getEditorControl(container, '佛像羽化强度')).toBeInTheDocument()
+    expect(getEditorControl(container, '固定回复内容')).toBeInTheDocument()
+    expect(getEditorControl(container, '展示标题')).toBeInTheDocument()
+    expect(getEditorControl(container, '手机 1 图片')).toBeInTheDocument()
+    expect(getEditorControl(container, '捐助主标题')).toBeInTheDocument()
+    expect(getEditorControl(container, '捐助导语')).toBeInTheDocument()
+    expect(getEditorControl(container, '左栏宽度（%）')).toBeInTheDocument()
+    expect(getEditorControl(container, '捐助图 1 图片')).toBeInTheDocument()
+    expect(getEditorControl(container, '版权第一行')).toBeInTheDocument()
+    expect(getEditorControl(container, '上移 对话页')).toBeInTheDocument()
+  })
 
   it('updates section visibility and order from the layout controls', () => {
-    const { updateSectionOrder, updateSectionVisibility } = renderEditor()
+    const { container, updateSectionOrder, updateSectionVisibility } = renderEditor()
 
-    fireEvent.click(screen.getByRole('button', { name: '下移 第一屏首屏' }))
+    fireEvent.click(getEditorControl(container, '下移 第一屏首屏'))
     expect(updateSectionOrder).toHaveBeenCalledWith('hero', 'down')
 
-    fireEvent.click(screen.getByRole('checkbox', { name: '显示 三张卡片' }))
+    fireEvent.click(getEditorControl(container, '显示 三张卡片'))
     expect(updateSectionVisibility).toHaveBeenCalledWith('cards', false)
   })
 
   it('writes responsive profile-aware offsets for quote placement', () => {
-    const { updateQuote } = renderEditor()
+    const { container, updateQuote } = renderEditor()
 
-    fireEvent.change(screen.getByLabelText('引文 X（%）'), {
+    fireEvent.change(getEditorControl(container, '引文 X（%）'), {
       target: { value: '6.5' },
     })
 
@@ -143,9 +167,9 @@ describe('SunyataEditor', () => {
   })
 
   it('writes profile-aware horizontal offsets for the visual image', () => {
-    const { updateVisual } = renderEditor()
+    const { container, updateVisual } = renderEditor()
 
-    fireEvent.change(screen.getByLabelText('视觉图左右（%）'), {
+    fireEvent.change(getEditorControl(container, '视觉图左右（%）'), {
       target: { value: '-8.5' },
     })
 
@@ -153,9 +177,9 @@ describe('SunyataEditor', () => {
   })
 
   it('updates donation copy fields', () => {
-    const { updateDonation } = renderEditor()
+    const { container, updateDonation } = renderEditor()
 
-    fireEvent.change(screen.getByLabelText('捐助导语'), {
+    fireEvent.change(getEditorControl(container, '捐助导语'), {
       target: { value: 'A quieter payment copy.' },
     })
 
@@ -163,9 +187,9 @@ describe('SunyataEditor', () => {
   })
 
   it('updates donation layout fields', () => {
-    const { updateDonationLayout } = renderEditor()
+    const { container, updateDonationLayout } = renderEditor()
 
-    fireEvent.change(screen.getByLabelText('图卡圆角'), {
+    fireEvent.change(getEditorControl(container, '图卡圆角'), {
       target: { value: '32' },
     })
 
@@ -173,9 +197,9 @@ describe('SunyataEditor', () => {
   })
 
   it('updates donation gallery content fields', () => {
-    const { updateDonationGalleryItem } = renderEditor()
+    const { container, updateDonationGalleryItem } = renderEditor()
 
-    fireEvent.change(screen.getByLabelText('捐助图 1 标题'), {
+    fireEvent.change(getEditorControl(container, '捐助图 1 标题'), {
       target: { value: 'Golden Mala' },
     })
 
@@ -183,8 +207,8 @@ describe('SunyataEditor', () => {
   })
 
   it('stores an uploaded journal image as a project asset path', async () => {
-    const { updateJournalItem } = renderEditor()
-    const input = screen.getByLabelText('卡片 1 前景图 上传')
+    const { container, updateJournalItem } = renderEditor()
+    const input = getEditorControl(container, '卡片 1 前景图 上传')
     const file = new File(['foreground'], 'foreground.png', { type: 'image/png' })
 
     fireEvent.change(input, {

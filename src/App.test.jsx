@@ -24,6 +24,10 @@ vi.mock('./pages/AppFaqGuidePage.jsx', () => ({
   default: () => <div data-testid="app-faq-guide-page" />,
 }))
 
+vi.mock('./pages/AppOnboardingWelcomePage.jsx', () => ({
+  default: () => <div data-testid="app-onboarding-welcome-page" />,
+}))
+
 describe('App routing', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
@@ -76,10 +80,9 @@ describe('App routing', () => {
 
     render(<App />)
 
-    expect(await screen.findByRole('link', { name: 'Continue to Zentube login' })).toHaveAttribute(
-      'href',
-      'https://www.buddhachat.online/videos/auth/login?returnUrl=http%3A%2F%2Flocalhost%3A3000%2F',
-    )
+    expect(await screen.findByTestId('account-login')).toBeInTheDocument()
+    expect(screen.getByTestId('account-email')).toHaveAttribute('type', 'email')
+    expect(screen.getByTestId('account-submit')).toBeInTheDocument()
   })
 
   it('renders the public app download route without a channel code', async () => {
@@ -135,5 +138,13 @@ describe('App routing', () => {
     expect(await screen.findByTestId('app-faq-guide-page')).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: '简体繁体切换' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '繁' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('renders the H5 app onboarding welcome route', async () => {
+    window.history.pushState({}, '', '/app/onboarding/v1')
+
+    render(<App />)
+
+    expect(await screen.findByTestId('app-onboarding-welcome-page')).toBeInTheDocument()
   })
 })
