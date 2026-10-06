@@ -172,9 +172,26 @@ describe('website product routing', () => {
 
   test('keeps music under the website music path', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const stagingHost = '(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)'
+    const legacyPinnedOrigin = 'https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app'
 
     expect(config.redirects.some(({ source }) => source === '/music')).toBe(false)
     expect(config.rewrites).toEqual(expect.arrayContaining([
+      {
+        source: '/music',
+        has: [{ type: 'host', value: stagingHost }],
+        destination: `${legacyPinnedOrigin}/music/`,
+      },
+      {
+        source: '/music/',
+        has: [{ type: 'host', value: stagingHost }],
+        destination: `${legacyPinnedOrigin}/music/`,
+      },
+      {
+        source: '/music/:path*',
+        has: [{ type: 'host', value: stagingHost }],
+        destination: `${legacyPinnedOrigin}/music/:path*`,
+      },
       {
         source: '/music',
         destination: 'https://buddhachat-music.vercel.app/music/',
@@ -188,5 +205,19 @@ describe('website product routing', () => {
         destination: 'https://buddhachat-music.vercel.app/music/:path*',
       },
     ]))
+
+    const stageMusicIndex = config.rewrites.findIndex(
+      (rewrite) => rewrite.source === '/music' && rewrite.destination === `${legacyPinnedOrigin}/music/`,
+    )
+    const defaultMusicIndex = config.rewrites.findIndex(
+      (rewrite) => rewrite.source === '/music' && rewrite.destination === 'https://buddhachat-music.vercel.app/music/',
+    )
+    const defaultCatchAllIndex = config.rewrites.findIndex(
+      (rewrite) => rewrite.source === '/music/:path*' && rewrite.destination === 'https://buddhachat-music.vercel.app/music/:path*',
+    )
+
+    expect(stageMusicIndex).toBeGreaterThan(-1)
+    expect(defaultMusicIndex).toBeGreaterThan(stageMusicIndex)
+    expect(defaultCatchAllIndex).toBeGreaterThan(stageMusicIndex)
   })
 })
