@@ -174,6 +174,26 @@ describe('website product routing', () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
     const stagingHost = '(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)'
     const legacyPinnedOrigin = 'https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app'
+    const rewriteFor = (host, pathname) => config.rewrites.find((rewrite) => {
+      const hostCondition = rewrite.has?.find(({ type }) => type === 'host')
+      if (hostCondition && !new RegExp(`^(?:${hostCondition.value})$`).test(host)) {
+        return false
+      }
+      if (rewrite.source.endsWith('/:path*')) {
+        const prefix = rewrite.source.slice(0, -'/:path*'.length)
+        return pathname.startsWith(`${prefix}/`)
+      }
+      return rewrite.source === pathname
+    })
+    const destinationFor = (host, pathname) => {
+      const rewrite = rewriteFor(host, pathname)
+      if (!rewrite) return null
+      if (!rewrite.source.endsWith('/:path*')) return rewrite.destination
+
+      const prefix = rewrite.source.slice(0, -'/:path*'.length)
+      const pathRemainder = pathname.slice(prefix.length + 1)
+      return rewrite.destination.replace(':path*', pathRemainder)
+    }
 
     expect(config.redirects.some(({ source }) => source === '/music')).toBe(false)
     expect(config.rewrites).toEqual(expect.arrayContaining([
@@ -206,18 +226,19 @@ describe('website product routing', () => {
       },
     ]))
 
-    const stageMusicIndex = config.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/music' && rewrite.destination === `${legacyPinnedOrigin}/music/`,
-    )
-    const defaultMusicIndex = config.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/music' && rewrite.destination === 'https://buddhachat-music.vercel.app/music/',
-    )
-    const defaultCatchAllIndex = config.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/music/:path*' && rewrite.destination === 'https://buddhachat-music.vercel.app/music/:path*',
-    )
+    for (const host of [
+      'staging.buddhachat.online',
+      'buddha-chat-official-site-env-staging-chenjunyu-1990s-projects.vercel.app',
+    ]) {
+      expect(destinationFor(host, '/music')).toBe(`${legacyPinnedOrigin}/music/`)
+      expect(destinationFor(host, '/music/')).toBe(`${legacyPinnedOrigin}/music/`)
+      expect(destinationFor(host, '/music/assets/index.js')).toBe(`${legacyPinnedOrigin}/music/assets/index.js`)
+      expect(destinationFor(host, '/music/scene/daily')).toBe(`${legacyPinnedOrigin}/music/scene/daily`)
+    }
 
-    expect(stageMusicIndex).toBeGreaterThan(-1)
-    expect(defaultMusicIndex).toBeGreaterThan(stageMusicIndex)
-    expect(defaultCatchAllIndex).toBeGreaterThan(stageMusicIndex)
+    expect(destinationFor('www.buddhachat.online', '/music')).toBe('https://buddhachat-music.vercel.app/music/')
+    expect(destinationFor('www.buddhachat.online', '/music/assets/index.js')).toBe('https://buddhachat-music.vercel.app/music/assets/index.js')
+    expect(destinationFor('www.buddhachat.online', '/')).toBe('/api/page-entry?page=home')
+    expect(destinationFor('www.buddhachat.online', '/api/music/state')).toBe('https://zentube.buddhachat.online/api/music/state')
   })
 })

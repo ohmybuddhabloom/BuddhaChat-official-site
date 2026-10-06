@@ -21,7 +21,7 @@ describe('canonical H5 routing', () => {
       const selected = resolve(host)
       expect(selected?.has).toBeDefined()
       expect(selected.destination).toBe(source.startsWith('/music')
-        ? 'https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/'
+        ? 'https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/'
         : 'https://staging-zentube.buddhachat.online/__buddhachat_www/videos/')
     }
     expect(resolve('www.buddhachat.online')?.has).toBeUndefined()

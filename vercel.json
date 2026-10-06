@@ -131,12 +131,12 @@
     {
       "source": "/music",
       "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/"
+      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/"
     },
     {
       "source": "/music/",
       "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/"
+      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/"
     },
     {
       "source": "/videos/assets/:path*",
@@ -156,7 +156,7 @@
     {
       "source": "/music/:path*",
       "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/:path*"
+      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/:path*"
     },
     {
       "source": "/api/auth/:path*",
@@ -268,21 +268,6 @@
     {
       "source": "/sutra/:path*",
       "destination": "https://sutra.buddhachat.online/sutra/:path*"
-    },
-    {
-      "source": "/music",
-      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/"
-    },
-    {
-      "source": "/music/",
-      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/"
-    },
-    {
-      "source": "/music/:path*",
-      "has": [{ "type": "host", "value": "(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)" }],
-      "destination": "https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/:path*"
     },
     {
       "source": "/music",
