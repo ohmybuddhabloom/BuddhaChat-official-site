@@ -6,7 +6,7 @@ import { mastersTextVersion, type MastersArticle } from '../../../shared/masters
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon, BookmarkIcon, ClockIcon, HeartIcon, MagnifyingGlassIcon, PlayIcon, ReaderIcon, ExternalLinkIcon, TrashIcon, Link2Icon, PersonIcon, Share1Icon } from '@radix-ui/react-icons';
 import { FlowStack, useFlow, MobileScroll, KeyboardInput, BottomSheet, type FlowScreen } from './mobile';
-import { books, chapters, videos, sources, nanItems, itemTitle, itemOwner, clock, readableArticles, legacyArticles, articleSummary, collectionArticles } from './content';
+import { books, chapters, videos, sources, nanItems, itemTitle, itemOwner, clock, readableArticles, legacyArticles, articleSummary, collectionArticles, historical } from './content';
 import { uiColors, uiRadius } from '../../../src/ui/tokens';
 import { contentUrl, routeFromUrl, downloadUrl, appHomeUrl, appUrlForPage } from './share-link.mjs';
 import { people } from './people';
@@ -21,7 +21,7 @@ const State = createContext<{state:Library; dispatch:(a:Action)=>void; warning:s
 const AppAccess=createContext<(route:string,action:string)=>void>(()=>{});
 const useLibrary=()=>useContext(State);
 const KEY='buddhachat-masters-prototype-v1';
-const publicRoutes=['home','directory','person','nan','yuanhui','shengyen','sources','yuanhui-book',...shengyenCatalog.entries.map(b=>'shengyen-book:'+b.sourceId),...readableArticles.map(c=>'reader:'+c.id),...books.map(b=>'book:'+b.id),...chapters.map(c=>'chapter:'+c.id),...videos.map(v=>'video:'+v.id),...nanItems.map(n=>'external:'+n.id)];
+const publicRoutes=[...people.map(p=>p.route),...historical.collections.map(b=>'book:'+b.id),'home','directory','person','nan','yuanhui','shengyen','sources','yuanhui-book',...shengyenCatalog.entries.map(b=>'shengyen-book:'+b.sourceId),...readableArticles.map(c=>'reader:'+c.id),...books.map(b=>'book:'+b.id),...chapters.map(c=>'chapter:'+c.id),...videos.map(v=>'video:'+v.id),...nanItems.map(n=>'external:'+n.id)];
 const canonicalRoutes=Object.fromEntries(publicRoutes.map(route=>[canonicalMastersContentRoute(route),h5LegacyRouteForMastersContent(route)]).filter((entry):entry is [string,string]=>Boolean(entry[0]&&entry[1])));
 const routes = (id:string):FlowScreen => ({id,headerHeight:94,header:()=> <Header id={id}/>,render:()=> <Screen id={id}/>});
 const supabaseUrl = (import.meta.env.VITE_MASTERS_SUPABASE_URL || '').replace(/\/+$/, '');
@@ -65,7 +65,7 @@ const fetchArticleBody: FetchArticleBody = async (id, version) => {
 const readArticle = createArticleReader(fetchArticleBody);
 function Header({id}:{id:string}) {
  const flow=useFlow();const requestApp=useContext(AppAccess);const[shared,setShared]=useState('');
- const title=id==='directory'?'全部人物':id==='yuanhui'?'源慧师父':id==='shengyen'?'圣严法师':id==='home'?'法师与名家':id==='nan'?'南怀瑾':id==='person'?'星云大师':id==='history'?'浏览记录':id==='following'?'我的关注':id==='favorites'?'我的收藏':id==='sources'?'内容来源':id.startsWith('book:')||id==='yuanhui-book'?'著作':id.startsWith('chapter:')||id.startsWith('reader:')?'阅读':id.startsWith('external:')||id.startsWith('shengyen-book:')?'著作':'影音';
+ const title=people.find(p=>p.route===id)?.name || (id==='directory'?'全部人物':id==='yuanhui'?'源慧师父':id==='shengyen'?'圣严法师':id==='home'?'法师与名家':id==='nan'?'南怀瑾':id==='person'?'星云大师':id==='history'?'浏览记录':id==='following'?'我的关注':id==='favorites'?'我的收藏':id==='sources'?'内容来源':id.startsWith('book:')||id==='yuanhui-book'?'著作':id.startsWith('chapter:')||id.startsWith('reader:')?'阅读':id.startsWith('external:')||id.startsWith('shengyen-book:')?'著作':'影音');
  useEffect(()=>{history.replaceState(history.state,'',contentUrl(location.href,id));setShared('');},[id]);
  async function share(){try{await navigator.clipboard.writeText(contentUrl(location.href,id));setShared('链接已复制');}catch{setShared('可复制浏览器地址分享');}}
  return <div className="header-shell"><header className="toolbar">{flow.canGoBack?<button aria-label="返回" onClick={flow.pop}><ArrowLeftIcon/></button>:id!=='home'?<button aria-label="返回栏目首页" onClick={()=>flow.replace(routes('home'))}><ArrowLeftIcon/></button>:<span className="brand">B</span>}<strong>{title}</strong><button aria-label="分享当前页面" onClick={share}><Share1Icon/></button></header><div className="web-app-bar"><span>{shared||'BuddhaChat · 法师与名家'}</span><button onClick={()=>requestApp(id,'继续浏览')}>打开 App</button></div></div>;
@@ -82,11 +82,11 @@ export default function Prototype(){
  useEffect(()=>{try{localStorage.setItem(KEY,JSON.stringify(state));setWarning('');}catch{setWarning('浏览器未允许保存，本次操作仅在当前页面保留。');}},[state]);
  return <State.Provider value={{state,dispatch,warning}}><AppAccess.Provider value={(route,action)=>{setGate({route,action});}}><FlowStack initial={routes(initialRoute)}/><BottomSheet open={gate!==null} onOpenChange={open=>{if(!open)setGate(null);}} title={gate?.action==='我的关注'?'在 App 中查看关注':gate?.action==='我的收藏'?'在 App 中查看收藏':gate?.action==='关注'?'在 App 中关注这位法师或名家':gate?.action==='收藏'?'在 App 中收藏这份内容':'在 BuddhaChat 中继续'} description={gate?.action?.includes('关注')?'关注功能由 App 承接，网页可继续浏览各位主页。':gate?.action?.includes('收藏')?'收藏功能由 App 承接，网页可继续浏览公开内容。':'网页可继续阅读与播放公开内容。'}>{!appContentUrl&&<p className="notice">此栏目的 App 内容页尚未上线。现在可以继续浏览网页，或打开 App 首页。</p>}<a className="primary wide" href={appUrlForPage(appContentUrl||appHomeUrl,location.href)}>{appContentUrl?'在 App 中继续':'打开 App 首页'}</a><a className="secondary wide" href={downloadUrl} target="_blank" rel="noopener noreferrer">尚未安装？前往下载</a><button className="text-button" onClick={()=>setGate(null)}>继续在网页浏览 <ArrowRightIcon/></button></BottomSheet></AppAccess.Provider></State.Provider>;
 }
-function Screen({id}:{id:string}) { const flow=useFlow(); return <MobileScroll className="app-screen"><main className="content" inert={flow.current.id!==id}>{id==='home'?<Home/>:id==='directory'?<Directory/>:id==='yuanhui-book'?<YuanhuiBook/>:people.some(p=>p.route===id)?<Profile route={id}/>:id.startsWith('shengyen-book:')?<ShengyenBook id={id.slice(14)}/>:id.startsWith('reader:')?<InlineReading id={id.slice(7)}/>:id.startsWith('external:')?<ExternalReading id={id.slice(9)}/>:['history','following','favorites'].includes(id)?<LibraryPage kind={id}/>:id==='sources'?<Sources/>:id.startsWith('book:')?<Book id={id.slice(5)}/>:id.startsWith('chapter:')?<Reading id={id.slice(8)}/>:flow.current.id===id?<Video id={id.slice(6)}/>:null}<StorageNote/></main></MobileScroll> }
+function Screen({id}:{id:string}) { const flow=useFlow(); return <MobileScroll className="app-screen"><main className="content" inert={flow.current.id!==id}>{id==='home'?<Home/>:id==='directory'?<Directory/>:id==='yuanhui-book'?<YuanhuiBook/>:people.some(p=>p.route===id)?<Profile route={id}/>:id.startsWith('shengyen-book:')?<ShengyenBook id={id.slice(14)}/>:id.startsWith('reader:')?<InlineReading id={id.slice(7)}/>:id.startsWith('external:')?<ExternalReading id={id.slice(9)}/>:['history','following','favorites'].includes(id)?<LibraryPage kind={id}/>:id==='sources'?<Sources/>:id.startsWith('book:')?(historical.collections.some(b=>b.id===id.slice(5))?<HistoricalBook id={id.slice(5)}/>:<Book id={id.slice(5)}/>):id.startsWith('chapter:')?<Reading id={id.slice(8)}/>:flow.current.id===id?<Video id={id.slice(6)}/>:null}<StorageNote/></main></MobileScroll> }
 function StorageNote(){const{warning}=useLibrary();const flow=useFlow();return <p className={warning?'warning':'footnote'} role={warning?'alert':undefined}>{warning&&<>{warning} · </>}<button onClick={()=>flow.push(routes('sources'))}>内容来源</button></p>}
 function Section({title,children,action}:{title:string;children:ReactNode;action?:ReactNode}){return <section className="section"><div className="section-title"><h2>{title}</h2>{action}</div>{children}</section>}
-function OpenItem({id,children}:{id:string;children?:ReactNode}){const flow=useFlow();const path=articleSummary(id)&&!chapters.some(c=>c.id===id)?'reader:':nanItems.some(n=>n.id===id)?'external:':books.some(b=>b.id===id)?'book:':videos.some(v=>v.id===id)?'video:':'chapter:';return <button className="text-button" onClick={()=>flow.push(routes(path+id))}>{children||itemTitle(id)}<ArrowRightIcon/></button>}
-function Save({id}:{id:string}){const requestApp=useContext(AppAccess);const route=nanItems.some(n=>n.id===id)?'external:'+id:books.some(b=>b.id===id)?'book:'+id:videos.some(v=>v.id===id)?'video:'+id:'chapter:'+id;return <button className="save" aria-label="在App中收藏" onClick={()=>requestApp(route,'收藏')}><BookmarkIcon/>收藏</button>}
+function OpenItem({id,children}:{id:string;children?:ReactNode}){const flow=useFlow();const path=articleSummary(id)&&!chapters.some(c=>c.id===id)?'reader:':nanItems.some(n=>n.id===id)?'external:':(books.some(b=>b.id===id)||historical.collections.some(b=>b.id===id))?'book:':videos.some(v=>v.id===id)?'video:':'chapter:';return <button className="text-button" onClick={()=>flow.push(routes(path+id))}>{children||itemTitle(id)}<ArrowRightIcon/></button>}
+function Save({id}:{id:string}){const requestApp=useContext(AppAccess);const route=articleSummary(id)?'reader:'+id:nanItems.some(n=>n.id===id)?'external:'+id:(books.some(b=>b.id===id)||historical.collections.some(b=>b.id===id))?'book:'+id:videos.some(v=>v.id===id)?'video:'+id:'chapter:'+id;return <button className="save" aria-label="在App中收藏" onClick={()=>requestApp(route,'收藏')}><BookmarkIcon/>收藏</button>}
 function Follow({id="hsing-yun"}:{id?:string}){const requestApp=useContext(AppAccess);return <button className="primary" onClick={()=>requestApp(people.find(p=>p.id===id)?.route||'home','关注')}>＋ 关注</button>}
 
 function Portrait({id}:{id:string}){const person=people.find(p=>p.id===id);const[failed,setFailed]=useState(false);return <span className="person-symbol" data-person={id} title={id==='nan-huaijin'?'南怀瑾 · 晚年肖像':undefined}>{person?.portrait&&!failed?<img src={person.portrait} alt={id==='nan-huaijin'?'南怀瑾晚年肖像':person.name} loading="lazy" referrerPolicy="no-referrer" onError={()=>setFailed(true)}/>:<PersonIcon aria-hidden="true"/>}</span>;}
@@ -127,6 +127,7 @@ function RecommendationFeed(){
   {id:'chapter:'+books[0].sample,title:itemTitle(books[0].sample),meta:'星云大师 · '+books[0].title,description:'从日常生活中的时间安排，进入佛法的思考。',source:'来源：星云大师全集',action:'阅读篇目'},
   {id:'external:'+nanItems[2].id,title:nanItems[2].title,meta:'南怀瑾 · 著作／讲述整理',description:'从著作目录进入，了解对《金刚经》的讲述。',source:'来源：劝学网整理版',action:'查看著作'},
   {id:'book:'+books[1].id,title:books[1].title,meta:'星云大师 · 自述与回望',description:books[1].intro,source:'来源：星云大师全集',action:'查看著作'},
+  ...historical.profiles.map(profile=>({id:people.find(p=>p.id===profile.id)!.route,title:people.find(p=>p.id===profile.id)!.name+'专题',meta:people.find(p=>p.id===profile.id)!.name+' · 著述与生平',description:profileCopy[profile.id].intro,source:'来源：'+profile.sources[0]?.institution,action:'进入专题'})),
  ];
  const hasMore=limit<items.length;
  useEffect(()=>{if(!hasMore||!sentinel.current)return;const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))setLimit(n=>Math.min(n+3,items.length));},{threshold:0.1});observer.observe(sentinel.current);return()=>observer.disconnect();},[limit,hasMore]);
@@ -146,19 +147,21 @@ function Profile({route}:{route:string}){
  const person=people.find(p=>p.route===route)!;
  const [tab,setTab]=useState('精选');
  const copy=profileCopy[person.id];
+ const historyProfile=historical.profiles.find(p=>p.id===person.id);
  return <div className="unified-profile" data-person-id={person.id}>
   <div className="profile"><Portrait id={person.id}/><div><span className="eyebrow">{person.type}</span><h1>{person.name}</h1></div><Follow id={person.id}/></div>
   <p className="intro profile-intro">{copy.intro}</p>
   <div className="tabs profile-tabs" role="tablist" aria-label={person.name+'栏目'}>{['精选','著作','影音','生平'].map(t=><button id={'tab-'+person.id+'-'+t} role="tab" aria-controls={'panel-'+person.id} aria-selected={t===tab} key={t} onClick={()=>setTab(t)}>{t}</button>)}</div>
   <div id={'panel-'+person.id} role="tabpanel" aria-labelledby={'tab-'+person.id+'-'+tab}>
-   {tab==='精选'?<><Resume personId={person.id} compact/><Section title="精选著作" action={<button className="all-people" onClick={()=>setTab('著作')}>全部著作 <ArrowRightIcon/></button>}><ProfileWorks personId={person.id} featured/></Section><Section title="精选影音" action={<button className="all-people" onClick={()=>setTab('影音')}>全部影音 <ArrowRightIcon/></button>}><ProfileVideos personId={person.id}/></Section></>:tab==='著作'?<ProfileWorks personId={person.id}/>:tab==='影音'?<ProfileVideos personId={person.id}/>:<><h2 className="profile-panel-title">生平简介</h2><p className="reading-copy">{copy.bio}</p></>}
+   {tab==='精选'?<><Resume personId={person.id} compact/><Section title="精选著作" action={<button className="all-people" onClick={()=>setTab('著作')}>全部著作 <ArrowRightIcon/></button>}><ProfileWorks personId={person.id} featured/></Section><Section title="精选影音" action={<button className="all-people" onClick={()=>setTab('影音')}>全部影音 <ArrowRightIcon/></button>}><ProfileVideos personId={person.id}/></Section></>:tab==='著作'?<ProfileWorks personId={person.id}/>:tab==='影音'?<ProfileVideos personId={person.id}/>:<><h2 className="profile-panel-title">生平简介</h2><p className="reading-copy">{copy.bio}</p>{historyProfile&&<HistoricalTimeline profile={historyProfile}/>}</>}
   </div>
-  <details className="source-details"><summary>资料来源</summary><p>{person.id==='nan-huaijin'?'著作样例来自劝学网整理版，非基金会官方出版版本。':person.id==='sheng-yen'?'书目以法鼓全集为依据；正文收录状态按篇目显示。':person.id==='hsing-yun'?'著作以佛光山《星云大师全集》为文字主源；讲座录像为本人开示。':'源慧师父公开主页 · 答疑解惑。'}</p><SourceLink url={person.url||(person.id==='hsing-yun'?'https://books.masterhsingyun.org/intro/master':'https://www.nhjcf.org/')}>查看资料出处</SourceLink></details>
+  <details className="source-details"><summary>资料来源</summary>{historyProfile?<><p>{historyProfile.source_note}</p>{historyProfile.sources.map(source=><p key={source.url}><SourceLink url={source.url}>{source.institution} · {source.title}</SourceLink></p>)}</>:<><p>{person.id==='nan-huaijin'?'著作样例来自劝学网整理版，非基金会官方出版版本。':person.id==='sheng-yen'?'书目以法鼓全集为依据；正文收录状态按篇目显示。':person.id==='hsing-yun'?'著作以佛光山《星云大师全集》为文字主源；讲座录像为本人开示。':'源慧师父公开主页 · 答疑解惑。'}</p><SourceLink url={person.url||(person.id==='hsing-yun'?'https://books.masterhsingyun.org/intro/master':'https://www.nhjcf.org/')}>查看资料出处</SourceLink></>}</details>
  </div>;
 }
 function PendingContent({kind}:{kind:string}){return <div className="pending-content"><ReaderIcon/><strong>{kind}暂未开放</strong><p>更多内容陆续更新。</p></div>}
 function ProfileWorks({personId,featured=false}:{personId:string;featured?:boolean}){
  const flow=useFlow();
+ if(historical.profiles.some(p=>p.id===personId))return <HistoricalWorks personId={personId} featured={featured}/>;
  if(personId==='yuanhui')return <div className="book-list"><div className="book-row"><span className="book-index">01</span><div><span className="eyebrow">开示 · 问答</span><button className="text-button" onClick={()=>flow.push(routes('yuanhui-book'))}><strong>答疑解惑 · 第一期</strong><ArrowRightIcon/></button><p>从日常疑问中，体会师父的教导。</p></div></div></div>;
  if(personId==='hsing-yun')return <BookRows/>;
  if(personId==='nan-huaijin')return <div className="book-list">{nanItems.filter(n=>n.kind==='book').map((n,i)=><div className="book-row" key={n.id}><span className="book-index">0{i+1}</span><div><span className="eyebrow">著作 · 讲述整理</span><OpenItem id={n.id}><strong>{n.title}</strong></OpenItem><p>精选篇目</p></div></div>)}</div>;
@@ -166,9 +169,23 @@ function ProfileWorks({personId,featured=false}:{personId:string;featured?:boole
  return <PendingContent kind="著作"/>;
 }
 function ProfileVideos({personId}:{personId:string}){
+ const profile=historical.profiles.find(p=>p.id===personId);
+ if(profile)return <p className="empty">{profile.media_note}</p>;
  if(personId==='hsing-yun')return <VideoRows/>;
  if(personId==='nan-huaijin')return <div className="video-list">{nanItems.filter(n=>n.kind==='video_series').map(n=><div className="chapter-row" key={n.id}><span className="eyebrow">讲课系列</span><OpenItem id={n.id}><strong>{n.title}</strong></OpenItem></div>)}</div>;
  return <PendingContent kind="影音"/>;
+}
+function HistoricalTimeline({profile}:{profile:typeof historical.profiles[number]}){return <Section title="生平年表">{profile.timeline.map((event,i)=><p className="reading-copy" key={i}><strong>{event.year}</strong> · {event.text}</p>)}</Section>}
+function HistoricalWorks({personId,featured=false}:{personId:string;featured?:boolean}){
+ const [category,setCategory]=useState('全部');
+ const works=historical.collections.filter(b=>b.person_id===personId);
+ const shown=featured?works.slice(0,3):works.filter(b=>category==='全部'||b.category===category);
+ return <>{!featured&&<label className="select-label">著作分类<select value={category} onChange={e=>setCategory(e.target.value)}>{['全部',...new Set(works.map(b=>b.category))].map(value=><option key={value}>{value}</option>)}</select></label>}<div className="book-list">{shown.map((book,i)=><div className="book-row" key={book.id}><span className="book-index">{String(i+1).padStart(2,'0')}</span><div><span className="eyebrow">{book.category}</span><OpenItem id={book.id}><strong>{book.title}</strong></OpenItem><p>{book.attribution}</p><p className="small">{collectionArticles(book.id).length} 篇可阅读</p></div></div>)}</div></>;
+}
+function HistoricalBook({id}:{id:string}){
+ const book=historical.collections.find(b=>b.id===id);const flow=useFlow();if(!book)return <p>著作暂不可用</p>;
+ const available=collectionArticles(id);const person=people.find(p=>p.id===book.person_id);
+ return <><span className="eyebrow">{person?.name} · {book.category}</span><h1>{book.title}</h1><p className="intro">{book.attribution}</p><p className="small">{available.length} 篇可阅读</p><div className="actions">{available.length>0&&<button className="primary" onClick={()=>flow.push(routes('reader:'+available[0].id))}>开始阅读 <ReaderIcon/></button>}<Save id={id}/></div><Section title="篇目">{available.map(article=><div className="chapter-row" key={article.id}><span className="small">第 {article.source_order} 篇 · {article.paragraph_count} 段</span><OpenItem id={article.id}/></div>)}{!available.length&&<PendingContent kind="本书正文"/>}</Section><details className="source-details"><summary>版本与来源</summary><p>{book.attribution}</p><SourceLink url={book.source_url}>原文出处</SourceLink></details></>;
 }
 function ShengyenWorks({featured=false}:{featured?:boolean}){
  const flow=useFlow();const[category,setCategory]=useState('全部');const[query,setQuery]=useState('');const[limit,setLimit]=useState(12);
@@ -191,12 +208,13 @@ function SearchResults({query}:{query:string}) {
   const matches=people.filter(p=>(p.name+p.aliases).includes(q));
   const bs=books.filter(b=>[b.title,b.title_original,b.label].join('').includes(q));
   const cs=readableArticles.filter(c=>c.title.includes(q)).slice(0,30);
+  const hs=historical.collections.filter(b=>b.title.includes(q));
   const ns=nanItems.filter(n=>n.title.includes(q));
   const flow=useFlow();
   return <Section title="搜索结果">
     {matches.map(p=><button className="row search-person" key={p.id} onClick={()=>flow.push(routes(p.route))}><strong>{p.name}</strong><span>{p.label} →</span></button>)}
-    {[...bs,...ns,...cs].map(item=><div className="row" key={item.id}><OpenItem id={item.id}/></div>)}
-    {!matches.length&&!bs.length&&!cs.length&&!ns.length&&<p className="empty">暂未找到，试试人物姓名或书名。篇目支持原目录繁体题名。</p>}
+    {[...bs,...hs,...ns,...cs].map(item=><div className="row" key={item.id}><OpenItem id={item.id}/></div>)}
+    {!matches.length&&!bs.length&&!cs.length&&!ns.length&&!hs.length&&<p className="empty">暂未找到，试试人物姓名或书名。篇目支持原目录繁体题名。</p>}
   </Section>;
 }
 
@@ -254,7 +272,7 @@ function InlineReading({id}:{id:string}){
  if(!summary)return <><span className="eyebrow">{bookId?itemTitle(bookId):'著作'}</span><h1>{entry?.title_display||'篇目暂不可用'}</h1><PendingContent kind="本篇正文"/>{siblings.length>0&&<button className="primary wide" onClick={()=>flow.replace(routes('reader:'+siblings[0].id))}>阅读可读篇目</button>}<button className="secondary wide" onClick={()=>flow.push(routes(bookRoute))}>返回本书目录</button></>;
  if(!article&&loaded.error)return <><span className="eyebrow">{itemTitle(summary.book_id)}</span><h1>{summary.title}</h1><div className="pending-content" role="alert"><ReaderIcon/><strong>正文暂时无法打开</strong><p>请检查网络后重试。</p><button className="primary wide" onClick={()=>setRetry(n=>n+1)}>重试</button></div><button className="secondary wide" onClick={()=>flow.push(routes(bookRoute))}>返回本书目录</button></>;
  if(!article)return <><span className="eyebrow">{itemTitle(summary.book_id)}</span><h1>{summary.title}</h1><div className="pending-content" aria-live="polite"><ReaderIcon/><strong>正在打开正文</strong></div><button className="secondary wide" onClick={()=>flow.push(routes(bookRoute))}>返回本书目录</button></>;
- return <div ref={bodyRef} className="inline-reader" data-article-id={id}><span className="eyebrow">{itemTitle(article.book_id)}</span><h1>{article.title}</h1><p className="subtitle">{article.author} · {article.person_id==='yuanhui'?'答疑解惑':article.person_id==='nan-huaijin'?'讲述整理':'著述'}</p>
+ return <div ref={bodyRef} className="inline-reader" data-article-id={id}><span className="eyebrow">{itemTitle(article.book_id)}</span><h1>{article.title}</h1><p className="subtitle">{historical.profiles.some(p=>p.id===article.person_id)?article.attribution:<>{article.author} · {article.person_id==='yuanhui'?'答疑解惑':article.person_id==='nan-huaijin'?'讲述整理':'著述'}</>}</p>
  <div className="reader-tools"><button onClick={()=>flow.push(routes(bookRoute))}><ReaderIcon/>目录</button><div role="group" aria-label="阅读字号">{[16,18,20].map(n=><button key={n} aria-label={'字号 '+n} aria-pressed={size===n} onClick={()=>setSize(n)}>{n===16?'小':n===18?'中':'大'}</button>)}</div><Save id={id}/></div>
  <article aria-label="正文" style={{fontSize:size}}>{buildReadingBlocks(article.paragraphs,(article as {figures?:MastersFigure[]}).figures??[],(article as {paragraph_roles?:string[]}).paragraph_roles).map(block=>block.type==='figure'?<ArticleFigure key={block.key} figure={block.figure}/>:<p key={'p'+block.index} data-role={block.role}>{article.person_id==='yuanhui'&&block.role&&(block.index===0||(article as {paragraph_roles?:string[]}).paragraph_roles?.[block.index-1] !== block.role)&&<span className="reader-speaker">{block.role==='question'?'读者问':'师父答'}</span>}{block.text}</p>)}</article>
  <p className="reader-finish">本篇已读完</p><div className="prev-next"><button disabled={index<=0} onClick={()=>flow.replace(routes('reader:'+siblings[index-1].id))}>上一篇</button><button onClick={()=>flow.push(routes(bookRoute))}>本书目录</button><button disabled={index<0||index>=siblings.length-1} onClick={()=>flow.replace(routes('reader:'+siblings[index+1].id))}>下一篇</button></div>

@@ -1,3 +1,5 @@
+import historicalData from '../../../shared/masters/historical-masters.json';
+export const historical = historicalData as { profiles: { id: string; source_note: string; sources: {url: string; title: string; institution: string}[]; timeline: {year: string; text: string}[]; media_note: string }[]; collections: {id: string; title: string; person_id: string; category: string; attribution: string; source_url: string}[] };
 import shengyenCatalog from '../../../docs/shengyen-chinese-catalog.json';
 import readingContent from '../../../shared/masters/reading-content.json';
 import {
@@ -30,7 +32,7 @@ export const sources = [
 ];
 export function articleSummary(id:string) { return getArticleSummary(id); }
 export function collectionArticles(id:string) { return getCollectionArticleSummaries(id); }
-export function itemTitle(id:string) { return (id==='yh-dayi-001'?'答疑解惑 · 第一期':undefined) || shengyenCatalog.entries.find(b=>'sy-'+b.sourceId===id)?.title || getArticleSummary(id)?.title || nanItems.find(n=>n.id===id)?.title || books.find(b=>b.id===id)?.title || chapters.find(c=>c.id===id)?.title_display || videos.find(v=>v.id===id)?.title || id; }
+export function itemTitle(id:string) { return historical.collections.find(b=>b.id===id)?.title || (id==='yh-dayi-001'?'答疑解惑 · 第一期':undefined) || shengyenCatalog.entries.find(b=>'sy-'+b.sourceId===id)?.title || getArticleSummary(id)?.title || nanItems.find(n=>n.id===id)?.title || books.find(b=>b.id===id)?.title || chapters.find(c=>c.id===id)?.title_display || videos.find(v=>v.id===id)?.title || id; }
 export const clock = (seconds:number) => `${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 
-export function itemOwner(id:string){return getArticleSummary(id)?.person_id || nanItems.find(n=>n.id===id)?.person_id || (id.startsWith('xy-')?'hsing-yun':id.startsWith('sy-')?'sheng-yen':undefined);}
+export function itemOwner(id:string){return getArticleSummary(id)?.person_id || historical.collections.find(b=>b.id===id)?.person_id || nanItems.find(n=>n.id===id)?.person_id || (id.startsWith('xy-')?'hsing-yun':id.startsWith('sy-')?'sheng-yen':undefined);}

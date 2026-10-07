@@ -1,0 +1,342 @@
+{
+  "checked_at": "2026-10-07",
+  "profiles": [
+    {
+      "id": "xu-yun",
+      "source_note": "文字采用般若文海现存版本，保留原题、缺字、引文与编者括注；篇目署名区分原著、讲述与辑录。年谱为虚云自述、岑学吕编；传统年谱采用1840年生，其他史料有异说，原文年龄不另行推算。",
+      "media_note": "尚未收录可核实的影音资料。",
+      "timeline": [
+        {
+          "year": "早年修学",
+          "text": "于福建鼓山出家，后游方参学，重视禅修与戒律。"
+        },
+        {
+          "year": "1930年代至1950年代",
+          "text": "参与鼓山、南华、云门等祖庭的重兴，晚年驻锡云居山真如寺。"
+        },
+        {
+          "year": "1953年",
+          "text": "获推为中国佛教协会名誉会长。"
+        },
+        {
+          "year": "1959年",
+          "text": "于云居山真如寺圆寂。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://yjsfj.pusa123.com/pusa/ldzs/6249.shtml",
+          "title": "虚云老和尚",
+          "institution": "云居山佛教官网",
+          "role": "寺院生平、日期异说、历史照片",
+          "verified": "opened"
+        },
+        {
+          "url": "https://www.chinareligion.cn/static/content/rw/2025-08-25/1000000008271.html",
+          "title": "虚云法师 一生爱国爱教的禅门泰斗",
+          "institution": "中国宗教（释本性，2025年第8期）",
+          "role": "现代生平交叉核对；不转载全文",
+          "verified": "opened"
+        },
+        {
+          "url": "https://www.bfnn.org/hsuyun/gb/article.htm",
+          "title": "虚云老和尚网路专辑—文章会集",
+          "institution": "般若文海",
+          "role": "旧版法汇与记录稿在线原文索引",
+          "verified": "opened"
+        },
+        {
+          "url": "https://www.bfnn.org/hsuyun/gb/photo/photo01.htm",
+          "title": "云公上人法相",
+          "institution": "般若文海",
+          "role": "历史肖像，已解析实际图片地址",
+          "verified": "HTML fetched"
+        },
+        {
+          "url": "https://www.malaysianbuddhistassociation.org/wp-content/uploads/stories/demo/bd_jin_dian_pdf/i_chan_xue_09.pdf",
+          "title": "虚云和尚法汇",
+          "institution": "马来西亚佛教总会",
+          "role": "机构典藏PDF，序中明确岑学吕编",
+          "verified": "search indexed; direct web fetch failed"
+        },
+        {
+          "url": "https://www.jxsfjxh.cn/a/1689572132031987713",
+          "title": "虚云老和尚五宗法嗣录",
+          "institution": "江西省佛教协会；素闻法师",
+          "role": "说明旧法汇并非穷尽，另有志莲图书馆诗稿与传法偈",
+          "verified": "opened"
+        },
+        {
+          "url": "https://chan.bailinsi.net/2008/5/2008504.htm",
+          "title": "《虚云和尚全集》编辑说明",
+          "institution": "柏林禅寺《禅》刊",
+          "role": "净慧等后编全集十部分的范围和整理说明",
+          "verified": "search indexed; direct open 502"
+        },
+        {
+          "url": "https://hx-culture.oss-cn-hangzhou.aliyuncs.com/jxfx/2023/08/28/4ca72d90bf8044c98161c3aa9291bad6.pdf",
+          "title": "虚云和尚法汇续编",
+          "institution": "江西佛教文献典藏（hx-culture）",
+          "role": "补充旧法汇未收材料，228页；尚未完成逐页归属核对",
+          "verified": "opened PDF metadata"
+        }
+      ]
+    },
+    {
+      "id": "hong-yi",
+      "source_note": "文字采用般若文海现存版本，保留原题、缺字、引文与编者括注；篇目署名区分原著、讲述与辑录。《晚晴集》及律学文献含经论辑录，非全部语句均为弘一原创；年谱条目的传主另行标明。",
+      "media_note": "尚未收录可核实的影音资料。",
+      "timeline": [
+        {
+          "year": "1880年",
+          "text": "生于天津，俗名李叔同。"
+        },
+        {
+          "year": "1905—1910年",
+          "text": "赴日本学习美术与音乐，回国后从事艺术教育。"
+        },
+        {
+          "year": "1918年",
+          "text": "于杭州虎跑定慧寺出家。"
+        },
+        {
+          "year": "闽南弘法时期",
+          "text": "研究、讲授并整理南山律学，著述与书信记录其修学实践。"
+        },
+        {
+          "year": "1942年",
+          "text": "于泉州圆寂，留下悲欣交集等临终遗墨。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bfnn.org/hungyi/article.htm",
+          "title": "弘一大师网络专辑—文章会集",
+          "institution": "般若文海佛教藏书"
+        },
+        {
+          "url": "https://www.bfnn.org/hungyi/music.htm",
+          "title": "弘一大师网络专辑—音乐歌谱",
+          "institution": "般若文海佛教藏书"
+        },
+        {
+          "url": "https://www.bfnn.org/hungyi/photo.htm",
+          "title": "弘一大师网络专辑—珍贵照片",
+          "institution": "般若文海佛教藏书"
+        },
+        {
+          "url": "https://www.bfnn.org/hungyi/art.htm",
+          "title": "弘一大师网络专辑—诗墨刻画",
+          "institution": "般若文海佛教藏书"
+        },
+        {
+          "url": "https://hongyimaster.blogspot.com/2017/05/blog-post_28.html",
+          "title": "弘一大师略传及年表",
+          "institution": "弘一大师纪念学会"
+        },
+        {
+          "url": "https://dmcb.dila.edu.tw/dmcb/弘一",
+          "title": "Hongyi 弘一",
+          "institution": "法鼓文理学院 DMCB"
+        },
+        {
+          "url": "https://zjdy.zjdafw.gov.cn/art/2012/9/12/art_25_7472.html",
+          "title": "李叔同",
+          "institution": "浙江档案数据库"
+        },
+        {
+          "url": "https://hebei.tjjw.gov.cn/lrhb/2025/03/27/deatil_202503272805.html",
+          "title": "李叔同故居纪念馆",
+          "institution": "天津市河北区纪委监委"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "xuyun-nianpu",
+      "title": "虚云和尚年谱",
+      "person_id": "xu-yun",
+      "category": "年谱与史料",
+      "attribution": "虚云自述，岑学吕编；编者附记及引用文献按原刊保留",
+      "source_url": "https://bookgb.bfnn.org/books2/1184.htm"
+    },
+    {
+      "id": "xuyun-fayu",
+      "title": "虚云和尚法汇 · 法语",
+      "person_id": "xu-yun",
+      "category": "法语与开示",
+      "attribution": "虚云开示，岑学吕编；编者按语按原刊保留",
+      "source_url": "https://bookgb.bfnn.org/books2/1185.htm"
+    },
+    {
+      "id": "xuyun-kaishi",
+      "title": "虚云和尚法汇 · 开示",
+      "person_id": "xu-yun",
+      "category": "法语与开示",
+      "attribution": "虚云开示，岑学吕编",
+      "source_url": "https://bookgb.bfnn.org/books2/1186.htm"
+    },
+    {
+      "id": "xuyun-shuwen",
+      "title": "虚云和尚法汇 · 书问",
+      "person_id": "xu-yun",
+      "category": "书信与问答",
+      "attribution": "虚云书信与答问，岑学吕编",
+      "source_url": "https://bookgb.bfnn.org/books2/1187.htm"
+    },
+    {
+      "id": "xuyun-wenji",
+      "title": "虚云和尚法汇 · 文记",
+      "person_id": "xu-yun",
+      "category": "序跋与文记",
+      "attribution": "虚云文记，岑学吕编",
+      "source_url": "https://bookgb.bfnn.org/books2/1188.htm"
+    },
+    {
+      "id": "xuyun-guiyue",
+      "title": "虚云和尚法汇 · 规约",
+      "person_id": "xu-yun",
+      "category": "戒律与丛林",
+      "attribution": "虚云寺院规约，岑学吕编",
+      "source_url": "https://bookgb.bfnn.org/books2/1189.htm"
+    },
+    {
+      "id": "xuyun-shige",
+      "title": "虚云和尚法汇 · 诗歌偈赞",
+      "person_id": "xu-yun",
+      "category": "诗歌与偈赞",
+      "attribution": "虚云诗偈，岑学吕编；他人赠诗不收作虚云原著",
+      "source_url": "https://bookgb.bfnn.org/books2/1190.htm"
+    },
+    {
+      "id": "hongyi-jiangyan",
+      "title": "弘一大师讲演录",
+      "person_id": "hong-yi",
+      "category": "讲演与修持",
+      "attribution": "弘一法师讲述；原刊记录者署名与引文按原文保留",
+      "source_url": "https://book.bfnn.org/books/0341.htm"
+    },
+    {
+      "id": "hongyi-jiangyan-xu",
+      "title": "弘一大师讲演续录",
+      "person_id": "hong-yi",
+      "category": "讲演与修持",
+      "attribution": "弘一法师讲述；原刊记录者署名与引文按原文保留",
+      "source_url": "https://book.bfnn.org/books/0342.htm"
+    },
+    {
+      "id": "hongyi-lvxue",
+      "title": "弘一大师文集 · 律学",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师著述；引录律典按原文保留",
+      "source_url": "https://book.bfnn.org/books2/1204.htm"
+    },
+    {
+      "id": "hongyi-kaishi",
+      "title": "弘一大师文集 · 开示",
+      "person_id": "hong-yi",
+      "category": "讲演与修持",
+      "attribution": "弘一法师开示；记录者署名按原文保留",
+      "source_url": "https://book.bfnn.org/books2/1207.htm"
+    },
+    {
+      "id": "hongyi-shujian",
+      "title": "弘一大师文集 · 书简",
+      "person_id": "hong-yi",
+      "category": "书信与问答",
+      "attribution": "弘一法师书信；编者括注按原文保留",
+      "source_url": "https://book.bfnn.org/books2/1208.htm"
+    },
+    {
+      "id": "hongyi-nanshan",
+      "title": "南山律在家备览略编 · 宗体篇",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师辑录；道宣、元照等原典作者按正文引文署名",
+      "source_url": "https://book.bfnn.org/books2/1197.htm"
+    },
+    {
+      "id": "hongyi-nanshan-chifan",
+      "title": "南山律在家备览略编 · 持犯篇",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师辑录；道宣、元照等原典作者按正文引文署名",
+      "source_url": "https://book.bfnn.org/books2/1198.htm"
+    },
+    {
+      "id": "hongyi-nanshan-chanhui",
+      "title": "南山律在家备览略编 · 忏悔篇",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师辑录；原典作者按正文引文署名",
+      "source_url": "https://book.bfnn.org/books2/1199.htm"
+    },
+    {
+      "id": "hongyi-nanshan-biexing",
+      "title": "南山律在家备览略编 · 别行篇",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师辑录；原典作者按正文引文署名",
+      "source_url": "https://book.bfnn.org/books2/1200.htm"
+    },
+    {
+      "id": "hongyi-nanshan-mingxiang",
+      "title": "南山律在家备览略编 · 戒体章名相别考",
+      "person_id": "hong-yi",
+      "category": "戒律与律学",
+      "attribution": "弘一法师编述；原典作者按正文引文署名",
+      "source_url": "https://book.bfnn.org/books2/1201.htm"
+    },
+    {
+      "id": "hongyi-daoxuan-nianpu",
+      "title": "南山道宣律祖弘传律教年谱附修学遗事",
+      "person_id": "hong-yi",
+      "category": "年谱与史料",
+      "attribution": "弘一法师编纂；传主为道宣律祖，非弘一自传",
+      "source_url": "https://book.bfnn.org/books2/1202.htm"
+    },
+    {
+      "id": "hongyi-ouyi-nianpu",
+      "title": "蕅益大师年谱",
+      "person_id": "hong-yi",
+      "category": "年谱与史料",
+      "attribution": "弘一法师编纂；传主为蕅益大师，录者注按原文标示",
+      "source_url": "https://book.bfnn.org/books2/1127.htm"
+    },
+    {
+      "id": "hongyi-yaoshi",
+      "title": "药师经析疑",
+      "person_id": "hong-yi",
+      "category": "佛法与经义",
+      "attribution": "弘一法师遗稿，圆拙整理；引录经疏按原文署名",
+      "source_url": "https://book.bfnn.org/books2/1251.htm"
+    },
+    {
+      "id": "hongyi-dizang",
+      "title": "地藏菩萨圣德大观",
+      "person_id": "hong-yi",
+      "category": "佛法与经义",
+      "attribution": "弘一法师辑述；引录经文按原文保留",
+      "source_url": "https://book.bfnn.org/books2/1194.htm"
+    },
+    {
+      "id": "hongyi-xinjing",
+      "title": "般若波罗蜜多心经讲录",
+      "person_id": "hong-yi",
+      "category": "佛法与经义",
+      "attribution": "弘一法师讲述",
+      "source_url": "https://book.bfnn.org/books2/1203.htm"
+    },
+    {
+      "id": "hongyi-wanqing",
+      "title": "晚晴集",
+      "person_id": "hong-yi",
+      "category": "讲演与修持",
+      "attribution": "弘一法师辑录；经论与祖师语录分别按原文出处署名",
+      "source_url": "https://book.bfnn.org/books2/1212.htm"
+    }
+  ],
+  "bibliography": []
+}
