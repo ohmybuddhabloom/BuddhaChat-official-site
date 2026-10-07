@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "5fdeda4597935fd0c86b919cc448148845aad0ff",
-  "sourceState": "reviewed-historical-masters-addition-preserving-official-existing-content",
+  "sourceState": "reviewed-incremental-supplement-preserving-official-existing-content",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -21,9 +21,9 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "cc2857281334718c94857f36825c36433c53de2c3abb4086f991eccdbdb4484f",
+    "prototypes/masters-h5/src/Prototype.tsx": "b0ae118c4f4d0c1e7d4f9fc8724f8681bec7f19a8b9b32b7c0233cfa9966d6dd",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "d18c2f3e584df1d09350f5c79cc93226733c0d71e8b7a067c71922735fe6b50c",
+    "prototypes/masters-h5/src/content.ts": "9b672d35b2f8ac3c261d4adccbd5867862194587ac8a3cec41fe1274edb37eb7",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5e231dc3a77ce28f585fb8843619076c7cc1a392c18cb7a188ac531ec8e5ee10",
@@ -58,7 +58,7 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "35b9258e13a25e19958bf1e9c0b6a7f95feacac7726326241747420d71bf42dd",
+    "shared/masters/article-index.json": "3f6f54b496cb93b62592f758bac1d943d023d9e6a44177632b8703a8804b0670",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
     "shared/masters/catalog.ts": "129e744b88074f2005bb77d3321ab939a4e6bf250edaa0a624c3b32ee6f79c1f",
@@ -67,10 +67,12 @@
     "shared/masters/people.ts": "a0d8bc239574618795ff634e0b3f017e998e8211c6ddffd8290a9c0b02bf265e",
     "shared/masters/profileCopy.ts": "1c22fb3d346fbcfa5f73a0568322e6433198955a386c40165aff356365e6a7a7",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "5690088acab2b27e6e4bc0244c981bcecb0d537216b959af59d157ec15582f83",
+    "shared/masters/shareLinks.ts": "bb7e89ed5ec7b61d1c26aa9b1da50496812f791d03baa6fd4ae6b4a5a44619f5",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
-    "shared/masters/historical-masters.json": "0738f13f038e2a29826c493e498a8c0be6673c981764377526f09b7a4f4953b8"
+    "shared/masters/historical-masters.json": "34b28c00117d6b0df247d05c0dd8156585ee0397b80dd46896b367a917cfffc5",
+    "shared/masters/historicalResources.ts": "3586723f83905a4a4b7b1059828f0732f9dcb57d5fdc225fc155e9196f0428b0"
   },
-  "historicalMastersSourceCommit": "d103acee"
+  "historicalMastersSourceCommit": "d103acee",
+  "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732"
 }

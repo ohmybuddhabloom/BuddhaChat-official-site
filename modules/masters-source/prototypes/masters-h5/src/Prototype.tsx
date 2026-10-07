@@ -1,5 +1,6 @@
+import { resourcesForPerson, type HistoricalResource } from '../../../shared/masters/historicalResources';
 import { profileCopy } from '../../../shared/masters/profileCopy';
-import { buildMastersAppLink, canonicalMastersContentRoute, h5LegacyRouteForMastersContent } from '../../../shared/masters/shareLinks';
+import { buildAvailableMastersAppLink, canonicalMastersContentRoute, h5LegacyRouteForMastersContent } from '../../../shared/masters/shareLinks';
 import { createArticleReader, type FetchArticleBody } from '../../../shared/masters/articleReader';
 import { buildReadingBlocks, type MastersFigure } from '../../../shared/masters/articleFigures';
 import { mastersTextVersion, type MastersArticle } from '../../../shared/masters/catalog';
@@ -76,11 +77,11 @@ export default function Prototype(){
  const [warning,setWarning]=useState('');
  const [gate,setGate]=useState<{route:string;action:string}|null>(null);
  const [initialRoute]=useState(()=>routeFromUrl(location.href,publicRoutes,canonicalRoutes));
- const appContentUrl=gate&&import.meta.env.VITE_MASTERS_APP_CONTENT_ENABLED==='true'?buildMastersAppLink(gate.route):null;
+ const appContentUrl=gate?buildAvailableMastersAppLink(gate.route,{contentEnabled:import.meta.env.VITE_MASTERS_APP_CONTENT_ENABLED==='true',historicalContentEnabled:import.meta.env.VITE_MASTERS_HISTORICAL_APP_CONTENT_ENABLED==='true'}):null;
  useEffect(()=>{Object.entries(uiColors).forEach(([key,value])=>document.documentElement.style.setProperty('--bc-'+key,value));Object.entries(uiRadius).forEach(([key,value])=>document.documentElement.style.setProperty('--bc-radius-'+key,value+'px'));},[]);
  const dispatch=(a:Action)=>setState(s=>reduceState(s,a));
  useEffect(()=>{try{localStorage.setItem(KEY,JSON.stringify(state));setWarning('');}catch{setWarning('浏览器未允许保存，本次操作仅在当前页面保留。');}},[state]);
- return <State.Provider value={{state,dispatch,warning}}><AppAccess.Provider value={(route,action)=>{setGate({route,action});}}><FlowStack initial={routes(initialRoute)}/><BottomSheet open={gate!==null} onOpenChange={open=>{if(!open)setGate(null);}} title={gate?.action==='我的关注'?'在 App 中查看关注':gate?.action==='我的收藏'?'在 App 中查看收藏':gate?.action==='关注'?'在 App 中关注这位法师或名家':gate?.action==='收藏'?'在 App 中收藏这份内容':'在 BuddhaChat 中继续'} description={gate?.action?.includes('关注')?'关注功能由 App 承接，网页可继续浏览各位主页。':gate?.action?.includes('收藏')?'收藏功能由 App 承接，网页可继续浏览公开内容。':'网页可继续阅读与播放公开内容。'}>{!appContentUrl&&<p className="notice">此栏目的 App 内容页尚未上线。现在可以继续浏览网页，或打开 App 首页。</p>}<a className="primary wide" href={appUrlForPage(appContentUrl||appHomeUrl,location.href)}>{appContentUrl?'在 App 中继续':'打开 App 首页'}</a><a className="secondary wide" href={downloadUrl} target="_blank" rel="noopener noreferrer">尚未安装？前往下载</a><button className="text-button" onClick={()=>setGate(null)}>继续在网页浏览 <ArrowRightIcon/></button></BottomSheet></AppAccess.Provider></State.Provider>;
+ return <State.Provider value={{state,dispatch,warning}}><AppAccess.Provider value={(route,action)=>{setGate({route,action});}}><FlowStack initial={routes(initialRoute)}/><BottomSheet open={gate!==null} onOpenChange={open=>{if(!open)setGate(null);}} title={gate?.action==='我的关注'?'在 App 中查看关注':gate?.action==='我的收藏'?'在 App 中查看收藏':gate?.action==='关注'?'在 App 中关注这位法师或名家':gate?.action==='收藏'?'在 App 中收藏这份内容':'在 BuddhaChat 中继续'} description={gate?.action?.includes('关注')?'关注功能由 App 承接，网页可继续浏览各位主页。':gate?.action?.includes('收藏')?'收藏功能由 App 承接，网页可继续浏览公开内容。':'网页可继续阅读与播放公开内容。'}>{!appContentUrl&&<p className="notice">此内容暂仅支持网页浏览。可继续浏览网页，或打开 App 首页。</p>}<a className="primary wide" href={appUrlForPage(appContentUrl||appHomeUrl,location.href)}>{appContentUrl?'在 App 中继续':'打开 App 首页'}</a><a className="secondary wide" href={downloadUrl} target="_blank" rel="noopener noreferrer">尚未安装？前往下载</a><button className="text-button" onClick={()=>setGate(null)}>继续在网页浏览 <ArrowRightIcon/></button></BottomSheet></AppAccess.Provider></State.Provider>;
 }
 function Screen({id}:{id:string}) { const flow=useFlow(); return <MobileScroll className="app-screen"><main className="content" inert={flow.current.id!==id}>{id==='home'?<Home/>:id==='directory'?<Directory/>:id==='yuanhui-book'?<YuanhuiBook/>:people.some(p=>p.route===id)?<Profile route={id}/>:id.startsWith('shengyen-book:')?<ShengyenBook id={id.slice(14)}/>:id.startsWith('reader:')?<InlineReading id={id.slice(7)}/>:id.startsWith('external:')?<ExternalReading id={id.slice(9)}/>:['history','following','favorites'].includes(id)?<LibraryPage kind={id}/>:id==='sources'?<Sources/>:id.startsWith('book:')?(historical.collections.some(b=>b.id===id.slice(5))?<HistoricalBook id={id.slice(5)}/>:<Book id={id.slice(5)}/>):id.startsWith('chapter:')?<Reading id={id.slice(8)}/>:flow.current.id===id?<Video id={id.slice(6)}/>:null}<StorageNote/></main></MobileScroll> }
 function StorageNote(){const{warning}=useLibrary();const flow=useFlow();return <p className={warning?'warning':'footnote'} role={warning?'alert':undefined}>{warning&&<>{warning} · </>}<button onClick={()=>flow.push(routes('sources'))}>内容来源</button></p>}
@@ -153,7 +154,7 @@ function Profile({route}:{route:string}){
   <p className="intro profile-intro">{copy.intro}</p>
   <div className="tabs profile-tabs" role="tablist" aria-label={person.name+'栏目'}>{['精选','著作','影音','生平'].map(t=><button id={'tab-'+person.id+'-'+t} role="tab" aria-controls={'panel-'+person.id} aria-selected={t===tab} key={t} onClick={()=>setTab(t)}>{t}</button>)}</div>
   <div id={'panel-'+person.id} role="tabpanel" aria-labelledby={'tab-'+person.id+'-'+tab}>
-   {tab==='精选'?<><Resume personId={person.id} compact/><Section title="精选著作" action={<button className="all-people" onClick={()=>setTab('著作')}>全部著作 <ArrowRightIcon/></button>}><ProfileWorks personId={person.id} featured/></Section><Section title="精选影音" action={<button className="all-people" onClick={()=>setTab('影音')}>全部影音 <ArrowRightIcon/></button>}><ProfileVideos personId={person.id}/></Section></>:tab==='著作'?<ProfileWorks personId={person.id}/>:tab==='影音'?<ProfileVideos personId={person.id}/>:<><h2 className="profile-panel-title">生平简介</h2><p className="reading-copy">{copy.bio}</p>{historyProfile&&<HistoricalTimeline profile={historyProfile}/>}</>}
+   {tab==='精选'?<><Resume personId={person.id} compact/><Section title="精选著作" action={<button className="all-people" onClick={()=>setTab('著作')}>全部著作 <ArrowRightIcon/></button>}><ProfileWorks personId={person.id} featured/></Section><Section title="精选影音" action={<button className="all-people" onClick={()=>setTab('影音')}>全部影音 <ArrowRightIcon/></button>}><ProfileVideos personId={person.id} featured/></Section></>:tab==='著作'?<ProfileWorks personId={person.id}/>:tab==='影音'?<ProfileVideos personId={person.id}/>:<><h2 className="profile-panel-title">生平简介</h2><p className="reading-copy">{copy.bio}</p>{historyProfile&&<HistoricalTimeline profile={historyProfile}/>}</>}
   </div>
   <details className="source-details"><summary>资料来源</summary>{historyProfile?<><p>{historyProfile.source_note}</p>{historyProfile.sources.map(source=><p key={source.url}><SourceLink url={source.url}>{source.institution} · {source.title}</SourceLink></p>)}</>:<><p>{person.id==='nan-huaijin'?'著作样例来自劝学网整理版，非基金会官方出版版本。':person.id==='sheng-yen'?'书目以法鼓全集为依据；正文收录状态按篇目显示。':person.id==='hsing-yun'?'著作以佛光山《星云大师全集》为文字主源；讲座录像为本人开示。':'源慧师父公开主页 · 答疑解惑。'}</p><SourceLink url={person.url||(person.id==='hsing-yun'?'https://books.masterhsingyun.org/intro/master':'https://www.nhjcf.org/')}>查看资料出处</SourceLink></>}</details>
  </div>;
@@ -168,19 +169,27 @@ function ProfileWorks({personId,featured=false}:{personId:string;featured?:boole
  if(personId==='sheng-yen')return <ShengyenWorks featured={featured}/>;
  return <PendingContent kind="著作"/>;
 }
-function ProfileVideos({personId}:{personId:string}){
+function ProfileVideos({personId,featured=false}:{personId:string;featured?:boolean}){
  const profile=historical.profiles.find(p=>p.id===personId);
- if(profile)return <p className="empty">{profile.media_note}</p>;
+ if(profile){const resources=resourcesForPerson(historical.resources,personId,'modern_video');return <><p className="empty">{profile.media_note}</p><HistoricalResourceRows resources={featured?resources.slice(0,3):resources}/></>;}
  if(personId==='hsing-yun')return <VideoRows/>;
  if(personId==='nan-huaijin')return <div className="video-list">{nanItems.filter(n=>n.kind==='video_series').map(n=><div className="chapter-row" key={n.id}><span className="eyebrow">讲课系列</span><OpenItem id={n.id}><strong>{n.title}</strong></OpenItem></div>)}</div>;
  return <PendingContent kind="影音"/>;
+}
+function HistoricalResourceRows({resources}:{resources:HistoricalResource[]}){
+ if(!resources.length)return null;
+ return <>{(['artwork','modern_video'] as const).map(kind=>{
+ const group=resources.filter(resource=>resource.kind===kind);if(!group.length)return null;
+ const artwork=kind==='artwork';
+ return <Section key={kind} title={artwork?'馆藏书法':'现代影音资料'}>{group.map(resource=><div className="source-row historical-resource" data-resource-id={resource.id} key={resource.id}><h3>{resource.title}</h3><p className="small">{artwork?'书写者及署名':'制作方及署名'}：{resource.attribution}</p><p className="small">{artwork?'馆藏':'节目来源'}：{resource.institution} · {resource.year}{resource.duration_seconds!==undefined&&<> · 时长 {clock(resource.duration_seconds)}</>}</p><details className="source-details"><summary>{artwork?'馆藏来源':'节目来源'}</summary><SourceLink url={resource.source_url}>{resource.institution} · 官方资料页</SourceLink></details></div>)}</Section>;
+ })}</>;
 }
 function HistoricalTimeline({profile}:{profile:typeof historical.profiles[number]}){return <Section title="生平年表">{profile.timeline.map((event,i)=><p className="reading-copy" key={i}><strong>{event.year}</strong> · {event.text}</p>)}</Section>}
 function HistoricalWorks({personId,featured=false}:{personId:string;featured?:boolean}){
  const [category,setCategory]=useState('全部');
  const works=historical.collections.filter(b=>b.person_id===personId);
  const shown=featured?works.slice(0,3):works.filter(b=>category==='全部'||b.category===category);
- return <>{!featured&&<label className="select-label">著作分类<select value={category} onChange={e=>setCategory(e.target.value)}>{['全部',...new Set(works.map(b=>b.category))].map(value=><option key={value}>{value}</option>)}</select></label>}<div className="book-list">{shown.map((book,i)=><div className="book-row" key={book.id}><span className="book-index">{String(i+1).padStart(2,'0')}</span><div><span className="eyebrow">{book.category}</span><OpenItem id={book.id}><strong>{book.title}</strong></OpenItem><p>{book.attribution}</p><p className="small">{collectionArticles(book.id).length} 篇可阅读</p></div></div>)}</div></>;
+ return <>{!featured&&<label className="select-label">著作分类<select value={category} onChange={e=>setCategory(e.target.value)}>{['全部',...new Set(works.map(b=>b.category))].map(value=><option key={value}>{value}</option>)}</select></label>}<div className="book-list">{shown.map((book,i)=><div className="book-row" key={book.id}><span className="book-index">{String(i+1).padStart(2,'0')}</span><div><span className="eyebrow">{book.category}</span><OpenItem id={book.id}><strong>{book.title}</strong></OpenItem><p>{book.attribution}</p><p className="small">{collectionArticles(book.id).length} 篇可阅读</p></div></div>)}</div>{!featured&&<HistoricalResourceRows resources={resourcesForPerson(historical.resources,personId,'artwork')}/>}</>;
 }
 function HistoricalBook({id}:{id:string}){
  const book=historical.collections.find(b=>b.id===id);const flow=useFlow();if(!book)return <p>著作暂不可用</p>;
@@ -209,12 +218,14 @@ function SearchResults({query}:{query:string}) {
   const bs=books.filter(b=>[b.title,b.title_original,b.label].join('').includes(q));
   const cs=readableArticles.filter(c=>c.title.includes(q)).slice(0,30);
   const hs=historical.collections.filter(b=>b.title.includes(q));
+  const rs=historical.resources.filter(resource=>resource.title.includes(q));
   const ns=nanItems.filter(n=>n.title.includes(q));
   const flow=useFlow();
   return <Section title="搜索结果">
     {matches.map(p=><button className="row search-person" key={p.id} onClick={()=>flow.push(routes(p.route))}><strong>{p.name}</strong><span>{p.label} →</span></button>)}
     {[...bs,...hs,...ns,...cs].map(item=><div className="row" key={item.id}><OpenItem id={item.id}/></div>)}
-    {!matches.length&&!bs.length&&!cs.length&&!ns.length&&!hs.length&&<p className="empty">暂未找到，试试人物姓名或书名。篇目支持原目录繁体题名。</p>}
+    <HistoricalResourceRows resources={rs}/>
+    {!rs.length&&!matches.length&&!bs.length&&!cs.length&&!ns.length&&!hs.length&&<p className="empty">暂未找到，试试人物姓名或书名。篇目支持原目录繁体题名。</p>}
   </Section>;
 }
 

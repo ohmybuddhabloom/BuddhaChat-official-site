@@ -1,4 +1,6 @@
+import historical from './historical-masters.json';
 import {
+  itemOwner,
   authors,
   getArticleSummary,
   getCollection,
@@ -169,4 +171,17 @@ export function buildMastersShareLinks(
   const h5Url = buildMastersH5Url(route, publicBaseUrl);
   if (!appUrl || !h5Url) return null;
   return { route, contentRoute, appUrl, h5Url };
+}
+
+/** Keep unpublished historical content off installed-app links until its candidate is accepted. */
+export function buildAvailableMastersAppLink(
+  input: string | MastersRoute | null | undefined,
+  options: { contentEnabled: boolean; historicalContentEnabled?: boolean },
+): string | null {
+  if (!options.contentEnabled) return null;
+  const route = resolveMastersShareRoute(input);
+  if (!route) return null;
+  const owner = route.kind === 'home' ? undefined : route.kind === 'person' ? route.id : itemOwner(route.id);
+  if (historical.profiles.some(profile => profile.id === owner) && !options.historicalContentEnabled) return null;
+  return buildMastersAppLink(route);
 }

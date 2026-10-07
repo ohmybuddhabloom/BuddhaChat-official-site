@@ -3,8 +3,8 @@
   "profiles": [
     {
       "id": "xu-yun",
-      "source_note": "文字采用般若文海现存版本，保留原题、缺字、引文与编者括注；篇目署名区分原著、讲述与辑录。年谱为虚云自述、岑学吕编；传统年谱采用1840年生，其他史料有异说，原文年龄不另行推算。",
-      "media_note": "尚未收录可核实的影音资料。",
+      "source_note": "文字采用般若文海现存版本、江西佛协辑录及《法汇续编》扫描页。原题、缺字、引文与编者括注按所标版本保留；新增传法偈仅收原偈，未将现代序言、传记和考证署为虚云原著。年谱为虚云自述、岑学吕编；传统年谱采用1840年生，其他史料有异说，原文年龄不另行推算。",
+      "media_note": "以下为现代影视传记，由演员演绎；尚未收录虚云本人生前录音。",
       "timeline": [
         {
           "year": "早年修学",
@@ -85,7 +85,7 @@
     {
       "id": "hong-yi",
       "source_note": "文字采用般若文海现存版本，保留原题、缺字、引文与编者括注；篇目署名区分原著、讲述与辑录。《晚晴集》及律学文献含经论辑录，非全部语句均为弘一原创；年谱条目的传主另行标明。",
-      "media_note": "尚未收录可核实的影音资料。",
+      "media_note": "以下为现代访谈与文化讲述，分别注明制作方；尚未收录本人原声。",
       "timeline": [
         {
           "year": "1880年",
@@ -336,7 +336,346 @@
       "category": "讲演与修持",
       "attribution": "弘一法师辑录；经论与祖师语录分别按原文出处署名",
       "source_url": "https://book.bfnn.org/books2/1212.htm"
+    },
+    {
+      "id": "xuyun-wuzong-faji",
+      "person_id": "xu-yun",
+      "title": "五宗法嗣录 · 原偈",
+      "category": "传法偈与宗派",
+      "attribution": "虚云传法偈，素闻法师辑录；仅收原偈",
+      "source_url": "https://www.jxsfjxh.cn/a/1689572132031987713"
+    },
+    {
+      "id": "xuyun-xubian-shige",
+      "person_id": "xu-yun",
+      "title": "法汇续编 · 诗偈选录",
+      "category": "诗歌与偈赞",
+      "attribution": "虚云诗偈，净慧辑录；据续编扫描页核对",
+      "source_url": "https://hx-culture.oss-cn-hangzhou.aliyuncs.com/jxfx/2023/08/28/4ca72d90bf8044c98161c3aa9291bad6.pdf"
+    },
+    {
+      "id": "hongyi-shici-zhuanlu",
+      "person_id": "hong-yi",
+      "title": "诗词与题画 · 转录选读",
+      "category": "诗词与题画",
+      "attribution": "李叔同（弘一）原作；维基文库转录版，非手稿校勘定本",
+      "source_url": "https://zh.wikisource.org/wiki/Author:李叔同"
     }
   ],
-  "bibliography": []
+  "bibliography": [],
+  "resources": [
+    {
+      "id": "hongyi-art-source-01",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "行书楞严经偈页",
+      "attribution": "经偈由弘一书写，经文并非弘一原创",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002643",
+      "year": "1918"
+    },
+    {
+      "id": "hongyi-art-source-02",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "篆书长寿钩铭轴",
+      "attribution": "李叔同书",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002644",
+      "year": "1913"
+    },
+    {
+      "id": "hongyi-art-source-03",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "楷书勇猛精进页",
+      "attribution": "李叔同书，夏弘宁捐赠",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002645",
+      "year": "1918"
+    },
+    {
+      "id": "hongyi-art-source-04",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "篆书知止页",
+      "attribution": "李叔同书",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002646",
+      "year": "年代未详"
+    },
+    {
+      "id": "hongyi-art-source-05",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "行书华严经偈横披",
+      "attribution": "弘一书写《华严经》偈，非弘一原创经文",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002647",
+      "year": "年代未详"
+    },
+    {
+      "id": "hongyi-art-source-06",
+      "person_id": "hong-yi",
+      "kind": "artwork",
+      "title": "行书七言联",
+      "attribution": "李叔同书",
+      "institution": "上海博物馆",
+      "source_url": "https://www.shanghaimuseum.net/mu/frontend/pg/article/id/P00002972",
+      "year": "1922"
+    },
+    {
+      "id": "hongyi-video-source-01",
+      "person_id": "hong-yi",
+      "kind": "modern_video",
+      "title": "[回声嘹亮]李叔同孙女收集祖父著作 四十年如一日",
+      "attribution": "总台CCTV-3《回声嘹亮》；李叔同孙女访谈",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2020/01/09/VIDE5IOwTL5yQxykMbQKXRrj200109.shtml",
+      "year": "2020",
+      "duration_seconds": 74
+    },
+    {
+      "id": "hongyi-video-source-02",
+      "person_id": "hong-yi",
+      "kind": "modern_video",
+      "title": "[百家说故事]李叔同的《送别》",
+      "attribution": "总台CCTV-10《百家说故事》现代讲述者；不是弘一原声",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2022/12/07/VIDERvFyKETmKaD6ucyE8ES7221207.shtml",
+      "year": "2022",
+      "duration_seconds": 179.72
+    },
+    {
+      "id": "hongyi-video-source-03",
+      "person_id": "hong-yi",
+      "kind": "modern_video",
+      "title": "[我的艺术清单]弘一法师的放下精神时刻影响着濮存昕",
+      "attribution": "总台CCTV-3《我的艺术清单》；濮存昕谈弘一",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2021/01/28/VIDExa9xayqIAoePcsS1afUT210128.shtml",
+      "year": "2021",
+      "duration_seconds": 65.08
+    },
+    {
+      "id": "xuyun-video-source-01",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第1集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/14/VIDE1355978183967838.shtml",
+      "year": "2012",
+      "duration_seconds": 2676.0
+    },
+    {
+      "id": "xuyun-video-source-02",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第2集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/14/VIDE1355978130736186.shtml",
+      "year": "2012",
+      "duration_seconds": 2521.0
+    },
+    {
+      "id": "xuyun-video-source-03",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第3集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/14/VIDE1355978180853795.shtml",
+      "year": "2012",
+      "duration_seconds": 2429.0
+    },
+    {
+      "id": "xuyun-video-source-04",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第4集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/14/VIDE1355978163053578.shtml",
+      "year": "2012",
+      "duration_seconds": 2512.0
+    },
+    {
+      "id": "xuyun-video-source-05",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第5集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/15/VIDE1355978188122897.shtml",
+      "year": "2012",
+      "duration_seconds": 2523.0
+    },
+    {
+      "id": "xuyun-video-source-06",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第6集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/15/VIDE1355978143495311.shtml",
+      "year": "2012",
+      "duration_seconds": 2562.0
+    },
+    {
+      "id": "xuyun-video-source-07",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第7集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/15/VIDE1355978172450687.shtml",
+      "year": "2012",
+      "duration_seconds": 2554.0
+    },
+    {
+      "id": "xuyun-video-source-08",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第8集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/15/VIDE1355978153917447.shtml",
+      "year": "2012",
+      "duration_seconds": 2533.0
+    },
+    {
+      "id": "xuyun-video-source-09",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第9集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/16/VIDE1355978177685757.shtml",
+      "year": "2012",
+      "duration_seconds": 2423.0
+    },
+    {
+      "id": "xuyun-video-source-10",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第10集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/16/VIDE1355978169237654.shtml",
+      "year": "2012",
+      "duration_seconds": 2558.0
+    },
+    {
+      "id": "xuyun-video-source-11",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第11集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/16/VIDE1355978178754768.shtml",
+      "year": "2012",
+      "duration_seconds": 2506.0
+    },
+    {
+      "id": "xuyun-video-source-12",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第12集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/16/VIDE1355978151759425.shtml",
+      "year": "2012",
+      "duration_seconds": 2555.0
+    },
+    {
+      "id": "xuyun-video-source-13",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第13集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/17/VIDE1355978176625746.shtml",
+      "year": "2012",
+      "duration_seconds": 2569.0
+    },
+    {
+      "id": "xuyun-video-source-14",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第14集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/17/VIDE1355978189182908.shtml",
+      "year": "2012",
+      "duration_seconds": 2237.0
+    },
+    {
+      "id": "xuyun-video-source-15",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第15集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/17/VIDE1355978152827436.shtml",
+      "year": "2012",
+      "duration_seconds": 2483.0
+    },
+    {
+      "id": "xuyun-video-source-16",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第16集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/17/VIDE1355978146641354.shtml",
+      "year": "2012",
+      "duration_seconds": 2584.0
+    },
+    {
+      "id": "xuyun-video-source-17",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第17集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/18/VIDE1355978166231618.shtml",
+      "year": "2012",
+      "duration_seconds": 2485.0
+    },
+    {
+      "id": "xuyun-video-source-18",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第18集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/18/VIDE1355978171398676.shtml",
+      "year": "2012",
+      "duration_seconds": 2543.0
+    },
+    {
+      "id": "xuyun-video-source-19",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第19集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/18/VIDE1355978170315665.shtml",
+      "year": "2012",
+      "duration_seconds": 2549.0
+    },
+    {
+      "id": "xuyun-video-source-20",
+      "person_id": "xu-yun",
+      "kind": "modern_video",
+      "title": "《百年虚云》 第20集",
+      "attribution": "央视网播出；现代影视传记（演员演绎），并非虚云本人影像或原声。",
+      "institution": "央视网",
+      "source_url": "https://tv.cctv.com/2012/07/18/VIDE1355978139441256.shtml",
+      "year": "2012",
+      "duration_seconds": 2681.0
+    }
+  ]
 }
