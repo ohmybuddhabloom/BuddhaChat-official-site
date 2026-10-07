@@ -21,7 +21,7 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "b0ae118c4f4d0c1e7d4f9fc8724f8681bec7f19a8b9b32b7c0233cfa9966d6dd",
+    "prototypes/masters-h5/src/Prototype.tsx": "0d861de34acd84ab0fbc42dce95cf56f6e61e7678f0d7e1e3558d14564982ad7",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
     "prototypes/masters-h5/src/content.ts": "9b672d35b2f8ac3c261d4adccbd5867862194587ac8a3cec41fe1274edb37eb7",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
@@ -45,7 +45,7 @@
     "prototypes/masters-h5/src/mobile/geometry.ts": "f1382e5d6cc9adfd7ac142304f2f9a5a2330db1d74b3f0848adbaf311676bf16",
     "prototypes/masters-h5/src/mobile/index.ts": "ee69d9341571db5dee84dd2d7452a62eef09085a84a85f198a3edc48047e0412",
     "prototypes/masters-h5/src/nan-huaijin-candidates.json": "dff0e6ee39cc1c944da7a88fd226d247dbb6f846b27323aea5d6fdf82c264c91",
-    "prototypes/masters-h5/src/people.ts": "13eff095fdd616895229804cc92878f5592d5c6053a9fbae56f2d8d874be1ae5",
+    "prototypes/masters-h5/src/people.ts": "bd2995ef5b965e8c296a5326b5b73b83fec6ba526db96f70a1c8ce6ada0e2650",
     "prototypes/masters-h5/src/prototype.css": "c9e9f190af013a5352ace20a5480557928ba1e1344296ec3b1da68f51b836676",
     "prototypes/masters-h5/src/public-entry.tsx": "87f0269d638896e9f7d2f1b7d5a9bbe7e4cdeac9f550ead77c66116af8f89fb8",
     "prototypes/masters-h5/src/public-runtime.tsx": "81375b2c5481e1dbe938d469347f1a7cc9967c024ce3d27d5d3e9c853f143700",
@@ -64,7 +64,7 @@
     "shared/masters/catalog.ts": "129e744b88074f2005bb77d3321ab939a4e6bf250edaa0a624c3b32ee6f79c1f",
     "shared/masters/collection-index.json": "39a3abb014219cafe577f4302915512fbe22355d949e436ad9e2cc69cae84d01",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
-    "shared/masters/people.ts": "a0d8bc239574618795ff634e0b3f017e998e8211c6ddffd8290a9c0b02bf265e",
+    "shared/masters/people.ts": "60d7d0aeb04755caa84c21d3e308aa821ecde0fd2a697e1722dd443a50765d66",
     "shared/masters/profileCopy.ts": "1c22fb3d346fbcfa5f73a0568322e6433198955a386c40165aff356365e6a7a7",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
     "shared/masters/shareLinks.ts": "bb7e89ed5ec7b61d1c26aa9b1da50496812f791d03baa6fd4ae6b4a5a44619f5",
@@ -74,5 +74,6 @@
     "shared/masters/historicalResources.ts": "3586723f83905a4a4b7b1059828f0732f9dcb57d5fdc225fc155e9196f0428b0"
   },
   "historicalMastersSourceCommit": "d103acee",
-  "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732"
+  "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
+  "temporaryVisibilitySourceCommit": "c017a8ceae253c84c6a8193109e97b95c1fea3e0"
 }

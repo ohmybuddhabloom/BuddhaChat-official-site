@@ -10,7 +10,7 @@ import { FlowStack, useFlow, MobileScroll, KeyboardInput, BottomSheet, type Flow
 import { books, chapters, videos, sources, nanItems, itemTitle, itemOwner, clock, readableArticles, legacyArticles, articleSummary, collectionArticles, historical } from './content';
 import { uiColors, uiRadius } from '../../../src/ui/tokens';
 import { contentUrl, routeFromUrl, downloadUrl, appHomeUrl, appUrlForPage } from './share-link.mjs';
-import { people } from './people';
+import { people, visiblePeople } from './people';
 import { catalogLabel } from './display-text.mjs';
 import shengyenCatalog from '../../../docs/shengyen-chinese-catalog.json';
 import YouTubePlayer from './YouTubePlayer';
@@ -107,7 +107,7 @@ function Home() {
     {query ? <SearchResults query={query}/> : <>
       <Section title="法师与名家" action={<button className="all-people" onClick={()=>flow.push(routes('directory'))}>查看全部 <ArrowRightIcon/></button>}>
         <div className="people-grid">
-          {people.map(person=><button key={person.id} onClick={()=>flow.push(routes(person.route))} aria-label={'进入'+person.name+'主页'}>
+          {visiblePeople.map(person=><button key={person.id} onClick={()=>flow.push(routes(person.route))} aria-label={'进入'+person.name+'主页'}>
             <Portrait id={person.id}/>
             <strong>{person.name}</strong><span>{person.type}</span>
           </button>)}
@@ -139,7 +139,7 @@ function Directory() {
   const flow = useFlow();
   return <>
     <div className="tabs" role="tablist" aria-label="人物分类">{['全部','法师','名家'].map(item=><button key={item} role="tab" aria-selected={filter===item} onClick={()=>setFilter(item)}>{item}</button>)}</div>
-    {people.filter(person=>filter==='全部'||person.type===filter).map(person=><div className="follow-row" key={person.id}>
+    {visiblePeople.filter(person=>filter==='全部'||person.type===filter).map(person=><div className="follow-row" key={person.id}>
       <button className="directory-person" onClick={()=>flow.push(routes(person.route))}><Portrait id={person.id}/><span><strong>{person.name}</strong><span>{person.label}</span></span></button><Follow id={person.id}/>
     </div>)}
   </>;
@@ -214,9 +214,9 @@ function ShengyenBook({id}:{id:string}){
 
 function SearchResults({query}:{query:string}) {
   const q=query.trim().toLowerCase();
-  const matches=people.filter(p=>(p.name+p.aliases).includes(q));
+  const matches=visiblePeople.filter(p=>(p.name+p.aliases).includes(q));
   const bs=books.filter(b=>[b.title,b.title_original,b.label].join('').includes(q));
-  const cs=readableArticles.filter(c=>c.title.includes(q)).slice(0,30);
+  const cs=readableArticles.filter(c=>visiblePeople.some(p=>p.id===c.person_id)&&c.title.includes(q)).slice(0,30);
   const hs=historical.collections.filter(b=>b.title.includes(q));
   const rs=historical.resources.filter(resource=>resource.title.includes(q));
   const ns=nanItems.filter(n=>n.title.includes(q));
@@ -229,7 +229,7 @@ function SearchResults({query}:{query:string}) {
   </Section>;
 }
 
-function Resume({personId,compact=false}:{personId?:string;compact?:boolean}){const {state}=useLibrary();const flow=useFlow();const history=state.history.filter(h=>!personId||itemOwner(h.id)===personId);if(!history.length)return null;if(compact){const h=history[0];const chapter=chapters.find(c=>c.id===h.id);const article=articleSummary(h.id);const book=books.find(b=>b.id===(article?.book_id||chapter?.book_id||h.id));const nan=nanItems.find(n=>n.id===h.id||n.id===article?.book_id);const isVideo=videos.some(v=>v.id===h.id);const author=people.find(p=>p.id===itemOwner(h.id))?.name||'';return <section className="resume-detail" aria-label="继续浏览"><div className="resume-heading"><span><ClockIcon/>继续浏览</span><button aria-label="查看全部浏览记录" onClick={()=>flow.push(routes('history'))}>全部记录</button></div><strong className="resume-title">{itemTitle(h.id)}</strong><p className="small">{author} · {article?itemTitle(article.book_id):book?.title||(isVideo?'金刚经大义（一）':nan?.title||'著作')}</p><div className="resume-bottom"><span className="small">{isVideo?(h.kind==='video'&&h.seconds?'上次播放至 '+clock(h.seconds):'已访问 · 尚无播放进度'):(h.kind==='chapter'&&h.paragraph!==undefined?'读到第 '+(h.paragraph+1)+' 段':'最近阅读')}</span><OpenItem id={h.id}>{isVideo?'继续播放':h.kind==='chapter'&&h.paragraph!==undefined?'继续阅读':'再读本篇'}</OpenItem></div></section>;}return <Section title="继续浏览">{history.slice(0,2).map(h=><div className="resume" key={h.id}><span className="small">{h.kind==='video'&&h.seconds?'上次播放至 '+clock(h.seconds):'paragraph' in h&&typeof h.paragraph==='number'?'读到第 '+(h.paragraph+1)+' 段':'最近阅读'}</span><OpenItem id={h.id}/></div>)}</Section>}
+function Resume({personId,compact=false}:{personId?:string;compact?:boolean}){const {state}=useLibrary();const flow=useFlow();const history=state.history.filter(h=>personId?itemOwner(h.id)===personId:visiblePeople.some(p=>p.id===itemOwner(h.id)));if(!history.length)return null;if(compact){const h=history[0];const chapter=chapters.find(c=>c.id===h.id);const article=articleSummary(h.id);const book=books.find(b=>b.id===(article?.book_id||chapter?.book_id||h.id));const nan=nanItems.find(n=>n.id===h.id||n.id===article?.book_id);const isVideo=videos.some(v=>v.id===h.id);const author=people.find(p=>p.id===itemOwner(h.id))?.name||'';return <section className="resume-detail" aria-label="继续浏览"><div className="resume-heading"><span><ClockIcon/>继续浏览</span><button aria-label="查看全部浏览记录" onClick={()=>flow.push(routes('history'))}>全部记录</button></div><strong className="resume-title">{itemTitle(h.id)}</strong><p className="small">{author} · {article?itemTitle(article.book_id):book?.title||(isVideo?'金刚经大义（一）':nan?.title||'著作')}</p><div className="resume-bottom"><span className="small">{isVideo?(h.kind==='video'&&h.seconds?'上次播放至 '+clock(h.seconds):'已访问 · 尚无播放进度'):(h.kind==='chapter'&&h.paragraph!==undefined?'读到第 '+(h.paragraph+1)+' 段':'最近阅读')}</span><OpenItem id={h.id}>{isVideo?'继续播放':h.kind==='chapter'&&h.paragraph!==undefined?'继续阅读':'再读本篇'}</OpenItem></div></section>;}return <Section title="继续浏览">{history.slice(0,2).map(h=><div className="resume" key={h.id}><span className="small">{h.kind==='video'&&h.seconds?'上次播放至 '+clock(h.seconds):'paragraph' in h&&typeof h.paragraph==='number'?'读到第 '+(h.paragraph+1)+' 段':'最近阅读'}</span><OpenItem id={h.id}/></div>)}</Section>}
 
 function BookRows(){return <div className="book-list">{books.map((b,i)=><div className="book-row" key={b.id}><span className="book-index">0{i+1}</span><div><span className="eyebrow">{b.label} · 全集第 {b.volume_numbers} 册</span><OpenItem id={b.id}><strong>{b.title}</strong></OpenItem><p>{b.intro}</p></div></div>)}</div>}
 function Book({id}:{id:string}){const book=books.find(b=>b.id===id);const [q,setQ]=useState('');const[volume,setVolume]=useState('');const[limit,setLimit]=useState(60);const[onlyReadable,setOnlyReadable]=useState(true);if(!book)return <p>该著作暂不可用</p>;const all=chapters.filter(c=>c.book_id===id);const readableIds=new Set(collectionArticles(id).map(a=>a.id));const groups=[...new Set(all.map(c=>c.hierarchy_original[0]||'本书目录'))];const shown=all.filter(c=>(!onlyReadable||readableIds.has(c.id))&&(!volume||(c.hierarchy_original[0]||'本书目录')===volume)&&(!q||c.title_display.includes(q)));return <><span className="eyebrow">星云大师全集 · 第 {book.volume_numbers} 册</span><h1>{book.title}</h1><p className="intro">{book.intro}</p><div className="actions"><OpenItem id={book.sample}>阅读精选篇目</OpenItem><Save id={id}/></div><label className="search"><MagnifyingGlassIcon/><KeyboardInput placeholder="搜索本书原目录" value={q} onChange={e=>setQ(e.target.value)}/></label><label className="select-label">选择册别<select value={volume} onChange={e=>setVolume(e.target.value)}><option value="">全部册别</option>{groups.map(g=><option key={g} value={g}>{catalogLabel(g)}</option>)}</select></label><div className="tabs" role="tablist" aria-label="目录范围"><button role="tab" aria-selected={onlyReadable} onClick={()=>{setOnlyReadable(true);setLimit(60);}}>可阅读</button><button role="tab" aria-selected={!onlyReadable} onClick={()=>{setOnlyReadable(false);setLimit(60);}}>全部目录</button></div><Section title="目录"><p className="small">显示 {Math.min(limit,shown.length)} / {shown.length} 项</p>{shown.slice(0,limit).map(c=><div className="chapter-row" key={c.id}><span className="small">{c.hierarchy_original.map(catalogLabel).join(' › ')||'本书'} · {c.title_original.match(/p\d+/)?.[0]}</span><OpenItem id={c.id}/><span className="small">{readableIds.has(c.id)?'可阅读':'暂未开放阅读'}</span>{c.attribution_status==='contributor_review_required'&&<span className="attribution">序文 / 编者资料</span>}</div>)}{shown.length>limit&&<button className="secondary wide" onClick={()=>setLimit(n=>n+60)}>加载更多目录（还有 {shown.length-limit} 项）</button>}{shown.length===0&&<p className="empty">没有匹配的篇目。</p>}</Section></>}
@@ -306,7 +306,7 @@ function ArticleFigure({figure}:{figure:MastersFigure}){
   :<td key={cellIndex} colSpan={cell.colspan} rowSpan={cell.rowspan}>{cell.text}</td>)}</tr>)}</table></div>;
 }
 function SourceLink({url,children}:{url:string;children:ReactNode}){return <a className="source-link" href={url} target="_blank" rel="noopener noreferrer">{children}<ExternalLinkIcon/></a>}
-function Sources(){return <><h1>每一份内容，<br/>都有来处。</h1><p className="intro">各位法师与名家的资料分别注明出处。导读由平台整理，原文及影音以所标注的来源为准。</p><Section title="人物主页来源">{people.filter(p=>p.url).map(p=><div className="source-row" key={p.id}><SourceLink url={p.url}>{p.name}</SourceLink></div>)}</Section>{sources.map(([name,url,note])=><div className="source-row" key={url}><SourceLink url={url}>{name}</SourceLink><p className="small">{note}</p></div>)}<Section title="人物图像来源"><p className="small">源慧师父、圣严法师图像来自各自官网；星云大师使用全集官网插画。南怀瑾晚年肖像来自中新网报道。</p><SourceLink url="https://www.chinanews.com.cn/cul/2012/10-23/4269724.shtml">南怀瑾肖像来源</SourceLink></Section><Section title="内容归属"><p className="reading-copy">本人著述：按作品实际作者署名。<br/>本人开示：注明实际讲者。<br/>他人朗读：作者与朗读者分别标注。<br/>研究资料：按研究者或机构署名。问答中的提问与回答分别标示。</p></Section></>}
+function Sources(){return <><h1>每一份内容，<br/>都有来处。</h1><p className="intro">各位法师与名家的资料分别注明出处。导读由平台整理，原文及影音以所标注的来源为准。</p><Section title="人物主页来源">{visiblePeople.filter(p=>p.url).map(p=><div className="source-row" key={p.id}><SourceLink url={p.url}>{p.name}</SourceLink></div>)}</Section>{sources.map(([name,url,note])=><div className="source-row" key={url}><SourceLink url={url}>{name}</SourceLink><p className="small">{note}</p></div>)}<Section title="人物图像来源"><p className="small">圣严法师图像来自官网；星云大师使用全集官网插画。南怀瑾晚年肖像来自中新网报道。</p><SourceLink url="https://www.chinanews.com.cn/cul/2012/10-23/4269724.shtml">南怀瑾肖像来源</SourceLink></Section><Section title="内容归属"><p className="reading-copy">本人著述：按作品实际作者署名。<br/>本人开示：注明实际讲者。<br/>他人朗读：作者与朗读者分别标注。<br/>研究资料：按研究者或机构署名。问答中的提问与回答分别标示。</p></Section></>}
 
 function ExternalReading({id}:{id:string}){
  const item=nanItems.find(n=>n.id===id);const flow=useFlow();const[limit,setLimit]=useState(60);useEffect(()=>setLimit(60),[id]);if(!item)return <p>资料尚未准备</p>;

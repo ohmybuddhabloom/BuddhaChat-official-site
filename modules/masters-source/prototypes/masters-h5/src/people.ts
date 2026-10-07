@@ -1,1 +1,1 @@
-export { people } from '../../../shared/masters/people';
+export { people, visiblePeople } from '../../../shared/masters/people';
