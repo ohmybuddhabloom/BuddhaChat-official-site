@@ -242,3 +242,43 @@ describe('website product routing', () => {
     expect(destinationFor('www.buddhachat.online', '/api/music/state')).toBe('https://zentube.buddhachat.online/api/music/state')
   })
 })
+
+describe('Phase2 versioned music namespace (owner-v2)', () => {
+  const NS = 'app137-owner-v2-01dafd9'
+  const stageHost = '(?:staging\\.buddhachat\\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\\.vercel\\.app)'
+
+  test('versioned namespace routes exist, are host-scoped, and precede the legacy /music/:path* rewrite', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const rw = config.rewrites
+    const legacyIdx = rw.findIndex(r => r.source === '/music/:path*' && r.has)
+    expect(legacyIdx).toBeGreaterThan(-1)
+
+    const wanted = [
+      `/music/${NS}/assets/:path*`,
+      `/music/${NS}/local-audio/:path*`,
+      `/music/${NS}`,
+      `/music/${NS}/`,
+      `/music/${NS}/:path*`,
+    ]
+    for (const source of wanted) {
+      const idx = rw.findIndex(r => r.source === source)
+      expect(idx, `${source} must exist`).toBeGreaterThan(-1)
+      // 必须排在 legacy /music/:path* 之前，否则会被 legacy 先命中
+      expect(idx, `${source} must precede legacy /music/:path*`).toBeLessThan(legacyIdx)
+      // 必须限定 Stage host，不能外溢到 Production
+      expect(rw[idx].has, `${source} must be host-scoped`).toBeTruthy()
+      expect(rw[idx].has[0]).toEqual({ type: 'host', value: stageHost })
+    }
+  })
+
+  test('legacy v1 pin and production fallbacks stay unchanged', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const rw = config.rewrites
+    const legacyHost = rw.find(r => r.source === '/music/:path*' && r.has)
+    expect(legacyHost.destination).toBe('https://buddhachat-music-7art93p7l-chenjunyu-1990s-projects.vercel.app/music/:path*')
+    // 生产回落仍指向稳定 music 域，且不带 host 限定
+    const prod = rw.filter(r => r.source === '/music/:path*' && !r.has)
+    expect(prod.length).toBe(1)
+    expect(prod[0].destination).toBe('https://buddhachat-music.vercel.app/music/:path*')
+  })
+})
