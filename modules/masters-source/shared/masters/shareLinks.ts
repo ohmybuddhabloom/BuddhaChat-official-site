@@ -2,6 +2,7 @@ import historical from './historical-masters.json';
 import expandedLibrary from './expanded-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
 import nextTextLibraryRound2 from './next-text-library-20261009.json';
+import continuousLibrary from './continuous-library-20261009.json';
 import {
   itemOwner,
   videos,
@@ -192,6 +193,7 @@ export function buildAvailableMastersAppLink(
   if (!options.expandedLibraryContentEnabled && (expandedLibrary.collections.some(book => book.id === bookId)
     || nextTextLibrary.collections.some(book => book.id === bookId)
     || nextTextLibraryRound2.collections.some(book => book.id === bookId)
+    || continuousLibrary.collections.some(book => book.id === bookId)
     || (route.kind === 'article' && expandedLibrary.pending_old_collection_article_ids.includes(route.id)))) return null;
   return buildMastersAppLink(route);
 }

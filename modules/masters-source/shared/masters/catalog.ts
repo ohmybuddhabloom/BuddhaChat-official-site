@@ -3,6 +3,7 @@ import historicalExpansion from './historical-expansion-20261008.json';
 import yinshunLibrary from './yinshun-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
 import nextTextLibraryRound2 from './next-text-library-20261009.json';
+import continuousLibrary from './continuous-library-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -53,6 +54,7 @@ export const collections = [
   ...yinshunLibrary.collections,
   ...nextTextLibrary.collections,
   ...nextTextLibraryRound2.collections,
+  ...continuousLibrary.collections,
 ];
 
 export type MastersArticle = typeof articles[number];

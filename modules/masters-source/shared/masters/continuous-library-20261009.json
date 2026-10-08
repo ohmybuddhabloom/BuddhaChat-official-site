@@ -1,0 +1,280 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "Complete871-page acquired scope, not final scope; authors/compiler/dialogue and manuscript-loss boundaries retained.",
+  "collections": [
+    {
+      "id": "sy-03-02",
+      "person_id": "sheng-yen",
+      "title": "神通與人通──宗教人生",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-02-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 18,
+      "catalog_count": 20,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-03-03",
+      "person_id": "sheng-yen",
+      "title": "教育．文化．文學",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-03-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 50,
+      "catalog_count": 51,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-04",
+      "person_id": "sheng-yen",
+      "title": "留日見聞",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-04-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 19,
+      "catalog_count": 20,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-05",
+      "person_id": "sheng-yen",
+      "title": "書序",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-05-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 109,
+      "catalog_count": 110,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-06",
+      "person_id": "sheng-yen",
+      "title": "評介",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-06-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 17,
+      "catalog_count": 18,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-07",
+      "person_id": "sheng-yen",
+      "title": "致詞",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-07-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 54,
+      "catalog_count": 55,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-08",
+      "person_id": "sheng-yen",
+      "title": "明日的佛教",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-08-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 51,
+      "catalog_count": 52,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-09",
+      "person_id": "sheng-yen",
+      "title": "我的法門師友",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-09-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 59,
+      "catalog_count": 60,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-10",
+      "person_id": "sheng-yen",
+      "title": "漢藏佛學同異答問",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-10-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 9,
+      "catalog_count": 10,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-03-11",
+      "person_id": "sheng-yen",
+      "title": "文集",
+      "category": "文集類",
+      "attribution": "聖嚴法師序言、文集、回憶或講演；受訪者、問答雙方、整理者、代讀者及所引來函另明示，非全篇都冒稱聖嚴親筆原創。",
+      "source_url": "https://ddc.shengyen.org/html/03-11-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 34,
+      "catalog_count": 36,
+      "deferred_count": 2
+    },
+    {
+      "id": "xy-hezhang-rensheng",
+      "person_id": "hsing-yun",
+      "title": "合掌人生",
+      "category": "回憶與文章",
+      "attribution": "星雲大師《合掌人生》自序、回憶與文章；四篇他人推薦序暫緩；個別篇末原刊、訪談整理與出版說明按正文保留。",
+      "source_url": "https://books.masterhsingyun.org/ArticleDetail/artcle6889",
+      "catalog_source_url": "https://books.masterhsingyun.org/ArticleList?bookno=101",
+      "source_institution": "星雲大師全集",
+      "readable_count": 33,
+      "catalog_count": 37,
+      "deferred_count": 4
+    },
+    {
+      "id": "xy-wushengxi-gechang",
+      "person_id": "hsing-yun",
+      "title": "無聲息的歌唱",
+      "category": "物語散文",
+      "attribution": "星雲大師《無聲息的歌唱》自序、〈為「物語」作序〉與二十篇物語散文；編者序暫緩。",
+      "source_url": "https://books.masterhsingyun.org/ArticleDetail/artcle7793",
+      "catalog_source_url": "https://books.masterhsingyun.org/ArticleList?bookno=106",
+      "source_institution": "星雲大師全集",
+      "readable_count": 22,
+      "catalog_count": 23,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-xingyun-zhihui",
+      "person_id": "hsing-yun",
+      "title": "星雲智慧",
+      "category": "文章演講文集",
+      "attribution": "星雲大師《星雲智慧》自序及文章、社論、致詞、演講；編者序與高希均回響文章暫緩；篇末原刊與講演場合按正文保留。",
+      "source_url": "https://books.masterhsingyun.org/ArticleDetail/artcle15432",
+      "catalog_source_url": "https://books.masterhsingyun.org/ArticleList?bookno=108",
+      "source_institution": "星雲大師全集",
+      "readable_count": 116,
+      "catalog_count": 118,
+      "deferred_count": 2
+    },
+    {
+      "id": "xy-yunshuilou-shiyu",
+      "person_id": "hsing-yun",
+      "title": "雲水樓拾語",
+      "category": "早期文集與史料",
+      "attribution": "星雲大師《雲水樓拾語》早期文章、碑記、啟事與法會記錄；編者的話、編者跋語與志開上人文章暫緩；原刊時間、署名與圖像按正文保留。",
+      "source_url": "https://books.masterhsingyun.org/ArticleDetail/artcle24332",
+      "catalog_source_url": "https://books.masterhsingyun.org/ArticleList?bookno=110",
+      "source_institution": "星雲大師全集",
+      "readable_count": 96,
+      "catalog_count": 99,
+      "deferred_count": 3
+    },
+    {
+      "id": "nhj-mengzi-tengwen-gaozi",
+      "person_id": "nan-huaijin",
+      "title": "孟子与滕文公、告子 · 现存讲稿",
+      "category": "儒学经典讲解",
+      "attribution": "南怀瑾讲述整理；经文引录与古人话语按原署保留；劝学旧录文，已与正式发行试阅核同一作品，非逐字校勘定本。滕文公原讲大部散佚，按现存稿收录。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/gaoziindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 62,
+      "catalog_count": 62,
+      "deferred_count": 0,
+      "excluded_editorial_paragraphs": 0
+    },
+    {
+      "id": "nhj-mengzi-gongsun",
+      "person_id": "nan-huaijin",
+      "title": "孟子与公孙丑",
+      "category": "儒学经典讲解",
+      "attribution": "南怀瑾讲述整理；经文引录与古人话语按原署保留；劝学旧录文，已与正式发行试阅核同一作品，非逐字校勘定本。编者导读和编按另界定，非本人原创。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/gongsunindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 61,
+      "catalog_count": 61,
+      "deferred_count": 0,
+      "excluded_editorial_paragraphs": 0
+    },
+    {
+      "id": "nhj-mengzi-wanzhang",
+      "person_id": "nan-huaijin",
+      "title": "孟子与万章",
+      "category": "儒学经典讲解",
+      "attribution": "南怀瑾讲述整理；经文引录与古人话语按原署保留；劝学旧录文，已与正式发行试阅核同一作品，非逐字校勘定本。编者导读和编按另界定，非本人原创。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/wanzhangindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 39,
+      "catalog_count": 39,
+      "deferred_count": 0,
+      "excluded_editorial_paragraphs": 2
+    }
+  ],
+  "batches": [
+    {
+      "id": "shengyen-03-remaining",
+      "path": "content/masters/imports/shengyen-03-remaining.json",
+      "sha256": "dec8e18a8620d92a8de4985393272c1e6f8aff2136b36c93d4901c5f934514b1",
+      "chapters": 420,
+      "review": "scripts/review-masters-shengyen-03-remaining.py"
+    },
+    {
+      "id": "hsingyun-hezhang-rensheng",
+      "path": "content/masters/imports/hsingyun-hezhang-rensheng.json",
+      "sha256": "1288a2eaa133d8d0cf351440c49eda475721987a55d9f99c802073decb3b02e7",
+      "chapters": 33,
+      "review": "scripts/review-masters-hsingyun-hezhang-rensheng.py"
+    },
+    {
+      "id": "hsingyun-wushengxi-gechang",
+      "path": "content/masters/imports/hsingyun-wushengxi-gechang.json",
+      "sha256": "a8ba48ee3b4127255b370aa74aea4ef87b671e546cbd6bd579f4f8ec25bd2898",
+      "chapters": 22,
+      "review": "scripts/review-masters-hsingyun-wushengxi-gechang.py"
+    },
+    {
+      "id": "hsingyun-xingyun-zhihui",
+      "path": "content/masters/imports/hsingyun-xingyun-zhihui.json",
+      "sha256": "e40baca3aa096789f4dd609e751459768f46fd1acc5faf117a3a06e131df06bf",
+      "chapters": 116,
+      "review": "scripts/review-masters-hsingyun-xingyun-zhihui.py"
+    },
+    {
+      "id": "hsingyun-yunshuilou-shiyu",
+      "path": "content/masters/imports/hsingyun-yunshuilou-shiyu.json",
+      "sha256": "31c020559a93bcb01b808ebe84a84ad730947363c6200eba7ac29dda880e1f77",
+      "chapters": 96,
+      "review": "scripts/review-masters-hsingyun-yunshuilou-shiyu.py"
+    },
+    {
+      "id": "nan-mengzi-tengwen-gaozi",
+      "path": "content/masters/imports/nan-mengzi-tengwen-gaozi.json",
+      "sha256": "bbdf3d44f721bf2301ea407d818da71ebfbdde9d32512e995633db3445a107ef",
+      "chapters": 62,
+      "review": "scripts/review-masters-nan-mengzi-tengwen-gaozi.py"
+    },
+    {
+      "id": "nan-mengzi-gongsun",
+      "path": "content/masters/imports/nan-mengzi-gongsun.json",
+      "sha256": "964c9601cf8587fcd3fcf9d74f0cb0dacbcdbd3f564f606c5ab65b417fec7586",
+      "chapters": 61,
+      "review": "scripts/review-masters-nan-mengzi-gongsun.py"
+    },
+    {
+      "id": "nan-mengzi-wanzhang",
+      "path": "content/masters/imports/nan-mengzi-wanzhang.json",
+      "sha256": "ea46c0d28df599239db502500258c5c67f04b404d176487b5278e240016c1d1f",
+      "chapters": 39,
+      "review": "scripts/review-masters-nan-mengzi-wanzhang.py"
+    }
+  ],
+  "catalog_pages": 871,
+  "deferred_pages": 22,
+  "failed_pages": 0,
+  "added_article_count": 849,
+  "deferred_fragments_note": "Two uncredited introductory paragraphs of Wanzhang excluded but all39 author-page entries remain readable."
+}

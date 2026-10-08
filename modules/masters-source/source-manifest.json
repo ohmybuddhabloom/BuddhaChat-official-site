@@ -58,16 +58,16 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "a716bf06ec67a52a6c3a911fe80f4d7da2f6473736bcac32a202b7e69ae8fb94",
+    "shared/masters/article-index.json": "25b82920fd3ad479cbe6c6f873e2d700703b30bb4d2ec13abfec38322da0b53a",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "8129e14097a67d59d9ef97c3e6f16f83bc537b772ba39bc05b23004c9b41dd70",
+    "shared/masters/catalog.ts": "e8ed07d442c95b6bfdd473fa71867c10a1c75792cb88ea65449482a11e25c80f",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
     "shared/masters/profileCopy.ts": "b78834c5fa5b9d3e76f64fde69c840918303d6a250ad13e5f700c529444dc73b",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "d4b4097d69868e664e9f4b331b7782fcccf6ac6b4a0f234881bec69efd0206a9",
+    "shared/masters/shareLinks.ts": "b629ae2573d7f1c0952612e842d9f18a1768864c4a4a38736e7600688bded8e5",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
@@ -79,7 +79,8 @@
     "shared/masters/historical-expansion-20261008.json": "384230ecaf64e529ec4f4a0784cc443e0ea616122fe553464d8d58a43fb50b77",
     "shared/masters/next-text-library-20261008.json": "eb2a097154e2c58166c0b46a881a9b6f4db124905fdf29c64725ea7350fb9bf3",
     "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4",
-    "shared/masters/yinshun-library.json": "ff308040f4c9b47cf1d975256f8ecfb7edc0d2521e5f79a3f85b01910037937e"
+    "shared/masters/yinshun-library.json": "ff308040f4c9b47cf1d975256f8ecfb7edc0d2521e5f79a3f85b01910037937e",
+    "shared/masters/continuous-library-20261009.json": "e668f1a58f0e91cf8725cc38143e96fc02d02de7212f4d7db512d88f51b95bb8"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -168,8 +169,19 @@
         "shared/masters/yinshun-library.json"
       ],
       "note": "34 source-preserving Yin Shun original-note sections appended; translated scripture/compiler roles explicit, all328 prior summaries preserved, discovery hidden."
+    },
+    {
+      "sourceCommit": "7b154bd1a0a984480d9f418f5328dd68979bf43e",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/shareLinks.ts",
+        "shared/masters/continuous-library-20261009.json"
+      ],
+      "note": "849 reviewed sections across17 collections plus4 Xu letters; retain concurrent Yin Shun inventory/source notes, hidden discovery and all earlier site files."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
-  "nextTextLibrary20261009SourceCommit": "1d17f38538eadb8a01eeb819f3370d3e77a541af"
+  "nextTextLibrary20261009SourceCommit": "1d17f38538eadb8a01eeb819f3370d3e77a541af",
+  "continuousLibrary20261009SourceCommit": "7b154bd1a0a984480d9f418f5328dd68979bf43e"
 }
