@@ -1,0 +1,208 @@
+{
+  "scope": "编辑原创书目简介及机构资料入口，不含作品正文",
+  "entries": [
+    {
+      "id": "sy-04-11",
+      "person_id": "sheng-yen",
+      "title": "聖嚴說禪",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "以禅门故事与开示帮助理解禅的用心方式，阅读时可留意古代公案和现代讲解的区别。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-11-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-12",
+      "person_id": "sheng-yen",
+      "title": "公案一○○",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "围绕一百则公案展开禅学解说，适合结合公案背景逐则阅读。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-12-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-13",
+      "person_id": "sheng-yen",
+      "title": "動靜皆自在",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "把禅修与生活中的身心实践联系起来，内容涉及修行方法与日常应用。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-13-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-14",
+      "person_id": "sheng-yen",
+      "title": "神會禪師的悟境",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "介绍神会禅师的思想及其文献背景，应分别辨识古代原典和现代讲解。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-14-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-15",
+      "person_id": "sheng-yen",
+      "title": "聖嚴法師教禪坐",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "入门禅坐指导；正文讲述与附录中的组织手册需分别阅读。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-15-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-16",
+      "person_id": "sheng-yen",
+      "title": "聖嚴法師教默照禪",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "默照禅的讲述与实践说明，推荐序及整理材料不等于讲述者本人著作。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-16-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-17",
+      "person_id": "sheng-yen",
+      "title": "聖嚴法師教話頭禪",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "话头禅的讲述与问答资料，导读作者、学员提问和法师回答应区分归属。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-17-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "sy-04-18",
+      "person_id": "sheng-yen",
+      "title": "禪的理論與實踐",
+      "category": "禪修類",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "结合禅学理论与修行实践的讲述资料，留意录音整理、采访与译编说明。",
+      "source_links": [
+        {
+          "url": "https://ddc.shengyen.org/html/04-18-001.html",
+          "label": "法鼓全集资料"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "xy-bainian-foyuan",
+      "person_id": "hsing-yun",
+      "title": "百年佛緣",
+      "category": "口述回憶",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "通过口述回忆认识星云大师的经历及人际因缘。可通过全集目录按主题浏览；官方网页目录与纸本十二册套书的收录范围需分别辨识。",
+      "source_links": [
+        {
+          "url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=115",
+          "label": "星云大师全集目录"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "xy-canxue-suoyi",
+      "person_id": "hsing-yun",
+      "title": "參學瑣憶",
+      "category": "人物參學回憶",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "以参学经历和人物往来为线索的回忆资料；各篇标题人物是传主或交往对象，不应自动改作作者。",
+      "source_links": [
+        {
+          "url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=117",
+          "label": "星云大师全集目录"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "nhj-zhongguo-wenhua",
+      "person_id": "nan-huaijin",
+      "title": "中国文化泛言",
+      "category": "文化与讲述版本资料",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "历年序跋与文化文章的汇集。旧目录与增订版的篇目范围不同，阅读时请留意出版版本。",
+      "source_links": [
+        {
+          "url": "http://www.laoku.com.tw/laoku/catalogue.asp?kind1=72",
+          "label": "老古文化出版目录"
+        },
+        {
+          "url": "http://www.laoku.com.tw/laoku/bkintro.asp?no1=Q72-06",
+          "label": "老古文化图书简介"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "nhj-zhuangzi-neipian",
+      "person_id": "nan-huaijin",
+      "title": "庄子讲记（内第一篇，2006旧听写）",
+      "category": "文化与讲述版本资料",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "逍遥游一篇的早期听写资料，可用于比较讲述整理版本；推荐通过出版方入口查正式内七篇版本。",
+      "source_links": [
+        {
+          "url": "http://www.laoku.com.tw/laoku/catalogue.asp?kind1=72",
+          "label": "老古文化出版目录"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "nhj-liezi-yishuo",
+      "person_id": "nan-huaijin",
+      "title": "列子臆说",
+      "category": "文化与讲述版本资料",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "以倒序方式讲解列子各篇的录音整理著作，涉及道家思想及人生问题。",
+      "source_links": [
+        {
+          "url": "https://isbn.ncl.edu.tw/FCKEDITOR_UploadFiles/1684391337.pdf",
+          "label": "国家图书馆出版书目"
+        },
+        {
+          "url": "http://www.nhjcf.org/index.php?a=show&c=index&catid=24&id=460&m=content",
+          "label": "南怀瑾文教基金会摘文"
+        }
+      ],
+      "body_included": false
+    }
+  ]
+}

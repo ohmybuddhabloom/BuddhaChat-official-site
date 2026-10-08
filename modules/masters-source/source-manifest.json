@@ -21,9 +21,9 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "05635a945af4801ef0a08ce178cfcbec8be2a24c632f7fc677e249b3759d4e45",
+    "prototypes/masters-h5/src/Prototype.tsx": "75226207c861d97b1901b335b10246416efa0a5e4a28b3008e4b90d5cfa4c2ff",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "ad774d799fcbbd59a9d20ad8d675925fe42bf29a5a5accc140584943d7b1fa8a",
+    "prototypes/masters-h5/src/content.ts": "526c0a22e7a386d4a9303d5763e6da64fe317330f4c27d067df6b9d7ffac906b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5e231dc3a77ce28f585fb8843619076c7cc1a392c18cb7a188ac531ec8e5ee10",
@@ -61,13 +61,13 @@
     "shared/masters/article-index.json": "2797bb4ce18e955fe2b49f26651c2996a98db6606bdecaa4dcc60410b56d32dc",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "36b60756bed1c158261be15f7f78ae20d8ae915b1bad3b6f7f519a26cae41816",
+    "shared/masters/catalog.ts": "253ab364256e5365c09957a75fba55ef918738d7c0142eb1055a95e8ffc14a1f",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
     "shared/masters/profileCopy.ts": "b78834c5fa5b9d3e76f64fde69c840918303d6a250ad13e5f700c529444dc73b",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "34e0cdf59636943a28f52a736588695c918c722e6d21c5b3ae94183f57fba0ea",
+    "shared/masters/shareLinks.ts": "368938801765d86cd8af22a6ff7b31d5c116808a27f1207e1880e039be77db01",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
@@ -82,7 +82,9 @@
     "shared/masters/yinshun-library.json": "ff308040f4c9b47cf1d975256f8ecfb7edc0d2521e5f79a3f85b01910037937e",
     "shared/masters/continuous-library-20261009.json": "e668f1a58f0e91cf8725cc38143e96fc02d02de7212f4d7db512d88f51b95bb8",
     "shared/masters/zen-originals-library-20261009.json": "763875a73a2278c4ce382f454fcbb44b2fd070224e793054bd6e515cc0908cd4",
-    "shared/masters/hongyi-huayan-preface-1945.json": "5a89abf16efaa27136ec4f8a7b4fdac1cd69d57bbd876359f2a7c0cd573258d7"
+    "shared/masters/hongyi-huayan-preface-1945.json": "5a89abf16efaa27136ec4f8a7b4fdac1cd69d57bbd876359f2a7c0cd573258d7",
+    "shared/masters/bibliographic-guides-20261009.json": "c9b5db6c533fcf7de75c971ca9ce7d3872fbb66dc837f5efdcc34423dcbd3216",
+    "shared/masters/bibliographicGuides.ts": "e471bcfcb61dc58daf73bbdddd656946eaeef986a43c85f8c2a35c297068a278"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -208,6 +210,18 @@
         "shared/masters/hongyi-huayan-preface-1945.json"
       ],
       "note": "Only1public-domain original preface from the1945yearbook quotation, not protected wholeyearbook/editorialtext/300couplets. All prior sourcefiles/indexobjects retained; no modernprivatefulltexts copied."
+    },
+    {
+      "sourceCommit": "b059b76a9e7c62ff69e849592f6512b115fd5fe0",
+      "files": [
+        "shared/masters/bibliographic-guides-20261009.json",
+        "shared/masters/bibliographicGuides.ts",
+        "shared/masters/catalog.ts",
+        "shared/masters/shareLinks.ts",
+        "prototypes/masters-h5/src/Prototype.tsx",
+        "prototypes/masters-h5/src/content.ts"
+      ],
+      "note": "13 editor-written bibliographic descriptions and institution links only; no book text/private raw copied. Prior article/body metadata retained, default-off native App handoff gate preserved."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
@@ -215,5 +229,6 @@
   "continuousLibrary20261009SourceCommit": "7b154bd1a0a984480d9f418f5328dd68979bf43e",
   "zenOriginals20261009SourceCommit": "daf9102b781cdd4e35f59077b1e71473b118eb9b",
   "hongyiMusic1933SourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588",
-  "huayanPreface1945SourceCommit": "755728cb81aede123551ce1f4ad0c5f020d940c9"
+  "huayanPreface1945SourceCommit": "755728cb81aede123551ce1f4ad0c5f020d940c9",
+  "bibliographicGuides20261009SourceCommit": "b059b76a9e7c62ff69e849592f6512b115fd5fe0"
 }

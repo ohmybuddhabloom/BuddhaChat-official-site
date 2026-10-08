@@ -16,6 +16,7 @@ import {
   type MastersArticleSummary,
   type MastersVideo,
 } from '../../../shared/masters/catalog';
+import { getBibliographicGuide as findBibliographicGuide } from '../../../shared/masters/bibliographicGuides';
 export { videos, getMastersVideoMetadata, getMastersVideoGroups, getMastersVideoSeries };
 export type { MastersVideo };
 import nan from './nan-huaijin-candidates.json';
@@ -40,10 +41,11 @@ export const sources = [
 ];
 export function articleSummary(id:string) { return getArticleSummary(id); }
 export function collectionArticles(id:string) { return getCollectionArticleSummaries(id); }
+export function getBibliographicGuide(id:string) { return findBibliographicGuide(id); }
 export function isLegacyCollectionId(id:string){return id==='yh-dayi-001'||id.startsWith('sy-')||historical.collections.some(b=>b.id===id)||nanItems.some(n=>n.id===id)||books.some(b=>b.id===id);}
 export function genericCollection(id:string){return libraryCollections.find(b=>b.id===id&&!isLegacyCollectionId(id));}
 export function genericCollectionsForPerson(personId:string){return libraryCollections.filter(b=>b.person_id===personId&&!isLegacyCollectionId(b.id));}
-export function collectionReadabilityLabel(id:string){const meta=libraryCollections.find(b=>b.id===id);const readable=collectionArticles(id).length||meta?.readable_count||0;const catalog=meta?.catalog_count;return catalog&&readable<catalog?`${readable} / ${catalog} 篇已收录`:`${readable} 篇可阅读`;}
+export function collectionReadabilityLabel(id:string){if(getBibliographicGuide(id))return '书目介绍 · 正文暂未开放';const meta=libraryCollections.find(b=>b.id===id);const readable=collectionArticles(id).length||meta?.readable_count||0;const catalog=meta?.catalog_count;return catalog&&readable<catalog?`${readable} / ${catalog} 篇已收录`:`${readable} 篇可阅读`;}
 export function collectionRoute(id:string){return id==='yh-dayi-001'?'yuanhui-book':id.startsWith('sy-')?'shengyen-book:'+id.slice(3):nanItems.some(n=>n.id===id)?'external:'+id:'book:'+id;}
 export function itemTitle(id:string) { return historical.collections.find(b=>b.id===id)?.title || (id==='yh-dayi-001'?'答疑解惑 · 第一期':undefined) || shengyenCatalog.entries.find(b=>'sy-'+b.sourceId===id)?.title || getArticleSummary(id)?.title || nanItems.find(n=>n.id===id)?.title || books.find(b=>b.id===id)?.title || genericCollection(id)?.title || libraryCollections.find(b=>b.id===id)?.title || chapters.find(c=>c.id===id)?.title_display || videos.find(v=>v.id===id)?.title || id; }
 export const clock = (seconds:number) => `${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
