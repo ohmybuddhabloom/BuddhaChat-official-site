@@ -3,9 +3,16 @@
   "discovery_enabled": false,
   "inventory_works": 44,
   "source_articles": 491,
-  "added_article_count": 321,
-  "held_article_count": 170,
+  "added_article_count": 328,
+  "held_article_count": 163,
   "batch_sha256": "a475fa0dbda0055eb046eee248667675eca4b6e7d750b2a2446dff1b38df9196",
+  "supplements": [
+    {
+      "batch_id": "yinshun-authored-prefaces-20261009",
+      "batch_sha256": "008ea7db40c233b8c1fe14b3b1e0ea1700b96024f89f17bcd213fd6f39e9dd76",
+      "articles": 7
+    }
+  ],
   "collections": [
     {
       "id": "yinshun-y01",
@@ -78,6 +85,14 @@
       "category": "佛學著作",
       "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=17p1.0100&m=2"
+    },
+    {
+      "id": "yinshun-y13",
+      "title": "太虛大師年譜",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=20p1.0100&m=2"
     },
     {
       "id": "yinshun-y14",
@@ -200,6 +215,14 @@
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=39p1.0100&m=2"
     },
     {
+      "id": "yinshun-y30",
+      "title": "雜阿含經論會編（上）",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=40p1.0100&m=2"
+    },
+    {
       "id": "yinshun-y33",
       "title": "印度之佛教",
       "person_id": "yin-shun",
@@ -216,12 +239,36 @@
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=48p1.0100&m=2"
     },
     {
+      "id": "yinshun-y35",
+      "title": "原始佛教聖典之集成",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=51p1.0100&m=2"
+    },
+    {
+      "id": "yinshun-y36",
+      "title": "說一切有部為主的論書與論師之研究",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=53p1.0100&m=2"
+    },
+    {
       "id": "yinshun-y37",
       "title": "初期大乘佛教之起源與開展",
       "person_id": "yin-shun",
       "category": "佛學著作",
       "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=55p1.0100&m=2"
+    },
+    {
+      "id": "yinshun-y38",
+      "title": "空之探究",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=58p1.0100&m=2"
     },
     {
       "id": "yinshun-y39",
@@ -712,6 +759,17 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 63,
       "paragraph_count": 881
+    },
+    {
+      "id": "yinshun-y13-a067",
+      "book_id": "yinshun-y13",
+      "person_id": "yin-shun",
+      "title": "編者附言",
+      "author": "印順法師",
+      "text_version": "b8967f1874b9b51c757c8b605ce1bc80eeb4b50c9d576df60aa26e5026f6a1d1",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 67,
+      "paragraph_count": 54
     },
     {
       "id": "yinshun-y14-a070",
@@ -2441,6 +2499,17 @@
       "paragraph_count": 128
     },
     {
+      "id": "yinshun-y25-a252",
+      "book_id": "yinshun-y25",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "314051e497530e55c8ddb841ce83255701050eeda5ebfb2b0d582122d610fc70",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 252,
+      "paragraph_count": 29
+    },
+    {
       "id": "yinshun-y25-a253",
       "book_id": "yinshun-y25",
       "person_id": "yin-shun",
@@ -3090,6 +3159,17 @@
       "paragraph_count": 68
     },
     {
+      "id": "yinshun-y30-a322",
+      "book_id": "yinshun-y30",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "ca8d4c764019a0be3106836afdb1e7be061897afbe0327cfed985fcc80d4354a",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 322,
+      "paragraph_count": 29
+    },
+    {
       "id": "yinshun-y33-a331",
       "book_id": "yinshun-y33",
       "person_id": "yin-shun",
@@ -3156,6 +3236,28 @@
       "paragraph_count": 7
     },
     {
+      "id": "yinshun-y35-a364",
+      "book_id": "yinshun-y35",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "e6ef142ae4d2ab5ae3a145c2515faf194ece29fcd3981c38b3681fe73e888fe4",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 364,
+      "paragraph_count": 48
+    },
+    {
+      "id": "yinshun-y36-a377",
+      "book_id": "yinshun-y36",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "375f40dd80d984bd697559626235c30787a7d007db956d0153b1b774a5f70914",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 377,
+      "paragraph_count": 86
+    },
+    {
       "id": "yinshun-y37-a392",
       "book_id": "yinshun-y37",
       "person_id": "yin-shun",
@@ -3178,6 +3280,17 @@
       "paragraph_count": 12
     },
     {
+      "id": "yinshun-y38-a409",
+      "book_id": "yinshun-y38",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "9874e64de23f2ee4e384da054935d9dececade51beffd8ecfc6079b0f21bf261",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 409,
+      "paragraph_count": 20
+    },
+    {
       "id": "yinshun-y39-a414",
       "book_id": "yinshun-y39",
       "person_id": "yin-shun",
@@ -3187,6 +3300,17 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 414,
       "paragraph_count": 25
+    },
+    {
+      "id": "yinshun-y40-a423",
+      "book_id": "yinshun-y40",
+      "person_id": "yin-shun",
+      "title": "序",
+      "author": "印順法師",
+      "text_version": "2fb34ae69485758a639f26d98d5018fe44c209cede94851a2b5a6e23255bdf5d",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 423,
+      "paragraph_count": 147
     },
     {
       "id": "yinshun-y40-a424",
