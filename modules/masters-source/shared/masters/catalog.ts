@@ -3,6 +3,9 @@ import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
 import { people } from './people';
+import { videos } from './videoCatalog';
+export { videos, mediaKindLabels, getMastersVideoMetadata, getMastersVideoGroups, getMastersVideoSeries } from './videoCatalog';
+export type { MastersVideo, MastersMediaKind } from './videoCatalog';
 
 export const authors = people;
 export const articles = readingContent.chapters;
@@ -33,15 +36,10 @@ export const collections = [
   ...additionalCollections,
   ...historical.collections,
 ];
-export const videos = [
-  { id: 'xy-video-W4438geBhss', person_id: 'hsing-yun', title: '金刚经大义（一）· 第 1 段', youtube: 'W4438geBhss', duration: 506 },
-  { id: 'xy-video-6J17zQh5tbU', person_id: 'hsing-yun', title: '金刚经大义（一）· 第 2 段', youtube: '6J17zQh5tbU', duration: 459 },
-];
 
 export type MastersArticle = typeof articles[number];
 export type MastersAuthor = typeof authors[number];
 export type MastersCollection = typeof collections[number];
-export type MastersVideo = typeof videos[number];
 export type MastersRoute =
   | { kind: 'home' }
   | { kind: 'person'; id: string }

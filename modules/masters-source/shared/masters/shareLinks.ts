@@ -1,6 +1,7 @@
 import historical from './historical-masters.json';
 import {
   itemOwner,
+  videos,
   authors,
   getArticleSummary,
   getCollection,
@@ -173,15 +174,16 @@ export function buildMastersShareLinks(
   return { route, contentRoute, appUrl, h5Url };
 }
 
-/** Keep unpublished historical content off installed-app links until its candidate is accepted. */
+/** Keep newly added content off installed-app links until its native candidate is accepted. */
 export function buildAvailableMastersAppLink(
   input: string | MastersRoute | null | undefined,
-  options: { contentEnabled: boolean; historicalContentEnabled?: boolean },
+  options: { contentEnabled: boolean; historicalContentEnabled?: boolean; nanMediaContentEnabled?: boolean },
 ): string | null {
   if (!options.contentEnabled) return null;
   const route = resolveMastersShareRoute(input);
   if (!route) return null;
   const owner = route.kind === 'home' ? undefined : route.kind === 'person' ? route.id : itemOwner(route.id);
   if (historical.profiles.some(profile => profile.id === owner) && !options.historicalContentEnabled) return null;
+  if (route.kind === 'video' && videos.find(video => video.id === route.id)?.requires_native_acceptance && !options.nanMediaContentEnabled) return null;
   return buildMastersAppLink(route);
 }

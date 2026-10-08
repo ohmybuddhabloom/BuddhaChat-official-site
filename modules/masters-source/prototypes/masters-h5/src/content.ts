@@ -7,8 +7,15 @@ import {
   articleSummaries,
   getArticleSummary,
   getCollectionArticleSummaries,
+  videos,
+  getMastersVideoMetadata,
+  getMastersVideoGroups,
+  getMastersVideoSeries,
   type MastersArticleSummary,
+  type MastersVideo,
 } from '../../../shared/masters/catalog';
+export { videos, getMastersVideoMetadata, getMastersVideoGroups, getMastersVideoSeries };
+export type { MastersVideo };
 import nan from './nan-huaijin-candidates.json';
 export const nanItems = nan.first_batch_candidates;
 import catalog from './hsingyun-catalog.json';
@@ -18,10 +25,6 @@ export type Chapter = typeof chapters[number];
 export type ArticleSummary = MastersArticleSummary;
 export const readableArticles = articleSummaries;
 export const legacyArticles = readingContent.chapters;
-export const videos = [
- {id:'xy-video-W4438geBhss', youtube:'W4438geBhss', title:'金刚经大义（一）· 第 1 段', duration:506},
- {id:'xy-video-6J17zQh5tbU', youtube:'6J17zQh5tbU', title:'金刚经大义（一）· 第 2 段', duration:459},
-];
 export const sources = [
  ['《星云大师全集》','https://books.masterhsingyun.org/article/articlelist','文字主源 · 佛光山'],
  ['全集版本与收录范围','https://books.masterhsingyun.org/intro/intro','增订版 395 册；附录含他人研究资料'],
@@ -36,4 +39,4 @@ export function collectionArticles(id:string) { return getCollectionArticleSumma
 export function itemTitle(id:string) { return historical.collections.find(b=>b.id===id)?.title || (id==='yh-dayi-001'?'答疑解惑 · 第一期':undefined) || shengyenCatalog.entries.find(b=>'sy-'+b.sourceId===id)?.title || getArticleSummary(id)?.title || nanItems.find(n=>n.id===id)?.title || books.find(b=>b.id===id)?.title || chapters.find(c=>c.id===id)?.title_display || videos.find(v=>v.id===id)?.title || id; }
 export const clock = (seconds:number) => `${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 
-export function itemOwner(id:string){return getArticleSummary(id)?.person_id || historical.collections.find(b=>b.id===id)?.person_id || nanItems.find(n=>n.id===id)?.person_id || (id.startsWith('xy-')?'hsing-yun':id.startsWith('sy-')?'sheng-yen':undefined);}
+export function itemOwner(id:string){return getArticleSummary(id)?.person_id || historical.collections.find(b=>b.id===id)?.person_id || nanItems.find(n=>n.id===id)?.person_id || videos.find(v=>v.id===id)?.person_id || (id.startsWith('xy-')?'hsing-yun':id.startsWith('sy-')?'sheng-yen':undefined);}
