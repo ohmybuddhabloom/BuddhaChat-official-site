@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-10-09T00:00:00+08:00",
+  "scope": "Zen official sources and one independently reviewed Hongyi original-periodical travelogue. Music preface remains deferred; no music candidate readable ID is published.",
+  "catalog_pages": 91,
+  "added_article_count": 84,
+  "deferred_pages": 7,
+  "failed_pages": 0,
+  "collections": [
+    {
+      "id": "sy-04-07",
+      "person_id": "sheng-yen",
+      "title": "心的詩偈──信心銘講錄",
+      "category": "禪修類",
+      "attribution": "聖嚴講述、僧俗弟子錄音整理與本人修閱；原典、採訪報導、校註、插圖及譯編者分别明示，不冒稱全部原創或親筆。",
+      "source_url": "https://ddc.shengyen.org/html/04-07-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 22,
+      "catalog_count": 24,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-04-08",
+      "person_id": "sheng-yen",
+      "title": "禪的世界",
+      "category": "禪修類",
+      "attribution": "聖嚴講述、僧俗弟子錄音整理與本人修閱；原典、採訪報導、校註、插圖及譯編者分别明示，不冒稱全部原創或親筆。",
+      "source_url": "https://ddc.shengyen.org/html/04-08-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 29,
+      "catalog_count": 31,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-04-09",
+      "person_id": "sheng-yen",
+      "title": "禪鑰",
+      "category": "禪修類",
+      "attribution": "聖嚴講述、僧俗弟子錄音整理與本人修閱；原典、採訪報導、校註、插圖及譯編者分别明示，不冒稱全部原創或親筆。",
+      "source_url": "https://ddc.shengyen.org/html/04-09-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 15,
+      "catalog_count": 16,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-04-10",
+      "person_id": "sheng-yen",
+      "title": "禪門",
+      "category": "禪修類",
+      "attribution": "聖嚴講述、僧俗弟子錄音整理與本人修閱；原典、採訪報導、校註、插圖及譯編者分别明示，不冒稱全部原創或親筆。",
+      "source_url": "https://ddc.shengyen.org/html/04-10-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 17,
+      "catalog_count": 18,
+      "deferred_count": 1
+    },
+    {
+      "id": "hongyi-before-monastic-1933",
+      "person_id": "hong-yi",
+      "title": "出家前舊作 · 1933再刊",
+      "category": "序跋與文記",
+      "attribution": "李叔同（弘一）出家前原作；1933《海潮音》李鴻梁手抄再刊，據原刊掃描兩遍視覺核字。劉孝標引語依原署保留；李鴻梁後跋及相鄰太虛文章排除。非原手稿或手稿校勘定本。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:CADAL16046305_海潮音.djvu",
+      "source_institution": "CADAL人大館藏原刊掃描／Wikimedia Commons",
+      "readable_count": 1,
+      "catalog_count": 2,
+      "deferred_count": 1
+    }
+  ],
+  "batches": [
+    {
+      "id": "shengyen-04-zen",
+      "path": "content/masters/imports/shengyen-04-zen.json",
+      "review": "scripts/review-masters-shengyen-04-zen.py",
+      "sha256": "60b8b6ae5bd309f5a84678193b164d80d4b4e1aaf994eafde8acdfa10fa726b6",
+      "chapters": 83,
+      "catalog_pages": 89,
+      "deferred_pages": 6,
+      "failed_pages": 0
+    },
+    {
+      "id": "hongyi-haichaoyin-1933",
+      "path": "content/masters/imports/hongyi-haichaoyin-1933.json",
+      "review": "scripts/collect-masters-hongyi-haichaoyin-1933.py",
+      "sha256": "d9c895422625922a90f2615aeaf988c5f4d8e0b319954870fb478f14e33f8fc1",
+      "chapters": 1,
+      "catalog_pages": 2,
+      "deferred_pages": 1,
+      "failed_pages": 0
+    }
+  ],
+  "deferred_notes": [
+    "sy-04-07 source classic 信心銘 remains attributed to 三祖僧璨 and is not published as Sheng Yen authorship.",
+    "sy-04-08 third-party report and four Sheng Yen editorial apparatus pages remain deferred.",
+    "音樂序 remains held because one source glyph is unresolved; no readable music-preface content ID is assigned."
+  ]
+}

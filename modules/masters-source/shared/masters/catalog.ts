@@ -4,6 +4,7 @@ import yinshunLibrary from './yinshun-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
 import nextTextLibraryRound2 from './next-text-library-20261009.json';
 import continuousLibrary from './continuous-library-20261009.json';
+import zenOriginalsLibrary from './zen-originals-library-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -38,6 +39,7 @@ export function getArticleSummary(id: string) { return summariesById.get(id); }
 export function getCollectionArticleSummaries(id: string) {
   return summariesByCollection.get(id)?.slice() ?? [];
 }
+const publishableZenOriginalsCollections = zenOriginalsLibrary.collections.filter(collection => summariesByCollection.has(collection.id));
 export const collections = [
   { id: 'yh-dayi-001', title: '答疑解惑 · 第一期', person_id: 'yuanhui' },
   { id: 'sy-05-02', title: '正信的佛教', person_id: 'sheng-yen' },
@@ -55,6 +57,7 @@ export const collections = [
   ...nextTextLibrary.collections,
   ...nextTextLibraryRound2.collections,
   ...continuousLibrary.collections,
+  ...publishableZenOriginalsCollections,
 ];
 
 export type MastersArticle = typeof articles[number];

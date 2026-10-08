@@ -215317,6 +215317,847 @@
     "paragraph_count": 15
   },
   {
+    "id": "sy-04-07-001",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "中文版自序",
+    "author": "聖嚴法師",
+    "source_sha256": "dc01c32d981d36b70b9418c6e8f1bfac80571945b30ef078be371dfbb5976570",
+    "source_order": 1,
+    "paragraph_count": 7
+  },
+  {
+    "id": "sy-04-07-002",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "前言",
+    "author": "聖嚴法師",
+    "source_sha256": "f68639d83e052d7fbf1a3ba4896c8d8a220e3c87b522c383d4b7b5389df3d017",
+    "source_order": 2,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-04-07-004",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "至道無難",
+    "author": "聖嚴法師",
+    "source_sha256": "7a0fcf944b4f83ed91f9d43bf69369feb9682b65be5bedd5271060b2bdd858fb",
+    "source_order": 4,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-07-005",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "莫存順逆",
+    "author": "聖嚴法師",
+    "source_sha256": "1c177ea51c4bb3921b6ffc5d00932777f1e78ae032a70d2e35991fb90972692e",
+    "source_order": 5,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-07-006",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "一種平懷",
+    "author": "聖嚴法師",
+    "source_sha256": "cb7ea36827d2cb4121a0ef7fcd91eb6808d26b24419179e33a821e02a89c3f8b",
+    "source_order": 6,
+    "paragraph_count": 17
+  },
+  {
+    "id": "sy-04-07-007",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "非有非空",
+    "author": "聖嚴法師",
+    "source_sha256": "f6bed98051f375223eeafe4158e3450a5bee105ae2455702b1ec05f338d11edd",
+    "source_order": 7,
+    "paragraph_count": 26
+  },
+  {
+    "id": "sy-04-07-008",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "絕言絕慮",
+    "author": "聖嚴法師",
+    "source_sha256": "30ef0a58a43a674316a8e19d71f4ffbc57cab8ee6e2a0060ef558e4a8c3af668",
+    "source_order": 8,
+    "paragraph_count": 17
+  },
+  {
+    "id": "sy-04-07-009",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "二見不住",
+    "author": "聖嚴法師",
+    "source_sha256": "65e5e3856ff46b2e2bc14e9e31a916810cbe0ca0b7b3173559df3c631d76e852",
+    "source_order": 9,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-04-07-010",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "一心不生",
+    "author": "聖嚴法師",
+    "source_sha256": "390c29a9680254d218c1d02e170fb96845e23c78437302b9c790b40bbf4943fe",
+    "source_order": 10,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-04-07-011",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "捨棄幻覺",
+    "author": "聖嚴法師",
+    "source_sha256": "62bb849dc136caa369525a10e1bb89e2e39d4de54256dc2184ab8176af1e94a0",
+    "source_order": 11,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-04-07-012",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "覺知煩惱",
+    "author": "聖嚴法師",
+    "source_sha256": "0e1c6d21c3cd24b28f57f66a68df165f8ffb22a25d0978f024e5cdbe1cebbf8f",
+    "source_order": 12,
+    "paragraph_count": 18
+  },
+  {
+    "id": "sy-04-07-013",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "無分無別",
+    "author": "聖嚴法師",
+    "source_sha256": "d6334861fd0c87063a0243e807da86fa9fb02fba79926eefd478c55b9eb16468",
+    "source_order": 13,
+    "paragraph_count": 21
+  },
+  {
+    "id": "sy-04-07-014",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "無疑無慮",
+    "author": "聖嚴法師",
+    "source_sha256": "e88c140443ff753df59d56f88cc9c4cc968fa24b954d28b2641b8085d00b13a3",
+    "source_order": 14,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-07-015",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "任性合道",
+    "author": "聖嚴法師",
+    "source_sha256": "7f114863555d57ad973b9832cf984015ee6bc98bd3d114d017d31b600c9842b9",
+    "source_order": 15,
+    "paragraph_count": 15
+  },
+  {
+    "id": "sy-04-07-016",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "勿惡六塵",
+    "author": "聖嚴法師",
+    "source_sha256": "c1778300ff1b3f777e0bea8d3d343d9ec0bd4e363a32bd6bd87b4e0781c952e0",
+    "source_order": 16,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-04-07-017",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "智者無為",
+    "author": "聖嚴法師",
+    "source_sha256": "f1186327af4f649debbd73eb5e31b27d55082407712f3075a9defe552a4fca5a",
+    "source_order": 17,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-04-07-018",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "法無異法",
+    "author": "聖嚴法師",
+    "source_sha256": "78f55515701483c546ca347b2f6829cfa1ade8494ed331d4dde42b11ee66ff79",
+    "source_order": 18,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-04-07-019",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "夢幻空華",
+    "author": "聖嚴法師",
+    "source_sha256": "e7b5daf2f28e54490bf2a30a2798b015fa8202c5b2cb250a428d2ecf23e4e14b",
+    "source_order": 19,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-07-020",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "萬法一如",
+    "author": "聖嚴法師",
+    "source_sha256": "8e315105f448da7a38e9943e82a46ee5626513dc017920be3f1cde671b0fa9cb",
+    "source_order": 20,
+    "paragraph_count": 17
+  },
+  {
+    "id": "sy-04-07-021",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "正信調直",
+    "author": "聖嚴法師",
+    "source_sha256": "59c42d73ce374efa1599f64a67afce23aa5bd496fecdc0f827500b94a82f5f89",
+    "source_order": 21,
+    "paragraph_count": 18
+  },
+  {
+    "id": "sy-04-07-022",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "虛明自然",
+    "author": "聖嚴法師",
+    "source_sha256": "5ac73d8488bf4c0ada72a24f64ea7756a685a6812e41417f9ba86c692dd6b57f",
+    "source_order": 22,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-04-07-023",
+    "book_id": "sy-04-07",
+    "person_id": "sheng-yen",
+    "title": "信心不二",
+    "author": "聖嚴法師",
+    "source_sha256": "af7c95849ef1b6a5af0b4c54c48b1c1cccb42c145a7546eb4778a22f39646824",
+    "source_order": 23,
+    "paragraph_count": 28
+  },
+  {
+    "id": "sy-04-08-001",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "0b9b4fab6b7ae3f3470af2c65a3fe680a00215a239564a3f2c7234348b76128e",
+    "source_order": 1,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-04-08-002",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪坐的基礎方法",
+    "author": "聖嚴法師",
+    "source_sha256": "3baa9da556f7de63468daa0d8400d53643882de42107e7fb5f3021ed7af956df",
+    "source_order": 2,
+    "paragraph_count": 71
+  },
+  {
+    "id": "sy-04-08-003",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "四念處",
+    "author": "聖嚴法師",
+    "source_sha256": "18c995ebe16f95bfa9382c69794f50bd958f163a2086d2640b487dca831591a3",
+    "source_order": 3,
+    "paragraph_count": 21
+  },
+  {
+    "id": "sy-04-08-004",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "日常生活中的四念處觀",
+    "author": "聖嚴法師",
+    "source_sha256": "6d4a152c7f1f179aa05228f0a2f8c1ede1b328f4b09c045421fc4591729c21f0",
+    "source_order": 4,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-04-08-005",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪修方法的演變",
+    "author": "聖嚴法師",
+    "source_sha256": "6b08abeb62172863fc0282c491f9d43f3c01833bd5be101a693b5aab6161ab01",
+    "source_order": 5,
+    "paragraph_count": 62
+  },
+  {
+    "id": "sy-04-08-006",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪是什麼",
+    "author": "聖嚴法師",
+    "source_sha256": "b7fd2ae559246495add5003a7daa29caaabc2c1c328608ca3ea808d944e7dc18",
+    "source_order": 6,
+    "paragraph_count": 46
+  },
+  {
+    "id": "sy-04-08-007",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪的智慧",
+    "author": "聖嚴法師",
+    "source_sha256": "ff8897d1ff11cf9026090b598354d9dc5d270f414e67605dad5bf0389657b7bb",
+    "source_order": 7,
+    "paragraph_count": 83
+  },
+  {
+    "id": "sy-04-08-008",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "智慧與福報",
+    "author": "聖嚴法師",
+    "source_sha256": "d55fee28cb83334bfa3dba2e3d6aaa69562ba9eb4143203db3d873b93fb62e4a",
+    "source_order": 8,
+    "paragraph_count": 45
+  },
+  {
+    "id": "sy-04-08-009",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪——自我的提昇",
+    "author": "聖嚴法師",
+    "source_sha256": "bc787012df315fda1f8608bc1a967f1349bd670f766cc1b939a44b4091f6acb0",
+    "source_order": 9,
+    "paragraph_count": 44
+  },
+  {
+    "id": "sy-04-08-010",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪——自我的消融",
+    "author": "聖嚴法師",
+    "source_sha256": "e9fa1cb8beca981d196d72110e99060088dd52d05ac3ac9947abf8e3d3fa895e",
+    "source_order": 10,
+    "paragraph_count": 53
+  },
+  {
+    "id": "sy-04-08-011",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪與人生",
+    "author": "聖嚴法師",
+    "source_sha256": "62bd158650fff064474d8c2ce8ba71d12376efa8530ba8b7df24275d8489261d",
+    "source_order": 11,
+    "paragraph_count": 50
+  },
+  {
+    "id": "sy-04-08-012",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪與生活",
+    "author": "聖嚴法師",
+    "source_sha256": "94ff63092935ea9222dd8b8931ba37d9cf2fc4569ec7d771c11498cdb4ff9218",
+    "source_order": 12,
+    "paragraph_count": 37
+  },
+  {
+    "id": "sy-04-08-013",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪的心靈環保",
+    "author": "聖嚴法師",
+    "source_sha256": "ce0b5c46e0574031564dd2287e8f3e3ed28d1f457e048530c3a98cc9d297bdb5",
+    "source_order": 13,
+    "paragraph_count": 41
+  },
+  {
+    "id": "sy-04-08-014",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪的知與行",
+    "author": "聖嚴法師",
+    "source_sha256": "9382ad9029ab84553f09648debc79d88de03dfab9f0813c6ba649c162d3888a3",
+    "source_order": 14,
+    "paragraph_count": 48
+  },
+  {
+    "id": "sy-04-08-015",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "禪與藝術",
+    "author": "聖嚴法師",
+    "source_sha256": "a65789b832413aaeb1bf1e017f417d9e61c50369d89887f1117cfe46be8e5936",
+    "source_order": 15,
+    "paragraph_count": 23
+  },
+  {
+    "id": "sy-04-08-016",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "生命的圓融",
+    "author": "聖嚴法師",
+    "source_sha256": "c5beae21e67ec3792a4d418686fb42ae5bd7a3429cd345498161f33680f98224",
+    "source_order": 16,
+    "paragraph_count": 51
+  },
+  {
+    "id": "sy-04-08-017",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "生命與時空",
+    "author": "聖嚴法師",
+    "source_sha256": "c556211d31ec805a05f8dcd6752cb1f425752eee32c4fde91e4ce5443591b217",
+    "source_order": 17,
+    "paragraph_count": 40
+  },
+  {
+    "id": "sy-04-08-018",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "理性與感性",
+    "author": "聖嚴法師",
+    "source_sha256": "9f7c45dfaed9b1fa597437ffc215790fda7c1cbde4d41f1275da95be544256e9",
+    "source_order": 18,
+    "paragraph_count": 119
+  },
+  {
+    "id": "sy-04-08-019",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "提得起．放得下",
+    "author": "聖嚴法師",
+    "source_sha256": "17c0c368300a2f1aba9d02e22dab1a7e81e13f99388f58aaaa86bc1458d6fbcc",
+    "source_order": 19,
+    "paragraph_count": 40
+  },
+  {
+    "id": "sy-04-08-020",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "提起與放下",
+    "author": "聖嚴法師",
+    "source_sha256": "9a4a87a00570a4dd8c369f9793997623b379c855180f2b3369823a6b96a73275",
+    "source_order": 20,
+    "paragraph_count": 57
+  },
+  {
+    "id": "sy-04-08-021",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "無常與無我",
+    "author": "聖嚴法師",
+    "source_sha256": "6ec5233f4d5b8dfff6f58b7b3c61e6030fad12e4463aa18ec304c7ea7496f6b5",
+    "source_order": 21,
+    "paragraph_count": 19
+  },
+  {
+    "id": "sy-04-08-022",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "提昇人品的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "7cc2e9393d1b958e8fddb0c10437d6e8de0cd1941dd4d671f9e4622a44547ea2",
+    "source_order": 22,
+    "paragraph_count": 61
+  },
+  {
+    "id": "sy-04-08-023",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "積極的人生觀",
+    "author": "聖嚴法師",
+    "source_sha256": "890fb697fbf7922258e7310997e9c0a52c1f525837d18b823de69050f616d10f",
+    "source_order": 23,
+    "paragraph_count": 64
+  },
+  {
+    "id": "sy-04-08-024",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "現代佛教與生活",
+    "author": "聖嚴法師",
+    "source_sha256": "dc6d1048170064110ad599b81945e6c562d063971d82368d74f64ca89f3a63f5",
+    "source_order": 24,
+    "paragraph_count": 35
+  },
+  {
+    "id": "sy-04-08-025",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "現代佛教青年應有之人生觀",
+    "author": "聖嚴法師",
+    "source_sha256": "a8b03ee5d42d34a9fef168b527543fb71cfd63f9e63d4a381b4aab1f444f0e0d",
+    "source_order": 25,
+    "paragraph_count": 29
+  },
+  {
+    "id": "sy-04-08-026",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "人心清淨．環境清淨",
+    "author": "聖嚴法師",
+    "source_sha256": "71915bd90c4b2f8944653ec118a2f18277b4984f9ddcac70e15f3804af1a4d69",
+    "source_order": 26,
+    "paragraph_count": 21
+  },
+  {
+    "id": "sy-04-08-027",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "綠化大地．淨化人間",
+    "author": "聖嚴法師",
+    "source_sha256": "4b60960888f2c241cd96827de31097f8048d9c440ff23b8b74cb2ae1db3a2300",
+    "source_order": 27,
+    "paragraph_count": 35
+  },
+  {
+    "id": "sy-04-08-028",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "從佛教看我們的居住環境",
+    "author": "聖嚴法師",
+    "source_sha256": "afead5ab2788e0887b0c112cd796cb11ad14ec526420690f4db39549177b19e4",
+    "source_order": 28,
+    "paragraph_count": 87
+  },
+  {
+    "id": "sy-04-08-029",
+    "book_id": "sy-04-08",
+    "person_id": "sheng-yen",
+    "title": "人間淨土",
+    "author": "聖嚴法師",
+    "source_sha256": "426c4cbec227c74c8f52b11261437dcdfce3cf4cb4c52a0ed35a7f2b6399309f",
+    "source_order": 29,
+    "paragraph_count": 44
+  },
+  {
+    "id": "sy-04-09-001",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "91468b7673419cf355b7bba106caa370252d276d74b6cc6b585d13398fd54cdf",
+    "source_order": 1,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-04-09-002",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "續佛慧命",
+    "author": "聖嚴法師",
+    "source_sha256": "c11bb329dfe0baf17a1d278a4c0cdd95005409a688c516ef32de0d5a7fd64786",
+    "source_order": 2,
+    "paragraph_count": 23
+  },
+  {
+    "id": "sy-04-09-003",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "「五停心觀」修行法",
+    "author": "聖嚴法師",
+    "source_sha256": "79b6183055d71da1950d9457ec2d8747986660ddd74b958a6bad7a380dcc2bc3",
+    "source_order": 3,
+    "paragraph_count": 128
+  },
+  {
+    "id": "sy-04-09-004",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "禪與悟  ——無常無我．理入行入",
+    "author": "聖嚴法師",
+    "source_sha256": "7c1732a7d646742eaf429536b7b8a3a5cfd717c185e79648f92dcc1892fac4b1",
+    "source_order": 4,
+    "paragraph_count": 26
+  },
+  {
+    "id": "sy-04-09-005",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "禪修的要領（一）",
+    "author": "聖嚴法師",
+    "source_sha256": "ba3a9b82c4df7d92a7c07e3a64b93b854b6350218327b627eb73cb075cd63715",
+    "source_order": 5,
+    "paragraph_count": 170
+  },
+  {
+    "id": "sy-04-09-006",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "禪修的要領（二）",
+    "author": "聖嚴法師",
+    "source_sha256": "3b8ede454a85e274fe5c33d84d2115e358195df4c43caa36ee261aad1521c731",
+    "source_order": 6,
+    "paragraph_count": 85
+  },
+  {
+    "id": "sy-04-09-007",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "明心見性",
+    "author": "聖嚴法師",
+    "source_sha256": "9088413964666d6720e8c2eb70b2b12fe4a49f5403f9033c1ead59f9a5b5ea45",
+    "source_order": 7,
+    "paragraph_count": 81
+  },
+  {
+    "id": "sy-04-09-008",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "開悟成佛",
+    "author": "聖嚴法師",
+    "source_sha256": "8f650e62dde6ab501b20f579ba8ed36d7ba99eecd457359607de130fa901000c",
+    "source_order": 8,
+    "paragraph_count": 104
+  },
+  {
+    "id": "sy-04-09-009",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "梅子熟了",
+    "author": "聖嚴法師",
+    "source_sha256": "75b4a359e50540319551aff7e568d7dc08df105d4d43c62e79dbe29b0d658c13",
+    "source_order": 9,
+    "paragraph_count": 41
+  },
+  {
+    "id": "sy-04-09-010",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "放鬆身心",
+    "author": "聖嚴法師",
+    "source_sha256": "2fc250fa9e4aadb5438170f73baff87d05d310e76b793329d1678d6400ac37ee",
+    "source_order": 10,
+    "paragraph_count": 23
+  },
+  {
+    "id": "sy-04-09-011",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "我與環境不一不二",
+    "author": "聖嚴法師",
+    "source_sha256": "26241447364838aee613f6700fa33fee05c4063fe79587b908e713e9bfb88842",
+    "source_order": 11,
+    "paragraph_count": 35
+  },
+  {
+    "id": "sy-04-09-012",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "佛在心中．口中．行為中",
+    "author": "聖嚴法師",
+    "source_sha256": "6e3d754ff8002199e96c93314ae645383c74dec4603de860b4eaa180e60bfe41",
+    "source_order": 12,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-09-013",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "禪如何用於日常生活",
+    "author": "聖嚴法師",
+    "source_sha256": "258e866e81887636f0b8f34741bbd0181a57eedc5f385627b05a0140d3326909",
+    "source_order": 13,
+    "paragraph_count": 37
+  },
+  {
+    "id": "sy-04-09-014",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "禪修與信仰",
+    "author": "聖嚴法師",
+    "source_sha256": "6825721c7c4ce77e4be9a6282da7420cb6cd58084a847f60d20a000a5e140462",
+    "source_order": 14,
+    "paragraph_count": 16
+  },
+  {
+    "id": "sy-04-09-015",
+    "book_id": "sy-04-09",
+    "person_id": "sheng-yen",
+    "title": "我們的身．心．世界",
+    "author": "聖嚴法師",
+    "source_sha256": "2dfe153df989c32a42aa411d5c6393773be9b486b292f1cddbd741bf8d1e58e8",
+    "source_order": 15,
+    "paragraph_count": 33
+  },
+  {
+    "id": "sy-04-10-001",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "9f8175a9ba66e0cf61f9b8aa04db105659a3786f8a7f2cf1728c69689744dd66",
+    "source_order": 1,
+    "paragraph_count": 12
+  },
+  {
+    "id": "sy-04-10-002",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "虛與實",
+    "author": "聖嚴法師",
+    "source_sha256": "e99b45989f9f0a4b28fc52e32236a403122e56939df4849629a31aaca27ee750",
+    "source_order": 2,
+    "paragraph_count": 31
+  },
+  {
+    "id": "sy-04-10-003",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "慈悲與智慧",
+    "author": "聖嚴法師",
+    "source_sha256": "a96e78641c1e39d7ca555647cdde7abfa29c094359f7389e236c6f81059f0e70",
+    "source_order": 3,
+    "paragraph_count": 36
+  },
+  {
+    "id": "sy-04-10-004",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "自私與無我",
+    "author": "聖嚴法師",
+    "source_sha256": "779c814a59208bc0b61ffdc79b7c0a84270ccec8750ca936a73b7e592cf05c04",
+    "source_order": 4,
+    "paragraph_count": 37
+  },
+  {
+    "id": "sy-04-10-005",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "自我與無我",
+    "author": "聖嚴法師",
+    "source_sha256": "37289b021aed4c9a632a1dd5f541fd4f70ae91673dd42f8297a25d68c6a2215c",
+    "source_order": 5,
+    "paragraph_count": 32
+  },
+  {
+    "id": "sy-04-10-006",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "理性與感性",
+    "author": "聖嚴法師",
+    "source_sha256": "fe88126d1449004db844281fc1c71dc33cada82a41e9321f4b0d6015ea19d0be",
+    "source_order": 6,
+    "paragraph_count": 62
+  },
+  {
+    "id": "sy-04-10-007",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "人生觀的層次",
+    "author": "聖嚴法師",
+    "source_sha256": "70f17da9efd79888543d4f1f6dc84223c8099ab625a1a769d65b6d55f16f88f3",
+    "source_order": 7,
+    "paragraph_count": 62
+  },
+  {
+    "id": "sy-04-10-008",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "安心之道",
+    "author": "聖嚴法師",
+    "source_sha256": "6b6e58e771ca1d2a67619bad5c4a60b2e232707e71cf68a7f0d03640332a5b49",
+    "source_order": 8,
+    "paragraph_count": 20
+  },
+  {
+    "id": "sy-04-10-009",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "清明心的重要",
+    "author": "聖嚴法師",
+    "source_sha256": "ff91ebb40a56ff9323da19892484ecc8db3e6a958f567060939a00217bb8e373",
+    "source_order": 9,
+    "paragraph_count": 44
+  },
+  {
+    "id": "sy-04-10-010",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "心靈環保",
+    "author": "聖嚴法師",
+    "source_sha256": "40282664dbe3a890888802a76d82517d1ae4297dae1a8110ecfb65dbddc692cc",
+    "source_order": 10,
+    "paragraph_count": 31
+  },
+  {
+    "id": "sy-04-10-011",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "話夢人生",
+    "author": "聖嚴法師",
+    "source_sha256": "2051490820724cc2e3ce7c482b59c17a764998eb7c7f8f932133d6bde26a2d36",
+    "source_order": 11,
+    "paragraph_count": 14
+  },
+  {
+    "id": "sy-04-10-012",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "生命與死亡、學問與生活",
+    "author": "聖嚴法師",
+    "source_sha256": "3fcaf660c37d25477c50080801d27bc4f70483d61d8ab2feb202a38cb06dd71e",
+    "source_order": 12,
+    "paragraph_count": 24
+  },
+  {
+    "id": "sy-04-10-013",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "照顧自己，關懷他人",
+    "author": "聖嚴法師",
+    "source_sha256": "86230309c2f48d81ac72a980e9f5ca40883e3e58c6b6fceec1c6d0b9446bf0dc",
+    "source_order": 13,
+    "paragraph_count": 22
+  },
+  {
+    "id": "sy-04-10-014",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "談生涯規畫——立足點與方向感",
+    "author": "聖嚴法師",
+    "source_sha256": "0a0dca283fce34001b3d5093130896d1b6090cd77cc3e541aade25848ce0a518",
+    "source_order": 14,
+    "paragraph_count": 84
+  },
+  {
+    "id": "sy-04-10-015",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "淨化人生的責任、權利、義務",
+    "author": "聖嚴法師",
+    "source_sha256": "7910cb9968c9c3c684a80395c3ff212b27d76c22ad5f8c7d2aaeecf113a60c8a",
+    "source_order": 15,
+    "paragraph_count": 79
+  },
+  {
+    "id": "sy-04-10-016",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "二十一世紀的佛教徒",
+    "author": "聖嚴法師",
+    "source_sha256": "f50d2d5287713327eef6f3deba40cc9c43a6dbb3473bc75d2854f47deb5c5735",
+    "source_order": 16,
+    "paragraph_count": 51
+  },
+  {
+    "id": "sy-04-10-017",
+    "book_id": "sy-04-10",
+    "person_id": "sheng-yen",
+    "title": "讀經與修行",
+    "author": "聖嚴法師",
+    "source_sha256": "d495f45e4dae954237f3a7432fbb42df759882ef60077cddf8393db9193c7221",
+    "source_order": 17,
+    "paragraph_count": 47
+  },
+  {
+    "id": "hongyi-west-lake-haichaoyin-1933",
+    "book_id": "hongyi-before-monastic-1933",
+    "person_id": "hong-yi",
+    "title": "西湖夜游記",
+    "author": "李叔同（弘一）",
+    "text_version": "1f2a363767482d92276f3a9b226b1aa199e09aaae9763c027fd6d319dabe11a8",
+    "source_sha256": "a4d113c86885a65fab21c8ad14e8cb217290b9eb6457189ec2413c1883223058",
+    "source_order": 1,
+    "paragraph_count": 3
+  },
+  {
     "id": "xuyun-xubian-foyuan-letter-2",
     "book_id": "xuyun-xubian-shuwen-20261008",
     "person_id": "xu-yun",
