@@ -204917,5 +204917,695 @@
     "source_sha256": "35dbc7c147619f9ab981142b7a17f4b852c3a9b525bab7900de30b562d9775c7",
     "source_order": 1,
     "paragraph_count": 5
+  },
+  {
+    "id": "sy-01-05-001",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "11b4a251f3c8b74ebdfacba22e9d3e735f04e85f2039642a0f17d131d394bbba",
+    "source_order": 1,
+    "paragraph_count": 3
+  },
+  {
+    "id": "sy-01-05-002",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "再版自序",
+    "author": "聖嚴法師",
+    "source_sha256": "bc792483b9540a9054d7ed08876cebeb82f4f469bd43b822da3993fffa0edb24",
+    "source_order": 2,
+    "paragraph_count": 6
+  },
+  {
+    "id": "sy-01-05-003",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "第一章　今日的基督教與佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "b078c7b689cf478282508a1342bf5321248cfd1e4b9318f290b17fdc3dca14e8",
+    "source_order": 3,
+    "paragraph_count": 49
+  },
+  {
+    "id": "sy-01-05-004",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "第二章　牧師及神父的「佛教學」",
+    "author": "聖嚴法師",
+    "source_sha256": "f31530ccd6ff21910cd800e7be78867494ef2ad9e136696792eff1103cbb5b3f",
+    "source_order": 4,
+    "paragraph_count": 150
+  },
+  {
+    "id": "sy-01-05-005",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "第三章　基督教的「神」之研究",
+    "author": "聖嚴法師",
+    "source_sha256": "142a31b7f2396281a233a6f7ac4ffdb30b795faecb51c048b9a72b82d409b119",
+    "source_order": 5,
+    "paragraph_count": 111
+  },
+  {
+    "id": "sy-01-05-006",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "第四章　基督教的「偉大」在哪裡",
+    "author": "聖嚴法師",
+    "source_sha256": "0ba0bbc825affe86b3d8011205847c2882f1944211d1abb53ae8cdd2acb7f66a",
+    "source_order": 6,
+    "paragraph_count": 369
+  },
+  {
+    "id": "sy-01-05-007",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "第五章　基督教與佛教的影響及價值",
+    "author": "聖嚴法師",
+    "source_sha256": "be6af159ddcd6f139f11c2234d1169c383661db025f8c43161e898d14c10d25a",
+    "source_order": 7,
+    "paragraph_count": 124
+  },
+  {
+    "id": "sy-01-05-008",
+    "book_id": "sy-01-05",
+    "person_id": "sheng-yen",
+    "title": "附錄 《評駁佛教與基督教的比較》",
+    "author": "聖嚴法師",
+    "source_sha256": "555d3959ba5ce75e39832b37a764506c103cef385cb9846f91a50bd243765403",
+    "source_order": 8,
+    "paragraph_count": 238
+  },
+  {
+    "id": "sy-01-06-001",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "自序",
+    "author": "聖嚴法師",
+    "source_sha256": "aac403ecd21a6478ac4af93485afd6c84af5698d11217ee23dc53b174b0a4a22",
+    "source_order": 1,
+    "paragraph_count": 13
+  },
+  {
+    "id": "sy-01-06-002",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "傳統戒律與現代世界",
+    "author": "聖嚴法師",
+    "source_sha256": "c56719b46d2be8bf31aeae4053731900d49af1f134d5282ec732fa1b400aeab5",
+    "source_order": 2,
+    "paragraph_count": 31
+  },
+  {
+    "id": "sy-01-06-003",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "從三聚淨戒論菩薩戒的時空適應",
+    "author": "聖嚴法師",
+    "source_sha256": "de4ccf8993ca83351b619d53f3d7441cd7b303337f4ff7125bd55d93d0514852",
+    "source_order": 3,
+    "paragraph_count": 438
+  },
+  {
+    "id": "sy-01-06-004",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "十善業道是菩薩戒的共軌",
+    "author": "聖嚴法師",
+    "source_sha256": "e23637c24e41b0842201ebe108772f7d3645ca78d0ab547cf21773a7438e06ac",
+    "source_order": 4,
+    "paragraph_count": 315
+  },
+  {
+    "id": "sy-01-06-005",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "明末的菩薩戒",
+    "author": "聖嚴法師",
+    "source_sha256": "0a9a1de7f64ef8cd9afd5f46c13755bc7e35d49e7f3950e3fe91ac9969d059c1",
+    "source_order": 5,
+    "paragraph_count": 88
+  },
+  {
+    "id": "sy-01-06-006",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "明末中國的戒律復興",
+    "author": "聖嚴法師",
+    "source_sha256": "018fb9490f62b315dd94fd267f8f83a7a3ca2df57a809d647a68fa380118231e",
+    "source_order": 6,
+    "paragraph_count": 120
+  },
+  {
+    "id": "sy-01-06-007",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "適應時空的菩薩戒會",
+    "author": "聖嚴法師",
+    "source_sha256": "851b56df7acaf96079b74cf9e8df2fe6ecd4e98e36915592b102cc2553d48d79",
+    "source_order": 7,
+    "paragraph_count": 8
+  },
+  {
+    "id": "sy-01-06-008",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "勉勵「萬行菩薩」都受菩薩戒",
+    "author": "聖嚴法師",
+    "source_sha256": "124e0543ae3e07e7b368241efd0a684ce96d5055661b30cc74cfd0682c1eb0de",
+    "source_order": 8,
+    "paragraph_count": 20
+  },
+  {
+    "id": "sy-01-06-009",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "對在家菩薩戒的認識",
+    "author": "聖嚴法師",
+    "source_sha256": "da0750ddca4803c6684ea50c172f6254fe8fff2d238125b706eac77d73771650",
+    "source_order": 9,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-01-06-010",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "附錄一 傳授菩薩戒儀範",
+    "author": "聖嚴法師",
+    "source_sha256": "f70c818684ae1a5bc4946be63e6cd894fdd04f3ad2f94fbc5da47931a36215ee",
+    "source_order": 10,
+    "paragraph_count": 115
+  },
+  {
+    "id": "sy-01-06-011",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "附錄二 菩薩戒會誦戒儀",
+    "author": "聖嚴法師",
+    "source_sha256": "cab98cd9396510fa173c971851918f849b5025f5a612dfa6686561112df5f4e2",
+    "source_order": 11,
+    "paragraph_count": 63
+  },
+  {
+    "id": "sy-01-06-012",
+    "book_id": "sy-01-06",
+    "person_id": "sheng-yen",
+    "title": "附錄三 傳授幽冥戒儀範",
+    "author": "聖嚴法師",
+    "source_sha256": "826c2f1b0300fee443a8258d9ed7dd48f2e870b56be0db73665c9fb9c46264a6",
+    "source_order": 12,
+    "paragraph_count": 67
+  },
+  {
+    "id": "xy-artcle7247",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "【自序】   禮敬先賢",
+    "author": "星雲大師",
+    "source_sha256": "0051a795f843a03f19dc805088e625b2ea894a1f8505c6bcef269d29868ba634",
+    "source_order": 1,
+    "paragraph_count": 7
+  },
+  {
+    "id": "xy-artcle7248",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "佛陀十大弟子名各有第一",
+    "author": "星雲大師",
+    "source_sha256": "0a81e9f8c11479cec583968cf2db80e66ddca33539a0e0a748c9c035eef02b97",
+    "source_order": 2,
+    "paragraph_count": 14
+  },
+  {
+    "id": "xy-artcle7249",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "舍利弗——智慧第一",
+    "author": "星雲大師",
+    "source_sha256": "331b7c34e369d659fce6a56a61ad2494d4e68db16c0c75455007fedddc7e123f",
+    "source_order": 3,
+    "paragraph_count": 262
+  },
+  {
+    "id": "xy-artcle7250",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "目犍連——神通第一",
+    "author": "星雲大師",
+    "source_sha256": "163116bf4c0b18ef269b07803c372ee79b77e03885b7688849dd6d98c517e548",
+    "source_order": 4,
+    "paragraph_count": 212
+  },
+  {
+    "id": "xy-artcle7251",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "富樓那——說法第一",
+    "author": "星雲大師",
+    "source_sha256": "f104aed2dc325b114bc5c7829f9ca77aee35550875d321dd78424b3367234ee1",
+    "source_order": 5,
+    "paragraph_count": 174
+  },
+  {
+    "id": "xy-artcle7252",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "須菩提──解空第一",
+    "author": "星雲大師",
+    "source_sha256": "e22533c8ce75c8f790753c6ec7cafa5655dd66e36f0959a49eb7140bd2a0f9ef",
+    "source_order": 6,
+    "paragraph_count": 215
+  },
+  {
+    "id": "xy-artcle7253",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "迦旃延——論議第一",
+    "author": "星雲大師",
+    "source_sha256": "4b69b0fd04395053d316cd0927d4dc42f12ceb299b863c308b8efbf705f880ab",
+    "source_order": 7,
+    "paragraph_count": 215
+  },
+  {
+    "id": "xy-artcle7254",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "大迦葉──頭陀第一",
+    "author": "星雲大師",
+    "source_sha256": "7119490de569d3716affad4ca096ce375358533f32e89983ee00fb0b5fdc060f",
+    "source_order": 8,
+    "paragraph_count": 189
+  },
+  {
+    "id": "xy-artcle7255",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "阿那律──天眼第一",
+    "author": "星雲大師",
+    "source_sha256": "f11c5df8140a7705035326a6b07d6a97b943cce26c4c2a636e44ef46223b8ea2",
+    "source_order": 9,
+    "paragraph_count": 178
+  },
+  {
+    "id": "xy-artcle7256",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "優波離——持戒第一",
+    "author": "星雲大師",
+    "source_sha256": "14cfbdd41bcaf422994bcb15bfd0d9946e93a6b86e53fc525c48326f8c65465b",
+    "source_order": 10,
+    "paragraph_count": 209
+  },
+  {
+    "id": "xy-artcle7257",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "阿難陀──多聞第一",
+    "author": "星雲大師",
+    "source_sha256": "bce04638e937d2834bf5dd1e279323f29efda94089c252064a418465364280c2",
+    "source_order": 11,
+    "paragraph_count": 232
+  },
+  {
+    "id": "xy-artcle7258",
+    "book_id": "xy-shida-dizi",
+    "person_id": "hsing-yun",
+    "title": "羅睺羅──密行第一",
+    "author": "星雲大師",
+    "source_sha256": "ac591884354da026555f018971d0e6cba7617141d8786ecae39dc2b556abf582",
+    "source_order": 12,
+    "paragraph_count": 162
+  },
+  {
+    "id": "xy-artcle7334",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第一章   千金小姐！萬金和尚！",
+    "author": "星雲大師",
+    "source_sha256": "7bea4d57667b2a004d6f0ec996f47283a2984bc6dbf27ee8b16f8e59bc09f470",
+    "source_order": 1,
+    "paragraph_count": 87
+  },
+  {
+    "id": "xy-artcle7335",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第二章   十不全的書記師",
+    "author": "星雲大師",
+    "source_sha256": "1c54678bc214d999c2b79c6c7c27a5a3803b00d0e5d846c13f81e705b19546ef",
+    "source_order": 2,
+    "paragraph_count": 48
+  },
+  {
+    "id": "xy-artcle7336",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第三章   只有一個條件",
+    "author": "星雲大師",
+    "source_sha256": "65ae0fae1ab98c940901d41a9ca0e21f09d838ae7eca72cdad8d5cec59e3658e",
+    "source_order": 3,
+    "paragraph_count": 75
+  },
+  {
+    "id": "xy-artcle7337",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第四章   洞房花燭夜",
+    "author": "星雲大師",
+    "source_sha256": "41d75ad214709d146d046460d4edf39b33e2f3647a714378645424fea67ded47",
+    "source_order": 4,
+    "paragraph_count": 75
+  },
+  {
+    "id": "xy-artcle7338",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第五章   小姐！ 你醒得很早呀！",
+    "author": "星雲大師",
+    "source_sha256": "49dc9cc741906832e0283a668ab7f90b51e108b11ee69e053579e73f4bb6c7a3",
+    "source_order": 5,
+    "paragraph_count": 34
+  },
+  {
+    "id": "xy-artcle7339",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第六章   有一個半徒弟",
+    "author": "星雲大師",
+    "source_sha256": "6d46c3b5335db77d41e702f878978127805539b624510b4063ce9392c52e3cc6",
+    "source_order": 6,
+    "paragraph_count": 102
+  },
+  {
+    "id": "xy-artcle7340",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第七章   不可小看了他",
+    "author": "星雲大師",
+    "source_sha256": "5e112638ca4d8d72f743adb121f405d0b62a30314199aa90f0e79aaa0631d31e",
+    "source_order": 7,
+    "paragraph_count": 62
+  },
+  {
+    "id": "xy-artcle7341",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第八章   難道不是韋馱護法？",
+    "author": "星雲大師",
+    "source_sha256": "16913ff02643f9a20d73341b2e900ba06d42f1646fc45ada3665bc7d97223863",
+    "source_order": 8,
+    "paragraph_count": 73
+  },
+  {
+    "id": "xy-artcle7342",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第九章   原來還是你！",
+    "author": "星雲大師",
+    "source_sha256": "04b56188e08e1ec12538c412410cf9f7e90452663d2a2dec99591153ec72c78e",
+    "source_order": 9,
+    "paragraph_count": 71
+  },
+  {
+    "id": "xy-artcle7343",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十章   愛情的真義",
+    "author": "星雲大師",
+    "source_sha256": "2987a96b991be42b16cae0e9becc90b859377f0c3a4936030ec2ec6d806af5be",
+    "source_order": 10,
+    "paragraph_count": 60
+  },
+  {
+    "id": "xy-artcle7344",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十一章   金刀剃下娘生髮",
+    "author": "星雲大師",
+    "source_sha256": "e7597986e96c9ec57de3ac6efa1bebf4519ff504ca587b6a1a1e3d7643df5bdb",
+    "source_order": 11,
+    "paragraph_count": 57
+  },
+  {
+    "id": "xy-artcle7345",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十二章   吳師爺的刁難",
+    "author": "星雲大師",
+    "source_sha256": "428bf2bcf9144a884880621be345216ba7cde32d81739c9818cf586caae34693",
+    "source_order": 12,
+    "paragraph_count": 59
+  },
+  {
+    "id": "xy-artcle7346",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十三章   誰殺死了她？",
+    "author": "星雲大師",
+    "source_sha256": "6f05ed67289fb2b45c314804da60552f6e06644001d417b1dde800ba0df65203",
+    "source_order": 13,
+    "paragraph_count": 64
+  },
+  {
+    "id": "xy-artcle7347",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十四章   將此一命布施給人",
+    "author": "星雲大師",
+    "source_sha256": "33707773ba019e58477f2f39b31adaf623130d0e86538cf5dd9a553ea467904f",
+    "source_order": 14,
+    "paragraph_count": 73
+  },
+  {
+    "id": "xy-artcle7348",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十五章   佛法才是最好的法律",
+    "author": "星雲大師",
+    "source_sha256": "0af19e2122763bdafbbcb52beb34f713a1cb211f65f85b2428679bf216115ded",
+    "source_order": 15,
+    "paragraph_count": 111
+  },
+  {
+    "id": "xy-artcle7349",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十六章   三個錦囊妙計",
+    "author": "星雲大師",
+    "source_sha256": "0e703c4d3dc360e1d71f907c3ae66074f7bf58dd0e80eb4d052492de58fbb0e6",
+    "source_order": 16,
+    "paragraph_count": 69
+  },
+  {
+    "id": "xy-artcle7350",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十七章   山寨改佛殿",
+    "author": "星雲大師",
+    "source_sha256": "10bbd41c36a5dc24907a3c92fe0ac8b8661eb339b7539148438e2d2e518759e2",
+    "source_order": 17,
+    "paragraph_count": 76
+  },
+  {
+    "id": "xy-artcle7351",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十八章   皇帝請我去的",
+    "author": "星雲大師",
+    "source_sha256": "25cbf7b8bfb821901d14a1bd68e040a7764a915312aed3f5ee15f24c9974210f",
+    "source_order": 18,
+    "paragraph_count": 67
+  },
+  {
+    "id": "xy-artcle7352",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第十九章   國師在此不敢抬頭",
+    "author": "星雲大師",
+    "source_sha256": "5cc8a5cf4b7686bb83994f0e14235d4ab033666ff340a858ee1bda777e0cdaf4",
+    "source_order": 19,
+    "paragraph_count": 72
+  },
+  {
+    "id": "xy-artcle7353",
+    "book_id": "xy-yulin-guoshi",
+    "person_id": "hsing-yun",
+    "title": "第二十章   把身體興隆這個道場",
+    "author": "星雲大師",
+    "source_sha256": "72d00f37fee5746adc7fe4b0e0f25e998ce37680c26d8b90b2a57cc6709778af",
+    "source_order": 20,
+    "paragraph_count": 28
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-03",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第01章、变迁的时代与不满的心理",
+    "author": "南怀瑾",
+    "source_sha256": "bb7de8d0479b2accb6e1e978cacd460bef21b64ef79a174118435f719e53b901",
+    "source_order": 3,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-04",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第02章、西方文化的影响",
+    "author": "南怀瑾",
+    "source_sha256": "0f896533fcd5e37153b52358c55ae05ca12c1381149f50134a630b9f06de894a",
+    "source_order": 4,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-05",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第03章、大时代的小故事",
+    "author": "南怀瑾",
+    "source_sha256": "be577cfdebee49534b57afb64a69671c12b8a07aa013d0c3437bbafc4f4ab0c0",
+    "source_order": 5,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-06",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第04章、美国文化带来的迷惘",
+    "author": "南怀瑾",
+    "source_sha256": "137f42c36789740d81ac6f36e8edbbad247ee2055de7afbb431fec9a281f9a7b",
+    "source_order": 6,
+    "paragraph_count": 19
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-07",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第05章、望子成龙",
+    "author": "南怀瑾",
+    "source_sha256": "765354284815ac5b0e3c9eddda24ddb0af4085cf2aabc3d826bf733b685901fc",
+    "source_order": 7,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-08",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第06章、孝和爱",
+    "author": "南怀瑾",
+    "source_sha256": "64812a159d93172cb91ae32a31be6b9009079052be99d3111c6ea228505e66a3",
+    "source_order": 8,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-09",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第07章、旧八股和新八股",
+    "author": "南怀瑾",
+    "source_sha256": "112a438595ae3d6d631d85596d4d381d7ea60394e611423bac46b1a1c549119f",
+    "source_order": 9,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-10",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第08章、从处变自强说起",
+    "author": "南怀瑾",
+    "source_sha256": "2010d72387b9866ae6ab4e0c8a9baa569baa87044921725d933de35c963aa0cb",
+    "source_order": 10,
+    "paragraph_count": 23
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-11",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第09章、六十年来教育的变和惑",
+    "author": "南怀瑾",
+    "source_sha256": "4013f7e057e300ad34da0b05933047248c31deb062cb40100621d5481eb923f1",
+    "source_order": 11,
+    "paragraph_count": 16
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-12",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第10章、七十年前八股文的思想与教育",
+    "author": "南怀瑾",
+    "source_sha256": "e96dba70842e0e6cd6234fe310f31d9e00063fcf7fa6fe11f33c5138aba93567",
+    "source_order": 12,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-13",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第11章、新旧教育的变革",
+    "author": "南怀瑾",
+    "source_sha256": "f8b48ba7107368bce76322397cd192ae1eddaf16f35c914535b80c904beff07d",
+    "source_order": 13,
+    "paragraph_count": 52
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-14",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第12章、值得反省的代差与教育",
+    "author": "南怀瑾",
+    "source_sha256": "fd2c4522a509844713ad0faaef801ce5718c4e58ba820e3f0ebbb365fc7022d0",
+    "source_order": 14,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-15",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第13章、教育与文化的中空",
+    "author": "南怀瑾",
+    "source_sha256": "ffa8e75e33d7b8bdf7c9632bff1ab3c234b412c496f940035450edbdcf0d67e7",
+    "source_order": 15,
+    "paragraph_count": 14
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-16",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第14章、尊师重道",
+    "author": "南怀瑾",
+    "source_sha256": "66d2112784a8382973ac8907eb1dcc2a18efe4e9f8ac079cb7b49e7cf604067b",
+    "source_order": 16,
+    "paragraph_count": 23
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-17",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第15章、武侠小说与社会心理教育",
+    "author": "南怀瑾",
+    "source_sha256": "4f087720dcca5f25e0be4f7c9661c39c6dbaec481fcff2481478782156a05be5",
+    "source_order": 17,
+    "paragraph_count": 10
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-18",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第16章、老文学和新文艺",
+    "author": "南怀瑾",
+    "source_sha256": "685d2ffac4d955794457b6d7baa26dcc814f1f197c764a0977ebded299f49f87",
+    "source_order": 18,
+    "paragraph_count": 9
+  },
+  {
+    "id": "nhj-yixin-yijiu-chapter-19",
+    "book_id": "nhj-yixin-yijiu",
+    "person_id": "nan-huaijin",
+    "title": "第17章、人性与人欲",
+    "author": "南怀瑾",
+    "source_sha256": "65aa701a935f8d752037a2e1d9035aa37b1bfcddde6d4ba3d4d7b3dd49e66f5f",
+    "source_order": 19,
+    "paragraph_count": 29
   }
 ]
