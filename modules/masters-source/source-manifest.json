@@ -1,6 +1,6 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
-  "baseCommit": "5fdeda4597935fd0c86b919cc448148845aad0ff",
+  "baseCommit": "9d062b5c5d8bb964bea650262726b41c40ab9475",
   "sourceState": "reviewed-incremental-supplement-preserving-official-existing-content",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
@@ -61,16 +61,16 @@
     "shared/masters/article-index.json": "a716bf06ec67a52a6c3a911fe80f4d7da2f6473736bcac32a202b7e69ae8fb94",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "f842deb93a4ff18fa182e98896ea8466f1277218605a95143bd4fef27c1ea371",
+    "shared/masters/catalog.ts": "8129e14097a67d59d9ef97c3e6f16f83bc537b772ba39bc05b23004c9b41dd70",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
-    "shared/masters/people.ts": "60d7d0aeb04755caa84c21d3e308aa821ecde0fd2a697e1722dd443a50765d66",
-    "shared/masters/profileCopy.ts": "1c22fb3d346fbcfa5f73a0568322e6433198955a386c40165aff356365e6a7a7",
+    "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
+    "shared/masters/profileCopy.ts": "b78834c5fa5b9d3e76f64fde69c840918303d6a250ad13e5f700c529444dc73b",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
     "shared/masters/shareLinks.ts": "d4b4097d69868e664e9f4b331b7782fcccf6ac6b4a0f234881bec69efd0206a9",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
-    "shared/masters/historical-masters.json": "34b28c00117d6b0df247d05c0dd8156585ee0397b80dd46896b367a917cfffc5",
+    "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
     "shared/masters/historicalResources.ts": "3586723f83905a4a4b7b1059828f0732f9dcb57d5fdc225fc155e9196f0428b0",
     "shared/masters/videoCatalog.ts": "8552fb6c8bdd38b57af78c4ed918ea2d4477ff60d1849958053de8e7fb1c9d32",
     "shared/masters/nan-videos.json": "10b8a34950e9360d6bbb03571e0e0d3cca83b5d4d4db06857debd53fe8bd3f49",
@@ -78,7 +78,8 @@
     "shared/masters/readingFeed.ts": "c27a3859364b8259a92c00f2f9f11105ec1992967f4afbc23bd0fb5908482fec",
     "shared/masters/historical-expansion-20261008.json": "384230ecaf64e529ec4f4a0784cc443e0ea616122fe553464d8d58a43fb50b77",
     "shared/masters/next-text-library-20261008.json": "eb2a097154e2c58166c0b46a881a9b6f4db124905fdf29c64725ea7350fb9bf3",
-    "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4"
+    "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4",
+    "shared/masters/yinshun-library.json": "3893e7af779acc3136d498c0b593c53d962ae1734803308ce794368445690d9f"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -142,6 +143,17 @@
         "shared/masters/next-text-library-20261009.json"
       ],
       "note": "116 reviewed readable sections across five collections;45 deferred and1 structural failure retained, unverified28-page listening edition excluded from runtime routes."
+    },
+    {
+      "sourceCommit": "9d062b5c5d8bb964bea650262726b41c40ab9475",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/people.ts",
+        "shared/masters/profileCopy.ts",
+        "shared/masters/historical-masters.json",
+        "shared/masters/yinshun-library.json"
+      ],
+      "note": "Reviewed Yin Shun catalog and identity supplement; entry remains hidden and prior official-site content preserved."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",

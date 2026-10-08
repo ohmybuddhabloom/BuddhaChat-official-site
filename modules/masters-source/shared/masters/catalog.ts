@@ -1,5 +1,6 @@
 import historical from './historical-masters.json';
 import historicalExpansion from './historical-expansion-20261008.json';
+import yinshunLibrary from './yinshun-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
 import nextTextLibraryRound2 from './next-text-library-20261009.json';
 import additionalArticles from './article-index.json';
@@ -20,6 +21,7 @@ export const articleSummaries: MastersArticleSummary[] = [
   ...articles.map(({ id, book_id, person_id, title, author, source_sha256, source_order, paragraphs }) =>
     ({ id, book_id, person_id, title, author, source_sha256, source_order, paragraph_count: paragraphs.length })),
   ...additionalArticles,
+  ...yinshunLibrary.articles,
 ];
 export function mastersTextVersion(article: { source_sha256: string; text_version?: string }) { return article.text_version ?? article.source_sha256; }
 const summariesById = new Map<string, MastersArticleSummary>();
@@ -48,6 +50,7 @@ export const collections = [
   ...additionalCollections,
   ...historical.collections,
   ...historicalExpansion.collections,
+  ...yinshunLibrary.collections,
   ...nextTextLibrary.collections,
   ...nextTextLibraryRound2.collections,
 ];

@@ -150,6 +150,49 @@
           "institution": "天津市河北区纪委监委"
         }
       ]
+    },
+    {
+      "id": "yin-shun",
+      "source_note": "生平与时间线由平台依据印顺文教基金会资料整理，不作为导师本人自述。著作原题、版本与编录者依原刊保留；《太虚大师全书》属于印顺参与整理的太虚著作。未审校正文的官网目录不计为已收录文章。",
+      "media_note": "本人讲述、他人讲解与纪念节目须分别注明主讲者及制作方；尚未收录通过播放核验的影音。",
+      "timeline": [
+        {
+          "year": "1906年",
+          "text": "生于浙江海宁。"
+        },
+        {
+          "year": "1930年",
+          "text": "于普陀山福泉庵出家；具体月日依来源标注农历。"
+        },
+        {
+          "year": "1953年",
+          "text": "创办福严精舍。"
+        },
+        {
+          "year": "1960年",
+          "text": "《成佛之道》出版，并创办慧日讲堂。"
+        },
+        {
+          "year": "2005年",
+          "text": "6月4日圆寂；此日期为国历。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.yinshun.org.tw/yinshun/biography.html",
+          "title": "印顺导师简介",
+          "institution": "印顺文教基金会",
+          "role": "机构生平与年谱资料；时间线由平台整理",
+          "verified": "opened"
+        },
+        {
+          "url": "https://www.yinshun.org.tw/yinshun/chronicle.html",
+          "title": "印顺导师年谱",
+          "institution": "印顺文教基金会",
+          "role": "机构生平与年谱资料；时间线由平台整理",
+          "verified": "opened"
+        }
+      ]
     }
   ],
   "collections": [
