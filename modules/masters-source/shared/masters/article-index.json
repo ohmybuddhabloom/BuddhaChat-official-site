@@ -216200,5 +216200,16 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 11,
     "paragraph_count": 5
+  },
+  {
+    "id": "hongyi-music-haichaoyin-1933",
+    "book_id": "hongyi-before-monastic-1933",
+    "person_id": "hong-yi",
+    "title": "音樂序 · 1933節略再刊",
+    "author": "李叔同（弘一）",
+    "text_version": "10e84608a815cf03ac6a49b1ac224afd66c86f12579f38cc14f4d03a263fdd47",
+    "source_sha256": "a4d113c86885a65fab21c8ad14e8cb217290b9eb6457189ec2413c1883223058",
+    "source_order": 2,
+    "paragraph_count": 6
   }
 ]

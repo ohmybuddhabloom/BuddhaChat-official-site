@@ -58,7 +58,7 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "c14da219813e1e34cd663bd91c12736a741f35b50ae73e0f0c86c8726af79cde",
+    "shared/masters/article-index.json": "4481cadd7051abea2ada03a590c7c8df2c1ee7407011f8cb58f191d505703cb8",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
     "shared/masters/catalog.ts": "f18ce64cff871f9d35181d4c71c6e2f9c20609fa2094c127821ce70ba7c0f65d",
@@ -190,10 +190,18 @@
         "shared/masters/zen-originals-library-20261009.json"
       ],
       "note": "83 reviewed Sheng Yen lectures and1 independently transcribed Hongyi1933 travelogue;36figures/bylines/classic quotations retained, music-preface1glyph held; preserve every old21397 index object and concurrent Yin Shun hidden/source-note boundaries."
+    },
+    {
+      "sourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588",
+      "files": [
+        "shared/masters/article-index.json"
+      ],
+      "note": "One independently read1933printed music abridgement appended to existing Hongyi collection. Original中略 and printedglyphs retained; allold21481summaries/metadata/files preserved. Modern806private research and raw/book bodies not copied to site."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
   "nextTextLibrary20261009SourceCommit": "1d17f38538eadb8a01eeb819f3370d3e77a541af",
   "continuousLibrary20261009SourceCommit": "7b154bd1a0a984480d9f418f5328dd68979bf43e",
-  "zenOriginals20261009SourceCommit": "daf9102b781cdd4e35f59077b1e71473b118eb9b"
+  "zenOriginals20261009SourceCommit": "daf9102b781cdd4e35f59077b1e71473b118eb9b",
+  "hongyiMusic1933SourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588"
 }
