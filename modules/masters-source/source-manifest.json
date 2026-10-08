@@ -23,7 +23,7 @@
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
     "prototypes/masters-h5/src/Prototype.tsx": "05635a945af4801ef0a08ce178cfcbec8be2a24c632f7fc677e249b3759d4e45",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "4fd5b9009d8bd0dfa59573e7a55f230faa5033a4038fa150dd6317a11c855687",
+    "prototypes/masters-h5/src/content.ts": "ad774d799fcbbd59a9d20ad8d675925fe42bf29a5a5accc140584943d7b1fa8a",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5e231dc3a77ce28f585fb8843619076c7cc1a392c18cb7a188ac531ec8e5ee10",
@@ -58,10 +58,10 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "6ea892f06a0728e74d53ee86739badd6860100078ffd4a1592ac853ee34099ca",
+    "shared/masters/article-index.json": "e532053386c7c6b964d29e76697c8d81a868676577394a9d3f4e69718494fb84",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "6b2b95b88f62b59998c2fbf8b87950fda002024df72441a59b9103d31d45cf19",
+    "shared/masters/catalog.ts": "f0a7e2c3657e5e0b7f4199b5bb6d07a8d10e359fc66e766c84aa6abe23987883",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "60d7d0aeb04755caa84c21d3e308aa821ecde0fd2a697e1722dd443a50765d66",
@@ -75,7 +75,8 @@
     "shared/masters/videoCatalog.ts": "8552fb6c8bdd38b57af78c4ed918ea2d4477ff60d1849958053de8e7fb1c9d32",
     "shared/masters/nan-videos.json": "10b8a34950e9360d6bbb03571e0e0d3cca83b5d4d4db06857debd53fe8bd3f49",
     "shared/masters/expanded-library.json": "6742bd61eecdd71e94187113f209a0bbec7bcc117d735db4c3a959a97a375325",
-    "shared/masters/readingFeed.ts": "c27a3859364b8259a92c00f2f9f11105ec1992967f4afbc23bd0fb5908482fec"
+    "shared/masters/readingFeed.ts": "c27a3859364b8259a92c00f2f9f11105ec1992967f4afbc23bd0fb5908482fec",
+    "shared/masters/historical-expansion-20261008.json": "384230ecaf64e529ec4f4a0784cc443e0ea616122fe553464d8d58a43fb50b77"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -106,6 +107,19 @@
         "prototypes/masters-h5/src/content.ts"
       ],
       "note": "Reviewed expansion retains the site-only three Nan articles now also present in canonical source; no text bodies bundled."
+    }
+  ],
+  "historicalExpansionSourceCommit": "bbacbc13e1f7d88ded673781e1fb40e08bbdaf04",
+  "incrementalSupplements": [
+    {
+      "sourceCommit": "bbacbc13e1f7d88ded673781e1fb40e08bbdaf04",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/historical-expansion-20261008.json",
+        "prototypes/masters-h5/src/content.ts"
+      ],
+      "note": "18 reviewed historical originals and three collections; prior site snapshot content retained."
     }
   ]
 }

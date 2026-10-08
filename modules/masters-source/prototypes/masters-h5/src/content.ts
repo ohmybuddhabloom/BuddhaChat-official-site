@@ -1,6 +1,7 @@
 import type { HistoricalResource } from '../../../shared/masters/historicalResources';
 import historicalData from '../../../shared/masters/historical-masters.json';
-export const historical = historicalData as { resources: HistoricalResource[]; profiles: { id: string; source_note: string; sources: {url: string; title: string; institution: string}[]; timeline: {year: string; text: string}[]; media_note: string }[]; collections: {id: string; title: string; person_id: string; category: string; attribution: string; source_url: string}[] };
+import historicalExpansion from '../../../shared/masters/historical-expansion-20261008.json';
+export const historical = { ...historicalData, collections: [...historicalData.collections, ...historicalExpansion.collections] } as { resources: HistoricalResource[]; profiles: { id: string; source_note: string; sources: {url: string; title: string; institution: string}[]; timeline: {year: string; text: string}[]; media_note: string }[]; collections: {id: string; title: string; person_id: string; category: string; attribution: string; source_url: string}[] };
 import shengyenCatalog from '../../../docs/shengyen-chinese-catalog.json';
 import readingContent from '../../../shared/masters/reading-content.json';
 import {

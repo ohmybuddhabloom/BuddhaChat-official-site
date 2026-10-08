@@ -204719,5 +204719,203 @@
     "source_sha256": "0897185865f6ab7d27bbaf2ae3c3ff447b118e75ded61ee064683c37728dcc2a",
     "source_order": 8,
     "paragraph_count": 90
+  },
+  {
+    "id": "xuyun-xubian-fayu-20261008-zhongban-fayu",
+    "book_id": "xuyun-xubian-fayu-20261008",
+    "person_id": "xu-yun",
+    "title": "重興雲居山真如寺懸鐘板法語",
+    "author": "虚云老和尚",
+    "text_version": "1761d8b61c71ad5fbdda0690bf0dcd0cb5ff7d91bea3d0f1641bd227dfdda7c6",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 1,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-fayu-20261008-jieqi-fayu",
+    "book_id": "xuyun-xubian-fayu-20261008",
+    "person_id": "xu-yun",
+    "title": "雲居解七法語",
+    "author": "虚云老和尚",
+    "text_version": "67a131233ec982bc5a2c96f0884d7d93162653dadfcd5d9364161c7d8556e175",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 2,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-wang-shanjun",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復王善鈞居士書",
+    "author": "虚云老和尚",
+    "text_version": "60de30081e9cd3e82f0608e2631aa926994748295cc20c62f1ee12d9aee42dab",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 1,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xuyun-xubian-wang-kuanqing",
+    "book_id": "xuyun-xubian-shige",
+    "person_id": "xu-yun",
+    "title": "贈汪寬青居士偈（续编本）",
+    "author": "虚云老和尚",
+    "text_version": "259aeabd72204fa4a9169eff3693e937d1d45acbdede04ab49cdbef735dbf905",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 3,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-ruyuan-government",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "致乳源縣政府函",
+    "author": "虚云老和尚",
+    "text_version": "cd0fa509261f43aa941d1092e0b7ac84121a85cc2ab8c65b23b9dda02dc9cd41",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 2,
+    "paragraph_count": 5
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-li-weihan",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "致李維漢部長書",
+    "author": "虚云老和尚",
+    "text_version": "d0bf0b8d9ca8511cbafd19e638d532b71e791d26b10ddcb6b525d78b2ff32155",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 3,
+    "paragraph_count": 3
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-foyuan-letter-1",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛源書（其一）",
+    "author": "虚云老和尚",
+    "text_version": "ed3529040f7f0d34122d9d445a83b169b9030328ed887d530982ce5e67c4742c",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 4,
+    "paragraph_count": 5
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-foyuan-letter-6",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛源書（其六）",
+    "author": "虚云老和尚",
+    "text_version": "0aed9bd61885bd995ebec824e2aa930a8cb1f994a6b3b74bd7c5172ed52b1ba5",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 5,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-shen-kuanling",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復福州沈寬舲居士書",
+    "author": "虚云老和尚",
+    "text_version": "917ac43dcefa4a9e977fdb89a89f3e1ea64d03e85da07f812960bb2df197c8cf",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 6,
+    "paragraph_count": 3
+  },
+  {
+    "id": "xuyun-xubian-shuwen-20261008-jinghui-letter",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與淨慧書",
+    "author": "虚云老和尚",
+    "text_version": "4c126328c8c811aa60327a5b8f1f1ef71f813a27027565c5646d7cb35d07442b",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 7,
+    "paragraph_count": 2
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-05-duanju",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "斷句（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "d97711fc1e89ba2f4cbe7035a34891eb3f6416b768641ecd196006bdd3fd1a63",
+    "source_sha256": "4c601ff744107c5ab057c046ba18be84d04bc93fcf6720c2c86ad9a5531c329f",
+    "source_order": 5,
+    "paragraph_count": 1
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-06-dongye-kegan",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "冬夜客感（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "071fbee6094e0c6581f6c61bc28df315ccdc9021ae596371a6c977d355bf167b",
+    "source_sha256": "10f4e74c766bbe81a59a283765b20b756da73654ec704f351f72b2f277f37e27",
+    "source_order": 6,
+    "paragraph_count": 4
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-07-fude-youguo-yuan-nianfeng",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "賦得憂國願年豐（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "17a971e04a18bf9adf5197bd66b154fb92f9681c96bfe19043d24cc052b1d5b5",
+    "source_sha256": "44b29cbc2c2cd01b07161c98d702911d6939f271c856ae2bc37e28ef781976ad",
+    "source_order": 7,
+    "paragraph_count": 7
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-08-chongyou-xiaolanting-kouzhan",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "重遊小蘭亭口占（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "f3ca848d3155d8ea061f2321a34b2cb02b058f8e3b2ff0830a7a20c777abecf8",
+    "source_sha256": "20b8653e24e7cdcca9150e6984fda8f244b29735da31a49b5924e8a1514d1e5e",
+    "source_order": 8,
+    "paragraph_count": 3
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-09-yongju-1912",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "詠菊（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "dea5054e60c2370d38088be639482ef7f0f834dd76d055d16b26b12bbd59f738",
+    "source_sha256": "a10821cf3dc766fdac00f9e6eeab58dc0745da932ab27953a3978c2b9a93abec",
+    "source_order": 9,
+    "paragraph_count": 4
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-10-ti-mengxian-huahui-hengfu",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "題夢仙花卉橫幅（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "9f506ae6d21fce9cf933f07a448d8340d4f306e21e69826598f14d5a046f7f85",
+    "source_sha256": "84790cf0a9f92ddd8542a9943c3544a3b437390b5460006b361e2e927821790a",
+    "source_order": 10,
+    "paragraph_count": 6
+  },
+  {
+    "id": "hongyi-shici-zhuanlu-11-yi-wang-haifan",
+    "book_id": "hongyi-shici-zhuanlu",
+    "person_id": "hong-yi",
+    "title": "貽王海帆先生（转录版）",
+    "author": "李叔同（弘一）",
+    "text_version": "0a52e50106ea371c9ba9ce9fcdd3ce37b248c90fa43017e51c6dfd3d37c1c55c",
+    "source_sha256": "1f60c84a946405d6667451cddf0b01e3e8022c18107ecec76f8ce53252c00491",
+    "source_order": 11,
+    "paragraph_count": 9
+  },
+  {
+    "id": "hongyi-hanjia-xu-1933-preface",
+    "book_id": "hongyi-hanjia-xu",
+    "person_id": "hong-yi",
+    "title": "寒笳集·原序（原刊转录）",
+    "author": "弘一法师（原署善臂）",
+    "text_version": "3c36b876413b4cb52ce32ba08ae39c54579e69d1e4344c0cc0a77ae422d80e32",
+    "source_sha256": "35dbc7c147619f9ab981142b7a17f4b852c3a9b525bab7900de30b562d9775c7",
+    "source_order": 1,
+    "paragraph_count": 5
   }
 ]

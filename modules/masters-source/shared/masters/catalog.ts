@@ -1,4 +1,5 @@
 import historical from './historical-masters.json';
+import historicalExpansion from './historical-expansion-20261008.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -44,6 +45,7 @@ export const collections = [
   { id: 'nhj-jingangjing-shuoshenme', title: '金刚经说什么', person_id: 'nan-huaijin' },
   ...additionalCollections,
   ...historical.collections,
+  ...historicalExpansion.collections,
 ];
 
 export type MastersArticle = typeof articles[number];
