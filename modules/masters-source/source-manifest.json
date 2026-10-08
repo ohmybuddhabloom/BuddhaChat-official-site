@@ -1,6 +1,6 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
-  "baseCommit": "2b068a031efa5e6db2d66c4e3ec97f496b2f267f",
+  "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
   "sourceState": "reviewed-incremental-supplement-preserving-official-existing-content",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
@@ -79,7 +79,7 @@
     "shared/masters/historical-expansion-20261008.json": "384230ecaf64e529ec4f4a0784cc443e0ea616122fe553464d8d58a43fb50b77",
     "shared/masters/next-text-library-20261008.json": "eb2a097154e2c58166c0b46a881a9b6f4db124905fdf29c64725ea7350fb9bf3",
     "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4",
-    "shared/masters/yinshun-library.json": "c669e354545ed7207d853a67c446dc83bf5c3023bd748029e08157ba867b962c"
+    "shared/masters/yinshun-library.json": "ff308040f4c9b47cf1d975256f8ecfb7edc0d2521e5f79a3f85b01910037937e"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -161,6 +161,13 @@
         "shared/masters/yinshun-library.json"
       ],
       "note": "Seven positively attributed Yin Shun prefaces/compiler-afterword appended independently; all321 prior summaries preserved, discovery remains hidden."
+    },
+    {
+      "sourceCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
+      "files": [
+        "shared/masters/yinshun-library.json"
+      ],
+      "note": "34 source-preserving Yin Shun original-note sections appended; translated scripture/compiler roles explicit, all328 prior summaries preserved, discovery hidden."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",

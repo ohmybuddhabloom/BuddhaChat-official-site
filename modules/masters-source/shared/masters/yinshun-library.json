@@ -3,14 +3,19 @@
   "discovery_enabled": false,
   "inventory_works": 44,
   "source_articles": 491,
-  "added_article_count": 328,
-  "held_article_count": 163,
+  "added_article_count": 362,
+  "held_article_count": 129,
   "batch_sha256": "a475fa0dbda0055eb046eee248667675eca4b6e7d750b2a2446dff1b38df9196",
   "supplements": [
     {
       "batch_id": "yinshun-authored-prefaces-20261009",
       "batch_sha256": "008ea7db40c233b8c1fe14b3b1e0ea1700b96024f89f17bcd213fd6f39e9dd76",
       "articles": 7
+    },
+    {
+      "batch_id": "yinshun-original-notes-20261009",
+      "batch_sha256": "b241fb4e0f9642edd0d4f4a13015859e71b1988889feffcca655318673d359ba",
+      "articles": 34
     }
   ],
   "collections": [
@@ -191,6 +196,14 @@
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=34p1.0100&m=2"
     },
     {
+      "id": "yinshun-y26",
+      "title": "華雨集第二冊",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=36p1.0100&m=2"
+    },
+    {
       "id": "yinshun-y27",
       "title": "華雨集第三冊",
       "person_id": "yin-shun",
@@ -221,6 +234,22 @@
       "category": "佛學著作",
       "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
       "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=40p1.0100&m=2"
+    },
+    {
+      "id": "yinshun-y31",
+      "title": "雜阿含經論會編（中）",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=43p1.0100&m=2"
+    },
+    {
+      "id": "yinshun-y32",
+      "title": "雜阿含經論會編（下）",
+      "person_id": "yin-shun",
+      "category": "佛學著作",
+      "attribution": "印順法師佛學著作集官方電子版；著述、講記及所引經論依原刊保留",
+      "source_url": "https://www.yinshun.org.tw/ebooks/#c=yinshun&a=44p1.0100&m=2"
     },
     {
       "id": "yinshun-y33",
@@ -2543,6 +2572,28 @@
       "paragraph_count": 673
     },
     {
+      "id": "yinshun-y25-a257",
+      "book_id": "yinshun-y25",
+      "person_id": "yin-shun",
+      "title": "五、精校燉煌本壇經",
+      "author": "慧能說／法海集記；印順校訂",
+      "text_version": "3000d36de710da4ec0fd5b8878ec9a9ba81ef7ceb17787c5ac11d739fed38660",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 257,
+      "paragraph_count": 1176
+    },
+    {
+      "id": "yinshun-y26-a258",
+      "book_id": "yinshun-y26",
+      "person_id": "yin-shun",
+      "title": "緒言",
+      "author": "印順法師",
+      "text_version": "acb660f0f8753576c82a38a4de7d3bf4ab39a2e1cbdb8434f307ed6ec54281e3",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 258,
+      "paragraph_count": 148
+    },
+    {
       "id": "yinshun-y27-a262",
       "book_id": "yinshun-y27",
       "person_id": "yin-shun",
@@ -3170,6 +3221,83 @@
       "paragraph_count": 29
     },
     {
+      "id": "yinshun-y30-a324",
+      "book_id": "yinshun-y30",
+      "person_id": "yin-shun",
+      "title": "五陰誦第一",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "7e01114bac72d4af99461618e080bee0b96bc4a6f76733d3cba8753c51df013c",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 324,
+      "paragraph_count": 3191
+    },
+    {
+      "id": "yinshun-y30-a325",
+      "book_id": "yinshun-y30",
+      "person_id": "yin-shun",
+      "title": "六入處誦第二",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "21c4fba888a9863df9b12959107d9df776a4ec9c4e8770b4321d242c21b77997",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 325,
+      "paragraph_count": 3122
+    },
+    {
+      "id": "yinshun-y31-a326",
+      "book_id": "yinshun-y31",
+      "person_id": "yin-shun",
+      "title": "雜因誦第三",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "305c085f250ed3abb6a8a99f107749e0d7a995807d8c30c309a5e67f33b323e9",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 326,
+      "paragraph_count": 3233
+    },
+    {
+      "id": "yinshun-y31-a327",
+      "book_id": "yinshun-y31",
+      "person_id": "yin-shun",
+      "title": "道品誦第四",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "3d83762643c97f4f9c03cb0b9ba8d72de4e02e88baab2e2e689a5345790719e1",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 327,
+      "paragraph_count": 3599
+    },
+    {
+      "id": "yinshun-y32-a328",
+      "book_id": "yinshun-y32",
+      "person_id": "yin-shun",
+      "title": "八眾相應誦第五",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "3c620352d510eee5abd03274c81c38e79dd65713f058e91d536cfa4329d24dd0",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 328,
+      "paragraph_count": 5478
+    },
+    {
+      "id": "yinshun-y32-a329",
+      "book_id": "yinshun-y32",
+      "person_id": "yin-shun",
+      "title": "弟子所說誦第六",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "20b3b166363fb4a65463e02e74fed207d1f30c2141de7cee2703bd03db0ba1c5",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 329,
+      "paragraph_count": 1463
+    },
+    {
+      "id": "yinshun-y32-a330",
+      "book_id": "yinshun-y32",
+      "person_id": "yin-shun",
+      "title": "如來所說誦第七",
+      "author": "漢譯經論；印順會編校訂",
+      "text_version": "0f776a5c64e28b4fb84fcd3d59e6afe9516790ea44c23b4a9d6871d6534cdccf",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 330,
+      "paragraph_count": 4118
+    },
+    {
       "id": "yinshun-y33-a331",
       "book_id": "yinshun-y33",
       "person_id": "yin-shun",
@@ -3192,6 +3320,17 @@
       "paragraph_count": 100
     },
     {
+      "id": "yinshun-y33-a340",
+      "book_id": "yinshun-y33",
+      "person_id": "yin-shun",
+      "title": "第八章　學派思想泛論",
+      "author": "印順法師",
+      "text_version": "828a6f7bc5a30eeb630fb2fba00b9cecad0b3866b757263a8e021e9842ae5388",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 340,
+      "paragraph_count": 224
+    },
+    {
       "id": "yinshun-y33-a341",
       "book_id": "yinshun-y33",
       "person_id": "yin-shun",
@@ -3201,6 +3340,39 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 341,
       "paragraph_count": 97
+    },
+    {
+      "id": "yinshun-y33-a342",
+      "book_id": "yinshun-y33",
+      "person_id": "yin-shun",
+      "title": "第十章　南北朝時代之佛教",
+      "author": "印順法師",
+      "text_version": "b199712371e7430612230ff6186673c4c3971b2f3ffedb3935226be5878f5060",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 342,
+      "paragraph_count": 117
+    },
+    {
+      "id": "yinshun-y33-a344",
+      "book_id": "yinshun-y33",
+      "person_id": "yin-shun",
+      "title": "第十二章　性空大乘之傳宏",
+      "author": "印順法師",
+      "text_version": "14bfdca0ac732dc3b1f85e6720cf72239e8c13aaad5195ffc2b62162cf9a39fb",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 344,
+      "paragraph_count": 250
+    },
+    {
+      "id": "yinshun-y33-a345",
+      "book_id": "yinshun-y33",
+      "person_id": "yin-shun",
+      "title": "第十三章　笈多王朝之佛教",
+      "author": "印順法師",
+      "text_version": "35fc749afcc6c34e93656e30bb7879bebd37f6226551e0a86007e2a1a7a4375c",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 345,
+      "paragraph_count": 212
     },
     {
       "id": "yinshun-y33-a350",
@@ -3236,6 +3408,72 @@
       "paragraph_count": 7
     },
     {
+      "id": "yinshun-y34-a356",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第三章　初期「大乘佛法」",
+      "author": "印順法師",
+      "text_version": "47c017444c5c3fcd9f21030d3edf5bd67684f5f69eb7fc5d63295de80391dd39",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 356,
+      "paragraph_count": 573
+    },
+    {
+      "id": "yinshun-y34-a357",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第四章　中觀大乘——「性空唯名論」",
+      "author": "印順法師",
+      "text_version": "eb66ad4d3d86fcea86ef8cc0fc3f2b5c2ec92723657139deb9c1db5353a1c295",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 357,
+      "paragraph_count": 505
+    },
+    {
+      "id": "yinshun-y34-a358",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第五章　後期「大乘佛法」",
+      "author": "印順法師",
+      "text_version": "80a9ea84671822298a5b4eeb64155080a628eae48b065fb93f81f2254d73e1a7",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 358,
+      "paragraph_count": 385
+    },
+    {
+      "id": "yinshun-y34-a360",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第七章　瑜伽大乘——「虛妄唯識論」",
+      "author": "印順法師",
+      "text_version": "4fae31571fa1efb4b5e703a896033ad2d0407523d05fd69fe5c4ef24e8b2a9db",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 360,
+      "paragraph_count": 639
+    },
+    {
+      "id": "yinshun-y34-a362",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第九章　瑜伽、中觀之對抗與合流",
+      "author": "印順法師",
+      "text_version": "eddb29460a7dfd6b62d57a81b6759e4a5357e8f36634f0133c1cccbaf6a9857a",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 362,
+      "paragraph_count": 949
+    },
+    {
+      "id": "yinshun-y34-a363",
+      "book_id": "yinshun-y34",
+      "person_id": "yin-shun",
+      "title": "第十章　「秘密大乘佛法」",
+      "author": "印順法師",
+      "text_version": "243145fcc40cfd086a4d77c2e52f277816ecc5edc70fb62d4537eeacc9c6bd4d",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 363,
+      "paragraph_count": 930
+    },
+    {
       "id": "yinshun-y35-a364",
       "book_id": "yinshun-y35",
       "person_id": "yin-shun",
@@ -3247,6 +3485,39 @@
       "paragraph_count": 48
     },
     {
+      "id": "yinshun-y35-a365",
+      "book_id": "yinshun-y35",
+      "person_id": "yin-shun",
+      "title": "第一章　有關結集的種種問題",
+      "author": "印順法師",
+      "text_version": "ed74974580a7fee755b02e00b84c6f34ad6d6498e482ac837eef704141f28702",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 365,
+      "paragraph_count": 919
+    },
+    {
+      "id": "yinshun-y35-a366",
+      "book_id": "yinshun-y35",
+      "person_id": "yin-shun",
+      "title": "第二章　研究的資料與參考書",
+      "author": "印順法師",
+      "text_version": "42519765ab0806d7bb94c5e9945d7dd14a699ca399b08a87a3288391b95efe5f",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 366,
+      "paragraph_count": 571
+    },
+    {
+      "id": "yinshun-y35-a376",
+      "book_id": "yinshun-y35",
+      "person_id": "yin-shun",
+      "title": "第十二章　結論",
+      "author": "印順法師",
+      "text_version": "710822782faf6c2c8f57def617ec1ec029288bb780608d9bd4d3c21a6afe23e7",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 376,
+      "paragraph_count": 189
+    },
+    {
       "id": "yinshun-y36-a377",
       "book_id": "yinshun-y36",
       "person_id": "yin-shun",
@@ -3256,6 +3527,28 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 377,
       "paragraph_count": 86
+    },
+    {
+      "id": "yinshun-y36-a384",
+      "book_id": "yinshun-y36",
+      "person_id": "yin-shun",
+      "title": "第七章　大毘婆沙論的諸大論師",
+      "author": "印順法師",
+      "text_version": "e1310902986dcc0333734da8d107942a76994babefcacb4de83af0ad124f2296",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 384,
+      "paragraph_count": 742
+    },
+    {
+      "id": "yinshun-y36-a391",
+      "book_id": "yinshun-y36",
+      "person_id": "yin-shun",
+      "title": "第十四章　其餘論書略述",
+      "author": "印順法師",
+      "text_version": "45ae0c8a6ce69898de3effa4c0755034587c478e5a5e1dfc7b7676c59e6ba6a7",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 391,
+      "paragraph_count": 170
     },
     {
       "id": "yinshun-y37-a392",
@@ -3280,6 +3573,28 @@
       "paragraph_count": 12
     },
     {
+      "id": "yinshun-y37-a394",
+      "book_id": "yinshun-y37",
+      "person_id": "yin-shun",
+      "title": "第一章　序說",
+      "author": "印順法師",
+      "text_version": "5146f6923b95a1516dace0e8f0822d4726b99ef5e3e548e7e7610a0cfd2f0f49",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 394,
+      "paragraph_count": 605
+    },
+    {
+      "id": "yinshun-y37-a408",
+      "book_id": "yinshun-y37",
+      "person_id": "yin-shun",
+      "title": "第十五章　初期大乘經之集出與持宏",
+      "author": "印順法師",
+      "text_version": "c0ec13cbe2f0c31d844ae0257c5c4825a4074301a2cf6b565f67af59ccb3942b",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 408,
+      "paragraph_count": 1102
+    },
+    {
       "id": "yinshun-y38-a409",
       "book_id": "yinshun-y38",
       "person_id": "yin-shun",
@@ -3300,6 +3615,61 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 414,
       "paragraph_count": 25
+    },
+    {
+      "id": "yinshun-y39-a415",
+      "book_id": "yinshun-y39",
+      "person_id": "yin-shun",
+      "title": "第一章　序說",
+      "author": "印順法師",
+      "text_version": "fa66e474505394cf6826f2ff6b606256d7228f9e3f7235e91b8f12cb43eff955",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 415,
+      "paragraph_count": 248
+    },
+    {
+      "id": "yinshun-y39-a417",
+      "book_id": "yinshun-y39",
+      "person_id": "yin-shun",
+      "title": "第三章　心性本淨說之發展",
+      "author": "印順法師",
+      "text_version": "ed2b1e8c06a35acd3a17b38375c15c349b2e4c45742089cb96d47cb2bd8c33b0",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 417,
+      "paragraph_count": 328
+    },
+    {
+      "id": "yinshun-y39-a418",
+      "book_id": "yinshun-y39",
+      "person_id": "yin-shun",
+      "title": "第四章　如來藏說之孕育與完成",
+      "author": "印順法師",
+      "text_version": "060e9c6158a5c30579e233d412584f668b0a58e6cf37486fcc5a9a04b47d3854",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 418,
+      "paragraph_count": 377
+    },
+    {
+      "id": "yinshun-y39-a419",
+      "book_id": "yinshun-y39",
+      "person_id": "yin-shun",
+      "title": "第五章　如來藏說之初期聖典",
+      "author": "印順法師",
+      "text_version": "a0895fc4cad783ddbcf250d51eab63d9473683fc7cade42d68c87f7e80cc42f7",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 419,
+      "paragraph_count": 470
+    },
+    {
+      "id": "yinshun-y39-a421",
+      "book_id": "yinshun-y39",
+      "person_id": "yin-shun",
+      "title": "第七章　瑜伽學派之如來藏說",
+      "author": "印順法師",
+      "text_version": "89bfff27cdc09b5fbed1f20a3f0ac7967f8d6d73f5d51da0da6b15678141a3d9",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 421,
+      "paragraph_count": 759
     },
     {
       "id": "yinshun-y40-a423",
@@ -3775,6 +4145,28 @@
       "paragraph_count": 202
     },
     {
+      "id": "yinshun-y42-a471",
+      "book_id": "yinshun-y42",
+      "person_id": "yin-shun",
+      "title": "第一章　歸敬三寶",
+      "author": "印順法師",
+      "text_version": "f16e3465397633b3c7bc01a6e8304862c317bf659e0bc7e6d307d0fac704b353",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 471,
+      "paragraph_count": 453
+    },
+    {
+      "id": "yinshun-y42-a473",
+      "book_id": "yinshun-y42",
+      "person_id": "yin-shun",
+      "title": "第三章　五乘共法",
+      "author": "印順法師",
+      "text_version": "37e7f57d6c76e91ff073508350d4c2484989033249f4f2d3b90bfeddccf52d31",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 473,
+      "paragraph_count": 905
+    },
+    {
       "id": "yinshun-y43-a476",
       "book_id": "yinshun-y43",
       "person_id": "yin-shun",
@@ -3784,6 +4176,17 @@
       "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
       "source_order": 476,
       "paragraph_count": 14
+    },
+    {
+      "id": "yinshun-y43-a478",
+      "book_id": "yinshun-y43",
+      "person_id": "yin-shun",
+      "title": "二、《起信論》與扶南大乘",
+      "author": "印順法師",
+      "text_version": "2ee1403ed348c5fd8e9de9aced3951dad5e6d3468b5f195a5720aff936bae114",
+      "source_sha256": "174124e52041fb7cb303214a65a5180684aac454c2174b02e287e592e5e84032",
+      "source_order": 478,
+      "paragraph_count": 409
     },
     {
       "id": "yinshun-y43-a479",
