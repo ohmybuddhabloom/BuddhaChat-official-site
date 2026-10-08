@@ -216211,5 +216211,16 @@
     "source_sha256": "a4d113c86885a65fab21c8ad14e8cb217290b9eb6457189ec2413c1883223058",
     "source_order": 2,
     "paragraph_count": 6
+  },
+  {
+    "id": "hongyi-huayan-preface-nianpu-quote",
+    "book_id": "hongyi-huayan-preface-1945",
+    "person_id": "hong-yi",
+    "title": "華嚴集聯三百序 · 年譜引錄",
+    "author": "弘一法師（原署勝髻）",
+    "text_version": "fa5891cedda9d0c916542cf34bd379ac1daa6b56ff710d84abc69e41341dbcdf",
+    "source_sha256": "7a7185a3a16e58bde9e278a2be915bf4504ac723eae84edadf080b996abfdc78",
+    "source_order": 1,
+    "paragraph_count": 6
   }
 ]

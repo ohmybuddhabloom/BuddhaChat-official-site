@@ -5,6 +5,7 @@ import nextTextLibrary from './next-text-library-20261008.json';
 import nextTextLibraryRound2 from './next-text-library-20261009.json';
 import continuousLibrary from './continuous-library-20261009.json';
 import zenOriginalsLibrary from './zen-originals-library-20261009.json';
+import hongyiHuayanPreface from './hongyi-huayan-preface-1945.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -58,6 +59,7 @@ export const collections = [
   ...nextTextLibraryRound2.collections,
   ...continuousLibrary.collections,
   ...publishableZenOriginalsCollections,
+  ...hongyiHuayanPreface.collections,
 ];
 
 export type MastersArticle = typeof articles[number];

@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "只弘一原序引錄；年譜編者作品/全PDF不提供。",
+  "catalog_pages": 1,
+  "added_article_count": 1,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [
+    {
+      "id": "hongyi-huayan-preface-1945",
+      "person_id": "hong-yi",
+      "title": "華嚴集聯三百 · 原序引錄",
+      "category": "序跋與文記",
+      "attribution": "弘一本人原序（署勝髻）；據林子青《弘一大師年譜》1945年10月再版所引原序獨立核字。只收引文中的序，不收年譜編者按語、劉質平跋或三百聯全書；非初刻、手稿或原初版本校勘定本。",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/NLC416-13jh009111-62483_%E5%BC%98%E4%B8%80%E5%A4%A7%E5%B8%AB%E5%B9%B4%E8%AD%9C.pdf",
+      "source_institution": "中國國家圖書館民國文獻掃描／Wikimedia Commons",
+      "readable_count": 1,
+      "catalog_count": 1,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "hongyi-huayan-preface-1945",
+      "path": "content/masters/imports/hongyi-huayan-preface-1945.json",
+      "review": "scripts/collect-masters-hongyi-huayan-preface-1945.py",
+      "sha256": "5f9a88daf0c572e300a8dd837fba9b8f66751e0f607d891a7727fba0308679be",
+      "chapters": 1,
+      "catalog_pages": 1,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}

@@ -58,16 +58,16 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "4481cadd7051abea2ada03a590c7c8df2c1ee7407011f8cb58f191d505703cb8",
+    "shared/masters/article-index.json": "2797bb4ce18e955fe2b49f26651c2996a98db6606bdecaa4dcc60410b56d32dc",
     "shared/masters/articleFigures.ts": "f30add518dff79035c2200f9c60819b8ac3642bcfb70f6ae3b388edd4d9aa6fd",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "f18ce64cff871f9d35181d4c71c6e2f9c20609fa2094c127821ce70ba7c0f65d",
+    "shared/masters/catalog.ts": "36b60756bed1c158261be15f7f78ae20d8ae915b1bad3b6f7f519a26cae41816",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
     "shared/masters/profileCopy.ts": "b78834c5fa5b9d3e76f64fde69c840918303d6a250ad13e5f700c529444dc73b",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "1c130850d4a80411265131f43d31d384e9b986af1b7369b72ab1074e270822c2",
+    "shared/masters/shareLinks.ts": "34e0cdf59636943a28f52a736588695c918c722e6d21c5b3ae94183f57fba0ea",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
@@ -81,7 +81,8 @@
     "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4",
     "shared/masters/yinshun-library.json": "ff308040f4c9b47cf1d975256f8ecfb7edc0d2521e5f79a3f85b01910037937e",
     "shared/masters/continuous-library-20261009.json": "e668f1a58f0e91cf8725cc38143e96fc02d02de7212f4d7db512d88f51b95bb8",
-    "shared/masters/zen-originals-library-20261009.json": "763875a73a2278c4ce382f454fcbb44b2fd070224e793054bd6e515cc0908cd4"
+    "shared/masters/zen-originals-library-20261009.json": "763875a73a2278c4ce382f454fcbb44b2fd070224e793054bd6e515cc0908cd4",
+    "shared/masters/hongyi-huayan-preface-1945.json": "5a89abf16efaa27136ec4f8a7b4fdac1cd69d57bbd876359f2a7c0cd573258d7"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -197,11 +198,22 @@
         "shared/masters/article-index.json"
       ],
       "note": "One independently read1933printed music abridgement appended to existing Hongyi collection. Original中略 and printedglyphs retained; allold21481summaries/metadata/files preserved. Modern806private research and raw/book bodies not copied to site."
+    },
+    {
+      "sourceCommit": "755728cb81aede123551ce1f4ad0c5f020d940c9",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/shareLinks.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/hongyi-huayan-preface-1945.json"
+      ],
+      "note": "Only1public-domain original preface from the1945yearbook quotation, not protected wholeyearbook/editorialtext/300couplets. All prior sourcefiles/indexobjects retained; no modernprivatefulltexts copied."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
   "nextTextLibrary20261009SourceCommit": "1d17f38538eadb8a01eeb819f3370d3e77a541af",
   "continuousLibrary20261009SourceCommit": "7b154bd1a0a984480d9f418f5328dd68979bf43e",
   "zenOriginals20261009SourceCommit": "daf9102b781cdd4e35f59077b1e71473b118eb9b",
-  "hongyiMusic1933SourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588"
+  "hongyiMusic1933SourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588",
+  "huayanPreface1945SourceCommit": "755728cb81aede123551ce1f4ad0c5f020d940c9"
 }
