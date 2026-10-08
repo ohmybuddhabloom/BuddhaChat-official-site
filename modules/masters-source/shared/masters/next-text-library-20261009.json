@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "Five additional readable collections plus a separately withheld28-page transcription; original/translated/compiled/scripture/source-loss boundaries retained.",
+  "collections": [
+    {
+      "id": "sy-02-03",
+      "person_id": "sheng-yen",
+      "title": "日韓佛教史略",
+      "category": "佛教史類",
+      "attribution": "聖嚴法師研究編著、韓國史節譯與讲演分別標示；編者序及校註另列。",
+      "source_url": "https://ddc.shengyen.org/html/02-03-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 19,
+      "catalog_count": 21,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-03-01",
+      "person_id": "sheng-yen",
+      "title": "學術論考",
+      "category": "文集類",
+      "attribution": "聖嚴法師學術論文及講演，錄音整理者和他人引用原文分別明示；全集編者校註另列。",
+      "source_url": "https://ddc.shengyen.org/html/03-01-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 23,
+      "catalog_count": 24,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-ahan-renjian",
+      "person_id": "hsing-yun",
+      "title": "阿含經與人間佛教",
+      "category": "佛法与经义",
+      "attribution": "《星雲大師全集》008《阿含經與人間佛教》；含《阿含經》導讀、選錄與人間佛教結語，經文原典按正文保留，不歸為大師原創經文。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=10",
+      "source_institution": "星雲大師全集",
+      "readable_count": 6,
+      "catalog_count": 6,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-fahua-pumen",
+      "person_id": "hsing-yun",
+      "title": "法華經觀世音菩薩普門品講話",
+      "category": "佛法与经义",
+      "attribution": "森下大圓原著，星雲大師譯述並略作刪改；另收星雲大師祈願文與譯後的話、鳩摩羅什譯〈觀世音菩薩普門品〉原典附錄；編者的話與心悟〈校後感言〉暫緩。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=11",
+      "source_institution": "星雲大師全集",
+      "readable_count": 13,
+      "catalog_count": 15,
+      "deferred_count": 2
+    },
+    {
+      "id": "nhj-lishi-jingyan",
+      "person_id": "nan-huaijin",
+      "title": "历史的经验 · 上编（旧转载版）",
+      "category": "历史与人事",
+      "attribution": "南怀瑾讲述整理及自序；1975年恒庐讲稿，正文经史引文按原署保留。劝学网旧转载版，未与纸本逐字校勘；下编冯道元记文及古人注疏暂不作本人正文。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/lishiindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 55,
+      "catalog_count": 68,
+      "deferred_count": 12,
+      "failed_count": 1
+    }
+  ],
+  "batches": [
+    {
+      "id": "shengyen-02-03-03-01",
+      "path": "content/masters/imports/shengyen-02-03-03-01.json",
+      "sha256": "5feeaa8e05c01e278224ee11c8bd4c87cca7c7b327b03057065d08f8535315c3",
+      "chapters": 42,
+      "review": "scripts/review-masters-shengyen-02-03-03-01.py"
+    },
+    {
+      "id": "hsingyun-ahan-renjian",
+      "path": "content/masters/imports/hsingyun-ahan-renjian.json",
+      "sha256": "8d4faa39ce84fbfaaa412d1fdb04b1542d9c9f5a9f26a05066a12db362e17c00",
+      "chapters": 6,
+      "review": "scripts/review-masters-hsingyun-ahan-renjian.py"
+    },
+    {
+      "id": "hsingyun-fahua-pumen",
+      "path": "content/masters/imports/hsingyun-fahua-pumen.json",
+      "sha256": "ba3330239791266a7e1e8e8e218733cdfacb982cb4965e23f84d382e25fd4f28",
+      "chapters": 13,
+      "review": "scripts/review-masters-hsingyun-fahua-pumen.py"
+    },
+    {
+      "id": "nan-lishi-jingyan",
+      "path": "content/masters/imports/nan-lishi-jingyan.json",
+      "sha256": "d974deeb83b1580896e266ad6e8706d50a153a5c50d554784a9aee6ca137715b",
+      "chapters": 55,
+      "review": "scripts/review-masters-nan-lishi-jingyan.py"
+    }
+  ],
+  "catalog_pages": 162,
+  "deferred_pages": 45,
+  "failed_pages": 1,
+  "added_article_count": 116,
+  "research_only_batches": [
+    {
+      "id": "nan-huashuo-zhongyong",
+      "path": "content/masters/imports/nan-huashuo-zhongyong.json",
+      "sha256": "bfd8812763e8166725b4a0502a2d8015cd7a466d42a670f88e22908a3ed574cc",
+      "catalog_pages": 28,
+      "review": "scripts/review-masters-nan-huashuo-zhongyong.py",
+      "reason": "Unverified ten-lecture transcription is not the independently identified same-title published manuscript."
+    }
+  ]
+}

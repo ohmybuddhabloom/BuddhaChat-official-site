@@ -1,6 +1,7 @@
 import historical from './historical-masters.json';
 import expandedLibrary from './expanded-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
+import nextTextLibraryRound2 from './next-text-library-20261009.json';
 import {
   itemOwner,
   videos,
@@ -190,6 +191,7 @@ export function buildAvailableMastersAppLink(
   const bookId = route.kind === 'collection' ? route.id : route.kind === 'article' ? getArticleSummary(route.id)?.book_id : undefined;
   if (!options.expandedLibraryContentEnabled && (expandedLibrary.collections.some(book => book.id === bookId)
     || nextTextLibrary.collections.some(book => book.id === bookId)
+    || nextTextLibraryRound2.collections.some(book => book.id === bookId)
     || (route.kind === 'article' && expandedLibrary.pending_old_collection_article_ids.includes(route.id)))) return null;
   return buildMastersAppLink(route);
 }

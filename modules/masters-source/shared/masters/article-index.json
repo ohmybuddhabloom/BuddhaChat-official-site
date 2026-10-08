@@ -205607,5 +205607,1165 @@
     "source_sha256": "65aa701a935f8d752037a2e1d9035aa37b1bfcddde6d4ba3d4d7b3dd49e66f5f",
     "source_order": 19,
     "paragraph_count": 29
+  },
+  {
+    "id": "sy-02-03-002",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第一章　古代的日本及其初期的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "9b9dacfa34b8fede3e2d0d037472b2b3773a4e5ac79b66fa76f7f5bd0b255e27",
+    "source_order": 2,
+    "paragraph_count": 80
+  },
+  {
+    "id": "sy-02-03-003",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第二章　奈良時代的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "ae22cf18c565c75f6453ff6883cdd2a7ff29abd31bac982ef1ce8510549a5df1",
+    "source_order": 3,
+    "paragraph_count": 65
+  },
+  {
+    "id": "sy-02-03-004",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第三章　平安時代的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "c61123ab1ebe0edcbb53a19a34a8af0460611486dd4b2db0225520d67c6e831f",
+    "source_order": 4,
+    "paragraph_count": 106
+  },
+  {
+    "id": "sy-02-03-005",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第四章　鎌倉時代的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "5c6fc1ad8b43fa73862271afd4e8eb7e1a98dab69530ea872346ddcac0482402",
+    "source_order": 5,
+    "paragraph_count": 84
+  },
+  {
+    "id": "sy-02-03-006",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第五章　南北朝及室町時代的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "306ed7bb82d9dac08880a1d44601a935dc888124377dfd6e9fd204b5dbf669c4",
+    "source_order": 6,
+    "paragraph_count": 71
+  },
+  {
+    "id": "sy-02-03-007",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第六章　江戶時代的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "d3dfdface01bc81ba02e87ef436c716d9e35bc200b9ce1c4a0caf38f01fd879e",
+    "source_order": 7,
+    "paragraph_count": 69
+  },
+  {
+    "id": "sy-02-03-008",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第七章　明治維新以後的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "d57e0dfc30e06d449c33d539da7a5c3cc7cee8a4b1c4044452a01ec3b91d828b",
+    "source_order": 8,
+    "paragraph_count": 68
+  },
+  {
+    "id": "sy-02-03-009",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第一章　佛教初傳的時期",
+    "author": "聖嚴法師",
+    "source_sha256": "ab98a1ba71f5613d40cc3136d3325514b21b38ba16ae53ff0a29ae868700c51b",
+    "source_order": 9,
+    "paragraph_count": 24
+  },
+  {
+    "id": "sy-02-03-010",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第二章　禪宗勃興的時期",
+    "author": "聖嚴法師",
+    "source_sha256": "1c2ec98647334c6373c2f5b23c3c94364539f1939cbedca49ce5767eaedbaa04",
+    "source_order": 10,
+    "paragraph_count": 26
+  },
+  {
+    "id": "sy-02-03-011",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第三章　禪教並行與祈禱佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "c85b0f4dd4cbab9490a4582d1ca9d9dcbd44fd5dc3b40affae785622d84011f7",
+    "source_order": 11,
+    "paragraph_count": 24
+  },
+  {
+    "id": "sy-02-03-012",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第四章　知訥的曹溪宗",
+    "author": "聖嚴法師",
+    "source_sha256": "e32d98ed6a319b01168744845f6adb220e8dbebfa92d09319fd1248e01457985",
+    "source_order": 12,
+    "paragraph_count": 32
+  },
+  {
+    "id": "sy-02-03-013",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第五章　高麗後期的禪師及排佛運動",
+    "author": "聖嚴法師",
+    "source_sha256": "70955cac0b299cd83894e0b3f0152e2b963a0e571b209010b4e300242f67ca95",
+    "source_order": 13,
+    "paragraph_count": 51
+  },
+  {
+    "id": "sy-02-03-014",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第六章　李朝的興儒排佛運動",
+    "author": "聖嚴法師",
+    "source_sha256": "a6db6d858c1d6e2c7419e189a37305311c2eba2102d76a937d9807aabb04b949",
+    "source_order": 14,
+    "paragraph_count": 39
+  },
+  {
+    "id": "sy-02-03-015",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第七章　佛教義軍及其龍象",
+    "author": "聖嚴法師",
+    "source_sha256": "aeef1ba8adfa36055911e072edef4d55e88ba125b73e6ad5559af577e7fad41c",
+    "source_order": 15,
+    "paragraph_count": 38
+  },
+  {
+    "id": "sy-02-03-016",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第八章　朝鮮末期的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "ece12318bd060314132a99cf989eefe3b4661f707dfc2fa338a8844426365d0d",
+    "source_order": 16,
+    "paragraph_count": 43
+  },
+  {
+    "id": "sy-02-03-017",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "第九章　近代的韓國佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "891a340042406717016633478354a10f7e34c056ef7774fec1aaa5fc0fb81fb9",
+    "source_order": 17,
+    "paragraph_count": 30
+  },
+  {
+    "id": "sy-02-03-018",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "附錄一 越南佛教史略",
+    "author": "聖嚴法師",
+    "source_sha256": "b70dd4a29bcd33b7e38ef580e7df5023d792c2b5229b1c22a6cba4ce21f642fd",
+    "source_order": 18,
+    "paragraph_count": 165
+  },
+  {
+    "id": "sy-02-03-019",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "附錄二 美國佛教的源流",
+    "author": "聖嚴法師",
+    "source_sha256": "5ded241f3acb5104c882dc945cee493c5ea09703d19e207b8736e9b3d70ef8c8",
+    "source_order": 19,
+    "paragraph_count": 17
+  },
+  {
+    "id": "sy-02-03-020",
+    "book_id": "sy-02-03",
+    "person_id": "sheng-yen",
+    "title": "附錄三 錫蘭的佛教",
+    "author": "聖嚴法師",
+    "source_sha256": "42c83aa7e1744c41b24003adf81cb910c2361660bd09249b9964e7084e7a4733",
+    "source_order": 20,
+    "paragraph_count": 90
+  },
+  {
+    "id": "sy-03-01-001",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "天台思想的一念三千",
+    "author": "聖嚴法師",
+    "source_sha256": "1636f6ff5c7e375cc01d2cc0def02f85dfbf77fa9c9244813b76a05119371a0f",
+    "source_order": 1,
+    "paragraph_count": 80
+  },
+  {
+    "id": "sy-03-01-002",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "密教之考察",
+    "author": "聖嚴法師",
+    "source_sha256": "8a4335caf85d9584482e76aa2bd23a005453f431fe3bbfb48392fa3b69bd808d",
+    "source_order": 2,
+    "paragraph_count": 111
+  },
+  {
+    "id": "sy-03-01-003",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "禪的本質",
+    "author": "聖嚴法師",
+    "source_sha256": "0c01aa452af9c4c2d18324cc36938faeb543d0d83ee1e27880739ac828303d99",
+    "source_order": 3,
+    "paragraph_count": 89
+  },
+  {
+    "id": "sy-03-01-004",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "中國佛教的特色──禪與禪宗",
+    "author": "聖嚴法師",
+    "source_sha256": "8b240c350c81ff41e39142d1a9b0b6d5ab0edd41c1a086f6c0fbd3b143c22599",
+    "source_order": 4,
+    "paragraph_count": 144
+  },
+  {
+    "id": "sy-03-01-005",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "中國佛教以《法華經》為基礎的修行方法",
+    "author": "聖嚴法師",
+    "source_sha256": "b6f287aac7407ef65d590bb01c6dfb52d5df3173feb7119aa0725c1a7c899404",
+    "source_order": 5,
+    "paragraph_count": 254
+  },
+  {
+    "id": "sy-03-01-006",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "和尚與僧伽",
+    "author": "聖嚴法師",
+    "source_sha256": "fc1dff33f1f81d95091ad6224dcc3900c94f4626a0d5c9acd1c702974581e810",
+    "source_order": 6,
+    "paragraph_count": 11
+  },
+  {
+    "id": "sy-03-01-007",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "正法律中的僧尼衣制及其上下座次",
+    "author": "聖嚴法師",
+    "source_sha256": "26aae8168cdeacfe51cfe27b81e05682d7c9352b16734c04ef314072cb772842",
+    "source_order": 7,
+    "paragraph_count": 62
+  },
+  {
+    "id": "sy-03-01-008",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "附錄 我對統一僧尼服色的看法",
+    "author": "聖嚴法師",
+    "source_sha256": "6fd9209d7a3b81a833aa6f67234287d2f2331fbbdee515eea973cc6cbcd74b53",
+    "source_order": 8,
+    "paragraph_count": 10
+  },
+  {
+    "id": "sy-03-01-009",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "近代的佛教學",
+    "author": "聖嚴法師",
+    "source_sha256": "848e6a56f7d5fe41784ea4080d51469b020c6bb2c2d5fdad8a56aae0b09564e9",
+    "source_order": 9,
+    "paragraph_count": 41
+  },
+  {
+    "id": "sy-03-01-010",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "今日的臺灣佛教及其面臨的問題",
+    "author": "聖嚴法師",
+    "source_sha256": "a5daf522f19f13f0044724e4f6b76e299102206251b5fd7600c665635525ccfc",
+    "source_order": 10,
+    "paragraph_count": 72
+  },
+  {
+    "id": "sy-03-01-011",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "中國佛教藝術的價值",
+    "author": "聖嚴法師",
+    "source_sha256": "069e1e482f563bd6a2daa06637c36e7a92604e61e6ce173424525c310feb631b",
+    "source_order": 11,
+    "paragraph_count": 100
+  },
+  {
+    "id": "sy-03-01-012",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "從佛教的觀點談科學",
+    "author": "聖嚴法師",
+    "source_sha256": "e76bce3f9e69652e5bb815040c2d1511a1967e83be53bc06c2eea2fbf0f50c59",
+    "source_order": 12,
+    "paragraph_count": 88
+  },
+  {
+    "id": "sy-03-01-013",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "印順長老的護教思想與現代社會",
+    "author": "聖嚴法師",
+    "source_sha256": "859011ba426516d2823f9bdf3320cfb7ed5c3d9d39a3aec2d8981c8690ae59fe",
+    "source_order": 13,
+    "paragraph_count": 46
+  },
+  {
+    "id": "sy-03-01-014",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "現代臺灣佛教的學術研究",
+    "author": "聖嚴法師",
+    "source_sha256": "2f3c9f7d6cd65ffe5ce3af59e0bd3657cbc6e6d60e9b1d2ef9bfbd810560049a",
+    "source_order": 14,
+    "paragraph_count": 31
+  },
+  {
+    "id": "sy-03-01-015",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "佛教與中國文化",
+    "author": "聖嚴法師",
+    "source_sha256": "f2921870a32d4d0d113c3df9c25d711fefe4259b493dd5fd51ea1ade9b5174cb",
+    "source_order": 15,
+    "paragraph_count": 46
+  },
+  {
+    "id": "sy-03-01-016",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "佛教藝術的承先啟後",
+    "author": "聖嚴法師",
+    "source_sha256": "719f2a3a6d6a15dd6dfd2c1912385ca7e829ae3a2eea09c4d4feba74b5c1ae84",
+    "source_order": 16,
+    "paragraph_count": 47
+  },
+  {
+    "id": "sy-03-01-017",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "中國佛教建築  ——佛教建築設計與發展國際研討會主題演講",
+    "author": "聖嚴法師",
+    "source_sha256": "66150e22908b780c0a48357a2c1b715bd14ef384ebb1e8534e4f93038d38c1cd",
+    "source_order": 17,
+    "paragraph_count": 31
+  },
+  {
+    "id": "sy-03-01-018",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "印順長老著述中的真常唯心論  ——我讀《大乘起信論講記》",
+    "author": "聖嚴法師",
+    "source_sha256": "ef5d29c4822b32119b508c5fe8d3ff3dc73cd24eb39c9c073ceeadd65d600a85",
+    "source_order": 18,
+    "paragraph_count": 53
+  },
+  {
+    "id": "sy-03-01-019",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "法顯大師對於漢傳佛教文化的影響及啟示",
+    "author": "聖嚴法師",
+    "source_sha256": "cd2d66128813bf0c97ac14ecda05f4b475053edc37b9c2afe66ee05f008d0a60",
+    "source_order": 19,
+    "paragraph_count": 32
+  },
+  {
+    "id": "sy-03-01-020",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "從東亞思想談現代人的心靈環保",
+    "author": "聖嚴法師",
+    "source_sha256": "af53e63c1ef2900b5b028120e60422ff4a3c95d39883e40cc95de999335ba1be",
+    "source_order": 20,
+    "paragraph_count": 60
+  },
+  {
+    "id": "sy-03-01-021",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "佛教在二十一世紀的社會功能及其修行觀念",
+    "author": "聖嚴法師",
+    "source_sha256": "c506a7640dd07f85007b0599e96e94594ca9184bf440eed0a5d8ef25709727eb",
+    "source_order": 21,
+    "paragraph_count": 44
+  },
+  {
+    "id": "sy-03-01-022",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "漢傳佛教文化及其古文物",
+    "author": "聖嚴法師",
+    "source_sha256": "3d85e2a56238b584d56605e4dae0ccfd53e28b5f24528fa511ff83dafdc60e86",
+    "source_order": 22,
+    "paragraph_count": 85
+  },
+  {
+    "id": "sy-03-01-023",
+    "book_id": "sy-03-01",
+    "person_id": "sheng-yen",
+    "title": "萬別千差一掃空  ——管窺黃檗隱元禪師",
+    "author": "聖嚴法師",
+    "source_sha256": "4dbace9cfbd0625b585ba1a7b4aed022198b1e49616ecff5e9ebe80ff21a20f8",
+    "source_order": 23,
+    "paragraph_count": 30
+  },
+  {
+    "id": "xy-artcle9883",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "前言",
+    "author": "星雲大師",
+    "source_sha256": "128170cf64d86b84ee644a22ef2a08a4e748c46fd45bf6947ff482259f0576ab",
+    "source_order": 1,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xy-artcle9884",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "一、《阿含經》的由來",
+    "author": "星雲大師",
+    "source_sha256": "2723a350cf023013656a8e7c63fa2bcc54e091caee6f4a797498afc66e0fa231",
+    "source_order": 2,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xy-artcle9885",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "二、《阿含經》的成立時期",
+    "author": "星雲大師",
+    "source_sha256": "fd10a0ed2bd44e71b115e703d63b45f45bd4d95d2663d4d8bf64b3572c86e0bf",
+    "source_order": 3,
+    "paragraph_count": 6
+  },
+  {
+    "id": "xy-artcle9886",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "三、南傳五阿含與北傳四阿含",
+    "author": "星雲大師",
+    "source_sha256": "452adcf856b85e711bdcce2d3cea386b259b95255b67dd141bb5b168b47adbb0",
+    "source_order": 4,
+    "paragraph_count": 6
+  },
+  {
+    "id": "xy-artcle9887",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "四、《阿含經》選錄",
+    "author": "星雲大師",
+    "source_sha256": "459dc54167ea26a5f92c48a4ff53c6015110f30709f7a3a27970536f8f4d09b4",
+    "source_order": 5,
+    "paragraph_count": 319
+  },
+  {
+    "id": "xy-artcle15968",
+    "book_id": "xy-ahan-renjian",
+    "person_id": "hsing-yun",
+    "title": "結語",
+    "author": "星雲大師",
+    "source_sha256": "20ebae65fcca184d13b6674de994a8fc05aab632b067fe13a772ba43703ab800",
+    "source_order": 6,
+    "paragraph_count": 6
+  },
+  {
+    "id": "xy-artcle2161",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "向觀世音菩薩祈願文",
+    "author": "星雲大師",
+    "source_sha256": "7ff3efd16bd04624f8288731bf1ded1e07c7eff99a3b1463ecbc6917b73e9d3d",
+    "source_order": 2,
+    "paragraph_count": 64
+  },
+  {
+    "id": "xy-artcle2162",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第一章   前言",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "ffde601dd2826d94644b79f38520eb3ad99af9f935e8f3dfb7b153f2564bfafa",
+    "source_order": 3,
+    "paragraph_count": 15
+  },
+  {
+    "id": "xy-artcle2163",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第二章   大乘與小乘",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "21406317800e27003e3b274552f34fef6004d94acc0c82b1722a61dc4d62b4be",
+    "source_order": 4,
+    "paragraph_count": 14
+  },
+  {
+    "id": "xy-artcle2164",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第三章   妙法蓮華經釋名",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "6755ed7b3475fbfb397a0b457f074029ceb487f720ef444346957774cc431fd6",
+    "source_order": 5,
+    "paragraph_count": 37
+  },
+  {
+    "id": "xy-artcle2165",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第四章   觀世音菩薩普門品釋名",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "5ee38af90bc86c816956d18375fdc43467141613923bbb7d516436b8262d5780",
+    "source_order": 6,
+    "paragraph_count": 33
+  },
+  {
+    "id": "xy-artcle2166",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第五章   無盡意發問",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "740cc3eaae7059c1c4187951dec5b9f9bad854df4a2d1390e4a5359d1db67e00",
+    "source_order": 7,
+    "paragraph_count": 33
+  },
+  {
+    "id": "xy-artcle2167",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第六章   佛陀應答",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "2a5963c2a1f0ad05a42a3945e7190c5656e0374615ae682f326de08f493e29cc",
+    "source_order": 8,
+    "paragraph_count": 51
+  },
+  {
+    "id": "xy-artcle2168",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第七章   冥益",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "84c329c3e496df39fcd750864742be146228e68cff13ae909053839cb9e4bc64",
+    "source_order": 9,
+    "paragraph_count": 242
+  },
+  {
+    "id": "xy-artcle2169",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第八章   顯益",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "839610560adbe0a8dc77ae27d78ae87de2e6ee9f5f77f7956e55d86eb843ae51",
+    "source_order": 10,
+    "paragraph_count": 291
+  },
+  {
+    "id": "xy-artcle2170",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第九章   普門品偈頌",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "2683636d4afe29ad207561274ff5b6315f52041965fd740676aae4cdb60e167c",
+    "source_order": 11,
+    "paragraph_count": 206
+  },
+  {
+    "id": "xy-artcle2171",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "第十章   流通",
+    "author": "森下大圓原著；星雲大師譯述",
+    "source_sha256": "f9713ef633ebbb5170824dabb970c9b5235d36593f5d16d5c81cd635dea5ed25",
+    "source_order": 12,
+    "paragraph_count": 17
+  },
+  {
+    "id": "xy-artcle2173",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "譯後的話",
+    "author": "星雲大師",
+    "source_sha256": "1fdc9c561dadbb3de91e82c853b91a8a31fb25b06dc7910f3e5edcf9b6e33641",
+    "source_order": 14,
+    "paragraph_count": 6
+  },
+  {
+    "id": "xy-artcle2174",
+    "book_id": "xy-fahua-pumen",
+    "person_id": "hsing-yun",
+    "title": "附錄   〈觀世音菩薩普門品〉原典",
+    "author": "姚秦三藏法師鳩摩羅什譯",
+    "source_sha256": "f09450aa0b98c0bf42dbae8d5371c6b9a33f7445f9a2b64aaac7bd880fe96d30",
+    "source_order": 15,
+    "paragraph_count": 46
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-01",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "前言",
+    "author": "南怀瑾",
+    "source_sha256": "a88d68c184ffd03991bb43ccd04cb265907061a0ec1b365f9c3ebe9c580f4b44",
+    "source_order": 1,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-02",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "话题",
+    "author": "南怀瑾",
+    "source_sha256": "b271904d9e12e512ba8d13b1035d7ed6bdeb3579f022aba478ad4534f20e8203",
+    "source_order": 2,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-03",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第01讲 神谋鬼谋",
+    "author": "南怀瑾",
+    "source_sha256": "d4557ad33faf4ac6ecae110f875cacb7e2f33c09c2e62fbe50e995f38e3a7199",
+    "source_order": 3,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-04",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第02讲 春秋多权谋",
+    "author": "南怀瑾",
+    "source_sha256": "22481a0e02c72a7795c825c24505dea51888d6f7cc1d85dd1fff32b787b80039",
+    "source_order": 4,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-05",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第03讲 正反相生（《长短经》--反经）",
+    "author": "南怀瑾",
+    "source_sha256": "f654df329f0573a78e4e0b096b64a5e8ffe4a54a396baa477718b2898d9b63a3",
+    "source_order": 5,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-06",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第04讲 古今无定法",
+    "author": "南怀瑾",
+    "source_sha256": "09dfaf1263ed783f7c6e344f2b20b00404af1c7743aef6ea9d5b549a9e9b24cc",
+    "source_order": 6,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-07",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第05讲 仁爱的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "1fcb9b747a6c37ebb9886e4a22b5e2b0b96326920d8257d18283fc8cdf98077c",
+    "source_order": 7,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-08",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第06讲 仗义的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "6a111409d58e59a90c86606f8e714d2c9b5c495905e11e444873a04fcfd8b0c5",
+    "source_order": 8,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-09",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第07讲 信陵君的故事",
+    "author": "南怀瑾",
+    "source_sha256": "b3ab89b76d57f70bccc154ecb6ea0e1d31d6740bf4314a2de3964329a69c3aaa",
+    "source_order": 9,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-10",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第08讲 讲礼的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "7c4225c665533dde04784c12610c5e707facbc3bfb8a7899826b233eda92595a",
+    "source_order": 10,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-11",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第09讲 郭嘉论袁绍与曹操",
+    "author": "南怀瑾",
+    "source_sha256": "2018439e0db600b923d84d2b28dac8418fd6bf24e43631e613559b4c6f6082d1",
+    "source_order": 11,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-12",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第10讲 乐乐的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "6e2378fff46cb7b4268bafe5f5f97a98747641f6680ddd2c2488ef206f0bd1d3",
+    "source_order": 12,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-13",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第11讲 名器的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "73904970c3a337c56c0e7cb5d568208e2393164c563e59a9c0d657ab786981a3",
+    "source_order": 13,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-14",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第12讲 重法制的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "a1efbe8270aa4b653988a1d3a312de71e11ed2a40689cda54df79c0c5f853299",
+    "source_order": 14,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-15",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第13讲 刑赏的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "e6bb04c88052faf9bf0ff107f245d68430416c69fb1f59229922273d0e12d957",
+    "source_order": 15,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-16",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第14讲 学识的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "ee0f2e09a189795a441febed27454a7cad9bb71a62270689bcb5e570177eb755",
+    "source_order": 16,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-17",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第15讲 盗窃死人以自豪",
+    "author": "南怀瑾",
+    "source_sha256": "162258eb88e010bfc18eba1799cf58eab6957f8c0a9a9afaf90a18f918fcabb9",
+    "source_order": 17,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-18",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第16讲 福利社会的事",
+    "author": "南怀瑾",
+    "source_sha256": "a7f9764b4dce453e3219b9cb5c36032a04530e17be292ab8ed27af62ae360cea",
+    "source_order": 18,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-19",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第17讲 孟子讲故事",
+    "author": "南怀瑾",
+    "source_sha256": "eff572cdcb5b7dc1c618cfd6324a87855eef8f33c60576370e27e9e39057031c",
+    "source_order": 19,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-20",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第18讲 楚灵王的故事",
+    "author": "南怀瑾",
+    "source_sha256": "996b0a82b3d54137efd1570a30ecfc2b82d0365be9e1bf263f272e2d2310ebf7",
+    "source_order": 20,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-21",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第19讲 尚贤的流弊",
+    "author": "南怀瑾",
+    "source_sha256": "cdd3b0d9c0ddbdbab325f57c4477edca6cdb28d845c72e841b98f0bbf16a66a0",
+    "source_order": 21,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-22",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第20讲 姜太公论派系问题",
+    "author": "南怀瑾",
+    "source_sha256": "6f9fd371fbf6e21d805081ee6267c812e7fb2d2dc41fe7c8f0f79ac30d352e45",
+    "source_order": 22,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-23",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第21讲 不能善用所长的五反",
+    "author": "南怀瑾",
+    "source_sha256": "c621389c9b261a10e36d7a45b20c82061a7f247a8519f015fee5bd7268d34ac9",
+    "source_order": 23,
+    "paragraph_count": 15
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-24",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第22讲 姜太公论三明",
+    "author": "南怀瑾",
+    "source_sha256": "5baa7b7eddd3ec714788da4ce0915fccf1848fe945decb0ab21fb5aa4a929de9",
+    "source_order": 24,
+    "paragraph_count": 8
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-25",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第23讲 专权与嫉妒",
+    "author": "南怀瑾",
+    "source_sha256": "7ba987c8b1e38f04173335767f3c3ed297a11b00d864dd2d697f1a8fec289134",
+    "source_order": 25,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-26",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第24讲 文武兼资论",
+    "author": "南怀瑾",
+    "source_sha256": "c3ec585c9d08e33233c17c62bc705dd83024dc30ca2f1aa668b6a973f1b69ea3",
+    "source_order": 26,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-27",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第25讲 人与牛的故事",
+    "author": "南怀瑾",
+    "source_sha256": "8eb58216bd3543decf7d4816e1eb5c0cae0cb7ebe6a92e9fc62b5a6a093bd0cd",
+    "source_order": 27,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-28",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第26讲 匡衡论政风",
+    "author": "南怀瑾",
+    "source_sha256": "13d5a882f685d907b1a21854a1ae940d0a8f3b303262551fa8b2d15bd948eab7",
+    "source_order": 28,
+    "paragraph_count": 1
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-29",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第27讲 更上一层楼的道理",
+    "author": "南怀瑾",
+    "source_sha256": "308a15d9fc5b65b19255e01d3dc9295f65464b78342731190be0394f801586b5",
+    "source_order": 29,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-30",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第28讲 京房的故事",
+    "author": "南怀瑾",
+    "source_sha256": "8b43daaff8d90da90069536f2612741b54445e5b2bc35d59afad792b372b203c",
+    "source_order": 30,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-31",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第29讲 庄子的著作权被盗",
+    "author": "南怀瑾",
+    "source_sha256": "a839034916aa2130a24ae6020a6277d73806409e8d197b270e51bffb26dac1c8",
+    "source_order": 31,
+    "paragraph_count": 6
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-32",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第30讲 田成子窃齐的故事",
+    "author": "南怀瑾",
+    "source_sha256": "c66e9974a3283b6d5921304b361e304d0920445c349a690212787c3a02c63f31",
+    "source_order": 32,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-33",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第31讲 晏子论权",
+    "author": "南怀瑾",
+    "source_sha256": "7fe0710ae17d1df542fad8ee269ae5912ff7bf3c569056bbbd5acb0c9f211fe5",
+    "source_order": 33,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-34",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第32讲 圣盗同源",
+    "author": "南怀瑾",
+    "source_sha256": "eddbb6a55fca481db4dcf85880476caba97f644f1a711ead5dfd7ca817bffe1a",
+    "source_order": 34,
+    "paragraph_count": 28
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-35",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第33讲 苏秦的历史时代",
+    "author": "南怀瑾",
+    "source_sha256": "56aca6aa011095d0698ec6b592a6c19f6b77596d35f9eea02f7fcb61bd9fb77d",
+    "source_order": 35,
+    "paragraph_count": 13
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-36",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第34讲 远见抵不住现实的短视",
+    "author": "南怀瑾",
+    "source_sha256": "85fdd3e80a6e637b451e2ff480d011b4743f9c7c1cf133d87096b9da2ae56eaf",
+    "source_order": 36,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-37",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第35讲 苏秦受到反教育",
+    "author": "南怀瑾",
+    "source_sha256": "7de1c620870daf65aa2ebc0e9ff052b92615808f08f94eceed08a1464fdcee6d",
+    "source_order": 37,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-38",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第36讲 药不对症的言论",
+    "author": "南怀瑾",
+    "source_sha256": "46eb5f4f631d690a72f7f05276ade083237d9ef793a505fbd29cdce2951b79ec",
+    "source_order": 38,
+    "paragraph_count": 12
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-39",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第37讲 人情千古重多金",
+    "author": "南怀瑾",
+    "source_sha256": "b619cdb4b8cff04fe9b79a6ccfe5095f1e48193099c2ffa9d177c3195ce959ee",
+    "source_order": 39,
+    "paragraph_count": 5
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-40",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第38讲 雏燕初飞",
+    "author": "南怀瑾",
+    "source_sha256": "4ab77020bd3a73bbc32efe14a9ba6d442c7544a23afd3c117ff10a7cbae8baa6",
+    "source_order": 40,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-41",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第39讲 反覆波澜的人世",
+    "author": "南怀瑾",
+    "source_sha256": "ac78f1df06bbe8f1296393c681fe5db4f6a44958ceb988de5ee1614feebfe897",
+    "source_order": 41,
+    "paragraph_count": 7
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-42",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第40讲 人才与时代历史",
+    "author": "南怀瑾",
+    "source_sha256": "4e1879c3aff301286c81f3cc7f412e28df28fde16edf4f0003dd0374005a9b62",
+    "source_order": 42,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-43",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第41讲 牵涉到商鞅",
+    "author": "南怀瑾",
+    "source_sha256": "36fe4edbb66a63f2b70f5ae6401c319621a95e3b9bab4b56676028684673a2a8",
+    "source_order": 43,
+    "paragraph_count": 4
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-44",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第42讲 外才与内用",
+    "author": "南怀瑾",
+    "source_sha256": "fae43203ade5c39461dbb840e4879b1630b277d8be9aaa85f3cc0cdfc62a45a7",
+    "source_order": 44,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-45",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第43讲 张仪的故事",
+    "author": "南怀瑾",
+    "source_sha256": "39639e5df94258bdeaf65665cbbfeef7eead0d4c2ec1d18bf09e6e0b3d00d244",
+    "source_order": 45,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-46",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第44讲 刺激的教育",
+    "author": "南怀瑾",
+    "source_sha256": "3c4e686ba9692f07a166c296ee06940e5a12381d82e875b9b5755437b3b027a5",
+    "source_order": 46,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-47",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第45讲 山梁雌雉 时哉！时哉！",
+    "author": "南怀瑾",
+    "source_sha256": "6707aebb62bf1aa09f4ee0c3f578285afac249eba64d80d273399b136a00d065",
+    "source_order": 47,
+    "paragraph_count": 23
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-48",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第46讲 引用历史的经验",
+    "author": "南怀瑾",
+    "source_sha256": "ce87d6645f5670077e8077e0555a99c64cbad865d4410b26da5d62985c506b7b",
+    "source_order": 48,
+    "paragraph_count": 29
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-49",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第47讲 长短纵横",
+    "author": "南怀瑾",
+    "source_sha256": "a5bb8ed853e2ed92a8079c70d7e3972aa26230c294e45c6c71e70924543cab22",
+    "source_order": 49,
+    "paragraph_count": 3
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-50",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第48讲 人臣之道",
+    "author": "南怀瑾",
+    "source_sha256": "3e0ac61dd37deaa7d450630b5bfd4337e486a3b8b2d4cf9ff1e39cd55e6bbb39",
+    "source_order": 50,
+    "paragraph_count": 2
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-51",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第49讲 六种正臣的典范",
+    "author": "南怀瑾",
+    "source_sha256": "aa08d09abee144b6a52fad60cfe4e50d2a643183599a172ca265f3d4533c306f",
+    "source_order": 51,
+    "paragraph_count": 22
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-52",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第50讲 恕臣之道",
+    "author": "南怀瑾",
+    "source_sha256": "cfa1d9bd879fbf74b98993decbec8c83522b5cf3ce8dd666822c3fbd27efc8f1",
+    "source_order": 52,
+    "paragraph_count": 23
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-53",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第51讲 反派臣道的型态",
+    "author": "南怀瑾",
+    "source_sha256": "e6712ed0c8b5d7e19257d4be248a5aeb2939b59fdb170a7921fa02cc4ba8b708",
+    "source_order": 53,
+    "paragraph_count": 19
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-54",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第52讲 防邪之道",
+    "author": "南怀瑾",
+    "source_sha256": "6fd6c4bb82a0839c96cd3fa22663e3e5982d39978d7b0a34759e2b7151b084ee",
+    "source_order": 54,
+    "paragraph_count": 33
+  },
+  {
+    "id": "nhj-lishi-jingyan-chapter-55",
+    "book_id": "nhj-lishi-jingyan",
+    "person_id": "nan-huaijin",
+    "title": "第53讲 忠奸之辨",
+    "author": "南怀瑾",
+    "source_sha256": "e6186f6738deef5373910fb8d6bd68d4d9d9c6871bbc02798f2e9f98847a48eb",
+    "source_order": 55,
+    "paragraph_count": 128
   }
 ]
