@@ -19,9 +19,18 @@ export const articleSummaries: MastersArticleSummary[] = [
   ...additionalArticles,
 ];
 export function mastersTextVersion(article: { source_sha256: string; text_version?: string }) { return article.text_version ?? article.source_sha256; }
-export function getArticleSummary(id: string) { return articleSummaries.find(article => article.id === id); }
+const summariesById = new Map<string, MastersArticleSummary>();
+const summariesByCollection = new Map<string, MastersArticleSummary[]>();
+for (const article of articleSummaries) {
+  if (!summariesById.has(article.id)) summariesById.set(article.id, article);
+  const rows = summariesByCollection.get(article.book_id) ?? [];
+  rows.push(article);
+  summariesByCollection.set(article.book_id, rows);
+}
+for (const rows of summariesByCollection.values()) rows.sort((a, b) => a.source_order - b.source_order);
+export function getArticleSummary(id: string) { return summariesById.get(id); }
 export function getCollectionArticleSummaries(id: string) {
-  return articleSummaries.filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
+  return summariesByCollection.get(id)?.slice() ?? [];
 }
 export const collections = [
   { id: 'yh-dayi-001', title: '答疑解惑 · 第一期', person_id: 'yuanhui' },

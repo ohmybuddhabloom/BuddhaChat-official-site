@@ -1,4 +1,5 @@
 import historical from './historical-masters.json';
+import expandedLibrary from './expanded-library.json';
 import {
   itemOwner,
   videos,
@@ -177,7 +178,7 @@ export function buildMastersShareLinks(
 /** Keep newly added content off installed-app links until its native candidate is accepted. */
 export function buildAvailableMastersAppLink(
   input: string | MastersRoute | null | undefined,
-  options: { contentEnabled: boolean; historicalContentEnabled?: boolean; nanMediaContentEnabled?: boolean },
+  options: { contentEnabled: boolean; historicalContentEnabled?: boolean; nanMediaContentEnabled?: boolean; expandedLibraryContentEnabled?: boolean },
 ): string | null {
   if (!options.contentEnabled) return null;
   const route = resolveMastersShareRoute(input);
@@ -185,5 +186,8 @@ export function buildAvailableMastersAppLink(
   const owner = route.kind === 'home' ? undefined : route.kind === 'person' ? route.id : itemOwner(route.id);
   if (historical.profiles.some(profile => profile.id === owner) && !options.historicalContentEnabled) return null;
   if (route.kind === 'video' && videos.find(video => video.id === route.id)?.requires_native_acceptance && !options.nanMediaContentEnabled) return null;
+  const bookId = route.kind === 'collection' ? route.id : route.kind === 'article' ? getArticleSummary(route.id)?.book_id : undefined;
+  if (!options.expandedLibraryContentEnabled && (expandedLibrary.collections.some(book => book.id === bookId)
+    || (route.kind === 'article' && expandedLibrary.pending_old_collection_article_ids.includes(route.id)))) return null;
   return buildMastersAppLink(route);
 }

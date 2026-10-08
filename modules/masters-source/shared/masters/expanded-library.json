@@ -1,0 +1,762 @@
+{
+  "collections": [
+    {
+      "id": "xy-fojiao-congshu",
+      "title": "佛教叢書",
+      "person_id": "hsing-yun",
+      "category": "经典与佛学",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=84",
+      "source_institution": "星雲大師全集",
+      "readable_count": 1132,
+      "catalog_count": 1133,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-chanhua",
+      "title": "星雲禪話",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=96",
+      "source_institution": "星雲大師全集",
+      "readable_count": 1083,
+      "catalog_count": 1086,
+      "deferred_count": 3
+    },
+    {
+      "id": "xy-fayu",
+      "title": "星雲法語",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=97",
+      "source_institution": "星雲大師全集",
+      "readable_count": 1078,
+      "catalog_count": 1083,
+      "deferred_count": 5
+    },
+    {
+      "id": "xy-jinyumantang",
+      "title": "金玉滿堂",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=91",
+      "source_institution": "星雲大師全集",
+      "readable_count": 1000,
+      "catalog_count": 1010,
+      "deferred_count": 10
+    },
+    {
+      "id": "xy-shuojie",
+      "title": "星雲說偈",
+      "person_id": "hsing-yun",
+      "category": "经典与佛学",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=98",
+      "source_institution": "星雲大師全集",
+      "readable_count": 1076,
+      "catalog_count": 1076,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-suitang-kaishilu",
+      "title": "隨堂開示錄",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=95",
+      "source_institution": "星雲大師全集",
+      "readable_count": 755,
+      "catalog_count": 787,
+      "deferred_count": 32
+    },
+    {
+      "id": "xy-shuoyu",
+      "title": "星雲說喻",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=99",
+      "source_institution": "星雲大師全集",
+      "readable_count": 594,
+      "catalog_count": 595,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-shige-renjian",
+      "title": "詩歌人間",
+      "person_id": "hsing-yun",
+      "category": "诗偈与祈愿",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=105",
+      "source_institution": "星雲大師全集",
+      "readable_count": 642,
+      "catalog_count": 645,
+      "deferred_count": 3
+    },
+    {
+      "id": "nhj-weishi-zhongguan",
+      "title": "唯识与中观（2019版）",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/zhongguanindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 461,
+      "catalog_count": 462,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-chuandeng-jiaocai",
+      "title": "佛光山傳燈學院教材",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=178",
+      "source_institution": "星雲大師全集",
+      "readable_count": 501,
+      "catalog_count": 581,
+      "deferred_count": 80
+    },
+    {
+      "id": "nhj-woshuo-cantongqi",
+      "title": "我说参同契",
+      "person_id": "nan-huaijin",
+      "category": "易学与道家",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/cantongindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 375,
+      "catalog_count": 375,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-huaigukaijin",
+      "title": "懷古慨今",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=100",
+      "source_institution": "星雲大師全集",
+      "readable_count": 501,
+      "catalog_count": 501,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-xichuan-biejiang",
+      "title": "易经系传别讲",
+      "person_id": "nan-huaijin",
+      "category": "易学与道家",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/xichiindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 233,
+      "catalog_count": 233,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-zhuangzi-nantan",
+      "title": "庄子諵譁",
+      "person_id": "nan-huaijin",
+      "category": "易学与道家",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/zhzinhindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 228,
+      "catalog_count": 230,
+      "deferred_count": 2
+    },
+    {
+      "id": "nhj-shengming-yanjiu",
+      "title": "生命科学研究",
+      "person_id": "nan-huaijin",
+      "category": "生命与修持",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/shengmingindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 87,
+      "catalog_count": 215,
+      "deferred_count": 128
+    },
+    {
+      "id": "nhj-damoduoluo-chanjing",
+      "title": "《达摩多罗禅经》讲记",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/damoduoindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 7,
+      "catalog_count": 177,
+      "deferred_count": 170
+    },
+    {
+      "id": "nhj-weimojie-jiangji",
+      "title": "《维摩诘经》讲记",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/weimojiindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 163,
+      "catalog_count": 165,
+      "deferred_count": 2
+    },
+    {
+      "id": "nhj-yijing-zashuo",
+      "title": "易经杂说",
+      "person_id": "nan-huaijin",
+      "category": "易学与道家",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/yijingindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 162,
+      "catalog_count": 164,
+      "deferred_count": 2
+    },
+    {
+      "id": "xy-fofa-zhenyi",
+      "title": "佛法真義",
+      "person_id": "hsing-yun",
+      "category": "经典与佛学",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=20",
+      "source_institution": "星雲大師全集",
+      "readable_count": 308,
+      "catalog_count": 308,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-qianyan-houyu",
+      "title": "二十一世纪初的前言后语",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/qianyanindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 60,
+      "catalog_count": 162,
+      "deferred_count": 102
+    },
+    {
+      "id": "nhj-chuanbo-chuantong",
+      "title": "中国传统文化与大众传播",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/chuanboindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 9,
+      "catalog_count": 24,
+      "deferred_count": 15
+    },
+    {
+      "id": "xy-xuwenxuan",
+      "title": "人間佛教序文選",
+      "person_id": "hsing-yun",
+      "category": "文集与日记",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=109",
+      "source_institution": "星雲大師全集",
+      "readable_count": 356,
+      "catalog_count": 356,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-zhongguoshi-guanli",
+      "title": "中国式管理",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/guanliindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 5,
+      "catalog_count": 30,
+      "deferred_count": 25
+    },
+    {
+      "id": "nhj-yaoshijing-jishiguan",
+      "title": "药师经的济世观",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/yaoshiindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 132,
+      "catalog_count": 133,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-caigentan",
+      "title": "佛光菜根譚",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=103",
+      "source_institution": "星雲大師全集",
+      "readable_count": 188,
+      "catalog_count": 199,
+      "deferred_count": 11
+    },
+    {
+      "id": "nhj-mengzi-pangtong",
+      "title": "孟子旁通",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/mengziindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 116,
+      "catalog_count": 116,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-jiangyanji",
+      "title": "講演集",
+      "person_id": "hsing-yun",
+      "category": "文集与日记",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=93",
+      "source_institution": "星雲大師全集",
+      "readable_count": 149,
+      "catalog_count": 151,
+      "deferred_count": 2
+    },
+    {
+      "id": "xy-xingyun-riji",
+      "title": "星雲日記",
+      "person_id": "hsing-yun",
+      "category": "文集与日记",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=124",
+      "source_institution": "星雲大師全集",
+      "readable_count": 177,
+      "catalog_count": 214,
+      "deferred_count": 37
+    },
+    {
+      "id": "nhj-lengjia-jinyi",
+      "title": "楞伽大义今释",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/lengjiaindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 106,
+      "catalog_count": 112,
+      "deferred_count": 6
+    },
+    {
+      "id": "nhj-xiaoyan-huangdineijing",
+      "title": "小言黄帝内经与生命科学",
+      "person_id": "nan-huaijin",
+      "category": "生命与修持",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/neijingindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 108,
+      "catalog_count": 108,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-qiyuanwen",
+      "title": "佛光祈願文",
+      "person_id": "hsing-yun",
+      "category": "诗偈与祈愿",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=104",
+      "source_institution": "星雲大師全集",
+      "readable_count": 212,
+      "catalog_count": 215,
+      "deferred_count": 3
+    },
+    {
+      "id": "nhj-mengzi-lilou",
+      "title": "孟子与离娄",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/lilouindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 104,
+      "catalog_count": 104,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-mengzi-jinxin",
+      "title": "孟子与尽心篇",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/jinxinindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 50,
+      "catalog_count": 50,
+      "deferred_count": 0
+    },
+    {
+      "id": "sy-01-03",
+      "title": "戒律學綱要",
+      "person_id": "sheng-yen",
+      "category": "戒律與修持",
+      "attribution": "聖嚴法師著述；法鼓全集版。編者校註及他人序跋按各篇來源區分。",
+      "source_url": "https://ddc.shengyen.org/html/01-03.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 28,
+      "catalog_count": 30,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-02-01",
+      "title": "印度佛教史",
+      "person_id": "sheng-yen",
+      "category": "佛教史",
+      "attribution": "聖嚴法師著述；法鼓全集版。編者校註及他人序跋按各篇來源區分。",
+      "source_url": "https://ddc.shengyen.org/html/02-01.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 12,
+      "catalog_count": 14,
+      "deferred_count": 2
+    },
+    {
+      "id": "sy-02-02",
+      "title": "西藏佛教史",
+      "person_id": "sheng-yen",
+      "category": "佛教史",
+      "attribution": "聖嚴法師著述；法鼓全集版。編者校註及他人序跋按各篇來源區分。",
+      "source_url": "https://ddc.shengyen.org/html/02-02.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 7,
+      "catalog_count": 9,
+      "deferred_count": 2
+    },
+    {
+      "id": "nhj-daxue-weiyan",
+      "title": "原本大学微言",
+      "person_id": "nan-huaijin",
+      "category": "儒学与文化",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/daxueindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 64,
+      "catalog_count": 65,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-01-04",
+      "title": "比較宗教學",
+      "person_id": "sheng-yen",
+      "category": "宗教研究",
+      "attribution": "聖嚴法師著述；法鼓全集版。編者校註及他人序跋按各篇來源區分。",
+      "source_url": "https://ddc.shengyen.org/html/01-04.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 11,
+      "catalog_count": 12,
+      "deferred_count": 1
+    },
+    {
+      "id": "nhj-zongjinglu-luejiang",
+      "title": "宗镜录略讲",
+      "person_id": "nan-huaijin",
+      "category": "佛学与经论",
+      "attribution": "南怀瑾讲述或著述的劝学网转载版，未与纸本逐字校勘；各篇作者、原典及编辑者说明依原刊区分。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/zongjingindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 92,
+      "catalog_count": 92,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-shijiamouni-fozhuan",
+      "title": "釋迦牟尼佛傳",
+      "person_id": "hsing-yun",
+      "category": "经典与佛学",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=112",
+      "source_institution": "星雲大師全集",
+      "readable_count": 51,
+      "catalog_count": 52,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-jueshiluncong",
+      "title": "覺世論叢",
+      "person_id": "hsing-yun",
+      "category": "开示与生活佛法",
+      "attribution": "星雲大師著作；《星雲大師全集》官方版本。正文、本人序與編者資料按各篇署名。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=107",
+      "source_institution": "星雲大師全集",
+      "readable_count": 61,
+      "catalog_count": 61,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "hsingyun-caigentan",
+      "path": "content/masters/imports/hsingyun-caigentan.json",
+      "sha256": "512e47febfac8ab76fa52437f3bc1b7ec82b62384ecb7cdc769343ed76058fd2",
+      "chapters": 188
+    },
+    {
+      "id": "hsingyun-chanhua",
+      "path": "content/masters/imports/hsingyun-chanhua.json",
+      "sha256": "61d37c6e9746228fa4e0a9450ef5c891a7d17c27259eb14ce116aa814b7fd1e1",
+      "chapters": 1083
+    },
+    {
+      "id": "hsingyun-chuandeng-jiaocai",
+      "path": "content/masters/imports/hsingyun-chuandeng-jiaocai.json",
+      "sha256": "0a858c00ab48dffc40bdf6633013f21cd1a1c4d75eb9d709af02f2a9da6b9c8a",
+      "chapters": 501
+    },
+    {
+      "id": "hsingyun-fayu",
+      "path": "content/masters/imports/hsingyun-fayu.json",
+      "sha256": "e92a4c07a91cae0fc522af71efe8bd0a492a435ab2811c75c4599e072b8be634",
+      "chapters": 1078
+    },
+    {
+      "id": "hsingyun-fofa-zhenyi",
+      "path": "content/masters/imports/hsingyun-fofa-zhenyi.json",
+      "sha256": "76c3b9f133091d7f0d17f268628a2b3fad73fbf85653277dfe0622ec9a8ed64d",
+      "chapters": 308
+    },
+    {
+      "id": "hsingyun-fojiao-congshu",
+      "path": "content/masters/imports/hsingyun-fojiao-congshu.json",
+      "sha256": "73d1d5566456409ad8960cead296e0426d1cf07a196d3fb946dea9e663e4959a",
+      "chapters": 1132
+    },
+    {
+      "id": "hsingyun-huaigukaijin",
+      "path": "content/masters/imports/hsingyun-huaigukaijin.json",
+      "sha256": "49bdb681ea9a9784acd28f1389c7b944e469442ef0bfcd01ec8322d9af8edf1b",
+      "chapters": 501
+    },
+    {
+      "id": "hsingyun-jiangyanji",
+      "path": "content/masters/imports/hsingyun-jiangyanji.json",
+      "sha256": "433b138ff1275dfaca18fe2e3e0f290184a8f548f6820f42784f365b5a4070a8",
+      "chapters": 149
+    },
+    {
+      "id": "hsingyun-jinyumantang",
+      "path": "content/masters/imports/hsingyun-jinyumantang.json",
+      "sha256": "2a73db7509d4b74a84fa692ed3a67f4b95934b8d6263f1142b020fb28b218fce",
+      "chapters": 1000
+    },
+    {
+      "id": "hsingyun-jueshiluncong",
+      "path": "content/masters/imports/hsingyun-jueshiluncong.json",
+      "sha256": "937ab777653aa295e0383d2234545c45833c18d033f5a0153adb4e5268d275b8",
+      "chapters": 61
+    },
+    {
+      "id": "hsingyun-qiyuanwen",
+      "path": "content/masters/imports/hsingyun-qiyuanwen.json",
+      "sha256": "9e8e6768da3f9b181c8e5994d5d241bde7942bfb770de82743d2e146dca0282c",
+      "chapters": 212
+    },
+    {
+      "id": "hsingyun-shige-renjian",
+      "path": "content/masters/imports/hsingyun-shige-renjian.json",
+      "sha256": "b86d81a2a52a29ea446ea6f051147b4cd9aad3151bf3bed3e2a4331cf2fc1df9",
+      "chapters": 642
+    },
+    {
+      "id": "hsingyun-shijiamouni-fozhuan",
+      "path": "content/masters/imports/hsingyun-shijiamouni-fozhuan.json",
+      "sha256": "2baf02c416d0820b22fd2757b0e07de5946907f92fff2f4872959d3c64bdd5f6",
+      "chapters": 51
+    },
+    {
+      "id": "hsingyun-shuojie",
+      "path": "content/masters/imports/hsingyun-shuojie.json",
+      "sha256": "627ad21a83f7c684c3496f755001afba017feb53e9c23e8d3d53ef2420733b5f",
+      "chapters": 1076
+    },
+    {
+      "id": "hsingyun-shuoyu",
+      "path": "content/masters/imports/hsingyun-shuoyu.json",
+      "sha256": "b39a6c838e4241183f649add1b449d2700c6276a09f115537d1f4b3b7f5c528f",
+      "chapters": 594
+    },
+    {
+      "id": "hsingyun-suitang-kaishilu",
+      "path": "content/masters/imports/hsingyun-suitang-kaishilu.json",
+      "sha256": "054d0caef00f07113a7af9cd4abfe6ee0de2a7b5acc6f03299fe060aba77af50",
+      "chapters": 755
+    },
+    {
+      "id": "hsingyun-xingyun-riji",
+      "path": "content/masters/imports/hsingyun-xingyun-riji.json",
+      "sha256": "a7446005a805b2705fb724ad640755b1af8ce0f9637cc59d4698faedc52f679c",
+      "chapters": 177
+    },
+    {
+      "id": "hsingyun-xuwenxuan",
+      "path": "content/masters/imports/hsingyun-xuwenxuan.json",
+      "sha256": "7b2ba0c9ed612ffe8a935430cf452e2f85d9de33e9a663f84c03fc5d502fd0ce",
+      "chapters": 356
+    },
+    {
+      "id": "nan-cantong",
+      "path": "content/masters/imports/nan-cantong.json",
+      "sha256": "edb604802643844469175e7f3004fdf8207e631431fb988674cff9db988a53b7",
+      "chapters": 375
+    },
+    {
+      "id": "nan-chuanbo-chuantong",
+      "path": "content/masters/imports/nan-chuanbo-chuantong.json",
+      "sha256": "e24e153550ad2b343a858f209b9fcf0a042b74ff915dc4e3b5d299b566f901c1",
+      "chapters": 9
+    },
+    {
+      "id": "nan-damoduo",
+      "path": "content/masters/imports/nan-damoduo.json",
+      "sha256": "4eb90776a8cbf2a53cf010aacf5a324c31ca052bb141b606e50269d872d492bd",
+      "chapters": 7
+    },
+    {
+      "id": "nan-daxue",
+      "path": "content/masters/imports/nan-daxue.json",
+      "sha256": "285c328883548d0d081717e3b9594078cfdc7a1f87337dce2d8dccd65daf4f48",
+      "chapters": 64
+    },
+    {
+      "id": "nan-laozi-expanded-additions",
+      "path": "content/masters/imports/nan-laozi-expanded-additions.json",
+      "sha256": "7ae27a9abcf6085ece6458b642350b5e7ff206cd81d03ce143e9689e30565018",
+      "chapters": 2
+    },
+    {
+      "id": "nan-lengjia",
+      "path": "content/masters/imports/nan-lengjia.json",
+      "sha256": "a83d6a244f64378f989e0a3fc073cc3a53b4780100bd94c9ab5814a6a628af0a",
+      "chapters": 106
+    },
+    {
+      "id": "nan-lunyu-expanded-additions",
+      "path": "content/masters/imports/nan-lunyu-expanded-additions.json",
+      "sha256": "f21cdf4e455fa17e14cdcb0bc70b5602f74c5d60de3269c9b6567536692ce13a",
+      "chapters": 1
+    },
+    {
+      "id": "nan-mengzi-jinxin",
+      "path": "content/masters/imports/nan-mengzi-jinxin.json",
+      "sha256": "2bed9370969f5c439225a4e6bd71afb294acd5aebd543c38357b978c828d118e",
+      "chapters": 50
+    },
+    {
+      "id": "nan-mengzi-lilou",
+      "path": "content/masters/imports/nan-mengzi-lilou.json",
+      "sha256": "a18efec4103addce8a23127087f7ae340e2d00616235f7d24fbc8febb03e6c05",
+      "chapters": 104
+    },
+    {
+      "id": "nan-mengzi-pangtong",
+      "path": "content/masters/imports/nan-mengzi-pangtong.json",
+      "sha256": "edd3695b71a6298bb050f1e05843b852b569d203b216222da5078e9b9f4e389d",
+      "chapters": 116
+    },
+    {
+      "id": "nan-qianyan-houyu",
+      "path": "content/masters/imports/nan-qianyan-houyu.json",
+      "sha256": "9a70b4df9a04d3092eb347dd3e97c890803e94ccd81ca5381882b0d107903987",
+      "chapters": 60
+    },
+    {
+      "id": "nan-shengming",
+      "path": "content/masters/imports/nan-shengming.json",
+      "sha256": "419b22a5488c017760391150360fece450f2f74cbeae34bfc3083c3cb0f09aca",
+      "chapters": 87
+    },
+    {
+      "id": "nan-weimojie",
+      "path": "content/masters/imports/nan-weimojie.json",
+      "sha256": "d8722d39c92c56c9b7bcf1eb025d8975bc69f700a3cdd58c75cb75b46103a916",
+      "chapters": 163
+    },
+    {
+      "id": "nan-xiaoyan-huangdineijing",
+      "path": "content/masters/imports/nan-xiaoyan-huangdineijing.json",
+      "sha256": "d66363211159f659a2762e4b72bc7d100eac24ee3ec86cf3b4c852966eb1a5d4",
+      "chapters": 108
+    },
+    {
+      "id": "nan-xichi",
+      "path": "content/masters/imports/nan-xichi.json",
+      "sha256": "f8dd3e730c1970f8bb1acc78dbd0cbbac7fb26b75cf237831d48d0ab14e6ab90",
+      "chapters": 233
+    },
+    {
+      "id": "nan-yaoshijing-jishiguan",
+      "path": "content/masters/imports/nan-yaoshijing-jishiguan.json",
+      "sha256": "409c9a46fb24705c907d10029d8a9ad4ae21a130b9f6832d580a9776ecb74992",
+      "chapters": 132
+    },
+    {
+      "id": "nan-yijing-zashuo",
+      "path": "content/masters/imports/nan-yijing-zashuo.json",
+      "sha256": "6ca6c59a967712650b2bbcecba191fd268c31431fc32e0b5289a5194d420d5df",
+      "chapters": 162
+    },
+    {
+      "id": "nan-zhongguan",
+      "path": "content/masters/imports/nan-zhongguan.json",
+      "sha256": "7c65ac032c4f1a3022a989fb85e4c7961dfd4508edbc634e2585b26dc60823e2",
+      "chapters": 461
+    },
+    {
+      "id": "nan-zhongguoshi-guanli",
+      "path": "content/masters/imports/nan-zhongguoshi-guanli.json",
+      "sha256": "1335f75d94435b0ba0329e23526a9be8c8fc7a9031345d2313cbd505a63a98d1",
+      "chapters": 5
+    },
+    {
+      "id": "nan-zhuangzi",
+      "path": "content/masters/imports/nan-zhuangzi.json",
+      "sha256": "b461017f899701ac483eea61540c41e868b2765a4e3af19166a68a5ca5a23b3f",
+      "chapters": 228
+    },
+    {
+      "id": "nan-zongjing",
+      "path": "content/masters/imports/nan-zongjing.json",
+      "sha256": "b822af3a146155004ba6bb9e86a350a454a08f386230924551439462355dcd0a",
+      "chapters": 92
+    },
+    {
+      "id": "shengyen-01-03",
+      "path": "content/masters/imports/shengyen-01-03.json",
+      "sha256": "a31b6f475ca41cea805561dec2f66cda72d8ed5a8b21bb99af82c55b3eb29699",
+      "chapters": 28
+    },
+    {
+      "id": "shengyen-01-04",
+      "path": "content/masters/imports/shengyen-01-04.json",
+      "sha256": "6285afe057ea8fdff1030b596a21e66512e3f9ec2dc21b77c0205e6604be3001",
+      "chapters": 11
+    },
+    {
+      "id": "shengyen-02-01-02-02",
+      "path": "content/masters/imports/shengyen-02-01-02-02.json",
+      "sha256": "1312a42069bc3d24136d7b8abfb7ed46e4150254f42ee7e52a4b3b3e01dca7c0",
+      "chapters": 19
+    }
+  ],
+  "pending_old_collection_article_ids": [
+    "nhj-lunyu-biecai-chapter-302",
+    "nhj-laozi-tashuo-chapter-65",
+    "nhj-laozi-tashuo-chapter-66"
+  ],
+  "added_article_count": 12487,
+  "author_counts": {
+    "nan-huaijin": 2565,
+    "hsing-yun": 9864,
+    "sheng-yen": 58
+  },
+  "source_note": "Reviewed archival corpus; current exact Staging verification required before delivery."
+}
