@@ -1,4 +1,5 @@
 import nanVideos from './nan-videos.json';
+import shengyenVideos from './shengyen-videos.json';
 
 export type MastersMediaKind = 'teaching' | 'interview' | 'memorial' | 'reading' | 'recitation' | 'demonstration';
 export type MastersVideo = {
@@ -12,6 +13,7 @@ export const videos: MastersVideo[] = [
   { id: 'xy-video-W4438geBhss', person_id: 'hsing-yun', title: '金刚经大义（一）· 第 1 段', youtube: 'W4438geBhss', duration: 506 },
   { id: 'xy-video-6J17zQh5tbU', person_id: 'hsing-yun', title: '金刚经大义（一）· 第 2 段', youtube: '6J17zQh5tbU', duration: 459 },
   ...nanVideos as MastersVideo[],
+  ...shengyenVideos as MastersVideo[],
 ];
 
 export const mediaKindLabels: Record<MastersMediaKind, string> = {
