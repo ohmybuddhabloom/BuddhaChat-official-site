@@ -216233,5 +216233,16 @@
     "source_sha256": "7a7185a3a16e58bde9e278a2be915bf4504ac723eae84edadf080b996abfdc78",
     "source_order": 1,
     "paragraph_count": 6
+  },
+  {
+    "id": "xuyun-xubian-yunmen-refuge",
+    "book_id": "xuyun-xubian-kaishi-20261009",
+    "person_id": "xu-yun",
+    "title": "在雲門授皈戒開示",
+    "author": "虛雲老和尚",
+    "text_version": "d996c2f1e29a4daf58e8ec4f04f5a5d16ec127112264d7c32cfbe8019f7da048",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 1,
+    "paragraph_count": 1
   }
 ]

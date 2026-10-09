@@ -7,6 +7,7 @@ import nextTextLibraryRound2 from './next-text-library-20261009.json';
 import continuousLibrary from './continuous-library-20261009.json';
 import zenOriginalsLibrary from './zen-originals-library-20261009.json';
 import hongyiHuayanPreface from './hongyi-huayan-preface-1945.json';
+import xuyunYunmenRefuge from './xuyun-yunmen-refuge-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -61,6 +62,7 @@ export const collections = [
   ...continuousLibrary.collections,
   ...publishableZenOriginalsCollections,
   ...hongyiHuayanPreface.collections,
+  ...xuyunYunmenRefuge.collections,
   ...bibliographicCollections,
 ];
 
