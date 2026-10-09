@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -58,10 +58,10 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "a89feedc6dfe7d194072d1a065afda61ef16c1e6899f3c63fa0e5dc1ec603b41",
+    "shared/masters/article-index.json": "11958ed491d8dadf8f3c84cca1ede82fe2a0678cf4633cff3c403801f214486f",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "faf8a82c8fed4691cdb460eaa980861995c928c01d7b240fae4a2278463d8437",
+    "shared/masters/catalog.ts": "15959f0003059c6866b7a65f4e6fc23eca6ca44f2d67373e0237f8dde7810964",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
@@ -812,7 +812,8 @@
     "shared/masters/xuyun-yunmen-refuge-20261009.json": "40054b8f8de5bb14536ab9b782aa88ac8362911de4027c69a17bd554239c8437",
     "shared/masters/xuyun-causality-20261009.json": "9ffc26e47b0ff7ade4c56b210130e7096f5814b6f10d1d54e9d9d01b726363f8",
     "shared/masters/xuyun-nanhua-20261009.json": "df8557e5618ec8be49be06e8d038a2085905a1515929f57688e1d76e2dc77e54",
-    "shared/masters/xuyun-shanghai-three-20261009.json": "1a970ca526193082a1c7f5269fa30dda9572caa7f3c4a33ab2998b0d0d20204f"
+    "shared/masters/xuyun-shanghai-three-20261009.json": "1a970ca526193082a1c7f5269fa30dda9572caa7f3c4a33ab2998b0d0d20204f",
+    "shared/masters/xuyun-hangzhou-20261009.json": "21ffca640e42007bfd5f12af2eb3f7c2626899e3ba228ad33af994ce7033189b"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1757,6 +1758,15 @@
         "shared/masters/xuyun-shanghai-three-20261009.json"
       ],
       "purpose": "Append three source-verified Shanghai speeches with separate dates/recorders; preserve previous talks/source snapshots and Staging overlay."
+    },
+    {
+      "sourceCommit": "797b362e0dfcf9b473237f3d501a8cf03df66d93",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/xuyun-hangzhou-20261009.json"
+      ],
+      "purpose": "Append complete source-verified Hangzhou speech with absent original date/recorder; preserve prior six speeches, Staging overlay and assets."
     }
   ]
 }

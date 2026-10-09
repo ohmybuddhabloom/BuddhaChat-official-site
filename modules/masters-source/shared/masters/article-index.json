@@ -216299,5 +216299,16 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 6,
     "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-hangzhou-world-peace",
+    "book_id": "xuyun-xubian-kaishi-20261009",
+    "person_id": "xu-yun",
+    "title": "在杭州市佛教界祝願世界和平法會上講話",
+    "author": "虛雲老和尚",
+    "text_version": "d7fb6794b302d1e0ecbdc22760bfaf890fbac36103f5b0e46ce8f9f3d2ddfc63",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 7,
+    "paragraph_count": 7
   }
 ]

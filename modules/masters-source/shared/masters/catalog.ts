@@ -11,6 +11,7 @@ import xuyunYunmenRefuge from './xuyun-yunmen-refuge-20261009.json';
 import xuyunCausality from './xuyun-causality-20261009.json';
 import xuyunNanhua from './xuyun-nanhua-20261009.json';
 import xuyunShanghaiThree from './xuyun-shanghai-three-20261009.json';
+import xuyunHangzhou from './xuyun-hangzhou-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -70,6 +71,7 @@ export const collections = [
     ...xuyunCausality.collection_updates.find(update => update.id === collection.id),
     ...xuyunNanhua.collection_updates.find(update => update.id === collection.id),
     ...xuyunShanghaiThree.collection_updates.find(update => update.id === collection.id),
+    ...xuyunHangzhou.collection_updates.find(update => update.id === collection.id),
   })),
   ...bibliographicCollections,
 ];
