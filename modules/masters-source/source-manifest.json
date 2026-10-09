@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-incremental-supplement-preserving-official-existing-content",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -21,7 +21,7 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "9904df58ad9d5206336964da74828bbb45977dd1d3da5601868fbfa89be517ad",
+    "prototypes/masters-h5/src/Prototype.tsx": "0302d4c4e2f24bd905c2ddfe02f6ad4b9e625b033f3e96d58196b5b58eede5fc",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
     "prototypes/masters-h5/src/content.ts": "526c0a22e7a386d4a9303d5763e6da64fe317330f4c27d067df6b9d7ffac906b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
@@ -45,8 +45,8 @@
     "prototypes/masters-h5/src/mobile/geometry.ts": "f1382e5d6cc9adfd7ac142304f2f9a5a2330db1d74b3f0848adbaf311676bf16",
     "prototypes/masters-h5/src/mobile/index.ts": "ee69d9341571db5dee84dd2d7452a62eef09085a84a85f198a3edc48047e0412",
     "prototypes/masters-h5/src/nan-huaijin-candidates.json": "dff0e6ee39cc1c944da7a88fd226d247dbb6f846b27323aea5d6fdf82c264c91",
-    "prototypes/masters-h5/src/people.ts": "bd2995ef5b965e8c296a5326b5b73b83fec6ba526db96f70a1c8ce6ada0e2650",
-    "prototypes/masters-h5/src/prototype.css": "c9e9f190af013a5352ace20a5480557928ba1e1344296ec3b1da68f51b836676",
+    "prototypes/masters-h5/src/people.ts": "7e2b7035f0b63f4212816837489158eb6aaee07b942cd3cfda08e0238a6ac1a5",
+    "prototypes/masters-h5/src/prototype.css": "4ecd11c5315b413c7c090ac0b0676719cdf5c487dc7a865c8290ab9c470d49ed",
     "prototypes/masters-h5/src/public-entry.tsx": "87f0269d638896e9f7d2f1b7d5a9bbe7e4cdeac9f550ead77c66116af8f89fb8",
     "prototypes/masters-h5/src/public-runtime.tsx": "81375b2c5481e1dbe938d469347f1a7cc9967c024ce3d27d5d3e9c853f143700",
     "prototypes/masters-h5/src/public-web.css": "f60d4d0f5071563441f51ae508659af41ee83c8f1cdbff5b98e75830cb9f7dad",
@@ -805,7 +805,10 @@
     "prototypes/masters-h5/public/figures/yinshun/cd3f1e32f177b5222e583ae2733cc41016195bafad867191cf7000065b8c0209.png": "cd3f1e32f177b5222e583ae2733cc41016195bafad867191cf7000065b8c0209",
     "prototypes/masters-h5/public/figures/yinshun/fbd709fdfcec27586ce40e6b04a889408c713294aa2ac7006ede6ecf44c6becb.png": "fbd709fdfcec27586ce40e6b04a889408c713294aa2ac7006ede6ecf44c6becb",
     "prototypes/masters-h5/public/figures/yinshun/cde72a9d40b95a695e2e287d98d59b8367bfd44db2a64ae14a51c1d17d528128.svg": "cde72a9d40b95a695e2e287d98d59b8367bfd44db2a64ae14a51c1d17d528128",
-    "prototypes/masters-h5/public/figures/yinshun/3a239ce6791a077e5d0f9668f6e977b95a4814ab50082da10cd79302de4d3696.svg": "3a239ce6791a077e5d0f9668f6e977b95a4814ab50082da10cd79302de4d3696"
+    "prototypes/masters-h5/public/figures/yinshun/3a239ce6791a077e5d0f9668f6e977b95a4814ab50082da10cd79302de4d3696.svg": "3a239ce6791a077e5d0f9668f6e977b95a4814ab50082da10cd79302de4d3696",
+    "prototypes/masters-h5/src/staging-people.mjs": "30ed45e717da2f4ebbafe6cae3c54f8609872d303d406ce2aa20431938f67934",
+    "prototypes/masters-h5/src/staging-people.d.mts": "7094e73e64d75812167fa237319da7b5547ea9bdb1d6d9068fb16a65ce49e55a",
+    "prototypes/masters-h5/public/figures/yinshun/portrait-daa9cb6721dba867e28f22e2663b981e4c006d2c10ae5dec4a77e7ce365ff8dd.jpg": "daa9cb6721dba867e28f22e2663b981e4c006d2c10ae5dec4a77e7ce365ff8dd"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",

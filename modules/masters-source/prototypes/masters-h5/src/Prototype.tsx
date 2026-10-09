@@ -154,6 +154,7 @@ function Profile({route}:{route:string}){
  return <div className="unified-profile" data-person-id={person.id}>
   <div className="profile"><Portrait id={person.id}/><div><span className="eyebrow">{person.type}</span><h1>{person.name}</h1></div><Follow id={person.id}/></div>
   <p className="intro profile-intro">{copy.intro}</p>
+  {person.id==='yin-shun'&&person.portrait&&<p className="small">肖像来源：<SourceLink url="https://www.yinshun.org.tw/">印顺文教基金会</SourceLink></p>}
   <div className="tabs profile-tabs" role="tablist" aria-label={person.name+'栏目'}>{['精选','著作','影音','生平'].map(t=><button id={'tab-'+person.id+'-'+t} role="tab" aria-controls={'panel-'+person.id} aria-selected={t===tab} key={t} onClick={()=>setTab(t)}>{t}</button>)}</div>
   <div id={'panel-'+person.id} role="tabpanel" aria-labelledby={'tab-'+person.id+'-'+tab}>
    {tab==='精选'?<><Resume personId={person.id} compact/><Section title="精选著作" action={<button className="all-people" onClick={()=>setTab('著作')}>全部著作 <ArrowRightIcon/></button>}><ProfileWorks personId={person.id} featured/></Section><Section title="精选影音" action={<button className="all-people" onClick={()=>setTab('影音')}>全部影音 <ArrowRightIcon/></button>}><ProfileVideos personId={person.id} featured/></Section></>:tab==='著作'?<ProfileWorks personId={person.id}/>:tab==='影音'?<ProfileVideos personId={person.id}/>:<><h2 className="profile-panel-title">生平简介</h2><p className="reading-copy">{copy.bio}</p>{historyProfile&&<HistoricalTimeline profile={historyProfile}/>}</>}
