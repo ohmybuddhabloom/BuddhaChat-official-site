@@ -58,7 +58,7 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "2797bb4ce18e955fe2b49f26651c2996a98db6606bdecaa4dcc60410b56d32dc",
+    "shared/masters/article-index.json": "a6afc60ac04a416ca63c71cbea958b4fe65cdd986f0586c4056056fd53ccdfdc",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
     "shared/masters/catalog.ts": "253ab364256e5365c09957a75fba55ef918738d7c0142eb1055a95e8ffc14a1f",
@@ -675,6 +675,13 @@
         "shared/masters/bibliographic-guides-20261009.json"
       ],
       "note": "Asset-first Yin Shun PNG derivatives and exact original SVG source copies; existing362 chapter index retained until48-body import; preserves concurrent source runtime changes."
+    },
+    {
+      "sourceCommit": "c56aab4a6b15136137176f2ef9d9d6a4b052e091",
+      "files": [
+        "shared/masters/article-index.json"
+      ],
+      "note": "One complete independently corrected Huqiu oral record appended to existing collection; prior21483indexobjects retained. Concurrent Yin Shun figure files and source hashes preserved. No new modern book bodies or private raw copied."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
@@ -683,5 +690,6 @@
   "zenOriginals20261009SourceCommit": "daf9102b781cdd4e35f59077b1e71473b118eb9b",
   "hongyiMusic1933SourceCommit": "d894534f28998b3592dc1df4efc9bf60e8776588",
   "huayanPreface1945SourceCommit": "755728cb81aede123551ce1f4ad0c5f020d940c9",
-  "bibliographicGuides20261009SourceCommit": "b059b76a9e7c62ff69e849592f6512b115fd5fe0"
+  "bibliographicGuides20261009SourceCommit": "b059b76a9e7c62ff69e849592f6512b115fd5fe0",
+  "xuyunHuqiuSourceCommit": "c56aab4a6b15136137176f2ef9d9d6a4b052e091"
 }

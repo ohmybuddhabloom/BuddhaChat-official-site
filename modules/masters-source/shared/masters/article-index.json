@@ -216202,6 +216202,17 @@
     "paragraph_count": 5
   },
   {
+    "id": "xuyun-xubian-huqiu-incense-1953",
+    "book_id": "xuyun-xubian-fayu-20261008",
+    "person_id": "xu-yun",
+    "title": "重建虎丘山紹隆祖師塔竣工拈香法語",
+    "author": "虚云老和尚",
+    "text_version": "8bc330e61f7ce9fb2a39d5cf3aef20c9e746a1841f93194e2425f6a06cb68552",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 3,
+    "paragraph_count": 2
+  },
+  {
     "id": "hongyi-music-haichaoyin-1933",
     "book_id": "hongyi-before-monastic-1933",
     "person_id": "hong-yi",
