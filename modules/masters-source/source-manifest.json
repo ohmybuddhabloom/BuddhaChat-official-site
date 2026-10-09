@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays; additive-four-reviewed-xuyun-essays",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -58,10 +58,10 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "e4b1a748cfa7b19198fc6b74bc378ab81304610e91a5c2ddaa26ec9e1a67af1c",
+    "shared/masters/article-index.json": "b18fab128f06fffc2b9f87258d42ec7b8653e9b54fd735a6e2eef100616dae52",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "5d460b9c8147ded786123de745e79f93074c0b936d0db01d76bac9d392566d81",
+    "shared/masters/catalog.ts": "dabbfc02e9125a1bf15b939f9a1b1c32835e95b9c9628ebb10d9c624d033a784",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
@@ -819,7 +819,8 @@
     "shared/masters/hongyi-sifen-preface-20261009.json": "a208a5c38d26fb355c8a04baba4980ac3e25a82d57bcaa7761947a7ee679e569",
     "shared/masters/xuyun-letters-next-20261009.json": "1a26c165acf39d6fb620151eaff53e5efa0f80d0303b55fe3c40cb2bd98cb3c1",
     "shared/masters/xuyun-letters-final-20261010.json": "48ab0512d639ecd729733583177f1c09810d8543a570857cdf52fa634359d05a",
-    "shared/masters/xuyun-essays-short-20261010.json": "6a86b862d242d59b0c70e7f6e1f7a49a635981191e2b705766cedd57bd716061"
+    "shared/masters/xuyun-essays-short-20261010.json": "6a86b862d242d59b0c70e7f6e1f7a49a635981191e2b705766cedd57bd716061",
+    "shared/masters/xuyun-essays-next-20261010.json": "72e658d86c8534b9639d6ff2cacd5836a4c389e41539546cf376e0ebf2aca768"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1835,6 +1836,15 @@
         "shared/masters/xuyun-essays-short-20261010.json"
       ],
       "purpose": "Append three individually reconciled complete Xu Yun essays; preserve old21516summaries,35letters and site-onlyStagingoverlay. Exact dualnativeRelease acceptance pending."
+    },
+    {
+      "sourceCommit": "63aea136c417bad7724c4fc1e64e25204de5d32b",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/xuyun-essays-next-20261010.json"
+      ],
+      "purpose": "Append four complete source-reconciled essays as orders4-7; preserve old3works/21519summaries,35letters and StagingYinshunoverlay. Recorder/date/poem/114tail retained; exact nativeRelease pending."
     }
   ]
 }

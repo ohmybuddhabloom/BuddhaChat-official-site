@@ -16,6 +16,7 @@ import hongyiSifenPreface from './hongyi-sifen-preface-20261009.json';
 import xuyunLettersNext from './xuyun-letters-next-20261009.json';
 import xuyunLettersFinal from './xuyun-letters-final-20261010.json';
 import xuyunEssaysShort from './xuyun-essays-short-20261010.json';
+import xuyunEssaysNext from './xuyun-essays-next-20261010.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -84,7 +85,10 @@ export const collections = [
     ...xuyunShanghaiThree.collection_updates.find(update => update.id === collection.id),
     ...xuyunHangzhou.collection_updates.find(update => update.id === collection.id),
   })),
-  ...xuyunEssaysShort.collections,
+  ...xuyunEssaysShort.collections.map(collection => ({
+    ...collection,
+    ...xuyunEssaysNext.collection_updates.find(update => update.id === collection.id),
+  })),
   ...bibliographicCollections,
 ];
 

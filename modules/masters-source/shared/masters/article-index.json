@@ -216618,5 +216618,49 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 3,
     "paragraph_count": 3
+  },
+  {
+    "id": "xuyun-xubian-essay-yunmen-collapse",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "雲門大覺寺祖殿傾落記",
+    "author": "虛雲老和尚",
+    "text_version": "a17d9d8432d2d03cd02341fa2054ed20d318f068a434d11973d51070391c90f3",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 4,
+    "paragraph_count": 3
+  },
+  {
+    "id": "xuyun-xubian-essay-ancestral-portraits",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "乙未重增佛祖道影附記",
+    "author": "虛雲老和尚",
+    "text_version": "49a360b1ca0c69368741d0316cebccb89d28c0374423005507fba39946c15222",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 5,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xuyun-xubian-essay-yunju-ordination-preface",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "江西雲居山眞如寺同戒錄序",
+    "author": "虛雲老和尚",
+    "text_version": "467acc61f3e901c640b81dd48bd6583878a9104528e95e2edc7bea70dd986d82",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 6,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xuyun-xubian-essay-yunju-reconstruction",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "重建雲居山眞如寺略記",
+    "author": "虛雲老和尚",
+    "text_version": "3c894b5a42042b9b6fcecd83f9a75cc0c13801cfb0ae4169640b2be52b000af3",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 7,
+    "paragraph_count": 13
   }
 ]
