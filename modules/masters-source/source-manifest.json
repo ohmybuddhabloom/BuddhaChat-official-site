@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -814,7 +814,7 @@
     "shared/masters/xuyun-nanhua-20261009.json": "df8557e5618ec8be49be06e8d038a2085905a1515929f57688e1d76e2dc77e54",
     "shared/masters/xuyun-shanghai-three-20261009.json": "1a970ca526193082a1c7f5269fa30dda9572caa7f3c4a33ab2998b0d0d20204f",
     "shared/masters/xuyun-hangzhou-20261009.json": "21ffca640e42007bfd5f12af2eb3f7c2626899e3ba228ad33af994ce7033189b",
-    "shared/masters/shengyen-videos.json": "6a8d763672bfd749b523f1ff80e1e7b8c77fae4da9c298392dd93deecd0bce67",
+    "shared/masters/shengyen-videos.json": "a0447468aa53f5b3c7d67f2e4c740b0b0e8964292304fb96a86af7b93d9377a4",
     "shared/masters/hsingyun-jingang-videos.json": "ec5f530dd3dac78089cfc6dd49793cf2a02468575bec169d616c767a4454b28c"
   },
   "historicalMastersSourceCommit": "d103acee",
@@ -1785,6 +1785,13 @@
         "shared/masters/hsingyun-jingang-videos.json"
       ],
       "purpose": "Append32 verified Jingang lecture segments to exact original2, preserve three day ranges/gap and selected alternate edition, other authors and Staging overlay."
+    },
+    {
+      "sourceCommit": "0ecb1610c10d4907b5812414912868c413fb0530",
+      "files": [
+        "shared/masters/shengyen-videos.json"
+      ],
+      "purpose": "Recover only three newly verified public episodes172/536/554; preserve previous1101 objects and all other authors, keep private570/unavailable275 held."
     }
   ]
 }
