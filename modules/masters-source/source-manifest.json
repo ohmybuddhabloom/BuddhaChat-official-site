@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -58,10 +58,10 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "11958ed491d8dadf8f3c84cca1ede82fe2a0678cf4633cff3c403801f214486f",
+    "shared/masters/article-index.json": "b1703efb01f66ab8d2b99a01de365f8e888cf3f7c9e5833383c7f23d23fa830d",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "15959f0003059c6866b7a65f4e6fc23eca6ca44f2d67373e0237f8dde7810964",
+    "shared/masters/catalog.ts": "f3413e6fde2d0b13e7ad71bcc9607ffc6a9cdbc8e2f30124dcd934faa8cb1e36",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
@@ -815,7 +815,8 @@
     "shared/masters/xuyun-shanghai-three-20261009.json": "1a970ca526193082a1c7f5269fa30dda9572caa7f3c4a33ab2998b0d0d20204f",
     "shared/masters/xuyun-hangzhou-20261009.json": "21ffca640e42007bfd5f12af2eb3f7c2626899e3ba228ad33af994ce7033189b",
     "shared/masters/shengyen-videos.json": "a0447468aa53f5b3c7d67f2e4c740b0b0e8964292304fb96a86af7b93d9377a4",
-    "shared/masters/hsingyun-jingang-videos.json": "ec5f530dd3dac78089cfc6dd49793cf2a02468575bec169d616c767a4454b28c"
+    "shared/masters/hsingyun-jingang-videos.json": "ec5f530dd3dac78089cfc6dd49793cf2a02468575bec169d616c767a4454b28c",
+    "shared/masters/hongyi-sifen-preface-20261009.json": "a208a5c38d26fb355c8a04baba4980ac3e25a82d57bcaa7761947a7ee679e569"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1792,6 +1793,15 @@
         "shared/masters/shengyen-videos.json"
       ],
       "purpose": "Recover only three newly verified public episodes172/536/554; preserve previous1101 objects and all other authors, keep private570/unavailable275 held."
+    },
+    {
+      "sourceCommit": "c5e6e465005cb5aafd88476a8f8f8501f5149cc5",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/hongyi-sifen-preface-20261009.json"
+      ],
+      "purpose": "Append the complete source-verified Sifen preface as the ninth law article; preserve prior eight texts, original collection attribution, other authors and Staging discovery overlay. Native exact Release acceptance remains pending."
     }
   ]
 }

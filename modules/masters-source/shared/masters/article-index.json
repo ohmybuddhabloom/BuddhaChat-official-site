@@ -216310,5 +216310,16 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 7,
     "paragraph_count": 7
+  },
+  {
+    "id": "hongyi-lvxue-a09",
+    "book_id": "hongyi-lvxue",
+    "person_id": "hong-yi",
+    "title": "四分律比丘戒相表記序",
+    "author": "弘一法師",
+    "text_version": "5524cfc3d1fa03ddaa97d8ac633784c043b7d82f77844ad14dc7c717128a428a",
+    "source_sha256": "62f95b1c10cb9b8fdf86cb6ee7a88b83aad2ae15addbe5c6d29fa0234a5379a2",
+    "source_order": 9,
+    "paragraph_count": 1
   }
 ]

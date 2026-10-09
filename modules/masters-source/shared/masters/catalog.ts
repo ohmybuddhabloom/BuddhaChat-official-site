@@ -12,6 +12,7 @@ import xuyunCausality from './xuyun-causality-20261009.json';
 import xuyunNanhua from './xuyun-nanhua-20261009.json';
 import xuyunShanghaiThree from './xuyun-shanghai-three-20261009.json';
 import xuyunHangzhou from './xuyun-hangzhou-20261009.json';
+import hongyiSifenPreface from './hongyi-sifen-preface-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -58,7 +59,10 @@ export const collections = [
   { id: 'nhj-laozi-tashuo', title: '老子他说', person_id: 'nan-huaijin' },
   { id: 'nhj-jingangjing-shuoshenme', title: '金刚经说什么', person_id: 'nan-huaijin' },
   ...additionalCollections,
-  ...historical.collections,
+  ...historical.collections.map(collection => ({
+    ...collection,
+    ...hongyiSifenPreface.collection_updates.find(update => update.id === collection.id),
+  })),
   ...historicalExpansion.collections,
   ...yinshunLibrary.collections,
   ...nextTextLibrary.collections,
