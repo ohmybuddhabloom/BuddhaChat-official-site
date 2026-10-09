@@ -216585,5 +216585,38 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 35,
     "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-essay-association-reflections",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "出席中國佛教協會成立會議感想",
+    "author": "虛雲老和尚",
+    "text_version": "7fd11bc9f103deab6f6ee14b1ca18401bda935de6b7b7a25ca3911012988d1e8",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 1,
+    "paragraph_count": 5
+  },
+  {
+    "id": "xuyun-xubian-essay-xuefeng-preface",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "雪峰山誌序",
+    "author": "虛雲老和尚",
+    "text_version": "48254d578dca42222e2c487dad5bdb02815b407526fbeadb9fca6a5f5d595ebf",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 2,
+    "paragraph_count": 2
+  },
+  {
+    "id": "xuyun-xubian-essay-yunju-views",
+    "book_id": "xuyun-xubian-zawen-20261010",
+    "person_id": "xu-yun",
+    "title": "雲居管見",
+    "author": "虛雲老和尚",
+    "text_version": "8c4fa865b1dee3f2f452f38ae94c631e35b255969389741a226beff67f32dbca",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 3,
+    "paragraph_count": 3
   }
 ]

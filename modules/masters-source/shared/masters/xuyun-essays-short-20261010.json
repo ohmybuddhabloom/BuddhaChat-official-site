@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-10",
+  "scope": "《虛雲和尚法匯續編》上卷雜文三篇已核完整作品；其余候选尚待逐篇审校，不宣称全编齐备。",
+  "catalog_pages": 3,
+  "added_article_count": 3,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [
+    {
+      "id": "xuyun-xubian-zawen-20261010",
+      "person_id": "xu-yun",
+      "title": "法汇续编 · 杂文补录",
+      "category": "杂文",
+      "attribution": "虛雲老和尚原作；據《虛雲和尚法匯續編》上卷（三）雜文排印掃描核錄。",
+      "source_url": "https://hx-culture.oss-cn-hangzhou.aliyuncs.com/jxfx/2023/08/28/4ca72d90bf8044c98161c3aa9291bad6.pdf",
+      "source_institution": "江西省佛教協會",
+      "readable_count": 3,
+      "catalog_count": 3,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-essays-short",
+      "path": "content/masters/imports/xuyun-essays-short.json",
+      "review": "scripts/collect-masters-xuyun-essays-short.py",
+      "sha256": "281453abec7750216add9ccec042ffae059e8cee2827cafd05dd17ba6fb5ea73",
+      "chapters": 3,
+      "catalog_pages": 3,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}
