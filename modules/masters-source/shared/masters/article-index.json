@@ -216255,5 +216255,16 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 2,
     "paragraph_count": 11
+  },
+  {
+    "id": "xuyun-xubian-nanhua-three-1948",
+    "book_id": "xuyun-xubian-kaishi-20261009",
+    "person_id": "xu-yun",
+    "title": "南華禪七開示三則",
+    "author": "虛雲老和尚",
+    "text_version": "1f7ec2eac229352f02391ac2b42f583ecea3ee21b3a97cfe078cada75e0bd91e",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 3,
+    "paragraph_count": 6
   }
 ]

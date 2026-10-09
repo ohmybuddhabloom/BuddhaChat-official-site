@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "《虛雲和尚法匯續編》二、開示中南華禪七開示三則完整排印組；追加既有開示補錄合集，不改舊雲門或因果批次。",
+  "catalog_pages": 1,
+  "added_article_count": 1,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "xuyun-xubian-kaishi-20261009",
+      "readable_count": 3,
+      "catalog_count": 3,
+      "deferred_count": 0,
+      "attribution": "虛雲老和尚口述開示；據《虛雲和尚法匯續編》開示原文，日期與記錄者逐篇依原載保留。"
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-nanhua",
+      "path": "content/masters/imports/xuyun-nanhua.json",
+      "review": "scripts/collect-masters-xuyun-nanhua.py",
+      "sha256": "c4b0f3412a102c3a22923a3fd91ff0b7ab9c17bc4891cf1d6b4acf4a2b45ed18",
+      "chapters": 1,
+      "catalog_pages": 1,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}
