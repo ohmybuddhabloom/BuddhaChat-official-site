@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "《虛雲和尚法匯續編》二、開示中一篇完整因果略談；追加既有開示補錄合集，不改舊雲門批次。",
+  "catalog_pages": 1,
+  "added_article_count": 1,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "xuyun-xubian-kaishi-20261009",
+      "readable_count": 2,
+      "catalog_count": 2,
+      "deferred_count": 0,
+      "attribution": "虛雲老和尚口述開示；據《虛雲和尚法匯續編》開示原文，日期與記錄者逐篇依原載保留。"
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-causality",
+      "path": "content/masters/imports/xuyun-causality.json",
+      "review": "scripts/collect-masters-xuyun-causality.py",
+      "sha256": "7b770ecec4e0891a9348dc3fbd04c30022dc6a3ad3b81da5610375471661f581",
+      "chapters": 1,
+      "catalog_pages": 1,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}

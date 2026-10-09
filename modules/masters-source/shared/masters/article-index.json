@@ -216244,5 +216244,16 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 1,
     "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-causality-1947",
+    "book_id": "xuyun-xubian-kaishi-20261009",
+    "person_id": "xu-yun",
+    "title": "因果略談",
+    "author": "虛雲老和尚",
+    "text_version": "174b825e3e98e24866be0e120b2e9a9e4845e73426f495384ce7bdf1fccea57a",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 2,
+    "paragraph_count": 11
   }
 ]

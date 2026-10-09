@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -58,10 +58,10 @@
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "0246bdb0666ca8069467d65dc759ee374d7b5ab017e11f3d13d12866835d98d3",
+    "shared/masters/article-index.json": "c19e5c2f435b95e8ec12376fe94f4eb05d6abd596c6691e93209057e51b40521",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "f91e8d110e604faabe4a8764b06ad62c96ce2ab4cf8858006646293909a25a2d",
+    "shared/masters/catalog.ts": "4fc10485f9a946f6358217a9d57069169d2cb75eb8ab8f6df8dbdbb9986f01f5",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
@@ -809,7 +809,8 @@
     "prototypes/masters-h5/src/staging-people.mjs": "30ed45e717da2f4ebbafe6cae3c54f8609872d303d406ce2aa20431938f67934",
     "prototypes/masters-h5/src/staging-people.d.mts": "7094e73e64d75812167fa237319da7b5547ea9bdb1d6d9068fb16a65ce49e55a",
     "prototypes/masters-h5/public/figures/yinshun/portrait-daa9cb6721dba867e28f22e2663b981e4c006d2c10ae5dec4a77e7ce365ff8dd.jpg": "daa9cb6721dba867e28f22e2663b981e4c006d2c10ae5dec4a77e7ce365ff8dd",
-    "shared/masters/xuyun-yunmen-refuge-20261009.json": "40054b8f8de5bb14536ab9b782aa88ac8362911de4027c69a17bd554239c8437"
+    "shared/masters/xuyun-yunmen-refuge-20261009.json": "40054b8f8de5bb14536ab9b782aa88ac8362911de4027c69a17bd554239c8437",
+    "shared/masters/xuyun-causality-20261009.json": "9ffc26e47b0ff7ade4c56b210130e7096f5814b6f10d1d54e9d9d01b726363f8"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1727,6 +1728,15 @@
         "shared/masters/xuyun-yunmen-refuge-20261009.json"
       ],
       "purpose": "Add reviewed Yunmen refuge talk without replacing Staging discovery overlay or prior assets."
+    },
+    {
+      "sourceCommit": "3bf3395cd9255a9348347042420f6ddfebe6de95",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/xuyun-causality-20261009.json"
+      ],
+      "purpose": "Append 1947 causality talk to existing teaching collection; preserve old Yunmen snapshot and Staging overlay/assets."
     }
   ]
 }
