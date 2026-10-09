@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y37.0588.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.4553in" height="1.50648in"
+		viewBox="0 0 392.781 108.467" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="1028" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {font-size:1em}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>頁-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group13-1" transform="translate(0.375,-0.375)" v:mID="13" v:groupContext="group">
+			<title>工作表.13</title>
+			<g id="shape1-2" v:mID="1" v:groupContext="shape" transform="translate(2.83465,-85.0394)">
+				<title>工作表.1</title>
+				<desc>《菩薩藏經》</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="97.128" width="104.89" height="22.6772"/>
+				<rect x="0" y="85.7894" width="104.882" height="22.6772" class="st1"/>
+				<text x="4.44" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>《菩薩藏經》</text>			</g>
+			<g id="shape2-5" v:mID="2" v:groupContext="shape" transform="translate(198.425,-85.0394)">
+				<title>工作表.2</title>
+				<desc>一卷</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="21.2598" cy="97.128" width="42.52" height="22.6772"/>
+				<rect x="0" y="85.7894" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>一卷</text>			</g>
+			<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(284.315,-85.0394)">
+				<title>工作表.3</title>
+				<desc>梁僧伽婆羅譯</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="53.8583" cy="97.128" width="107.72" height="22.6772"/>
+				<rect x="0" y="85.7894" width="107.717" height="22.6772" class="st1"/>
+				<text x="5.86" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>梁僧伽婆羅譯</text>			</g>
+			<g id="shape4-11" v:mID="4" v:groupContext="shape" transform="translate(2.83465,-56.6929)">
+				<title>工作表.4</title>
+				<desc>《菩薩藏經》</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="97.128" width="104.89" height="22.6772"/>
+				<rect x="0" y="85.7894" width="104.882" height="22.6772" class="st1"/>
+				<text x="4.44" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>《菩薩藏經》</text>			</g>
+			<g id="shape5-14" v:mID="5" v:groupContext="shape" transform="translate(198.425,-56.6929)">
+				<title>工作表.5</title>
+				<desc>三卷</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="21.2598" cy="97.128" width="42.52" height="22.6772"/>
+				<rect x="0" y="85.7894" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>三卷</text>			</g>
+			<g id="shape6-17" v:mID="6" v:groupContext="shape" transform="translate(284.315,-56.6929)">
+				<title>工作表.6</title>
+				<desc>秦鳩摩羅什譯</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="53.8583" cy="97.128" width="107.72" height="22.6772"/>
+				<rect x="0" y="85.7894" width="107.717" height="22.6772" class="st1"/>
+				<text x="5.86" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>秦鳩摩羅什譯</text>			</g>
+			<g id="shape7-20" v:mID="7" v:groupContext="shape" transform="translate(4.79616E-14,-28.3465)">
+				<title>工作表.7</title>
+				<desc>《大菩薩藏經》</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="63.7795" cy="97.128" width="127.56" height="22.6772"/>
+				<rect x="0" y="85.7894" width="127.559" height="22.6772" class="st1"/>
+				<text x="7.78" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>《大菩薩藏經》</text>			</g>
+			<g id="shape8-23" v:mID="8" v:groupContext="shape" transform="translate(199.843,-28.3465)">
+				<title>工作表.8</title>
+				<desc>二○卷</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="28.3465" cy="97.128" width="56.7" height="22.6772"/>
+				<rect x="0" y="85.7894" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4" y="101.93" class="st2" v:langID="1028"><v:paragraph v:bulletSize="0.166667"/><v:tabList/>二<tspan
+							class="st3" v:langID="1033">○</tspan>卷</text>			</g>
+			<g id="shape9-27" v:mID="9" v:groupContext="shape" transform="translate(284.882,-28.3465)">
+				<title>工作表.9</title>
+				<desc>唐玄奘譯</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="36.8504" cy="97.128" width="73.71" height="22.6772"/>
+				<rect x="0" y="85.7894" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>唐玄奘譯</text>			</g>
+			<g id="shape10-30" v:mID="10" v:groupContext="shape" transform="translate(2.83465,0)">
+				<title>工作表.10</title>
+				<desc>《大乘菩薩藏正法經》</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="85.0394" cy="97.128" width="170.08" height="22.6772"/>
+				<rect x="0" y="85.7894" width="170.079" height="22.6772" class="st1"/>
+				<text x="5.04" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>《大乘菩薩藏正法經》</text>			</g>
+			<g id="shape11-33" v:mID="11" v:groupContext="shape" transform="translate(199.843,-5.40012E-13)">
+				<title>工作表.11</title>
+				<desc>四○卷</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="28.3465" cy="97.128" width="56.7" height="22.6772"/>
+				<rect x="0" y="85.7894" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4" y="101.93" class="st2" v:langID="1028"><v:paragraph v:bulletSize="0.166667"/><v:tabList/>四<tspan
+							class="st3" v:langID="1033">○</tspan>卷</text>			</g>
+			<g id="shape12-37" v:mID="12" v:groupContext="shape" transform="translate(284.315,-8.95284E-13)">
+				<title>工作表.12</title>
+				<desc>趙宋法護等譯</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="53.8583" cy="97.128" width="107.72" height="22.6772"/>
+				<rect x="0" y="85.7894" width="107.717" height="22.6772" class="st1"/>
+				<text x="5.86" y="101.93" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>趙宋法護等譯</text>			</g>
+		</g>
+	</g>
+</svg>

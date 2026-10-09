@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y36.0155.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.47968in" height="1.90982in"
+		viewBox="0 0 466.537 137.507" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="1028" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>頁-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group19-1" transform="translate(0.375,-0.375)" v:mID="19" v:groupContext="group">
+			<title>工作表.19</title>
+			<g id="shape1-2" v:mID="1" v:groupContext="shape" transform="translate(1.62312,-113.631)">
+				<title>工作表.1</title>
+				<desc>辯五事品</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="38.8668" cy="126.169" width="77.74" height="22.6772"/>
+				<rect x="0" y="114.83" width="77.7337" height="22.6772" class="st1"/>
+				<text x="6.87" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>辯五事品</text>			</g>
+			<g id="shape2-5" v:mID="2" v:groupContext="shape" transform="translate(1.48592,-64.1339)">
+				<title>工作表.2</title>
+				<desc>辯諸處品</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="38.1582" cy="126.169" width="76.32" height="22.6772"/>
+				<rect x="0" y="114.83" width="76.3164" height="22.6772" class="st1"/>
+				<text x="6.16" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>辯諸處品</text>			</g>
+			<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(0,-28.5913)">
+				<title>工作表.3</title>
+				<desc>辯諸智品</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="39.2212" cy="126.169" width="78.45" height="22.6772"/>
+				<rect x="0" y="114.83" width="78.4423" height="22.6772" class="st1"/>
+				<text x="7.22" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>辯諸智品</text>			</g>
+			<g id="shape4-11" v:mID="4" v:groupContext="shape" transform="translate(0.845858,0)">
+				<title>工作表.4</title>
+				<desc>辯隨眠品</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="39.9298" cy="126.169" width="79.86" height="22.6772"/>
+				<rect x="0" y="114.83" width="79.8597" height="22.6772" class="st1"/>
+				<text x="7.93" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>辯隨眠品</text>			</g>
+			<g id="shape5-14" v:mID="5" v:groupContext="shape" transform="translate(155.129,-114.08)">
+				<title>工作表.5</title>
+				<desc>五事自相分別</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="74.1503" cy="126.169" width="148.31" height="22.6772"/>
+				<rect x="0" y="114.83" width="148.301" height="22.6772" class="st1"/>
+				<text x="10.15" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>五事（自相）分別</text>			</g>
+			<g id="shape6-17" v:mID="6" v:groupContext="shape" transform="translate(159.027,-85.7337)">
+				<title>工作表.6</title>
+				<desc>諸門共相分別</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="71.3156" cy="126.169" width="142.64" height="22.6772"/>
+				<rect x="0" y="114.83" width="142.631" height="22.6772" class="st1"/>
+				<text x="7.32" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>諸門（共相）分別</text>			</g>
+			<g id="shape7-20" v:mID="7" v:groupContext="shape" transform="translate(372.344,-113.631)">
+				<title>工作表.7</title>
+				<desc>攝所攝</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="32.9692" cy="126.169" width="65.94" height="22.6772"/>
+				<rect x="0" y="114.83" width="65.9384" height="22.6772" class="st1"/>
+				<text x="8.97" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>攝所攝</text>			</g>
+			<g id="shape8-23" v:mID="8" v:groupContext="shape" transform="translate(373.391,-56.9377)">
+				<title>工作表.8</title>
+				<desc>識所識</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="31.9227" cy="126.169" width="63.85" height="22.6772"/>
+				<rect x="0" y="114.83" width="63.8454" height="22.6772" class="st1"/>
+				<text x="7.92" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>識所識</text>			</g>
+			<g id="shape9-26" v:mID="9" v:groupContext="shape" transform="translate(372.968,-28.5913)">
+				<title>工作表.9</title>
+				<desc>智所知</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="31.214" cy="126.169" width="62.43" height="22.6772"/>
+				<rect x="0" y="114.83" width="62.428" height="22.6772" class="st1"/>
+				<text x="7.21" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>智所知</text>			</g>
+			<g id="shape10-29" v:mID="10" v:groupContext="shape" transform="translate(373.186,-0.244795)">
+				<title>工作表.10</title>
+				<desc>隨眠所隨增</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="46.3006" cy="126.169" width="92.61" height="22.6772"/>
+				<rect x="0" y="114.83" width="92.6012" height="22.6772" class="st1"/>
+				<text x="6.3" y="130.97" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>隨眠所隨增</text>			</g>
+			<g id="shape11-32" v:mID="11" v:groupContext="shape" transform="translate(158.699,-68.2763)">
+				<title>工作表.11</title>
+				<path d="M0 137.51 L216 137.51" class="st3"/>
+			</g>
+			<g id="shape12-35" v:mID="12" v:groupContext="shape" transform="translate(73.6598,-76.7802)">
+				<title>工作表.12</title>
+				<path d="M0 137.51 L28.35 137.51" class="st3"/>
+			</g>
+			<g id="shape13-38" v:mID="13" v:groupContext="shape" transform="translate(122.404,-75.2589) rotate(8.53077)">
+				<title>工作表.13</title>
+				<path d="M0 137.51 L57.33 137.51" class="st3"/>
+			</g>
+			<g id="shape14-41" v:mID="14" v:groupContext="shape" transform="translate(76.4945,-11.5834)">
+				<title>工作表.14</title>
+				<path d="M0 137.51 L298.21 137.51" class="st3"/>
+			</g>
+			<g id="shape15-44" v:mID="15" v:groupContext="shape" transform="translate(76.4945,-39.9298)">
+				<title>工作表.15</title>
+				<path d="M0 137.51 L298.21 137.51" class="st3"/>
+			</g>
+			<g id="shape16-47" v:mID="16" v:groupContext="shape" transform="translate(73.6598,-124.969)">
+				<title>工作表.16</title>
+				<path d="M0 137.51 L85.04 137.51" class="st3"/>
+			</g>
+			<g id="shape17-50" v:mID="17" v:groupContext="shape" transform="translate(56.5807,-69.0603) rotate(-19.29)">
+				<title>工作表.17</title>
+				<path d="M0 137.51 L60.07 137.51" class="st3"/>
+			</g>
+			<g id="shape18-53" v:mID="18" v:groupContext="shape" transform="translate(297.597,-124.969)">
+				<title>工作表.18</title>
+				<path d="M0 137.51 L79.37 137.51" class="st3"/>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y35.0515.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="5.1301in" height="1.33522in" viewBox="0 0 369.367 96.1358" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st5">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.00001em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="group17-1" transform="translate(0.375,-0.375)">
+			<title>工作表.17</title>
+			<g id="shape2-2" transform="translate(-1.39888E-14,-42.7931)">
+				<title>工作表.2</title>
+				<desc>祇夜</desc>
+				<rect x="0" y="73.7321" width="35.1209" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">祇夜</text>			</g>
+			<g id="shape3-5" transform="translate(141.474,-72.9821)">
+				<title>工作表.3</title>
+				<desc>伽陀</desc>
+				<rect x="0" y="73.7321" width="35.1209" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">伽陀</text>			</g>
+			<g id="shape4-8" transform="translate(76.7368,-42.7931)">
+				<title>工作表.4</title>
+				<desc>偈</desc>
+				<rect x="0" y="73.7321" width="23.1208" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">偈</text>			</g>
+			<g id="shape5-11" transform="translate(241.021,-31.1811)">
+				<title>工作表.5</title>
+				<desc>不順煩惱</desc>
+				<rect x="0" y="73.7321" width="59.1211" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">不順煩惱</text>			</g>
+			<g id="shape6-14" transform="translate(333.496,-31.1811)">
+				<title>工作表.6</title>
+				<desc>祇夜</desc>
+				<rect x="0" y="73.7321" width="35.1209" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">祇夜</text>			</g>
+			<g id="shape7-17" transform="translate(141.474,-14.4467)">
+				<title>工作表.7</title>
+				<desc>路伽</desc>
+				<rect x="0" y="73.7321" width="35.1209" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">路伽</text>			</g>
+			<g id="shape8-20" transform="translate(241.021,1.27898E-13)">
+				<title>工作表.8</title>
+				<desc>順煩惱</desc>
+				<rect x="0" y="73.7321" width="47.121" height="22.4037" class="st1"/>
+				<text x="5.56" y="88.53" class="st2">順煩惱</text>			</g>
+			<g id="shape9-23" transform="translate(35.1209,-46.9084)">
+				<title>動態連接器</title>
+				<path d="M0 89.05 L41.62 89.05" class="st3"/>
+			</g>
+			<g id="shape10-26" transform="translate(129.402,-22.8139)">
+				<title>左大括弧</title>
+				<path d="M11.34 96.14 A15.1801 10.4363 0 0 1 7.16 92.75 A7.08661 7.08661 0 0 1 5.67 88.41 L5.67 67.79 A2.83465 2.83465
+							 -180 0 0 2.83 64.95 L0 64.95 L0 64.95 A5.66929 5.66929 -180 0 0 5.67 59.29 L5.67 41.5 A7.08661 7.08661
+							 0 0 1 7.16 37.16 A15.1801 10.4363 0 0 1 11.34 33.77" class="st4"/>
+			</g>
+			<g id="shape11-29" transform="translate(231.449,-10.1264)">
+				<title>左大括弧.11</title>
+				<path d="M8.5 96.14 A11.3851 5.19528 0 0 1 5.11 94.22 A2.83465 2.83465 0 0 1 4.25 92.19 L4.25 82.74 A2.12598 2.12598
+							 -180 0 0 2.13 80.61 L0 80.61 L0 80.61 A4.25197 4.25197 -180 0 0 4.25 76.36 L4.25 69.04 A2.83465 2.83465
+							 0 0 1 5.11 67.01 A11.3851 5.19528 0 0 1 8.5 65.09" class="st4"/>
+			</g>
+			<g id="shape12-32" transform="translate(176.594,-18.4252)">
+				<title>動態連接器.12</title>
+				<path d="M0 89.05 L57.73 89.05" class="st3"/>
+			</g>
+			<g id="shape13-35" transform="translate(99.8576,-46.9084)">
+				<title>動態連接器.13</title>
+				<path d="M0 89.05 L29.54 89.05" class="st3"/>
+			</g>
+			<g id="shape16-38" transform="translate(300.142,-35.2963)">
+				<title>動態連接器.16</title>
+				<path d="M0 89.05 L33.35 89.05" class="st3"/>
+			</g>
+		</g>
+	</g>
+</svg>

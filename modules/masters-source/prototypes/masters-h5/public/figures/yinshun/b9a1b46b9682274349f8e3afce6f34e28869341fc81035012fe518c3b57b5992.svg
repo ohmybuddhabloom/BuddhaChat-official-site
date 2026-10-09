@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y38.0161.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="6.3131in" height="8.32098in" viewBox="0 0 454.543 599.11" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st4">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="group80-1" transform="translate(0.5,-0.5)">
+			<title>工作表.80</title>
+			<g id="shape1-2" transform="translate(28.3465,-569.764)">
+				<title>工作表.1</title>
+				<desc>十四空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">十四空</text>			</g>
+			<g id="shape2-5" transform="translate(141.732,-569.764)">
+				<title>工作表.2</title>
+				<desc>十六空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">十六空</text>			</g>
+			<g id="shape3-8" transform="translate(255.118,-569.764)">
+				<title>工作表.3</title>
+				<desc>十八空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">十八空</text>			</g>
+			<g id="shape4-11" transform="translate(368.504,-569.764)">
+				<title>工作表.4</title>
+				<desc>二十空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">二十空</text>			</g>
+			<g id="shape25-14" transform="translate(240.945,-87.874)">
+				<title>工作表.25</title>
+				<desc>不可得空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">不可得空</text>			</g>
+			<g id="shape29-17" transform="translate(-485.724,599.11) rotate(-90)">
+				<title>工作表.29</title>
+				<path d="M0 599.11 L595.28 599.11" class="st3"/>
+			</g>
+			<g id="shape31-20" transform="translate(-372.339,599.11) rotate(-90)">
+				<title>工作表.31</title>
+				<path d="M0 599.11 L598.11 599.11" class="st3"/>
+			</g>
+			<g id="shape32-23" transform="translate(-258.953,599.11) rotate(-90)">
+				<title>工作表.32</title>
+				<path d="M0 599.11 L595.28 599.11" class="st3"/>
+			</g>
+			<g id="shape5-26" transform="translate(12.7559,-541.417)">
+				<title>工作表.5</title>
+				<desc>內空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">內空</text>			</g>
+			<g id="shape6-29" transform="translate(12.7559,-513.071)">
+				<title>工作表.6</title>
+				<desc>外空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">外空</text>			</g>
+			<g id="shape7-32" transform="translate(14.1732,-484.724)">
+				<title>工作表.7</title>
+				<desc>內外空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">內外空</text>			</g>
+			<g id="shape8-35" transform="translate(12.7559,-456.378)">
+				<title>工作表.8</title>
+				<desc>空空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">空空</text>			</g>
+			<g id="shape9-38" transform="translate(12.7559,-428.031)">
+				<title>工作表.9</title>
+				<desc>大空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">大空</text>			</g>
+			<g id="shape10-41" transform="translate(14.1732,-399.685)">
+				<title>工作表.10</title>
+				<desc>勝義空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">勝義空</text>			</g>
+			<g id="shape11-44" transform="translate(14.1732,-371.339)">
+				<title>工作表.11</title>
+				<desc>有為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">有為空</text>			</g>
+			<g id="shape12-47" transform="translate(14.1732,-342.992)">
+				<title>工作表.12</title>
+				<desc>無為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無為空</text>			</g>
+			<g id="shape13-50" transform="translate(14.1732,-314.646)">
+				<title>工作表.13</title>
+				<desc>畢竟空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">畢竟空</text>			</g>
+			<g id="shape14-53" transform="translate(14.1732,-286.299)">
+				<title>工作表.14</title>
+				<desc>無際空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無際空</text>			</g>
+			<g id="shape15-56" transform="translate(12.7559,-257.953)">
+				<title>工作表.15</title>
+				<desc>散空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">散空</text>			</g>
+			<g id="shape19-59" transform="translate(14.1732,-201.26)">
+				<title>工作表.19</title>
+				<desc>本性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">本性空</text>			</g>
+			<g id="shape24-62" transform="translate(14.1732,-116.22)">
+				<title>工作表.24</title>
+				<desc>一切法空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">一切法空</text>			</g>
+			<g id="shape21-65" transform="translate(14.1732,-158.74)">
+				<title>工作表.21</title>
+				<desc>自共相空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">自共相空</text>			</g>
+			<g id="shape17-68" transform="translate(127.205,-232.441)">
+				<title>工作表.17</title>
+				<desc>無散空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無散空</text>			</g>
+			<g id="shape26-71" transform="translate(127.205,-59.5276)">
+				<title>工作表.26</title>
+				<desc>無性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無性空</text>			</g>
+			<g id="shape28-74" transform="translate(126.496,-2.83465)">
+				<title>工作表.28</title>
+				<desc>無性自性空</desc>
+				<rect x="0" y="576.433" width="90.7087" height="22.6772" class="st1"/>
+				<text x="5.35" y="592.57" class="st2">無性自性空</text>			</g>
+			<g id="shape35-77" transform="translate(125.787,-541.417)">
+				<title>工作表.35</title>
+				<desc>內空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">內空</text>			</g>
+			<g id="shape36-80" transform="translate(125.787,-513.071)">
+				<title>工作表.36</title>
+				<desc>外空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">外空</text>			</g>
+			<g id="shape37-83" transform="translate(127.205,-484.724)">
+				<title>工作表.37</title>
+				<desc>內外空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">內外空</text>			</g>
+			<g id="shape38-86" transform="translate(125.787,-456.378)">
+				<title>工作表.38</title>
+				<desc>空空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">空空</text>			</g>
+			<g id="shape39-89" transform="translate(125.787,-428.031)">
+				<title>工作表.39</title>
+				<desc>大空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">大空</text>			</g>
+			<g id="shape40-92" transform="translate(127.205,-399.685)">
+				<title>工作表.40</title>
+				<desc>勝義空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">勝義空</text>			</g>
+			<g id="shape41-95" transform="translate(127.205,-371.339)">
+				<title>工作表.41</title>
+				<desc>有為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">有為空</text>			</g>
+			<g id="shape42-98" transform="translate(127.205,-342.992)">
+				<title>工作表.42</title>
+				<desc>無為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無為空</text>			</g>
+			<g id="shape43-101" transform="translate(127.205,-314.646)">
+				<title>工作表.43</title>
+				<desc>畢竟空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">畢竟空</text>			</g>
+			<g id="shape44-104" transform="translate(127.205,-286.299)">
+				<title>工作表.44</title>
+				<desc>無際空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無際空</text>			</g>
+			<g id="shape46-107" transform="translate(127.205,-201.26)">
+				<title>工作表.46</title>
+				<desc>本性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">本性空</text>			</g>
+			<g id="shape48-110" transform="translate(127.205,-116.22)">
+				<title>工作表.48</title>
+				<desc>一切法空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">一切法空</text>			</g>
+			<g id="shape22-113" transform="translate(125.787,-157.608)">
+				<title>工作表.22</title>
+				<desc>相空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">相空</text>			</g>
+			<g id="shape16-116" transform="translate(240.945,-243.78)">
+				<title>工作表.16</title>
+				<desc>散無散空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">散無散空</text>			</g>
+			<g id="shape27-119" transform="translate(240.945,-31.1811)">
+				<title>工作表.27</title>
+				<desc>自性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">自性空</text>			</g>
+			<g id="shape50-122" transform="translate(239.528,-541.417)">
+				<title>工作表.50</title>
+				<desc>內空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">內空</text>			</g>
+			<g id="shape51-125" transform="translate(239.528,-513.071)">
+				<title>工作表.51</title>
+				<desc>外空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">外空</text>			</g>
+			<g id="shape52-128" transform="translate(240.945,-484.724)">
+				<title>工作表.52</title>
+				<desc>內外空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">內外空</text>			</g>
+			<g id="shape53-131" transform="translate(239.528,-456.378)">
+				<title>工作表.53</title>
+				<desc>空空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">空空</text>			</g>
+			<g id="shape54-134" transform="translate(239.528,-428.031)">
+				<title>工作表.54</title>
+				<desc>大空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">大空</text>			</g>
+			<g id="shape55-137" transform="translate(240.945,-399.685)">
+				<title>工作表.55</title>
+				<desc>勝義空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">勝義空</text>			</g>
+			<g id="shape56-140" transform="translate(240.945,-371.339)">
+				<title>工作表.56</title>
+				<desc>有為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">有為空</text>			</g>
+			<g id="shape57-143" transform="translate(240.945,-342.992)">
+				<title>工作表.57</title>
+				<desc>無為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無為空</text>			</g>
+			<g id="shape58-146" transform="translate(240.945,-314.646)">
+				<title>工作表.58</title>
+				<desc>畢竟空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">畢竟空</text>			</g>
+			<g id="shape59-149" transform="translate(240.945,-286.299)">
+				<title>工作表.59</title>
+				<desc>無際空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無際空</text>			</g>
+			<g id="shape61-152" transform="translate(240.945,-201.26)">
+				<title>工作表.61</title>
+				<desc>本性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">本性空</text>			</g>
+			<g id="shape63-155" transform="translate(240.945,-116.22)">
+				<title>工作表.63</title>
+				<desc>一切法空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">一切法空</text>			</g>
+			<g id="shape62-158" transform="translate(240.945,-158.74)">
+				<title>工作表.62</title>
+				<desc>自共相空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">自共相空</text>			</g>
+			<g id="shape23-161" transform="translate(240.945,-59.5276)">
+				<title>工作表.23</title>
+				<desc>無性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無性空</text>			</g>
+			<g id="shape64-164" transform="translate(240.945,-2.83465)">
+				<title>工作表.64</title>
+				<desc>無性自性空</desc>
+				<rect x="0" y="576.433" width="90.7087" height="22.6772" class="st1"/>
+				<text x="5.35" y="592.57" class="st2">無性自性空</text>			</g>
+			<g id="shape18-167" transform="translate(355.039,-229.606)">
+				<title>工作表.18</title>
+				<desc>無變異空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">無變異空</text>			</g>
+			<g id="shape65-170" transform="translate(353.622,-541.417)">
+				<title>工作表.65</title>
+				<desc>內空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">內空</text>			</g>
+			<g id="shape66-173" transform="translate(353.622,-513.071)">
+				<title>工作表.66</title>
+				<desc>外空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">外空</text>			</g>
+			<g id="shape67-176" transform="translate(355.039,-484.724)">
+				<title>工作表.67</title>
+				<desc>內外空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">內外空</text>			</g>
+			<g id="shape68-179" transform="translate(353.622,-456.378)">
+				<title>工作表.68</title>
+				<desc>空空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">空空</text>			</g>
+			<g id="shape69-182" transform="translate(353.622,-428.031)">
+				<title>工作表.69</title>
+				<desc>大空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">大空</text>			</g>
+			<g id="shape70-185" transform="translate(355.039,-399.685)">
+				<title>工作表.70</title>
+				<desc>勝義空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">勝義空</text>			</g>
+			<g id="shape71-188" transform="translate(355.039,-371.339)">
+				<title>工作表.71</title>
+				<desc>有為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">有為空</text>			</g>
+			<g id="shape72-191" transform="translate(355.039,-342.992)">
+				<title>工作表.72</title>
+				<desc>無為空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無為空</text>			</g>
+			<g id="shape73-194" transform="translate(355.039,-314.646)">
+				<title>工作表.73</title>
+				<desc>畢竟空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">畢竟空</text>			</g>
+			<g id="shape74-197" transform="translate(355.039,-286.299)">
+				<title>工作表.74</title>
+				<desc>無際空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無際空</text>			</g>
+			<g id="shape75-200" transform="translate(353.622,-257.953)">
+				<title>工作表.75</title>
+				<desc>散空</desc>
+				<rect x="0" y="576.433" width="42.5197" height="22.6772" class="st1"/>
+				<text x="5.26" y="592.57" class="st2">散空</text>			</g>
+			<g id="shape76-203" transform="translate(355.039,-201.26)">
+				<title>工作表.76</title>
+				<desc>本性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">本性空</text>			</g>
+			<g id="shape77-206" transform="translate(355.039,-172.913)">
+				<title>工作表.77</title>
+				<desc>自相空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">自相空</text>			</g>
+			<g id="shape78-209" transform="translate(355.039,-116.22)">
+				<title>工作表.78</title>
+				<desc>一切法空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">一切法空</text>			</g>
+			<g id="shape47-212" transform="translate(355.039,-144.567)">
+				<title>工作表.47</title>
+				<desc>共相空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">共相空</text>			</g>
+			<g id="shape20-215" transform="translate(355.039,-87.874)">
+				<title>工作表.20</title>
+				<desc>不可得空</desc>
+				<rect x="0" y="576.433" width="73.7008" height="22.6772" class="st1"/>
+				<text x="4.85" y="592.57" class="st2">不可得空</text>			</g>
+			<g id="shape49-218" transform="translate(355.039,-59.5276)">
+				<title>工作表.49</title>
+				<desc>無性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">無性空</text>			</g>
+			<g id="shape60-221" transform="translate(355.039,-31.1811)">
+				<title>工作表.60</title>
+				<desc>自性空</desc>
+				<rect x="0" y="576.433" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="592.57" class="st2">自性空</text>			</g>
+			<g id="shape79-224" transform="translate(354.331,-2.83465)">
+				<title>工作表.79</title>
+				<desc>無性自性空</desc>
+				<rect x="0" y="576.433" width="90.7087" height="22.6772" class="st1"/>
+				<text x="5.35" y="592.57" class="st2">無性自性空</text>			</g>
+			<g id="shape34-227" transform="translate(-6.39488E-14,-566.929)">
+				<title>工作表.34</title>
+				<path d="M0 599.11 L453.54 599.11" class="st3"/>
+			</g>
+		</g>
+	</g>
+</svg>
