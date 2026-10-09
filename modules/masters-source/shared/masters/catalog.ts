@@ -13,6 +13,7 @@ import xuyunNanhua from './xuyun-nanhua-20261009.json';
 import xuyunShanghaiThree from './xuyun-shanghai-three-20261009.json';
 import xuyunHangzhou from './xuyun-hangzhou-20261009.json';
 import hongyiSifenPreface from './hongyi-sifen-preface-20261009.json';
+import xuyunLettersNext from './xuyun-letters-next-20261009.json';
 import additionalArticles from './article-index.json';
 import additionalCollections from './collection-index.json';
 import readingContent from './reading-content.json';
@@ -63,7 +64,10 @@ export const collections = [
     ...collection,
     ...hongyiSifenPreface.collection_updates.find(update => update.id === collection.id),
   })),
-  ...historicalExpansion.collections,
+  ...historicalExpansion.collections.map(collection => ({
+    ...collection,
+    ...xuyunLettersNext.collection_updates.find(update => update.id === collection.id),
+  })),
   ...yinshunLibrary.collections,
   ...nextTextLibrary.collections,
   ...nextTextLibraryRound2.collections,

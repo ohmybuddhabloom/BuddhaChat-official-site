@@ -216321,5 +216321,93 @@
     "source_sha256": "62f95b1c10cb9b8fdf86cb6ee7a88b83aad2ae15addbe5c6d29fa0234a5379a2",
     "source_order": 9,
     "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-kuanjing",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復朱寬鏡居士書",
+    "author": "虛雲老和尚",
+    "text_version": "3c9b6c793ee46011aed79da25144bd1da852d172ca1a5f8b5ca9f60c890a026d",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 12,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-shanyi",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與善意和尚書",
+    "author": "虛雲老和尚",
+    "text_version": "c40cdff5901efe9cc3be03ee3892b2d7e66347aff548240acee13559c5c0adaa",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 13,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-kuanjian-notice",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與寬鑒等脫離師徒關係啓事",
+    "author": "虛雲老和尚",
+    "text_version": "f7cc0a070b976031dce50de09092304dca3c98d5e83d9be80abf7d5c5d07d802",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 14,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-lianggong",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "為六榕事示梁公居士函",
+    "author": "虛雲老和尚",
+    "text_version": "8bbdea1a76ab36d961a06c203cbe4c47b3b1f96951c7abffc1f3d7f1b33aafac",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 15,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-liurong-telegram",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "示六榕大眾代電",
+    "author": "虛雲老和尚",
+    "text_version": "dd4be20d95a45e1a161b70713e281bb14c5dc5f4b108b550fcab1785fb2d5326",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 16,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-tangying",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與湯瑛居士書",
+    "author": "虛雲老和尚",
+    "text_version": "6c6785e3fd66a79c9873f8904a7ade92b1f2af09b24230be0022a7f405a74827",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 17,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-jin-hongshu-1",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復金弘恕居士書（其一）",
+    "author": "虛雲老和尚",
+    "text_version": "4f1fce68f0a187deea6587b20919c4c38fa954f3b571614474335d6df1cfb3e9",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 18,
+    "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-jin-hongshu-2",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復金弘恕居士書（其二）",
+    "author": "虛雲老和尚",
+    "text_version": "e31fb84761369778cd3736da61d72381718880beef94ff62ada7ee2dfe634e9f",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 19,
+    "paragraph_count": 1
   }
 ]
