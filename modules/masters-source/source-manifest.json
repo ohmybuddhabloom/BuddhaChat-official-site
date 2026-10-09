@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -21,7 +21,7 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "0302d4c4e2f24bd905c2ddfe02f6ad4b9e625b033f3e96d58196b5b58eede5fc",
+    "prototypes/masters-h5/src/Prototype.tsx": "d32036fc1f5d9bdefdb56e4c5f5f1299e39c4be9b211b4b9fc5ade85524dabfe",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
     "prototypes/masters-h5/src/content.ts": "526c0a22e7a386d4a9303d5763e6da64fe317330f4c27d067df6b9d7ffac906b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
@@ -50,18 +50,18 @@
     "prototypes/masters-h5/src/public-entry.tsx": "87f0269d638896e9f7d2f1b7d5a9bbe7e4cdeac9f550ead77c66116af8f89fb8",
     "prototypes/masters-h5/src/public-runtime.tsx": "81375b2c5481e1dbe938d469347f1a7cc9967c024ce3d27d5d3e9c853f143700",
     "prototypes/masters-h5/src/public-web.css": "f60d4d0f5071563441f51ae508659af41ee83c8f1cdbff5b98e75830cb9f7dad",
-    "prototypes/masters-h5/src/share-link.d.mts": "504c53b91b9cb9597cb7665da2ae02a64ec204a4bfe39d57d4111027101a2ef3",
-    "prototypes/masters-h5/src/share-link.mjs": "f590f914a955bd50919b88a91600e427f6859632146f1536df5cecb4bfbfcdc1",
+    "prototypes/masters-h5/src/share-link.d.mts": "83d2fd4019fb74cd047398bfe7ef53b4fa2fca9cf5ec5d51c7cd4ec59eeb15dc",
+    "prototypes/masters-h5/src/share-link.mjs": "7d7b38dc4a02620735fa3d4ddbd5ead954633536a9996093ede683e9d2158377",
     "prototypes/masters-h5/src/styles.css": "844c67b27cf5e38ba395153145d058c929c6479199d245cd046f3646badd719d",
     "prototypes/masters-h5/src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
     "prototypes/masters-h5/tsconfig.json": "83efc1798334967d5a907f26b8cba31fa213f16b5ac0ed5c02fd38e7cf0ceb66",
     "prototypes/masters-h5/vite.config.ts": "da36eba05b845c3b0d69d823a515f6f7d9612992126ed2fe32c2809815ec73ba",
     "prototypes/masters-h5/vite.public.config.ts": "9aa202500fea71d01c3efc6e3ae96eb040d5fa4c5e4c2f85dd68dfde88d888da",
     "prototypes/masters-h5/worker/index.js": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389",
-    "shared/masters/article-index.json": "068d40ff7c4849035146fd9e2ce1e328a664305839c28842fef9347aa5d88ffc",
+    "shared/masters/article-index.json": "e7f76acec0b610b2f77a0ba1772aa33b3a96ea54c48d448d16956195e2dbe57e",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "ac76f36e26ccbfb110fd1c73a58a5a6e6177eaa7fef025f77ea12a0bfb9980e2",
+    "shared/masters/catalog.ts": "a6b9e0a7ec0d89daacf625a473a6052f87fb89b24c145254fa9f3349c7e36600",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
@@ -817,7 +817,8 @@
     "shared/masters/shengyen-videos.json": "a0447468aa53f5b3c7d67f2e4c740b0b0e8964292304fb96a86af7b93d9377a4",
     "shared/masters/hsingyun-jingang-videos.json": "ec5f530dd3dac78089cfc6dd49793cf2a02468575bec169d616c767a4454b28c",
     "shared/masters/hongyi-sifen-preface-20261009.json": "a208a5c38d26fb355c8a04baba4980ac3e25a82d57bcaa7761947a7ee679e569",
-    "shared/masters/xuyun-letters-next-20261009.json": "1a26c165acf39d6fb620151eaff53e5efa0f80d0303b55fe3c40cb2bd98cb3c1"
+    "shared/masters/xuyun-letters-next-20261009.json": "1a26c165acf39d6fb620151eaff53e5efa0f80d0303b55fe3c40cb2bd98cb3c1",
+    "shared/masters/xuyun-letters-final-20261010.json": "48ab0512d639ecd729733583177f1c09810d8543a570857cdf52fa634359d05a"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1812,6 +1813,18 @@
         "shared/masters/xuyun-letters-next-20261009.json"
       ],
       "purpose": "Append eight complete scanned correspondence entries as existing-book orders12–19; preserve previous eleven letters, Hongyi law collection, other authors and Staging discovery overlay. Exact native Release acceptance remains pending."
+    },
+    {
+      "sourceCommit": "65a10dd64c53a2817571cb3304c2bdc7d7427350",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/article-index.json",
+        "shared/masters/xuyun-letters-final-20261010.json",
+        "prototypes/masters-h5/src/Prototype.tsx",
+        "prototypes/masters-h5/src/share-link.mjs",
+        "prototypes/masters-h5/src/share-link.d.mts"
+      ],
+      "purpose": "Append16 complete letters as existing-book orders20–35, preserve19oldbodies and Staging Yinshun discovery/portrait credit overlay. Patch only Header import/effect in Prototype, preserve all other overlay lines; avoid redundant history replacement. Exact native Release acceptance remains pending."
     }
   ]
 }

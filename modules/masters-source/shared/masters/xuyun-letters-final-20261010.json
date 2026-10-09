@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-10",
+  "scope": "《虛雲和尚法匯續編》上卷書問十六篇已核排印書信；追加既有書問合集第20至35篇。",
+  "catalog_pages": 16,
+  "added_article_count": 16,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "xuyun-xubian-shuwen-20261008",
+      "readable_count": 35,
+      "catalog_count": 35,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-letters-final",
+      "path": "content/masters/imports/xuyun-letters-final.json",
+      "review": "scripts/collect-masters-xuyun-letters-final.py",
+      "sha256": "9b6087a8251bc47cbd38df20d27bc148aefb96702b1917a9ba77acca0c80073e",
+      "chapters": 16,
+      "catalog_pages": 16,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}

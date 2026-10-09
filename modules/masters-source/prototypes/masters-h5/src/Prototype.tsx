@@ -9,7 +9,7 @@ import { ArrowLeftIcon, ArrowRightIcon, BookmarkIcon, ClockIcon, HeartIcon, Magn
 import { FlowStack, useFlow, MobileScroll, KeyboardInput, BottomSheet, type FlowScreen } from './mobile';
 import { books, chapters, videos, sources, nanItems, itemTitle, itemOwner, clock, readableArticles, legacyArticles, articleSummary, collectionArticles, historical, libraryCollections, genericCollection, genericCollectionsForPerson, collectionReadabilityLabel, collectionRoute, getBibliographicGuide, getMastersVideoMetadata, getMastersVideoGroups, getMastersVideoSeries, type MastersVideo, type LibraryCollection } from './content';
 import { uiColors, uiRadius } from '../../../src/ui/tokens';
-import { contentUrl, routeFromUrl, downloadUrl, appHomeUrl, appUrlForPage } from './share-link.mjs';
+import { contentUrl, syncContentUrl, routeFromUrl, downloadUrl, appHomeUrl, appUrlForPage } from './share-link.mjs';
 import { people, visiblePeople } from './people';
 import { catalogLabel } from './display-text.mjs';
 import shengyenCatalog from '../../../docs/shengyen-chinese-catalog.json';
@@ -68,7 +68,7 @@ const readArticle = createArticleReader(fetchArticleBody);
 function Header({id}:{id:string}) {
  const flow=useFlow();const requestApp=useContext(AppAccess);const[shared,setShared]=useState('');
  const title=people.find(p=>p.route===id)?.name || (id==='directory'?'全部人物':id==='yuanhui'?'源慧师父':id==='shengyen'?'圣严法师':id==='home'?'法师与名家':id==='nan'?'南怀瑾':id==='person'?'星云大师':id==='history'?'浏览记录':id==='following'?'我的关注':id==='favorites'?'我的收藏':id==='sources'?'内容来源':id.startsWith('book:')||id==='yuanhui-book'?'著作':id.startsWith('chapter:')||id.startsWith('reader:')?'阅读':id.startsWith('external:')||id.startsWith('shengyen-book:')?'著作':'影音');
- useEffect(()=>{history.replaceState(history.state,'',contentUrl(location.href,id));setShared('');},[id]);
+ useEffect(()=>{syncContentUrl(history,location,id);setShared('');},[id]);
  async function share(){try{await navigator.clipboard.writeText(contentUrl(location.href,id));setShared('链接已复制');}catch{setShared('可复制浏览器地址分享');}}
  return <div className="header-shell"><header className="toolbar">{flow.canGoBack?<button aria-label="返回" onClick={flow.pop}><ArrowLeftIcon/></button>:id!=='home'?<button aria-label="返回栏目首页" onClick={()=>flow.replace(routes('home'))}><ArrowLeftIcon/></button>:<span className="brand">B</span>}<strong>{title}</strong><button aria-label="分享当前页面" onClick={share}><Share1Icon/></button></header><div className="web-app-bar"><span>{shared||'BuddhaChat · 法师与名家'}</span><button onClick={()=>requestApp(id,'继续浏览')}>打开 App</button></div></div>;
 }

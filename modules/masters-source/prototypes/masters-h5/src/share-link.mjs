@@ -11,6 +11,10 @@ export function contentUrl(base, route) {
   url.searchParams.set('content', publicRoute(route) ? route : 'home');
   return url.toString();
 }
+export function syncContentUrl(history, location, route) {
+  const next = contentUrl(location.href, route);
+  if (next !== location.href) history.replaceState(history.state, '', next);
+}
 export function routeFromUrl(raw, allowedRoutes, canonicalRoutes = {}) {
   try {
     const route = new URL(raw).searchParams.get('content');

@@ -216409,5 +216409,181 @@
     "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
     "source_order": 19,
     "paragraph_count": 1
+  },
+  {
+    "id": "xuyun-xubian-letter-rongxi",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "復融熙法師書",
+    "author": "虛雲老和尚",
+    "text_version": "c1702136812cd582011b84b7b48187a77c19da555cc7a5bfa487f9e67c424dae",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 20,
+    "paragraph_count": 3
+  },
+  {
+    "id": "xuyun-xubian-letter-haihan",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與印度尼西亞釋海涵書",
+    "author": "虛雲老和尚",
+    "text_version": "3d888087302d56cb48ee3ce9bf041277cfe803e64c52fe3a0c470fadfa798edd",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 21,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-1",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其一）",
+    "author": "虛雲老和尚",
+    "text_version": "c71863e7267029b900a633a0f80d71fe385665e21f23004af2d71c4cbaf0b556",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 22,
+    "paragraph_count": 5
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-2",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其二）",
+    "author": "虛雲老和尚",
+    "text_version": "69ecf0416a434f98c16b1b2397ca618c56db4c2c9058bd7b3b38767de4fee30b",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 23,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-3",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其三）",
+    "author": "虛雲老和尚",
+    "text_version": "ea3f7240ac87a138739fcf333f6c003590dce3c0a756724bf03335cd3505ad41",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 24,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-4",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其四）",
+    "author": "虛雲老和尚",
+    "text_version": "799907e3f08155b7bb7d1c68135b6adc66e329d40ccbd70ad1be79111197eb94",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 25,
+    "paragraph_count": 5
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-5",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其五）",
+    "author": "虛雲老和尚",
+    "text_version": "3d117da42bee634372de02fb1bc10ccb2b525c44a15b94d6db3e329933c21372",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 26,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-6",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其六）",
+    "author": "虛雲老和尚",
+    "text_version": "b93ad36699fc5ae6b40ff35609e9cd912199648998972e24aa06777d1a233bd4",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 27,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-foyun-7",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與佛雲書（其七）",
+    "author": "虛雲老和尚",
+    "text_version": "973d45f5ffcff8d77e4a7ddc07b3041d05561bcaae4016253d325fe50f5b7dbe",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 28,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-1",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其一）",
+    "author": "虛雲老和尚",
+    "text_version": "850d814a37ba78c323247665a213f0123eb8e26205ba366ca9c2245c8b20d659",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 29,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-2",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其二）",
+    "author": "虛雲老和尚",
+    "text_version": "b235a97c891943f7d50ff0c2248bca77590dc65a0b66acc14e41c042c1c211d8",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 30,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-3",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其三）",
+    "author": "虛雲老和尚",
+    "text_version": "e9a8347325eb4d08ba31347be0b3b2c6449756f77c9bfc527c00a16f2463758f",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 31,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-4",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其四）",
+    "author": "虛雲老和尚",
+    "text_version": "32d8e363ae4793e0f4b1350c728fec036e76a6086c10112c12d219b62e096bcf",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 32,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-5",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其五）",
+    "author": "虛雲老和尚",
+    "text_version": "f66cf4634dab57e461c35d7e4b19110a064211dcb51bf509399157e6e6f4aed0",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 33,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-6",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其六）",
+    "author": "虛雲老和尚",
+    "text_version": "f055f43e62a170b239e7caead7d8716ffd5190c35a20d99ff3aa2d7ee8414568",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 34,
+    "paragraph_count": 4
+  },
+  {
+    "id": "xuyun-xubian-letter-zhu-changsong-7",
+    "book_id": "xuyun-xubian-shuwen-20261008",
+    "person_id": "xu-yun",
+    "title": "與朱長松居士書（其七）",
+    "author": "虛雲老和尚",
+    "text_version": "161e5f5c7ea87555e445d831820c8f794888b1c1600e534164a43836ac4ce253",
+    "source_sha256": "7536c6f1bddb358f05fdda0daa0969f19c6173dcd4190e0e02d80092ff1bbe99",
+    "source_order": 35,
+    "paragraph_count": 4
   }
 ]
