@@ -79,7 +79,7 @@
     "shared/masters/historical-expansion-20261008.json": "384230ecaf64e529ec4f4a0784cc443e0ea616122fe553464d8d58a43fb50b77",
     "shared/masters/next-text-library-20261008.json": "eb2a097154e2c58166c0b46a881a9b6f4db124905fdf29c64725ea7350fb9bf3",
     "shared/masters/next-text-library-20261009.json": "f9bb62c3e89434115e885c81ffd08d404b0c87b447643ddf6f9f5c35462a6ca4",
-    "shared/masters/yinshun-library.json": "a447d1d698a7f138bc60d14d318d3ad013d4d3a0318d89ff14258532bbf70290",
+    "shared/masters/yinshun-library.json": "0aac89c95c59fa5d5117f019215526d162897eaef84fe68673bc8b43e14256d3",
     "shared/masters/continuous-library-20261009.json": "e668f1a58f0e91cf8725cc38143e96fc02d02de7212f4d7db512d88f51b95bb8",
     "shared/masters/zen-originals-library-20261009.json": "763875a73a2278c4ce382f454fcbb44b2fd070224e793054bd6e515cc0908cd4",
     "shared/masters/hongyi-huayan-preface-1945.json": "5a89abf16efaa27136ec4f8a7b4fdac1cd69d57bbd876359f2a7c0cd573258d7",
@@ -1697,6 +1697,13 @@
         "prototypes/masters-h5/public/figures/yinshun/3a239ce6791a077e5d0f9668f6e977b95a4814ab50082da10cd79302de4d3696.svg"
       ],
       "note": "Asset-first79 source-reviewed Yin Shun diagrams; retain410 published Yin Shun article objects until79-body staging import. Preserve concurrent Huqiu, bibliographic guides and every previous figure."
+    },
+    {
+      "sourceCommit": "6ec3d40985555232aae214d138a7f1f736a06577",
+      "files": [
+        "shared/masters/yinshun-library.json"
+      ],
+      "note": "Final489 reviewed chapters: resolves assets-first410 index exception after79-body import. Every previous410 article object retained; discovery remains hidden."
     }
   ],
   "nextTextLibrarySourceCommit": "cf95f37724a141bc53618d091e34842226850014",
