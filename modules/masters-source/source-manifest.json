@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -72,7 +72,7 @@
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
     "shared/masters/historicalResources.ts": "3586723f83905a4a4b7b1059828f0732f9dcb57d5fdc225fc155e9196f0428b0",
-    "shared/masters/videoCatalog.ts": "3c642149a0a8fddddbd26ca5904c92e06f0d937e06ce71a623e13ee879ec150e",
+    "shared/masters/videoCatalog.ts": "695ad8859741d43cc820fd64a452e86c1a3579bf628c50b827d3cfb997cf5959",
     "shared/masters/nan-videos.json": "10b8a34950e9360d6bbb03571e0e0d3cca83b5d4d4db06857debd53fe8bd3f49",
     "shared/masters/expanded-library.json": "6742bd61eecdd71e94187113f209a0bbec7bcc117d735db4c3a959a97a375325",
     "shared/masters/readingFeed.ts": "c27a3859364b8259a92c00f2f9f11105ec1992967f4afbc23bd0fb5908482fec",
@@ -814,7 +814,8 @@
     "shared/masters/xuyun-nanhua-20261009.json": "df8557e5618ec8be49be06e8d038a2085905a1515929f57688e1d76e2dc77e54",
     "shared/masters/xuyun-shanghai-three-20261009.json": "1a970ca526193082a1c7f5269fa30dda9572caa7f3c4a33ab2998b0d0d20204f",
     "shared/masters/xuyun-hangzhou-20261009.json": "21ffca640e42007bfd5f12af2eb3f7c2626899e3ba228ad33af994ce7033189b",
-    "shared/masters/shengyen-videos.json": "6a8d763672bfd749b523f1ff80e1e7b8c77fae4da9c298392dd93deecd0bce67"
+    "shared/masters/shengyen-videos.json": "6a8d763672bfd749b523f1ff80e1e7b8c77fae4da9c298392dd93deecd0bce67",
+    "shared/masters/hsingyun-jingang-videos.json": "ec5f530dd3dac78089cfc6dd49793cf2a02468575bec169d616c767a4454b28c"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1776,6 +1777,14 @@
         "shared/masters/shengyen-videos.json"
       ],
       "purpose": "Add1101 unique verified official Shengyen programme videos in29 source categories; preserve other authors and Staging overlay. Actual native release acceptance remains pending."
+    },
+    {
+      "sourceCommit": "1059b1001dee93f67734961329dcdf5b2a1b3305",
+      "files": [
+        "shared/masters/videoCatalog.ts",
+        "shared/masters/hsingyun-jingang-videos.json"
+      ],
+      "purpose": "Append32 verified Jingang lecture segments to exact original2, preserve three day ranges/gap and selected alternate edition, other authors and Staging overlay."
     }
   ]
 }
