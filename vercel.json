@@ -449,6 +449,10 @@
       "destination": "/_masters/assets/:path*"
     },
     {
+      "source": "/masters/figures/:path*",
+      "destination": "/_masters/figures/:path*"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y07.0134.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.23047in" height="0.624173in"
+		viewBox="0 0 376.594 44.9405" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	
+	<v:documentProperties v:langID="1028" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>頁-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group8-1" transform="translate(0.36,-0.36)" v:mID="8" v:groupContext="group">
+			<title>工作表.8</title>
+			<g id="shape1-2" v:mID="1" v:groupContext="shape" transform="translate(-3.59712E-14,-12.189)">
+				<title>工作表.1</title>
+				<desc>藏識</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="20.126" cy="35.0192" width="40.26" height="19.8425"/>
+				<rect x="0" y="25.098" width="40.252" height="19.8425" class="st1"/>
+				<text x="4.13" y="40" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>藏識</text>			</g>
+			<g id="shape4-5" v:mID="4" v:groupContext="shape" transform="translate(111.685,-24.378)">
+				<title>工作表.4</title>
+				<desc>業相――――――生故與七識不異</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="124.016" cy="35.0192" width="248.04" height="19.8425"/>
+				<rect x="0" y="25.098" width="248.031" height="19.8425" class="st1"/>
+				<text x="4.02" y="40" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>業相――――――生故與七識不異</text>			</g>
+			<g id="shape6-8" v:mID="6" v:groupContext="shape" transform="translate(119.244,54.9414) rotate(170.317)">
+				<title>工作表.6</title>
+				<path d="M0 44.94 L72.47 44.94" class="st3"/>
+			</g>
+			<g id="shape7-11" v:mID="7" v:groupContext="shape" transform="translate(104.126,79.3194) rotate(-170.317)">
+				<title>工作表.7</title>
+				<path d="M0 44.94 L72.47 44.94" class="st3"/>
+			</g>
+			<g id="shape2-14" v:mID="2" v:groupContext="shape" transform="translate(111.685,1.42109E-14)">
+				<title>工作表.2</title>
+				<desc>真相………………不滅故與七識不一</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="132.094" cy="35.0192" width="264.19" height="19.8425"/>
+				<rect x="0" y="25.098" width="264.189" height="19.8425" class="st1"/>
+				<text x="4.1" y="40" class="st2" v:langID="1028"><v:paragraph v:horizAlign="1"/><v:tabList/>真相………………不滅故與七識不一</text>			</g>
+		</g>
+	</g>
+</svg>

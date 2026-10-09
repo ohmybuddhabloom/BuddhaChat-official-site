@@ -22,6 +22,8 @@ export type MastersImageFigure =
     caption: string;
     bytes: number;
     sha256: string;
+    width?: number;
+    height?: number;
   }
   | {
     after_paragraph: number;
@@ -91,7 +93,11 @@ export function parseArticleFigures(value: unknown, paragraphCount: number): Mas
     if (typeof entry.src !== 'string' || !entry.src.startsWith('https://')) throw new Error('Invalid figure source');
     if (!Number.isInteger(entry.bytes) || (entry.bytes as number) <= 0) throw new Error('Invalid figure size');
     if (typeof entry.sha256 !== 'string' || !/^[0-9a-f]{64}$/.test(entry.sha256)) throw new Error('Invalid figure digest');
+    const hasDimensions = entry.width !== undefined || entry.height !== undefined;
+    if (hasDimensions && (!Number.isInteger(entry.width) || (entry.width as number) <= 0 ||
+        !Number.isInteger(entry.height) || (entry.height as number) <= 0)) throw new Error('Invalid figure dimensions');
     return {
+      ...(hasDimensions ? { width: entry.width as number, height: entry.height as number } : {}),
       after_paragraph: after as number, kind: 'image' as const, available: true as const, src: entry.src,
       caption: entry.caption, bytes: entry.bytes as number, sha256: entry.sha256,
     };
@@ -126,4 +132,11 @@ export function buildReadingBlocks(
 /** True when the article needs the reader's figure rendering to be complete. */
 export function hasFigures(value: unknown) {
   return Array.isArray(value) && value.length > 0;
+}
+
+/** Reviewed pixel dimensions preserve tall plates at their natural aspect ratio. */
+export function figureImageAspectStyle(figure: MastersImageFigure) {
+  return figure.available && figure.width && figure.height
+    ? { height: undefined, aspectRatio: figure.width / figure.height }
+    : undefined;
 }

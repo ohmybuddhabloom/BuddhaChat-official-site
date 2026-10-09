@@ -1,3 +1,4 @@
+import { bibliographicCollections } from './bibliographicGuides';
 import historical from './historical-masters.json';
 import historicalExpansion from './historical-expansion-20261008.json';
 import yinshunLibrary from './yinshun-library.json';
@@ -60,6 +61,7 @@ export const collections = [
   ...continuousLibrary.collections,
   ...publishableZenOriginalsCollections,
   ...hongyiHuayanPreface.collections,
+  ...bibliographicCollections,
 ];
 
 export type MastersArticle = typeof articles[number];

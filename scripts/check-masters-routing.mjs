@@ -5,6 +5,7 @@ for (const [source, destination] of [
   ['/masters', '/_masters/index.html'],
   ['/masters/', '/_masters/index.html'],
   ['/masters/assets/:path*', '/_masters/assets/:path*'],
+  ['/masters/figures/:path*', '/_masters/figures/:path*'],
 ]) {
   const matches = config.rewrites.filter(route => route.source === source);
   assert.equal(matches.length, 1, source);

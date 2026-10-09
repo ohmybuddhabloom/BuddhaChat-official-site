@@ -10,6 +10,28 @@ const {
 } = routing
 
 describe('website product routing', () => {
+  test('serves Masters PNG figures before the HTML catch-all while preserving reader routes', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const rewrites = config.rewrites
+    const figureRoute = rewrites.findIndex(route => route.source === '/masters/figures/:path*')
+    expect(figureRoute).toBeGreaterThan(-1)
+    expect(rewrites[figureRoute]).toEqual({
+      source: '/masters/figures/:path*',
+      destination: '/_masters/figures/:path*',
+    })
+    // Both HTML fallbacks must come later, or a valid PNG URL would return a page.
+    for (const source of ['/:path*/', '/:path*']) {
+      expect(figureRoute).toBeLessThan(rewrites.findIndex(route => route.source === source))
+    }
+    expect(rewrites).toEqual(expect.arrayContaining([
+      { source: '/masters', destination: '/_masters/index.html' },
+      { source: '/masters/', destination: '/_masters/index.html' },
+      { source: '/masters/assets/:path*', destination: '/_masters/assets/:path*' },
+      { source: '/', destination: '/api/page-entry?page=home' },
+      { source: '/:path*', destination: '/api/page-entry?path=:path*' },
+    ]))
+  })
+
   test('redirects master entry points to their public subdomain', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 

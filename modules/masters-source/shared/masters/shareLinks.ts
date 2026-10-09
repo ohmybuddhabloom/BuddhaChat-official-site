@@ -1,3 +1,4 @@
+import { bibliographicCollections } from './bibliographicGuides';
 import historical from './historical-masters.json';
 import expandedLibrary from './expanded-library.json';
 import nextTextLibrary from './next-text-library-20261008.json';
@@ -198,6 +199,7 @@ export function buildAvailableMastersAppLink(
     || continuousLibrary.collections.some(book => book.id === bookId)
     || zenOriginalsLibrary.collections.some(book => book.id === bookId)
     || hongyiHuayanPreface.collections.some(book => book.id === bookId)
+    || bibliographicCollections.some(book => book.id === bookId)
     || (route.kind === 'article' && expandedLibrary.pending_old_collection_article_ids.includes(route.id)))) return null;
   return buildMastersAppLink(route);
 }
