@@ -1,3 +1,4 @@
+import louYulieReading from './lou-yulie-reading.json';
 import { bibliographicCollections } from './bibliographicGuides';
 import historical from './historical-masters.json';
 import expandedLibrary from './expanded-library.json';
@@ -193,7 +194,8 @@ export function buildAvailableMastersAppLink(
   if (historical.profiles.some(profile => profile.id === owner) && !options.historicalContentEnabled) return null;
   if (route.kind === 'video' && videos.find(video => video.id === route.id)?.requires_native_acceptance && !options.nanMediaContentEnabled) return null;
   const bookId = route.kind === 'collection' ? route.id : route.kind === 'article' ? getArticleSummary(route.id)?.book_id : undefined;
-  if (!options.expandedLibraryContentEnabled && (expandedLibrary.collections.some(book => book.id === bookId)
+  if (!options.expandedLibraryContentEnabled && (louYulieReading.collections.some(book => book.id === bookId)
+    || expandedLibrary.collections.some(book => book.id === bookId)
     || nextTextLibrary.collections.some(book => book.id === bookId)
     || nextTextLibraryRound2.collections.some(book => book.id === bookId)
     || continuousLibrary.collections.some(book => book.id === bookId)

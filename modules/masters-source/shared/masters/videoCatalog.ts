@@ -1,3 +1,4 @@
+import louYulieVideos from './lou-yulie-videos.json';
 import nanVideos from './nan-videos.json';
 import shengyenVideos from './shengyen-videos.json';
 import hsingyunJingangVideos from './hsingyun-jingang-videos.json';
@@ -16,6 +17,7 @@ export const videos: MastersVideo[] = [
   ...hsingyunJingangVideos as MastersVideo[],
   ...nanVideos as MastersVideo[],
   ...shengyenVideos as MastersVideo[],
+  ...louYulieVideos as MastersVideo[],
 ];
 
 export const mediaKindLabels: Record<MastersMediaKind, string> = {

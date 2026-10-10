@@ -1,3 +1,4 @@
+import louYulieReading from './lou-yulie-reading.json';
 import { bibliographicCollections } from './bibliographicGuides';
 import historical from './historical-masters.json';
 import historicalExpansion from './historical-expansion-20261008.json';
@@ -36,6 +37,8 @@ export const articleSummaries: MastersArticleSummary[] = [
     ({ id, book_id, person_id, title, author, source_sha256, source_order, paragraph_count: paragraphs.length })),
   ...additionalArticles,
   ...yinshunLibrary.articles,
+  ...louYulieReading.chapters.map(({ id, book_id, person_id, title, author, source_sha256, text_version, source_order, paragraphs }) =>
+    ({ id, book_id, person_id, title, author, source_sha256, text_version, source_order, paragraph_count: paragraphs.length })),
 ];
 export function mastersTextVersion(article: { source_sha256: string; text_version?: string }) { return article.text_version ?? article.source_sha256; }
 const summariesById = new Map<string, MastersArticleSummary>();
@@ -90,6 +93,7 @@ export const collections = [
     ...xuyunEssaysNext.collection_updates.find(update => update.id === collection.id),
   })),
   ...bibliographicCollections,
+  ...louYulieReading.collections,
 ];
 
 export type MastersArticle = typeof articles[number];
@@ -102,11 +106,13 @@ export type MastersRoute =
   | { kind: 'article'; id: string }
   | { kind: 'video'; id: string };
 
-export function getArticle(id: string) { return articles.find(article => article.id === id); }
+export function getArticle(id: string): MastersArticle | undefined {
+  return articles.find(article => article.id === id) ?? louYulieReading.chapters.find(article => article.id === id);
+}
 export function getCollection(id: string) { return collections.find(collection => collection.id === id); }
 export function getAuthor(id: string) { return authors.find(author => author.id === id); }
 export function getCollectionArticles(id: string) {
-  return articles.filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
+  return [...articles, ...louYulieReading.chapters].filter(article => article.book_id === id).sort((a, b) => a.source_order - b.source_order);
 }
 export function itemOwner(id: string): string | undefined {
   return getAuthor(id)?.id ?? getArticleSummary(id)?.person_id ?? getCollection(id)?.person_id ?? videos.find(video => video.id === id)?.person_id;

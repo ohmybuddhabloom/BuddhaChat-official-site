@@ -1,0 +1,80 @@
+{
+  "collections": [
+    {
+      "id": "lyl-editorial-guide",
+      "title": "楼宇烈专题 · 编辑导读",
+      "person_id": "lou-yulie",
+      "category": "编辑导读",
+      "attribution": "BuddhaChat编辑原创导读，非楼宇烈著作原文",
+      "readable_count": 3
+    }
+  ],
+  "chapters": [
+    {
+      "id": "lyl-editorial-zen",
+      "book_id": "lyl-editorial-guide",
+      "person_id": "lou-yulie",
+      "title": "编辑导读 · 从禅宗课程走近佛教",
+      "author": "BuddhaChat编辑",
+      "attribution": "BuddhaChat编辑原创导读，非楼宇烈著作原文",
+      "source_url": "https://sce.pku.edu.cn/bflm/msmk/lyl/index.html",
+      "source_institution": "北京大学继续教育学院",
+      "source_kind": "editorial_guide",
+      "checked_at": "2026-10-10",
+      "coverage": "original_editorial",
+      "coverage_note": "本篇为编辑原创导读，仅附核实过的参考出处，不转载来源正文。source_sha256 与 text_version 固定编辑导读的规范 JSON（id、title、author、attribution、paragraphs；UTF-8、无空格），并非远程网页哈希。",
+      "source_sha256": "3cb1adfc9e148c091ff065f4d094324feb503089f2e1824d613286a919f28596",
+      "text_version": "3cb1adfc9e148c091ff065f4d094324feb503089f2e1824d613286a919f28596",
+      "paragraphs": [
+        "北京大学继续教育学院的楼宇烈课程，以禅宗在中国的发展影响为题，介绍人的主动性与佛教人文精神。本篇由BuddhaChat编辑撰写，供初读者寻找学习入口。",
+        "编辑建议先带着一个问题阅读：学习佛教，怎样从了解名词走向观察自己的生活？遇到陌生概念，先记录疑问，再回到课程出处查证，避免只凭一句话下结论。",
+        "接着可浏览《中国佛教与人文精神》的书目介绍，再看相关讲座。读后不妨想一想：对人的主动性的关注，怎样帮助你理解佛教与日常生活的关系？"
+      ],
+      "source_order": 1
+    },
+    {
+      "id": "lyl-editorial-daily",
+      "book_id": "lyl-editorial-guide",
+      "person_id": "lou-yulie",
+      "title": "编辑导读 · 把传统文化放回日常",
+      "author": "BuddhaChat编辑",
+      "attribution": "BuddhaChat编辑原创导读，非楼宇烈著作原文",
+      "source_url": "https://news.pku.edu.cn/xwzh/d3a30116023e459687a6ecf75fad39f4.htm",
+      "source_institution": "北京大学新闻网／《人民日报》",
+      "source_kind": "editorial_guide",
+      "checked_at": "2026-10-10",
+      "coverage": "original_editorial",
+      "coverage_note": "本篇为编辑原创导读，仅附核实过的参考出处，不转载来源正文。source_sha256 与 text_version 固定编辑导读的规范 JSON（id、title、author、attribution、paragraphs；UTF-8、无空格），并非远程网页哈希。",
+      "source_sha256": "fcf12524f1e1f74b9034d4ae7007b4f12d71ff759d5ca6ceb0ae17c205e0a233",
+      "text_version": "fcf12524f1e1f74b9034d4ae7007b4f12d71ff759d5ca6ceb0ae17c205e0a233",
+      "paragraphs": [
+        "楼宇烈在《让传统回到日常》中谈到传统与现代生活的联系，并以诚信、茶礼等展开说明。本篇是BuddhaChat编辑的阅读提示，帮助读者把问题放回生活情境。",
+        "编辑建议从一件小事开始：答应别人的事情，能否按时做到？一次待客或交谈，能否照顾对方的感受？把问题放在具体情境里，比记住抽象口号更容易反思。",
+        "阅读《中国的品格》或《中国文化的根本精神》的书目介绍时，可以保留这些问题。导读中的练习由编辑提出，不是楼宇烈的原话或对其著作的完整概括。"
+      ],
+      "source_order": 2
+    },
+    {
+      "id": "lyl-editorial-classics",
+      "book_id": "lyl-editorial-guide",
+      "person_id": "lou-yulie",
+      "title": "编辑导读 · 分清经典、注文与校释",
+      "author": "BuddhaChat编辑",
+      "attribution": "BuddhaChat编辑原创导读，非楼宇烈著作原文",
+      "source_url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+      "source_institution": "北京大学图书馆",
+      "source_kind": "editorial_guide",
+      "checked_at": "2026-10-10",
+      "coverage": "original_editorial",
+      "coverage_note": "本篇为编辑原创导读，仅附核实过的参考出处，不转载来源正文。source_sha256 与 text_version 固定编辑导读的规范 JSON（id、title、author、attribution、paragraphs；UTF-8、无空格），并非远程网页哈希。",
+      "source_sha256": "19c6b929247e546dd7774012b578d24a76feccf64aee38161ff062caa34cc15a",
+      "text_version": "19c6b929247e546dd7774012b578d24a76feccf64aee38161ff062caa34cc15a",
+      "paragraphs": [
+        "北京大学图书馆的《楼宇烈文集》介绍列出《王弼集校释》《荀子新注》等卷。本篇由BuddhaChat编辑撰写，帮助初读者区分不同层次的文本。",
+        "读古籍时，可以分别记录：古代原文说了什么，注者怎样解释，现代整理者补充了哪些说明。王弼的注文与楼宇烈的校释不能视为同一作者的文字。",
+        "编辑建议先选一个短段，记下版本、页码与疑问，再对照上下文。此处提供阅读方法与书目入口，不含上述现代著作正文；遇到分歧应回到原书核对。"
+      ],
+      "source_order": 3
+    }
+  ]
+}

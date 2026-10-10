@@ -1,0 +1,47 @@
+{
+  "topics": [
+    {
+      "id": "buddhism",
+      "title": "佛教入门",
+      "description": "先读编辑导读，再了解佛教研究书目与相关讲座。",
+      "reading_id": "lyl-editorial-zen",
+      "book_ids": [
+        "lyl-zhongguo-fojiao-renwen",
+        "lyl-huakai-lianxian",
+        "lyl-zongjiao-yanjiu-fangfa"
+      ],
+      "video_ids": [
+        "lyl-video-OOGDOjR9gDg"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": "传统文化",
+      "description": "从日常生活的问题出发，认识传统文化与人文关怀。",
+      "reading_id": "lyl-editorial-daily",
+      "book_ids": [
+        "lyl-zhongguo-pinge",
+        "lyl-wenhua-genben-jingshen",
+        "lyl-rujia-chuantong-wenhua",
+        "lyl-zhongguo-dongfang-zhexue",
+        "lyl-yishu-chuantong-yixue"
+      ],
+      "video_ids": [
+        "lyl-video-GMi6zTERQPs"
+      ]
+    },
+    {
+      "id": "classics",
+      "title": "经典研究",
+      "description": "分清古代原文、注文与现代校释，按兴趣选择书目。",
+      "reading_id": "lyl-editorial-classics",
+      "book_ids": [
+        "lyl-wangbi-jijiaoshi",
+        "lyl-xunzi-xinzhu",
+        "lyl-xuanxue-daojia",
+        "lyl-wenji"
+      ],
+      "video_ids": []
+    }
+  ]
+}

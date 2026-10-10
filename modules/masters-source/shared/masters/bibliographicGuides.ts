@@ -1,6 +1,7 @@
 import data from './bibliographic-guides-20261009.json';
+import louYulie from './lou-yulie-guides.json';
 
-export const bibliographicGuides = data.entries;
+export const bibliographicGuides = [...data.entries, ...louYulie.entries];
 const guidesById = new Map(bibliographicGuides.map(guide => [guide.id, guide]));
 export function getBibliographicGuide(id: string) { return guidesById.get(id); }
 export const bibliographicCollections = bibliographicGuides.map(guide => ({

@@ -5,6 +5,7 @@ export const people = [
   { id: 'nan-huaijin', name: '南怀瑾', portrait: 'https://www.chinanews.com.cn/cul/2012/10-23/U397P4T8D4269724F107DT20121023144005.jpg', aliases: '南懷瑾', type: '名家', label: '名家典藏', route: 'nan', url: '' },
   {"id": "xu-yun", "name": "虚云老和尚", "portrait": "https://www.bfnn.org/hsuyun/images/photo01.jpg", "aliases": "虚云和尚虛雲老和尚德清", "type": "法师", "label": "禅修与法汇", "route": "xuyun", "url": "https://yjsfj.pusa123.com/pusa/ldzs/6249.shtml"},
   {"id": "hong-yi", "name": "弘一法师", "portrait": "https://www.bfnn.org/hungyi/images/photo01.jpg", "aliases": "弘一大师弘一大師李叔同李息霜演音", "type": "法师", "label": "律学与著述", "route": "hongyi", "url": "https://www.bfnn.org/hungyi/article.htm"},
+  { id: 'lou-yulie', name: '楼宇烈', portrait: "https://news.pku.edu.cn/virtual_attach_file.vsb?afc=_MzMF2UlCbU4VfU9z74LmWko7QkolMAkL4-sUlVVnm62oz-0gihFp2hmCIa0MkybU1ysMYh2nzGsLml4L7UDnRr2Mm-solVfLmfRLRUsLm6FMzW2nzN8MmnFM47sLkb/v2veo4OeCtnZ6sv0qIbtpYysoz-Pg4L4LRvPMR7Jqd1nx&oid=2137586656&tid=7921&nid=3307141&e=.jpg", aliases: '樓宇烈 楼宇烈先生 樓宇烈先生 Lou Yulie', type: '名家', label: '中国哲学与佛教文化', route: 'louyulie', url: 'https://news.pku.edu.cn/info/7921/3307141.htm' },
   // Keep discovery disabled until reviewed text, portrait and media pass staging acceptance.
   {"id": "yin-shun", "name": "印顺老和尚", "aliases": "印顺导师 印顺法师 印順導師 印順法師 印順老和尚 張鹿芹 张鹿芹 盛正", "type": "法师", "label": "佛学著作与生平", "route": "yinshun", "url": "https://www.yinshun.org.tw/", "portrait": "", "hidden": true},
 ];

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "lyl-video-OOGDOjR9gDg",
+    "person_id": "lou-yulie",
+    "title": "佛教与中华文化",
+    "youtube": "OOGDOjR9gDg",
+    "duration": 2632,
+    "media_kind": "teaching",
+    "series_id": "lou-yulie-wenmingzhilv",
+    "series_title": "楼宇烈 · 文明之旅",
+    "attribution": "楼宇烈本人讲述；央视《文明之旅》节目；YouTube发布频道LIVE NOW",
+    "source_institution": "YouTube · LIVE NOW（原节目：央视《文明之旅》）",
+    "source_url": "https://www.youtube.com/watch?v=OOGDOjR9gDg",
+    "requires_native_acceptance": true
+  },
+  {
+    "id": "lyl-video-GMi6zTERQPs",
+    "person_id": "lou-yulie",
+    "title": "做人与修身",
+    "youtube": "GMi6zTERQPs",
+    "duration": 2553,
+    "media_kind": "teaching",
+    "series_id": "lou-yulie-wenmingzhilv",
+    "series_title": "楼宇烈 · 文明之旅",
+    "attribution": "楼宇烈本人讲述；央视《文明之旅》节目；YouTube发布频道LIVE NOW",
+    "source_institution": "YouTube · LIVE NOW（原节目：央视《文明之旅》）",
+    "source_url": "https://www.youtube.com/watch?v=GMi6zTERQPs",
+    "requires_native_acceptance": true
+  }
+]

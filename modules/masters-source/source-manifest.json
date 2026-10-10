@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays; additive-four-reviewed-xuyun-essays",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays; additive-four-reviewed-xuyun-essays; reviewed-lou-yulie-local-reader-and-media",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -21,9 +21,9 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "d32036fc1f5d9bdefdb56e4c5f5f1299e39c4be9b211b4b9fc5ade85524dabfe",
+    "prototypes/masters-h5/src/Prototype.tsx": "bbf34c78fa79f589077cc43c8570e651e3febe219975161ee6aa6a5be2cf38fd",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "526c0a22e7a386d4a9303d5763e6da64fe317330f4c27d067df6b9d7ffac906b",
+    "prototypes/masters-h5/src/content.ts": "ed3d4a32b11d285616c9e9cc8d42ea7aa12a1f9b16282e7bf01d1622f8f09b5b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5e231dc3a77ce28f585fb8843619076c7cc1a392c18cb7a188ac531ec8e5ee10",
@@ -61,18 +61,18 @@
     "shared/masters/article-index.json": "b18fab128f06fffc2b9f87258d42ec7b8653e9b54fd735a6e2eef100616dae52",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "dabbfc02e9125a1bf15b939f9a1b1c32835e95b9c9628ebb10d9c624d033a784",
+    "shared/masters/catalog.ts": "e2c54c8a7ead1b249a9ae3c1212a977d53063789bd20c94077747e19608c2505",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
-    "shared/masters/people.ts": "a5e90d8927713340d1225c79ba63c23d9d54510d9a678dc2b0a287ee4ddb73d0",
-    "shared/masters/profileCopy.ts": "b78834c5fa5b9d3e76f64fde69c840918303d6a250ad13e5f700c529444dc73b",
+    "shared/masters/people.ts": "eb5d531e5a6800cd090be8fbce6172679ea5e8758486f595afc85c1f66bf350c",
+    "shared/masters/profileCopy.ts": "64f1b15346d88060e4c3b796d1ce2c7c3449bf0d3fc3db8ccb0df7f0752b864c",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "368938801765d86cd8af22a6ff7b31d5c116808a27f1207e1880e039be77db01",
+    "shared/masters/shareLinks.ts": "38550a1e4892d67af5e80545275feefd343f124cf9297cd90bca616cd538fafe",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
     "shared/masters/historicalResources.ts": "3586723f83905a4a4b7b1059828f0732f9dcb57d5fdc225fc155e9196f0428b0",
-    "shared/masters/videoCatalog.ts": "695ad8859741d43cc820fd64a452e86c1a3579bf628c50b827d3cfb997cf5959",
+    "shared/masters/videoCatalog.ts": "b2411328bf0940013f1b486951d0121b49516476a1718effd82d54e3c851b54b",
     "shared/masters/nan-videos.json": "10b8a34950e9360d6bbb03571e0e0d3cca83b5d4d4db06857debd53fe8bd3f49",
     "shared/masters/expanded-library.json": "6742bd61eecdd71e94187113f209a0bbec7bcc117d735db4c3a959a97a375325",
     "shared/masters/readingFeed.ts": "c27a3859364b8259a92c00f2f9f11105ec1992967f4afbc23bd0fb5908482fec",
@@ -303,7 +303,7 @@
     "prototypes/masters-h5/public/figures/yinshun/8059b17a23af3397a2af33262a5256ef205c3b56023437d8bc8afbd8d3df5f49.svg": "8059b17a23af3397a2af33262a5256ef205c3b56023437d8bc8afbd8d3df5f49",
     "prototypes/masters-h5/public/figures/yinshun/6d4aeb861b5d254affde503011306b93d41d8e8750ee006df2cb57da739f456f.svg": "6d4aeb861b5d254affde503011306b93d41d8e8750ee006df2cb57da739f456f",
     "prototypes/masters-h5/public/figures/yinshun/ad9507414b091cd56c80dc9074a52b64065d0b3263cf53e97d4500877cb985db.svg": "ad9507414b091cd56c80dc9074a52b64065d0b3263cf53e97d4500877cb985db",
-    "shared/masters/bibliographicGuides.ts": "e471bcfcb61dc58daf73bbdddd656946eaeef986a43c85f8c2a35c297068a278",
+    "shared/masters/bibliographicGuides.ts": "d89851be17771a0b9e8e726129e1cf5e61230f09aac7ceb063ae8f311e70d4f1",
     "shared/masters/bibliographic-guides-20261009.json": "c9b5db6c533fcf7de75c971ca9ce7d3872fbb66dc837f5efdcc34423dcbd3216",
     "prototypes/masters-h5/public/figures/yinshun/173bb011b01b7c14b87f6a22358cb19241e8c72c958355a78697f98dbe37499e.png": "173bb011b01b7c14b87f6a22358cb19241e8c72c958355a78697f98dbe37499e",
     "prototypes/masters-h5/public/figures/yinshun/fc2b73d1104bc4aa2122c57e8df7c6e1e26ecbfc484b055c4e2b2f8b38388765.png": "fc2b73d1104bc4aa2122c57e8df7c6e1e26ecbfc484b055c4e2b2f8b38388765",
@@ -820,7 +820,12 @@
     "shared/masters/xuyun-letters-next-20261009.json": "1a26c165acf39d6fb620151eaff53e5efa0f80d0303b55fe3c40cb2bd98cb3c1",
     "shared/masters/xuyun-letters-final-20261010.json": "48ab0512d639ecd729733583177f1c09810d8543a570857cdf52fa634359d05a",
     "shared/masters/xuyun-essays-short-20261010.json": "6a86b862d242d59b0c70e7f6e1f7a49a635981191e2b705766cedd57bd716061",
-    "shared/masters/xuyun-essays-next-20261010.json": "72e658d86c8534b9639d6ff2cacd5836a4c389e41539546cf376e0ebf2aca768"
+    "shared/masters/xuyun-essays-next-20261010.json": "72e658d86c8534b9639d6ff2cacd5836a4c389e41539546cf376e0ebf2aca768",
+    "assets/masters/lou-yulie.jpg": "f210ca270630f5ddd01fb1590a19f4e18904492f667975ed75201132a0c83af7",
+    "shared/masters/lou-yulie-guides.json": "ffb49db887aada20d3443c3be89383d7997fc9e0c7f8448124468a4f71a568f5",
+    "shared/masters/lou-yulie-reading.json": "333313b7369b88660f9ea95f9203fd26ea5c9ff1abdadc665d6d5092b6b514e5",
+    "shared/masters/lou-yulie-topics.json": "a586414385da04d42f42effa3e8d079165be80754ce52d9b4b80b119767ee363",
+    "shared/masters/lou-yulie-videos.json": "edffef76f4310faf249efff064a562a020a53d54c68c79ad026614d807409ab9"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1845,6 +1850,25 @@
         "shared/masters/xuyun-essays-next-20261010.json"
       ],
       "purpose": "Append four complete source-reconciled essays as orders4-7; preserve old3works/21519summaries,35letters and StagingYinshunoverlay. Recorder/date/poem/114tail retained; exact nativeRelease pending."
+    },
+    {
+      "sourceCommit": "9f430846efb67e049f1e456a73717b7d7c5acee8",
+      "files": [
+        "assets/masters/lou-yulie.jpg",
+        "shared/masters/bibliographicGuides.ts",
+        "shared/masters/people.ts",
+        "shared/masters/profileCopy.ts",
+        "shared/masters/catalog.ts",
+        "shared/masters/shareLinks.ts",
+        "shared/masters/videoCatalog.ts",
+        "shared/masters/lou-yulie-guides.json",
+        "shared/masters/lou-yulie-reading.json",
+        "shared/masters/lou-yulie-topics.json",
+        "shared/masters/lou-yulie-videos.json",
+        "prototypes/masters-h5/src/content.ts",
+        "prototypes/masters-h5/src/Prototype.tsx"
+      ],
+      "purpose": "Lou profile/official portrait, twelve editorial book guides, three clearly editor-authored local readings, two actual verified lecture identities and three topical routes. Preserve all corpus, Yinshun Staging discovery/portrait credit and assets. Native links gated."
     }
   ]
 }
