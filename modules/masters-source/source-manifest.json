@@ -824,8 +824,8 @@
     "assets/masters/lou-yulie.jpg": "f210ca270630f5ddd01fb1590a19f4e18904492f667975ed75201132a0c83af7",
     "shared/masters/lou-yulie-guides.json": "ffb49db887aada20d3443c3be89383d7997fc9e0c7f8448124468a4f71a568f5",
     "shared/masters/lou-yulie-reading.json": "333313b7369b88660f9ea95f9203fd26ea5c9ff1abdadc665d6d5092b6b514e5",
-    "shared/masters/lou-yulie-topics.json": "a586414385da04d42f42effa3e8d079165be80754ce52d9b4b80b119767ee363",
-    "shared/masters/lou-yulie-videos.json": "edffef76f4310faf249efff064a562a020a53d54c68c79ad026614d807409ab9"
+    "shared/masters/lou-yulie-topics.json": "af0e4b4cda89a177312a8e5668dc50d37a7e9c4c8bcc4e471840a9e12f4c58ca",
+    "shared/masters/lou-yulie-videos.json": "85b3421db4ef23fd76d7b8a572b43de18bcf7edb4fd6a3537e77c2583cbad1bb"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1869,6 +1869,14 @@
         "prototypes/masters-h5/src/Prototype.tsx"
       ],
       "purpose": "Lou profile/official portrait, twelve editorial book guides, three clearly editor-authored local readings, two actual verified lecture identities and three topical routes. Preserve all corpus, Yinshun Staging discovery/portrait credit and assets. Native links gated."
+    },
+    {
+      "sourceCommit": "90426512e940da0c83c12d352783075a45660da7",
+      "files": [
+        "shared/masters/lou-yulie-videos.json",
+        "shared/masters/lou-yulie-topics.json"
+      ],
+      "purpose": "Add the verified 43:08 tea-culture lecture to Lou traditional-culture topic; preserve prior library and native media gates."
     }
   ]
 }

@@ -26,5 +26,19 @@
     "source_institution": "YouTube · LIVE NOW（原节目：央视《文明之旅》）",
     "source_url": "https://www.youtube.com/watch?v=GMi6zTERQPs",
     "requires_native_acceptance": true
+  },
+  {
+    "id": "lyl-video-anM0WyRA0r4",
+    "person_id": "lou-yulie",
+    "title": "喝茶之道",
+    "youtube": "anM0WyRA0r4",
+    "duration": 2588,
+    "media_kind": "teaching",
+    "series_id": "lou-yulie-wenmingzhilv",
+    "series_title": "楼宇烈 · 文明之旅",
+    "attribution": "楼宇烈本人讲述；央视《文明之旅》节目；YouTube发布频道LIVE NOW",
+    "source_institution": "YouTube · LIVE NOW（原节目：央视《文明之旅》）",
+    "source_url": "https://www.youtube.com/watch?v=anM0WyRA0r4",
+    "requires_native_acceptance": true
   }
 ]
