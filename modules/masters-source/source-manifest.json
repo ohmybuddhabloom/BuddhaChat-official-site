@@ -23,7 +23,7 @@
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
     "prototypes/masters-h5/src/Prototype.tsx": "bbf34c78fa79f589077cc43c8570e651e3febe219975161ee6aa6a5be2cf38fd",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
-    "prototypes/masters-h5/src/content.ts": "ed3d4a32b11d285616c9e9cc8d42ea7aa12a1f9b16282e7bf01d1622f8f09b5b",
+    "prototypes/masters-h5/src/content.ts": "3c2b371542d25094db228e5afcd0d419915b4af89aca14b7d9c7ac118767872b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
     "prototypes/masters-h5/src/display-text.mjs": "664e4927f43a75c369c8befe6b1c15bb59fda37b93082af8d4d3fb31fbf76790",
     "prototypes/masters-h5/src/hsingyun-catalog.json": "5e231dc3a77ce28f585fb8843619076c7cc1a392c18cb7a188ac531ec8e5ee10",
@@ -61,13 +61,13 @@
     "shared/masters/article-index.json": "b18fab128f06fffc2b9f87258d42ec7b8653e9b54fd735a6e2eef100616dae52",
     "shared/masters/articleFigures.ts": "f7a1b44bdfa485458ea1c12513af6379866c8d1cfc9749445b5521f0cccaf608",
     "shared/masters/articleReader.ts": "821d5ae13f0722ad011a5fae6e73b66038658507a4c44859d5e491764f897f2b",
-    "shared/masters/catalog.ts": "e2c54c8a7ead1b249a9ae3c1212a977d53063789bd20c94077747e19608c2505",
+    "shared/masters/catalog.ts": "432fb0646b792b55eb40e5cffee8ef53228eed03cd158e8523d43fb018336418",
     "shared/masters/collection-index.json": "9da82f3a273a1f4289778b53ad77ab4333eee1a28014f5c7c1474972eadb09e9",
     "shared/masters/libraryPolicy.ts": "7227d65fcab0972214c37c4479d21e6c1e62f3c60584da71c7aba709c58cc18c",
     "shared/masters/people.ts": "eb5d531e5a6800cd090be8fbce6172679ea5e8758486f595afc85c1f66bf350c",
     "shared/masters/profileCopy.ts": "64f1b15346d88060e4c3b796d1ce2c7c3449bf0d3fc3db8ccb0df7f0752b864c",
     "shared/masters/reading-content.json": "9bfed0a4a814b44ca33265bd212a5c4586f0452264ace306db787d2640f54901",
-    "shared/masters/shareLinks.ts": "38550a1e4892d67af5e80545275feefd343f124cf9297cd90bca616cd538fafe",
+    "shared/masters/shareLinks.ts": "52fcde8d9593e926ec0f61d9f273a9270b1eb642bf8308d710969704272b1aae",
     "shared/masters/visitQueue.ts": "5e184d5eb2ca0fd4829d361a78e6f4f069c19b84dabe00ad9d09d8c215a624d4",
     "src/ui/tokens.ts": "7587d8831d755cbd06cffbd6fff26d13a390c93a96d93f257304e0113f3ea74b",
     "shared/masters/historical-masters.json": "9d6be26e1f95c14770fa9a6f5f3a644f1d049eeeb7ad0f5a71e15deb36ae6a30",
@@ -825,7 +825,9 @@
     "shared/masters/lou-yulie-guides.json": "ffb49db887aada20d3443c3be89383d7997fc9e0c7f8448124468a4f71a568f5",
     "shared/masters/lou-yulie-reading.json": "333313b7369b88660f9ea95f9203fd26ea5c9ff1abdadc665d6d5092b6b514e5",
     "shared/masters/lou-yulie-topics.json": "af0e4b4cda89a177312a8e5668dc50d37a7e9c4c8bcc4e471840a9e12f4c58ca",
-    "shared/masters/lou-yulie-videos.json": "85b3421db4ef23fd76d7b8a572b43de18bcf7edb4fd6a3537e77c2583cbad1bb"
+    "shared/masters/lou-yulie-videos.json": "85b3421db4ef23fd76d7b8a572b43de18bcf7edb4fd6a3537e77c2583cbad1bb",
+    "shared/masters/lou-yulie-originals.json": "d1e5ec87914fb0df5a383a0a1f74aab8e7ade75b0468ef19962fd1a0d86761d4",
+    "content/masters/lou-yulie-originals.json": "39791b10fa8cc03fd0e888c630b2fe9f3b3e4b80275de8d643504305f5cfe9d2"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1877,6 +1879,17 @@
         "shared/masters/lou-yulie-topics.json"
       ],
       "purpose": "Add the verified 43:08 tea-culture lecture to Lou traditional-culture topic; preserve prior library and native media gates."
+    },
+    {
+      "sourceCommit": "01bc83ec12333b395a89a57578ab4d1f71f34b95",
+      "files": [
+        "shared/masters/catalog.ts",
+        "shared/masters/shareLinks.ts",
+        "shared/masters/lou-yulie-originals.json",
+        "content/masters/lou-yulie-originals.json",
+        "prototypes/masters-h5/src/content.ts"
+      ],
+      "purpose": "Add one complete attributed author-authorized network essay. Native catalog keeps only index and requires verified network body; preserve all previous content and acceptance gates."
     }
   ]
 }

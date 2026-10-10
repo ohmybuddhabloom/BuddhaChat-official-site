@@ -1,3 +1,4 @@
+import louYulieOriginalBodies from '../../../content/masters/lou-yulie-originals.json';
 import louYulieReading from '../../../shared/masters/lou-yulie-reading.json';
 import type { HistoricalResource } from '../../../shared/masters/historicalResources';
 import historicalData from '../../../shared/masters/historical-masters.json';
@@ -30,7 +31,7 @@ export type ArticleSummary = MastersArticleSummary;
 export type LibraryCollection = { id: string; title: string; person_id: string; category?: string; attribution?: string; source_url?: string; source_institution?: string; readable_count?: number; catalog_count?: number; deferred_count?: number };
 export const libraryCollections = sharedCollections as LibraryCollection[];
 export const readableArticles = articleSummaries;
-export const legacyArticles = [...readingContent.chapters, ...louYulieReading.chapters];
+export const legacyArticles = [...readingContent.chapters, ...louYulieReading.chapters, ...louYulieOriginalBodies.chapters];
 export const sources = [
  ['《星云大师全集》','https://books.masterhsingyun.org/article/articlelist','文字主源 · 佛光山'],
  ['全集版本与收录范围','https://books.masterhsingyun.org/intro/intro','增订版 395 册；附录含他人研究资料'],

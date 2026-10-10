@@ -1,0 +1,25 @@
+{
+  "collections": [
+    {
+      "id": "lyl-authorized-articles",
+      "title": "楼宇烈 · 作者文章",
+      "person_id": "lou-yulie",
+      "category": "作者原文",
+      "attribution": "按原站逐篇明确的网络转载许可收录，保留完整网页文字与原作者署名",
+      "readable_count": 1
+    }
+  ],
+  "articles": [
+    {
+      "id": "lyl-original-cultural-difference",
+      "book_id": "lyl-authorized-articles",
+      "person_id": "lou-yulie",
+      "title": "中西文化的关键性差别",
+      "author": "楼宇烈",
+      "source_sha256": "7f6aa324a4c8cdcb364051e815d4e6b0854b39fc1f6f68f554c336eade7761a3",
+      "text_version": "7f6aa324a4c8cdcb364051e815d4e6b0854b39fc1f6f68f554c336eade7761a3",
+      "source_order": 1,
+      "paragraph_count": 28
+    }
+  ]
+}

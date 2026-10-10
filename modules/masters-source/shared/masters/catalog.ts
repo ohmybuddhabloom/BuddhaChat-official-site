@@ -1,3 +1,4 @@
+import louYulieOriginals from './lou-yulie-originals.json';
 import louYulieReading from './lou-yulie-reading.json';
 import { bibliographicCollections } from './bibliographicGuides';
 import historical from './historical-masters.json';
@@ -36,6 +37,7 @@ export const articleSummaries: MastersArticleSummary[] = [
   ...articles.map(({ id, book_id, person_id, title, author, source_sha256, source_order, paragraphs }) =>
     ({ id, book_id, person_id, title, author, source_sha256, source_order, paragraph_count: paragraphs.length })),
   ...additionalArticles,
+  ...louYulieOriginals.articles,
   ...yinshunLibrary.articles,
   ...louYulieReading.chapters.map(({ id, book_id, person_id, title, author, source_sha256, text_version, source_order, paragraphs }) =>
     ({ id, book_id, person_id, title, author, source_sha256, text_version, source_order, paragraph_count: paragraphs.length })),
@@ -94,6 +96,7 @@ export const collections = [
   })),
   ...bibliographicCollections,
   ...louYulieReading.collections,
+  ...louYulieOriginals.collections,
 ];
 
 export type MastersArticle = typeof articles[number];
