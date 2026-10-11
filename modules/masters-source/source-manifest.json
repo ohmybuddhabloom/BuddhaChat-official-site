@@ -1,7 +1,7 @@
 {
   "sourceRepository": "https://github.com/ohmybuddhabloom/buddhachat-rn-expo-claude-to-codex",
   "baseCommit": "65c8fc1dce49bc73cd06618ba47607188c53c1c3",
-  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays; additive-four-reviewed-xuyun-essays; reviewed-lou-yulie-local-reader-and-media",
+  "sourceState": "reviewed-staging-only-yinshun-discovery-overlay; canonical-native-visibility-unchanged; additive-reviewed-yunmen-refuge; additive-reviewed-causality-1947; additive-reviewed-nanhua-three-section-group; additive-reviewed-shanghai-three-records; additive-reviewed-hangzhou-speech; reviewed-shengyen-dafagu-media-candidate; reviewed-hsingyun-jingang-segment-expansion; recovered-three-public-shengyen-videos; reviewed-hongyi-sifen-original-preface; reviewed-eight-xuyun-correspondence-entries; complete-reviewed-xuyun-correspondence-section; no-redundant-header-history-replacement; additive-three-reviewed-xuyun-essays; additive-four-reviewed-xuyun-essays; reviewed-lou-yulie-local-reader-and-media; page-only-yuanhui-exclusion-preserving-staging-yinshun-overlay",
   "files": {
     "docs/shengyen-chinese-catalog.json": "13610ae65c9e5f90861dfda74becc965643145f05f59125cb1984dd9ab0045cc",
     "prototypes/masters-h5/.npmrc": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008",
@@ -21,7 +21,7 @@
     "prototypes/masters-h5/scripts/prepare-sites-build.mjs": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6",
     "prototypes/masters-h5/scripts/update-mobile-runtime-lock.mjs": "b4e1aa41133f19ba8bb32685b3ec05798b1ceabaf72c328419d545aa60fe1f0b",
     "prototypes/masters-h5/src/App.tsx": "7054b4e14304ab33153d3a2e860aa43d2a4f69e8a69630b4a37a2cbcd4ad2f16",
-    "prototypes/masters-h5/src/Prototype.tsx": "bbf34c78fa79f589077cc43c8570e651e3febe219975161ee6aa6a5be2cf38fd",
+    "prototypes/masters-h5/src/Prototype.tsx": "2a846596a09afa72174d10ce49c67fe42b9bf3bbfef93aa025eb17a3f622f3f3",
     "prototypes/masters-h5/src/YouTubePlayer.tsx": "51758568afe254416cbc62811500d1090dc342e0a6c2491bf4b9ca81e9346723",
     "prototypes/masters-h5/src/content.ts": "3c2b371542d25094db228e5afcd0d419915b4af89aca14b7d9c7ac118767872b",
     "prototypes/masters-h5/src/display-text.d.mts": "6878e0ce5d5ea738782a5f139ad3cc4cfc56ce04e765391c77e9e896e6ea1352",
@@ -45,7 +45,7 @@
     "prototypes/masters-h5/src/mobile/geometry.ts": "f1382e5d6cc9adfd7ac142304f2f9a5a2330db1d74b3f0848adbaf311676bf16",
     "prototypes/masters-h5/src/mobile/index.ts": "ee69d9341571db5dee84dd2d7452a62eef09085a84a85f198a3edc48047e0412",
     "prototypes/masters-h5/src/nan-huaijin-candidates.json": "dff0e6ee39cc1c944da7a88fd226d247dbb6f846b27323aea5d6fdf82c264c91",
-    "prototypes/masters-h5/src/people.ts": "7e2b7035f0b63f4212816837489158eb6aaee07b942cd3cfda08e0238a6ac1a5",
+    "prototypes/masters-h5/src/people.ts": "8911785159f6f21852030bf2c84f4139371ec1b0cbd8130fd2295707e3a3f734",
     "prototypes/masters-h5/src/prototype.css": "4ecd11c5315b413c7c090ac0b0676719cdf5c487dc7a865c8290ab9c470d49ed",
     "prototypes/masters-h5/src/public-entry.tsx": "87f0269d638896e9f7d2f1b7d5a9bbe7e4cdeac9f550ead77c66116af8f89fb8",
     "prototypes/masters-h5/src/public-runtime.tsx": "81375b2c5481e1dbe938d469347f1a7cc9967c024ce3d27d5d3e9c853f143700",
@@ -827,7 +827,8 @@
     "shared/masters/lou-yulie-topics.json": "af0e4b4cda89a177312a8e5668dc50d37a7e9c4c8bcc4e471840a9e12f4c58ca",
     "shared/masters/lou-yulie-videos.json": "85b3421db4ef23fd76d7b8a572b43de18bcf7edb4fd6a3537e77c2583cbad1bb",
     "shared/masters/lou-yulie-originals.json": "d1e5ec87914fb0df5a383a0a1f74aab8e7ade75b0468ef19962fd1a0d86761d4",
-    "content/masters/lou-yulie-originals.json": "39791b10fa8cc03fd0e888c630b2fe9f3b3e4b80275de8d643504305f5cfe9d2"
+    "content/masters/lou-yulie-originals.json": "39791b10fa8cc03fd0e888c630b2fe9f3b3e4b80275de8d643504305f5cfe9d2",
+    "shared/masters/pageVisibility.ts": "58994ab58fe5bfaeeede509314da704f24653f2bfb5039f957705c449d19bf40"
   },
   "historicalMastersSourceCommit": "d103acee",
   "historicalMastersSupplementSourceCommit": "0ab83180f6a58345d75488a6b842607fdb736732",
@@ -1891,5 +1892,6 @@
       ],
       "purpose": "Add one complete attributed author-authorized network essay. Native catalog keeps only index and requires verified network body; preserve all previous content and acceptance gates."
     }
-  ]
+  ],
+  "visibilityOverlayCommit": "3bf564b56d21909df2b59f55aef518b3a793b46b"
 }
