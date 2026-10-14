@@ -440,8 +440,12 @@ function EmailScreen({ copy, onBack, onSuccess, embedded = false, requestNative 
           if (embedded) await requestNative('auth.email.verify_otp', { email, token: code })
           else await loginWithCode({ email, code })
           setAuthenticated(true)
-        } catch {
-          setError(copy.email.expiredCode)
+        } catch (error) {
+          // Only a structured OTP response proves expiry; transport/bridge failures do not.
+          const failure = error?.payload ?? error
+          const expired = error?.retryable !== true && failure?.retryable !== true
+            && (failure?.code === 'otp_expired' || failure?.error_code === 'otp_expired')
+          setError(expired ? copy.email.expiredCode : copy.email.verifyFailed)
           return
         }
       }

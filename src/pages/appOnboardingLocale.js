@@ -82,6 +82,7 @@ const en = {
     invalidEmail: 'Enter a valid email address',
     invalidCode: 'Enter the 6-digit code',
     expiredCode: 'The code is invalid or expired. Please enter it again.',
+    verifyFailed: 'Verification could not be completed. Please check your connection and retry.',
     syncFailed: 'Signed in, but progress sync failed. Please retry.',
   },
   quests: {
@@ -290,6 +291,7 @@ const zhHans = {
     invalidEmail: '请输入有效的邮箱地址',
     invalidCode: '请输入 6 位验证码',
     expiredCode: '验证码无效或已过期，请重新输入',
+    verifyFailed: '暂时无法完成验证，请检查网络后重试',
     syncFailed: '登录成功，但同步进度失败，请重试',
   },
   quests: {
@@ -498,6 +500,7 @@ const zhHant = {
     invalidEmail: '請輸入有效的電子信箱地址',
     invalidCode: '請輸入 6 位驗證碼',
     expiredCode: '驗證碼無效或已過期，請重新輸入',
+    verifyFailed: '暫時無法完成驗證，請檢查網絡後重試',
     syncFailed: '登入成功，但同步進度失敗，請重試',
   },
   quests: {
