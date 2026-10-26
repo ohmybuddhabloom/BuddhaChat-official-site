@@ -293,6 +293,16 @@ describe('Phase2 versioned music namespace (owner-v2)', () => {
     }
   })
 
+  test('the 1.3.7 App namespace follows the music Staging environment, not a frozen deployment', async () => {
+    // A frozen deployment kept music fixes merged to music staging (e.g. following the App's
+    // 简/繁 language) from ever reaching the App. The legacy v1 pin below stays frozen.
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const stagingMusic = `https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/${NS}`
+    const routes = config.rewrites.filter(r => r.source.startsWith(`/music/${NS}`))
+    expect(routes.length).toBe(5)
+    for (const route of routes) expect(route.destination.startsWith(stagingMusic), route.source).toBe(true)
+  })
+
   test('legacy v1 pin and production fallbacks stay unchanged', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
     const rw = config.rewrites
