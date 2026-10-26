@@ -38,7 +38,7 @@
   ],
   "git": {
     "deploymentEnabled": {
-      "staging": false,
+      "staging": true,
       "*": false,
       "**": false
     }

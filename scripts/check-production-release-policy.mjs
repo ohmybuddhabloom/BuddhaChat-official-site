@@ -41,12 +41,12 @@ for (const [name, source] of [
 ]) {
   const deploymentEnabled = JSON.parse(source).git?.deploymentEnabled
   if (
-    deploymentEnabled?.staging !== false ||
+    deploymentEnabled?.staging !== true ||
     deploymentEnabled?.['*'] !== false ||
     deploymentEnabled?.['**'] !== false ||
     Object.keys(deploymentEnabled).some((branch) => !['staging', '*', '**'].includes(branch))
   ) {
-    fail(`${name} must disable automatic Git deployment for every branch`)
+    fail(`${name} must enable Git deployment only for staging`)
   }
 }
 
