@@ -9,10 +9,10 @@ for (const [name, script, config] of [
   ["legal site", new URL("../legal-site/scripts/vercel-ignore-build.mjs", import.meta.url), new URL("../legal-site/vercel.json", import.meta.url)],
   ["master router", new URL("../master-router/scripts/vercel-ignore-build.mjs", import.meta.url), new URL("../master-router/vercel.json", import.meta.url)],
 ]) {
-  test(`${name} disables Git deployment for all branches`, () => {
+  test(`${name} enables Git deployment only for staging`, () => {
     const deploymentEnabled = JSON.parse(readFileSync(config, "utf8")).git?.deploymentEnabled;
 
-    assert.deepEqual(deploymentEnabled, { staging: false, "*": false, "**": false });
+    assert.deepEqual(deploymentEnabled, { staging: true, "*": false, "**": false });
     // Vercel: unmatched defaults true; any matching true wins. '*' excludes '/'.
     // https://vercel.com/docs/project-configuration/git-configuration
     const deploys = (branch) => {
@@ -21,7 +21,7 @@ for (const [name, script, config] of [
     };
     assert.equal(matchesGlob('codex/a/b', '*'), false);
     assert.equal(matchesGlob('codex/a/b', '**'), true);
-    assert.equal(deploys('staging'), false);
+    assert.equal(deploys('staging'), true);
     for (const branch of ['main', 'production', 'feature', 'codex/a', 'codex/a/b', 'release/2026/09', 'staging/nested']) {
       assert.equal(deploys(branch), false, `${branch} must not auto-deploy`);
     }
