@@ -405,6 +405,18 @@
       "destination": "https://sutra.buddhachat.online/sutra/:path*"
     },
     {
+      "source": "/music/app137-owner-v2-01dafd9",
+      "destination": "https://buddhachat-music.vercel.app/music/app137-owner-v2-01dafd9/"
+    },
+    {
+      "source": "/music/app137-owner-v2-01dafd9/",
+      "destination": "https://buddhachat-music.vercel.app/music/app137-owner-v2-01dafd9/"
+    },
+    {
+      "source": "/music/app137-owner-v2-01dafd9/:path*",
+      "destination": "https://buddhachat-music.vercel.app/music/app137-owner-v2-01dafd9/:path*"
+    },
+    {
       "source": "/music",
       "destination": "https://buddhachat-music.vercel.app/music/"
     },

@@ -314,3 +314,19 @@ describe('Phase2 versioned music namespace (owner-v2)', () => {
     expect(prod[0].destination).toBe('https://buddhachat-music.vercel.app/music/:path*')
   })
 })
+
+describe('App 1.3.7 music page', () => {
+  test('routes the versioned native music path, including its trailing slash, to the music project before any catch-all', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const sources = config.rewrites.map((rule) => rule.source)
+    const root = config.rewrites.find((rule) => rule.source === '/music/app137-owner-v2-01dafd9/')
+
+    expect(root).toEqual({
+      source: '/music/app137-owner-v2-01dafd9/',
+      destination: 'https://buddhachat-music.vercel.app/music/app137-owner-v2-01dafd9/',
+    })
+    expect(root.has).toBeUndefined()
+    expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/music/:path*'))
+    expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/:path*'))
+  })
+})
