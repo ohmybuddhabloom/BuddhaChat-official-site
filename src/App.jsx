@@ -9,6 +9,7 @@ const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
 const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
 const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
 const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
+const AppOnboardingWelcomePage = lazy(() => import('./pages/AppOnboardingWelcomePage.jsx'))
 
 const STORY_NAV = {
   logo: 'Buddha Chat',
@@ -49,6 +50,7 @@ function App() {
   const isDownloadPage = isChineseDownloadPage || isEnglishDownloadPage
   const isYuanhuiGuidePage = pathname === '/guide/yuanhui'
   const isAppFaqGuidePage = pathname === '/guide/app-faq'
+  const isAppOnboardingWelcomePage = pathname === '/app/onboarding/v1'
 
   useEffect(() => {
     const scene = isDownloadPage
@@ -57,7 +59,9 @@ function App() {
         ? { scene: 'yuanhui_user_guide' }
         : isAppFaqGuidePage
           ? { scene: 'app_faq_guide' }
-          : undefined
+          : isAppOnboardingWelcomePage
+            ? { scene: 'app_onboarding_v1' }
+            : undefined
     const idleCallback = window.requestIdleCallback?.(
       () => trackPageView(scene),
       { timeout: 2500 },
@@ -84,7 +88,7 @@ function App() {
         window.clearTimeout(fallbackTimer)
       }
     }
-  }, [isAppFaqGuidePage, isDownloadPage, isYuanhuiGuidePage, pathname])
+  }, [isAppFaqGuidePage, isAppOnboardingWelcomePage, isDownloadPage, isYuanhuiGuidePage, pathname])
 
   if (FUSION_ROUTES.has(pathname)) {
     return (
@@ -117,6 +121,14 @@ function App() {
       <Suspense fallback={null}>
         <LanguageToggle />
         <AppFaqGuidePage />
+      </Suspense>
+    )
+  }
+
+  if (isAppOnboardingWelcomePage) {
+    return (
+      <Suspense fallback={null}>
+        <AppOnboardingWelcomePage />
       </Suspense>
     )
   }
