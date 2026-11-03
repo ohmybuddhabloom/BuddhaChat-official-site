@@ -51,6 +51,15 @@ function expectAcceptedBy137(postMessage) {
 
 const ALL = { emailOtp: true, appleSignIn: true, googleSignIn: true, guest: true }
 
+// App 1.3.7 OnboardingH5Screen: Android back goes to the page only when the latest ready step is not
+// welcome; otherwise the App does not consume it and Android leaves the App.
+function androidBack(postMessage) {
+  const ready = bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.step_ready').at(-1)?.payload.step ?? 'welcome'
+  if (ready === 'welcome') return 'left the App'
+  act(() => window.dispatchEvent(new Event('buddhachat:native-back')))
+  return 'handled by the page'
+}
+
 describe('embedded two-entry welcome', () => {
   afterEach(() => {
     vi.restoreAllMocks()
@@ -80,11 +89,12 @@ describe('embedded two-entry welcome', () => {
     expectAcceptedBy137(postMessage)
   })
 
-  it('opens the sign-in choices without telling the App anything, with Apple only when the App offers it', () => {
+  it('opens the sign-in choices without persisting anything, with Apple only when the App offers it', () => {
     const iphone = mount(ALL)
-    const before = iphone.mock.calls.length
+    const before = bridgeMessages(iphone).length
     fireEvent.click(screen.getByRole('button', { name: '已有账号？登录' }))
-    expect(iphone.mock.calls.length, 'opening the choices is H5-only').toBe(before)
+    const sent = bridgeMessages(iphone).slice(before)
+    expect(sent.map(({ event, payload }) => [event, payload]), 'only the back-handling ready step is reported').toEqual([['onboarding.step_ready', { step: 'email' }]])
     expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     for (const name of ['使用邮箱继续', '使用 Apple 继续', '使用 Google 继续']) expect(screen.getByRole('button', { name })).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: '直接体验' })).not.toBeInTheDocument()
@@ -128,12 +138,13 @@ describe('embedded two-entry welcome', () => {
     for (const viaNative of [false, true]) {
       const postMessage = mount(ALL)
       fireEvent.click(screen.getByRole('button', { name: '已有账号？登录' }))
-      if (viaNative) act(() => window.dispatchEvent(new Event('buddhachat:native-back')))
+      if (viaNative) expect(androidBack(postMessage), 'App 1.3.7 must hand back to the page').toBe('handled by the page')
       else fireEvent.click(screen.getByRole('button', { name: '返回' }))
       const back = lastPersist(postMessage)
       expect(back.payload.step).toBe('welcome')
       await ack(back)
       expect(screen.getByRole('button', { name: '直接体验' })).toBeInTheDocument()
+      expect(androidBack(postMessage), 'back on the welcome still leaves the App as in 1.3.7').toBe('left the App')
       expectAcceptedBy137(postMessage)
       document.body.innerHTML = ''
     }
@@ -147,11 +158,16 @@ describe('embedded two-entry welcome', () => {
     expect(open.payload).toEqual({ step: 'email', data: {} })
     await ack(open)
     expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
-    act(() => window.dispatchEvent(new Event('buddhachat:native-back')))
+    expect(androidBack(postMessage)).toBe('handled by the page')
     const back = lastPersist(postMessage)
     expect(back.payload.step).toBe('welcome')
     await ack(back)
     expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
+    expect(androidBack(postMessage), 'a second back from the choices reaches the welcome, not the home screen').toBe('handled by the page')
+    const home = lastPersist(postMessage)
+    expect(home.payload.step).toBe('welcome')
+    await ack(home)
+    expect(screen.getByRole('button', { name: '直接体验' })).toBeInTheDocument()
     expectAcceptedBy137(postMessage)
   })
 
