@@ -19,6 +19,7 @@ export const PROMPT_IDS = ['peace', 'guide', 'know']
 const en = {
   announcements: {
     welcome: 'Welcome',
+    login: 'Sign in',
     email: 'Email sign-in',
     quests: 'Your clear path',
     'wish-one': 'Tell us what your heart is seeking',
@@ -59,10 +60,16 @@ const en = {
     apple: 'Continue with Apple',
     google: 'Continue with Google',
     guest: 'Continue as guest',
+    direct: 'Try it now',
+    haveAccount: 'Already have an account? Sign in',
     legalPrefix: 'By continuing, you agree to the ',
     terms: 'Terms of Service',
     legalJoin: ' and ',
     privacy: 'Privacy Policy',
+  },
+  login: {
+    title: 'Sign in or create an account',
+    subtitle: 'Choose how you signed in before, or a new way to keep your practice.',
   },
   email: {
     titleEmail: 'Continue with email',
@@ -228,6 +235,7 @@ const en = {
 const zhHans = {
   announcements: {
     welcome: '欢迎',
+    login: '登录',
     email: '邮箱登录',
     quests: '你的清净之路',
     'wish-one': '告诉我们你内心所求',
@@ -268,10 +276,16 @@ const zhHans = {
     apple: '使用 Apple 继续',
     google: '使用 Google 继续',
     guest: '游客体验',
+    direct: '直接体验',
+    haveAccount: '已有账号？登录',
     legalPrefix: '继续即表示你同意',
     terms: '服务条款',
     legalJoin: '与',
     privacy: '隐私政策',
+  },
+  login: {
+    title: '登录或注册账号',
+    subtitle: '选择你之前使用的方式，或用新的方式保存修行记录。',
   },
   email: {
     titleEmail: '使用邮箱继续',
@@ -438,6 +452,7 @@ const zhHant = {
   ...zhHans,
   announcements: {
     welcome: '歡迎',
+    login: '登入',
     email: '電子信箱登入',
     quests: '你的清淨之路',
     'wish-one': '告訴我們你內心所求',
@@ -478,10 +493,16 @@ const zhHant = {
     apple: '使用 Apple 繼續',
     google: '使用 Google 繼續',
     guest: '訪客體驗',
+    direct: '直接體驗',
+    haveAccount: '已有帳號？登入',
     legalPrefix: '繼續即表示你同意',
     terms: '服務條款',
     legalJoin: '與',
     privacy: '隱私政策',
+  },
+  login: {
+    title: '登入或註冊帳號',
+    subtitle: '選擇你之前使用的方式，或用新的方式保存修行紀錄。',
   },
   email: {
     ...zhHans.email,
