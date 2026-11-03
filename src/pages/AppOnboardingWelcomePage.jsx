@@ -72,6 +72,11 @@ const BRIDGE_EVENTS = new Set([
   'navigation.external',
 ])
 
+// What the App is told it is showing, when that differs from the persisted step. App 1.3.7 hands Android
+// back to the page only while the ready step is not welcome, so the sign-in choices report email (which
+// 1.3.7 treats identically: back goes to the page, nothing is persisted) and back returns to the welcome.
+const H5_STEP_READY_OVERRIDES = { login: 'email' }
+
 const NATIVE_STEP_TO_H5 = {
   welcome: 'welcome',
   email: 'email',
@@ -93,7 +98,7 @@ const NATIVE_STEP_TO_H5 = {
 
 const H5_STEP_TO_NATIVE = {
   welcome: 'welcome',
-  // The sign-in choices are H5-only: App 1.3.7 knows no such step, so they resume as welcome.
+  // The sign-in choices are H5-only: App 1.3.7 knows no such step, so they persist and resume as welcome.
   login: 'welcome',
   email: 'email',
   quests: 'quests',
@@ -367,7 +372,7 @@ function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onOpenLogin,
             <div className="onboarding-actions" data-motion-beat="actions">
               {capabilities.guest ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onGuest}>{copy.welcome.direct}</PrimaryButton> : null}
               {hasSignInChoice(capabilities) ? (
-                <button className="onboarding-text-link" type="button" disabled={busy} onClick={onOpenLogin}>{copy.welcome.haveAccount}</button>
+                <button className="onboarding-text-link" type="button" disabled={busy} aria-busy={busy} onClick={onOpenLogin}>{copy.welcome.haveAccount}</button>
               ) : null}
             </div>
           ) : (
@@ -1088,7 +1093,7 @@ export default function AppOnboardingWelcomePage() {
   }, [embedded])
 
   useEffect(() => {
-    const nativeStep = H5_STEP_TO_NATIVE[step]
+    const nativeStep = H5_STEP_READY_OVERRIDES[step] ?? H5_STEP_TO_NATIVE[step]
     if (!embedded || !nativeBootstrap.ready || !nativeStep || lastReadyStep.current === nativeStep) return
     lastReadyStep.current = nativeStep
     const id = createBridgeMessageId(++bridgeMessageNumber.current)
