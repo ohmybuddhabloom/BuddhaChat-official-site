@@ -56,7 +56,7 @@ const DEFAULT_PAYLOAD = {
   guardianType: '',
 }
 
-const VALID_STEPS = new Set(['welcome', 'email', ...MAIN_STEPS, 'complete', 'guest-home'])
+const VALID_STEPS = new Set(['welcome', 'login', 'email', ...MAIN_STEPS, 'complete', 'guest-home'])
 const BRIDGE_ACK_TIMEOUT_MS = 12_000
 const BRIDGE_AUTH_TIMEOUT_MS = 120_000
 const BRIDGE_EVENTS = new Set([
@@ -71,6 +71,11 @@ const BRIDGE_EVENTS = new Set([
   'onboarding.step_ready',
   'navigation.external',
 ])
+
+// What the App is told it is showing, when that differs from the persisted step. App 1.3.7 hands Android
+// back to the page only while the ready step is not welcome, so the sign-in choices report email (which
+// 1.3.7 treats identically: back goes to the page, nothing is persisted) and back returns to the welcome.
+const H5_STEP_READY_OVERRIDES = { login: 'email' }
 
 const NATIVE_STEP_TO_H5 = {
   welcome: 'welcome',
@@ -93,6 +98,8 @@ const NATIVE_STEP_TO_H5 = {
 
 const H5_STEP_TO_NATIVE = {
   welcome: 'welcome',
+  // The sign-in choices are H5-only: App 1.3.7 knows no such step, so they persist and resume as welcome.
+  login: 'welcome',
   email: 'email',
   quests: 'quests',
   'wish-one': 'wish_survey_1',
@@ -316,7 +323,7 @@ function ChoiceButton({ children, selected, onClick, className = '' }) {
   )
 }
 
-function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onLegal, embedded = false, capabilities = {}, busy = false }) {
+function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onOpenLogin, onLegal, embedded = false, capabilities = {}, busy = false }) {
   const heroRef = useRef(null)
 
   const handlePointerMove = (event) => {
@@ -360,6 +367,15 @@ function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onLegal, emb
             title={<span id="onboarding-welcome-title">{copy.welcome.title}</span>}
             subtitle={copy.welcome.subtitle}
           />
+          {embedded ? (
+            // 1.3.5 auth wireframe ①: a new user starts in one tap; returning users pick a sign-in method next.
+            <div className="onboarding-actions" data-motion-beat="actions">
+              {capabilities.guest ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onGuest}>{copy.welcome.direct}</PrimaryButton> : null}
+              {hasSignInChoice(capabilities) ? (
+                <button className="onboarding-text-link" type="button" disabled={busy} aria-busy={busy} onClick={onOpenLogin}>{copy.welcome.haveAccount}</button>
+              ) : null}
+            </div>
+          ) : (
           <div className="onboarding-actions" data-motion-beat="actions">
             {!embedded ? <PrimaryButton disabled={busy} aria-busy={busy} onClick={onBegin}>{copy.welcome.begin}</PrimaryButton> : null}
             {!embedded || capabilities.emailOtp ? (
@@ -372,15 +388,45 @@ function WelcomeScreen({ copy, onBegin, onEmail, onGuest, onSignIn, onLegal, emb
             {embedded && capabilities.googleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('google')}>{copy.welcome.google}</SecondaryButton> : null}
             {!embedded || capabilities.guest ? <SecondaryButton disabled={busy} onClick={onGuest}>{copy.welcome.guest}</SecondaryButton> : null}
           </div>
+          )}
+          <LegalNotice copy={copy} onLegal={onLegal} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const hasSignInChoice = (capabilities) => Boolean(capabilities.emailOtp || capabilities.appleSignIn || capabilities.googleSignIn)
+
+function LegalNotice({ copy, onLegal }) {
+  return (
           <p className="onboarding-legal" data-motion-beat="legal">
             {copy.welcome.legalPrefix}
             <a href="https://legal.buddhachat.online/terms" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'terms')}>{copy.welcome.terms}</a>
             {copy.welcome.legalJoin}
             <a href="https://legal.buddhachat.online/privacy" target="_blank" rel="noreferrer" onClick={(event) => onLegal(event, 'privacy')}>{copy.welcome.privacy}</a>
           </p>
-        </div>
+  )
+}
+
+// The sign-in choices behind "已有账号？登录" (embedded only). Apple appears only when the App offers it,
+// so Android never shows it. Every action sends the same message the old welcome sent.
+function LoginScreen({ copy, onBack, onEmail, onSignIn, onLegal, capabilities = {}, busy = false }) {
+  return (
+    <StandardScreen step="login" onBack={onBack} copy={copy} className="onboarding-screen--login">
+      <Heading title={copy.login.title} subtitle={copy.login.subtitle} />
+      <div className="onboarding-actions">
+        {capabilities.emailOtp ? (
+          <SecondaryButton disabled={busy} onClick={onEmail}>
+            <img src="/app-onboarding/email-icon.svg" alt="" aria-hidden="true" />
+            {copy.welcome.email}
+          </SecondaryButton>
+        ) : null}
+        {capabilities.appleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('apple')}>{copy.welcome.apple}</SecondaryButton> : null}
+        {capabilities.googleSignIn ? <SecondaryButton disabled={busy} onClick={() => onSignIn('google')}>{copy.welcome.google}</SecondaryButton> : null}
       </div>
-    </section>
+      <LegalNotice copy={copy} onLegal={onLegal} />
+    </StandardScreen>
   )
 }
 
@@ -1047,7 +1093,7 @@ export default function AppOnboardingWelcomePage() {
   }, [embedded])
 
   useEffect(() => {
-    const nativeStep = H5_STEP_TO_NATIVE[step]
+    const nativeStep = H5_STEP_READY_OVERRIDES[step] ?? H5_STEP_TO_NATIVE[step]
     if (!embedded || !nativeBootstrap.ready || !nativeStep || lastReadyStep.current === nativeStep) return
     lastReadyStep.current = nativeStep
     const id = createBridgeMessageId(++bridgeMessageNumber.current)
@@ -1133,9 +1179,9 @@ export default function AppOnboardingWelcomePage() {
   }
 
   const backMap = useMemo(() => ({
-    email: 'welcome', quests: 'welcome', 'wish-one': 'quests', birthdate: 'wish-one', 'wish-two': 'birthdate',
+    login: 'welcome', email: embedded ? 'login' : 'welcome', quests: 'welcome', 'wish-one': 'quests', birthdate: 'wish-one', 'wish-two': 'birthdate',
     presence: 'wish-two', resonance: 'presence', blessing: 'resonance', guardian: 'blessing', conversation: 'guardian', practice: 'conversation',
-  }), [])
+  }), [embedded])
   nativeBackRef.current = () => {
     const previous = backMap[step]
     if (previous) goBack(previous)
@@ -1247,14 +1293,24 @@ export default function AppOnboardingWelcomePage() {
       onBegin={() => runNativeAction('onboarding.persist', { step: 'quests', data: {} }, () => go('quests'))}
       onEmail={() => runNativeAction('onboarding.persist', { step: 'email', data: {} }, () => go('email'))}
       onSignIn={signIn}
+      onOpenLogin={() => go('login')}
       onLegal={openLegal}
       onGuest={exploreAsGuest}
+    />,
+    login: <LoginScreen
+      copy={copy}
+      busy={pendingAction}
+      capabilities={nativeBootstrap.capabilities}
+      onBack={() => goBack('welcome')}
+      onEmail={() => runNativeAction('onboarding.persist', { step: 'email', data: {} }, () => go('email'))}
+      onSignIn={signIn}
+      onLegal={openLegal}
     />,
     email: <EmailScreen
       copy={copy}
       embedded={embedded}
       requestNative={requestNative}
-      onBack={() => goBack('welcome')}
+      onBack={() => goBack(embedded ? 'login' : 'welcome')}
       onSuccess={async () => {
         if (embedded) await requestNative('onboarding.persist', { step: 'quests', data: {} })
         go('quests')
