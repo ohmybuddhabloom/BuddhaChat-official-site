@@ -10,6 +10,16 @@ function sendNativeMessage(message) {
   window.dispatchEvent(new MessageEvent('message', { data: JSON.stringify(message) }))
 }
 
+
+// 1.3.8 two-entry welcome: sign-in buttons now sit behind "已有账号？登录". Open that choice first when
+// the embedded welcome is showing it; elsewhere (standalone web, later screens) this is a plain lookup.
+const SIGN_IN_ENTRY = /^(已有账号？登录|已有帳號？登入|Already have an account\? Sign in)$/
+function signInChoice(name) {
+  const entry = screen.queryByRole('button', { name: SIGN_IN_ENTRY })
+  if (entry) fireEvent.click(entry)
+  return screen.getByRole('button', { name })
+}
+
 describe('AppOnboardingWelcomePage', () => {
   afterEach(() => {
     vi.useRealTimers()
@@ -103,14 +113,14 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue with email' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue as guest' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Try it now' })).toBeInTheDocument()
+    expect(signInChoice('Continue with email')).toBeInTheDocument()
     expect(screen.queryByText('开启你的清净之旅')).not.toBeInTheDocument()
     expect(document.querySelector('.app-onboarding')).toHaveAttribute('lang', 'en')
     pushState.mockClear()
     replaceState.mockClear()
 
-    fireEvent.click(screen.getByRole('button', { name: 'Continue with email' }))
+    fireEvent.click(signInChoice('Continue with email'))
     const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
 
@@ -162,7 +172,7 @@ describe('AppOnboardingWelcomePage', () => {
     }))
 
     expect(screen.queryByRole('button', { name: '开始探索' })).not.toBeInTheDocument()
-    const begin = screen.getByRole('button', { name: '使用邮箱继续' })
+    const begin = signInChoice('使用邮箱继续')
     fireEvent.click(begin)
     fireEvent.click(begin)
     const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
@@ -176,7 +186,7 @@ describe('AppOnboardingWelcomePage', () => {
     })
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(1)
     expect(begin).toBeDisabled()
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
 
@@ -198,13 +208,13 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    const email = screen.getByRole('button', { name: '使用邮箱继续' })
+    const email = signInChoice('使用邮箱继续')
     fireEvent.click(email)
     const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
 
     expect(persist?.payload).toEqual({ step: 'email', data: {} })
     expect(email).toBeDisabled()
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
     expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
@@ -225,11 +235,11 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     const persist = bridgeMessages(postMessage).find(({ event }) => event === 'onboarding.persist')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id }))
 
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: persist.event, id: persist.id, payload: {} }))
     expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
@@ -379,7 +389,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    const begin = screen.getByRole('button', { name: '使用邮箱继续' })
+    const begin = signInChoice('使用邮箱继续')
     fireEvent.click(begin)
     await act(async () => vi.advanceTimersByTime(12_000))
 
@@ -410,7 +420,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    const google = screen.getByRole('button', { name: '使用 Google 继续' })
+    const google = signInChoice('使用 Google 继续')
     fireEvent.click(google)
     await act(async () => vi.advanceTimersByTime(12_000))
 
@@ -443,7 +453,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     fireEvent.change(screen.getByLabelText('邮箱地址'), { target: { value: 'user@example.com' } })
@@ -844,10 +854,10 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    expect(screen.getByRole('button', { name: '使用 Apple 继续' })).toBeInTheDocument()
+    expect(signInChoice('使用 Apple 继续')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: '使用邮箱继续' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: '游客体验' })).not.toBeInTheDocument()
-    const google = screen.getByRole('button', { name: '使用 Google 继续' })
+    expect(screen.queryByRole('button', { name: '直接体验' })).not.toBeInTheDocument()
+    const google = signInChoice('使用 Google 继续')
     fireEvent.click(google)
     fireEvent.click(google)
     const auth = bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')
@@ -858,7 +868,7 @@ describe('AppOnboardingWelcomePage', () => {
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: auth[0].event, id: auth[0].id, payload: {} }))
     const progress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'quests')
     expect(progress).toBeDefined()
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: progress.event, id: progress.id, payload: {} }))
     expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
@@ -884,7 +894,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    fireEvent.click(signInChoice('使用 Google 继续'))
     const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
     await act(async () => sendNativeMessage({
       v: 1,
@@ -894,11 +904,11 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { code: 'auth_cancelled', message: '登录已取消', retryable: false },
     }))
 
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
-    expect(screen.getByRole('button', { name: '使用 Google 继续' })).toBeEnabled()
-    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    expect(signInChoice('使用 Google 继续')).toBeEnabled()
+    fireEvent.click(signInChoice('使用 Google 继续'))
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
   })
 
@@ -922,7 +932,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    fireEvent.click(signInChoice('使用 Google 继续'))
     const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
     await act(async () => sendNativeMessage({
       v: 1,
@@ -932,7 +942,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { code: 'action_failed', message: '登录已取消', retryable: true },
     }))
 
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(0)
     fireEvent.click(screen.getByRole('button', { name: '重试' }))
@@ -954,7 +964,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用 Google 继续' }))
+    fireEvent.click(signInChoice('使用 Google 继续'))
     const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
     await act(async () => sendNativeMessage({
       v: 1, type: 'ack', event: auth.event, id: auth.id,
@@ -967,9 +977,9 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { code, message: 'Persistence failed', retryable: true },
     }))
 
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
-    expect(screen.getByRole('button', { name: '使用 Google 继续' })).toBeEnabled()
+    expect(signInChoice('使用 Google 继续')).toBeEnabled()
     fireEvent.click(screen.getByRole('button', { name: '重试' }))
     expect(bridgeMessages(postMessage).filter(({ event }) => event === 'auth.sign_in')).toHaveLength(2)
   })
@@ -994,7 +1004,7 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     await act(async () => sendNativeMessage({
       v: 1,
@@ -1004,7 +1014,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { code: 'auth_cancelled', message: 'Unexpected cancel', retryable: true },
     }))
 
-    expect(screen.getByRole('heading', { name: '开启你的清净之旅' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     expect(screen.getByRole('alert')).toHaveTextContent('操作失败，请重试')
     expect(bridgeMessages(postMessage).filter(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')).toHaveLength(1)
   })
@@ -1024,7 +1034,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { guest: true } },
     }))
 
-    const guest = screen.getByRole('button', { name: '游客体验' })
+    const guest = screen.getByRole('button', { name: '直接体验' })
     fireEvent.click(guest)
     fireEvent.click(guest)
     const requests = bridgeMessages(postMessage).filter(({ event }) => event === 'guest.explore')
@@ -1053,7 +1063,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     expect(bridgeMessages(postMessage)).toContainEqual(expect.objectContaining({
@@ -1128,7 +1138,7 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'welcome', payload: {}, locale: 'zh-Hans', capabilities: { emailOtp: true } },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     const emailProgress = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: emailProgress.event, id: emailProgress.id, payload: {} }))
     fireEvent.change(screen.getByLabelText('邮箱地址'), { target: { value: 'user@example.com' } })
@@ -1290,10 +1300,10 @@ describe('AppOnboardingWelcomePage', () => {
     pushState.mockClear()
     historyBack.mockClear()
 
-    fireEvent.click(screen.getByRole('button', { name: 'Continue with email' }))
+    fireEvent.click(signInChoice('Continue with email'))
     const emailPersist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'email')
     expect(emailPersist?.payload.data).toEqual({})
-    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Sign in or create an account' })).toBeInTheDocument()
     expect(replaceState).not.toHaveBeenCalled()
     expect(pushState).not.toHaveBeenCalled()
     expect(historyBack).not.toHaveBeenCalled()
@@ -1311,7 +1321,7 @@ describe('AppOnboardingWelcomePage', () => {
     expect(historyBack).not.toHaveBeenCalled()
 
     await act(async () => sendNativeMessage({ v: 1, type: 'ack', event: welcomePersist.event, id: welcomePersist.id, payload: {} }))
-    expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Sign in or create an account' })).toBeInTheDocument()
     expect(replaceState).not.toHaveBeenCalled()
     expect(pushState).not.toHaveBeenCalled()
     expect(historyBack).not.toHaveBeenCalled()
@@ -1431,10 +1441,10 @@ describe('AppOnboardingWelcomePage', () => {
 
     expect(screen.getByRole('heading', { name: 'Begin Your Clear Path' })).toBeInTheDocument()
     expect(document.querySelector('.onboarding-welcome-scroll')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue with email' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue with Apple' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue with Google' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Continue as guest' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Try it now' })).toBeInTheDocument()
+    expect(signInChoice('Continue with email')).toBeInTheDocument()
+    expect(signInChoice('Continue with Apple')).toBeInTheDocument()
+    expect(signInChoice('Continue with Google')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Terms of Service' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Privacy Policy' })).toBeInTheDocument()
     expect(pushState).not.toHaveBeenCalled()
@@ -1579,7 +1589,7 @@ describe('AppOnboardingWelcomePage', () => {
     })
     render(<AppOnboardingWelcomePage />)
 
-    fireEvent.click(screen.getByRole('button', { name: '使用邮箱继续' }))
+    fireEvent.click(signInChoice('使用邮箱继续'))
     expect(screen.getByRole('heading', { name: '使用邮箱继续' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: '返回' }))
     expect(historyBack).toHaveBeenCalledOnce()

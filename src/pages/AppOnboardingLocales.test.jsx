@@ -35,6 +35,7 @@ afterEach(() => {
 const steps = ['welcome', 'email', 'quests', 'wish_survey_1', 'birthdate', 'wish_survey_2',
   'presence_presence', 'presence_transition', 'presence_blessing', 'guardian_match',
   'guardian_first_interaction', 'first_practice', 'first_practice_completed']
+
 describe('localized native bootstrap across the complete flow', () => {
   it.each(steps)('English %s renders without untranslated Chinese controls', step => {
     const { container } = boot('en', step)
@@ -53,8 +54,8 @@ describe('localized native bootstrap across the complete flow', () => {
   })
 
   it.each([
-    ['en', 'Continue as guest', 'Action failed. Please retry.', 'Retry'],
-    ['zh-Hant', '訪客體驗', '操作失敗，請重試', '重試'],
+    ['en', 'Try it now', 'Action failed. Please retry.', 'Retry'],
+    ['zh-Hant', '直接體驗', '操作失敗，請重試', '重試'],
   ])('%s localizes native failure without leaking provider text, then retries the same action', async (locale, guest, errorText, retry) => {
     const { postMessage } = boot(locale, 'welcome')
     fireEvent.click(screen.getByRole('button', { name: guest }))
