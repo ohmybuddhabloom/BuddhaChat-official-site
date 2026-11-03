@@ -138,12 +138,13 @@ describe('embedded two-entry welcome', () => {
     for (const viaNative of [false, true]) {
       const postMessage = mount(ALL)
       fireEvent.click(screen.getByRole('button', { name: '已有账号？登录' }))
+      const persistsBefore = bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist').length
       if (viaNative) expect(androidBack(postMessage), 'App 1.3.7 must hand back to the page').toBe('handled by the page')
       else fireEvent.click(screen.getByRole('button', { name: '返回' }))
-      const back = lastPersist(postMessage)
-      expect(back.payload.step).toBe('welcome')
-      await ack(back)
+      // Nothing to persist: the App still holds welcome, so a rejected persist can never strand the person here.
+      expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.persist')).toHaveLength(persistsBefore)
       expect(screen.getByRole('button', { name: '直接体验' })).toBeInTheDocument()
+      expect(bridgeMessages(postMessage).filter(({ event }) => event === 'onboarding.step_ready').at(-1).payload.step, 'the App is told the welcome is showing again').toBe('welcome')
       expect(androidBack(postMessage), 'back on the welcome still leaves the App as in 1.3.7').toBe('left the App')
       expectAcceptedBy137(postMessage)
       document.body.innerHTML = ''
@@ -164,11 +165,22 @@ describe('embedded two-entry welcome', () => {
     await ack(back)
     expect(screen.getByRole('heading', { name: '登录或注册账号' })).toBeInTheDocument()
     expect(androidBack(postMessage), 'a second back from the choices reaches the welcome, not the home screen').toBe('handled by the page')
-    const home = lastPersist(postMessage)
-    expect(home.payload.step).toBe('welcome')
-    await ack(home)
     expect(screen.getByRole('button', { name: '直接体验' })).toBeInTheDocument()
     expectAcceptedBy137(postMessage)
+  })
+
+  it('back from the choices still works when the App rejects persisting welcome', async () => {
+    const postMessage = mount(ALL)
+    fireEvent.click(screen.getByRole('button', { name: '已有账号？登录' }))
+    fireEvent.click(screen.getByRole('button', { name: '使用 Apple 继续' }))
+    const auth = bridgeMessages(postMessage).find(({ event }) => event === 'auth.sign_in')
+    // iOS 1.3.7 reports a cancelled Apple sheet as a generic failure: the retry banner shows.
+    await act(async () => sendNativeMessage({ v: 1, type: 'error', event: auth.event, id: auth.id, payload: { code: 'action_failed', message: '操作失败', retryable: true } }))
+    expect(screen.getByRole('alert')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '返回' }))
+    expect(screen.getByRole('button', { name: '直接体验' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '已有账号？登录' })).toBeEnabled()
+    expect(screen.queryByRole('alert'), 'the sign-in retry does not follow to the welcome').not.toBeInTheDocument()
   })
 
   it('hides an entry the App cannot serve', () => {
