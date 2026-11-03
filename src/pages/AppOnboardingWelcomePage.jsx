@@ -1158,7 +1158,22 @@ export default function AppOnboardingWelcomePage() {
     window.history.pushState({ onboardingStep: next, onboardingDepth: nextDepth }, '')
   }
 
+  // Leaving the sign-in choices needs no App round trip: opening them persisted nothing, so the App
+  // still holds welcome. Skipping the persist also keeps back working when the App would reject a
+  // welcome persist (for example an account whose stored step is already past the welcome).
+  const leaveSignInChoices = () => {
+    // A failed sign-in's retry belongs to the choices; it must not follow the person to the welcome.
+    retryAction.current = null
+    setBridgeError('')
+    setDirection('back')
+    setStep('welcome')
+  }
+
   const goBack = (previous) => {
+    if (embedded && step === 'login' && previous === 'welcome') {
+      leaveSignInChoices()
+      return
+    }
     if (embedded) {
       runNativeAction('onboarding.persist', {
         step: H5_STEP_TO_NATIVE[previous],
