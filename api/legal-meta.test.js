@@ -19,3 +19,13 @@ describe('legal social metadata', () => {
     expect(html).not.toMatch(/vercel\.app|zentube/)
   })
 })
+
+describe('community translation terms', () => {
+  it('tells people their Community messages are translated by MiniMax', () => {
+    const html = readFileSync(path.join(process.cwd(), 'legal-site', 'terms.html'), 'utf8')
+    const section = html.slice(html.indexOf('9. Community Guidelines'), html.indexOf('10. Child Safety'))
+    expect(section).toContain('sent to MiniMax, our translation provider')
+    expect(section).toContain('Only the message text is sent')
+    expect(html).toContain('Effective Date: November 4, 2026')
+  })
+})
