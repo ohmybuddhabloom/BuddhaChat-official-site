@@ -298,7 +298,8 @@ describe('Phase2 versioned music namespace (owner-v2)', () => {
     // 简/繁 language) from ever reaching the App. The legacy v1 pin below stays frozen.
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
     const stagingMusic = `https://buddhachat-music-env-staging-chenjunyu-1990s-projects.vercel.app/music/${NS}`
-    const routes = config.rewrites.filter(r => r.source.startsWith(`/music/${NS}`))
+    // Only the Staging-host rules follow music Staging; the host-less rules serve Production.
+    const routes = config.rewrites.filter(r => r.source.startsWith(`/music/${NS}`) && r.has)
     expect(routes.length).toBe(5)
     for (const route of routes) expect(route.destination.startsWith(stagingMusic), route.source).toBe(true)
   })
@@ -319,14 +320,15 @@ describe('App 1.3.7 music page', () => {
   test('routes the versioned native music path, including its trailing slash, to the music project before any catch-all', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
     const sources = config.rewrites.map((rule) => rule.source)
-    const root = config.rewrites.find((rule) => rule.source === '/music/app137-owner-v2-01dafd9/')
+    const root = config.rewrites.find((rule) => rule.source === '/music/app137-owner-v2-01dafd9/' && !rule.has)
 
     expect(root).toEqual({
       source: '/music/app137-owner-v2-01dafd9/',
       destination: 'https://buddhachat-music.vercel.app/music/app137-owner-v2-01dafd9/',
     })
     expect(root.has).toBeUndefined()
-    expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/music/:path*'))
-    expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/:path*'))
+    const prodIndex = config.rewrites.indexOf(root)
+    expect(prodIndex).toBeLessThan(config.rewrites.findIndex((rule) => rule.source === '/music/:path*' && !rule.has))
+    expect(prodIndex).toBeLessThan(sources.indexOf('/:path*'))
   })
 })
