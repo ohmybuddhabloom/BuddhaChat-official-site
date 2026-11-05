@@ -50,7 +50,7 @@ function useCampaignDeepLink() {
       // follow the javascript: navigation. WeChat blocks it, so skip there.
       try {
         const fallback = encodeURIComponent(window.location.href)
-        window.location.href = `intent://l/${deepLink.split('//')[1]}#Intent;scheme=buddhachat;S.browser_fallback_url=${fallback};end`
+        window.location.href = `intent://${deepLink.split('//')[1]}#Intent;scheme=buddhachat;S.browser_fallback_url=${fallback};end`
       } catch {
         // ignore — the page remains a download fallback
       }
