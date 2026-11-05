@@ -1,7 +1,8 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest'
+import routerHandler from './master-router/api/index.js'
 import routing from './master-router/lib/routing.js'
 
 const {
@@ -330,5 +331,34 @@ describe('App 1.3.7 music page', () => {
     const prodIndex = config.rewrites.indexOf(root)
     expect(prodIndex).toBeLessThan(config.rewrites.findIndex((rule) => rule.source === '/music/:path*' && !rule.has))
     expect(prodIndex).toBeLessThan(sources.indexOf('/:path*'))
+  })
+})
+
+describe('go smart link proxy', () => {
+  test('hands a smart link redirect to the visitor instead of following it', async () => {
+    const location = 'https://www.buddhachat.online/download?ch=video-share'
+    const fetchMock = vi.fn(async () => new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } }))
+    vi.stubGlobal('fetch', fetchMock)
+    const headers = {}
+    const response = {
+      statusCode: 0,
+      sent: undefined,
+      setHeader(key, value) { headers[key] = value },
+      status(code) { this.statusCode = code; return this },
+      send(body) { this.sent = body; return this },
+    }
+    try {
+      await routerHandler({
+        method: 'GET',
+        url: '/l/video?itemId=topic%3A19',
+        headers: { host: 'go.buddhachat.online', 'user-agent': 'iPhone' },
+      }, response)
+    } finally {
+      vi.unstubAllGlobals()
+    }
+    expect(fetchMock.mock.calls[0][1].redirect).toBe('manual')
+    expect(fetchMock.mock.calls[0][0]).toMatch(/\/l\/video\?itemId=topic%3A19$/)
+    expect(response.statusCode).toBe(302)
+    expect(headers.location).toBe(location)
   })
 })
