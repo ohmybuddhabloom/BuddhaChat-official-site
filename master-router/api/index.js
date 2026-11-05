@@ -37,6 +37,9 @@ async function proxySmartLinkRequest(request, response) {
     method,
     headers,
     body,
+    // The redirect belongs to the visitor. Followed here, its page lands on the go host, where the
+    // page's scripts and images 404 and phones show a blank screen.
+    redirect: 'manual',
   })
   const responseBody =
     method === 'HEAD' ? null : Buffer.from(await upstream.arrayBuffer())
