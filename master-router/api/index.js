@@ -30,6 +30,7 @@ async function proxySmartLinkRequest(request, response) {
     accept: request.headers.accept || 'application/json',
     'user-agent': request.headers['user-agent'] || 'buddhachat-master-router',
   }
+  if (request.headers['accept-language']) headers['accept-language'] = request.headers['accept-language']
   if (request.headers['content-type']) headers['content-type'] = request.headers['content-type']
   if (request.headers['x-forwarded-for']) headers['x-forwarded-for'] = request.headers['x-forwarded-for']
 
@@ -44,7 +45,7 @@ async function proxySmartLinkRequest(request, response) {
   const responseBody =
     method === 'HEAD' ? null : Buffer.from(await upstream.arrayBuffer())
 
-  for (const header of ['cache-control', 'content-type', 'location', 'x-robots-tag']) {
+  for (const header of ['cache-control', 'content-security-policy', 'content-type', 'location', 'referrer-policy', 'x-robots-tag']) {
     const value = upstream.headers.get(header)
     if (value) response.setHeader(header, value)
   }
