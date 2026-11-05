@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="date">Effective Date: November 4, 2026</p>
+  <p class="date">Effective Date: November 5, 2026</p>
 
   <p>BuddhaChat ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the BuddhaChat mobile application ("App").</p>
 
@@ -44,6 +44,8 @@
   <p><strong>Chat Content:</strong> Messages and media you choose to send in community group chats (Dojos), questions you post in the Q&amp;A feed, and prompts you send to Ask. Ask conversations may be retained in app or service history so that you can continue a conversation. Optional long-term Ask memory is used only when you enable it.</p>
   <p><strong>Device Information:</strong> Push notification tokens for delivering notifications to your device.</p>
   <p><strong>Usage and Analytics Data:</strong> We collect information about how the App is used to understand engagement and improve BuddhaChat. This includes a randomly generated visitor identifier, your account identifier when you are signed in, basic device details such as operating system, device type, brand, and model, screens viewed, app-open events, sign-in and sign-up events, and referral or campaign attribution included in links you open. This information is stored in our Supabase backend for internal reporting and is not sold or shared for third-party advertising.</p>
+  <p><strong>Diagnostics Data:</strong> To keep the App reliable, we record technical information about how it runs: crash and error reports, whether requests succeed or fail and how long they take, load times, the App version and platform, a coarse region, and a one-way hash of a random identifier created on your device. These records do not include your name, account identifier, messages, or the contents of your requests. Crash reports go to a crash reporting service we run ourselves, and the other diagnostics are stored in our Supabase backend.</p>
+  <p><strong>Security Data:</strong> To protect the App and limit abuse, we may check that requests come from a genuine copy of the App using Apple App Attest or Google Play Integrity, and we store the device key Apple issues for this check with your account identifier. When an Ask question counts toward a usage limit, or when you start an article translation, we store a keyed one-way hash of your IP address to enforce those limits. We do not store the IP address itself for these limits.</p>
   <p><strong>Media Data:</strong> When you choose to share a photo, file, voice message, or video in Community, the selected media is uploaded for delivery to the conversation. Camera and microphone access is requested only after you choose a feature that needs it.</p>
   <p><strong>Voice Input:</strong> When you choose voice input in Ask, audio is recorded temporarily and transmitted for speech-to-text processing. The resulting transcription is placed in the Ask input field.</p>
   <p><strong>Purchase Information:</strong> Apple App Store or Google Play processes and stores payment information for digital purchases. We receive purchase confirmation, product, entitlement, and subscription status through RevenueCat, but not your complete credit card details. For physical product purchases via PayPal, PayPal processes payment; we receive the shipping and order information needed to fulfill the order.</p>
@@ -56,6 +58,7 @@
     <li>To facilitate community features (Dojo membership and Q&amp;A feeds)</li>
     <li>To deliver media that you choose to share in Community</li>
     <li>To measure App usage, diagnose product issues, and understand referral or campaign performance</li>
+    <li>To keep the App secure, detect modified clients, and prevent abuse</li>
     <li>To manage purchases, subscriptions, and premium access</li>
     <li>To fulfill physical product orders placed through PayPal</li>
   </ul>
@@ -79,6 +82,8 @@
     <li><strong>AgentChat and MiniMax</strong> — Generating AI-powered spiritual guidance in Ask. Your Ask messages and related conversation context are sent to these services to produce a reply.</li>
     <li><strong>Groq</strong> — Transcribing Ask voice input into text and, only if you turn on Ask memory, summarizing your stated preferences to personalize replies.</li>
     <li><strong>MiniMax</strong> — Translating Community messages into each reader's language. The text of a message may be translated when it is sent or when it is opened, and the translation is stored so it can be shown again. Only the message text is sent, not your name or account details.</li>
+    <li><strong>MiniMax</strong> — Translating Masters articles when a reader asks for a translation. Only the article text is sent, and the translation is stored so other readers can see it.</li>
+    <li><strong>Apple App Attest and Google Play Integrity</strong> — Checking that requests come from a genuine copy of the App.</li>
     <li><strong>RevenueCat</strong> — Subscription management and purchase validation</li>
     <li><strong>Apple App Store and Google Play</strong> — Payment processing for digital purchases</li>
     <li><strong>PayPal</strong> — Payment processing for physical product purchases</li>
