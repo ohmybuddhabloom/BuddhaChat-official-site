@@ -23,6 +23,11 @@ if (env === "production" || ["main", "master", "production"].includes(ref)) {
   process.exit(1);
 }
 
+if (ref === "staging") {
+  console.log("Building the automatic Staging deployment.");
+  process.exit(1);
+}
+
 if (!previousSha) {
   console.log("No previous deployment SHA available; building.");
   process.exit(1);
