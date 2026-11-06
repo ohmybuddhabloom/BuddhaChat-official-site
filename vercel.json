@@ -60,6 +60,16 @@
       "permanent": false
     },
     {
+      "source": "/videos/assets/:path*",
+      "destination": "https://zentube.buddhachat.online/assets/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/videos/locales/:path*",
+      "destination": "https://zentube.buddhachat.online/locales/:path*",
+      "permanent": false
+    },
+    {
       "source": "/master/:slug([a-z0-9-]+)",
       "destination": "https://:slug.buddhachat.online",
       "permanent": true

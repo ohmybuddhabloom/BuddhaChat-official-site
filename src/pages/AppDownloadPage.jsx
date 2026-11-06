@@ -85,13 +85,13 @@ const DOWNLOADS = {
 }
 
 const PREVIEW_IMAGES = [
-  '/app-previews/app-ai-buddha-mobile.avif',
-  '/app-previews/app-home-mobile.avif',
-  '/app-previews/app-master-talks-mobile.avif',
-  '/app-previews/app-practice-mobile.avif',
-  '/app-previews/app-music-mobile.avif',
-  '/app-previews/app-scriptures-mobile.avif',
-  '/app-previews/app-community-mobile.avif',
+  'app-ai-buddha-mobile',
+  'app-home-mobile',
+  'app-master-talks-mobile',
+  'app-practice-mobile',
+  'app-music-mobile',
+  'app-scriptures-mobile',
+  'app-community-mobile',
 ]
 
 const PAGE_COPY = {
@@ -528,14 +528,20 @@ export default function AppDownloadPage({ locale = 'zh' }) {
             <figure key={PREVIEW_IMAGES[index]}>
               <div className="campaign-download-preview-media">
                 <div className="campaign-download-phone-screen">
-                  <img
-                    src={PREVIEW_IMAGES[index]}
-                    alt={preview[0]}
-                    width="540"
-                    height="1122"
-                    decoding="async"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcSet={`/app-previews/${PREVIEW_IMAGES[index]}.avif`}
+                    />
+                    <img
+                      src={`/app-previews/${PREVIEW_IMAGES[index]}.jpg`}
+                      alt={preview[0]}
+                      width="540"
+                      height="1122"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               </div>
               <figcaption>
