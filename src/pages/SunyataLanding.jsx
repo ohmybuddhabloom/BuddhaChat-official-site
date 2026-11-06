@@ -223,7 +223,6 @@ function getInitialViewportProfile() {
 }
 
 function SunyataLanding() {
-  const cursorRef = useRef(null)
   const heroSectionRef = useRef(null)
   const heroTitleRef = useRef(null)
   const devotionalRef = useRef(null)
@@ -285,63 +284,6 @@ function SunyataLanding() {
 
     return () => {
       window.removeEventListener('resize', updateProfile)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (
-      typeof window.matchMedia === 'function' &&
-      !window.matchMedia('(pointer: fine)').matches
-    ) {
-      return undefined
-    }
-
-    let pointerFrame = 0
-
-    const updatePointer = (event) => {
-      if (!cursorRef.current) {
-        return
-      }
-
-      if (pointerFrame) {
-        cancelAnimationFrame(pointerFrame)
-      }
-
-      pointerFrame = requestAnimationFrame(() => {
-        if (!cursorRef.current) {
-          return
-        }
-
-        cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`
-      })
-    }
-
-    const expandCursor = () => {
-      if (cursorRef.current) {
-        cursorRef.current.style.width = '250px'
-        cursorRef.current.style.height = '250px'
-      }
-    }
-
-    const resetCursor = () => {
-      if (cursorRef.current) {
-        cursorRef.current.style.width = '150px'
-        cursorRef.current.style.height = '150px'
-      }
-    }
-
-    document.addEventListener('mousemove', updatePointer)
-    document.addEventListener('mousedown', expandCursor)
-    document.addEventListener('mouseup', resetCursor)
-
-    return () => {
-      if (pointerFrame) {
-        cancelAnimationFrame(pointerFrame)
-      }
-
-      document.removeEventListener('mousemove', updatePointer)
-      document.removeEventListener('mousedown', expandCursor)
-      document.removeEventListener('mouseup', resetCursor)
     }
   }, [])
 
@@ -840,7 +782,6 @@ function SunyataLanding() {
 
   return (
     <main className={`sunyata-page${projectSceneReady ? ' scene-ready' : ''}${editorEnabled && editorOpen ? ' editor-open' : ''}`}>
-      <div ref={cursorRef} className="sunyata-cursor" aria-hidden="true" />
       <NoiseOverlay />
       <div className="void-bg" aria-hidden="true" />
       {editorEnabled && <SunyataEditor
