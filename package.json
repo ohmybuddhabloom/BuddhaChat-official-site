@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/verify-public-assets.mjs && vite build && node scripts/prepare-vercel-output.mjs",
+    "build": "node scripts/check-production-release-policy.mjs && node scripts/verify-public-assets.mjs && vite build && node scripts/prepare-vercel-output.mjs",
+    "check:release-policy": "node scripts/check-production-release-policy.mjs",
+    "release:production": "node scripts/production-release-blocked.mjs",
     "test": "vitest run",
     "lint": "eslint .",
     "preview": "vite preview",

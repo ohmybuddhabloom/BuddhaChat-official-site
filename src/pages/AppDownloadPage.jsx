@@ -80,7 +80,7 @@ const DOWNLOADS = {
   },
   apk: {
     icon: '/download-icons/android.png',
-    url: import.meta.env.VITE_ANDROID_APK_URL || '/download/android/latest.apk',
+    url: import.meta.env.VITE_ANDROID_APK_URL || '/downloads/android/latest.apk',
   },
 }
 
