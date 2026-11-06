@@ -210,6 +210,14 @@
       "destination": "https://zentube.buddhachat.online/api/reader-sync"
     },
     {
+      "source": "/api/reader-sync/:path*",
+      "destination": "https://zentube.buddhachat.online/api/reader-sync/:path*"
+    },
+    {
+      "source": "/api/music/:path*",
+      "destination": "https://zentube.buddhachat.online/api/music/:path*"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },

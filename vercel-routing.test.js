@@ -176,6 +176,21 @@ describe('website product routing', () => {
   })
 })
 
+describe('account API forwards', () => {
+  test('sends versioned reader sync and music state to the video site before the page fallback', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const index = source => config.rewrites.findIndex(rule => rule.source === source && !rule.has)
+    for (const [source, destination] of [
+      ['/api/reader-sync/:path*', 'https://zentube.buddhachat.online/api/reader-sync/:path*'],
+      ['/api/music/:path*', 'https://zentube.buddhachat.online/api/music/:path*'],
+    ]) {
+      expect(index(source)).toBeGreaterThanOrEqual(0)
+      expect(config.rewrites[index(source)].destination).toBe(destination)
+      expect(index(source)).toBeLessThan(index('/:path*/'))
+    }
+  })
+})
+
 describe('App 1.3.7 music page', () => {
   test('routes the versioned native music path, including its trailing slash, to the music project before any catch-all', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
