@@ -31,6 +31,22 @@ describe('android release endpoint', () => {
     expect(res.payload.versionCode).toBe(11)
   })
 
+  it('points the staging site at its own package and every other host at the official one', () => {
+    Object.assign(process.env, {
+      ANDROID_APK_VERSION_CODE: '96',
+      ANDROID_APK_VERSION_NAME: '1.3.8',
+      ANDROID_APK_SHA256: 'b'.repeat(64),
+    })
+    const apkUrl = (host) => {
+      const res = response()
+      handler({ headers: { host } }, res)
+      return res.payload.apkUrl
+    }
+    expect(apkUrl('staging.buddhachat.online')).toBe('https://staging.buddhachat.online/downloads/android/latest.apk')
+    expect(apkUrl('www.buddhachat.online')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
+    expect(apkUrl('evil.example')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
+  })
+
   it('does not expose a partially configured APK release', () => {
     delete process.env.ANDROID_APK_VERSION_CODE
     const res = response()

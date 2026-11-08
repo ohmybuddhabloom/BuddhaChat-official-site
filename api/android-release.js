@@ -1,4 +1,6 @@
 const APK_HOST = 'www.buddhachat.online'
+// Staging serves its own package; anything else, including a spoofed host, gets the official one.
+const STAGING_HOST = 'staging.buddhachat.online'
 const SHA256 = /^[a-f0-9]{64}$/i
 
 function integer(value, fallback = 0) {
@@ -19,7 +21,8 @@ export default function handler(req, res) {
     return res.status(503).json({ error: 'Android release is not configured.' })
   }
 
-  const apkUrl = `https://${APK_HOST}/downloads/android/latest.apk`
+  const host = String(req?.headers?.host ?? '').toLowerCase()
+  const apkUrl = `https://${host === STAGING_HOST ? STAGING_HOST : APK_HOST}/downloads/android/latest.apk`
   res.setHeader('Cache-Control', 'no-store, max-age=0')
   return res.status(200).json({
     platform: 'android',
