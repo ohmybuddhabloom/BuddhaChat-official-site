@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="date">Effective Date: November 5, 2026</p>
+  <p class="date">Effective Date: [date 1.4.1 is released]</p>
 
   <p>BuddhaChat ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the BuddhaChat mobile application ("App").</p>
 
@@ -46,6 +46,7 @@
   <p><strong>Usage and Analytics Data:</strong> We collect information about how the App is used to understand engagement and improve BuddhaChat. This includes a randomly generated visitor identifier, your account identifier when you are signed in, basic device details such as operating system, device type, brand, and model, screens viewed, app-open events, sign-in and sign-up events, and referral or campaign attribution included in links you open. This information is stored in our Supabase backend for internal reporting and is not sold or shared for third-party advertising.</p>
   <p><strong>Diagnostics Data:</strong> To keep the App reliable, we record technical information about how it runs: crash and error reports, whether requests succeed or fail and how long they take, load times, the App version and platform, a coarse region, and a one-way hash of a random identifier created on your device. These records do not include your name, account identifier, messages, or the contents of your requests. Crash reports go to a crash reporting service we run ourselves, and the other diagnostics are stored in our Supabase backend.</p>
   <p><strong>Security Data:</strong> To protect the App and limit abuse, we may check that requests come from a genuine copy of the App using Apple App Attest or Google Play Integrity, and we store the device key Apple issues for this check with your account identifier. When an Ask question counts toward a usage limit, or when you start an article translation, we store a keyed one-way hash of your IP address to enforce those limits. We do not store the IP address itself for these limits.</p>
+  <p><strong>Continuing a Shared Page After Installing:</strong> If you open a BuddhaChat web page, choose to open it in the App, and then install the App, the App tries to take you back to that page the first time it opens. On iPhone, when you choose to download the App from that page, we store the page address together with a salted one-way hash of your network address (never the address itself). When the App first opens on the same network, it asks for that page once; the record is deleted as soon as it is handed out, or after two hours if it never is. On Android, the web page copies its own link to your clipboard, and the App reads the clipboard once on its first launch after installation, uses the link only if it is a BuddhaChat page link, and then clears it. The App does not read the clipboard at any other time. Only public BuddhaChat pages can be continued this way.</p>
   <p><strong>Media Data:</strong> When you choose to share a photo, file, voice message, or video in Community, the selected media is uploaded for delivery to the conversation. Camera and microphone access is requested only after you choose a feature that needs it.</p>
   <p><strong>Voice Input:</strong> When you choose voice input in Ask, audio is recorded temporarily and transmitted for speech-to-text processing. The resulting transcription is placed in the Ask input field.</p>
   <p><strong>Purchase Information:</strong> Apple App Store or Google Play processes and stores payment information for digital purchases. We receive purchase confirmation, product, entitlement, and subscription status through RevenueCat, but not your complete credit card details. For physical product purchases via PayPal, PayPal processes payment; we receive the shipping and order information needed to fulfill the order.</p>
@@ -68,6 +69,7 @@
   <ul>
     <li><strong>Camera and Photo Library:</strong> Used only when you choose to take or select media to share in Community.</li>
     <li><strong>Microphone:</strong> Used only when you choose Ask voice input, record a Community voice message, or record a video with audio. You can deny or revoke this permission at any time in your device settings.</li>
+    <li><strong>Clipboard (Android):</strong> Read once, on the first launch after installation, only to continue a BuddhaChat page you chose to open in the App. Anything that is not a BuddhaChat page link is ignored.</li>
     <li><strong>Push Notifications:</strong> Used to deliver practice reminders and community updates. You can manage notification preferences in your device settings.</li>
   </ul>
 
