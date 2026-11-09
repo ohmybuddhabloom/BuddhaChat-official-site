@@ -4,48 +4,28 @@ import {
   getScrollStopAtViewportPosition,
   getScrollVideoProgress,
   getScrollVideoRange,
-  getScrollVideoTime,
 } from '../../lib/scrollVideo.js'
+import {
+  SCROLL_FRAME_COUNT,
+  SCROLL_FRAME_SIZES,
+  buildScrollFrameLoadOrder,
+  findNearestLoadedFrame,
+  getScrollFrameUrl,
+  limitScrollFrameLoadOrder,
+  pickScrollFrameSet,
+  shouldLimitScrollFrames,
+} from '../../lib/scrollFrames.js'
 
-const TIME_EASING = 0.18
-const MIN_TIME_DELTA = 1 / 120
+// 帧位置每个动画帧向目标靠近的比例；滚轮一格跳很多帧时也能平滑过渡。
+const FRAME_EASING = 0.25
+const LOAD_CONCURRENCY = 4
+const POSTER_SRC = '/kling-buddha-scroll-poster.jpg'
 
-function waitForVideoReady(video) {
-  if (video.readyState >= 3) {
-    return Promise.resolve()
-  }
-
-  return new Promise((resolve) => {
-    let settled = false
-
-    const settle = () => {
-      if (settled) {
-        return
-      }
-      settled = true
-      window.clearTimeout(timeoutId)
-      video.removeEventListener('canplay', onCanPlay)
-      video.removeEventListener('loadedmetadata', onMetadata)
-      resolve()
-    }
-
-    const onCanPlay = () => settle()
-    const onMetadata = () => settle()
-
-    video.addEventListener('canplay', onCanPlay, { once: true })
-    // loadedmetadata 保证 duration/videoWidth/videoHeight 就绪；iOS 与弱网下
-    // canplay 可能迟迟不触发（无用户交互时），metadata 到达即可安全进入 scrub
-    video.addEventListener('loadedmetadata', onMetadata, { once: true })
-
-    // 兜底：4 秒后 metadata 已到则放行；未到则继续等待 loadedmetadata，
-    // 绝不因单次超时而永久停在海报帧
-    const timeoutId = window.setTimeout(() => {
-      video.removeEventListener('canplay', onCanPlay)
-      if (video.readyState >= 1) {
-        settle()
-      }
-    }, 4000)
-  })
+function prefersReducedMotion() {
+  return (
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
 }
 
 function applyFigureTransform(element, buddha, followOffset) {
@@ -57,6 +37,8 @@ function applyFigureTransform(element, buddha, followOffset) {
   element.style.scale = `${(buddha.scale ?? 100) / 100}`
 }
 
+// 佛像随滚动"播放"：用预先导出的图片序列画在画布上。
+// 以前直接拖视频进度，每次滚动都要跳转并解码视频，手机上佛像每秒只能刷新几次。
 function ScrollVideoBackground({
   heroSectionRef,
   endSectionRef,
@@ -66,67 +48,114 @@ function ScrollVideoBackground({
   buddha,
 }) {
   const figureRef = useRef(null)
-  const videoRef = useRef(null)
+  const canvasRef = useRef(null)
   const rangeRef = useRef({ startScroll: 0, endScroll: 0 })
-  const durationRef = useRef(0)
-  const targetTimeRef = useRef(0)
-  const renderedTimeRef = useRef(0)
+  const framesRef = useRef([])
+  const shownFrameRef = useRef(-1)
+  const framePositionRef = useRef(0)
   const rafRef = useRef(0)
-  const [frameAspectRatio, setFrameAspectRatio] = useState('1024 / 682')
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(() => window.scrollY > 0)
-  const [videoReady, setVideoReady] = useState(false)
+  const requestDrawRef = useRef(() => {})
+  const [reducedMotion] = useState(prefersReducedMotion)
+  const [shouldLoadFrames, setShouldLoadFrames] = useState(
+    () => !reducedMotion && window.scrollY > 0,
+  )
+  const [framesReady, setFramesReady] = useState(false)
+
+  // 页面加载完、浏览器空闲时就开始下帧；访客先滚动则立即开始。
+  useEffect(() => {
+    if (shouldLoadFrames || reducedMotion) return undefined
+
+    let idleId = 0
+    let timerId = 0
+    const start = () => setShouldLoadFrames(true)
+    const scheduleIdle = () => {
+      if (typeof window.requestIdleCallback === 'function') {
+        idleId = window.requestIdleCallback(start, { timeout: 2000 })
+      } else {
+        timerId = window.setTimeout(start, 600)
+      }
+    }
+
+    window.addEventListener('scroll', start, { once: true, passive: true })
+    if (document.readyState === 'complete') {
+      scheduleIdle()
+    } else {
+      window.addEventListener('load', scheduleIdle, { once: true })
+    }
+
+    return () => {
+      window.removeEventListener('scroll', start)
+      window.removeEventListener('load', scheduleIdle)
+      if (idleId && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(idleId)
+      }
+      window.clearTimeout(timerId)
+    }
+  }, [reducedMotion, shouldLoadFrames])
 
   useEffect(() => {
-    if (shouldLoadVideo) return undefined
-    const loadOnScroll = () => setShouldLoadVideo(true)
-    window.addEventListener('scroll', loadOnScroll, { once: true, passive: true })
-    return () => window.removeEventListener('scroll', loadOnScroll)
-  }, [shouldLoadVideo])
+    if (!shouldLoadFrames) return undefined
+    const canvas = canvasRef.current
+    if (!canvas) return undefined
 
-  useEffect(() => {
-    if (!shouldLoadVideo) return undefined
-    const video = videoRef.current
+    const set = pickScrollFrameSet(window.innerWidth)
+    const size = SCROLL_FRAME_SIZES[set]
+    canvas.width = size.width
+    canvas.height = size.height
 
-    if (!video) {
-      return undefined
+    const frames = new Array(SCROLL_FRAME_COUNT).fill(null)
+    framesRef.current = frames
+    shownFrameRef.current = -1
+
+    let order = buildScrollFrameLoadOrder(SCROLL_FRAME_COUNT)
+    if (shouldLimitScrollFrames(navigator.connection)) {
+      order = limitScrollFrameLoadOrder(order)
     }
 
     let cancelled = false
-    video.load()
+    let cursor = 0
+    let active = 0
+    let anyLoaded = false
 
-    const hydrateVideo = async () => {
-      await waitForVideoReady(video)
+    const loadNext = () => {
+      while (!cancelled && active < LOAD_CONCURRENCY && cursor < order.length) {
+        const index = order[cursor]
+        const image = new Image()
+        image.decoding = 'async'
+        image.fetchPriority = cursor === 0 ? 'high' : 'low'
+        cursor += 1
+        active += 1
 
-      if (cancelled) {
-        return
-      }
-
-      // 防御：超时放行但 metadata 仍未就绪时，等 loadedmetadata 再继续，
-      // 避免 videoReady 永远不触发、佛像永远停在海报帧
-      if (!video.videoWidth || !video.videoHeight || !video.duration) {
-        await new Promise((resolve) => {
-          video.addEventListener('loadedmetadata', resolve, { once: true })
-        })
-        if (cancelled) {
-          return
+        const finish = (loaded) => {
+          active -= 1
+          if (cancelled) return
+          if (loaded) {
+            frames[index] = image
+            if (!anyLoaded) {
+              anyLoaded = true
+              setFramesReady(true)
+            }
+            requestDrawRef.current()
+          }
+          loadNext()
         }
-      }
 
-      durationRef.current = video.duration
-      setFrameAspectRatio(`${video.videoWidth} / ${video.videoHeight}`)
-      video.currentTime = 0
-
-      if (!cancelled) {
-        setVideoReady(true)
+        image.onload = () => {
+          // 提前解码，滚动画帧时不在主线程上临时解码。
+          const decoded = typeof image.decode === 'function' ? image.decode() : Promise.resolve()
+          decoded.then(() => finish(true), () => finish(true))
+        }
+        image.onerror = () => finish(false)
+        image.src = getScrollFrameUrl(set, index)
       }
     }
 
-    hydrateVideo()
+    loadNext()
 
     return () => {
       cancelled = true
     }
-  }, [shouldLoadVideo])
+  }, [shouldLoadFrames])
 
   useEffect(() => {
     const updateRange = () => {
@@ -176,126 +205,83 @@ function ScrollVideoBackground({
   }, [buddha.stopViewportY, endSectionRef, heroSectionRef, rangeKey, stopTargetRef])
 
   useEffect(() => {
-    applyFigureTransform(
-      figureRef.current,
-      buddha,
+    const followOffset = () =>
       getScrollFollowOffset(
         window.scrollY,
         rangeRef.current.startScroll,
         rangeRef.current.endScroll,
-      ),
-    )
-  }, [buddha])
-
-  useEffect(() => {
-    if (!videoReady) {
-      return undefined
-    }
-
-    const video = videoRef.current
-
-    if (!video) {
-      return undefined
-    }
-
-    if (
-      typeof window.matchMedia === 'function' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      video.currentTime = 0
-      applyFigureTransform(
-        figureRef.current,
-        buddha,
-        getScrollFollowOffset(
-          window.scrollY,
-          rangeRef.current.startScroll,
-          rangeRef.current.endScroll,
-        ),
       )
+
+    applyFigureTransform(figureRef.current, buddha, followOffset())
+
+    if (reducedMotion) {
+      // 减少动态效果：只保留静态海报，不下帧、不监听滚动换帧。
       return undefined
+    }
+
+    const drawFrame = (position) => {
+      const frames = framesRef.current
+      const canvas = canvasRef.current
+      const index = findNearestLoadedFrame(frames, position)
+      if (index < 0 || index === shownFrameRef.current || !canvas) return
+      const context = canvas.getContext('2d')
+      if (!context) return
+      context.drawImage(frames[index], 0, 0, canvas.width, canvas.height)
+      shownFrameRef.current = index
     }
 
     const tick = () => {
-      const delta = targetTimeRef.current - renderedTimeRef.current
-
-      if (Math.abs(delta) <= MIN_TIME_DELTA) {
-        renderedTimeRef.current = targetTimeRef.current
-        video.currentTime = renderedTimeRef.current
-        // 恢复 scrub 语义：目标帧就绪后暂停并停止追帧，
-        // 佛像静止在滚轮对应帧，而非持续播放
-        video.pause()
-        rafRef.current = 0
-        return
-      }
-
-      renderedTimeRef.current += delta * TIME_EASING
-      video.currentTime = renderedTimeRef.current
-      rafRef.current = requestAnimationFrame(tick)
-    }
-
-    const queueRender = () => {
-      // iOS Safari 等环境：暂停状态的视频高频 seek 可能不刷新画面。
-      // 滚动期间短暂恢复播放态以渲染 seek 帧；tick 收敛后会 pause()，
-      // 保证佛像始终跟随滚轮位置、静止时不再自行播放。
-      if (video.paused) {
-        const playPromise = video.play()
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(() => {})
-        }
-      }
-
-      applyFigureTransform(
-        figureRef.current,
-        buddha,
-        getScrollFollowOffset(
-          window.scrollY,
-          rangeRef.current.startScroll,
-          rangeRef.current.endScroll,
-        ),
-      )
+      rafRef.current = 0
+      applyFigureTransform(figureRef.current, buddha, followOffset())
 
       const progress = getScrollVideoProgress(
         window.scrollY,
         rangeRef.current.startScroll,
         rangeRef.current.endScroll,
       )
-      targetTimeRef.current = getScrollVideoTime(
-        window.scrollY,
-        rangeRef.current.startScroll,
-        rangeRef.current.endScroll,
-        durationRef.current,
-      )
+      const target = progress * (SCROLL_FRAME_COUNT - 1)
+      const delta = target - framePositionRef.current
+      framePositionRef.current =
+        progress === 0 || Math.abs(delta) < 0.5
+          ? target
+          : framePositionRef.current + delta * FRAME_EASING
 
-      if (progress === 0) {
-        renderedTimeRef.current = Math.min(renderedTimeRef.current, targetTimeRef.current)
+      drawFrame(framePositionRef.current)
+
+      if (framePositionRef.current !== target) {
+        rafRef.current = requestAnimationFrame(tick)
       }
+    }
 
+    const requestDraw = () => {
       if (!rafRef.current) {
         rafRef.current = requestAnimationFrame(tick)
       }
     }
 
-    queueRender()
-    window.addEventListener('scroll', queueRender, { passive: true })
-    window.addEventListener('resize', queueRender)
+    requestDrawRef.current = requestDraw
+    requestDraw()
+    window.addEventListener('scroll', requestDraw, { passive: true })
+    window.addEventListener('resize', requestDraw)
 
     return () => {
+      requestDrawRef.current = () => {}
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current)
+        rafRef.current = 0
       }
-
-      window.removeEventListener('scroll', queueRender)
-      window.removeEventListener('resize', queueRender)
+      window.removeEventListener('scroll', requestDraw)
+      window.removeEventListener('resize', requestDraw)
     }
-  }, [buddha, videoReady])
+  }, [buddha, reducedMotion])
 
   return (
     <div
       ref={figureRef}
-      className={`hero-scroll-figure${videoReady ? ' is-ready' : ''}`}
+      className={`hero-scroll-figure${framesReady ? ' is-ready' : ''}`}
       data-testid="hero-scroll-figure"
       data-layer="video"
-      data-render-mode="direct-video"
+      data-render-mode="image-sequence"
       data-scroll-end={scrollEndId}
       data-scroll-follow="page"
       data-visual-layer="overlay"
@@ -306,24 +292,28 @@ function ScrollVideoBackground({
       data-feather-strength={String(buddha.featherStrength ?? 68)}
       aria-hidden="true"
       style={{
-        aspectRatio: frameAspectRatio,
+        aspectRatio: '1024 / 682',
         transform: `translate3d(${buddha.x}px, ${buddha.y}px, 0px)`,
         scale: `${(buddha.scale ?? 100) / 100}`,
         '--buddha-feather-range': `${buddha.featherRange ?? 84}%`,
         '--buddha-feather-strength': `${(buddha.featherStrength ?? 68) / 100}`,
       }}
     >
-      <video
-        ref={videoRef}
-        className="hero-scroll-video"
-        data-testid="scroll-video"
-        poster="/kling-buddha-scroll-poster.jpg"
-        muted
-        playsInline
-        preload="none"
-      >
-        <source src="/kling-buddha-scroll-scrub.mp4" type="video/mp4" />
-      </video>
+      <img
+        className="hero-scroll-poster"
+        data-testid="scroll-poster"
+        src={POSTER_SRC}
+        alt=""
+        width="1280"
+        height="854"
+        fetchPriority="high"
+        decoding="async"
+      />
+      <canvas
+        ref={canvasRef}
+        className="hero-scroll-canvas"
+        data-testid="scroll-frames"
+      />
       <div className="hero-scroll-feather" />
     </div>
   )
