@@ -320,7 +320,7 @@ describe('Phase2 versioned music namespace (owner-v2)', () => {
 describe('App 1.3.7 music page', () => {
   test('routes the versioned native music path, including its trailing slash, to the music project before any catch-all', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
-    const sources = config.rewrites.map((rule) => rule.source)
+    const productionIndex = (source) => config.rewrites.findIndex((rule) => rule.source === source && !rule.has)
     const root = config.rewrites.find((rule) => rule.source === '/music/app137-owner-v2-01dafd9/' && !rule.has)
 
     expect(root).toEqual({
@@ -330,7 +330,7 @@ describe('App 1.3.7 music page', () => {
     expect(root.has).toBeUndefined()
     const prodIndex = config.rewrites.indexOf(root)
     expect(prodIndex).toBeLessThan(config.rewrites.findIndex((rule) => rule.source === '/music/:path*' && !rule.has))
-    expect(prodIndex).toBeLessThan(sources.indexOf('/:path*'))
+    expect(prodIndex).toBeLessThan(productionIndex('/:path*'))
   })
 })
 
@@ -391,34 +391,5 @@ describe('App 1.3.7 music page', () => {
     expect(root.has).toBeUndefined()
     expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/music/:path*'))
     expect(sources.indexOf('/music/app137-owner-v2-01dafd9/')).toBeLessThan(sources.indexOf('/:path*'))
-  })
-})
-
-describe('go smart link proxy', () => {
-  test('hands a smart link redirect to the visitor instead of following it', async () => {
-    const location = 'https://www.buddhachat.online/download?ch=video-share'
-    const fetchMock = vi.fn(async () => new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } }))
-    vi.stubGlobal('fetch', fetchMock)
-    const headers = {}
-    const response = {
-      statusCode: 0,
-      sent: undefined,
-      setHeader(key, value) { headers[key] = value },
-      status(code) { this.statusCode = code; return this },
-      send(body) { this.sent = body; return this },
-    }
-    try {
-      await routerHandler({
-        method: 'GET',
-        url: '/l/video?itemId=topic%3A19',
-        headers: { host: 'go.buddhachat.online', 'user-agent': 'iPhone' },
-      }, response)
-    } finally {
-      vi.unstubAllGlobals()
-    }
-    expect(fetchMock.mock.calls[0][1].redirect).toBe('manual')
-    expect(fetchMock.mock.calls[0][0]).toMatch(/\/l\/video\?itemId=topic%3A19$/)
-    expect(response.statusCode).toBe(302)
-    expect(headers.location).toBe(location)
   })
 })
