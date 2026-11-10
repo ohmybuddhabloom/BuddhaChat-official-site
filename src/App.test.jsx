@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App.jsx'
 
-vi.mock('./pages/SunyataLanding.jsx', () => ({
+vi.mock('./home/HomePage.jsx', () => ({
   default: () => <div data-testid="landing-page" />,
 }))
 

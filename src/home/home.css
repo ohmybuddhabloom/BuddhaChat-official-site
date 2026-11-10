@@ -1,0 +1,387 @@
+/*
+ * 官网首页版式（2026-11-11 重做）。外观沿用 index.css 里原来的样式类，这里只定位置和性能规则。
+ *
+ * 位置来自 Owner 在旧编辑器里调好的数值（public/editor-state/scene.json），按编辑器原来的换算规则写死：
+ * 横向百分比 = 视口宽度百分比，纵向百分比 = 该段高度（首屏、问答段都是一屏高）的百分比。
+ * 两套版式：宽屏（≥901px）左右排；手机（≤900px）上下排，手机内再按旧编辑器的三档微调。
+ *
+ * 性能规则（滑动时浏览器每帧只做合成）：
+ *   - 跟随滚动的效果只用 position: sticky 或 CSS 滚动驱动动画，不用脚本每帧改位置；
+ *   - 不放大面积的无限循环动画；模糊只用静态的、不随滚动变化的；
+ *   - 页面不许比视口宽（iPhone 上会整页左右晃）。
+ */
+
+.home-page {
+  overflow-x: clip;
+}
+
+/* ---------- 性能规则：去掉滑动时持续耗电的效果，静态外观取原动画的中间值 ---------- */
+
+.home-page .void-bg {
+  animation: none;
+  transform: scale(1.1);
+  opacity: 0.75;
+  will-change: auto;
+}
+
+.home-page .hero-title {
+  animation: none;
+  filter: blur(1px);
+  opacity: 0.78;
+  will-change: auto;
+}
+
+.home-page .fog-frame {
+  filter: none;
+}
+
+.home-page .devotional-space {
+  will-change: auto;
+}
+
+/* 首屏标题随滚动下移并淡出（原来是脚本：下移 = 滚动 × 0.2，700px 内淡出）。 */
+@supports (animation-timeline: scroll()) {
+  .home-page .hero-title {
+    animation: home-title-drift linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 700px;
+  }
+}
+
+@keyframes home-title-drift {
+  from {
+    translate: 0 0;
+    opacity: 0.78;
+  }
+
+  to {
+    translate: 0 140px;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-title {
+    animation: none;
+  }
+}
+
+/* ---------- 佛像：轨道 + 吸附 ---------- */
+
+.home-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.home-stage > * {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.home-stage > .hero-container {
+  grid-row: 1;
+}
+
+.home-stage > .home-buddha-slot {
+  grid-row: 2;
+}
+
+.home-stage > .interlude-section {
+  grid-row: 3;
+}
+
+.home-buddha-track {
+  --fig-w: calc(min(52.8vw, 640px) * 1.26);
+  --fig-h: calc(var(--fig-w) * 682 / 1024);
+  --fig-cx: calc(70vw - 120px);
+  --stick-top: calc(50dvh - var(--fig-h) / 2);
+  /* 停下时佛像中心在问答段顶部往下 37% 屏高处（与旧版 1440×900 停下时一致） */
+  --rest-center: 137dvh;
+  grid-row: 1 / 4;
+  grid-column: 1;
+  position: relative;
+  z-index: 5;
+  height: calc(var(--rest-center) + var(--fig-h) / 2);
+  pointer-events: none;
+}
+
+.home-buddha.hero-scroll-figure {
+  position: sticky;
+  top: var(--stick-top);
+  width: var(--fig-w);
+  min-width: 0;
+  height: var(--fig-h);
+  margin-top: var(--stick-top);
+  margin-left: calc(var(--fig-cx) - var(--fig-w) / 2);
+  --buddha-feather-range: 69%;
+  --buddha-feather-strength: 0.68;
+}
+
+.home-buddha .hero-scroll-video {
+  transition: none;
+}
+
+.home-buddha .hero-scroll-video.is-visible {
+  opacity: 1;
+}
+
+.home-buddha-slot {
+  display: none;
+}
+
+/* ---------- 宽屏（≥901px）：旧编辑器桌面档的数值 ---------- */
+
+@media (min-width: 901px) {
+  .home-page .hero-left {
+    width: 40%;
+    padding-left: 10%;
+    transform: translate3d(11.25vw, -2.267dvh, 0);
+  }
+
+  .home-page .hero-right {
+    width: 60%;
+  }
+
+  .home-page .interlude-copy {
+    transform: translate3d(6.313vw, -12.1dvh, 0);
+  }
+
+  .home-page .interlude-chat-bar {
+    transform: translate3d(-1vw, 4.4dvh, 0);
+  }
+
+  .home-page .interlude-floating-card--reply {
+    transform: translate3d(160px, -33px, 0);
+  }
+
+  .home-page .wilderness-copy {
+    transform: translate3d(11.2vw, calc((100dvh - 84px) * 0.02133), 0);
+  }
+
+  .home-page .wilderness-carousel-wrap {
+    transform: translate3d(-15vw, calc((100dvh - 84px) * 0.008), 0);
+  }
+
+  .home-page .feature-card:nth-child(1) {
+    margin-top: 50px;
+  }
+
+  .home-page .feature-card:nth-child(3) {
+    margin-top: 80px;
+  }
+
+  .home-page .main-visual {
+    width: 83%;
+  }
+
+  .home-page .ghost-label {
+    right: -1%;
+    bottom: 10%;
+  }
+
+  /* 引言：相对引言图区域左移 34% 宽、上移 27.6% 高（区域宽 = 80vw，高 = min(72vh, 760px)） */
+  .home-page .visual-quote-wrap {
+    max-width: 612px;
+    transform: translate3d(-27.2vw, calc(min(72vh, 760px) * -0.276), 0);
+  }
+}
+
+/* ---------- 山野手记主题（旧编辑器里调的颜色和尺寸） ---------- */
+
+.home-page .wilderness-journal-section {
+  --journal-bg: #726e6e;
+  --journal-overlay-color: #ffffff;
+  --journal-gold: #cda55b;
+  --journal-cream: #efe7d7;
+  --journal-overlay-opacity: 0.07;
+  --journal-lead-brightness: 1.22;
+  --journal-image-opacity: 0.85;
+  --journal-left-veil-opacity: 0.67;
+  --journal-bottom-veil-opacity: 0.87;
+  --journal-glow-opacity: 0.35;
+  --journal-copy-max-width: 522px;
+  --journal-card-width: 411px;
+  --journal-card-height: 453px;
+}
+
+/* 背景图从 CSS 背景改成可延迟加载、按屏幕挑尺寸的图片 */
+.home-page .wilderness-background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- 手机（≤900px）：上下排 ---------- */
+
+@media (max-width: 900px) {
+  .home-page .hero-left {
+    width: 100%;
+    padding-left: 0;
+    transform: translate3d(0, 4dvh, 0);
+  }
+
+  .home-page .hero-right {
+    width: 100%;
+  }
+
+  .home-buddha-track {
+    --fig-w: calc(min(78vw, 390px) * 1.26);
+    --fig-cx: 50vw;
+    /* 首屏时佛像中心在屏高 62% 处（标题、副标题在上方） */
+    --stick-top: calc(62dvh - var(--fig-h) / 2);
+    grid-row: 1 / 3;
+    height: auto;
+  }
+
+  /* 停下的位置是一个真实的占位：佛像落在问答标题正上方，不会和标题重叠 */
+  .home-buddha-slot {
+    display: block;
+    height: calc(var(--slot-fig-h) * 0.82);
+    --slot-fig-h: calc(min(78vw, 390px) * 1.26 * 682 / 1024);
+  }
+
+  .home-page .interlude-section {
+    min-height: 0;
+    justify-content: flex-start;
+    padding-top: 12px;
+    padding-inline: 24px;
+  }
+
+  .home-page .interlude-copy {
+    margin-top: 0;
+  }
+
+  .home-page .interlude-chat-bar {
+    grid-template-columns: 1fr;
+    border-radius: 28px;
+    margin-top: clamp(28px, 5vh, 44px);
+  }
+
+  .home-page .main-visual {
+    width: 80%;
+  }
+
+  .home-page .ghost-label {
+    right: -3%;
+    bottom: 7%;
+  }
+
+  .home-page .visual-quote-wrap {
+    max-width: 360px;
+    transform: none;
+  }
+}
+
+@media (max-width: 429px) {
+  .home-buddha-track {
+    --fig-w: calc(min(72vw, 320px) * 1.26);
+  }
+
+  .home-buddha-slot {
+    --slot-fig-h: calc(min(72vw, 320px) * 1.26 * 682 / 1024);
+  }
+}
+
+@media (max-width: 414px) {
+  .home-page .hero-left {
+    transform: translate3d(0, 7dvh, 0);
+  }
+
+  .home-page .main-visual {
+    width: 84%;
+  }
+
+  .home-page .ghost-label {
+    right: -1%;
+    bottom: 8%;
+  }
+
+  .home-page .visual-quote-wrap {
+    max-width: 316px;
+  }
+}
+
+@media (max-width: 389px) {
+  .home-page .hero-left {
+    transform: translate3d(0, 10dvh, 0);
+  }
+
+  .home-page .interlude-copy {
+    transform: translate3d(0, -2dvh, 0);
+  }
+
+  .home-page .main-visual {
+    width: 88%;
+  }
+
+  .home-page .ghost-label {
+    right: 1%;
+    bottom: 9%;
+  }
+
+  .home-page .visual-quote-wrap {
+    max-width: 276px;
+  }
+}
+
+/* ---------- 手机：导航随页面滚走，不再盖在内容上；三张手机截图和电脑版一样叠成一组 ---------- */
+
+@media (max-width: 900px) {
+  .home-page .sunyata-nav {
+    position: absolute;
+  }
+
+  .home-page .app-previews-waterfall {
+    --phone-w: min(46vw, 230px);
+    min-height: 0;
+    height: calc(var(--phone-w) * 2.3);
+    max-width: 560px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .home-page .app-preview-phone {
+    position: absolute;
+  }
+
+  .home-page .app-preview-phone.is-center {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+
+  .home-page .app-preview-phone.is-back-left,
+  .home-page .app-preview-phone.is-back-right {
+    margin-top: 0;
+    z-index: 10;
+  }
+
+  .home-page .app-preview-phone.is-back-left {
+    left: 0;
+    top: 12%;
+    transform: scale(0.82);
+    transform-origin: left top;
+  }
+
+  .home-page .app-preview-phone.is-back-right {
+    right: 0;
+    top: 6%;
+    transform: scale(0.82);
+    transform-origin: right top;
+  }
+
+  .home-page .app-preview-frame {
+    width: var(--phone-w);
+    padding: 6px;
+    border-radius: calc(var(--phone-w) * 0.2);
+  }
+
+  .home-page .app-preview-screen {
+    height: calc(var(--phone-w) * 2.05);
+    border-radius: calc(var(--phone-w) * 0.17);
+  }
+}
