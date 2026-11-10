@@ -853,7 +853,7 @@ a {
 }
 
 .hero-scroll-poster,
-.hero-scroll-canvas {
+.hero-scroll-video {
   position: absolute;
   inset: 0;
   display: block;
@@ -862,7 +862,17 @@ a {
   object-fit: cover;
 }
 
-/* 海报是静态图，保留原来的轻微调色；画布上的帧已把同样的调色烘焙进图片。 */
+/* 视频第一次定位完成前不显示，避免露出黑帧；之后盖在封面上。 */
+.hero-scroll-video {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-scroll-figure.is-ready .hero-scroll-video {
+  opacity: 1;
+}
+
+/* 封面是静态图，保留原来的轻微调色；视频里的画面已把同样的调色烘焙进去。 */
 .hero-scroll-poster {
   filter: sepia(0.03) saturate(1.02) brightness(0.99) contrast(1.01);
 }

@@ -1,29 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import ScrollVideoBackground from './ScrollVideoBackground.jsx'
-import { SCROLL_FRAME_COUNT } from '../../lib/scrollFrames.js'
-
-const requested = []
-
-class FakeImage {
-  constructor() {
-    this.onload = null
-    this.onerror = null
-    requested.push(this)
-  }
-
-  set src(value) {
-    this._src = value
-  }
-
-  get src() {
-    return this._src
-  }
-
-  decode() {
-    return Promise.resolve()
-  }
-}
 
 function renderBackground() {
   const elementRef = { current: document.createElement('section') }
@@ -42,10 +19,17 @@ function mockReducedMotion(matches) {
   window.matchMedia = vi.fn().mockReturnValue({ matches, addEventListener() {}, removeEventListener() {} })
 }
 
+let fetchMock
+
 beforeEach(() => {
-  requested.length = 0
-  vi.stubGlobal('Image', FakeImage)
-  window.requestIdleCallback = undefined
+  fetchMock = vi.fn().mockResolvedValue({ ok: true, blob: () => Promise.resolve(new Blob(['x'])) })
+  vi.stubGlobal('fetch', fetchMock)
+  URL.createObjectURL = vi.fn(() => 'blob:hero')
+  URL.revokeObjectURL = vi.fn()
+  vi.spyOn(HTMLMediaElement.prototype, 'load').mockImplementation(() => {})
+  vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+  vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  Object.defineProperty(document, 'readyState', { value: 'complete', configurable: true })
   mockReducedMotion(false)
 })
 
@@ -56,81 +40,112 @@ afterEach(() => {
 })
 
 describe('ScrollVideoBackground', () => {
-  it('shows the poster first and never ships a video element', () => {
+  it('先显示封面；视频元素存在但不预加载', () => {
     renderBackground()
     expect(screen.getByTestId('scroll-poster')).toHaveAttribute('src', '/kling-buddha-scroll-poster.jpg')
-    expect(screen.getByTestId('hero-scroll-figure')).toHaveAttribute('data-render-mode', 'image-sequence')
-    expect(document.querySelector('video')).toBeNull()
+    expect(screen.getByTestId('hero-scroll-figure')).toHaveAttribute('data-render-mode', 'baked-video')
+    const video = screen.getByTestId('scroll-video')
+    expect(video).toHaveAttribute('preload', 'none')
+    expect(video.muted).toBe(true)
+    expect(fetchMock).not.toHaveBeenCalled()
   })
 
-  it('starts loading sparse frames as soon as the visitor scrolls', () => {
-    renderBackground()
-    fireEvent.scroll(window)
-    expect(requested.length).toBeGreaterThan(0)
-    expect(requested.length).toBeLessThanOrEqual(4)
-    // jsdom 视口 1024 宽，选桌面素材；第一帧最先请求
-    expect(requested[0].src).toBe('/kling-buddha-scroll-frames/v1/d/000.webp')
-    expect(requested[1].src).toBe('/kling-buddha-scroll-frames/v1/d/016.webp')
-  })
-
-  it('starts loading after page load even without a scroll', () => {
-    vi.useFakeTimers()
-    renderBackground()
-    expect(requested).toHaveLength(0)
-    act(() => {
-      vi.advanceTimersByTime(700)
-    })
-    expect(requested.length).toBeGreaterThan(0)
-  })
-
-  it('draws the first loaded frame on the canvas and marks the figure ready', async () => {
-    const drawImage = vi.fn()
-    vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue({ drawImage })
-    const raf = vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
-      setTimeout(() => callback(performance.now()), 0)
-      return 1
-    })
-
+  it('访客一滚动就以低优先级下载整段视频', async () => {
     renderBackground()
     fireEvent.scroll(window)
     await act(async () => {
-      requested[0].onload()
       await Promise.resolve()
-      await new Promise((resolve) => setTimeout(resolve, 5))
     })
-
-    expect(screen.getByTestId('hero-scroll-figure')).toHaveClass('is-ready')
-    expect(drawImage).toHaveBeenCalledWith(requested[0], 0, 0, 1024, 682)
-    expect(raf).toHaveBeenCalled()
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+    // jsdom 视口 1024 宽，选桌面版
+    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v1/d.mp4')
+    expect(fetchMock.mock.calls[0][1]).toMatchObject({ priority: 'low' })
   })
 
-  it('keeps loading until every frame is requested', async () => {
+  it('不滚动时，等首屏资源下完、网络空下来才下载', () => {
+    vi.useFakeTimers()
+    // jsdom 不真正加载图片；这里当作封面已经加载完
+    vi.spyOn(HTMLImageElement.prototype, 'complete', 'get').mockReturnValue(true)
+    vi.stubGlobal('PerformanceObserver', undefined)
+    renderBackground()
+    act(() => {
+      vi.advanceTimersByTime(1000)
+    })
+    expect(fetchMock).not.toHaveBeenCalled()
+    act(() => {
+      vi.advanceTimersByTime(400)
+    })
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+  })
+
+  it('视频下完后挂到视频元素上，第一次定位完成才显示', async () => {
     renderBackground()
     fireEvent.scroll(window)
-    for (let guard = 0; guard < SCROLL_FRAME_COUNT * 2; guard += 1) {
-      const pending = requested.filter((image) => !image.settled)
-      if (!pending.length) break
-      await act(async () => {
-        for (const image of pending) {
-          image.settled = true
-          image.onload()
-        }
-        await Promise.resolve()
-        await Promise.resolve()
-      })
-    }
-    expect(new Set(requested.map((image) => image.src)).size).toBe(SCROLL_FRAME_COUNT)
+    await act(async () => {
+      await Promise.resolve()
+      await Promise.resolve()
+      await Promise.resolve()
+    })
+    const video = screen.getByTestId('scroll-video')
+    expect(video.getAttribute('src')).toBe('blob:hero')
+    expect(screen.getByTestId('hero-scroll-figure')).not.toHaveClass('is-ready')
+    await act(async () => {
+      video.dispatchEvent(new Event('loadedmetadata'))
+      await Promise.resolve()
+      await Promise.resolve()
+      await Promise.resolve()
+    })
+    // 苹果 Safari 要先播放一下才会解码画面
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalled()
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled()
+    await act(async () => {
+      video.dispatchEvent(new Event('seeked'))
+    })
+    expect(screen.getByTestId('hero-scroll-figure')).toHaveClass('is-ready')
   })
 
-  it('downloads no frames for visitors who prefer reduced motion', () => {
+  it('不允许自动播放时（如低电量模式），等第一次触摸再开始跟随滚动', async () => {
+    HTMLMediaElement.prototype.play.mockRejectedValueOnce(new Error('NotAllowedError'))
+    renderBackground()
+    fireEvent.scroll(window)
+    await act(async () => {
+      for (let i = 0; i < 4; i += 1) await Promise.resolve()
+    })
+    const video = screen.getByTestId('scroll-video')
+    await act(async () => {
+      video.dispatchEvent(new Event('loadedmetadata'))
+      for (let i = 0; i < 4; i += 1) await Promise.resolve()
+    })
+    expect(HTMLMediaElement.prototype.pause).not.toHaveBeenCalled()
+    await act(async () => {
+      fireEvent.pointerDown(window)
+      for (let i = 0; i < 4; i += 1) await Promise.resolve()
+    })
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2)
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1)
+  })
+
+  it('下载失败时一直显示封面', async () => {
+    fetchMock.mockResolvedValue({ ok: false, status: 404 })
+    renderBackground()
+    fireEvent.scroll(window)
+    await act(async () => {
+      await Promise.resolve()
+      await Promise.resolve()
+    })
+    expect(screen.getByTestId('scroll-video').getAttribute('src')).toBeNull()
+    expect(screen.getByTestId('scroll-poster')).toBeInTheDocument()
+  })
+
+  it('偏好减少动态效果的访客不下载视频', () => {
     vi.useFakeTimers()
     mockReducedMotion(true)
     renderBackground()
     fireEvent.scroll(window)
     act(() => {
-      vi.advanceTimersByTime(3000)
+      vi.advanceTimersByTime(8000)
     })
-    expect(requested).toHaveLength(0)
+    expect(fetchMock).not.toHaveBeenCalled()
     expect(screen.getByTestId('scroll-poster')).toBeInTheDocument()
   })
 })
