@@ -36,6 +36,12 @@ const isEnglishDownloadPage = (url) =>
   url.pathname === '/download/en' ||
   url.searchParams.get('path') === 'download/en'
 
+const isJoinInvitePage = (url) => {
+  const rewrittenPath = url.searchParams.get('path')?.trim()
+  const sourcePath = rewrittenPath ? `/${rewrittenPath.replace(/^\/+/, '')}` : url.pathname
+  return sourcePath === '/join' || sourcePath.startsWith('/join/')
+}
+
 const isYuanhuiGuidePage = (url) =>
   url.searchParams.get('page') === 'guide-yuanhui' ||
   url.pathname === '/guide/yuanhui' ||
@@ -94,6 +100,18 @@ export function getPageMeta(url) {
       title: '下载 BuddhaChat｜一念连接，万法相伴',
       description:
         '经书、法师开示视频、冥想佛乐与每日修行，一站汇聚在 BuddhaChat。',
+      canonicalUrl: `${ORIGIN}/download`,
+      imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
+      type: 'website',
+    }
+  }
+
+  if (isJoinInvitePage(url)) {
+    // Invite links are mostly forwarded in WeChat: the card should say what it is, and must not
+    // index one canonical page per invite code.
+    return {
+      title: '道场邀请｜一起在 BuddhaChat 共修',
+      description: '有同修邀请你加入 BuddhaChat 道场，一起念诵、打卡、交流。',
       canonicalUrl: `${ORIGIN}/download`,
       imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
       type: 'website',
