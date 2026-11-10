@@ -4,6 +4,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import JoinInvitePage from './JoinInvitePage.jsx'
 import { inviteAppLink, readInviteCode } from '../lib/inviteLink.js'
 import { getPageMeta } from '../../api/page-entry.js'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 // Dojo invites used to 302 straight to buddhachat://join/<code>, which shows nothing in WeChat or a
 // browser without the App. This landing page is what the invite link now opens.
@@ -69,5 +71,11 @@ describe('JoinInvitePage', () => {
     const meta = getPageMeta(new URL('https://www.buddhachat.online/api/page-entry?path=join/AB12cd34'))
     expect(meta.title).toMatch(/道场邀请/)
     expect(meta.canonicalUrl).toBe('https://www.buddhachat.online/download')
+  })
+
+  it('lets a real 36-character code wrap instead of widening the card past the phone', () => {
+    const css = readFileSync(resolve(process.cwd(), 'src/pages/JoinInvitePage.css'), 'utf8')
+    expect(css).toMatch(/\.join-invite-code strong \{[^}]*word-break: break-all;/)
+    expect(css).toMatch(/\.join-invite-card \*[^{]*\{\s*box-sizing: border-box;/)
   })
 })
