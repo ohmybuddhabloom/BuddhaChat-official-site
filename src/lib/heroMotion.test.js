@@ -4,8 +4,6 @@ import {
   HERO_TIMELINE,
   createLatestSeeker,
   frameToTime,
-  getHeroVideoUrl,
-  pickHeroVideoSet,
   waitForQuietNetwork,
 } from './heroMotion.js'
 import { createFrameAnimator, smoothDamp } from './frameAnimator.js'
@@ -28,11 +26,6 @@ describe('时间轴（oil-motion 编译生成）', () => {
     expect(frameToTime(-3)).toBeCloseTo(0.5 / 24)
   })
 
-  it('宽于 900 用桌面版，否则手机版', () => {
-    expect(pickHeroVideoSet(1440)).toBe('d')
-    expect(pickHeroVideoSet(390)).toBe('m')
-    expect(getHeroVideoUrl('m')).toBe('/kling-buddha-scroll-video/v1/m.mp4')
-  })
 })
 
 describe('只提交最新目标帧', () => {

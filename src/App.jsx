@@ -3,7 +3,7 @@ import LanguageToggle from './components/LanguageToggle.jsx'
 import { trackNavClick, trackPageView } from './lib/analytics.js'
 import { detectDownloadPlatform } from './lib/downloadPlatform.js'
 
-const SunyataLanding = lazy(() => import('./pages/SunyataLanding.jsx'))
+const HomePage = lazy(() => import('./home/HomePage.jsx'))
 const FusionRoutePage = lazy(() => import('./pages/FusionRoutePage.jsx'))
 const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
 const JoinInvitePage = lazy(() => import('./pages/JoinInvitePage.jsx'))
@@ -150,7 +150,7 @@ function App() {
     <Suspense fallback={null}>
       {storySlug
         ? <StoryRoutePage nav={STORY_NAV} storySlug={storySlug} />
-        : <SunyataLanding />}
+        : <HomePage />}
     </Suspense>
   )
 }

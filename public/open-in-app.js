@@ -14,7 +14,7 @@
   if (!linkHost) return;
 
   var DISMISSED = 'buddhachat_open_in_app_dismissed';
-  try { if (sessionStorage.getItem(DISMISSED)) return; } catch (error) {}
+  try { if (sessionStorage.getItem(DISMISSED)) return; } catch { /* 隐私模式不能读会话存储，照常显示 */ }
 
   var BLOCKED_PATH = /^\/(?:(?:videos|sutra|music)\/)?(?:login|logout|signup|auth|admin|api|account|download|app-onboarding|onboarding|app)(?:\/|$)/i;
   var BLOCKED_QUERY = /[?&](?:access_token|refresh_token|id_token|token|code|state|session|redirect|redirect_to|redirect_uri|next|return_to)=/i;
@@ -40,7 +40,7 @@
   close.style.cssText = 'width:44px;height:44px;border:0;background:none;color:#FFF8ED;font-size:20px;line-height:1';
   close.addEventListener('click', function () {
     pill.remove();
-    try { sessionStorage.setItem(DISMISSED, '1'); } catch (error) {}
+    try { sessionStorage.setItem(DISMISSED, '1'); } catch { /* 隐私模式不能写，只关闭本次 */ }
   });
 
   pill.appendChild(link);

@@ -846,6 +846,24 @@ a {
   object-fit: cover;
 }
 
+/* 佛像跟随滚动交给浏览器（滚动驱动动画），位置由组件写入 --follow-*。 */
+@keyframes hero-figure-follow {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 var(--follow-distance, 0px);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .hero-scroll-figure.is-css-follow {
+    animation: hero-figure-follow linear both;
+    animation-timeline: scroll(root block);
+    animation-range: var(--follow-start, 0px) var(--follow-end, 1px);
+  }
+}
+
 /* 视频第一次定位完成前不显示，避免露出黑帧；之后盖在封面上。 */
 .hero-scroll-video {
   opacity: 0;
@@ -3370,13 +3388,17 @@ a {
     min-width: 0;
   }
 
+  /* 手机上佛像停在标题上方（组件里算），输入框紧跟标题，和电脑版一样“佛像、标题、输入框”同屏。 */
   .interlude-section {
+    min-height: 0;
+    justify-content: flex-start;
     padding-inline: 24px;
   }
 
   .interlude-chat-bar {
     grid-template-columns: 1fr;
     border-radius: 28px;
+    margin-top: clamp(28px, 5vh, 44px);
   }
 
   .interlude-overlay {
