@@ -9,6 +9,7 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
+const zlib = require('zlib')
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((acc, cur, i, all) => {
@@ -32,7 +33,14 @@ function serve(root, port) {
         file = fs.existsSync(index) ? index : path.join(root, fs.existsSync(path.join(root, 'spa.html')) ? 'spa.html' : 'index.html')
       }
       const type = TYPES[path.extname(file)] || 'application/octet-stream'
-      res.writeHead(200, { 'Content-Type': type, 'Cache-Control': /\/assets\//.test(urlPath) ? 'public, max-age=31536000, immutable' : 'public, max-age=0, must-revalidate' })
+      const headers = { 'Content-Type': type, 'Cache-Control': /\/assets\//.test(urlPath) ? 'public, max-age=31536000, immutable' : 'public, max-age=0, must-revalidate' }
+      // 和线上一样压缩文本类文件，否则脚本、样式的传输量没法和正式环境比
+      if (/text|javascript|json|svg/.test(type) && /gzip/.test(req.headers['accept-encoding'] || '')) {
+        res.writeHead(200, { ...headers, 'Content-Encoding': 'gzip' })
+        fs.createReadStream(file).pipe(zlib.createGzip()).pipe(res)
+        return
+      }
+      res.writeHead(200, headers)
       fs.createReadStream(file).pipe(res)
     })
     .listen(port, '127.0.0.1', () => console.log(`本地服务 ${root} → http://127.0.0.1:${port}/`))
@@ -76,8 +84,9 @@ async function loadOnce(browser, url, device, mbps) {
     }).observe({ type: 'largest-contentful-paint', buffered: true })
     const t = performance.now()
     ;(function w() {
-      const f = document.querySelector('.hero-scroll-figure')
-      if (f && f.classList.contains('is-ready')) window.__heroReady = performance.now() - t
+      // 新首页：data-hero-ready 在第一帧真正显示后才出现；旧首页：.hero-scroll-figure.is-ready
+      const ready = document.querySelector('[data-hero-ready="1"], .hero-scroll-figure.is-ready:not(.home-buddha)')
+      if (ready) window.__heroReady = performance.now() - t
       else requestAnimationFrame(w)
     })()
   })
