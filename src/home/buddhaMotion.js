@@ -20,10 +20,11 @@ export function locateFrame(frame, bReady) {
   return { part: 'b', local: f - SPLIT_FRAME }
 }
 
-// 滚动进度：轨道顶部在页面顶部（首屏），佛像吸住的距离 = 轨道高 - 佛像高 - 吸附位置。
+// 滚动进度：佛像在轨道里的初始位置就是它的吸附位置（margin-top = top），
+// 所以从滚到轨道顶部起就吸住，滚过“轨道高 - 佛像高 - 吸附位置”后离开。
 export function getStickProgress(scrollY, { trackTop, trackHeight, figureHeight, stickTop }) {
   const distance = trackHeight - figureHeight - stickTop
   if (!(distance > 0)) return 0
-  return Math.min(1, Math.max(0, (scrollY - trackTop + stickTop) / distance))
+  return Math.min(1, Math.max(0, (scrollY - trackTop) / distance))
 }
 

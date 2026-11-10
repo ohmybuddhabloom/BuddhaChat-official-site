@@ -78,9 +78,11 @@ describe('佛像两段视频', () => {
 
   it('吸附进度：从页面顶部到佛像离开轨道，0 到 1，两端截住', () => {
     const geometry = { trackTop: 0, trackHeight: 1500, figureHeight: 500, stickTop: 200 }
-    expect(getStickProgress(0, geometry)).toBeCloseTo(0.25)
-    expect(getStickProgress(600, geometry)).toBe(1)
-    expect(getStickProgress(-50, { ...geometry, stickTop: 0 })).toBe(0)
+    // 吸住的距离 = 1500 - 500 - 200 = 800
+    expect(getStickProgress(0, geometry)).toBe(0)
+    expect(getStickProgress(200, geometry)).toBeCloseTo(0.25)
+    expect(getStickProgress(800, geometry)).toBe(1)
+    expect(getStickProgress(-50, geometry)).toBe(0)
     expect(getStickProgress(100, { ...geometry, trackHeight: 400 })).toBe(0)
   })
 })
