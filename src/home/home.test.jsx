@@ -234,3 +234,25 @@ describe('山野手记', () => {
     expect(container.querySelector('.wilderness-background img')).toHaveAttribute('loading', 'lazy')
   })
 })
+
+describe('问答段与浮动按钮', () => {
+  it('问答段进入屏幕时给页面加标记，离开时去掉', () => {
+    let callback
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        constructor(cb) {
+          callback = cb
+        }
+        observe() {}
+        disconnect() {}
+      },
+    )
+    render(<HomeDialogue interlude={HOME_DIALOGUE} />)
+    act(() => callback([{ isIntersecting: true }]))
+    expect(document.documentElement).toHaveClass('home-dialogue-in-view')
+    act(() => callback([{ isIntersecting: false }]))
+    expect(document.documentElement).not.toHaveClass('home-dialogue-in-view')
+    vi.unstubAllGlobals()
+  })
+})

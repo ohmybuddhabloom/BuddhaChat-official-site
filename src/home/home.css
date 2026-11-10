@@ -385,3 +385,13 @@
     border-radius: calc(var(--phone-w) * 0.17);
   }
 }
+
+/* 问答段在屏幕上时，让共用的“在 App 中打开”浮动按钮淡出，不压住标题和输入框（标记由 HomeDialogue 设置）。 */
+[data-open-in-app] {
+  transition: opacity 0.2s ease;
+}
+
+.home-dialogue-in-view [data-open-in-app] {
+  opacity: 0;
+  pointer-events: none;
+}
