@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import './fonts.css'
 import './home.css'
 import SunyataNav from '../components/sunyata/SunyataNav.jsx'
@@ -47,6 +47,25 @@ function askTheBuddha(event) {
 }
 
 function HomePage() {
+  const heroActionsRef = useRef(null)
+
+  // 首屏两个按钮在屏幕上时，让共用的“在 App 中打开”浮动按钮淡出：
+  // 手机上它正好浮在佛像和按钮之间，首屏已有 Download 按钮（2026-11-11 iOS Safari 走查发现）。
+  useEffect(() => {
+    const actions = heroActionsRef.current
+    if (!actions || typeof IntersectionObserver !== 'function') return undefined
+    const root = document.documentElement
+    const observer = new IntersectionObserver(
+      ([entry]) => root.classList.toggle('home-hero-actions-in-view', entry.isIntersecting),
+      { threshold: 0.15 },
+    )
+    observer.observe(actions)
+    return () => {
+      observer.disconnect()
+      root.classList.remove('home-hero-actions-in-view')
+    }
+  }, [])
+
   useEffect(() => {
     const idle = window.requestIdleCallback?.(() => trackPageView(), { timeout: 2500 })
     const timer = idle === undefined ? window.setTimeout(() => trackPageView(), 1500) : null
@@ -75,7 +94,7 @@ function HomePage() {
             <h1 className="hero-title">{HOME_HERO.title}</h1>
             <div className="hero-rule" aria-hidden="true" />
             <p className="subtitle">{HOME_HERO.subtitle}</p>
-            <div className="hero-actions">
+            <div className="hero-actions" ref={heroActionsRef}>
               <a className="hero-cta hero-cta--primary" href={HOME_HERO.primaryAction.href} onClick={askTheBuddha}>
                 {HOME_HERO.primaryAction.label}
               </a>
