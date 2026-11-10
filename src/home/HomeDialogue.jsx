@@ -9,11 +9,29 @@ function HomeDialogue({ interlude }) {
   const [activeExchange, setActiveExchange] = useState(null)
   const [_submitError, setSubmitError] = useState('')
   const timersRef = useRef([])
+  const sectionRef = useRef(null)
 
   useEffect(() => {
     return () => {
       timersRef.current.forEach((timerId) => window.clearTimeout(timerId))
       timersRef.current = []
+    }
+  }, [])
+
+  // 手机底部“在 App 中打开”浮动按钮（public/open-in-app.js，四个站共用）会压住问答标题和输入框；
+  // 问答段在屏幕上时给页面加标记，由 home.css 让按钮暂时淡出。
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section || typeof IntersectionObserver !== 'function') return undefined
+    const root = document.documentElement
+    const observer = new IntersectionObserver(
+      ([entry]) => root.classList.toggle('home-dialogue-in-view', entry.isIntersecting),
+      { threshold: 0.15 },
+    )
+    observer.observe(section)
+    return () => {
+      observer.disconnect()
+      root.classList.remove('home-dialogue-in-view')
     }
   }, [])
 
@@ -108,6 +126,7 @@ function HomeDialogue({ interlude }) {
 
   return (
     <section
+      ref={sectionRef}
       className="interlude-section"
       id="dialogue"
       data-stack="foreground"

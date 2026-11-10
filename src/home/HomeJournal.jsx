@@ -280,7 +280,8 @@ function HomeJournal({ journal }) {
             <img
               src={`${item.background}-960.webp`}
               srcSet={`${item.background}-960.webp 960w, ${item.background}-${item.backgroundWide}.webp ${item.backgroundWide}w`}
-              sizes="100vw"
+              // 背景上叠着深色遮罩，手机上 960 宽足够：按 320 声明，三倍屏也只取 960 宽那张
+              sizes="(max-width: 900px) 320px, 100vw"
               alt=""
               loading="lazy"
               decoding="async"
