@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import {
+  getDockAboveScroll,
   getScrollFollowOffset,
   getScrollStopAtViewportPosition,
   getScrollVideoProgress,
@@ -24,6 +25,18 @@ function prefersReducedMotion() {
   )
 }
 
+// 支持滚动驱动动画的浏览器（Chrome 115+、Safari 26+）由浏览器在合成线程上跟随滚动，
+// 不再每帧用脚本改位置，滑动时不会比页面慢一拍而抖动。
+function supportsScrollTimeline() {
+  return (
+    typeof CSS !== 'undefined' &&
+    typeof CSS.supports === 'function' &&
+    CSS.supports('animation-timeline: scroll()')
+  )
+}
+
+const MOBILE_LAYOUT_QUERY = '(max-width: 900px)'
+
 function applyFigureTransform(element, buddha, followOffset) {
   if (!element) {
     return
@@ -31,6 +44,15 @@ function applyFigureTransform(element, buddha, followOffset) {
 
   element.style.transform = `translate3d(${buddha.x}px, ${buddha.y + followOffset}px, 0px)`
   element.style.scale = `${(buddha.scale ?? 100) / 100}`
+}
+
+// 跟随距离交给 CSS：translate 属性在 scale 外层，所以距离要乘 scale，和原来写在 transform 里的效果一致。
+function applyCssFollow(element, range, scale) {
+  if (!element) return
+  const distance = Math.max(range.endScroll - range.startScroll, 0) * scale
+  element.style.setProperty('--follow-start', `${range.startScroll}px`)
+  element.style.setProperty('--follow-end', `${Math.max(range.endScroll, range.startScroll + 1)}px`)
+  element.style.setProperty('--follow-distance', `${distance}px`)
 }
 
 // 佛像随滚动逐帧推进（oil-motion：baked-video + frame-scrub）。
@@ -50,6 +72,7 @@ function ScrollVideoBackground({
   const seekerRef = useRef(null)
   const animatorRef = useRef(null)
   const [reducedMotion] = useState(prefersReducedMotion)
+  const [cssFollow] = useState(() => !reducedMotion && supportsScrollTimeline())
   const [shouldLoad, setShouldLoad] = useState(() => !reducedMotion && window.scrollY > 0)
   const [videoReady, setVideoReady] = useState(false)
 
@@ -57,6 +80,8 @@ function ScrollVideoBackground({
   useEffect(() => {
     if (shouldLoad || reducedMotion) return undefined
     const start = () => setShouldLoad(true)
+    // 不能提前：2026-11-11 实测提前到 1.4 秒开始下载，“山野手记”图片被挤到 13 秒才下完。
+    // 想让佛像早点动，要把视频分段（先下一小段），见 docs/web-performance-plan.md。
     const stopWaiting = waitForQuietNetwork(start)
     window.addEventListener('scroll', start, { once: true, passive: true })
     return () => {
@@ -115,11 +140,13 @@ function ScrollVideoBackground({
           removeGestureListener()
           prime().then((ok) => ok && startScrub())
         }
-        window.addEventListener('pointerdown', onGesture, { once: true, passive: true })
-        window.addEventListener('touchstart', onGesture, { once: true, passive: true })
+        // 苹果只把 touchend / click 算作用户操作，touchstart（滑动开始）不算。
+        const gestureEvents = ['pointerdown', 'touchstart', 'touchend', 'click']
+        gestureEvents.forEach((name) =>
+          window.addEventListener(name, onGesture, { once: true, passive: true }),
+        )
         removeGestureListener = () => {
-          window.removeEventListener('pointerdown', onGesture)
-          window.removeEventListener('touchstart', onGesture)
+          gestureEvents.forEach((name) => window.removeEventListener(name, onGesture))
         }
       })
     }
@@ -186,23 +213,52 @@ function ScrollVideoBackground({
         (buddha.stopViewportY ?? 50) / 100,
       )
 
+      let endScroll = Math.max(stopScroll, defaultRange.startScroll)
+
+      // 手机上标题在佛像下方：佛像停在标题上方，不让标题从佛像身上滑过去。
+      const copy = endSection.querySelector('.interlude-copy')
+      const figure = figureRef.current
+      const space = figure?.parentElement
+      if (copy && figure && space && window.matchMedia?.(MOBILE_LAYOUT_QUERY).matches) {
+        const scale = (buddha.scale ?? 100) / 100
+        const spaceRect = space.getBoundingClientRect()
+        endScroll = getDockAboveScroll({
+          startScroll: defaultRange.startScroll,
+          figureCenterAtStart:
+            spaceRect.top + window.scrollY + spaceRect.height / 2 + (buddha.y ?? 0) * scale,
+          figureHeight: figure.offsetHeight * scale,
+          scale,
+          copyTop: copy.getBoundingClientRect().top + window.scrollY,
+        })
+      }
+
       rangeRef.current = {
         startScroll: defaultRange.startScroll,
-        endScroll: Math.max(stopScroll, defaultRange.startScroll),
+        endScroll,
+      }
+      if (cssFollow) {
+        applyCssFollow(figure, rangeRef.current, (buddha.scale ?? 100) / 100)
       }
     }
 
     updateRange()
     window.addEventListener('resize', updateRange)
+    // 字体、图片加载完会把下面的段落往下推，停靠位置要跟着重算。
+    const observer =
+      typeof ResizeObserver === 'function' ? new ResizeObserver(() => updateRange()) : null
+    observer?.observe(document.body)
 
     return () => {
       window.removeEventListener('resize', updateRange)
+      observer?.disconnect()
     }
-  }, [buddha.stopViewportY, endSectionRef, heroSectionRef, rangeKey, stopTargetRef])
+  }, [buddha.scale, buddha.stopViewportY, buddha.y, cssFollow, endSectionRef, heroSectionRef, rangeKey, stopTargetRef])
 
   useEffect(() => {
     const followOffset = () =>
-      getScrollFollowOffset(
+      cssFollow
+        ? 0
+        : getScrollFollowOffset(
         window.scrollY,
         rangeRef.current.startScroll,
         rangeRef.current.endScroll,
@@ -218,7 +274,7 @@ function ScrollVideoBackground({
     let raf = 0
     const tick = () => {
       raf = 0
-      applyFigureTransform(figureRef.current, buddha, followOffset())
+      if (!cssFollow) applyFigureTransform(figureRef.current, buddha, followOffset())
       animatorRef.current?.setProgress(
         getScrollVideoProgress(
           window.scrollY,
@@ -244,12 +300,12 @@ function ScrollVideoBackground({
       window.removeEventListener('resize', requestDraw)
       window.removeEventListener('hero-motion-ready', requestDraw)
     }
-  }, [buddha, reducedMotion])
+  }, [buddha, cssFollow, reducedMotion])
 
   return (
     <div
       ref={figureRef}
-      className={`hero-scroll-figure${videoReady ? ' is-ready' : ''}`}
+      className={`hero-scroll-figure${videoReady ? ' is-ready' : ''}${cssFollow ? ' is-css-follow' : ''}`}
       data-testid="hero-scroll-figure"
       data-layer="video"
       data-render-mode="baked-video"

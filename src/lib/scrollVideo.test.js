@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  getDockAboveScroll,
   getFrameSelection,
   getScrollFollowOffset,
   getScrollStopAtViewportPosition,
@@ -69,5 +70,19 @@ describe('scroll video mapping', () => {
       nextIndex: 11,
       blend: 0,
     })
+  })
+})
+
+describe('getDockAboveScroll', () => {
+  it('佛像底边停在标题上方 gap 处（佛像每滚 1px 在页面上移动 scale px）', () => {
+    // 起点中心 500，高 200，莲座底在中心下 76；标题顶 1000，留 20 → 底边要到 980，需移动 404，scale 1.25 → 滚 323.2
+    expect(
+      getDockAboveScroll({ startScroll: 0, figureCenterAtStart: 500, figureHeight: 200, scale: 1.25, copyTop: 1000 }),
+    ).toBeCloseTo(323.2)
+  })
+
+  it('标题已经在佛像上方够远时不往回算，数值无效时退回起点', () => {
+    expect(getDockAboveScroll({ startScroll: 10, figureCenterAtStart: 900, figureHeight: 200, scale: 1, copyTop: 500 })).toBe(10)
+    expect(getDockAboveScroll({ startScroll: 10, figureCenterAtStart: NaN, figureHeight: 200, scale: 1, copyTop: 500 })).toBe(10)
   })
 })
