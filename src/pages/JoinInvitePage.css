@@ -1,0 +1,74 @@
+.join-invite {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px calc(32px + env(safe-area-inset-bottom));
+  background: radial-gradient(circle at 50% 0%, #f7ead6 0%, #f3ece2 55%, #ece3d6 100%);
+  color: #3a2a18;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+.join-invite-card {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 36px 26px 30px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 48px rgba(58, 42, 24, 0.12);
+  text-align: center;
+}
+
+.join-invite-logo { border-radius: 14px; }
+.join-invite-kicker { margin: 4px 0 0; font-size: 13px; letter-spacing: 0.12em; color: #a07a45; }
+.join-invite h1 { margin: 0; font-size: 24px; line-height: 1.35; font-weight: 600; }
+.join-invite-body { margin: 0; font-size: 15px; line-height: 1.7; color: #5b4a36; }
+
+.join-invite-code {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f5ede1;
+  font-size: 13px;
+  color: #7a6650;
+}
+.join-invite-code strong { font-size: 17px; letter-spacing: 0.06em; color: #3a2a18; }
+.join-invite-code button {
+  border: 0;
+  background: none;
+  color: #8a5a2b;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.join-invite-open {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 15px 0;
+  border-radius: 999px;
+  background: #8a5a2b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.join-invite-wechat {
+  margin: 6px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff4e0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #7a4f1d;
+  text-align: left;
+}
+.join-invite-hint { margin: 0; font-size: 13px; color: #7a6650; }
+.join-invite-download { font-size: 14px; color: #8a5a2b; text-decoration: underline; text-underline-offset: 3px; }
