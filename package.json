@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/verify-public-assets.mjs && vite build && node scripts/build-masters-h5.mjs && node scripts/prepare-vercel-output.mjs",
+    "build": "node scripts/verify-public-assets.mjs && vite build && node scripts/prerender-home.mjs && node scripts/build-masters-h5.mjs && node scripts/prepare-vercel-output.mjs",
     "test": "npm run check:masters && vitest run",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -13,7 +13,8 @@
     "preview:status": "node scripts/preview-status.mjs",
     "preview:stop": "node scripts/preview-stop.mjs",
     "publish:android-apk": "node scripts/publish-android-apk.mjs",
-    "check:masters": "node scripts/check-masters-routing.mjs && node scripts/build-masters-h5.mjs --verify-only && node --test scripts/masters-source.check.mjs scripts/masters-app-return.check.cjs scripts/masters-staging-discovery.check.mjs"
+    "check:masters": "node scripts/check-masters-routing.mjs && node scripts/build-masters-h5.mjs --verify-only && node --test scripts/masters-source.check.mjs scripts/masters-app-return.check.cjs scripts/masters-staging-discovery.check.mjs",
+    "check:budget": "node scripts/perf-budget.mjs"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.5",

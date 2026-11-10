@@ -1,0 +1,109 @@
+/* 首页字体自托管（2026-11-11）：只含首页用到的字重和字符，由 ~/nz-qa/home-rebuild/fonts/make.py 从谷歌字体生成。 */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/inter-normal.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-AC, U+AE-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/inter-normal-ext.woff2') format('woff2');
+  unicode-range: U+100-101, U+1E25, U+1E43, U+1E47;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/libre-baskerville-italic.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-AC, U+AE-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/libre-baskerville-italic-ext.woff2') format('woff2');
+  unicode-range: U+100-101, U+1E25, U+1E43, U+1E47;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/libre-baskerville-normal.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-AC, U+AE-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/libre-baskerville-normal-ext.woff2') format('woff2');
+  unicode-range: U+100-101, U+1E25, U+1E43, U+1E47;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('/fonts/montserrat-normal.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-AC, U+AE-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('/fonts/montserrat-normal-ext.woff2') format('woff2');
+  unicode-range: U+100-101, U+1E25, U+1E43, U+1E47;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/playfair-display-italic.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-B4, U+B6-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/playfair-display-italic-ext.woff2') format('woff2');
+  unicode-range: U+100-101;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/playfair-display-normal.woff2') format('woff2');
+  unicode-range: U+20-7E, U+A0-B4, U+B6-FF, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/playfair-display-normal-ext.woff2') format('woff2');
+  unicode-range: U+100-101;
+}

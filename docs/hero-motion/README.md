@@ -24,7 +24,16 @@ python3 $OIL_MOTION/scripts/compile_scroll_video.py graded-master.mkv out --back
 ```
 
 - ffmpeg 9 去掉了 oil-motion 脚本里用的 `-vsync`；在 mini 上用 `~/bc-oil-motion/bin/ffmpeg` 包一层（换成 `-fps_mode passthrough`）。
-- 新素材放 `public/kling-buddha-scroll-video/v2/`，不要覆盖 v1（缓存一年）。
+- 新素材放新目录（v3…），不要覆盖已发布的目录（缓存一年）。
+
+## 2026-11-11 首页重做后（v2：两段视频 + 原生吸附）
+
+- 145 帧拆成两段全关键帧视频：`v2/{m,d}-a.mp4` 第 0～47 帧（手机 0.55 MB），`v2/{m,d}-b.mp4` 第 48～144 帧。
+  编码命令：`~/bc-oil-motion/seg/encode.sh`（参数与 v1 相同：手机 768 宽 crf 24，桌面 1024 宽 crf 25，-g 1）。
+- a 段页面 load 后立即下载（首屏以下图片都已改成延迟加载，不再抢网速）；b 段等网络空闲或滚到第 40 帧。
+- 位置不再用脚本跟随：佛像在 `.home-buddha-track` 轨道里 `position: sticky`，轨道起止见 `src/home/home.css`。
+- 静音必须由脚本设置：React 生成静态网页时不写 `muted` 属性，苹果上不静音不能自动播放。
+- 组件 `src/home/HomeBuddha.jsx`，纯计算 `src/home/buddhaMotion.js`。v1 单段视频与 `ScrollVideoBackground` 已删除。
 
 ## 运行时要点（`src/lib/heroMotion.js`、`src/lib/frameAnimator.js`）
 
