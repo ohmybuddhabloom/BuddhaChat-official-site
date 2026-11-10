@@ -36,6 +36,6 @@ describe('community translation privacy', () => {
     expect(html).toContain("Translating Community messages into each reader's language")
     expect(html).toContain('may be translated when it is sent or when it is opened')
     expect(html).not.toContain('when you choose to view a translation')
-    expect(html).toContain('Effective Date: November 4, 2026')
+    expect(html).toContain('Effective Date: November 10, 2026')
   })
 })
