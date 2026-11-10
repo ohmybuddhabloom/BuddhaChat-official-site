@@ -22,6 +22,14 @@
         "sameAs": ["https://apps.apple.com/app/id6762049050"]
       }
     </script>
+    <script>
+      // 首屏时段（与 src/home/timeOfDay.js 的 pickTimeOfDay 同一规则），首次绘制前写入，避免颜色跳变。
+      (function () {
+        var h = new Date().getHours()
+        var t = h >= 5 && h < 10 ? 'dawn' : h >= 10 && h < 17 ? 'day' : h >= 17 && h < 20 ? 'dusk' : 'night'
+        document.documentElement.setAttribute('data-home-time', t)
+      })()
+    </script>
     <link rel="preload" as="image" href="/home/buddha-poster-768.webp" media="(max-width: 900px)" fetchpriority="high" />
     <link rel="preload" as="image" href="/home/buddha-poster-1280.webp" media="(min-width: 901px)" fetchpriority="high" />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-italic.woff2" crossorigin />
