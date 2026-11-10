@@ -1,0 +1,60 @@
+{
+  "display": {
+    "width": 640,
+    "height": 426,
+    "dpr": 1.6
+  },
+  "requiredCell": {
+    "width": 1024,
+    "height": 682
+  },
+  "frames": 145,
+  "texture": {
+    "maxSize": 4096,
+    "columnsPerSheet": 4,
+    "rowsPerSheet": 6,
+    "framesPerSheet": 24,
+    "sheetCount": 7
+  },
+  "decodedFrameMemoryMiB": 386.3,
+  "sourceCheck": {
+    "width": 1024,
+    "height": 682,
+    "required_width": 1024,
+    "required_height": 682,
+    "width_ratio": 1.0,
+    "height_ratio": 1.0,
+    "passes": true
+  },
+  "cellCheck": null,
+  "temporalCheck": {
+    "scrollPages": 2.0,
+    "framesPerPage": 72.5,
+    "targetFramesPerPage": 24.0,
+    "requiredFrames": 48,
+    "passes": true
+  },
+  "driver": "scroll",
+  "parameterSpace": "linear",
+  "timeControl": "scrub",
+  "access": "sequential",
+  "backgroundOwner": "video",
+  "delivery": {
+    "selected": "baked-video",
+    "reasonCodes": [
+      "background-baked-into-video"
+    ],
+    "atlasWithinBudget": false,
+    "thresholds": {
+      "atlasMaxSheets": 1,
+      "atlasMaxDecodedMemoryMiB": 192.0,
+      "linearVideoMinFrames": 180
+    }
+  },
+  "runtime": {
+    "renderer": "baked-video",
+    "controller": "frame-scrub"
+  },
+  "failures": [],
+  "passes": true
+}

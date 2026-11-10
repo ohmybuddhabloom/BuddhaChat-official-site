@@ -1,0 +1,16 @@
+# Owner 原话（2026-11-10）：官网首页佛像滑动时要跟手，不能卡；整个官网不能比之前慢。"用这个 skill 重新做一下"。
+subject_count: 1
+subjects:
+  - identity: 官网首页现有的佛像（kling-buddha 素材，145 帧，已调色）
+style: 保持现有画面与调色，不重新生成
+motion_intent: 页面向下滚动时佛像按现有动作逐帧推进，停手即停
+background_owner: video        # 佛像与暗色背景同在一张画面里，边缘由页面上的 CSS 羽化遮罩融进页面
+scene: 沿用现有素材的场景与光线
+driver: scroll
+input_semantics: continuous
+time_control: scrub
+navigation: continuous
+clip_continuity: independent
+continuity: [佛像身份、构图、调色与现有版本一致, 编辑器里的羽化范围与强度、位置、缩放、停止点照旧生效]
+aspect_ratio: custom           # 1024:682，沿用现有素材，不裁切
+destination: 官网首页 Hero，最大 CSS 宽度 640px（.hero-scroll-figure width:min(88%,640px)），手机与桌面
