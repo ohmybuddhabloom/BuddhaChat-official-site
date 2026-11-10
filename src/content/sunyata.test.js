@@ -14,8 +14,8 @@ describe('sunyata content defaults', () => {
     expect(scene.nav.logo).toBe('Sūnyatā')
     expect(scene.footer.titleLine1).toBe('Seek and')
     expect(scene.footer.titleLine2).toBe('it is given')
-    expect(scene.footer.copyrightLine1).toBe('')
-    expect(scene.footer.copyrightLine2).toBe('')
+    expect(scene.footer.copyrightLine1).toBe('© 2026 BuddhaChat.')
+    expect(scene.footer.copyrightLine2).toBe('All rights reserved.')
     expect(scene.layout.sections).toEqual([
       { id: 'hero', visible: true },
       { id: 'interlude', visible: true },

@@ -55,6 +55,31 @@
   ],
   "redirects": [
     {
+      "source": "/privacy",
+      "destination": "https://legal.buddhachat.online/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "https://legal.buddhachat.online/terms",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "https://legal.buddhachat.online/support",
+      "permanent": true
+    },
+    {
+      "source": "/account-deletion",
+      "destination": "https://legal.buddhachat.online/account-deletion",
+      "permanent": true
+    },
+    {
+      "source": "/child-safety",
+      "destination": "https://legal.buddhachat.online/child-safety",
+      "permanent": true
+    },
+    {
       "source": "/download/android/latest.apk",
       "destination": "https://music.buddhachat.online/apk/BuddhaChat-latest.apk",
       "permanent": false
