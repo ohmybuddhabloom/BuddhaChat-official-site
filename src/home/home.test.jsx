@@ -312,3 +312,35 @@ describe('首屏金箔奶油改版', () => {
     expect(screen.getByRole('button', { name: /Dawn/ })).toHaveAttribute('aria-pressed', 'false')
   })
 })
+
+describe('首屏按钮与“在 App 中打开”浮动按钮', () => {
+  it('首屏按钮在屏幕上时给 <html> 加标记，离开或卸载时去掉', () => {
+    const observers = []
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        constructor(callback) {
+          this.callback = callback
+          this.targets = []
+          observers.push(this)
+        }
+        observe(target) {
+          this.targets.push(target)
+        }
+        disconnect() {}
+      },
+    )
+    const { unmount } = render(<HomePage />)
+    const hero = observers.find((item) => item.targets.some((target) => target.classList.contains('hero-actions')))
+    expect(hero).toBeDefined()
+    const root = document.documentElement
+    act(() => hero.callback([{ isIntersecting: true }]))
+    expect(root.classList.contains('home-hero-actions-in-view')).toBe(true)
+    act(() => hero.callback([{ isIntersecting: false }]))
+    expect(root.classList.contains('home-hero-actions-in-view')).toBe(false)
+    act(() => hero.callback([{ isIntersecting: true }]))
+    unmount()
+    expect(root.classList.contains('home-hero-actions-in-view')).toBe(false)
+    vi.unstubAllGlobals()
+  })
+})
