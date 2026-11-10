@@ -2613,12 +2613,59 @@ a {
 }
 
 .sunyata-footer {
-  padding: 100px 40px;
+  padding: 100px 40px 48px;
   border-top: 1px solid rgba(45, 35, 25, 0.05);
   display: flex;
+  flex-direction: column;
+  gap: 56px;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.footer-legal {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-legal a {
+  color: inherit;
+  opacity: 0.72;
+  text-decoration: none;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.5;
+}
+
+.interlude-reply-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .archive-section {

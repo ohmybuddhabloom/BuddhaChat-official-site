@@ -35,10 +35,13 @@ function SunyataAppPreviews({ showcase }) {
             >
               {showcase.primaryActionLabel}
             </a>
-            <button type="button" className="app-previews-secondary">
-              {showcase.secondaryActionLabel}
-            </button>
+            {showcase.secondaryActionLabel && showcase.secondaryActionHref ? (
+              <a className="app-previews-secondary" href={showcase.secondaryActionHref}>
+                {showcase.secondaryActionLabel}
+              </a>
+            ) : null}
           </div>
+          {showcase.proofText ? (
           <div className="app-previews-proof">
             <div className="app-previews-proof-stack" aria-hidden="true">
               {showcase.proofAvatars?.map((avatar, index) => (
@@ -49,6 +52,7 @@ function SunyataAppPreviews({ showcase }) {
             </div>
             <p>{showcase.proofText}</p>
           </div>
+          ) : null}
         </div>
 
         <div className="app-previews-waterfall">

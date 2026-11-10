@@ -178,7 +178,7 @@ export const defaultScene = {
   hero: {
     title: 'the luminous void',
     subtitle:
-      'she whispers the ancient mantras he is hearing in his soul. showing the inspiration spirit channeling into the physical vessel.',
+      'Ask the Buddha, hear living masters, and keep a daily practice. One quiet app for the path.',
     scrollLabel: 'scroll to enter',
     copyX: 0,
     copyY: 0,
@@ -188,12 +188,14 @@ export const defaultScene = {
   interlude: {
     kicker: 'Quiet Dialogue',
     title: 'Place a question into the hush.',
-    note: 'The second screen should stay mostly empty, with only a soft line of text and a single field below.',
+    note: '',
     placeholder: 'Ask Buddha a question...',
     actionLabel: 'Offer',
-    responseLabel: 'Buddha replies',
+    responseLabel: 'BuddhaChat',
     responseText:
-      'Offer the question gently. The next clear step usually arrives before the full answer does.',
+      'Your guardian Buddha answers in the BuddhaChat app, with a reply written for your question.',
+    responseLinkLabel: 'Continue in the app',
+    responseLinkHref: '/download',
     responseDelayMs: 420,
     fadeDurationMs: 320,
     textX: 0,
@@ -239,45 +241,32 @@ export const defaultScene = {
     kicker: 'A Sacred Digital Experience',
     title: 'The Digital Sanctuary.',
     lead:
-      'Reconnect with your inner stillness. Foshuo translates ritual, wisdom, and ceremonial calm into a digital experience that feels weighted, luminous, and memorable.',
+      'Reconnect with your inner stillness. BuddhaChat brings the Buddha’s wisdom, living masters, and daily practice into one calm, beautifully crafted app.',
     primaryActionLabel: 'Download Now',
-    secondaryActionLabel: 'Watch the Story',
+    secondaryActionLabel: '',
     reserveHeading: 'Reserve Your Invite',
     reserveNote: 'To ensure a truly serene experience, the Buddha Chat app is still being mindfully developed. Breathe and rest in the present—we will write to you the moment it arrives.',
     reserveEmailPlaceholder: 'Enter your email',
     reserveSubmitLabel: 'Submit',
-    proofText: 'Joined by 12,000+ seekers worldwide',
-    proofAvatars: [
-      {
-        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5BcCtipHMXi3CNEZdMB5V7Sa9HEt9olmb079PiiWwCuuoIW3YE6eV0yCYR2gGvmv5F17M4-Qad9_7Jnkt2RV6iYB9jPEoLMJYeWDS4XN5URc5BrPhnyRezaOWxSdQtxsY0eevSGwpPscFmMKurPlkGerZ5SizhEHsEpeOxtqRusF9IHbhTaOfgkmKmsypUpksB8dtQK-QjA1BRUdFSVFPsndp6o_Obko_5YRdnOFnqvONV-eAS-5HCnRNEqaRJrtb7QtT6rQUH30',
-        alt: 'Close-up portrait of a woman',
-      },
-      {
-        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDB1_kVUHFOoMKNX2rjc_IbyRya62SO9A71_WrqJuCu33WuwTms6oItmzcPPjk2GYKrDFPFm8iB4AFWV0IzTc41pogRb9U5GW515AMAY0Fr30z10hv5mwdemONWfyyKag7zbGYWfc265ofudqSQtPHwvGBoeu6v2owuLhstEez14FjY3-rTvDFGkNlYwlVKNFW4t56KMyguI86fCY87m0e4KwL6UbaSvWp_OMhmqnBpWkvUx60KA3j2OQpLuERAChfxrqfIoCbUT5M',
-        alt: 'Portrait of a man',
-      },
-      {
-        src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCLvSLFYpG6B2imUbaVnvGdPcxC7QuRLDug4JAYKnAojVjK7zjBh0uhzORiuRj5nzcCIySQ_15ownvAgACbTvjBCStGRkqp3s8pTDUD7yqRhh7gnyn_VQvmVC0Hc--PI_Sctw4FCla-hMWW2i4KLaiIS4m5juH09qS8OTvgI4VlglePEVRCdMCp9-yoZlNsIDwquzw1QEZkUNnm5PQfiJAvqyL20gOAlSooTzMPeCtHCbyVqe5iUFpw0S71-ud199T1E5xDVVIYe8k',
-        alt: 'Portrait of a seeker',
-      },
-    ],
+    proofText: '',
+    proofAvatars: [],
     phones: [
       {
         key: 'left',
         imageSrc: '/app-previews/master-updates.webp',
-        imageAlt: 'Foshuo wisdom feed',
+        imageAlt: 'BuddhaChat master updates',
         layout: 'left',
       },
       {
         key: 'center',
         imageSrc: '/app-previews/foshuo-home.webp',
-        imageAlt: 'Foshuo home sanctuary screen',
+        imageAlt: 'BuddhaChat home screen',
         layout: 'center',
       },
       {
         key: 'right',
         imageSrc: '/app-previews/qa-detail.webp',
-        imageAlt: 'Foshuo detail practice screen',
+        imageAlt: 'BuddhaChat question and answer detail',
         layout: 'right',
       },
     ],
@@ -378,9 +367,10 @@ export const defaultScene = {
   footer: {
     titleLine1: 'Seek and',
     titleLine2: 'it is given',
-    ctaLabel: 'Join the circle',
-    copyrightLine1: '',
-    copyrightLine2: '',
+    ctaLabel: 'Download BuddhaChat',
+    ctaHref: '/download',
+    copyrightLine1: '© 2026 BuddhaChat.',
+    copyrightLine2: 'All rights reserved.',
   },
 }
 

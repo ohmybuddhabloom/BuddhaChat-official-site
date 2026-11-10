@@ -59,6 +59,10 @@
         "href": "/sutra"
       },
       {
+        "label": "Download",
+        "href": "/download"
+      },
+      {
         "label": "Sign in",
         "href": "/login"
       }
@@ -66,7 +70,7 @@
   },
   "hero": {
     "title": "Buddha Chat",
-    "subtitle": "she whispers the ancient mantras he is hearing in his soul. showing the inspiration spirit channeling into the physical vessel.",
+    "subtitle": "Ask the Buddha, hear living masters, and keep a daily practice. One quiet app for the path.",
     "scrollLabel": "scroll to enter",
     "leftWidth": 40,
     "leftPadding": 10,
@@ -96,11 +100,11 @@
   "interlude": {
     "kicker": "Quiet Dialogue",
     "title": "Place a question into the hush.",
-    "note": "The second screen should stay mostly empty, with only a soft line of text and a single field below.",
+    "note": "",
     "placeholder": "Ask Buddha a question...",
     "actionLabel": "Offer",
-    "responseLabel": "Buddha replies",
-    "responseText": "Offer the question gently. The next clear step usually arrives before the full answer does.",
+    "responseLabel": "BuddhaChat",
+    "responseText": "Your guardian Buddha answers in the BuddhaChat app, with a reply written for your question.",
     "responseDelayMs": 420,
     "fadeDurationMs": 320,
     "replyX": 160,
@@ -128,7 +132,9 @@
     "textXPercent": 6.313,
     "textYPercent": -12.1,
     "chatXPercent": -1,
-    "chatYPercent": 4.4
+    "chatYPercent": 4.4,
+    "responseLinkLabel": "Continue in the app",
+    "responseLinkHref": "/download"
   },
   "buddha": {
     "x": -95,
@@ -162,45 +168,32 @@
   "appShowcase": {
     "kicker": "A Sacred Digital Experience",
     "title": "The Digital Sanctuary.",
-    "lead": "Reconnect with your inner stillness. Foshuo translates ritual, wisdom, and ceremonial calm into a digital experience that feels weighted, luminous, and memorable.",
+    "lead": "Reconnect with your inner stillness. BuddhaChat brings the Buddha’s wisdom, living masters, and daily practice into one calm, beautifully crafted app.",
     "primaryActionLabel": "Download Now",
-    "secondaryActionLabel": "Watch the Story",
+    "secondaryActionLabel": "",
     "reserveHeading": "Reserve Your Invite",
     "reserveNote": "To ensure a truly serene experience, the Buddha Chat app is still being mindfully developed. Breathe and rest in the present—we will write to you the moment it arrives.",
     "reserveEmailPlaceholder": "Enter your email",
     "reserveSubmitLabel": "Submit",
-    "proofText": "Joined by 12,000+ seekers worldwide",
-    "proofAvatars": [
-      {
-        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD5BcCtipHMXi3CNEZdMB5V7Sa9HEt9olmb079PiiWwCuuoIW3YE6eV0yCYR2gGvmv5F17M4-Qad9_7Jnkt2RV6iYB9jPEoLMJYeWDS4XN5URc5BrPhnyRezaOWxSdQtxsY0eevSGwpPscFmMKurPlkGerZ5SizhEHsEpeOxtqRusF9IHbhTaOfgkmKmsypUpksB8dtQK-QjA1BRUdFSVFPsndp6o_Obko_5YRdnOFnqvONV-eAS-5HCnRNEqaRJrtb7QtT6rQUH30",
-        "alt": "Close-up portrait of a woman"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDB1_kVUHFOoMKNX2rjc_IbyRya62SO9A71_WrqJuCu33WuwTms6oItmzcPPjk2GYKrDFPFm8iB4AFWV0IzTc41pogRb9U5GW515AMAY0Fr30z10hv5mwdemONWfyyKag7zbGYWfc265ofudqSQtPHwvGBoeu6v2owuLhstEez14FjY3-rTvDFGkNlYwlVKNFW4t56KMyguI86fCY87m0e4KwL6UbaSvWp_OMhmqnBpWkvUx60KA3j2OQpLuERAChfxrqfIoCbUT5M",
-        "alt": "Portrait of a man"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLvSLFYpG6B2imUbaVnvGdPcxC7QuRLDug4JAYKnAojVjK7zjBh0uhzORiuRj5nzcCIySQ_15ownvAgACbTvjBCStGRkqp3s8pTDUD7yqRhh7gnyn_VQvmVC0Hc--PI_Sctw4FCla-hMWW2i4KLaiIS4m5juH09qS8OTvgI4VlglePEVRCdMCp9-yoZlNsIDwquzw1QEZkUNnm5PQfiJAvqyL20gOAlSooTzMPeCtHCbyVqe5iUFpw0S71-ud199T1E5xDVVIYe8k",
-        "alt": "Portrait of a seeker"
-      }
-    ],
+    "proofText": "",
+    "proofAvatars": [],
     "phones": [
       {
         "key": "left",
         "imageSrc": "/app-previews/master-updates.webp",
-        "imageAlt": "Foshuo wisdom feed",
+        "imageAlt": "BuddhaChat master updates",
         "layout": "left"
       },
       {
         "key": "center",
         "imageSrc": "/app-previews/foshuo-home.webp",
-        "imageAlt": "Foshuo home sanctuary screen",
+        "imageAlt": "BuddhaChat home screen",
         "layout": "center"
       },
       {
         "key": "right",
         "imageSrc": "/app-previews/qa-detail.webp",
-        "imageAlt": "Foshuo detail practice screen",
+        "imageAlt": "BuddhaChat question and answer detail",
         "layout": "right"
       }
     ]
@@ -393,9 +386,10 @@
   "footer": {
     "titleLine1": "Seek and it is given",
     "titleLine2": "",
-    "ctaLabel": "Join the circle",
-    "copyrightLine1": "© 2024 SŪNYATĀ COLLECTIVE",
-    "copyrightLine2": "ALL RIGHTS RESERVED IN THE VOID"
+    "ctaLabel": "Download BuddhaChat",
+    "copyrightLine1": "© 2026 BuddhaChat.",
+    "copyrightLine2": "All rights reserved.",
+    "ctaHref": "/download"
   },
   "waitlist": {
     "kicker": "Reserve The App",

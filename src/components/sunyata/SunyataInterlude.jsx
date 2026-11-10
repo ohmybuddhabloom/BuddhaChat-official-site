@@ -1,3 +1,4 @@
+import { trackCtaClick } from '../../lib/analytics.js'
 import { useEffect, useRef, useState } from 'react'
 
 import { submitChatPrompt } from '../../lib/siteApi.js'
@@ -121,7 +122,7 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
       >
         <p className="interlude-kicker">{interlude.kicker}</p>
         <h2 className="interlude-title">{interlude.title}</h2>
-        <p className="interlude-note">{interlude.note}</p>
+        {interlude.note ? <p className="interlude-note">{interlude.note}</p> : null}
       </div>
 
       {activeExchange ? (
@@ -150,6 +151,15 @@ function SunyataInterlude({ sectionRef, chatBarRef, interlude }) {
               {interlude.responseLabel}
             </span>
             <p>{interlude.responseText}</p>
+            {interlude.responseLinkLabel ? (
+              <a
+                className="interlude-reply-link"
+                href={interlude.responseLinkHref || '/download'}
+                onClick={() => trackCtaClick('interlude_download', 'official')}
+              >
+                {interlude.responseLinkLabel}
+              </a>
+            ) : null}
           </article>
         </div>
       ) : null}
