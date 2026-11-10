@@ -252,6 +252,22 @@
       "destination": "https://zentube.buddhachat.online/api/music/:path*"
     },
     {
+      "source": "/masters",
+      "destination": "/_masters/index.html"
+    },
+    {
+      "source": "/masters/",
+      "destination": "/_masters/index.html"
+    },
+    {
+      "source": "/masters/assets/:path*",
+      "destination": "/_masters/assets/:path*"
+    },
+    {
+      "source": "/masters/figures/:path*",
+      "destination": "/_masters/figures/:path*"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },

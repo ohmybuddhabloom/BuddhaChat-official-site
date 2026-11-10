@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-08",
+  "collections": [
+    {
+      "attribution": "虚云原作或原口述法语；据《虚云和尚法汇续编》排印扫描逐字核对，记录者文字按原文保留。",
+      "category": "法语与开示",
+      "id": "xuyun-xubian-fayu-20261008",
+      "person_id": "xu-yun",
+      "source_institution": "江西省佛教协会",
+      "source_url": "https://hx-culture.oss-cn-hangzhou.aliyuncs.com/jxfx/2023/08/28/4ca72d90bf8044c98161c3aa9291bad6.pdf",
+      "title": "法汇续编 · 法语补录"
+    },
+    {
+      "attribution": "虚云函牍；净慧辑录《虚云和尚法汇续编》上卷书问，排印署名、日期与收件语按原文保留。",
+      "category": "书信与函牍",
+      "id": "xuyun-xubian-shuwen-20261008",
+      "person_id": "xu-yun",
+      "source_institution": "江西省佛教协会",
+      "source_url": "https://hx-culture.oss-cn-hangzhou.aliyuncs.com/jxfx/2023/08/28/4ca72d90bf8044c98161c3aa9291bad6.pdf",
+      "title": "法汇续编 · 书问补录"
+    },
+    {
+      "attribution": "弘一法师自序；1933年《寒笳集》原刊扫描人工转录，原署晋水璎珞院沙门善臂集。本合集只收原序，不收全书，后文蕅益语录不作弘一原创。",
+      "category": "序跋与文记",
+      "id": "hongyi-hanjia-xu",
+      "person_id": "hong-yi",
+      "source_institution": "中国国家图书馆民国图书扫描／Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:NLC416-07jh010864-4472_寒笳集，一名，蕅益大師警訓略錄.pdf",
+      "title": "寒笳集 · 原序"
+    }
+  ],
+  "scope": "2026-10-08 historical expansion metadata for three new collections only; chapters may also append to existing collections in import batch."
+}

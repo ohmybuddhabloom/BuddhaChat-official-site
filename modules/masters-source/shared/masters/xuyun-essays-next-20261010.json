@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-10",
+  "scope": "《虛雲和尚法匯續編》上卷雜文四篇已核完整作品；追加既有雜文合集第4至7篇。",
+  "catalog_pages": 4,
+  "added_article_count": 4,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "xuyun-xubian-zawen-20261010",
+      "readable_count": 7,
+      "catalog_count": 7,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-essays-next",
+      "path": "content/masters/imports/xuyun-essays-next.json",
+      "review": "scripts/collect-masters-xuyun-essays-next.py",
+      "sha256": "61869180948834508611e05a4093d81221d2b1e01f73328021c6da1ed1f17adf",
+      "chapters": 4,
+      "catalog_pages": 4,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}

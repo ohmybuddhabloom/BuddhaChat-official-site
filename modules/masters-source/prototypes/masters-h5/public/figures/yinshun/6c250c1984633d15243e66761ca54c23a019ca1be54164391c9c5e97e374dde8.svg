@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y40.0352-1.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="3.12065in" height="1.11278in" viewBox="0 0 224.687 80.1201" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st4">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st2 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="group15-1" transform="translate(0.375,-0.375)">
+			<title>工作表.15</title>
+			<g id="shape8-2" transform="translate(-5.69452,-13.1625) rotate(-48.0128)">
+				<title>工作表.8</title>
+				<path d="M0 80.12 L38.14 80.12" class="st1"/>
+			</g>
+			<g id="shape9-5" transform="translate(113.386,-68.0315)">
+				<title>工作表.9</title>
+				<path d="M0 80.12 L56.69 80.12" class="st1"/>
+			</g>
+			<g id="shape10-8" transform="translate(113.386,-11.3386)">
+				<title>工作表.10</title>
+				<path d="M0 80.12 L56.69 80.12" class="st1"/>
+			</g>
+			<g id="shape11-11" transform="translate(113.411,-13.1625) rotate(48.0128)">
+				<title>工作表.11</title>
+				<path d="M0 80.12 L38.14 80.12" class="st1"/>
+			</g>
+			<g id="shape13-14" transform="translate(22.6772,-39.685)">
+				<title>工作表.13</title>
+				<path d="M0 80.12 L147.4 80.12" class="st1"/>
+			</g>
+			<g id="shape1-17" transform="translate(1.59872E-14,-28.3465)">
+				<title>工作表.1</title>
+				<desc>性</desc>
+				<rect x="0" y="57.4429" width="22.6772" height="22.6772" class="st2"/>
+				<text x="4" y="73.58" class="st3">性</text>			</g>
+			<g id="shape2-20" transform="translate(75.1181,-56.6929)">
+				<title>工作表.2</title>
+				<desc>法性</desc>
+				<rect x="0" y="57.4429" width="42.5197" height="22.6772" class="st2"/>
+				<text x="5.26" y="73.58" class="st3">法性</text>			</g>
+			<g id="shape5-23" transform="translate(75.1181,-1.42109E-14)">
+				<title>工作表.5</title>
+				<desc>本性</desc>
+				<rect x="0" y="57.4429" width="42.5197" height="22.6772" class="st2"/>
+				<text x="5.26" y="73.58" class="st3">本性</text>			</g>
+			<g id="shape3-26" transform="translate(167.244,-56.6929)">
+				<title>工作表.3</title>
+				<desc>自法性</desc>
+				<rect x="0" y="57.4429" width="56.6929" height="22.6772" class="st2"/>
+				<text x="4.35" y="73.58" class="st3">自法性</text>			</g>
+			<g id="shape4-29" transform="translate(167.244,-28.3465)">
+				<title>工作表.4</title>
+				<desc>自　性</desc>
+				<rect x="0" y="57.4429" width="56.6929" height="22.6772" class="st2"/>
+				<text x="4.35" y="73.58" class="st3">自　性</text>			</g>
+			<g id="shape6-32" transform="translate(167.244,-3.69482E-13)">
+				<title>工作表.6</title>
+				<desc>自本性</desc>
+				<rect x="0" y="57.4429" width="56.6929" height="22.6772" class="st2"/>
+				<text x="4.35" y="73.58" class="st3">自本性</text>			</g>
+		</g>
+	</g>
+</svg>

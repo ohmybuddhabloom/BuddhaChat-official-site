@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y40.0415-3.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="1.02827in" height="1.0247in" viewBox="0 0 74.0355 73.7783" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st3">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st2 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="group5-1" transform="translate(0.75,-0.75)">
+			<title>工作表.5</title>
+			<g id="group1-2">
+				<title>工作表.1</title>
+				<g id="shape2-3" transform="translate(1.125,-1.12425)">
+					<title>工作表.2</title>
+					<ellipse cx="35.1427" cy="38.7638" rx="35.1427" ry="35.0145" class="st1"/>
+				</g>
+				<g id="shape3-5">
+					<title>工作表.3</title>
+					<path d="M36.27 73.78 C16.27 73.78 0 57.57 0 37.64 C0 17.71 16.27 1.5 36.27 1.5 C56.27 1.5 72.54 17.71 72.54
+								 37.64 C72.54 57.57 56.27 73.78 36.27 73.78 ZM36.27 3.75 C17.51 3.75 2.25 18.95 2.25 37.64 C2.25
+								 56.33 17.51 71.53 36.27 71.53 C55.03 71.53 70.29 56.32 70.29 37.64 C70.29 18.95 55.03 3.75 36.27
+								 3.75 Z" class="st2"/>
+				</g>
+			</g>
+			<g id="shape4-7" transform="translate(11.7562,-13.1737)">
+				<title>工作表.4</title>
+				<path d="M22.15 26.35 C23.75 26.49 25.28 26.68 26.71 26.92 C27.19 26.99 27.43 27.16 27.43 27.43 C27.43 27.77 27.17
+							 28.06 26.66 28.3 C26.18 28.54 25.69 28.78 25.17 29.02 C25.1 31.21 25 33.21 24.87 35.02 C25.17 38.23
+							 25.67 41.17 26.35 43.84 C27.1 47.12 28.27 50.11 29.84 52.81 C31.27 55.61 32.98 58.14 34.97 60.4 C36.74
+							 62.45 39.05 64.5 41.89 66.55 C44.14 68.26 46.64 69.3 49.37 69.68 L49.37 70.45 C47.29 70.45 45.78 71.2
+							 44.86 72.7 C40.9 70.31 37.73 67.71 35.38 64.91 C32.92 62.11 30.86 59.1 29.22 55.88 C27.45 52.43 26.11
+							 49.1 25.22 45.89 C24.81 44.25 24.49 42.59 24.25 40.91 C24.22 41.15 24.18 41.38 24.15 41.58 C23.5 45.07
+							 22.69 48.35 21.74 51.42 C20.58 54.43 19.23 57.1 17.69 59.42 C16.05 61.99 14 64.26 11.54 66.24 C8.83
+							 68.67 5.18 71.18 0.56 73.78 L0 72.7 C3.25 70.82 6 68.96 8.25 67.11 C10.27 65.37 12.15 63.39 13.89 61.17
+							 C15.64 59.01 17.16 56.43 18.46 53.42 C19.76 50.72 20.76 47.49 21.48 43.73 C22.17 40.04 22.51 36.42 22.51
+							 32.87 C22.51 29.96 22.39 27.79 22.15 26.35 Z" class="st2"/>
+			</g>
+		</g>
+	</g>
+</svg>

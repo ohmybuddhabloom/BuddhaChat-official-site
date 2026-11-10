@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y26.0026.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="7.73042in" height="3.46999in" viewBox="0 0 556.591 249.839" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st7">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#000000;stroke-dasharray:3,3;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st2 {fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;stroke-width:1}
+		.st3 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st4 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st5 {marker-end:url(#mrkr5-38);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st6 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364514 1.67301 0.372642 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-38" class="st6" refX="-6.16" orient="auto" markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<g>
+		<title>頁-1</title>
+		<g id="group51-1" transform="translate(0.5,-0.5)">
+			<title>工作表.51</title>
+			<g id="shape6-2" transform="translate(481.89,318.517) rotate(180)">
+				<title>工作表.6</title>
+				<path d="M0 249.84 L184.25 249.84" class="st1"/>
+			</g>
+			<g id="shape9-5" transform="translate(368.504,0)">
+				<title>工作表.9</title>
+				<desc>現證慧</desc>
+				<rect x="0" y="229.997" width="94.0535" height="19.8425" class="st2"/>
+				<text x="7.03" y="244.72" class="st3">（現證慧）</text>			</g>
+			<g id="shape10-8" transform="translate(-2.39808E-14,-227.934)">
+				<title>工作表.10</title>
+				<desc>聞慧</desc>
+				<rect x="0" y="229.997" width="72.2835" height="19.8425" class="st2"/>
+				<text x="4.14" y="244.72" class="st3">（聞慧）</text>			</g>
+			<g id="shape11-11" transform="translate(149.173,-228.997)">
+				<title>工作表.11</title>
+				<desc>成信</desc>
+				<rect x="0" y="229.997" width="75.8268" height="19.8425" class="st2"/>
+				<text x="5.91" y="244.72" class="st3">（成信）</text>			</g>
+			<g id="shape12-14" transform="translate(53.8583,-199.587)">
+				<title>工作表.12</title>
+				<desc>思慧</desc>
+				<rect x="0" y="229.997" width="72.2835" height="19.8425" class="st2"/>
+				<text x="4.14" y="244.72" class="st3">（思慧）</text>			</g>
+			<g id="shape13-17" transform="translate(68.0315,-227.934)">
+				<title>工作表.13</title>
+				<desc>正見</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正見</text>			</g>
+			<g id="shape14-20" transform="translate(155.906,-199.587)">
+				<title>工作表.14</title>
+				<desc>正思惟</desc>
+				<rect x="0" y="229.997" width="59.5276" height="19.8425" class="st2"/>
+				<text x="5.76" y="244.72" class="st3">正思惟</text>			</g>
+			<g id="shape3-23" transform="translate(113.386,-237.855)">
+				<title>工作表.3</title>
+				<path d="M0 249.84 L28.35 249.84" class="st4"/>
+			</g>
+			<g id="shape15-26" transform="translate(-108.107,40.3307) rotate(-90)">
+				<title>工作表.15</title>
+				<path d="M0 249.84 L28.35 249.84" class="st4"/>
+			</g>
+			<g id="shape16-29" transform="translate(118.665,238.756) rotate(-90)">
+				<title>工作表.16</title>
+				<path d="M0 249.84 L28.35 249.84" class="st4"/>
+			</g>
+			<g id="shape17-32" transform="translate(141.732,-209.509)">
+				<title>工作表.17</title>
+				<path d="M0 249.84 L7.3 249.84" class="st5"/>
+			</g>
+			<g id="shape18-39" transform="translate(368.504,-11.0835)">
+				<title>工作表.18</title>
+				<path d="M0 249.84 L7.3 249.84" class="st5"/>
+			</g>
+			<g id="shape19-44" transform="translate(212.598,-138.643)">
+				<title>工作表.19</title>
+				<path d="M0 249.84 L22.19 249.84" class="st5"/>
+			</g>
+			<g id="shape20-49" transform="translate(255.118,-114.548)">
+				<title>工作表.20</title>
+				<desc>正命</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正命</text>			</g>
+			<g id="shape21-52" transform="translate(255.118,-142.894)">
+				<title>工作表.21</title>
+				<desc>正業</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正業</text>			</g>
+			<g id="shape22-55" transform="translate(255.118,-171.241)">
+				<title>工作表.22</title>
+				<desc>正語</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正語</text>			</g>
+			<g id="shape23-58" transform="translate(255.118,-57.8551)">
+				<title>工作表.23</title>
+				<desc>正念</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正念</text>			</g>
+			<g id="shape24-61" transform="translate(256.535,-86.2016)">
+				<title>工作表.24</title>
+				<desc>正精進</desc>
+				<rect x="0" y="229.997" width="59.5276" height="19.8425" class="st2"/>
+				<text x="5.76" y="244.72" class="st3">正精進</text>			</g>
+			<g id="shape26-64" transform="translate(-37.2409,182.063) rotate(-90)">
+				<title>工作表.26</title>
+				<path d="M0 249.84 L141.73 249.84" class="st4"/>
+			</g>
+			<g id="shape27-67" transform="translate(212.598,-67.7764)">
+				<title>工作表.27</title>
+				<path d="M0 249.84 L22.19 249.84" class="st5"/>
+			</g>
+			<g id="shape29-72" transform="translate(-8.89449,201.906) rotate(-90)">
+				<title>工作表.29</title>
+				<path d="M0 249.84 L45.35 249.84" class="st4"/>
+			</g>
+			<g id="shape31-75" transform="translate(374.357,-9.3309) rotate(32.2756)">
+				<title>工作表.31</title>
+				<path d="M0 249.84 L15.93 249.84" class="st4"/>
+			</g>
+			<g id="shape32-78" transform="translate(240.945,-93.2882)">
+				<title>工作表.32</title>
+				<path d="M0 249.84 L13.46 249.84" class="st4"/>
+			</g>
+			<g id="shape33-81" transform="translate(241.654,-98.9575)">
+				<title>工作表.33</title>
+				<path d="M0 249.84 L13.46 249.84" class="st4"/>
+			</g>
+			<g id="shape34-84" transform="translate(241.654,-181.162)">
+				<title>工作表.34</title>
+				<path d="M0 249.84 L13.46 249.84" class="st4"/>
+			</g>
+			<g id="shape30-87" transform="translate(-8.17654,153.036) rotate(-90.4939)">
+				<title>工作表.30</title>
+				<path d="M0 249.84 L82.21 249.84" class="st4"/>
+			</g>
+			<g id="shape36-90" transform="translate(255.118,-39.4299)">
+				<title>工作表.36</title>
+				<path d="M0 249.84 L70.87 249.84" class="st4"/>
+			</g>
+			<g id="shape37-93" transform="translate(298.346,-67.7764)">
+				<title>工作表.37</title>
+				<path d="M0 249.84 L13.46 249.84" class="st4"/>
+			</g>
+			<g id="shape38-96" transform="translate(61.9717,195.528) rotate(-90)">
+				<title>工作表.38</title>
+				<path d="M0 249.84 L13.46 249.84" class="st4"/>
+			</g>
+			<g id="shape39-99" transform="translate(493.653,24.1595) rotate(46.4688)">
+				<title>工作表.39</title>
+				<path d="M0 249.84 L19.55 249.84" class="st4"/>
+			</g>
+			<g id="shape40-102" transform="translate(321.024,-39.4299)">
+				<title>工作表.40</title>
+				<path d="M0 249.84 L7.3 249.84" class="st5"/>
+			</g>
+			<g id="shape41-107" transform="translate(170.787,-28.4457)">
+				<title>工作表.41</title>
+				<desc>修慧</desc>
+				<rect x="0" y="229.997" width="75.8268" height="19.8425" class="st2"/>
+				<text x="5.91" y="244.72" class="st3">（修慧）</text>			</g>
+			<g id="shape42-110" transform="translate(496.063,-57.8551)">
+				<title>工作表.42</title>
+				<desc>心清淨</desc>
+				<rect x="0" y="229.997" width="59.5276" height="19.8425" class="st2"/>
+				<text x="5.76" y="244.72" class="st3">心清淨</text>			</g>
+			<g id="shape43-113" transform="translate(496.063,-2.57953)">
+				<title>工作表.43</title>
+				<desc>見清淨</desc>
+				<rect x="0" y="229.997" width="59.5276" height="19.8425" class="st2"/>
+				<text x="5.76" y="244.72" class="st3">見清淨</text>			</g>
+			<g id="shape44-116" transform="translate(496.063,-128.721)">
+				<title>工作表.44</title>
+				<desc>戒清淨</desc>
+				<rect x="0" y="229.997" width="59.5276" height="19.8425" class="st2"/>
+				<text x="5.76" y="244.72" class="st3">戒清淨</text>			</g>
+			<g id="shape45-119" transform="translate(481.89,402.139) rotate(180)">
+				<title>工作表.45</title>
+				<path d="M0 249.84 L170.08 249.84" class="st1"/>
+			</g>
+			<g id="shape46-122" transform="translate(481.89,460.249) rotate(180)">
+				<title>工作表.46</title>
+				<path d="M0 249.84 L113.39 249.84" class="st1"/>
+			</g>
+			<g id="shape47-125" transform="translate(496.063,488.595) rotate(180)">
+				<title>工作表.47</title>
+				<path d="M0 249.84 L43.03 249.84" class="st1"/>
+			</g>
+			<g id="shape1-128" transform="translate(719.526,293.795) rotate(116.565)">
+				<title>工作表.1</title>
+				<path d="M0 249.84 L31.69 249.84" class="st1"/>
+			</g>
+			<g id="shape2-131" transform="translate(732.254,192.642) rotate(109.026)">
+				<title>工作表.2</title>
+				<path d="M0 249.84 L43.48 249.84" class="st1"/>
+			</g>
+			<g id="shape4-134" transform="translate(258.289,189.316) rotate(-107.879)">
+				<title>工作表.4</title>
+				<path d="M0 249.84 L46.17 249.84" class="st1"/>
+			</g>
+			<g id="shape5-137" transform="translate(709.335,48.9149) rotate(65.556)">
+				<title>工作表.5</title>
+				<path d="M0 249.84 L34.25 249.84" class="st1"/>
+			</g>
+			<g id="shape7-140" transform="translate(223.427,-199.587)">
+				<title>工作表.7</title>
+				<desc>起願欲</desc>
+				<rect x="0" y="229.997" width="94.0535" height="19.8425" class="st2"/>
+				<text x="7.03" y="244.72" class="st3">（起願欲）</text>			</g>
+			<g id="shape49-143" transform="translate(325.984,-29.1543)">
+				<title>工作表.49</title>
+				<desc>正定</desc>
+				<rect x="0" y="229.997" width="45.3543" height="19.8425" class="st2"/>
+				<text x="6.68" y="244.72" class="st3">正定</text>			</g>
+		</g>
+	</g>
+</svg>

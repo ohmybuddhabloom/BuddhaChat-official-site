@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y03.0014.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="2.48785in" height="0.660367in" viewBox="0 0 179.126 47.5464" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st4">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="shape1-1" transform="translate(1.06866,-1.09622)">
+			<title>工作表.1</title>
+			<desc>佛　乘果</desc>
+			<rect x="0" y="30.5386" width="104.173" height="17.0079" class="st1"/>
+			<text x="4.09" y="43.84" class="st2">佛　乘（果）</text>		</g>
+		<g id="shape9-4" transform="translate(132.525,-29.4427)">
+			<title>工作表.9</title>
+			<desc>大乘</desc>
+			<rect x="0" y="30.5386" width="46.2402" height="17.0079" class="st1"/>
+			<text x="7.12" y="43.84" class="st2">大乘</text>		</g>
+		<g id="shape2-7" transform="translate(0.36,-29.4427)">
+			<title>工作表.2</title>
+			<desc>菩薩乘因</desc>
+			<rect x="0" y="30.5386" width="105.591" height="17.0079" class="st1"/>
+			<text x="4.8" y="43.84" class="st2">菩薩乘（因）</text>		</g>
+		<g id="shape3-10" transform="translate(95.675,-37.9466)">
+			<title>工作表.3</title>
+			<path d="M0 47.55 L42.52 47.55" class="st3"/>
+		</g>
+		<g id="shape4-13" transform="translate(95.675,-9.60016)">
+			<title>工作表.4</title>
+			<path d="M0 47.55 L42.52 47.55" class="st3"/>
+		</g>
+		<g id="shape5-16" transform="translate(69.3009,-1.61475) rotate(-33.6901)">
+			<title>工作表.5</title>
+			<path d="M0 47.55 L51.1 47.55" class="st3"/>
+		</g>
+		<g id="shape7-19" transform="translate(132.525,-1.09622)">
+			<title>工作表.7</title>
+			<desc>一乘</desc>
+			<rect x="0" y="30.5386" width="46.2402" height="17.0079" class="st1"/>
+			<text x="9.2" y="43.84" class="st2">一乘</text>		</g>
+	</g>
+</svg>

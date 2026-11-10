@@ -1,0 +1,186 @@
+{
+  "checked_at": "2026-10-10",
+  "scope": "编辑原创书目简介，不含作品正文或影音授权",
+  "entries": [
+    {
+      "id": "lyl-zhongguo-fojiao-renwen",
+      "person_id": "lou-yulie",
+      "title": "中国佛教与人文精神",
+      "category": "佛教研究",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "从中国思想史的视角研究佛教，关注佛教与人的生活、修养及文化之间的关系。《楼宇烈文集》第六卷将早期同名著作与后续文章分册收录，选读时应辨明单行本和文集本的范围。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第六卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-huakai-lianxian",
+      "person_id": "lou-yulie",
+      "title": "花开莲现：心经大智慧",
+      "category": "佛经讲解",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "围绕《心经》展开理解佛教思想的路径。此书是楼宇烈的现代讲解，需与《心经》经文区分；北京大学图书馆的文集介绍将其列入第六卷下册。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 第六卷收录说明"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-zhongguo-pinge",
+      "person_id": "lou-yulie",
+      "title": "中国的品格",
+      "category": "传统文化",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "从中国文化的整体面貌入手，认识楼宇烈对传统文化与人文精神的思考。北京大学讣告将此书列为代表作，可与佛教研究著作对照阅读。",
+      "source_links": [
+        {
+          "url": "https://news.pku.edu.cn/info/7921/3307141.htm",
+          "label": "北京大学哲学系 · 代表著作"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-wenhua-genben-jingshen",
+      "person_id": "lou-yulie",
+      "title": "中国文化的根本精神",
+      "category": "传统文化",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "了解楼宇烈怎样理解中国文化的精神取向，并将儒、释、道放在相互关联的思想背景中考察。北京大学讣告将此书列为代表作。",
+      "source_links": [
+        {
+          "url": "https://news.pku.edu.cn/info/7921/3307141.htm",
+          "label": "北京大学哲学系 · 代表著作"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-wangbi-jijiaoshi",
+      "person_id": "lou-yulie",
+      "title": "王弼集校释",
+      "category": "古籍校释",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "由王弼的《老子》与《周易》注释走近魏晋玄学。王弼为古代原著作者，楼宇烈承担校释工作；阅读时应分别识别原文、注文和现代校释。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第一卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-xunzi-xinzhu",
+      "person_id": "lou-yulie",
+      "title": "荀子新注",
+      "category": "古籍注释",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "由先秦儒学理解荀子的思想。此书对《荀子》作现代注释，古代原著与楼宇烈等人的注释应分别辨识。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第2卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-rujia-chuantong-wenhua",
+      "person_id": "lou-yulie",
+      "title": "儒家与中国传统文化",
+      "category": "儒学研究",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "收集楼宇烈关于儒学的研究文章，将思想史问题与儒家在现代生活中的意义联系起来。为《楼宇烈文集》第三卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第3卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-xuanxue-daojia",
+      "person_id": "lou-yulie",
+      "title": "玄学与道家文化",
+      "category": "玄学与道家",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "以魏晋玄学及道家、道教研究为线索，认识楼宇烈的早期学术路径。为《楼宇烈文集》第四卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第4卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-zhongguo-dongfang-zhexue",
+      "person_id": "lou-yulie",
+      "title": "中国思想与东方哲学",
+      "category": "东方哲学",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "从中国文化出发，将儒释道关系放进东方哲学及东亚思想交流的背景中考察。为《楼宇烈文集》第五卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第5卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-zongjiao-yanjiu-fangfa",
+      "person_id": "lou-yulie",
+      "title": "宗教研究方法讲记",
+      "category": "宗教学方法",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "根据研究生课程讲课记录形成，介绍研究宗教时如何处理资料、观点与方法。需区分学术研究与宗教信仰。为文集第七卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第7卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-yishu-chuantong-yixue",
+      "person_id": "lou-yulie",
+      "title": "中国艺术与传统医学",
+      "category": "艺术与文化",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "收录楼宇烈对传统艺术和中医文化的研究、讲述，帮助理解道与艺之间的关系。为《楼宇烈文集》第八卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集第8卷"
+        }
+      ],
+      "body_included": false
+    },
+    {
+      "id": "lyl-wenji",
+      "person_id": "lou-yulie",
+      "title": "楼宇烈文集",
+      "category": "文集总览",
+      "description_author": "BuddhaChat编辑",
+      "original_description": "2025年出版的八卷九册文集，覆盖古籍校释、儒释道、东方哲学、宗教研究方法以及艺术与传统医学。可按兴趣选择各卷。",
+      "source_links": [
+        {
+          "url": "https://www.lib.pku.edu.cn/bjdxtsgjzpt/jzm_3/616b4b7b2dc848c185108b729920d717.htm",
+          "label": "北京大学图书馆 · 文集总览"
+        }
+      ],
+      "body_included": false
+    }
+  ]
+}
