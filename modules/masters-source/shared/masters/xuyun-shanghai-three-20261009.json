@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "《虛雲和尚法匯續編》二、開示中三篇上海講話；追加既有開示補錄合集，不改舊雲門、因果、南華批次。",
+  "catalog_pages": 3,
+  "added_article_count": 3,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "xuyun-xubian-kaishi-20261009",
+      "readable_count": 6,
+      "catalog_count": 6,
+      "deferred_count": 0,
+      "attribution": "虛雲老和尚口述開示；據《虛雲和尚法匯續編》開示原文，日期與記錄者逐篇依原載保留。"
+    }
+  ],
+  "batches": [
+    {
+      "id": "xuyun-shanghai-three",
+      "path": "content/masters/imports/xuyun-shanghai-three.json",
+      "review": "scripts/collect-masters-xuyun-shanghai-three.py",
+      "sha256": "8906f9d41cb7dadce2212b74fcf4d5b99ed8111c05c56a0e82ddea48215a68f3",
+      "chapters": 3,
+      "catalog_pages": 3,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}

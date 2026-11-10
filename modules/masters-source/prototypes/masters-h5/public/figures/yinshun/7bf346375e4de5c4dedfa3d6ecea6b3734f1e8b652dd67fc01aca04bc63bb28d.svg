@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 產生 y36.0362.svg 頁-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="6.69401in" height="1.50955in" viewBox="0 0 481.969 108.688" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st4">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:新細明體;font-size:1.33333em}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>頁-1</title>
+		<g id="group12-1" transform="translate(0.375,-0.375)">
+			<title>工作表.12</title>
+			<g id="shape1-2" transform="translate(1.84025,-28.5676)">
+				<title>工作表.1</title>
+				<desc>論法者</desc>
+				<rect x="0" y="86.0105" width="56.6929" height="22.6772" class="st1"/>
+				<text x="4.35" y="102.15" class="st2">論法者</text>			</g>
+			<g id="shape2-5" transform="translate(112.742,-56.9141)">
+				<title>工作表.2</title>
+				<desc>論法者法師</desc>
+				<rect x="0" y="86.0105" width="123.749" height="22.6772" class="st1"/>
+				<text x="5.87" y="102.15" class="st2">論法者（法師）</text>			</g>
+			<g id="shape3-8" transform="translate(110.33,-2.84217E-14)">
+				<title>工作表.3</title>
+				<desc>誦經者經師</desc>
+				<rect x="0" y="86.0105" width="125.167" height="22.6772" class="st1"/>
+				<text x="6.58" y="102.15" class="st2">誦經者（經師）</text>			</g>
+			<g id="shape4-11" transform="translate(325.375,-56.9141)">
+				<title>工作表.4</title>
+				<desc>阿毘達磨者論師</desc>
+				<rect x="0" y="86.0105" width="155.844" height="22.6772" class="st1"/>
+				<text x="5.92" y="102.15" class="st2">阿毘達磨者（論師）</text>			</g>
+			<g id="shape5-14" transform="translate(324.049,-0.22115)">
+				<title>工作表.5</title>
+				<desc>譬喻者譬喻師</desc>
+				<rect x="0" y="86.0105" width="144.049" height="22.6772" class="st1"/>
+				<text x="8.02" y="102.15" class="st2">譬喻者（譬喻師）</text>			</g>
+			<g id="shape6-17" transform="translate(226.772,-11.5597)">
+				<title>工作表.6</title>
+				<path d="M0 108.69 L99.21 108.69" class="st3"/>
+			</g>
+			<g id="shape8-20" transform="translate(7.54803,-28.1607) rotate(-26.8827)">
+				<title>工作表.8</title>
+				<path d="M0 108.69 L62.69 108.69" class="st3"/>
+			</g>
+			<g id="shape9-23" transform="translate(104.91,-28.6254) rotate(26.3359)">
+				<title>工作表.9</title>
+				<path d="M0 108.69 L63.9 108.69" class="st3"/>
+			</g>
+			<g id="shape7-26" transform="translate(226.772,-68.2526)">
+				<title>工作表.7</title>
+				<path d="M0 108.69 L99.21 108.69" class="st3"/>
+			</g>
+			<g id="shape11-29" transform="translate(2.39808E-14,-85.2605)">
+				<title>工作表.11</title>
+				<desc>持律者律師</desc>
+				<rect x="0" y="86.0105" width="120.189" height="22.6772" class="st1"/>
+				<text x="4.09" y="102.15" class="st2">持律者（律師）</text>			</g>
+		</g>
+	</g>
+</svg>

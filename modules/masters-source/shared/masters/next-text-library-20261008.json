@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-10-08",
+  "scope": "Five additional works; full scope remains in reconciliation. Only reviewed author content is readable.",
+  "collections": [
+    {
+      "id": "sy-01-05",
+      "person_id": "sheng-yen",
+      "title": "基督教之研究",
+      "category": "教義論述類",
+      "attribution": "聖嚴法師著作；本人序、學術論文、答問與編訂儀軌分別標示，全集編者校註另列。",
+      "source_url": "https://ddc.shengyen.org/html/01-05-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 8,
+      "catalog_count": 9,
+      "deferred_count": 1
+    },
+    {
+      "id": "sy-01-06",
+      "person_id": "sheng-yen",
+      "title": "菩薩戒指要",
+      "category": "教義論述類",
+      "attribution": "聖嚴法師著作；本人序、學術論文、答問與編訂儀軌分別標示，全集編者校註另列。",
+      "source_url": "https://ddc.shengyen.org/html/01-06-001.html",
+      "source_institution": "法鼓全集",
+      "readable_count": 12,
+      "catalog_count": 13,
+      "deferred_count": 1
+    },
+    {
+      "id": "xy-shida-dizi",
+      "person_id": "hsing-yun",
+      "title": "十大弟子傳",
+      "category": "传记与佛教故事",
+      "attribution": "星雲大師著作《十大弟子傳》；自序〈禮敬先賢〉署一九五九年三月，说明本书介绍佛陀比丘弟子中最有名的十大弟子；《星雲大師全集》236冊。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=113",
+      "source_institution": "星雲大師全集",
+      "readable_count": 12,
+      "catalog_count": 12,
+      "deferred_count": 0
+    },
+    {
+      "id": "xy-yulin-guoshi",
+      "person_id": "hsing-yun",
+      "title": "玉琳國師",
+      "category": "传记与佛教故事",
+      "attribution": "星雲大師著作《玉琳國師》；《星雲大師全集》237冊，20章完整收錄；本批未含他人序跋或現代編輯文章。",
+      "source_url": "https://books.masterhsingyun.org/Article/CpChapterMenu?bookno=114",
+      "source_institution": "星雲大師全集",
+      "readable_count": 20,
+      "catalog_count": 20,
+      "deferred_count": 0
+    },
+    {
+      "id": "nhj-yixin-yijiu",
+      "person_id": "nan-huaijin",
+      "title": "亦新亦旧的一代",
+      "category": "文化与教育",
+      "attribution": "南怀瑾讲述整理；古国治编序、陈世志三版献言另署名，不作本人正文；劝学网转载版，未与纸本逐字校勘。",
+      "source_url": "https://www.quanxue.cn/ct_nanhuaijin/xinjiuindex.html",
+      "source_institution": "劝学网",
+      "readable_count": 17,
+      "catalog_count": 19,
+      "deferred_count": 2
+    }
+  ],
+  "batches": [
+    {
+      "id": "shengyen-01-05-01-06",
+      "path": "content/masters/imports/shengyen-01-05-01-06.json",
+      "sha256": "98e5eb807f9642e52356e6c1915188eb4b4cfcb312a8228e0f8516fc0065ab50",
+      "chapters": 20,
+      "review": "scripts/review-masters-shengyen-01-05-01-06.py"
+    },
+    {
+      "id": "hsingyun-shida-dizi",
+      "path": "content/masters/imports/hsingyun-shida-dizi.json",
+      "sha256": "60a7e64f745fee2facdd345cd70a47306779557bef260f2a79a0b359cb0ce47d",
+      "chapters": 12,
+      "review": "scripts/review-masters-hsingyun-shida-dizi.py"
+    },
+    {
+      "id": "hsingyun-yulin-guoshi",
+      "path": "content/masters/imports/hsingyun-yulin-guoshi.json",
+      "sha256": "f5eea43e48d8d44b48d9f4868c9836e50c8dcf0627d80868da2a760415a983af",
+      "chapters": 20,
+      "review": "scripts/review-masters-hsingyun-yulin-guoshi.py"
+    },
+    {
+      "id": "nan-yixin-yijiu",
+      "path": "content/masters/imports/nan-yixin-yijiu.json",
+      "sha256": "07b4ecbce913eb394b1ff79988133172cfce6b2cc8f856e95e92c150c6e4c587",
+      "chapters": 17,
+      "review": "scripts/review-masters-nan-yixin-yijiu.py"
+    }
+  ],
+  "catalog_pages": 73,
+  "deferred_pages": 4,
+  "failed_pages": 0,
+  "added_article_count": 69
+}

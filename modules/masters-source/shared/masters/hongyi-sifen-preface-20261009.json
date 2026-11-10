@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-09",
+  "scope": "弘一〈四分律比丘戒相表記序〉原刊影印核字；追加既有弘一律學合集第9篇。",
+  "catalog_pages": 1,
+  "added_article_count": 1,
+  "deferred_pages": 0,
+  "failed_pages": 0,
+  "collections": [],
+  "collection_updates": [
+    {
+      "id": "hongyi-lvxue",
+      "readable_count": 9,
+      "catalog_count": 9,
+      "deferred_count": 0
+    }
+  ],
+  "batches": [
+    {
+      "id": "hongyi-sifen-preface",
+      "path": "content/masters/imports/hongyi-sifen-preface.json",
+      "review": "scripts/collect-masters-hongyi-sifen-preface.py",
+      "sha256": "3445ff4fd09334f298712548dbaa95ad4cc0da74d092b7e8e28e27af40b0a3a0",
+      "chapters": 1,
+      "catalog_pages": 1,
+      "deferred_pages": 0,
+      "failed_pages": 0
+    }
+  ]
+}
