@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "fps": 24.0,
+  "frameDuration": 0.041666666666666664,
+  "frameCount": 145,
+  "initialState": "state-0",
+  "states": [
+    {
+      "id": "state-0",
+      "frame": 0,
+      "hold": 0.0
+    },
+    {
+      "id": "state-1",
+      "frame": 144,
+      "hold": 6.0
+    }
+  ],
+  "segments": [
+    {
+      "id": "state-0->state-1",
+      "from": "state-0",
+      "to": "state-1",
+      "sourceFrames": {
+        "start": 0,
+        "hold": 144,
+        "endExclusive": 145
+      },
+      "frames": {
+        "start": 0,
+        "hold": 144,
+        "endExclusive": 145
+      },
+      "start": 0.0,
+      "hold": 6.0,
+      "endExclusive": 6.041666666666667,
+      "curve": {
+        "type": "constant",
+        "rate": 1.0
+      }
+    }
+  ],
+  "_说明": "由 oil-motion compile_scroll_video.py 从 ~/bc-oil-motion 编译生成，不要手改；换素材时重新编译并整体替换（视频放 v2 目录）。"
+}
