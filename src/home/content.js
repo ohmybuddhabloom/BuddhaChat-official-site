@@ -47,7 +47,21 @@ export const HOME_NAV = {
 export const HOME_HERO = {
   "title": "Buddha Chat",
   "subtitle": "Ask the Buddha, hear living masters, and keep a daily practice. One quiet app for the path.",
-  "scrollLabel": "scroll to enter"
+  "primaryAction": { "label": "Ask the Buddha", "href": "#dialogue" },
+  "secondaryAction": { "label": "Download the app", "href": "/download" }
+}
+
+// 首屏四个时段（2026-11-11 金箔奶油改版）：只换首屏的光色，不加载任何图片。
+// 打开时按访客本地时间自动选（home.html 里的内联脚本，与 timeOfDay.js 同一规则），左下角可切换。
+export const HOME_TIMES = {
+  "label": "Time of practice",
+  "nowLabel": "Now practicing",
+  "items": [
+    { "key": "dawn", "number": "01", "label": "Dawn", "practice": "Morning chant" },
+    { "key": "day", "number": "02", "label": "Day", "practice": "Sutra reading" },
+    { "key": "dusk", "number": "03", "label": "Dusk", "practice": "Evening bell" },
+    { "key": "night", "number": "04", "label": "Night", "practice": "Lamp meditation" }
+  ]
 }
 
 export const HOME_DIALOGUE = {

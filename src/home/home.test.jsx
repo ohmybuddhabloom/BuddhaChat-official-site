@@ -7,7 +7,10 @@ import HomeDialogue from './HomeDialogue.jsx'
 import HomeJournal from './HomeJournal.jsx'
 import HomePage from './HomePage.jsx'
 import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame, pickVideoSet } from './buddhaMotion.js'
-import { HOME_DIALOGUE, HOME_JOURNAL, HOME_NAV } from './content.js'
+import { HOME_DIALOGUE, HOME_HERO, HOME_JOURNAL, HOME_NAV, HOME_TIMES } from './content.js'
+import { HOME_TIME_KEYS, pickTimeOfDay } from './timeOfDay.js'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { submitChatPrompt } from '../lib/siteApi.js'
 
 vi.mock('../lib/siteApi.js', () => ({
@@ -254,5 +257,58 @@ describe('问答段与浮动按钮', () => {
     act(() => callback([{ isIntersecting: false }]))
     expect(document.documentElement).not.toHaveClass('home-dialogue-in-view')
     vi.unstubAllGlobals()
+  })
+})
+
+describe('首屏金箔奶油改版', () => {
+  afterEach(() => {
+    document.documentElement.removeAttribute('data-home-time')
+    vi.useRealTimers()
+  })
+
+  it('首屏有两个按钮：Ask the Buddha 指向问答段，Download the app 指向下载页', () => {
+    render(<HomePage />)
+    expect(screen.getByRole('link', { name: HOME_HERO.primaryAction.label })).toHaveAttribute('href', '#dialogue')
+    expect(screen.getByRole('link', { name: HOME_HERO.secondaryAction.label })).toHaveAttribute('href', '/download')
+    expect(document.getElementById('dialogue')).not.toBeNull()
+  })
+
+  it('点 Ask the Buddha 会滑到问答段并把光标放进输入框', () => {
+    vi.useFakeTimers()
+    const scrollIntoView = vi.fn()
+    Element.prototype.scrollIntoView = scrollIntoView
+    render(<HomePage />)
+    fireEvent.click(screen.getByRole('link', { name: HOME_HERO.primaryAction.label }))
+    expect(scrollIntoView).toHaveBeenCalled()
+    act(() => vi.advanceTimersByTime(800))
+    expect(document.activeElement).toBe(document.getElementById('buddha-question'))
+  })
+
+  it('时段规则：5–10 点清晨，10–17 点白天，17–20 点黄昏，其余夜晚', () => {
+    expect([4, 5, 9, 10, 16, 17, 19, 20, 23, 0].map(pickTimeOfDay)).toEqual([
+      'night', 'dawn', 'dawn', 'day', 'day', 'dusk', 'dusk', 'night', 'night', 'night',
+    ])
+    expect(HOME_TIMES.items.map((item) => item.key)).toEqual(HOME_TIME_KEYS)
+  })
+
+  it('home.html 的内联脚本与 pickTimeOfDay 规则一致（首次绘制前就写好时段，不跳色）', () => {
+    const html = readFileSync(path.resolve(__dirname, '../../home.html'), 'utf8')
+    const inline = html.match(/<script>([\s\S]*?data-home-time[\s\S]*?)<\/script>/)[1]
+    vi.useFakeTimers()
+    for (let hour = 0; hour < 24; hour += 1) {
+      vi.setSystemTime(new Date(2026, 10, 11, hour, 30))
+      new Function(inline)()
+      expect(document.documentElement.getAttribute('data-home-time')).toBe(pickTimeOfDay(hour))
+    }
+  })
+
+  it('时段切换：点按改写 <html data-home-time>，并用 aria-pressed 标出当前时段', async () => {
+    document.documentElement.setAttribute('data-home-time', 'dawn')
+    render(<HomePage />)
+    await waitFor(() => expect(screen.getByRole('button', { name: /Dawn/ })).toHaveAttribute('aria-pressed', 'true'))
+    fireEvent.click(screen.getByRole('button', { name: /Night/ }))
+    expect(document.documentElement.getAttribute('data-home-time')).toBe('night')
+    await waitFor(() => expect(screen.getByRole('button', { name: /Night/ })).toHaveAttribute('aria-pressed', 'true'))
+    expect(screen.getByRole('button', { name: /Dawn/ })).toHaveAttribute('aria-pressed', 'false')
   })
 })

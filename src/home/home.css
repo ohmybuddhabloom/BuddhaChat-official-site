@@ -26,8 +26,8 @@
 
 .home-page .hero-title {
   animation: none;
-  filter: blur(1px);
-  opacity: 0.78;
+  filter: none;
+  opacity: 1;
   will-change: auto;
 }
 
@@ -51,7 +51,7 @@
 @keyframes home-title-drift {
   from {
     translate: 0 0;
-    opacity: 0.78;
+    opacity: 1;
   }
 
   to {
@@ -394,4 +394,396 @@
 .home-dialogue-in-view [data-open-in-app] {
   opacity: 0;
   pointer-events: none;
+}
+
+/* =====================================================================
+ * 金箔奶油改版（2026-11-11，Owner 选定方向 C；参考 Weave「一份需求、三个方向、同一画面四个时段」工作流）
+ * 只改外观，不加图片、视频和字体：时段是 CSS 调色层，按钮和细线是纯样式。
+ * ===================================================================== */
+
+/* ---------- 首屏文字：清晰的深棕标题、金色细线、两个按钮 ---------- */
+
+/* 层级：首屏容器不再自成一层，文字（z 10）和时段控件（z 12）排在佛像（z 5）和调色层（z 6）之上，
+ * 不被佛像边缘的奶油色羽化盖住；右栏（原 z 6，含雾化层和金圈）压到佛像之下，保持原来的样子，
+ * 否则雾化层会盖在调色层上，沿左右栏分界出现矩形色块（2026-11-11 实测）。 */
+.home-page .hero-container {
+  z-index: auto;
+}
+
+.home-page .hero-right {
+  z-index: 1;
+}
+
+.home-page .hero-title {
+  margin-bottom: 1.4rem;
+  color: #3a2814;
+}
+
+.hero-rule {
+  width: min(340px, 82%);
+  height: 1px;
+  margin-bottom: 1.4rem;
+  background: linear-gradient(90deg, rgba(184, 146, 80, 0.8), rgba(184, 146, 80, 0.35) 70%, transparent);
+}
+
+.home-page .subtitle {
+  max-width: 360px;
+  margin-bottom: 2.2rem;
+  color: #4a3721;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (min-width: 901px) {
+  .hero-actions {
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 28px;
+  border-radius: 999px;
+  color: #3a2814;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.98rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.25s var(--transition),
+    box-shadow 0.25s var(--transition),
+    background-color 0.25s ease;
+}
+
+.hero-cta--primary {
+  background: linear-gradient(180deg, #f4dfa6 0%, #dcb466 100%);
+  box-shadow:
+    0 8px 22px rgba(160, 118, 48, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.hero-cta--secondary {
+  border: 1px solid rgba(176, 138, 72, 0.6);
+  background-color: rgba(255, 250, 240, 0.35);
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+}
+
+.hero-cta--primary:hover {
+  box-shadow:
+    0 12px 28px rgba(160, 118, 48, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.hero-cta--secondary:hover {
+  background-color: rgba(255, 250, 240, 0.65);
+}
+
+.hero-cta:focus-visible,
+.home-time-tab:focus-visible {
+  outline: 2px solid #9a7434;
+  outline-offset: 3px;
+}
+
+/* ---------- 导航（只在首页）：两侧金色细线，Download 做成金色按钮 ---------- */
+
+.home-page .sunyata-nav-links a[href='/download'] {
+  padding: 9px 20px;
+  margin: -9px 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f4dfa6 0%, #dcb466 100%);
+  box-shadow: 0 6px 16px rgba(160, 118, 48, 0.18);
+  color: #3a2814;
+  opacity: 1;
+}
+
+@media (min-width: 901px) {
+  .home-page .sunyata-nav-links::before {
+    content: '';
+    align-self: center;
+    width: clamp(24px, 6vw, 120px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184, 146, 80, 0.55));
+  }
+}
+
+/* ---------- 四个时段：同一画面的四种光色（工作流第 2 步） ----------
+ * <html data-home-time> 由 home.html 内联脚本在首次绘制前写入，点按左下角切换。
+ * 两层覆盖首屏（含佛像）：tint 半透明上色/压暗，glow 在佛像处补一圈暖光。
+ * 不用 mix-blend-mode：上面有单独合成的文字层时，浏览器会把那块区域隔离计算，出现矩形色块（2026-11-11 实测）。
+ * 颜色是注册过的 CSS 变量，切换时 1.2 秒过渡；层是静态的，滑动时只做合成。 */
+
+@property --home-tint-top {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0);
+}
+
+@property --home-tint-bottom {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0);
+}
+
+@property --home-glow {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(255, 214, 150, 0);
+}
+
+:root[data-home-time='dawn'] {
+  --home-tint-top: rgba(238, 168, 148, 0.3);
+  --home-tint-bottom: rgba(248, 206, 176, 0.12);
+  --home-glow: rgba(255, 236, 206, 0.22);
+}
+
+:root[data-home-time='dusk'] {
+  --home-tint-top: rgba(222, 138, 72, 0.3);
+  --home-tint-bottom: rgba(232, 176, 116, 0.16);
+  --home-glow: rgba(255, 196, 120, 0.16);
+}
+
+:root[data-home-time='night'] {
+  --home-tint-top: rgba(34, 42, 92, 0.52);
+  --home-tint-bottom: rgba(62, 64, 112, 0.34);
+  --home-glow: rgba(255, 206, 130, 0.2);
+}
+
+.home-stage::before,
+.home-stage::after {
+  content: '';
+  grid-row: 1 / 4;
+  grid-column: 1;
+  align-self: start;
+  position: relative;
+  z-index: 6;
+  /* 只盖首屏一屏、底部渐隐：问答段（z 28）背景不透明，盖过去会截出一条硬边 */
+  height: 100dvh;
+  pointer-events: none;
+  transition:
+    --home-tint-top 1.2s ease,
+    --home-tint-bottom 1.2s ease,
+    --home-glow 1.2s ease;
+}
+
+.home-stage::before {
+  background: linear-gradient(176deg, var(--home-tint-top) 0%, var(--home-tint-bottom) 62%, rgba(255, 255, 255, 0) 100%);
+}
+
+.home-stage::after {
+  --glow-x: calc(70vw - 120px);
+  background: radial-gradient(ellipse 34vw 46dvh at var(--glow-x) 58dvh, var(--home-glow) 0%, rgba(255, 214, 150, 0) 100%);
+}
+
+@media (max-width: 900px) {
+  .home-stage::after {
+    --glow-x: 50vw;
+    background: radial-gradient(ellipse 60vw 30dvh at var(--glow-x) 62dvh, var(--home-glow) 0%, rgba(255, 214, 150, 0) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-stage::before,
+  .home-stage::after {
+    transition: none;
+  }
+}
+
+/* 左下角时段切换、右下角“正在做的功课” */
+
+.home-time {
+  position: absolute;
+  inset: auto 0 clamp(22px, 5dvh, 48px);
+  z-index: 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-inline: 21vw 8vw;
+  pointer-events: none;
+}
+
+.home-time > * {
+  pointer-events: auto;
+}
+
+.home-time-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(184, 146, 80, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.4);
+}
+
+.home-time-tab {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #4a3721;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.86rem;
+  cursor: pointer;
+  opacity: 0.75;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.home-time-tab:hover {
+  opacity: 1;
+}
+
+.home-time-num {
+  font-variant-numeric: tabular-nums;
+}
+
+:root:not([data-home-time]) .home-time-tab[data-time='day'],
+:root[data-home-time='dawn'] .home-time-tab[data-time='dawn'],
+:root[data-home-time='day'] .home-time-tab[data-time='day'],
+:root[data-home-time='dusk'] .home-time-tab[data-time='dusk'],
+:root[data-home-time='night'] .home-time-tab[data-time='night'] {
+  background: linear-gradient(180deg, #f4dfa6 0%, #dcb466 100%);
+  color: #3a2814;
+  opacity: 1;
+}
+
+.home-time-now {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 20px;
+  border: 1px solid rgba(184, 146, 80, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.4);
+  color: #4a3721;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.86rem;
+  font-style: italic;
+}
+
+.home-time-lotus {
+  width: 22px;
+  height: 15px;
+  fill: none;
+  stroke: #b08a48;
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+}
+
+.home-time-practice {
+  display: none;
+}
+
+:root:not([data-home-time]) .home-time-practice[data-time='day'],
+:root[data-home-time='dawn'] .home-time-practice[data-time='dawn'],
+:root[data-home-time='day'] .home-time-practice[data-time='day'],
+:root[data-home-time='dusk'] .home-time-practice[data-time='dusk'],
+:root[data-home-time='night'] .home-time-practice[data-time='night'] {
+  display: inline;
+}
+
+/* 手机：文字栏撑满首屏，按钮推到底部（佛像下方、时段切换上方），不和佛像抢位置。
+ * 首屏总高度保持一屏：右栏（金圈、雾化）改为绝对定位，不再占位；佛像吸附位置（62% 屏高）不变。
+ * 原来的 translate 下移量（4 / 7 / 10dvh）改成变量，算撑满高度时要减掉。 */
+@media (max-width: 900px) {
+  .home-page .hero-container {
+    --hero-pad-top: clamp(104px, 22vw, 136px);
+    --hero-bottom-reserve: calc(clamp(22px, 5dvh, 48px) + 36px + 18px);
+    position: relative;
+  }
+
+  .home-page .hero-left {
+    --hero-shift: 4dvh;
+    transform: translate3d(0, var(--hero-shift), 0);
+    min-height: calc(100dvh - var(--hero-pad-top) - var(--hero-shift) - var(--hero-bottom-reserve));
+  }
+
+  .home-page .hero-right {
+    position: absolute;
+    left: 0;
+    top: calc(62dvh - clamp(260px, 42vh, 400px) / 2);
+  }
+
+  .hero-actions {
+    margin-top: auto;
+    justify-content: center;
+  }
+
+  /* 手机文字栏本身有 gap，标题和细线不再另加下边距，副标题保持原来的高度 */
+  .home-page .hero-title,
+  .hero-rule {
+    margin-bottom: 0;
+  }
+
+  .home-time-now {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .home-page .hero-left {
+    --hero-shift: 7dvh;
+  }
+}
+
+@media (max-width: 389px) {
+  .home-page .hero-left {
+    --hero-shift: 10dvh;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .sunyata-nav-links a[href='/download'] {
+    padding: 6px 14px;
+    margin: -6px 0;
+  }
+
+  .hero-cta {
+    min-height: 44px;
+    padding: 0 20px;
+    font-size: 0.92rem;
+  }
+
+  .home-page .subtitle {
+    margin-bottom: 0;
+  }
+
+  .home-time {
+    flex-direction: column-reverse;
+    gap: 10px;
+    padding-inline: 16px;
+  }
+
+  .home-time-tab {
+    padding: 0 11px;
+    font-size: 0.8rem;
+  }
+
+  .home-time-now {
+    min-height: 36px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 389px) {
+  .home-time-num {
+    display: none;
+  }
 }
