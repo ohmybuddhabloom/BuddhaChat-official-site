@@ -60,6 +60,33 @@
           "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
+    },
+    {
+      "source": "/fonts/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/home/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/home.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -137,7 +164,17 @@
   "rewrites": [
     {
       "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "story"
+        }
+      ],
       "destination": "/api/page-entry?page=home"
+    },
+    {
+      "source": "/",
+      "destination": "/home.html"
     },
     {
       "source": "/download",

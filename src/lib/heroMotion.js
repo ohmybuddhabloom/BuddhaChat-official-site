@@ -1,24 +1,9 @@
-// 首页佛像：oil-motion 的 baked-video + frame-scrub 路线。
-// 一个全关键帧 MP4（每一帧都能直接定位），滚动只决定显示第几帧。
+// 首页佛像：oil-motion 的 baked-video + frame-scrub 路线（组件见 src/home/HomeBuddha.jsx）。
+// 全关键帧 MP4（每一帧都能直接定位），滚动只决定显示第几帧。
 import timeline from './heroMotion.timeline.json'
 
 export const HERO_TIMELINE = timeline
 export const HERO_FRAME_COUNT = timeline.frameCount
-export const HERO_VIDEO_BASE = '/kling-buddha-scroll-video/v1'
-export const HERO_VIDEO_SIZES = {
-  m: { width: 768, height: 512 },
-  d: { width: 1024, height: 682 },
-}
-
-// 只在初始化时选一次，普通 resize 不换源（oil-motion runtime 规则）。
-export function pickHeroVideoSet(viewportWidth) {
-  return viewportWidth > 900 ? 'd' : 'm'
-}
-
-export function getHeroVideoUrl(set) {
-  return `${HERO_VIDEO_BASE}/${set}.mp4`
-}
-
 // 定位到帧的中间时刻，避免浮点误差落到前一帧。
 export function frameToTime(frame, { fps, frameCount } = timeline) {
   const index = Math.min(frameCount - 1, Math.max(0, Math.round(frame)))

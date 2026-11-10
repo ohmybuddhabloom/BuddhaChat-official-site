@@ -11,6 +11,24 @@ const {
 } = routing
 
 describe('website product routing', () => {
+  test('首页走构建时生成的 home.html；带 ?story= 的故事页仍由入口函数填分享信息', async () => {
+    const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
+    const rewrites = config.rewrites
+    const storyRoute = rewrites.findIndex(
+      (route) => route.source === '/' && route.has?.[0]?.key === 'story',
+    )
+    const homeRoute = rewrites.findIndex(
+      (route) => route.source === '/' && route.destination === '/home.html',
+    )
+    expect(rewrites[storyRoute]).toEqual({
+      source: '/',
+      has: [{ type: 'query', key: 'story' }],
+      destination: '/api/page-entry?page=home',
+    })
+    expect(homeRoute).toBeGreaterThan(storyRoute)
+    expect(rewrites[homeRoute].has).toBeUndefined()
+  })
+
   test('redirects master entry points to their public subdomain', async () => {
     const config = JSON.parse(await readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'))
 
