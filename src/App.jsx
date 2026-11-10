@@ -6,6 +6,7 @@ import { detectDownloadPlatform } from './lib/downloadPlatform.js'
 const SunyataLanding = lazy(() => import('./pages/SunyataLanding.jsx'))
 const FusionRoutePage = lazy(() => import('./pages/FusionRoutePage.jsx'))
 const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
+const JoinInvitePage = lazy(() => import('./pages/JoinInvitePage.jsx'))
 const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
 const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
 const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
@@ -90,6 +91,10 @@ function App() {
       }
     }
   }, [isAppFaqGuidePage, isAppOnboardingWelcomePage, isDownloadPage, isYuanhuiGuidePage, pathname])
+
+  if (pathname === '/join' || pathname.startsWith('/join/')) {
+    return <Suspense fallback={null}><JoinInvitePage pathname={pathname} /></Suspense>
+  }
 
   if (pathname === '/login' || pathname === '/auth/login') {
     return <Suspense fallback={null}><AccountLoginPage /></Suspense>
