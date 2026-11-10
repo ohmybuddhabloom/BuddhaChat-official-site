@@ -10,8 +10,14 @@
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
 }
 
+.join-invite-card,
+.join-invite-card * {
+  box-sizing: border-box;
+}
+
 .join-invite-card {
   width: 100%;
+  min-width: 0;
   max-width: 420px;
   display: grid;
   justify-items: center;
@@ -28,17 +34,28 @@
 .join-invite h1 { margin: 0; font-size: 24px; line-height: 1.35; font-weight: 600; }
 .join-invite-body { margin: 0; font-size: 15px; line-height: 1.7; color: #5b4a36; }
 
+/* Real codes are ZEN- + 32 hex (36 chars): let the code wrap and put the copy action on its
+   own line so the card never grows wider than the phone. */
 .join-invite-code {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  gap: 6px;
   padding: 10px 14px;
   border-radius: 12px;
   background: #f5ede1;
   font-size: 13px;
   color: #7a6650;
 }
-.join-invite-code strong { font-size: 17px; letter-spacing: 0.06em; color: #3a2a18; }
+.join-invite-code strong {
+  max-width: 100%;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: #3a2a18;
+  word-break: break-all;
+  font-variant-numeric: tabular-nums;
+}
 .join-invite-code button {
   border: 0;
   background: none;
