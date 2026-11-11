@@ -14,8 +14,8 @@ export const FOLLOW_MAX_SPEED = HERO_FRAME_COUNT * 20
 // 轨道走完就随页面离开。不再用脚本每帧改位置，滑动时不会比页面慢一拍而抖动。
 // 轨道起止全由 home.css 的版式决定（宽屏：停在问答标题右侧；手机：停在问答标题上方）。
 //
-// 画面：145 帧拆成两段全关键帧视频。a 段（第 0～47 帧，手机 0.55 MB）页面加载完就下载，
-// 一滑就能动；b 段（第 48～144 帧）等页面其余资源下完再下载，不和图片抢网速。
+// 画面：145 帧拆成两段全关键帧视频。a 段（第 0～47 帧，1.3 MB）一打开就下载，加载画面等它就绪才淡出，
+// 整页出现时一滑就能动；b 段（第 48～144 帧）等页面其余资源下完再下载，不和图片抢网速。
 // 只差 b 段时停在第 47 帧，下完自动接上。
 function prefersReducedMotion() {
   return typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -35,11 +35,34 @@ function prime(video) {
     )
 }
 
-function loadInto(video, url, signal) {
-  return fetch(url, { priority: 'low', signal })
+// 加载画面（home.html 里的内联脚本）的接口；单独渲染组件、测试时不存在。
+function reportLoader(method, ...args) {
+  if (typeof window !== 'undefined') window.__homeLoader?.[method]?.(...args)
+}
+
+// 边下载边报告进度（有 Content-Length 且支持流式读取时），下完转成内存地址再挂到 <video>。
+function readBlob(response, onProgress) {
+  const total = Number(response.headers?.get?.('content-length')) || 0
+  if (!onProgress || !total || !response.body?.getReader) return response.blob()
+  const reader = response.body.getReader()
+  const chunks = []
+  let received = 0
+  const pump = () =>
+    reader.read().then(({ done, value }) => {
+      if (done) return new Blob(chunks, { type: 'video/mp4' })
+      chunks.push(value)
+      received += value.byteLength
+      onProgress(Math.min(1, received / total))
+      return pump()
+    })
+  return pump()
+}
+
+function loadInto(video, url, { signal, priority, onProgress }) {
+  return fetch(url, { priority, signal })
     .then((response) => {
       if (!response.ok) throw new Error(String(response.status))
-      return response.blob()
+      return readBlob(response, onProgress)
     })
     .then(
       (blob) =>
@@ -61,7 +84,10 @@ function HomeBuddha() {
   const [visiblePart, setVisiblePart] = useState('')
 
   useEffect(() => {
-    if (prefersReducedMotion()) return undefined
+    if (prefersReducedMotion()) {
+      reportLoader('step', 'buddha')
+      return undefined
+    }
     const track = trackRef.current
     const sticky = stickyRef.current
     const videos = { a: videoARef.current, b: videoBRef.current }
@@ -137,14 +163,22 @@ function HomeBuddha() {
         removeGesture = () => events.forEach((name) => window.removeEventListener(name, onGesture))
       })
 
+    // a 段决定加载画面何时淡出：下载时报告进度，就绪（或失败、或要等手势才能播放）就算完成。
     const load = (part) =>
-      loadInto(videos[part], getSegmentUrl(part), controller?.signal)
+      loadInto(videos[part], getSegmentUrl(part), {
+        signal: controller?.signal,
+        priority: part === 'a' ? 'high' : 'low',
+        onProgress: part === 'a' ? (value) => reportLoader('progress', 'buddha', value) : undefined,
+      })
         .then((objectUrl) => {
           objectUrls.push(objectUrl)
           return primeThenActivate(part)
         })
         .catch(() => {
           // 下载失败就一直显示静态封面，不影响页面其他部分。
+        })
+        .finally(() => {
+          if (part === 'a') reportLoader('step', 'buddha')
         })
 
     function requestB() {
@@ -173,20 +207,17 @@ function HomeBuddha() {
     const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(onResize) : null
     observer?.observe(track)
 
-    // a 段：页面加载完就开始（下面的图片都是延迟加载，此时不抢首屏）；访客先滑动就立刻开始。
+    // a 段：一接管就开始下载（加载画面在等它；下面的图片都是延迟加载，不和它抢）。
     let aStarted = false
     const startA = () => {
       if (aStarted) return
       aStarted = true
-      window.removeEventListener('scroll', startA)
       load('a').then(() => {
         // b 段：等页面其余资源下完、网络空下来。
         if (!cancelled && !bRequested) stopWaitingB = waitForQuietNetwork(requestB)
       })
     }
-    window.addEventListener('scroll', startA, { once: true, passive: true })
-    if (document.readyState === 'complete') startA()
-    else window.addEventListener('load', startA, { once: true })
+    startA()
 
     return () => {
       cancelled = true
@@ -195,8 +226,6 @@ function HomeBuddha() {
       controller?.abort()
       if (raf) cancelAnimationFrame(raf)
       window.removeEventListener('scroll', requestTick)
-      window.removeEventListener('scroll', startA)
-      window.removeEventListener('load', startA)
       window.removeEventListener('resize', onResize)
       observer?.disconnect()
       animator?.destroy()
