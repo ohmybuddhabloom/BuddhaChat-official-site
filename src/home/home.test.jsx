@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { hydrateRoot } from 'react-dom/client'
 import { renderToString } from 'react-dom/server'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import HomeBuddha from './HomeBuddha.jsx'
+import HomeBuddha, { FOLLOW_MAX_SPEED, FOLLOW_SMOOTH_TIME } from './HomeBuddha.jsx'
 import HomeDialogue from './HomeDialogue.jsx'
 import HomeJournal from './HomeJournal.jsx'
 import HomePage from './HomePage.jsx'
@@ -12,6 +12,7 @@ import { HOME_TIME_KEYS, pickTimeOfDay } from './timeOfDay.js'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { submitChatPrompt } from '../lib/siteApi.js'
+import { createFrameAnimator } from '../lib/frameAnimator.js'
 
 vi.mock('../lib/siteApi.js', () => ({
   submitChatPrompt: vi.fn(() => Promise.resolve({ ok: true })),
@@ -87,6 +88,35 @@ describe('佛像两段视频', () => {
     expect(getStickProgress(800, geometry)).toBe(1)
     expect(getStickProgress(-50, geometry)).toBe(0)
     expect(getStickProgress(100, { ...geometry, trackHeight: 400 })).toBe(0)
+  })
+})
+
+describe('佛像跟手', () => {
+  // 按 60Hz 推进动画，返回画面第一次显示目标帧所用的毫秒数
+  const settleMs = (options, jumpTo) => {
+    const queue = []
+    let shown = 0
+    const animator = createFrameAnimator({ frameCount: 145, render: (frame) => (shown = frame), requestFrame: (cb) => queue.push(cb), cancelFrame: () => {}, ...options })
+    animator.setProgress(jumpTo / 144)
+    let now = 0
+    let reached = -1
+    while (queue.length && now < 3000) {
+      now += 1000 / 60
+      queue.shift()(now)
+      if (reached < 0 && shown === jumpTo) reached = now
+    }
+    expect(shown).toBe(jumpTo)
+    return reached
+  }
+
+  it('滚一格（约 15 帧）在 150 毫秒内追上，比技能默认缓动快至少一倍', () => {
+    const fast = settleMs({ smoothTime: FOLLOW_SMOOTH_TIME, maxSpeed: FOLLOW_MAX_SPEED }, 15)
+    expect(fast).toBeLessThanOrEqual(150)
+    expect(settleMs({}, 15)).toBeGreaterThan(fast * 2)
+  })
+
+  it('一下滑到底也不被限速：整段 145 帧在 200 毫秒内走完', () => {
+    expect(settleMs({ smoothTime: FOLLOW_SMOOTH_TIME, maxSpeed: FOLLOW_MAX_SPEED }, 144)).toBeLessThanOrEqual(200)
   })
 })
 

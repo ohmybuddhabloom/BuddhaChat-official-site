@@ -3,6 +3,11 @@ import { createLatestSeeker, HERO_FRAME_COUNT, waitForQuietNetwork } from '../li
 import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame, pickVideoSet } from './buddhaMotion.js'
 import { createFrameAnimator } from '../lib/frameAnimator.js'
 
+// 跟手程度：技能默认 0.11 秒缓动、每秒最多 290 帧，滚一格要约 0.45 秒才停稳，整段至少 0.5 秒走完。
+// 浏览器本身对滚轮已有平滑滚动，这里只留很短的缓动吸收触控板抖动，不再限制速度。
+export const FOLLOW_SMOOTH_TIME = 0.03
+export const FOLLOW_MAX_SPEED = HERO_FRAME_COUNT * 20
+
 // 首页佛像（oil-motion：baked-video + frame-scrub）。
 //
 // 位置：佛像放在一条从首屏延伸到问答段的“轨道”里，用浏览器原生的 position: sticky 吸住，
@@ -110,7 +115,7 @@ function HomeBuddha() {
       ready[part] = true
       seekers[part] = createLatestSeeker(videos[part], { onShown: onShown(part) })
       if (!animator) {
-        animator = createFrameAnimator({ frameCount: HERO_FRAME_COUNT, render })
+        animator = createFrameAnimator({ frameCount: HERO_FRAME_COUNT, render, smoothTime: FOLLOW_SMOOTH_TIME, maxSpeed: FOLLOW_MAX_SPEED })
       }
       animator.redraw()
       render(lastFrame)
