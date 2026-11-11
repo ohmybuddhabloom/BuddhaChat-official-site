@@ -336,6 +336,16 @@ describe('加载画面', () => {
   })
 })
 
+describe('佛像两段视频只显示一段', () => {
+  it('没轮到的那段透明，规则优先级压过 index.css 的 .hero-scroll-figure.is-ready .hero-scroll-video', () => {
+    const css = readFileSync(path.join(process.cwd(), 'src/home/home.css'), 'utf8')
+    expect(css).toMatch(/\.hero-scroll-figure\.home-buddha\.is-ready \.hero-scroll-video \{[^}]*opacity: 0/)
+    expect(css).toMatch(/\.hero-scroll-figure\.home-buddha\.is-ready \.hero-scroll-video\.is-visible \{[^}]*opacity: 1/)
+    const { container } = render(<HomeBuddha />)
+    expect(container.querySelector('.hero-scroll-figure.home-buddha.is-ready')).toBeInTheDocument()
+  })
+})
+
 describe('首屏标题', () => {
   it('标题不再模糊（11-12 Owner：像被遮罩挡在后面）', () => {
     const css = readFileSync(path.join(process.cwd(), 'src/home/home.css'), 'utf8')
