@@ -34,6 +34,7 @@ python3 $OIL_MOTION/scripts/compile_scroll_video.py graded-master.mkv out --back
   `bash scripts/hero-motion/encode-v3.sh <kling-buddha-scroll-scrub.mp4> <输出目录>`。
   与母版相似度 0.996（v2 电脑 0.981、手机 0.975；4 月原版因没有调色为 0.987）。
 - 体积：`v3/a.mp4` 1.3 MB、`v3/b.mp4` 2.5 MB，共 3.9 MB（4 月原版 4.0 MB）。下载时机不变，等待时显示封面。
+- `v2/` 文件保留不删：部署时还开着旧页面的访客，稍后还会去取 v2 的 b 段。
 - 原版视频在 Chris 的 Mac `~/Documents/BuddhaChat-official-site/public/kling-buddha-scroll-scrub.mp4`，
   仓库历史 e28cae6 里也有。显示需要的像素（电脑 Retina 1612 宽、大屏手机 1269 宽）高于 1024，要更清晰只能重新生成。
 
