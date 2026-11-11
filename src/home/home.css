@@ -26,8 +26,10 @@
 
 .home-page .hero-title {
   animation: none;
-  filter: blur(1px);
-  opacity: 0.78;
+  /* 11-12 Owner：标题像被遮罩挡在后面。旧首页的“呼吸光晕”在 0.5～2px 模糊之间来回，
+     重做时固定在 1px 模糊、0.78 透明度，标题一直是虚的；现在去掉模糊，只留一点透明度。 */
+  filter: none;
+  opacity: 0.92;
   will-change: auto;
 }
 
@@ -51,7 +53,7 @@
 @keyframes home-title-drift {
   from {
     translate: 0 0;
-    opacity: 0.78;
+    opacity: 0.92;
   }
 
   to {

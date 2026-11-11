@@ -26,9 +26,101 @@
     <link rel="preload" as="image" href="/home/buddha-poster-1280.webp" media="(min-width: 901px)" fetchpriority="high" />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-italic.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-normal.woff2" crossorigin />
+    <style>
+      /* 加载画面（11-12 Owner：先加载完再让整页出来）。字体、佛像封面、佛像视频第一段就绪后淡出；
+         最多 8 秒。脚本没运行时，纯样式兜底在 8 秒后自己隐藏。 */
+      html.home-loading { overflow: hidden; }
+      #home-loader {
+        position: fixed; inset: 0; z-index: 2147483000; display: grid; place-items: center;
+        background: radial-gradient(circle at 50% 44%, #fdf5e6 0%, #eadccf 62%);
+        transition: opacity 0.65s cubic-bezier(0.23, 1, 0.32, 1), visibility 0s linear 0.65s;
+        animation: home-loader-failsafe 0.6s ease 8s forwards;
+      }
+      html.home-loaded #home-loader { opacity: 0; visibility: hidden; pointer-events: none; }
+      .home-loader-mark { display: grid; justify-items: center; gap: 22px; }
+      .home-loader-ring { width: 76px; height: 76px; overflow: visible; }
+      .home-loader-ring circle { fill: none; stroke-width: 1; }
+      .home-loader-track { stroke: rgba(200, 169, 126, 0.28); }
+      .home-loader-arc {
+        stroke: #c8a97e; stroke-linecap: round; stroke-dasharray: 220;
+        stroke-dashoffset: calc(220 * (1 - var(--home-loader-p, 0.04)));
+        transform: rotate(-90deg); transform-origin: 38px 38px;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .home-loader-dot { fill: #c8a97e; transform-origin: 38px 38px; animation: home-loader-breathe 2.4s ease-in-out infinite; }
+      .home-loader-word {
+        margin: 0; padding-left: 0.42em; color: #2d2319; opacity: 0.55;
+        font: 500 11px/1 Inter, system-ui, -apple-system, sans-serif; letter-spacing: 0.42em;
+      }
+      @keyframes home-loader-breathe { 0%, 100% { opacity: 0.35; transform: scale(0.75); } 50% { opacity: 0.95; transform: scale(1); } }
+      @keyframes home-loader-failsafe { to { opacity: 0; visibility: hidden; } }
+      @media (prefers-reduced-motion: reduce) { .home-loader-dot { animation: none; } }
+    </style>
   </head>
   <body>
+    <div id="home-loader" aria-hidden="true">
+      <div class="home-loader-mark">
+        <svg class="home-loader-ring" viewBox="0 0 76 76">
+          <circle class="home-loader-track" cx="38" cy="38" r="35" />
+          <circle class="home-loader-arc" cx="38" cy="38" r="35" />
+          <circle class="home-loader-dot" cx="38" cy="38" r="3" />
+        </svg>
+        <p class="home-loader-word">BUDDHA CHAT</p>
+      </div>
+    </div>
     <div id="root"><!--home-html--></div>
+    <script>
+      // 加载画面的进度与淡出。佛像组件（src/home/HomeBuddha.jsx）通过 window.__homeLoader 报告视频进度。
+      ;(function () {
+        var html = document.documentElement
+        var el = document.getElementById('home-loader')
+        if (!el) return
+        var weights = { fonts: 0.15, poster: 0.15, buddha: 0.7 }
+        var got = {}
+        var part = {}
+        var finished = false
+        var start = performance.now()
+        html.classList.add('home-loading')
+        function paint() {
+          var p = 0
+          for (var k in weights) p += weights[k] * (got[k] ? 1 : part[k] || 0)
+          el.style.setProperty('--home-loader-p', String(Math.max(0.04, Math.min(1, p))))
+        }
+        function finish() {
+          if (finished) return
+          finished = true
+          // 素材都在缓存里时不播放淡出，免得一闪
+          var instant = performance.now() - start < 350
+          if (instant) el.style.transition = 'none'
+          html.classList.add('home-loaded')
+          html.classList.remove('home-loading')
+          if (performance.mark) performance.mark('home-revealed')
+          setTimeout(function () { el.remove() }, instant ? 0 : 800)
+        }
+        function step(name) {
+          if (got[name]) return
+          got[name] = true
+          paint()
+          for (var k in weights) if (!got[k]) return
+          setTimeout(finish, 250)
+        }
+        window.__homeLoader = {
+          progress: function (name, value) { part[name] = value; paint() },
+          step: step,
+          done: finish,
+        }
+        setTimeout(finish, 8000)
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { step('fonts') }, function () { step('fonts') })
+        else step('fonts')
+        var poster = document.querySelector('.hero-scroll-poster')
+        if (!poster || poster.complete) step('poster')
+        else {
+          poster.addEventListener('load', function () { step('poster') }, { once: true })
+          poster.addEventListener('error', function () { step('poster') }, { once: true })
+        }
+        paint()
+      })()
+    </script>
     <script defer src="/open-in-app.js"></script>
     <script type="module" src="/src/home/main.jsx"></script>
   </body>

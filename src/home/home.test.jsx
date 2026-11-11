@@ -9,6 +9,8 @@ import HomePage from './HomePage.jsx'
 import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame } from './buddhaMotion.js'
 import { HOME_DIALOGUE, HOME_JOURNAL, HOME_NAV } from './content.js'
 import { submitChatPrompt } from '../lib/siteApi.js'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { createFrameAnimator } from '../lib/frameAnimator.js'
 
 vi.mock('../lib/siteApi.js', () => ({
@@ -129,35 +131,57 @@ describe('佛像组件', () => {
     vi.unstubAllGlobals()
   })
 
-  it('先显示封面，视频不预加载；访客一滚动就以低优先级下载 a 段', async () => {
-    Object.defineProperty(document, 'readyState', { value: 'loading', configurable: true })
+  it('先显示封面，视频标签不预加载；一接管就以高优先级下载 a 段', async () => {
     render(<HomeBuddha />)
     expect(screen.getByTestId('home-buddha').querySelector('img')).toBeInTheDocument()
     expect(screen.getByTestId('home-buddha-video-a')).toHaveAttribute('preload', 'none')
     expect(screen.getByTestId('home-buddha-video-a').muted).toBe(true)
-    expect(fetchMock).not.toHaveBeenCalled()
-
-    fireEvent.scroll(window)
     await act(async () => {})
     expect(fetchMock).toHaveBeenCalledTimes(1)
     expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
-    expect(fetchMock.mock.calls[0][1]).toMatchObject({ priority: 'low' })
-    delete document.readyState
+    expect(fetchMock.mock.calls[0][1]).toMatchObject({ priority: 'high' })
   })
 
-  it('页面已加载完时直接下载 a 段，不等滚动', async () => {
+  it('a 段边下载边把进度报给加载画面，结束后报告佛像就绪', async () => {
+    const loader = { progress: vi.fn(), step: vi.fn() }
+    window.__homeLoader = loader
+    const chunks = [new Uint8Array(30), new Uint8Array(70)]
+    fetchMock.mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        headers: { get: (name) => (name === 'content-length' ? '100' : null) },
+        body: { getReader: () => ({ read: () => Promise.resolve(chunks.length ? { done: false, value: chunks.shift() } : { done: true }) }) },
+      }),
+    )
     render(<HomeBuddha />)
-    await act(async () => {})
-    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
+    await waitFor(() => expect(loader.progress).toHaveBeenCalledTimes(2))
+    expect(loader.progress.mock.calls.map((call) => call[1])).toEqual([0.3, 1])
+    expect(loader.step).not.toHaveBeenCalled()
+    // 测试环境不会真的解码视频，手动发出“元数据已就绪”
+    fireEvent(screen.getByTestId('home-buddha-video-a'), new Event('loadedmetadata'))
+    await waitFor(() => expect(loader.step).toHaveBeenCalledWith('buddha'))
+    delete window.__homeLoader
+  })
+
+  it('a 段下载失败也报告就绪，加载画面不会一直挡着', async () => {
+    const loader = { progress: vi.fn(), step: vi.fn() }
+    window.__homeLoader = loader
+    fetchMock.mockImplementationOnce(() => Promise.resolve({ ok: false, status: 503 }))
+    render(<HomeBuddha />)
+    await waitFor(() => expect(loader.step).toHaveBeenCalledWith('buddha'))
+    delete window.__homeLoader
   })
 
   it('偏好减少动态效果的访客不下载视频', async () => {
     vi.stubGlobal('matchMedia', (query) => ({ matches: query.includes('reduce'), addEventListener() {}, removeEventListener() {} }))
     window.matchMedia = globalThis.matchMedia
+    const loader = { progress: vi.fn(), step: vi.fn() }
+    window.__homeLoader = loader
     render(<HomeBuddha />)
-    fireEvent.scroll(window)
     await act(async () => {})
     expect(fetchMock).not.toHaveBeenCalled()
+    expect(loader.step).toHaveBeenCalledWith('buddha')
+    delete window.__homeLoader
     delete window.matchMedia
   })
 })
@@ -261,6 +285,63 @@ describe('山野手记', () => {
     expect(card).toHaveAttribute('loading', 'lazy')
     expect(card.getAttribute('srcset')).toContain('430w')
     expect(container.querySelector('.wilderness-background img')).toHaveAttribute('loading', 'lazy')
+  })
+})
+
+describe('加载画面', () => {
+  // 取 home.html 里的加载画面和内联脚本，在测试页面里实际运行
+  const template = readFileSync(path.join(process.cwd(), 'home.html'), 'utf8')
+  const markup = template.match(/<div id="home-loader"[\s\S]*?<\/svg>[\s\S]*?<\/div>\s*<\/div>/)[0]
+  const script = template.match(/<script>\s*(\/\/ 加载画面[\s\S]*?)<\/script>/)[1]
+
+  const boot = ({ posterComplete }) => {
+    document.body.innerHTML = `${markup}<img class="hero-scroll-poster" />`
+    Object.defineProperty(document.body.querySelector('img'), 'complete', { value: posterComplete })
+    document.documentElement.className = ''
+    new Function(script)()
+    return document.getElementById('home-loader')
+  }
+
+  afterEach(() => {
+    vi.useRealTimers()
+    delete window.__homeLoader
+    document.documentElement.className = ''
+    document.body.innerHTML = ''
+  })
+
+  it('打开时锁住滚动；字体、封面、佛像都就绪后淡出整页', async () => {
+    vi.useFakeTimers()
+    const el = boot({ posterComplete: true })
+    expect(document.documentElement).toHaveClass('home-loading')
+    window.__homeLoader.progress('buddha', 0.5)
+    expect(Number(el.style.getPropertyValue('--home-loader-p'))).toBeGreaterThan(0.3)
+    await act(async () => {})
+    window.__homeLoader.step('buddha')
+    vi.advanceTimersByTime(300)
+    expect(document.documentElement).toHaveClass('home-loaded')
+    expect(document.documentElement).not.toHaveClass('home-loading')
+  })
+
+  it('佛像一直没就绪时，最多 8 秒也会显示页面', () => {
+    vi.useFakeTimers()
+    boot({ posterComplete: false })
+    vi.advanceTimersByTime(7900)
+    expect(document.documentElement).not.toHaveClass('home-loaded')
+    vi.advanceTimersByTime(200)
+    expect(document.documentElement).toHaveClass('home-loaded')
+  })
+
+  it('脚本没运行时，纯样式兜底 8 秒后自己隐藏', () => {
+    expect(template).toMatch(/animation: home-loader-failsafe [^;]*8s forwards/)
+  })
+})
+
+describe('首屏标题', () => {
+  it('标题不再模糊（11-12 Owner：像被遮罩挡在后面）', () => {
+    const css = readFileSync(path.join(process.cwd(), 'src/home/home.css'), 'utf8')
+    const rule = css.match(/\.home-page \.hero-title \{[^}]*\}/)[0]
+    expect(rule).toMatch(/filter: none/)
+    expect(rule).not.toMatch(/blur\(/)
   })
 })
 
