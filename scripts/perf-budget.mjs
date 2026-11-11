@@ -51,8 +51,9 @@ for (const [dir, limit] of [['home', 220], ['fonts', 40]]) {
 report.push('通过  首页图片单张 ≤ 220 KB、字体单个 ≤ 40 KB（只列出超标项）')
 
 // 5. 首页佛像视频第一段（一滑就要用到）
-const firstSegment = path.join(dist, 'kling-buddha-scroll-video/v2/m-a.mp4')
-if (existsSync(firstSegment)) check('手机版佛像视频第一段', kb(statSync(firstSegment).size), 700)
+// 11-11 Owner：清晰度不能降，可以多下载一点；视频在页面其余资源下载完之后才开始下载，等待时显示封面。
+const firstSegment = path.join(dist, 'kling-buddha-scroll-video/v3/a.mp4')
+if (existsSync(firstSegment)) check('佛像视频第一段', kb(statSync(firstSegment).size), 1500)
 
 console.log(report.join('\n'))
 if (failures.length) {

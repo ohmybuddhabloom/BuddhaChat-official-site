@@ -2,14 +2,12 @@ import { HERO_FRAME_COUNT } from '../lib/heroMotion.js'
 
 // 佛像两段视频与吸附进度的纯计算（组件见 HomeBuddha.jsx）。
 export const SPLIT_FRAME = 48
-const VIDEO_BASE = '/kling-buddha-scroll-video/v2'
+// v3（11-11）：直接从 4 月原版视频套调色做母版，手机和电脑共用 1024 宽、压缩率 20。
+// v2 先经 WebP 帧图（质量 72）再压到 24/25，手机还缩到 768 宽，清晰度只剩原版的 45%～87%。
+const VIDEO_BASE = '/kling-buddha-scroll-video/v3'
 
-export function pickVideoSet(viewportWidth) {
-  return viewportWidth > 900 ? 'd' : 'm'
-}
-
-export function getSegmentUrl(set, part) {
-  return `${VIDEO_BASE}/${set}-${part}.mp4`
+export function getSegmentUrl(part) {
+  return `${VIDEO_BASE}/${part}.mp4`
 }
 
 // 全局第 frame 帧在哪一段、段内第几帧；b 段没准备好时退回 a 段最后一帧。

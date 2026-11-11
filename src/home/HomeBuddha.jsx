@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { createLatestSeeker, HERO_FRAME_COUNT, waitForQuietNetwork } from '../lib/heroMotion.js'
-import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame, pickVideoSet } from './buddhaMotion.js'
+import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame } from './buddhaMotion.js'
 import { createFrameAnimator } from '../lib/frameAnimator.js'
 
 // 跟手程度：技能默认 0.11 秒缓动、每秒最多 290 帧，滚一格要约 0.45 秒才停稳，整段至少 0.5 秒走完。
@@ -74,7 +74,6 @@ function HomeBuddha() {
       video.defaultMuted = true
       video.setAttribute('muted', '')
     }
-    const set = pickVideoSet(window.innerWidth)
     const controller = typeof AbortController === 'function' ? new AbortController() : null
     const objectUrls = []
     const seekers = {}
@@ -139,7 +138,7 @@ function HomeBuddha() {
       })
 
     const load = (part) =>
-      loadInto(videos[part], getSegmentUrl(set, part), controller?.signal)
+      loadInto(videos[part], getSegmentUrl(part), controller?.signal)
         .then((objectUrl) => {
           objectUrls.push(objectUrl)
           return primeThenActivate(part)
