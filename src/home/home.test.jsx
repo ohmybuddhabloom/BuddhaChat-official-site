@@ -2,13 +2,14 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { hydrateRoot } from 'react-dom/client'
 import { renderToString } from 'react-dom/server'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import HomeBuddha from './HomeBuddha.jsx'
+import HomeBuddha, { FOLLOW_MAX_SPEED, FOLLOW_SMOOTH_TIME } from './HomeBuddha.jsx'
 import HomeDialogue from './HomeDialogue.jsx'
 import HomeJournal from './HomeJournal.jsx'
 import HomePage from './HomePage.jsx'
-import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame, pickVideoSet } from './buddhaMotion.js'
+import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame } from './buddhaMotion.js'
 import { HOME_DIALOGUE, HOME_JOURNAL, HOME_NAV } from './content.js'
 import { submitChatPrompt } from '../lib/siteApi.js'
+import { createFrameAnimator } from '../lib/frameAnimator.js'
 
 vi.mock('../lib/siteApi.js', () => ({
   submitChatPrompt: vi.fn(() => Promise.resolve({ ok: true })),
@@ -70,10 +71,9 @@ describe('佛像两段视频', () => {
     expect(locateFrame(999, true)).toEqual({ part: 'b', local: 96 })
   })
 
-  it('宽于 900 用桌面版，地址按段区分', () => {
-    expect(pickVideoSet(1440)).toBe('d')
-    expect(pickVideoSet(390)).toBe('m')
-    expect(getSegmentUrl('m', 'a')).toBe('/kling-buddha-scroll-video/v2/m-a.mp4')
+  it('手机和电脑共用同一套 1024 宽视频，地址按段区分', () => {
+    expect(getSegmentUrl('a')).toBe('/kling-buddha-scroll-video/v3/a.mp4')
+    expect(getSegmentUrl('b')).toBe('/kling-buddha-scroll-video/v3/b.mp4')
   })
 
   it('吸附进度：从页面顶部到佛像离开轨道，0 到 1，两端截住', () => {
@@ -84,6 +84,35 @@ describe('佛像两段视频', () => {
     expect(getStickProgress(800, geometry)).toBe(1)
     expect(getStickProgress(-50, geometry)).toBe(0)
     expect(getStickProgress(100, { ...geometry, trackHeight: 400 })).toBe(0)
+  })
+})
+
+describe('佛像跟手', () => {
+  // 按 60Hz 推进动画，返回画面第一次显示目标帧所用的毫秒数
+  const settleMs = (options, jumpTo) => {
+    const queue = []
+    let shown = 0
+    const animator = createFrameAnimator({ frameCount: 145, render: (frame) => (shown = frame), requestFrame: (cb) => queue.push(cb), cancelFrame: () => {}, ...options })
+    animator.setProgress(jumpTo / 144)
+    let now = 0
+    let reached = -1
+    while (queue.length && now < 3000) {
+      now += 1000 / 60
+      queue.shift()(now)
+      if (reached < 0 && shown === jumpTo) reached = now
+    }
+    expect(shown).toBe(jumpTo)
+    return reached
+  }
+
+  it('滚一格（约 15 帧）在 150 毫秒内追上，比技能默认缓动快至少一倍', () => {
+    const fast = settleMs({ smoothTime: FOLLOW_SMOOTH_TIME, maxSpeed: FOLLOW_MAX_SPEED }, 15)
+    expect(fast).toBeLessThanOrEqual(150)
+    expect(settleMs({}, 15)).toBeGreaterThan(fast * 2)
+  })
+
+  it('一下滑到底也不被限速：整段 145 帧在 200 毫秒内走完', () => {
+    expect(settleMs({ smoothTime: FOLLOW_SMOOTH_TIME, maxSpeed: FOLLOW_MAX_SPEED }, 144)).toBeLessThanOrEqual(200)
   })
 })
 
@@ -111,7 +140,7 @@ describe('佛像组件', () => {
     fireEvent.scroll(window)
     await act(async () => {})
     expect(fetchMock).toHaveBeenCalledTimes(1)
-    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v2/d-a.mp4')
+    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
     expect(fetchMock.mock.calls[0][1]).toMatchObject({ priority: 'low' })
     delete document.readyState
   })
@@ -119,7 +148,7 @@ describe('佛像组件', () => {
   it('页面已加载完时直接下载 a 段，不等滚动', async () => {
     render(<HomeBuddha />)
     await act(async () => {})
-    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v2/d-a.mp4')
+    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
   })
 
   it('偏好减少动态效果的访客不下载视频', async () => {

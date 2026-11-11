@@ -26,7 +26,19 @@ python3 $OIL_MOTION/scripts/compile_scroll_video.py graded-master.mkv out --back
 - ffmpeg 9 去掉了 oil-motion 脚本里用的 `-vsync`；在 mini 上用 `~/bc-oil-motion/bin/ffmpeg` 包一层（换成 `-fps_mode passthrough`）。
 - 新素材放新目录（v3…），不要覆盖已发布的目录（缓存一年）。
 
-## 2026-11-11 首页重做后（v2：两段视频 + 原生吸附）
+## 2026-11-11 v3：清晰度回到 4 月原版（现行）
+
+- Owner 发现佛像不如以前清晰。实测（以 4 月原版为 100%，拉普拉斯方差）：v2 电脑 84%～87%、手机 44%～46%。
+  原因：母版是从质量 72 的 WebP 帧图合成的，再压到 24/25；手机还缩到 768 宽。
+- v3 直接从 4 月原版视频套同一组调色做母版，手机和电脑共用 1024 宽、压缩率 20、每帧关键帧：
+  `bash scripts/hero-motion/encode-v3.sh <kling-buddha-scroll-scrub.mp4> <输出目录>`。
+  与母版相似度 0.996（v2 电脑 0.981、手机 0.975；4 月原版因没有调色为 0.987）。
+- 体积：`v3/a.mp4` 1.3 MB、`v3/b.mp4` 2.5 MB，共 3.9 MB（4 月原版 4.0 MB）。下载时机不变，等待时显示封面。
+- `v2/` 文件保留不删：部署时还开着旧页面的访客，稍后还会去取 v2 的 b 段。
+- 原版视频在 Chris 的 Mac `~/Documents/BuddhaChat-official-site/public/kling-buddha-scroll-scrub.mp4`，
+  仓库历史 e28cae6 里也有。显示需要的像素（电脑 Retina 1612 宽、大屏手机 1269 宽）高于 1024，要更清晰只能重新生成。
+
+## 2026-11-11 首页重做后（v2：两段视频 + 原生吸附，已被 v3 取代）
 
 - 145 帧拆成两段全关键帧视频：`v2/{m,d}-a.mp4` 第 0～47 帧（手机 0.55 MB），`v2/{m,d}-b.mp4` 第 48～144 帧。
   编码命令：`~/bc-oil-motion/seg/encode.sh`（参数与 v1 相同：手机 768 宽 crf 24，桌面 1024 宽 crf 25，-g 1）。
