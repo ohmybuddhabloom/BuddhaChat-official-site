@@ -120,11 +120,16 @@
   --buddha-feather-strength: 0.68;
 }
 
-.home-buddha .hero-scroll-video {
+/* 只显示当前那一段视频。11-12 Owner 发现：页面在最顶部时佛像已经转到斜前方（iPhone 上直接是正面）。
+   原因是 index.css 的 .hero-scroll-figure.is-ready .hero-scroll-video { opacity: 1 } 比这里优先级高，
+   a、b 两段同时显示，排在后面的 b 段盖住了 a 段：电脑上停在 b 段第一帧（第 48 帧），
+   iPhone 预热时 b 段整段播完，停在最后一帧。这里用四个类名压过它。 */
+.hero-scroll-figure.home-buddha.is-ready .hero-scroll-video {
+  opacity: 0;
   transition: none;
 }
 
-.home-buddha .hero-scroll-video.is-visible {
+.hero-scroll-figure.home-buddha.is-ready .hero-scroll-video.is-visible {
   opacity: 1;
 }
 

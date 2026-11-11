@@ -30,6 +30,8 @@
       /* 加载画面（11-12 Owner：先加载完再让整页出来）。字体、佛像封面、佛像视频第一段就绪后淡出；
          最多 8 秒。脚本没运行时，纯样式兜底在 8 秒后自己隐藏。 */
       html.home-loading { overflow: hidden; }
+      /* 加载期间“在 App 中打开”浮动按钮（同为最高层）先不出现 */
+      html.home-loading [data-open-in-app] { visibility: hidden; }
       #home-loader {
         position: fixed; inset: 0; z-index: 2147483000; display: grid; place-items: center;
         background: radial-gradient(circle at 50% 44%, #fdf5e6 0%, #eadccf 62%);
