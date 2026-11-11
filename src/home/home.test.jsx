@@ -6,7 +6,7 @@ import HomeBuddha, { FOLLOW_MAX_SPEED, FOLLOW_SMOOTH_TIME } from './HomeBuddha.j
 import HomeDialogue from './HomeDialogue.jsx'
 import HomeJournal from './HomeJournal.jsx'
 import HomePage from './HomePage.jsx'
-import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame, pickVideoSet } from './buddhaMotion.js'
+import { SPLIT_FRAME, getSegmentUrl, getStickProgress, locateFrame } from './buddhaMotion.js'
 import { HOME_DIALOGUE, HOME_JOURNAL, HOME_NAV } from './content.js'
 import { submitChatPrompt } from '../lib/siteApi.js'
 import { createFrameAnimator } from '../lib/frameAnimator.js'
@@ -71,10 +71,9 @@ describe('佛像两段视频', () => {
     expect(locateFrame(999, true)).toEqual({ part: 'b', local: 96 })
   })
 
-  it('宽于 900 用桌面版，地址按段区分', () => {
-    expect(pickVideoSet(1440)).toBe('d')
-    expect(pickVideoSet(390)).toBe('m')
-    expect(getSegmentUrl('m', 'a')).toBe('/kling-buddha-scroll-video/v2/m-a.mp4')
+  it('手机和电脑共用同一套 1024 宽视频，地址按段区分', () => {
+    expect(getSegmentUrl('a')).toBe('/kling-buddha-scroll-video/v3/a.mp4')
+    expect(getSegmentUrl('b')).toBe('/kling-buddha-scroll-video/v3/b.mp4')
   })
 
   it('吸附进度：从页面顶部到佛像离开轨道，0 到 1，两端截住', () => {
@@ -141,7 +140,7 @@ describe('佛像组件', () => {
     fireEvent.scroll(window)
     await act(async () => {})
     expect(fetchMock).toHaveBeenCalledTimes(1)
-    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v2/d-a.mp4')
+    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
     expect(fetchMock.mock.calls[0][1]).toMatchObject({ priority: 'low' })
     delete document.readyState
   })
@@ -149,7 +148,7 @@ describe('佛像组件', () => {
   it('页面已加载完时直接下载 a 段，不等滚动', async () => {
     render(<HomeBuddha />)
     await act(async () => {})
-    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v2/d-a.mp4')
+    expect(fetchMock.mock.calls[0][0]).toBe('/kling-buddha-scroll-video/v3/a.mp4')
   })
 
   it('偏好减少动态效果的访客不下载视频', async () => {
