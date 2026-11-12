@@ -18,7 +18,7 @@ if (!process.argv.includes('--verify-only')) {
   const cwd = path.join(source, 'prototypes/masters-h5');
   for (const args of [['ci'], ['run', 'build:public']]) {
     const staging = process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_GIT_COMMIT_REF === 'staging';
-    // 1.4.2: Production App links to the same content as Staging; Yin Shun stays Staging-only (not imported into Production).
+    // 1.4.2: Production App links to the same content as Staging. Yin Shun is visible everywhere since 11-12 (imported into Production).
     const production = process.env.VERCEL_ENV === 'production';
     const result = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', args, { cwd, stdio: 'inherit', env: { ...process.env, VITE_MASTERS_APP_CONTENT_ENABLED: staging || production ? 'true' : 'false', VITE_MASTERS_YINSHUN_STAGING_VISIBLE: staging ? 'true' : 'false' } });
     if (result.error) throw result.error;
