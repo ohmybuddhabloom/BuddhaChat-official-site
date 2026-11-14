@@ -31,6 +31,9 @@ jobs:
       - name: Run tests
         run: npm test -- --maxWorkers=2
 
+      - name: Enforce Staging-only Vercel automation
+        run: node --test scripts/vercel-ignore-build.node-test.mjs
+
       - name: Lint source
         run: npx eslint src
 
