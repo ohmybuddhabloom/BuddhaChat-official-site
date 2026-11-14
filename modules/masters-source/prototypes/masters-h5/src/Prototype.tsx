@@ -5,9 +5,9 @@ import { resourcesForPerson, type HistoricalResource } from '../../../shared/mas
 import { profileCopy } from '../../../shared/masters/profileCopy';
 import { buildAvailableMastersAppLink, canonicalMastersContentRoute, h5LegacyRouteForMastersContent } from '../../../shared/masters/shareLinks';
 import { createArticleReader, type FetchArticleBody } from '../../../shared/masters/articleReader';
-import { buildReadingBlocks, type MastersFigure } from '../../../shared/masters/articleFigures';
+import { buildReadingBlocks, groupStartForLine, readingLineGroups, type MastersFigure } from '../../../shared/masters/articleFigures';
 import { mastersTextVersion, type MastersArticle } from '../../../shared/masters/catalog';
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon, BookmarkIcon, ClockIcon, HeartIcon, MagnifyingGlassIcon, PlayIcon, ReaderIcon, ExternalLinkIcon, TrashIcon, Link2Icon, PersonIcon, Share1Icon } from '@radix-ui/react-icons';
 import { FlowStack, useFlow, MobileScroll, KeyboardInput, BottomSheet, type FlowScreen } from './mobile';
 import { books, chapters, videos, sources, nanItems, itemTitle, itemOwner, clock, readableArticles, legacyArticles, articleSummary, collectionArticles, historical, libraryCollections, genericCollection, genericCollectionsForPerson, collectionReadabilityLabel, collectionRoute, getBibliographicGuide, getMastersVideoMetadata, getMastersVideoGroups, getMastersVideoSeries, type MastersVideo, type LibraryCollection } from './content';
@@ -306,15 +306,19 @@ function InlineReading({id}:{id:string}){
  const loadedArticle=loaded.id===id?loaded.article:null;
  const article=legacy&&mastersTextVersion(legacy)===summaryVersion?legacy:loadedArticle&&mastersTextVersion(loadedArticle)===summaryVersion?loadedArticle:null;
  const textVersion=article?mastersTextVersion(article):undefined;
+ // Yin Shun's stored source lines are regrouped into paragraphs; positions stay in source-line space.
+ const lineGroups=useMemo(()=>article?readingLineGroups(article):undefined,[article]);
  useEffect(()=>{
   if(!active||!article||!bodyRef.current)return;
   const container=bodyRef.current.closest<HTMLElement>('[data-testid="mobile-scroll"]');
-  const paragraphs=Array.from(bodyRef.current.querySelectorAll<HTMLElement>('article p'));
+  const paragraphs=Array.from(bodyRef.current.querySelectorAll<HTMLElement>(lineGroups?'article p[data-line]':'article p'));
+  const lineOf=(position:number)=>lineGroups?Number(paragraphs[position].dataset.line):position;
   if(!container||!paragraphs.length)return;
   const saved=latest.current.state.history.find(h=>h.id===id&&h.kind==='chapter');
-  const restored=saved?.kind==='chapter'&&saved.textVersion===textVersion?Math.min(saved.paragraph??0,paragraphs.length-1):0;
+  const savedLine=saved?.kind==='chapter'&&saved.textVersion===textVersion?saved.paragraph??0:0;
+  const restored=lineGroups?Math.max(0,paragraphs.findIndex(p=>Number(p.dataset.line)===groupStartForLine(lineGroups,savedLine))):Math.min(savedLine,paragraphs.length-1);
   let current=restored;let frame=0;
-  const save=(paragraph:number)=>latest.current.dispatch({type:'visit',id,kind:'chapter',visitedAt:Date.now(),paragraph,textVersion});
+  const save=(position:number)=>latest.current.dispatch({type:'visit',id,kind:'chapter',visitedAt:Date.now(),paragraph:lineOf(position),textVersion});
   const onScroll=()=>{
    const bounds=container.getBoundingClientRect();
    const next=paragraphs.findIndex(p=>p.getBoundingClientRect().bottom>bounds.top+12);
@@ -327,7 +331,7 @@ function InlineReading({id}:{id:string}){
    container.addEventListener('scroll',onScroll,{passive:true});
   });});
   return()=>{cancelAnimationFrame(frame);container.removeEventListener('scroll',onScroll);};
- },[id,active,textVersion]);
+ },[id,active,textVersion,lineGroups]);
  const bookId=article?.book_id||summary?.book_id||entry?.book_id;
  const siblings=bookId?collectionArticles(bookId):[];const index=siblings.findIndex(c=>c.id===id);
  const bookRoute=bookId?collectionRoute(bookId):'home';
@@ -336,7 +340,7 @@ function InlineReading({id}:{id:string}){
  if(!article)return <><span className="eyebrow">{itemTitle(summary.book_id)}</span><h1>{summary.title}</h1><div className="pending-content" aria-live="polite"><ReaderIcon/><strong>正在打开正文</strong></div><button className="secondary wide" onClick={()=>flow.push(routes(bookRoute))}>返回本书目录</button></>;
  return <div ref={bodyRef} className="inline-reader" data-article-id={id}><span className="eyebrow">{itemTitle(article.book_id)}</span><h1>{article.title}</h1><p className="subtitle">{(article.source_kind==='editorial_guide'||historical.profiles.some(p=>p.id===article.person_id))?article.attribution:<>{article.author} · {article.person_id==='yuanhui'?'答疑解惑':article.person_id==='nan-huaijin'?'讲述整理':'著述'}</>}</p>
  <div className="reader-tools"><button onClick={()=>flow.push(routes(bookRoute))}><ReaderIcon/>目录</button><div role="group" aria-label="阅读字号">{[16,18,20].map(n=><button key={n} aria-label={'字号 '+n} aria-pressed={size===n} onClick={()=>setSize(n)}>{n===16?'小':n===18?'中':'大'}</button>)}</div><Save id={id}/></div>
- <article aria-label="正文" style={{fontSize:size}}>{buildReadingBlocks(article.paragraphs,(article as {figures?:MastersFigure[]}).figures??[],(article as {paragraph_roles?:string[]}).paragraph_roles).map(block=>block.type==='figure'?<ArticleFigure key={block.key} figure={block.figure}/>:<p key={'p'+block.index} data-role={block.role}>{block.role&&(block.index===0||(article as {paragraph_roles?:string[]}).paragraph_roles?.[block.index-1] !== block.role)&&<span className="reader-speaker">{block.role==='question'?'读者问':'师父答'}</span>}{block.text}</p>)}</article>
+ <article aria-label="正文" style={{fontSize:size}}>{buildReadingBlocks(article.paragraphs,(article as {figures?:MastersFigure[]}).figures??[],(article as {paragraph_roles?:string[]}).paragraph_roles,lineGroups).map(block=>block.type==='figure'?<ArticleFigure key={block.key} figure={block.figure}/>:<p key={'p'+block.index} data-role={block.role} data-line={lineGroups?block.index:undefined}>{block.role&&(block.index===0||(article as {paragraph_roles?:string[]}).paragraph_roles?.[block.index-1] !== block.role)&&<span className="reader-speaker">{block.role==='question'?'读者问':'师父答'}</span>}{block.text}</p>)}</article>
  <p className="reader-finish">本篇已读完</p><div className="prev-next"><button disabled={index<=0} onClick={()=>flow.replace(routes('reader:'+siblings[index-1].id))}>上一篇</button><button onClick={()=>flow.push(routes(bookRoute))}>本书目录</button><button disabled={index<0||index>=siblings.length-1} onClick={()=>flow.replace(routes('reader:'+siblings[index+1].id))}>下一篇</button></div>
  <details className="source-details"><summary>版本与来源</summary><p>{article.attribution}</p><p>{article.source_institution}。{article.person_id==='nan-huaijin'?'此为转载整理版，非官方出版版本。':''}</p><SourceLink url={article.source_url}>资料出处</SourceLink></details>
  </div>;
