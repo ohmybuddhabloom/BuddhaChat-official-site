@@ -42,6 +42,12 @@ const isJoinInvitePage = (url) => {
   return sourcePath === '/join' || sourcePath.startsWith('/join/')
 }
 
+const isLampInvitePage = (url) => {
+  const rewrittenPath = url.searchParams.get('path')?.trim()
+  const sourcePath = rewrittenPath ? `/${rewrittenPath.replace(/^\/+/, '')}` : url.pathname
+  return sourcePath === '/lamp' || sourcePath.startsWith('/lamp/')
+}
+
 const isYuanhuiGuidePage = (url) =>
   url.searchParams.get('page') === 'guide-yuanhui' ||
   url.pathname === '/guide/yuanhui' ||
@@ -114,6 +120,17 @@ export function getPageMeta(url) {
       description: '有同修邀请你加入 BuddhaChat 道场，一起念诵、打卡、交流。',
       canonicalUrl: `${ORIGIN}/download`,
       imageUrl: absoluteUrl('/share/download-card-v1.jpg'),
+      type: 'website',
+    }
+  }
+
+  if (isLampInvitePage(url)) {
+    // 传灯 links are forwarded in WeChat (Owner 2026-11-22): the card names the lamp, not one page per code.
+    return {
+      title: '一位师兄为你点亮了一盏灯｜BuddhaChat',
+      description: '诸恶莫作，众善奉行，自净其意，是诸佛教。千余位法师的开示，十二种语言，分文不取。',
+      canonicalUrl: `${ORIGIN}/download`,
+      imageUrl: absoluteUrl('/share/lamp-card-v1.jpg'),
       type: 'website',
     }
   }

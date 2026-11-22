@@ -7,6 +7,7 @@ const HomePage = lazy(() => import('./home/HomePage.jsx'))
 const FusionRoutePage = lazy(() => import('./pages/FusionRoutePage.jsx'))
 const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
 const JoinInvitePage = lazy(() => import('./pages/JoinInvitePage.jsx'))
+const LampInvitePage = lazy(() => import('./pages/LampInvitePage.jsx'))
 const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
 const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
 const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
@@ -90,6 +91,10 @@ function App() {
       }
     }
   }, [isAppFaqGuidePage, isAppOnboardingWelcomePage, isDownloadPage, isYuanhuiGuidePage, pathname])
+
+  if (pathname === '/lamp' || pathname.startsWith('/lamp/')) {
+    return <Suspense fallback={null}><LampInvitePage pathname={pathname} /></Suspense>
+  }
 
   if (pathname === '/join' || pathname.startsWith('/join/')) {
     return <Suspense fallback={null}><JoinInvitePage pathname={pathname} /></Suspense>
