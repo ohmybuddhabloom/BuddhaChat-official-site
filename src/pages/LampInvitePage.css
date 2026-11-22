@@ -1,0 +1,218 @@
+/* 传灯 (Owner 2026-11-22): 信笺 — rice paper, ink, one ochre action colour. */
+.lamp-page {
+  --lamp-paper: #f6eedf;
+  --lamp-ink: #2b2118;
+  --lamp-ink-soft: #4a3b2c;
+  --lamp-ochre: #7a3e1d;
+  --lamp-muted: #6b5a46;
+  --lamp-line: #e2d3bb;
+  min-height: 100dvh;
+  background: var(--lamp-paper);
+  color: var(--lamp-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+  padding-bottom: 40px;
+}
+
+.lamp-wechat {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 18px;
+  background: #3a2a1c;
+  color: #fff6e6;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.lamp-wechat span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.lamp-letter {
+  min-height: 470px;
+  padding: 56px 30px 150px;
+  background: url('/lamp/paper-v1.jpg') center bottom / cover no-repeat;
+}
+
+.lamp-letter--plain {
+  min-height: 100dvh;
+  background-image: none;
+}
+
+.lamp-from {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #7a5a35;
+}
+
+.lamp-letter h1 {
+  margin: 14px 0 0;
+  font: 600 26px/1.55 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  color: var(--lamp-ink);
+}
+
+.lamp-quote {
+  margin: 22px 0 0;
+  font: 500 20px/1.9 'Kaiti SC', 'STKaiti', 'Songti SC', serif;
+  color: #3a2a1c;
+}
+
+.lamp-quote span {
+  display: block;
+}
+
+.lamp-source {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #7a5a35;
+}
+
+.lamp-actions,
+.lamp-more {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.lamp-actions {
+  margin-top: -40px;
+}
+
+.lamp-body {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--lamp-ink-soft);
+}
+
+.lamp-cta,
+.lamp-open,
+.lamp-text,
+.lamp-more-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+
+.lamp-cta {
+  min-height: 54px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--lamp-ochre);
+  color: #fff6e6;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.lamp-text {
+  min-height: 44px;
+  font-size: 15px;
+  color: var(--lamp-muted);
+}
+
+.lamp-open {
+  min-height: 46px;
+  margin-top: 10px;
+  border: 1px solid #c9a986;
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--lamp-ochre);
+}
+
+.lamp-note,
+.lamp-code-hint {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--lamp-muted);
+}
+
+.lamp-notice {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #efe1c8;
+  font-size: 14px;
+  text-align: center;
+}
+
+.lamp-code {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px dashed #c9a986;
+  border-radius: 12px;
+  background: #fbf5ea;
+  font-size: 14px;
+  color: var(--lamp-muted);
+}
+
+.lamp-code strong {
+  flex: 1;
+  font: 600 19px/1 ui-monospace, Menlo, monospace;
+  letter-spacing: 2px;
+  color: var(--lamp-ink);
+}
+
+.lamp-code button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: #ead9bd;
+  color: var(--lamp-ochre);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lamp-more {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--lamp-line);
+}
+
+.lamp-more h2 {
+  margin: 0 0 12px;
+  font: 600 19px/1.4 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+}
+
+.lamp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lamp-grid div {
+  padding: 12px 14px;
+  border: 1px solid var(--lamp-line);
+  border-radius: 12px;
+  background: #fbf5ea;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--lamp-muted);
+}
+
+.lamp-grid b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 16px;
+  color: var(--lamp-ink);
+}
+
+.lamp-more-link {
+  min-height: 48px;
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--lamp-ochre);
+}
