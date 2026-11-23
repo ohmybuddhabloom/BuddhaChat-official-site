@@ -285,7 +285,7 @@ describe('AppDownloadPage', () => {
   })
 
   it('shows the seven selected app experiences', () => {
-    render(<AppDownloadPage />)
+    const { container } = render(<AppDownloadPage />)
 
     expect(screen.getByText('每日法师推荐')).toBeInTheDocument()
     expect(screen.getByText('持续修行')).toBeInTheDocument()
@@ -294,34 +294,28 @@ describe('AppDownloadPage', () => {
     expect(screen.getByText('法师开示')).toBeInTheDocument()
     expect(screen.getByText('道场共修')).toBeInTheDocument()
     expect(screen.getByText('AI 佛祖对话')).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: 'BuddhaChat 首页真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-home-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat 每日修行真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-practice-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat 佛乐场景真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-music-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat 读经导航真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-scriptures-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat 法师开示真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-master-talks-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat 道场与共修社区真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-community-mobile.avif',
-    )
-    expect(screen.getByRole('img', { name: 'BuddhaChat AI 佛祖对话真实页面' })).toHaveAttribute(
-      'src',
-      '/app-previews/app-ai-buddha-mobile.avif',
-    )
+    const expectedPreviews = [
+      ['BuddhaChat 首页真实页面', 'app-home-mobile'],
+      ['BuddhaChat 每日修行真实页面', 'app-practice-mobile'],
+      ['BuddhaChat 佛乐场景真实页面', 'app-music-mobile'],
+      ['BuddhaChat 读经导航真实页面', 'app-scriptures-mobile'],
+      ['BuddhaChat 法师开示真实页面', 'app-master-talks-mobile'],
+      ['BuddhaChat 道场与共修社区真实页面', 'app-community-mobile'],
+      ['BuddhaChat AI 佛祖对话真实页面', 'app-ai-buddha-mobile'],
+    ]
+
+    for (const [name, asset] of expectedPreviews) {
+      const image = screen.getByRole('img', { name })
+      const picture = image.closest('picture')
+
+      expect(image).toHaveAttribute('src', `/app-previews/${asset}.jpg`)
+      expect(picture).not.toBeNull()
+      expect(picture.querySelector('source[type="image/avif"]')).toHaveAttribute(
+        'srcset',
+        `/app-previews/${asset}.avif`,
+      )
+    }
+    expect(container.querySelectorAll('.campaign-download-phone-screen picture')).toHaveLength(7)
   })
 
   it('moves the app preview carousel with its controls', () => {
