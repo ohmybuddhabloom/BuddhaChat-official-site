@@ -143,3 +143,13 @@ export function videoGuideDelaySec(durationSec) {
   if (!Number.isFinite(durationSec) || durationSec <= 0) return 120
   return Math.min(600, Math.max(60, Math.round(durationSec / 3)))
 }
+
+// The App drops a bridge message longer than 4096 characters, so the title gives way first.
+const APP_BRIDGE_LIMIT = 4096
+export function appShareMessage(title, url) {
+  const message = (text) => JSON.stringify({ version: 1, action: 'share', payload: { url, text } })
+  let caption = String(title ?? '').slice(0, 200)
+  while (caption && message(`${caption}\n${url}`).length > APP_BRIDGE_LIMIT) caption = caption.slice(0, -10)
+  const full = message(caption ? `${caption}\n${url}` : url)
+  return full.length <= APP_BRIDGE_LIMIT ? full : JSON.stringify({ version: 1, action: 'share', payload: { url } })
+}

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './SharePage.css'
 import { detectDownloadPlatform, isWeChatBrowser } from '../lib/downloadPlatform.js'
-import { previewBlockCount, videoGuideDelaySec } from '../lib/sharePage.js'
+import { appShareMessage, previewBlockCount, videoGuideDelaySec } from '../lib/sharePage.js'
 
 // 1.4.5 任务8: the page a shared video, question or article opens on. The content itself sits in the
 // middle of the first screen; the App is offered gently (Owner 11-27: no hard wall), and the page can be
@@ -104,7 +104,7 @@ export default function SharePage({
   const platform = detectDownloadPlatform()
   // Inside the App's own web view (a 1.4.4 App opening a share link) the App is already here.
   const appBridge = globalThis.ReactNativeWebView
-  const inApp = Boolean(appBridge?.postMessage)
+  const inApp = typeof appBridge?.postMessage === 'function'
   const inWeChat = !inApp && isWeChatBrowser()
   const [expanded, setExpanded] = useState(false)
   const [guide, setGuide] = useState(false)
@@ -148,8 +148,8 @@ export default function SharePage({
         <section className="share-sheet share-sheet--plain">
           <h1>{missing ? copy.missingTitle : copy.unavailableTitle}</h1>
           <p className="share-summary" data-testid="share-state">{missing ? copy.missingBody : copy.unavailableBody}</p>
-          {inWeChat ? null : <a className="share-cta" href={links?.downloadUrl ?? '/download'}>{copy.download}</a>}
-          {links?.appUrl && !inWeChat ? <a className="share-open" href={links.appUrl}>{copy.open}</a> : null}
+          {inWeChat || inApp ? null : <a className="share-cta" href={links?.downloadUrl ?? '/download'}>{copy.download}</a>}
+          {links?.appUrl && !inWeChat && !inApp ? <a className="share-open" href={links.appUrl}>{copy.open}</a> : null}
         </section>
       </main>
     )
@@ -181,7 +181,7 @@ export default function SharePage({
 
   const reshare = () => {
     if (inApp) {
-      appBridge.postMessage(JSON.stringify({ version: 1, action: 'share', payload: { url: links.reshare, text: `${data.title}\n${links.reshare}` } }))
+      appBridge.postMessage(appShareMessage(data.title, links.reshare))
       return
     }
     if (inWeChat) {
@@ -246,9 +246,9 @@ export default function SharePage({
           </div>
         ) : null}
         {data.media?.kind === 'cover' ? (
-          <a className="share-cover" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined} data-testid="share-cover">
+          <a className="share-cover" href={inApp ? undefined : inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined} data-testid="share-cover">
             <img src={links.cardUrl} alt="" />
-            <span>{copy.coverHint}</span>
+            {inApp ? null : <span>{copy.coverHint}</span>}
           </a>
         ) : null}
 
