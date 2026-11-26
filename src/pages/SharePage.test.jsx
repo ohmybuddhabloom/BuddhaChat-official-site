@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import SharePage from './SharePage.jsx'
-import { previewBlockCount, shareEnvironment, shareLinks, videoGuideDelaySec } from '../lib/sharePage.js'
+import { appShareMessage, previewBlockCount, shareEnvironment, shareLinks, videoGuideDelaySec } from '../lib/sharePage.js'
 
 // 1.4.5 任务8: the shared content sits in the middle of the first screen, the App is offered gently,
 // and the page can be passed on from WeChat, WhatsApp or any browser.
@@ -89,6 +89,44 @@ describe('SharePage', () => {
     render(<SharePage data={{ ...article, type: 'video', blocks: [], media: { kind: 'video', embedUrl: 'https://www.buddhachat.online/videos/embed/UwWNDUfyxL9', durationSec: 899 } }} />)
     expect(screen.getByTestId('share-video').getAttribute('src')).toBe('https://www.buddhachat.online/videos/embed/UwWNDUfyxL9')
     expect(screen.queryByTestId('share-guide')).toBeNull()
+  })
+
+  it('inside the App web view shows the whole article and shares through the App', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    const postMessage = vi.fn()
+    vi.stubGlobal('ReactNativeWebView', { postMessage })
+    render(<SharePage data={article} />)
+    expect(screen.getByText('第五段')).toBeTruthy()
+    expect(screen.queryByTestId('share-download')).toBeNull()
+    expect(screen.queryByTestId('share-open')).toBeNull()
+    expect(screen.queryByTestId('share-guide')).toBeNull()
+    fireEvent.click(screen.getByTestId('share-reshare'))
+    expect(JSON.parse(postMessage.mock.calls[0][0])).toEqual({ version: 1, action: 'share', payload: { url: links.reshare, text: `${article.title}\n${links.reshare}` } })
+  })
+
+  it('keeps the App bridge message within the 4096 characters the App accepts', () => {
+    const url = 'https://www.buddhachat.online/s/qa/23?r=abc123'
+    expect(JSON.parse(appShareMessage('短标题', url)).payload.text).toBe(`短标题\n${url}`)
+    const long = appShareMessage('长'.repeat(5000), url)
+    expect(long.length).toBeLessThanOrEqual(4096)
+    expect(JSON.parse(long).payload.url).toBe(url)
+    const hugeUrl = `${url}&x=${'a'.repeat(4100)}`
+    expect(JSON.parse(appShareMessage('t', hugeUrl))).toEqual({ version: 1, action: 'share', payload: { url: hugeUrl } })
+  })
+
+  it('shows no download or open button inside the App on a missing item', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    vi.stubGlobal('ReactNativeWebView', { postMessage: vi.fn() })
+    render(<SharePage data={{ type: 'video', id: 'x', state: 'missing', links, params: {} }} />)
+    expect(screen.queryByText('下载 BuddhaChat')).toBeNull()
+    expect(screen.queryByText('在 App 中打开')).toBeNull()
+  })
+
+  it('does not treat a page with a non-function bridge as the App', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    vi.stubGlobal('ReactNativeWebView', { postMessage: 'yes' })
+    render(<SharePage data={article} />)
+    expect(screen.getByTestId('share-download')).toBeTruthy()
   })
 
   it('explains a missing item instead of an empty page', () => {
