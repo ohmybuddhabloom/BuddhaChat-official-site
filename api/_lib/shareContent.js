@@ -2,7 +2,35 @@
 // Each type reads the public source the App itself reads; nothing here needs a signed-in user.
 // Returns null when the content does not exist (404) and throws when the source is unavailable.
 
-const TIMEOUT_MS = 8_000
+// Two upstream reads (content, then the cover) must fit the 10 s function limit with room to answer.
+export const TIMEOUT_MS = 4_000
+
+// Covers are fetched server side, so only these HTTPS image hosts are ever requested.
+const IMAGE_HOSTS = [
+  /^customer-[a-z0-9]+\.cloudflarestream\.com$/,
+  /^videodelivery\.net$/,
+  /^imagedelivery\.net$/,
+  /^(?:staging-)?yuanhui\.buddhachat\.online$/,
+  /^buddha-tokyo-1300001083\.cos\.ap-tokyo\.myqcloud\.com$/,
+]
+
+/** A cover we may fetch, sized for a 1200×630 card when the host can crop; anything else is dropped. */
+export function safeImageUrl(value) {
+  let url
+  try {
+    url = new URL(String(value ?? ''))
+  } catch {
+    return null
+  }
+  if (url.protocol !== 'https:' || url.username || url.password || url.port) return null
+  if (!IMAGE_HOSTS.some((host) => host.test(url.hostname))) return null
+  if (/\.cloudflarestream\.com$/.test(url.hostname)) {
+    url.searchParams.set('width', '1200')
+    url.searchParams.set('height', '630')
+    url.searchParams.set('fit', 'crop')
+  }
+  return url.toString()
+}
 
 /** The stable card image address for a share page (served by api/share-card.js). */
 export const shareCardUrl = (canonicalUrl) => `${canonicalUrl}/card.jpg`
@@ -37,7 +65,7 @@ async function loadVideo(id, env, fetcher) {
     title: plain(video.title) || 'BuddhaChat',
     summary: summarize(video.description) || summarize(video.title),
     author: plain(video.author?.displayName) || null,
-    imageUrl: thumbs.large || thumbs.original || thumbs.medium || null,
+    imageUrl: safeImageUrl(thumbs.large || thumbs.original || thumbs.medium),
     blocks: [],
     media: playable
       ? { kind: 'video', embedUrl: `${env.site}/videos/embed/${encodeURIComponent(id)}`, durationSec: Number(video.duration) || null }

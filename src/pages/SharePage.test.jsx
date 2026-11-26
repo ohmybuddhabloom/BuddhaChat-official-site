@@ -54,6 +54,20 @@ describe('SharePage', () => {
     expect(screen.getByTestId('share-wechat-overlay').textContent).toContain('朋友圈')
   })
 
+  it('never starts a download inside WeChat; it explains the browser hand-off instead', () => {
+    phone('Mozilla/5.0 (Linux; Android 14) MicroMessenger/8.0.50', 'Linux')
+    render(<SharePage data={article} />)
+    expect(screen.queryByTestId('share-apk')).toBeNull()
+    fireEvent.click(screen.getByTestId('share-download'))
+    expect(screen.getByTestId('share-wechat-overlay').textContent).toContain('在浏览器打开')
+  })
+
+  it('keeps the WeChat hint on a missing item too', () => {
+    phone('Mozilla/5.0 (iPhone) MicroMessenger/8.0.50')
+    render(<SharePage data={{ state: 'missing', params: {}, links: { downloadUrl: '/download' } }} />)
+    expect(screen.getByTestId('share-wechat')).toBeTruthy()
+  })
+
   it('passes the page on with one more hand counted', () => {
     const share = vi.fn(() => Promise.resolve())
     vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 (Linux; Android 14) Chrome', platform: 'Linux', language: 'en', share })

@@ -1,37 +1,61 @@
 // The image a chat app shows for /s/<type>/<id>: a stable address on www for the content's cover.
 // Video covers upstream are signed Cloudflare URLs that expire, so a card must never point at them.
-import { readSharePath, shareEnvironment } from '../src/lib/sharePage.js'
-import { loadShareContent } from './_lib/shareContent.js'
+import { readSharePath, shareEnvironmentNamed } from '../src/lib/sharePage.js'
+import { loadShareContent, safeImageUrl, TIMEOUT_MS } from './_lib/shareContent.js'
+import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
 
-const MAX_BYTES = 5 * 1024 * 1024
+const MAX_BYTES = 2 * 1024 * 1024
 
-export async function loadShareCard(type, id, hostname, fetcher = fetch) {
-  const share = readSharePath(`/s/${type}/${encodeURIComponent(String(id ?? ''))}/card.jpg`)
-  const env = shareEnvironment(hostname)
-  const fallback = `${env.site}/share/official-card-v1.jpg`
-  if (!share) return { redirect: fallback }
-  let content
-  try {
-    content = await loadShareContent(share.type, share.id, env, fetcher)
-  } catch {
-    return { redirect: fallback, cache: 'public, s-maxage=60' }
+/** Reads at most `limit` bytes; a larger body is abandoned instead of buffered. */
+async function readCapped(response, limit) {
+  const declared = Number(response.headers.get('content-length'))
+  if (Number.isFinite(declared) && declared > limit) return null
+  if (!response.body?.getReader) {
+    const bytes = Buffer.from(await response.arrayBuffer())
+    return bytes.length > limit ? null : bytes
   }
-  if (!content?.imageUrl) return { redirect: fallback }
-  const response = await fetcher(content.imageUrl, { redirect: 'follow', signal: AbortSignal.timeout(8_000) })
-  const type_ = response.headers.get('content-type') || ''
-  if (!response.ok || !/^image\/(?:jpeg|png|webp)\b/i.test(type_)) return { redirect: fallback, cache: 'public, s-maxage=60' }
-  const bytes = Buffer.from(await response.arrayBuffer())
-  if (bytes.length === 0 || bytes.length > MAX_BYTES) return { redirect: fallback }
-  return { bytes, contentType: type_.split(';')[0] }
+  const reader = response.body.getReader()
+  const chunks = []
+  let total = 0
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    total += value.length
+    if (total > limit) {
+      await reader.cancel().catch(() => {})
+      return null
+    }
+    chunks.push(value)
+  }
+  return Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)))
+}
+
+export async function loadShareCard(type, id, environmentName, fetcher = fetch) {
+  const env = shareEnvironmentNamed(environmentName)
+  const fallback = { redirect: `${env.site}/share/official-card-v1.jpg` }
+  const share = readSharePath(`/s/${type}/${encodeURIComponent(String(id ?? ''))}/card.jpg`)
+  if (!share) return fallback
+  try {
+    const content = await loadShareContent(share.type, share.id, env, fetcher)
+    // The content loader already keeps only allowed hosts; checked again because this is the fetch.
+    const imageUrl = safeImageUrl(content?.imageUrl)
+    if (!imageUrl) return fallback
+    const response = await fetcher(imageUrl, { redirect: 'error', signal: AbortSignal.timeout(TIMEOUT_MS) })
+    const contentType = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase()
+    // The page declares a JPEG card, so only a JPEG is passed through.
+    if (!response.ok || contentType !== 'image/jpeg') return { ...fallback, cache: 'public, s-maxage=60' }
+    const bytes = await readCapped(response, MAX_BYTES)
+    if (!bytes?.length) return fallback
+    return { bytes, contentType }
+  } catch {
+    return { ...fallback, cache: 'public, s-maxage=60' }
+  }
 }
 
 export default async function handler(req, res) {
-  const url = new URL(req.url, 'https://www.buddhachat.online')
-  const card = await loadShareCard(
-    url.searchParams.get('type'),
-    url.searchParams.get('id'),
-    req.headers?.['x-forwarded-host'] || req.headers?.host,
-  ).catch(() => ({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg', cache: 'public, s-maxage=60' }))
+  const url = new URL(req.url, PUBLIC_ORIGINS.production)
+  const environmentName = getPublicOrigin(req) === PUBLIC_ORIGINS.staging ? 'staging' : 'production'
+  const card = await loadShareCard(url.searchParams.get('type'), url.searchParams.get('id'), environmentName)
   if (card.redirect) {
     res.statusCode = 302
     res.setHeader('location', card.redirect)
@@ -41,6 +65,7 @@ export default async function handler(req, res) {
   }
   res.statusCode = 200
   res.setHeader('content-type', card.contentType)
-  res.setHeader('cache-control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=604800')
+  // A removed item's cover must stop being served within a day.
+  res.setHeader('cache-control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600')
   res.end(card.bytes)
 }

@@ -40,6 +40,10 @@ export function shareEnvironment(hostname) {
   return STAGING_HOSTS.test(String(hostname || '')) ? ENVIRONMENTS.staging : ENVIRONMENTS.production
 }
 
+export function shareEnvironmentNamed(name) {
+  return name === 'staging' ? ENVIRONMENTS.staging : ENVIRONMENTS.production
+}
+
 /** The content each share page can show, and the exact id shape it accepts. */
 export const SHARE_ID_PATTERNS = {
   video: /^[A-Za-z0-9_-]{11}$/,
@@ -53,8 +57,8 @@ export function readSharePath(pathname) {
   const match = /^\/s\/([a-z]+)\/([^/]+)(\/card\.jpg)?\/?$/.exec(pathname || '')
   if (!match) return null
   const [, type, rawId, card] = match
+  if (!Object.hasOwn(SHARE_ID_PATTERNS, type)) return null
   const pattern = SHARE_ID_PATTERNS[type]
-  if (!pattern) return null
   let id
   try {
     id = decodeURIComponent(rawId)

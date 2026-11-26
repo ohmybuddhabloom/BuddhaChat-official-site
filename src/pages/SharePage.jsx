@@ -107,7 +107,8 @@ export default function SharePage({
   const [guide, setGuide] = useState(false)
   const [guideDismissed, setGuideDismissed] = useState(false)
   const [notice, setNotice] = useState('')
-  const [wechatShare, setWechatShare] = useState(false)
+  // In WeChat nothing can download or open the App, so every such tap explains the browser hand-off.
+  const [wechatGuide, setWechatGuide] = useState(null)
   const watched = useRef(0)
 
   const blocks = useMemo(() => (Array.isArray(data?.blocks) ? data.blocks : []), [data])
@@ -134,11 +135,18 @@ export default function SharePage({
     const missing = data?.state === 'missing'
     return (
       <main className="share-page" data-testid="share-page">
+        <style>{'[data-open-in-app]{display:none!important}'}</style>
+        {inWeChat ? (
+          <div className="share-wechat" role="note" data-testid="share-wechat">
+            <span aria-hidden="true">↗</span>
+            {copy.wechat}
+          </div>
+        ) : null}
         <section className="share-sheet share-sheet--plain">
           <h1>{missing ? copy.missingTitle : copy.unavailableTitle}</h1>
           <p className="share-summary" data-testid="share-state">{missing ? copy.missingBody : copy.unavailableBody}</p>
-          <a className="share-cta" href={links?.downloadUrl ?? '/download'}>{copy.download}</a>
-          {links && !inWeChat ? <a className="share-open" href={links.appUrl}>{copy.open}</a> : null}
+          {inWeChat ? null : <a className="share-cta" href={links?.downloadUrl ?? '/download'}>{copy.download}</a>}
+          {links?.appUrl && !inWeChat ? <a className="share-open" href={links.appUrl}>{copy.open}</a> : null}
         </section>
       </main>
     )
@@ -170,7 +178,7 @@ export default function SharePage({
 
   const reshare = () => {
     if (inWeChat) {
-      setWechatShare(true)
+      setWechatGuide('share')
       return
     }
     const payload = { title: data.title, text: data.summary, url: links.reshare }
@@ -181,8 +189,15 @@ export default function SharePage({
     copyText(links.reshare).then((ok) => ok && setNotice(copy.copied))
   }
 
+  const toBrowser = (event) => {
+    event.preventDefault()
+    setWechatGuide('browser')
+  }
+
   let downloads
-  if (platform === 'ios') {
+  if (inWeChat) {
+    downloads = [<a key="wechat" className="share-cta" href={links.downloadUrl} onClick={toBrowser} data-testid="share-download">{copy.download}</a>]
+  } else if (platform === 'ios') {
     downloads = [<a key="ios" className="share-cta" href={links.appStoreUrl ?? links.downloadUrl} onClick={recordForIos} data-testid="share-download">{copy.download}</a>]
   } else if (platform === 'android' && links.googlePlayUrl) {
     downloads = [
@@ -224,7 +239,7 @@ export default function SharePage({
           </div>
         ) : null}
         {data.media?.kind === 'cover' ? (
-          <a className="share-cover" href={inWeChat ? undefined : links.appUrl} data-testid="share-cover">
+          <a className="share-cover" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined} data-testid="share-cover">
             <img src={links.cardUrl} alt="" />
             <span>{copy.coverHint}</span>
           </a>
@@ -253,7 +268,7 @@ export default function SharePage({
         ) : null}
         {truncated ? (
           <div className="share-guide" data-testid="share-guide">
-            <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl}>{copy.readAll}</a>
+            <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined}>{copy.readAll}</a>
             <button type="button" className="share-text" onClick={() => setExpanded(true)} data-testid="share-expand">{copy.keepReading}</button>
           </div>
         ) : null}
@@ -278,15 +293,15 @@ export default function SharePage({
       {guide && !guideDismissed ? (
         <div className="share-sheet-guide" role="dialog" data-testid="share-video-guide">
           <p>{copy.watchInApp}</p>
-          <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl}>{copy.open}</a>
+          <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined}>{copy.open}</a>
           <button type="button" className="share-text" onClick={() => setGuideDismissed(true)}>{copy.later}</button>
         </div>
       ) : null}
 
-      {wechatShare ? (
-        <button type="button" className="share-wechat-overlay" onClick={() => setWechatShare(false)} data-testid="share-wechat-overlay">
+      {wechatGuide ? (
+        <button type="button" className="share-wechat-overlay" onClick={() => setWechatGuide(null)} data-testid="share-wechat-overlay">
           <span className="share-arrow" aria-hidden="true">↗</span>
-          <span>{copy.wechatShare}</span>
+          <span>{wechatGuide === 'share' ? copy.wechatShare : copy.wechat}</span>
         </button>
       ) : null}
     </main>

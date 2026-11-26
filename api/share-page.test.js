@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { getSharePage, injectPageMeta, injectShareData } from './page-entry.js'
 import { loadShareCard } from './share-card.js'
+import { safeImageUrl } from './_lib/shareContent.js'
 import { readSharePath, readShareParams, shareEnvironment, shareLinks } from '../src/lib/sharePage.js'
 
 // 1.4.5 任务8: every shared video, question and article opens on www/s/<type>/<id> with its own card.
@@ -78,7 +79,7 @@ describe('share page content', () => {
 
   it('gives a public video its own card and an embedded player', async () => {
     const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
-    const page = await getSharePage(new URL('https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=whatsapp&l=en'), 'www.buddhachat.online', fetcher)
+    const page = await getSharePage(new URL('https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=whatsapp&l=en'), 'production', fetcher)
     expect(page.status).toBe(200)
     expect(page.meta).toMatchObject({
       title: '愣嚴咒｜正心正念',
@@ -96,25 +97,25 @@ describe('share page content', () => {
 
   it('reads the rewritten path the site router hands over', async () => {
     const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
-    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'production', fetcher)
     expect(page.data.title).toBe('愣嚴咒')
   })
 
   it('shows only the cover of a video that is not public', async () => {
     const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json({ ...VIDEO, accessPolicy: 'course' }) })
-    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'production', fetcher)
     expect(page.data.media).toEqual({ kind: 'cover', embedUrl: null, durationSec: 899 })
   })
 
   it('answers 404 with the plain site card for missing content', async () => {
-    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fakeFetch({}))
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'production', fakeFetch({}))
     expect(page.status).toBe(404)
     expect(page.data.state).toBe('missing')
     expect(page.meta.imageUrl).toBe('https://www.buddhachat.online/share/official-card-v1.jpg')
   })
 
   it('still answers the page when the source is down, with a short cache', async () => {
-    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fakeFetch({ 'https://zentube': new Response('x', { status: 502 }) }))
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'production', fakeFetch({ 'https://zentube': new Response('x', { status: 502 }) }))
     expect(page.status).toBe(200)
     expect(page.cache).toBe('public, s-maxage=30')
     expect(page.data.state).toBe('unavailable')
@@ -127,7 +128,7 @@ describe('share page content', () => {
         question: { item_id: 'topic:23', title: '念佛总是妄念纷飞？', body: '念佛时杂念特别多', author_name: '张三', is_anonymous: true, answer: { body: '妄念多，恰恰说明你开始觉察了。', author_name: 'BuddhaChat 官方' } },
       }),
     })
-    const page = await getSharePage(url('/s/qa/23'), 'www.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/qa/23'), 'production', fetcher)
     expect(page.meta.title).toBe('念佛总是妄念纷飞？｜BuddhaChat 官方')
     expect(page.meta.imageUrl).toBe('https://www.buddhachat.online/share/official-card-v1.jpg')
     expect(page.data.blocks).toEqual([
@@ -141,7 +142,7 @@ describe('share page content', () => {
     const fetcher = fakeFetch({
       'https://lsiycbdglqtltlecvzky.supabase.co/functions/v1/public-question': json({ environment: 'production', question: { item_id: 'topic:23', title: 't', body: 'b', is_anonymous: true, answer: null } }),
     })
-    const page = await getSharePage(url('/s/qa/23'), 'staging.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/qa/23'), 'staging', fetcher)
     expect(page.data.state).toBe('unavailable')
   })
 
@@ -156,7 +157,7 @@ describe('share page content', () => {
         ] },
       }),
     })
-    const page = await getSharePage(url('/s/yuanhui/yuanhui-001-q001'), 'www.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/yuanhui/yuanhui-001-q001'), 'production', fetcher)
     expect(page.meta.title).toBe('如何与师父心相应？｜源慧法师')
     expect(page.meta.description).toBe('实际上修行真的是需要悟后起修的。')
     // The question is the title, so the page body starts with the answer.
@@ -165,20 +166,20 @@ describe('share page content', () => {
 
   it('reads staging content from staging sources only', async () => {
     const fetcher = fakeFetch({ 'https://staging-zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
-    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'staging.buddhachat.online', fetcher)
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'staging', fetcher)
     expect(page.data.links.canonical).toBe('https://staging.buddhachat.online/s/video/UwWNDUfyxL9')
     expect(page.data.media.embedUrl).toBe('https://staging.buddhachat.online/videos/embed/UwWNDUfyxL9')
     expect(fetcher.calls).toEqual(['https://staging-zentube.buddhachat.online/api/videos/UwWNDUfyxL9'])
   })
 
   it('sends a book to the reader’s own share page', async () => {
-    const page = await getSharePage(url('/s/sutra/practice-vow'), 'www.buddhachat.online', fakeFetch({}))
+    const page = await getSharePage(url('/s/sutra/practice-vow'), 'production', fakeFetch({}))
     expect(page).toEqual({ status: 302, location: 'https://www.buddhachat.online/sutra/s/practice-vow' })
   })
 
   it('leaves every other path to the site', async () => {
-    expect(await getSharePage(url('/download'), 'www.buddhachat.online', fakeFetch({}))).toBeNull()
-    expect(await getSharePage(url('/s/video/UwWNDUfyxL9/card.jpg'), 'www.buddhachat.online', fakeFetch({}))).toBeNull()
+    expect(await getSharePage(url('/download'), 'production', fakeFetch({}))).toBeNull()
+    expect(await getSharePage(url('/s/video/UwWNDUfyxL9/card.jpg'), 'production', fakeFetch({}))).toBeNull()
   })
 
   it('never lets content text close the data script', () => {
@@ -197,7 +198,7 @@ describe('share cards', () => {
       'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO),
       'https://customer-x.cloudflarestream.com/': new Response(new Uint8Array([0xff, 0xd8, 0xff]), { headers: { 'content-type': 'image/jpeg' } }),
     })
-    const card = await loadShareCard('video', 'UwWNDUfyxL9', 'www.buddhachat.online', fetcher)
+    const card = await loadShareCard('video', 'UwWNDUfyxL9', 'production', fetcher)
     expect(card.contentType).toBe('image/jpeg')
     expect([...card.bytes]).toEqual([0xff, 0xd8, 0xff])
   })
@@ -207,8 +208,62 @@ describe('share cards', () => {
       'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO),
       'https://customer-x.cloudflarestream.com/': new Response('<html>', { headers: { 'content-type': 'text/html' } }),
     })
-    expect(await loadShareCard('video', 'UwWNDUfyxL9', 'www.buddhachat.online', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg', cache: 'public, s-maxage=60' })
-    expect(await loadShareCard('video', '../etc', 'www.buddhachat.online', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg' })
-    expect((await loadShareCard('qa', '23', 'staging.buddhachat.online', fakeFetch({}))).redirect).toBe('https://staging.buddhachat.online/share/official-card-v1.jpg')
+    expect(await loadShareCard('video', 'UwWNDUfyxL9', 'production', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg', cache: 'public, s-maxage=60' })
+    expect(await loadShareCard('video', '../etc', 'production', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg' })
+    expect((await loadShareCard('qa', '23', 'staging', fakeFetch({}))).redirect).toBe('https://staging.buddhachat.online/share/official-card-v1.jpg')
+  })
+})
+
+describe('share page hardening (local review of #124)', () => {
+  const entry = (query) => new URL(`https://www.buddhachat.online/api/page-entry?${query}`)
+
+  it('never lets a query value take over a dedicated page', async () => {
+    expect(await getSharePage(entry('page=download&path=s/sutra/x'), 'production', fakeFetch({}))).toBeNull()
+    expect(await getSharePage(entry('path=s/sutra/x&path=download'), 'production', fakeFetch({}))).toBeNull()
+  })
+
+  it('answers a malformed share path as missing, never as a server error', async () => {
+    for (const path of ['s/constructor/1', 's/toString/1', 's/video/short', 's/nothing']) {
+      const page = await getSharePage(entry(`path=${path}`), 'production', fakeFetch({}))
+      expect(page.status).toBe(404)
+      expect(page.data.state).toBe('missing')
+    }
+  })
+
+  it('keeps who shared it when a book goes to the reader', async () => {
+    const page = await getSharePage(entry('path=s/sutra/practice-vow&r=abc123&ch=line&h=3&i=ABCDEFGH&x=1'), 'staging', fakeFetch({}))
+    expect(page).toEqual({ status: 302, location: 'https://staging.buddhachat.online/sutra/s/practice-vow?r=abc123&ch=line&h=3&i=ABCDEFGH' })
+  })
+
+  it('keeps replacement sequences in content as plain text', () => {
+    const html = injectShareData('<html><head></head><body></body></html>', { title: "a $& b $' c $` d" })
+    expect(html).toContain("a $& b $' c $` d")
+  })
+
+  it('fetches covers only from known HTTPS image hosts, cropped for the card', () => {
+    expect(safeImageUrl('https://customer-ab12.cloudflarestream.com/tok/thumbnails/thumbnail.jpg?height=720&width=1280&fit=crop'))
+      .toBe('https://customer-ab12.cloudflarestream.com/tok/thumbnails/thumbnail.jpg?height=630&width=1200&fit=crop')
+    expect(safeImageUrl('https://yuanhui.buddhachat.online/assets/images/share/yuanhui-card-v2.jpg')).toBe('https://yuanhui.buddhachat.online/assets/images/share/yuanhui-card-v2.jpg')
+    for (const bad of ['http://customer-ab12.cloudflarestream.com/x.jpg', 'https://169.254.169.254/latest', 'https://evil.example/x.jpg', 'https://customer-ab12.cloudflarestream.com:8443/x.jpg', 'https://user@yuanhui.buddhachat.online/x.jpg', null, 'not a url']) {
+      expect(safeImageUrl(bad)).toBeNull()
+    }
+  })
+
+  it('does not follow redirects or buffer oversized covers', async () => {
+    const seen = []
+    const fetcher = async (url, options) => {
+      seen.push([String(url), options?.redirect])
+      if (String(url).startsWith('https://zentube')) return json(VIDEO)
+      return new Response('x', { headers: { 'content-type': 'image/jpeg', 'content-length': String(3 * 1024 * 1024) } })
+    }
+    const card = await loadShareCard('video', 'UwWNDUfyxL9', 'production', fetcher)
+    expect(card.redirect).toBe('https://www.buddhachat.online/share/official-card-v1.jpg')
+    expect(seen[1][1]).toBe('error')
+    expect(seen[1][0]).toContain('width=1200')
+  })
+
+  it('serves a video cover with a staging fallback on staging', async () => {
+    const card = await loadShareCard('video', 'UwWNDUfyxL9', 'staging', async () => { throw new Error('down') })
+    expect(card).toEqual({ redirect: 'https://staging.buddhachat.online/share/official-card-v1.jpg', cache: 'public, s-maxage=60' })
   })
 })

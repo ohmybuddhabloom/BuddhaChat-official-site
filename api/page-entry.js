@@ -2,7 +2,8 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { SACRED_STORIES_BY_SLUG } from '../src/content/sacredStories.js'
-import { readSharePath, readShareParams, shareEnvironment, shareLinks } from '../src/lib/sharePage.js'
+import { readSharePath, readShareParams, shareEnvironmentNamed, shareLinks } from '../src/lib/sharePage.js'
+import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
 import { loadShareContent, shareCardUrl } from './_lib/shareContent.js'
 
 const ORIGIN = 'https://www.buddhachat.online'
@@ -200,26 +201,48 @@ export function injectPageMeta(html, meta) {
 
 const SHARE_LOCALES = { 'zh-Hans': 'zh_CN', 'zh-Hant': 'zh_TW', en: 'en_US' }
 
+/**
+ * Share pages arrive only through the site-wide catch-all rewrite (`?path=s/...`) or directly. A
+ * dedicated page (download, guides) carries `page=` and must never be taken over by a query value.
+ */
 const sharePathOf = (url) => {
-  const rewrittenPath = url.searchParams.get('path')?.trim()
-  return rewrittenPath ? `/${rewrittenPath.replace(/^\/+/, '')}` : url.pathname
+  if (url.searchParams.has('page')) return null
+  const rewritten = url.searchParams.getAll('path')
+  if (rewritten.length > 1) return null
+  if (rewritten.length === 1) return `/${rewritten[0].trim().replace(/^\/+/, '')}`
+  return url.pathname
 }
+
+const SHARE_PARAM_KEYS = ['r', 'ch', 'h', 'i', 'l']
 
 /**
  * 1.4.5 share pages, /s/<type>/<id>: the card a chat app shows comes from the content itself, and the
  * page receives the same content so it renders without a second request. A missing item answers 404
  * with the plain site card; an unreachable source still answers the page, which then explains itself.
  */
-export async function getSharePage(url, hostname, fetcher = fetch) {
-  const share = readSharePath(sharePathOf(url))
-  if (!share || share.asset) return null
-  const env = shareEnvironment(hostname)
+export async function getSharePage(url, environmentName, fetcher = fetch) {
+  const sourcePath = sharePathOf(url)
+  if (!sourcePath?.startsWith('/s/')) return null
+  const env = shareEnvironmentNamed(environmentName)
+  const share = readSharePath(sourcePath)
+  if (share?.asset) return null
   const params = readShareParams(url.search)
+  if (!share) {
+    // An unknown type or a malformed id is a missing page, not a temporary failure.
+    return {
+      status: 404,
+      cache: 'public, s-maxage=60',
+      meta: { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, canonicalUrl: `${env.site}/download`, imageUrl: `${env.site}/share/official-card-v1.jpg`, type: 'website' },
+      data: { state: 'missing', params, links: { downloadUrl: `${env.site}/download` } },
+    }
+  }
   const links = shareLinks(env, share.type, share.id, params)
   links.cardUrl = shareCardUrl(links.canonical)
-  // The scripture reader already owns a share page with its own card.
+  // The scripture reader already owns a share page with its own card; the share values travel along.
   if (share.type === 'sutra') {
-    return { status: 302, location: `${env.site}/sutra/s/${encodeURIComponent(share.id)}` }
+    const target = new URL(`${env.site}/sutra/s/${encodeURIComponent(share.id)}`)
+    for (const key of SHARE_PARAM_KEYS) if (params[key] !== undefined) target.searchParams.set(key, String(params[key]))
+    return { status: 302, location: target.toString() }
   }
   const fallbackMeta = {
     title: DEFAULT_TITLE,
@@ -240,7 +263,8 @@ export async function getSharePage(url, hostname, fetcher = fetch) {
   }
   return {
     status: 200,
-    cache: 'public, s-maxage=300, stale-while-revalidate=86400',
+    // Short stale window: a removed question or article must stop showing within minutes.
+    cache: 'public, s-maxage=300, stale-while-revalidate=600',
     meta: {
       title: content.author ? `${content.title}｜${content.author}` : content.title,
       description: content.summary || DEFAULT_DESCRIPTION,
@@ -256,7 +280,8 @@ export async function getSharePage(url, hostname, fetcher = fetch) {
 export function injectShareData(html, data) {
   // `<` is escaped so content text can never close the script element.
   const json = JSON.stringify(data).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029')
-  return html.replace(/<\/head>/i, `<script>window.__BC_SHARE__=${json}</script></head>`)
+  // A callback keeps `$&`, `$'` and friends in the content from acting as replacement patterns.
+  return html.replace(/<\/head>/i, () => `<script>window.__BC_SHARE__=${json}</script></head>`)
 }
 
 export default async function handler(req, res) {
@@ -267,7 +292,7 @@ export default async function handler(req, res) {
   )
 
   res.setHeader('content-type', 'text/html; charset=utf-8')
-  const share = await getSharePage(url, req.headers?.['x-forwarded-host'] || req.headers?.host)
+  const share = await getSharePage(url, getPublicOrigin(req) === PUBLIC_ORIGINS.staging ? 'staging' : 'production')
   if (share?.location) {
     res.statusCode = share.status
     res.setHeader('location', share.location)
