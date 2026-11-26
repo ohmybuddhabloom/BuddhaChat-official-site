@@ -146,8 +146,8 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'wish_survey_1', payload: {}, locale: 'zh-Hant', capabilities: {} },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '智慧' }))
-    fireEvent.click(screen.getByRole('button', { name: '清明' }))
+    fireEvent.click(screen.getByRole('button', { name: '人生方向' }))
+    fireEvent.click(screen.getByRole('button', { name: '幫你理清思路' }))
     fireEvent.click(screen.getByRole('button', { name: '繼續' }))
     const persist = bridgeMessages(postMessage).find(({ event, payload }) => event === 'onboarding.persist' && payload?.step === 'wish_survey_1_completed')
 
@@ -260,8 +260,8 @@ describe('AppOnboardingWelcomePage', () => {
       payload: { initialStep: 'wish_survey_1', payload: {}, locale: 'zh-Hans', capabilities: {} },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '情绪平静' }))
-    fireEvent.click(screen.getByRole('button', { name: '倾听' }))
+    fireEvent.click(screen.getByRole('button', { name: '自己的情绪' }))
+    fireEvent.click(screen.getByRole('button', { name: '多听你说' }))
     fireEvent.click(screen.getByRole('button', { name: '继续' }))
     const persist = bridgeMessages(postMessage).find(({ payload }) => payload?.step === 'wish_survey_1_completed')
 
@@ -351,9 +351,9 @@ describe('AppOnboardingWelcomePage', () => {
       },
     }))
 
-    fireEvent.click(screen.getByRole('button', { name: '温和' }))
-    fireEvent.click(screen.getByRole('button', { name: '好运' }))
-    fireEvent.click(screen.getByRole('button', { name: '焦虑' }))
+    fireEvent.click(screen.getByRole('button', { name: '温和一些，慢慢说' }))
+    fireEvent.click(screen.getByRole('button', { name: '顺利' }))
+    fireEvent.click(screen.getByRole('button', { name: '有些担心' }))
     fireEvent.click(screen.getByRole('button', { name: '揭晓我的守护佛' }))
     const persist = bridgeMessages(postMessage).find(({ payload }) => payload?.step === 'wish_survey_2_completed')
 
@@ -1556,15 +1556,15 @@ describe('AppOnboardingWelcomePage', () => {
     expect(screen.getByRole('heading', { name: /你的清净之路/ })).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: /分享你的心愿/ }))
-    fireEvent.click(screen.getByRole('button', { name: '情绪平静' }))
-    fireEvent.click(screen.getByRole('button', { name: '倾听' }))
+    fireEvent.click(screen.getByRole('button', { name: '自己的情绪' }))
+    fireEvent.click(screen.getByRole('button', { name: '多听你说' }))
     fireEvent.click(screen.getByRole('button', { name: '继续' }))
     expect(screen.getByRole('heading', { name: /出生信息会加深/ })).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: '继续' }))
-    fireEvent.click(screen.getByRole('button', { name: '温和' }))
-    fireEvent.click(screen.getByRole('button', { name: '好运' }))
-    fireEvent.click(screen.getByRole('button', { name: '焦虑' }))
+    fireEvent.click(screen.getByRole('button', { name: '温和一些，慢慢说' }))
+    fireEvent.click(screen.getByRole('button', { name: '顺利' }))
+    fireEvent.click(screen.getByRole('button', { name: '有些担心' }))
     fireEvent.click(screen.getByRole('button', { name: '揭晓我的守护佛' }))
     expect(screen.getByRole('heading', { name: '佛的临在' })).toBeInTheDocument()
 
@@ -1646,6 +1646,10 @@ describe('AppOnboardingWelcomePage', () => {
     ['财富', '财神'],
     ['守护', '地藏菩萨'],
     ['智慧', '文殊菩萨'],
+    // 1.4.5 labels (问佛先问两问 wording); the older labels above stay readable for saved payloads.
+    ['和身边人的关系', '观音菩萨'],
+    ['人生方向', '文殊菩萨'],
+    ['家人的平安', '地藏菩萨'],
   ])('matches %s with %s', (improvement, guardian) => {
     vi.stubGlobal('matchMedia', () => ({ matches: false }))
     window.localStorage.setItem('buddhachat:onboarding:step', 'guardian')

@@ -13,7 +13,8 @@ export const IMPROVEMENT_IDS = [
 export const SUPPORT_IDS = ['listening', 'guidance', 'encouragement', 'clarity']
 export const PACE_IDS = ['gentle', 'direct', 'daily']
 export const BLESSING_IDS = ['peace', 'good_fortune', 'courage', 'wisdom']
-export const INNER_STATE_IDS = ['anxiety', 'confusion', 'pressure', 'attachment']
+// calm (心里还算平静) added with the App's 问佛先问两问 (1.4.5) so no answer presumes distress.
+export const INNER_STATE_IDS = ['anxiety', 'confusion', 'pressure', 'attachment', 'calm']
 export const PROMPT_IDS = ['peace', 'guide', 'know']
 
 const en = {
@@ -110,8 +111,8 @@ const en = {
   wishOne: {
     title: ['Tell us', 'what your heart is seeking'],
     subtitle: 'Your answers help us understand your wish and the kind of guidance you need.',
-    questionImprovement: 'What would you most like to improve?',
-    questionSupport: 'What kind of support would you like?',
+    questionImprovement: 'Lately, what has been on your mind the most?',
+    questionSupport: 'When we talk about it, how would you like me to be with you?',
     helper: 'This step focuses on your wish and intention.',
     continue: 'Continue',
   },
@@ -133,9 +134,9 @@ const en = {
     title: ['How do you want', 'to be supported?'],
     subtitle: 'Choose the answers closest to how you feel now.',
     questions: {
-      pace: 'What pace fits you best?',
-      blessing: 'What blessing do you most hope to receive?',
-      innerState: 'What feeling is strongest right now?',
+      pace: 'When I speak, which way do you prefer?',
+      blessing: 'Which blessing would you like most?',
+      innerState: 'Thinking about it, which is closest to how you feel right now?',
     },
     summary: '♡ We will use your support, blessing, and inner state to find your guardian',
     reveal: 'Reveal my guardian Buddha',
@@ -207,18 +208,18 @@ const en = {
   options: {
     improvements: {
       emotional_peace: 'Emotional peace',
-      relationships: 'Relationships',
-      career: 'Career',
-      health: 'Health',
-      wealth: 'Wealth',
-      protection: 'Protection',
-      wisdom: 'Wisdom',
+      relationships: 'People around me',
+      career: 'Work or studies',
+      health: 'My health',
+      wealth: 'My finances',
+      protection: "My family's safety",
+      wisdom: 'Where my life is going',
     },
-    supports: { listening: 'Listening', guidance: 'Guidance', encouragement: 'Encouragement', clarity: 'Clarity' },
+    supports: { listening: 'Mostly listen', guidance: 'Give concrete advice', encouragement: 'Cheer me on', clarity: 'Help me think it through' },
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    pace: { gentle: 'Gentle', direct: 'Direct', daily: 'Daily' },
-    blessing: { peace: 'Peace', good_fortune: 'Good fortune', courage: 'Courage', wisdom: 'Wisdom' },
-    innerState: { anxiety: 'Anxiety', confusion: 'Confusion', pressure: 'Pressure', attachment: 'Attachment' },
+    pace: { gentle: 'Gently, at an easy pace', direct: 'Directly, to the point', daily: 'Briefly, a line a day' },
+    blessing: { peace: 'Peace of mind', good_fortune: 'Smooth going', courage: 'Courage', wisdom: 'Wisdom' },
+    innerState: { anxiety: 'A bit worried', confusion: 'Unsure what to do', pressure: 'Under a lot of pressure', attachment: 'Hard to let go', calm: 'Fairly calm' },
     prompts: { peace: 'I seek peace', guide: 'Please guide me', know: 'What should I know today?' },
   },
   guardians: {
@@ -326,8 +327,8 @@ const zhHans = {
   wishOne: {
     title: ['告诉我们', '你内心所求'],
     subtitle: '你的回答会帮助我们理解你的愿望，以及你需要的引导方式。',
-    questionImprovement: '你最想改善哪方面？',
-    questionSupport: '你希望获得哪种支持？',
+    questionImprovement: '这段时间，你最常想着的是哪方面的事？',
+    questionSupport: '聊起它的时候，你希望我怎么陪你？',
     helper: '这一步关注你的愿望与发心。',
     continue: '继续',
   },
@@ -349,9 +350,9 @@ const zhHans = {
     title: ['你希望如何', '被陪伴？'],
     subtitle: '选择最贴近你当下感受的答案。',
     questions: {
-      pace: '什么节奏更适合你？',
-      blessing: '你最希望获得哪种祝福？',
-      innerState: '你现在最明显的感受？',
+      pace: '以后跟你说话，你喜欢哪种方式？',
+      blessing: '我想送你一份祝福，你最想要哪一份？',
+      innerState: '说到这件事，你现在心里更接近哪一种？',
     },
     summary: '♡ 将以你选择的陪伴、祝福与内在状态为你寻找守护',
     reveal: '揭晓我的守护佛',
@@ -422,19 +423,19 @@ const zhHans = {
   },
   options: {
     improvements: {
-      emotional_peace: '情绪平静',
-      relationships: '人际关系',
-      career: '事业',
-      health: '健康',
-      wealth: '财富',
-      protection: '守护',
-      wisdom: '智慧',
+      emotional_peace: '自己的情绪',
+      relationships: '和身边人的关系',
+      career: '工作或学业',
+      health: '身体健康',
+      wealth: '经济状况',
+      protection: '家人的平安',
+      wisdom: '人生方向',
     },
-    supports: { listening: '倾听', guidance: '指引', encouragement: '鼓励', clarity: '清明' },
+    supports: { listening: '多听你说', guidance: '给你具体建议', encouragement: '给你打打气', clarity: '帮你理清思路' },
     months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-    pace: { gentle: '温和', direct: '直接', daily: '每日' },
-    blessing: { peace: '平安', good_fortune: '好运', courage: '勇气', wisdom: '智慧' },
-    innerState: { anxiety: '焦虑', confusion: '迷茫', pressure: '压力', attachment: '执着' },
+    pace: { gentle: '温和一些，慢慢说', direct: '直接一些，说重点', daily: '简短一点，每天一句' },
+    blessing: { peace: '心安', good_fortune: '顺利', courage: '勇气', wisdom: '智慧' },
+    innerState: { anxiety: '有些担心', confusion: '拿不定主意', pressure: '压力不小', attachment: '有些放不下', calm: '心里还算平静' },
     prompts: { peace: '我寻求平静', guide: '请指引我', know: '今天我应该知道什么？' },
   },
   guardians: {
@@ -543,8 +544,8 @@ const zhHant = {
   wishOne: {
     title: ['告訴我們', '你內心所求'],
     subtitle: '你的回答會幫助我們理解你的願望，以及你需要的引導方式。',
-    questionImprovement: '你最想改善哪方面？',
-    questionSupport: '你希望獲得哪種支持？',
+    questionImprovement: '這段時間，你最常想著的是哪方面的事？',
+    questionSupport: '聊起它的時候，你希望我怎麼陪你？',
     helper: '這一步關注你的願望與發心。',
     continue: '繼續',
   },
@@ -566,9 +567,9 @@ const zhHant = {
     title: ['你希望如何', '被陪伴？'],
     subtitle: '選擇最貼近你當下感受的答案。',
     questions: {
-      pace: '什麼節奏更適合你？',
-      blessing: '你最希望獲得哪種祝福？',
-      innerState: '你現在最明顯的感受？',
+      pace: '以後跟你說話，你喜歡哪種方式？',
+      blessing: '我想送你一份祝福，你最想要哪一份？',
+      innerState: '說到這件事，你現在心裡更接近哪一種？',
     },
     summary: '♡ 將以你選擇的陪伴、祝福與內在狀態為你尋找守護',
     reveal: '揭曉我的守護佛',
@@ -639,19 +640,19 @@ const zhHant = {
   },
   options: {
     improvements: {
-      emotional_peace: '情緒平靜',
-      relationships: '人際關係',
-      career: '事業',
-      health: '健康',
-      wealth: '財富',
-      protection: '守護',
-      wisdom: '智慧',
+      emotional_peace: '自己的情緒',
+      relationships: '和身邊人的關係',
+      career: '工作或學業',
+      health: '身體健康',
+      wealth: '經濟狀況',
+      protection: '家人的平安',
+      wisdom: '人生方向',
     },
-    supports: { listening: '傾聽', guidance: '指引', encouragement: '鼓勵', clarity: '清明' },
+    supports: { listening: '多聽你說', guidance: '給你具體建議', encouragement: '給你打打氣', clarity: '幫你理清思路' },
     months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-    pace: { gentle: '溫和', direct: '直接', daily: '每日' },
-    blessing: { peace: '平安', good_fortune: '好運', courage: '勇氣', wisdom: '智慧' },
-    innerState: { anxiety: '焦慮', confusion: '迷茫', pressure: '壓力', attachment: '執著' },
+    pace: { gentle: '溫和一些，慢慢說', direct: '直接一些，說重點', daily: '簡短一點，每天一句' },
+    blessing: { peace: '心安', good_fortune: '順利', courage: '勇氣', wisdom: '智慧' },
+    innerState: { anxiety: '有些擔心', confusion: '拿不定主意', pressure: '壓力不小', attachment: '有些放不下', calm: '心裡還算平靜' },
     prompts: { peace: '我尋求平靜', guide: '請指引我', know: '今天我應該知道什麼？' },
   },
   guardians: {
@@ -686,13 +687,20 @@ export function monthPairs(labels) {
   return labels.map((label, index) => [String(index + 1).padStart(2, '0'), label])
 }
 
-export const LEGACY_IMPROVEMENT_IDS = Object.fromEntries(
-  IMPROVEMENT_IDS.map((id) => [zhHans.options.improvements[id], id]),
-)
+// Older pages stored the Simplified Chinese label, not the id. The labels changed in 1.4.5, so the
+// labels those pages saved are listed here as they were, next to today's labels.
+const OLD_IMPROVEMENT_LABELS = { 情绪平静: 'emotional_peace', 人际关系: 'relationships', 事业: 'career', 健康: 'health', 财富: 'wealth', 守护: 'protection', 智慧: 'wisdom' }
+const OLD_SUPPORT_LABELS = { 倾听: 'listening', 指引: 'guidance', 鼓励: 'encouragement', 清明: 'clarity' }
 
-export const LEGACY_SUPPORT_IDS = Object.fromEntries(
-  SUPPORT_IDS.map((id) => [zhHans.options.supports[id], id]),
-)
+export const LEGACY_IMPROVEMENT_IDS = {
+  ...OLD_IMPROVEMENT_LABELS,
+  ...Object.fromEntries(IMPROVEMENT_IDS.map((id) => [zhHans.options.improvements[id], id])),
+}
+
+export const LEGACY_SUPPORT_IDS = {
+  ...OLD_SUPPORT_LABELS,
+  ...Object.fromEntries(SUPPORT_IDS.map((id) => [zhHans.options.supports[id], id])),
+}
 
 export const LEGACY_MONTH_IDS = Object.fromEntries(
   [zhHans, zhHant, en].flatMap((copy) => monthPairs(copy.options.months).map(([id, label]) => [label, id])),
