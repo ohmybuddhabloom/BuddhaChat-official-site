@@ -102,7 +102,10 @@ export default function SharePage({
   const copy = COPY[pickLocale(data?.params?.l, language)]
   const links = data?.links
   const platform = detectDownloadPlatform()
-  const inWeChat = isWeChatBrowser()
+  // Inside the App's own web view (a 1.4.4 App opening a share link) the App is already here.
+  const appBridge = globalThis.ReactNativeWebView
+  const inApp = Boolean(appBridge?.postMessage)
+  const inWeChat = !inApp && isWeChatBrowser()
   const [expanded, setExpanded] = useState(false)
   const [guide, setGuide] = useState(false)
   const [guideDismissed, setGuideDismissed] = useState(false)
@@ -113,12 +116,12 @@ export default function SharePage({
 
   const blocks = useMemo(() => (Array.isArray(data?.blocks) ? data.blocks : []), [data])
   const isArticle = data?.type === 'yuanhui'
-  const shown = isArticle && !expanded ? blocks.slice(0, previewBlockCount(blocks.length)) : blocks
+  const shown = isArticle && !expanded && !inApp ? blocks.slice(0, previewBlockCount(blocks.length)) : blocks
   const truncated = shown.length < blocks.length
 
   // Count only the seconds the page is actually in front of the reader.
   useEffect(() => {
-    if (data?.media?.kind !== 'video' || guideDismissed) return undefined
+    if (data?.media?.kind !== 'video' || guideDismissed || inApp) return undefined
     const limit = videoGuideDelaySec(data.media.durationSec)
     const timer = setInterval(() => {
       if (document.visibilityState !== 'visible') return
@@ -129,7 +132,7 @@ export default function SharePage({
       }
     }, 1000)
     return () => clearInterval(timer)
-  }, [data, guideDismissed])
+  }, [data, guideDismissed, inApp])
 
   if (!data || !links || data.state !== 'ready') {
     const missing = data?.state === 'missing'
@@ -177,6 +180,10 @@ export default function SharePage({
   }
 
   const reshare = () => {
+    if (inApp) {
+      appBridge.postMessage(JSON.stringify({ version: 1, action: 'share', payload: { url: links.reshare, text: `${data.title}\n${links.reshare}` } }))
+      return
+    }
     if (inWeChat) {
       setWechatGuide('share')
       return
@@ -276,19 +283,21 @@ export default function SharePage({
       </article>
 
       <section className="share-actions">
-        {downloads}
-        {inWeChat ? null : <a className="share-open" href={links.appUrl} data-testid="share-open">{copy.open}</a>}
+        {inApp ? null : downloads}
+        {inWeChat || inApp ? null : <a className="share-open" href={links.appUrl} data-testid="share-open">{copy.open}</a>}
         <button type="button" className="share-reshare" onClick={reshare} data-testid="share-reshare">{copy.share}</button>
         {notice ? <p className="share-notice" role="status">{notice}</p> : null}
       </section>
 
-      <section className="share-more" aria-label={copy.moreTitle}>
-        <h2>{copy.moreTitle}</h2>
-        <div className="share-grid">
-          {copy.more.map(([title, body]) => <div key={title}><b>{title}</b>{body}</div>)}
-        </div>
-        <a className="share-more-link" href="/">{copy.moreLink}</a>
-      </section>
+      {inApp ? null : (
+        <section className="share-more" aria-label={copy.moreTitle}>
+          <h2>{copy.moreTitle}</h2>
+          <div className="share-grid">
+            {copy.more.map(([title, body]) => <div key={title}><b>{title}</b>{body}</div>)}
+          </div>
+          <a className="share-more-link" href="/">{copy.moreLink}</a>
+        </section>
+      )}
 
       {guide && !guideDismissed ? (
         <div className="share-sheet-guide" role="dialog" data-testid="share-video-guide">

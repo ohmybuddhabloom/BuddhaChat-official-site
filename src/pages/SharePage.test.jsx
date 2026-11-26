@@ -91,6 +91,19 @@ describe('SharePage', () => {
     expect(screen.queryByTestId('share-guide')).toBeNull()
   })
 
+  it('inside the App web view shows the whole article and shares through the App', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    const postMessage = vi.fn()
+    vi.stubGlobal('ReactNativeWebView', { postMessage })
+    render(<SharePage data={article} />)
+    expect(screen.getByText('第五段')).toBeTruthy()
+    expect(screen.queryByTestId('share-download')).toBeNull()
+    expect(screen.queryByTestId('share-open')).toBeNull()
+    expect(screen.queryByTestId('share-guide')).toBeNull()
+    fireEvent.click(screen.getByTestId('share-reshare'))
+    expect(JSON.parse(postMessage.mock.calls[0][0])).toEqual({ version: 1, action: 'share', payload: { url: links.reshare, text: `${article.title}\n${links.reshare}` } })
+  })
+
   it('explains a missing item instead of an empty page', () => {
     phone('Mozilla/5.0 (iPhone) Safari')
     render(<SharePage data={{ type: 'video', id: 'x', state: 'missing', links, params: {} }} />)
