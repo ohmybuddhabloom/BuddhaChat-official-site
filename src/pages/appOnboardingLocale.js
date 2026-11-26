@@ -13,8 +13,10 @@ export const IMPROVEMENT_IDS = [
 export const SUPPORT_IDS = ['listening', 'guidance', 'encouragement', 'clarity']
 export const PACE_IDS = ['gentle', 'direct', 'daily']
 export const BLESSING_IDS = ['peace', 'good_fortune', 'courage', 'wisdom']
-// calm (心里还算平静) added with the App's 问佛先问两问 (1.4.5) so no answer presumes distress.
-export const INNER_STATE_IDS = ['anxiety', 'confusion', 'pressure', 'attachment', 'calm']
+// calm (心里还算平静) has its label below but is not offered yet: App builds before 1.4.5 reject
+// the id, and this page is served to every installed App. Add it here once 1.4.5 is the oldest
+// supported App (the App's 问佛先问两问 already offers it).
+export const INNER_STATE_IDS = ['anxiety', 'confusion', 'pressure', 'attachment']
 export const PROMPT_IDS = ['peace', 'guide', 'know']
 
 const en = {
