@@ -29,7 +29,8 @@ const ENVIRONMENTS = {
     androidPackage: null,
     zentubeApi: 'https://staging-zentube.buddhachat.online/api',
     yuanhuiSite: 'https://staging-yuanhui.buddhachat.online',
-    supabase: 'https://bjswjgadnariutxibsfh.supabase.co',
+    // Staging's forum functions (public-question) run on the staging bridge project, not the main one.
+    supabase: 'https://lsiycbdglqtltlecvzky.supabase.co',
   },
 }
 

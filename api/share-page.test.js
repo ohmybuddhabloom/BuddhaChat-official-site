@@ -139,7 +139,7 @@ describe('share page content', () => {
 
   it('refuses a question answered for the other environment', async () => {
     const fetcher = fakeFetch({
-      'https://bjswjgadnariutxibsfh.supabase.co/functions/v1/public-question': json({ environment: 'production', question: { item_id: 'topic:23', title: 't', body: 'b', is_anonymous: true, answer: null } }),
+      'https://lsiycbdglqtltlecvzky.supabase.co/functions/v1/public-question': json({ environment: 'production', question: { item_id: 'topic:23', title: 't', body: 'b', is_anonymous: true, answer: null } }),
     })
     const page = await getSharePage(url('/s/qa/23'), 'staging.buddhachat.online', fetcher)
     expect(page.data.state).toBe('unavailable')
