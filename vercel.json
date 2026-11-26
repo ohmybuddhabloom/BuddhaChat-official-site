@@ -536,6 +536,10 @@
       "destination": "/_masters/figures/:path*"
     },
     {
+      "source": "/s/:type/:id/card.jpg",
+      "destination": "/api/share-card?type=:type&id=:id"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },

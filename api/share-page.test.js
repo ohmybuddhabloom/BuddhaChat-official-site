@@ -1,0 +1,214 @@
+import { describe, expect, it } from 'vitest'
+
+import { getSharePage, injectPageMeta, injectShareData } from './page-entry.js'
+import { loadShareCard } from './share-card.js'
+import { readSharePath, readShareParams, shareEnvironment, shareLinks } from '../src/lib/sharePage.js'
+
+// 1.4.5 任务8: every shared video, question and article opens on www/s/<type>/<id> with its own card.
+
+const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } })
+
+function fakeFetch(routes) {
+  const calls = []
+  const fetcher = async (url) => {
+    calls.push(String(url))
+    for (const [prefix, answer] of Object.entries(routes)) {
+      if (String(url).startsWith(prefix)) return typeof answer === 'function' ? answer(url) : answer
+    }
+    return new Response('not found', { status: 404 })
+  }
+  fetcher.calls = calls
+  return fetcher
+}
+
+const VIDEO = {
+  id: 'UwWNDUfyxL9',
+  title: '愣嚴咒',
+  description: 'Leng Yan Curse',
+  thumbnailUrls: { large: 'https://customer-x.cloudflarestream.com/signed/thumbnails/thumbnail.jpg' },
+  author: { displayName: '正心正念' },
+  isPublic: true,
+  status: 'published',
+  accessPolicy: 'public',
+  duration: 899,
+}
+
+describe('share page paths and links', () => {
+  it('accepts only known types with their exact id shapes', () => {
+    expect(readSharePath('/s/video/UwWNDUfyxL9')).toEqual({ type: 'video', id: 'UwWNDUfyxL9', asset: null })
+    expect(readSharePath('/s/video/UwWNDUfyxL9/card.jpg')).toEqual({ type: 'video', id: 'UwWNDUfyxL9', asset: 'card' })
+    expect(readSharePath('/s/qa/23/')).toEqual({ type: 'qa', id: '23', asset: null })
+    expect(readSharePath('/s/yuanhui/yuanhui-001-q001')).toEqual({ type: 'yuanhui', id: 'yuanhui-001-q001', asset: null })
+    expect(readSharePath('/s/sutra/practice-vow')).toEqual({ type: 'sutra', id: 'practice-vow', asset: null })
+    expect(readSharePath('/s/video/short')).toBeNull()
+    expect(readSharePath('/s/qa/0')).toBeNull()
+    expect(readSharePath('/s/qa/12a')).toBeNull()
+    expect(readSharePath('/s/unknown/1')).toBeNull()
+    expect(readSharePath('/s/yuanhui/%3Cscript%3E')).toBeNull()
+    expect(readSharePath('/s/video/UwWNDUfyxL9/extra')).toBeNull()
+    expect(readSharePath('/lamp/ABCDEFGH')).toBeNull()
+  })
+
+  it('keeps only well-formed tracking values', () => {
+    expect(readShareParams('?r=abc123XYZ&ch=whatsapp&h=2&i=ABCDEFGH&l=zh-Hant&utm=x')).toEqual({ r: 'abc123XYZ', ch: 'whatsapp', h: 2, i: 'ABCDEFGH', l: 'zh-Hant' })
+    expect(readShareParams('?r=%3Cx%3E&ch=Bad Channel&h=0&i=ABCDEFG1&l=fr')).toEqual({})
+    expect(readShareParams('?h=100')).toEqual({})
+  })
+
+  it('opens the same page in the App and carries it through an install, per environment', () => {
+    const prod = shareLinks(shareEnvironment('www.buddhachat.online'), 'video', 'UwWNDUfyxL9', { r: 'abc123', ch: 'wechat', i: 'ABCDEFGH' })
+    expect(prod.canonical).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9')
+    expect(prod.page).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9?r=abc123&ch=wechat&i=ABCDEFGH')
+    expect(prod.link).toBe(`https://go.buddhachat.online/l/page?url=${encodeURIComponent(prod.page)}`)
+    expect(prod.appUrl).toBe(`buddhachat://l/page?url=${encodeURIComponent(prod.page)}`)
+    expect(decodeURIComponent(prod.googlePlayUrl.split('referrer=')[1])).toContain(`deep_link=${encodeURIComponent(prod.link)}`)
+    // Passing it on keeps the first sharer and counts one more hand.
+    expect(prod.reshare).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9?r=abc123&ch=web&h=2&i=ABCDEFGH')
+
+    const staging = shareLinks(shareEnvironment('staging.buddhachat.online'), 'qa', '23', {})
+    expect(staging.canonical).toBe('https://staging.buddhachat.online/s/qa/23')
+    expect(staging.link.startsWith('https://staging-admin.buddhachat.online/l/page?url=')).toBe(true)
+    expect(staging.appUrl.startsWith('buddhachat-staging://')).toBe(true)
+    expect(staging.googlePlayUrl).toBeNull()
+  })
+})
+
+describe('share page content', () => {
+  const url = (path) => new URL(`https://www.buddhachat.online/api/page-entry?path=${encodeURIComponent(path.replace(/^\//, ''))}`)
+
+  it('gives a public video its own card and an embedded player', async () => {
+    const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
+    const page = await getSharePage(new URL('https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=whatsapp&l=en'), 'www.buddhachat.online', fetcher)
+    expect(page.status).toBe(200)
+    expect(page.meta).toMatchObject({
+      title: '愣嚴咒｜正心正念',
+      description: 'Leng Yan Curse',
+      canonicalUrl: 'https://www.buddhachat.online/s/video/UwWNDUfyxL9',
+      imageUrl: 'https://www.buddhachat.online/s/video/UwWNDUfyxL9/card.jpg',
+      type: 'video.other',
+      locale: 'en_US',
+    })
+    expect(page.data.state).toBe('ready')
+    expect(page.data.media).toEqual({ kind: 'video', embedUrl: 'https://www.buddhachat.online/videos/embed/UwWNDUfyxL9', durationSec: 899 })
+    expect(page.data.params).toEqual({ ch: 'whatsapp', l: 'en' })
+    expect(page.data.links.cardUrl).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9/card.jpg')
+  })
+
+  it('reads the rewritten path the site router hands over', async () => {
+    const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fetcher)
+    expect(page.data.title).toBe('愣嚴咒')
+  })
+
+  it('shows only the cover of a video that is not public', async () => {
+    const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json({ ...VIDEO, accessPolicy: 'course' }) })
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fetcher)
+    expect(page.data.media).toEqual({ kind: 'cover', embedUrl: null, durationSec: 899 })
+  })
+
+  it('answers 404 with the plain site card for missing content', async () => {
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fakeFetch({}))
+    expect(page.status).toBe(404)
+    expect(page.data.state).toBe('missing')
+    expect(page.meta.imageUrl).toBe('https://www.buddhachat.online/share/official-card-v1.jpg')
+  })
+
+  it('still answers the page when the source is down, with a short cache', async () => {
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'www.buddhachat.online', fakeFetch({ 'https://zentube': new Response('x', { status: 502 }) }))
+    expect(page.status).toBe(200)
+    expect(page.cache).toBe('public, s-maxage=30')
+    expect(page.data.state).toBe('unavailable')
+  })
+
+  it('shows a question with its answer and never an anonymous asker', async () => {
+    const fetcher = fakeFetch({
+      'https://xqibxlpzghveyqemprjr.supabase.co/functions/v1/public-question?topic_id=23': json({
+        environment: 'production',
+        question: { item_id: 'topic:23', title: '念佛总是妄念纷飞？', body: '念佛时杂念特别多', author_name: '张三', is_anonymous: true, answer: { body: '妄念多，恰恰说明你开始觉察了。', author_name: 'BuddhaChat 官方' } },
+      }),
+    })
+    const page = await getSharePage(url('/s/qa/23'), 'www.buddhachat.online', fetcher)
+    expect(page.meta.title).toBe('念佛总是妄念纷飞？｜BuddhaChat 官方')
+    expect(page.meta.imageUrl).toBe('https://www.buddhachat.online/share/official-card-v1.jpg')
+    expect(page.data.blocks).toEqual([
+      { type: 'question', text: '念佛时杂念特别多' },
+      { type: 'answer', text: '妄念多，恰恰说明你开始觉察了。', author: 'BuddhaChat 官方' },
+    ])
+    expect(JSON.stringify(page.data)).not.toContain('张三')
+  })
+
+  it('refuses a question answered for the other environment', async () => {
+    const fetcher = fakeFetch({
+      'https://bjswjgadnariutxibsfh.supabase.co/functions/v1/public-question': json({ environment: 'production', question: { item_id: 'topic:23', title: 't', body: 'b', is_anonymous: true, answer: null } }),
+    })
+    const page = await getSharePage(url('/s/qa/23'), 'staging.buddhachat.online', fetcher)
+    expect(page.data.state).toBe('unavailable')
+  })
+
+  it('titles a 源慧 article with its question and keeps every paragraph for the page', async () => {
+    const fetcher = fakeFetch({
+      'https://yuanhui.buddhachat.online/assets/data/yuanhui/articles/001.json': json({
+        'zh-CN': { 'yuanhui-001-q001': [
+          { type: 'quote', text: '问：如何与师父心相应？' },
+          { type: 'paragraph', text: '实际上修行真的是需要悟后起修的。' },
+          { type: 'paragraph', text: '第二段' },
+          { type: 'image', text: 'ignored' },
+        ] },
+      }),
+    })
+    const page = await getSharePage(url('/s/yuanhui/yuanhui-001-q001'), 'www.buddhachat.online', fetcher)
+    expect(page.meta.title).toBe('如何与师父心相应？｜源慧法师')
+    expect(page.meta.description).toBe('实际上修行真的是需要悟后起修的。')
+    // The question is the title, so the page body starts with the answer.
+    expect(page.data.blocks.map((block) => block.text)).toEqual(['实际上修行真的是需要悟后起修的。', '第二段'])
+  })
+
+  it('reads staging content from staging sources only', async () => {
+    const fetcher = fakeFetch({ 'https://staging-zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
+    const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'staging.buddhachat.online', fetcher)
+    expect(page.data.links.canonical).toBe('https://staging.buddhachat.online/s/video/UwWNDUfyxL9')
+    expect(page.data.media.embedUrl).toBe('https://staging.buddhachat.online/videos/embed/UwWNDUfyxL9')
+    expect(fetcher.calls).toEqual(['https://staging-zentube.buddhachat.online/api/videos/UwWNDUfyxL9'])
+  })
+
+  it('sends a book to the reader’s own share page', async () => {
+    const page = await getSharePage(url('/s/sutra/practice-vow'), 'www.buddhachat.online', fakeFetch({}))
+    expect(page).toEqual({ status: 302, location: 'https://www.buddhachat.online/sutra/s/practice-vow' })
+  })
+
+  it('leaves every other path to the site', async () => {
+    expect(await getSharePage(url('/download'), 'www.buddhachat.online', fakeFetch({}))).toBeNull()
+    expect(await getSharePage(url('/s/video/UwWNDUfyxL9/card.jpg'), 'www.buddhachat.online', fakeFetch({}))).toBeNull()
+  })
+
+  it('never lets content text close the data script', () => {
+    const html = injectShareData('<html><head><title>x</title></head><body></body></html>', { title: '</script><script>alert(1)</script>\u2028' })
+    expect(html).not.toContain('</script><script>alert(1)')
+    expect(html).toContain('\\u003c/script>')
+    expect(html).toContain('\\u2028')
+    const meta = injectPageMeta(html, { title: '"><b>', description: 'd', canonicalUrl: 'c', imageUrl: 'i', type: 'article' })
+    expect(meta).toContain('&quot;&gt;&lt;b&gt;')
+  })
+})
+
+describe('share cards', () => {
+  it('serves the cover from a stable address', async () => {
+    const fetcher = fakeFetch({
+      'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO),
+      'https://customer-x.cloudflarestream.com/': new Response(new Uint8Array([0xff, 0xd8, 0xff]), { headers: { 'content-type': 'image/jpeg' } }),
+    })
+    const card = await loadShareCard('video', 'UwWNDUfyxL9', 'www.buddhachat.online', fetcher)
+    expect(card.contentType).toBe('image/jpeg')
+    expect([...card.bytes]).toEqual([0xff, 0xd8, 0xff])
+  })
+
+  it('falls back to the site card for anything that is not an image', async () => {
+    const fetcher = fakeFetch({
+      'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO),
+      'https://customer-x.cloudflarestream.com/': new Response('<html>', { headers: { 'content-type': 'text/html' } }),
+    })
+    expect(await loadShareCard('video', 'UwWNDUfyxL9', 'www.buddhachat.online', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg', cache: 'public, s-maxage=60' })
+    expect(await loadShareCard('video', '../etc', 'www.buddhachat.online', fetcher)).toEqual({ redirect: 'https://www.buddhachat.online/share/official-card-v1.jpg' })
+    expect((await loadShareCard('qa', '23', 'staging.buddhachat.online', fakeFetch({}))).redirect).toBe('https://staging.buddhachat.online/share/official-card-v1.jpg')
+  })
+})
