@@ -8,6 +8,7 @@ const FusionRoutePage = lazy(() => import('./pages/FusionRoutePage.jsx'))
 const StoryRoutePage = lazy(() => import('./pages/StoryRoutePage.jsx'))
 const JoinInvitePage = lazy(() => import('./pages/JoinInvitePage.jsx'))
 const LampInvitePage = lazy(() => import('./pages/LampInvitePage.jsx'))
+const SharePage = lazy(() => import('./pages/SharePage.jsx'))
 const AppDownloadPage = lazy(() => import('./pages/AppDownloadPage.jsx'))
 const YuanhuiUserGuidePage = lazy(() => import('./pages/YuanhuiUserGuidePage.jsx'))
 const AppFaqGuidePage = lazy(() => import('./pages/AppFaqGuidePage.jsx'))
@@ -92,6 +93,11 @@ function App() {
       }
     }
   }, [isAppFaqGuidePage, isAppOnboardingWelcomePage, isDownloadPage, isYuanhuiGuidePage, pathname])
+
+  // 1.4.5 share pages: the server already put the content into window.__BC_SHARE__.
+  if (pathname.startsWith('/s/')) {
+    return <Suspense fallback={null}><SharePage /></Suspense>
+  }
 
   if (pathname === '/lamp' || pathname.startsWith('/lamp/')) {
     return <Suspense fallback={null}><LampInvitePage pathname={pathname} /></Suspense>

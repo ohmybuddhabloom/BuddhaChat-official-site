@@ -1,0 +1,249 @@
+/* 1.4.5 share pages: the 传灯 page's 信笺 palette (Owner 2026-11-22) — rice paper, ink, one ochre action colour. */
+.share-page {
+  --share-paper: #f6eedf;
+  --share-card: #fbf6ec;
+  --share-ink: #2b2118;
+  --share-ink-soft: #4a3b2c;
+  --share-ochre: #7a3e1d;
+  --share-muted: #6b5a46;
+  --share-line: #e2d3bb;
+  min-height: 100dvh;
+  background: var(--share-paper);
+  color: var(--share-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+  padding-bottom: 48px;
+}
+
+.share-wechat {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 18px;
+  background: #3a2a1c;
+  color: #fff6e6;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.share-wechat span { font-size: 22px; line-height: 1; }
+
+.share-sheet {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 28px 20px 8px;
+}
+
+.share-sheet--plain { min-height: 70dvh; padding-top: 72px; }
+
+.share-kind {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #7a5a35;
+}
+
+.share-sheet h1 {
+  margin: 10px 0 0;
+  font: 600 24px/1.5 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  color: var(--share-ink);
+}
+
+.share-author {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: var(--share-muted);
+}
+
+.share-summary {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--share-ink-soft);
+}
+
+.share-media {
+  position: relative;
+  margin: 18px -20px 0;
+  aspect-ratio: 16 / 9;
+  background: #1d1611;
+}
+
+.share-media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.share-cover {
+  position: relative;
+  display: block;
+  margin: 18px -20px 0;
+  aspect-ratio: 16 / 9;
+  background: #1d1611;
+  color: #fff6e6;
+  text-decoration: none;
+}
+
+.share-cover img { width: 100%; height: 100%; object-fit: cover; opacity: .75; }
+
+.share-cover span {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(43, 33, 24, .82);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.share-qa section {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--share-line);
+  border-radius: 12px;
+  background: var(--share-card);
+}
+
+.share-qa h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #7a5a35;
+  letter-spacing: 1px;
+}
+
+.share-qa p, .share-body p, .share-body blockquote {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.share-body { position: relative; margin-top: 18px; }
+.share-body p + p, .share-body blockquote + p, .share-body p + blockquote { margin-top: 14px; }
+.share-body h2 { margin: 22px 0 8px; font: 600 19px/1.6 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
+
+.share-body blockquote {
+  padding: 12px 16px;
+  border-left: 3px solid var(--share-ochre);
+  background: var(--share-card);
+  font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', serif;
+}
+
+.share-body--faded::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  background: linear-gradient(rgba(246, 238, 223, 0), var(--share-paper));
+}
+
+.share-guide { display: grid; gap: 6px; margin-top: 8px; }
+
+.share-actions {
+  max-width: 680px;
+  margin: 18px auto 0;
+  padding: 0 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.share-cta {
+  display: block;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--share-ochre);
+  color: #fffaf0;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-open, .share-reshare {
+  display: block;
+  padding: 12px 18px;
+  border: 1px solid var(--share-ochre);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--share-ochre);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.share-text {
+  display: block;
+  padding: 8px;
+  border: 0;
+  background: none;
+  color: var(--share-ochre);
+  font-size: 15px;
+  text-align: center;
+  text-decoration: underline;
+  font-family: inherit;
+}
+
+.share-notice { margin: 0; font-size: 14px; color: var(--share-muted); text-align: center; }
+
+.share-more {
+  max-width: 680px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+}
+
+.share-more h2 { margin: 0 0 12px; font-size: 16px; color: #7a5a35; }
+
+.share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.share-grid div {
+  padding: 12px 14px;
+  border: 1px solid var(--share-line);
+  border-radius: 12px;
+  background: var(--share-card);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--share-muted);
+}
+
+.share-grid b { display: block; color: var(--share-ink); font-size: 16px; }
+
+.share-more-link { display: inline-block; margin-top: 14px; color: var(--share-ochre); font-size: 15px; }
+
+.share-sheet-guide {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 16px;
+  background: #fffaf0;
+  box-shadow: 0 10px 30px rgba(43, 33, 24, .25);
+  display: grid;
+  gap: 8px;
+}
+
+.share-sheet-guide p { margin: 0; font-size: 16px; text-align: center; }
+
+.share-wechat-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  border: 0;
+  background: rgba(20, 14, 10, .78);
+  color: #fff6e6;
+  font-size: 17px;
+  line-height: 1.6;
+  padding: 90px 32px 0;
+  text-align: right;
+  font-family: inherit;
+}
+
+.share-arrow { position: absolute; top: 14px; right: 22px; font-size: 48px; }

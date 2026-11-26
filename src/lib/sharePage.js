@@ -1,0 +1,145 @@
+// 1.4.5 任务8（全套分享）: one share page per piece of content, https://www.buddhachat.online/s/<type>/<id>.
+// It lives on www, which Mainland WeChat reaches through the Tokyo relay. Every link carries who shared
+// it (r), where it was sent (ch), how many hands it has passed (h), the sharer's invite code (i) and the
+// sharer's language (l). The "open in App" and download buttons carry this same page, so the App can land
+// on the same content after an install, exactly like the 传灯 page.
+const REFERRAL_CODE = /^[A-HJ-NP-Z2-9]{8}$/
+
+const ENVIRONMENTS = {
+  production: {
+    name: 'production',
+    site: 'https://www.buddhachat.online',
+    linkHost: 'go.buddhachat.online',
+    scheme: 'buddhachat',
+    deferredLinkUrl: 'https://buddhabloom-admin.buddhachat.online/api/deferred-link',
+    appStoreUrl: 'https://apps.apple.com/app/id6762049050',
+    androidPackage: 'com.chriskevin.buddhachat',
+    zentubeApi: 'https://zentube.buddhachat.online/api',
+    yuanhuiSite: 'https://yuanhui.buddhachat.online',
+    supabase: 'https://xqibxlpzghveyqemprjr.supabase.co',
+  },
+  staging: {
+    name: 'staging',
+    site: 'https://staging.buddhachat.online',
+    linkHost: 'staging-admin.buddhachat.online',
+    scheme: 'buddhachat-staging',
+    deferredLinkUrl: 'https://staging-admin.buddhachat.online/api/deferred-link',
+    // Staging ships through TestFlight and direct install, never through a store listing.
+    appStoreUrl: null,
+    androidPackage: null,
+    zentubeApi: 'https://staging-zentube.buddhachat.online/api',
+    yuanhuiSite: 'https://staging-yuanhui.buddhachat.online',
+    // Staging's forum functions (public-question) run on the staging bridge project, not the main one.
+    supabase: 'https://lsiycbdglqtltlecvzky.supabase.co',
+  },
+}
+
+const STAGING_HOSTS = /^(?:staging\.buddhachat\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\.vercel\.app)$/i
+
+export function shareEnvironment(hostname) {
+  return STAGING_HOSTS.test(String(hostname || '')) ? ENVIRONMENTS.staging : ENVIRONMENTS.production
+}
+
+export function shareEnvironmentNamed(name) {
+  return name === 'staging' ? ENVIRONMENTS.staging : ENVIRONMENTS.production
+}
+
+/** The content each share page can show, and the exact id shape it accepts. */
+export const SHARE_ID_PATTERNS = {
+  video: /^[A-Za-z0-9_-]{11}$/,
+  qa: /^[1-9]\d{0,15}$/,
+  yuanhui: /^yuanhui-(?:\d{3}-q\d{3}|topic-q\d{3})$/,
+  sutra: /^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/,
+}
+
+/** `/s/<type>/<id>`, or its card image (`…/card` plus the jpg suffix); anything else is not a share page. */
+export function readSharePath(pathname) {
+  const match = /^\/s\/([a-z]+)\/([^/]+)(\/card\.jpg)?\/?$/.exec(pathname || '')
+  if (!match) return null
+  const [, type, rawId, card] = match
+  if (!Object.hasOwn(SHARE_ID_PATTERNS, type)) return null
+  const pattern = SHARE_ID_PATTERNS[type]
+  let id
+  try {
+    id = decodeURIComponent(rawId)
+  } catch {
+    return null
+  }
+  if (!pattern.test(id)) return null
+  return { type, id, asset: card ? 'card' : null }
+}
+
+const PARAM_PATTERNS = {
+  r: /^[A-Za-z0-9_-]{6,40}$/,
+  ch: /^[a-z0-9_]{1,24}$/,
+  i: REFERRAL_CODE,
+  l: /^(?:zh-Hans|zh-Hant|en)$/,
+}
+
+/** Only well-formed tracking values survive; a hand-edited link never breaks the page. */
+export function readShareParams(search) {
+  let params
+  try {
+    params = new URLSearchParams(search || '')
+  } catch {
+    return {}
+  }
+  const out = {}
+  for (const [key, pattern] of Object.entries(PARAM_PATTERNS)) {
+    const value = params.get(key)?.trim()
+    if (value && pattern.test(value)) out[key] = value
+  }
+  const hop = Number(params.get('h'))
+  if (Number.isInteger(hop) && hop >= 1 && hop <= 99) out.h = hop
+  return out
+}
+
+function withParams(url, params) {
+  const page = new URL(url)
+  for (const key of ['r', 'ch', 'h', 'i', 'l']) {
+    if (params[key] !== undefined && params[key] !== null && params[key] !== '') page.searchParams.set(key, String(params[key]))
+  }
+  return page.toString()
+}
+
+export function shareCanonicalUrl(env, type, id) {
+  return `${env.site}/s/${type}/${encodeURIComponent(id)}`
+}
+
+export function shareLinks(env, type, id, params = {}) {
+  const canonical = shareCanonicalUrl(env, type, id)
+  const page = withParams(canonical, params)
+  const link = `https://${env.linkHost}/l/page?url=${encodeURIComponent(page)}`
+  const appUrl = `${env.scheme}://l/page?url=${encodeURIComponent(page)}`
+  const googlePlayUrl = env.androidPackage
+    ? `https://play.google.com/store/apps/details?id=${env.androidPackage}&referrer=${encodeURIComponent(
+      `utm_source=h5_share&deep_link=${encodeURIComponent(link)}`,
+    )}`
+    : null
+  // Passing the page on keeps the first sharer and counts one more hand.
+  const reshare = withParams(canonical, { ...params, ch: 'web', h: Math.min((params.h ?? 1) + 1, 99) })
+  return {
+    canonical,
+    page,
+    link,
+    appUrl,
+    appStoreUrl: env.appStoreUrl,
+    googlePlayUrl,
+    apkUrl: `${env.site}/downloads/android/latest.apk`,
+    downloadUrl: `${env.site}/download`,
+    deferredLinkUrl: env.deferredLinkUrl,
+    reshare,
+  }
+}
+
+/** Article pages show about 40% before offering the App (Owner 11-27: soft guide, no wall). */
+export function previewBlockCount(total) {
+  if (total <= 3) return total
+  return Math.max(2, Math.ceil(total * 0.4))
+}
+
+/** A video offers the App after about a third of its length on screen, between one and ten minutes. */
+export function videoGuideDelaySec(durationSec) {
+  if (!Number.isFinite(durationSec) || durationSec <= 0) return 120
+  return Math.min(600, Math.max(60, Math.round(durationSec / 3)))
+}
