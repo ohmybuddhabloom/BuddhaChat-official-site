@@ -253,6 +253,7 @@ describe('佛乐 and 藏经阁 share pages', () => {
     expect(page.data.blocks).toEqual([{ type: 'paragraph', text: '第一段' }])
     expect(page.meta.imageUrl).toBe('https://staging.buddhachat.online/s/cangjing/yungang/card.jpg')
     expect(seen[0]).toMatch(/^https:\/\/bjswjgadnariutxibsfh\.supabase\.co\/rest\/v1\/cangjing_items\?/)
+    expect(seen[0]).toContain('&status=eq.published&cangjing_item_translations.review_status=eq.reviewed')
     const simplified = await getSharePage(url('/s/cangjing/yungang'), 'staging', fetcher)
     expect(simplified.meta.title).toBe('云冈石窟｜北魏 · 山西大同')
   })
@@ -309,6 +310,20 @@ describe('share page hardening (local review of #124)', () => {
   it('keeps replacement sequences in content as plain text', () => {
     const html = injectShareData('<html><head></head><body></body></html>', { title: "a $& b $' c $` d" })
     expect(html).toContain("a $& b $' c $` d")
+  })
+
+  it('allows the 佛乐 artwork folder and the public 藏经阁 bucket only by path', () => {
+    expect(safeImageUrl('https://www.buddhachat.online/music/assets/scene-chant.jpg')).toBe('https://www.buddhachat.online/music/assets/scene-chant.jpg')
+    expect(safeImageUrl('https://bjswjgadnariutxibsfh.supabase.co/storage/v1/object/public/cangjing/a/b.jpg')).toBe('https://bjswjgadnariutxibsfh.supabase.co/storage/v1/object/public/cangjing/a/b.jpg')
+    for (const bad of [
+      'https://www.buddhachat.online/api/release-health',
+      'https://www.buddhachat.online/music/assets/../../api/x.jpg',
+      'https://staging.buddhachat.online/music/assets/scene-chant.jpg',
+      'https://bjswjgadnariutxibsfh.supabase.co/rest/v1/cangjing_items',
+      'https://bjswjgadnariutxibsfh.supabase.co/storage/v1/object/public/avatars/x.jpg',
+    ]) {
+      expect(safeImageUrl(bad)).toBeNull()
+    }
   })
 
   it('fetches covers only from known HTTPS image hosts, cropped for the card', () => {

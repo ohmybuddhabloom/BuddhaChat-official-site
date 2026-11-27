@@ -13,8 +13,6 @@ const IMAGE_HOSTS = [
   /^imagedelivery\.net$/,
   /^(?:staging-)?yuanhui\.buddhachat\.online$/,
   /^buddha-tokyo-1300001083\.cos\.ap-tokyo\.myqcloud\.com$/,
-  /^(?:www|staging)\.buddhachat\.online$/,
-  /^(?:xqibxlpzghveyqemprjr|bjswjgadnariutxibsfh)\.supabase\.co$/,
 ]
 
 /** A cover we may fetch, sized for a 1200×630 card when the host can crop; anything else is dropped. */
@@ -26,7 +24,11 @@ export function safeImageUrl(value) {
     return null
   }
   if (url.protocol !== 'https:' || url.username || url.password || url.port) return null
-  if (!IMAGE_HOSTS.some((host) => host.test(url.hostname))) return null
+  // The 佛乐 site's own artwork and the public 藏经阁 bucket are allowed only by path.
+  const pathAllowed = (/^www\.buddhachat\.online$/.test(url.hostname) && /^\/music\/assets\/[A-Za-z0-9._-]+\.(?:jpe?g|png|webp)$/i.test(url.pathname))
+    || (/^(?:xqibxlpzghveyqemprjr|bjswjgadnariutxibsfh)\.supabase\.co$/.test(url.hostname) && /^\/storage\/v1\/object\/public\/cangjing\//.test(url.pathname))
+  if (!pathAllowed && !IMAGE_HOSTS.some((host) => host.test(url.hostname))) return null
+  if (url.pathname.includes('..')) return null
   if (/\.cloudflarestream\.com$/.test(url.hostname)) {
     url.searchParams.set('width', '1200')
     url.searchParams.set('height', '630')
@@ -218,7 +220,8 @@ async function loadMusic(id, env, fetcher) {
   } catch {
     audioUrl = null
   }
-  const image = typeof track.image_url === 'string' && track.image_url.startsWith('/') ? `${env.site}/music${track.image_url}` : null
+  // The catalog is production's, so its artwork is too.
+  const image = typeof track.image_url === 'string' && /^\/assets\/[A-Za-z0-9._-]+$/.test(track.image_url) ? `https://www.buddhachat.online/music${track.image_url}` : null
   const length = formatMinutes(Number(track.duration_seconds))
   return {
     title: plain(track.title),
@@ -235,7 +238,9 @@ const CANGJING_LOCALES = { 'zh-Hans': ['zh-Hans', 'zh-Hant', 'en'], 'zh-Hant': [
 /** A published 藏经阁 item, in the sharer's language when it has one. Row-level security keeps drafts out. */
 async function loadCangjing(id, env, fetcher, params = {}) {
   const rows = await restRows(fetcher, env.mainSupabase, env.mainAnonKey, 'cangjing_items',
-    `select=id,cover_url,cangjing_item_translations(locale,title,summary,era_label,place_label,body)&id=eq.${encodeURIComponent(id)}&limit=1`)
+    // Row-level security already shows anon only published items and reviewed translations; the
+    // filters say so again so a policy change can never publish a draft through a share page.
+    `select=id,cover_url,cangjing_item_translations(locale,title,summary,era_label,place_label,body)&id=eq.${encodeURIComponent(id)}&status=eq.published&cangjing_item_translations.review_status=eq.reviewed&limit=1`)
   const item = rows[0]
   if (!item || item.id !== id) return null
   const translations = Array.isArray(item.cangjing_item_translations) ? item.cangjing_item_translations : []
