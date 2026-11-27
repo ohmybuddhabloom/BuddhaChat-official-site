@@ -96,6 +96,31 @@ describe('share page content', () => {
     expect(page.data.links.posterUrl).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9/poster.png?ch=whatsapp&l=en&size=story')
   })
 
+  it('keeps every link on the backup share domain the visitor came through, and only on a known one', async () => {
+    const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
+    const at = (host, env = 'production') => getSharePage(new URL('https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=wechat&i=ABCD2345'), env, fetcher, host)
+    const backup = await at('buddhachat.net')
+    expect(backup.meta.canonicalUrl).toBe('https://buddhachat.net/s/video/UwWNDUfyxL9')
+    expect(backup.data.links).toMatchObject({
+      page: 'https://buddhachat.net/s/video/UwWNDUfyxL9?ch=wechat&i=ABCD2345',
+      reshare: 'https://buddhachat.net/s/video/UwWNDUfyxL9?ch=web&h=2&i=ABCD2345',
+      posterUrl: 'https://buddhachat.net/s/video/UwWNDUfyxL9/poster.png?ch=wechat&i=ABCD2345&size=story',
+      downloadUrl: 'https://buddhachat.net/download',
+      apkUrl: 'https://buddhachat.net/downloads/android/latest.apk',
+    })
+    expect(backup.data.media.embedUrl).toBe('https://buddhachat.net/videos/embed/UwWNDUfyxL9')
+    // The App is handed the main site's page inside the go link, which is all WeChat sees there.
+    const mainPage = 'https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=wechat&i=ABCD2345'
+    expect(backup.data.links.link).toBe(`https://go.buddhachat.online/l/page?url=${encodeURIComponent(mainPage)}`)
+    expect(backup.data.links.appUrl).toBe(`buddhachat://l/page?url=${encodeURIComponent(mainPage)}`)
+    expect((await at('WWW.BUDDHACHAT.NET')).data.links.page).toMatch(/^https:\/\/www\.buddhachat\.net\//)
+    // Any other host, or the other environment's backup, keeps the main site.
+    for (const host of ['evil.example', 'staging.buddhachat.net', 'buddhachat.net.evil.example', '', null]) {
+      expect((await at(host)).data.links.page, String(host)).toMatch(/^https:\/\/www\.buddhachat\.online\//)
+    }
+    expect((await at('staging.buddhachat.net', 'staging')).data.links.page).toMatch(/^https:\/\/staging\.buddhachat\.net\//)
+  })
+
   it('reads the rewritten path the site router hands over', async () => {
     const fetcher = fakeFetch({ 'https://zentube.buddhachat.online/api/videos/UwWNDUfyxL9': json(VIDEO) })
     const page = await getSharePage(url('/s/video/UwWNDUfyxL9'), 'production', fetcher)

@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { SACRED_STORIES_BY_SLUG } from '../src/content/sacredStories.js'
-import { readSharePath, readShareParams, shareEnvironmentNamed, shareLinks } from '../src/lib/sharePage.js'
+import { readSharePath, readShareParams, SHARE_HOST_HEADER, shareEnvironmentFor, shareLinks } from '../src/lib/sharePage.js'
 import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
 import { loadShareContent, shareCardUrl, sharePosterUrl } from './_lib/shareContent.js'
 
@@ -220,10 +220,10 @@ const SHARE_PARAM_KEYS = ['r', 'ch', 'h', 'i', 'l']
  * page receives the same content so it renders without a second request. A missing item answers 404
  * with the plain site card; an unreachable source still answers the page, which then explains itself.
  */
-export async function getSharePage(url, environmentName, fetcher = fetch) {
+export async function getSharePage(url, environmentName, fetcher = fetch, shareHost = null) {
   const sourcePath = sharePathOf(url)
   if (!sourcePath?.startsWith('/s/')) return null
-  const env = shareEnvironmentNamed(environmentName)
+  const env = shareEnvironmentFor(environmentName, shareHost)
   const share = readSharePath(sourcePath)
   if (share?.asset) return null
   const params = readShareParams(url.search)
@@ -293,7 +293,14 @@ export default async function handler(req, res) {
   )
 
   res.setHeader('content-type', 'text/html; charset=utf-8')
-  const share = await getSharePage(url, getPublicOrigin(req) === PUBLIC_ORIGINS.staging ? 'staging' : 'production')
+  const share = await getSharePage(
+    url,
+    getPublicOrigin(req) === PUBLIC_ORIGINS.staging ? 'staging' : 'production',
+    fetch,
+    req.headers?.[SHARE_HOST_HEADER],
+  )
+  // Pages opened on the backup share domain carry links on it: they are cached apart.
+  if (share) res.setHeader('vary', SHARE_HOST_HEADER)
   if (share?.location) {
     res.statusCode = share.status
     res.setHeader('location', share.location)

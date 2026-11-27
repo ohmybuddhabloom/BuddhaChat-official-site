@@ -52,6 +52,9 @@ describe('share events', () => {
   it('takes reports only from our share pages and at most 30 a minute from one address', () => {
     expect(fromSharePage({ origin: 'https://www.buddhachat.online', 'user-agent': IPHONE_WECHAT })).toBe(true)
     expect(fromSharePage({ referer: 'https://staging.buddhachat.online/s/qa/14', 'user-agent': IPHONE_WECHAT })).toBe(true)
+    expect(fromSharePage({ origin: 'https://buddhachat.net', 'user-agent': IPHONE_WECHAT })).toBe(true)
+    expect(fromSharePage({ referer: 'https://staging.buddhachat.net/s/qa/14', 'user-agent': IPHONE_WECHAT })).toBe(true)
+    expect(fromSharePage({ origin: 'https://buddhachat.net.evil.example', 'user-agent': IPHONE_WECHAT })).toBe(false)
     expect(fromSharePage({ origin: 'https://evil.example', 'user-agent': IPHONE_WECHAT })).toBe(false)
     expect(fromSharePage({ origin: 'https://www.buddhachat.online' })).toBe(false)
     const now = 1_000_000

@@ -1,5 +1,5 @@
 // /s/<type>/<id>/poster.png?size=story|feed: the share page as a poster with a QR code back to it.
-import { readSharePath, readShareParams, shareEnvironmentNamed, shareLinks } from '../src/lib/sharePage.js'
+import { readSharePath, readShareParams, SHARE_HOST_HEADER, shareEnvironmentFor, shareLinks } from '../src/lib/sharePage.js'
 import { loadShareContent } from './_lib/shareContent.js'
 import { renderPoster } from './_lib/sharePoster.js'
 import { fetchCoverJpeg } from './share-card.js'
@@ -9,8 +9,9 @@ import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
 let rendering = 0
 export const MAX_CONCURRENT_RENDERS = 2
 
-export async function loadSharePoster(url, environmentName, fetcher = fetch) {
-  const env = shareEnvironmentNamed(environmentName)
+export async function loadSharePoster(url, environmentName, fetcher = fetch, shareHost = null) {
+  // The QR leads back to the host the poster was asked for (the backup share domain included).
+  const env = shareEnvironmentFor(environmentName, shareHost)
   const type = url.searchParams.get('type')
   const id = url.searchParams.get('id')
   const share = readSharePath(`/s/${type}/${encodeURIComponent(String(id ?? ''))}/card.jpg`)
@@ -41,9 +42,10 @@ export async function loadSharePoster(url, environmentName, fetcher = fetch) {
 export default async function handler(req, res) {
   const url = new URL(req.url, PUBLIC_ORIGINS.production)
   const environmentName = getPublicOrigin(req) === PUBLIC_ORIGINS.staging ? 'staging' : 'production'
+  res.setHeader('vary', SHARE_HOST_HEADER)
   let poster
   try {
-    poster = await loadSharePoster(url, environmentName)
+    poster = await loadSharePoster(url, environmentName, fetch, req.headers?.[SHARE_HOST_HEADER])
   } catch {
     poster = { status: 503 }
   }
