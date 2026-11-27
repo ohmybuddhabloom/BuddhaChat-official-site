@@ -59,6 +59,23 @@ export function shareEnvironmentNamed(name) {
   return name === 'staging' ? ENVIRONMENTS.staging : ENVIRONMENTS.production
 }
 
+// 1.4.5 任务8 (Owner 2026-11-28): the backup share domain buddhachat.net serves this site through the
+// Tokyo relay, which names the host the visitor used in this header. A page opened there keeps every
+// link on that host, so a share that went out on the backup domain never leads back to a blocked one.
+export const SHARE_HOST_HEADER = 'x-buddhachat-share-host'
+const BACKUP_SHARE_HOSTS = {
+  production: new Set(['buddhachat.net', 'www.buddhachat.net']),
+  staging: new Set(['staging.buddhachat.net']),
+}
+
+/** The environment as seen from the visitor's host; any host but this environment's backup is ignored. */
+export function shareEnvironmentFor(name, shareHost) {
+  const env = shareEnvironmentNamed(name)
+  const host = String(shareHost ?? '').trim().toLowerCase()
+  const backups = name === 'staging' ? BACKUP_SHARE_HOSTS.staging : BACKUP_SHARE_HOSTS.production
+  return backups.has(host) ? { ...env, site: `https://${host}` } : env
+}
+
 /** The content each share page can show, and the exact id shape it accepts. */
 export const SHARE_ID_PATTERNS = {
   video: /^[A-Za-z0-9_-]{11}$/,

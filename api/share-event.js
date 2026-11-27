@@ -10,7 +10,8 @@ export const SHARE_EVENTS = new Set(['open', 'download', 'open_app', 'reshare', 
 // no free text (a name, a phone number) can ever be stored through these fields.
 export const SHARE_CHANNELS = new Set(['app', 'system', 'copy', 'wechat', 'whatsapp', 'facebook', 'line', 'telegram', 'x', 'poster', 'web'])
 const SHARE_ID = /^[0-9a-z]{12}$/
-const SITE_ORIGINS = /^https:\/\/(?:www|staging)\.buddhachat\.online(?:\/|$)/
+// The main site and the backup share domain (Owner 2026-11-28).
+const SITE_ORIGINS = /^https:\/\/(?:(?:www|staging)\.buddhachat\.online|(?:www\.|staging\.)?buddhachat\.net)(?:\/|$)/
 
 // Per instance, at most 30 events a minute from one address; the address is never stored.
 const WINDOW_MS = 60_000
