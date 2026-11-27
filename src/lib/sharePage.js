@@ -65,8 +65,10 @@ export const SHARE_ID_PATTERNS = {
   qa: /^[1-9]\d{0,15}$/,
   yuanhui: /^yuanhui-(?:\d{3}-q\d{3}|topic-q\d{3})$/,
   sutra: /^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/,
-  music: /^[1-9]\d{0,9}$/,
-  cangjing: /^[a-z0-9][a-z0-9-]{0,79}$/,
+  // The music catalog's identifiers (the App's musicTrackId): positive integers or UUIDs.
+  music: /^(?:[1-9]\d{0,18}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i,
+  // cangjing_items ids are 2–96 characters.
+  cangjing: /^[a-z0-9][a-z0-9-]{1,95}$/,
 }
 
 /** `/s/<type>/<id>`, or its card image (`…/card` plus the jpg suffix); anything else is not a share page. */
