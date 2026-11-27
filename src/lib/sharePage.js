@@ -96,6 +96,8 @@ export const SHARE_ID_PATTERNS = {
   music: /^(?:[1-9]\d{0,18}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i,
   // cangjing_items ids are 2–96 characters.
   cangjing: /^[a-z0-9][a-z0-9-]{1,95}$/,
+  // 日行一善 projects (1.4.5): a project slug.
+  deed: /^[a-z0-9][a-z0-9-]{1,63}$/,
 }
 
 /** `/s/<type>/<id>`, or its card image (`…/card` plus the jpg suffix); anything else is not a share page. */
