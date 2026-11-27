@@ -4,6 +4,10 @@
   "functions": {
     "api/*.js": {
       "maxDuration": 10
+    },
+    "api/share-poster.js": {
+      "maxDuration": 20,
+      "memory": 1024
     }
   },
   "headers": [
@@ -538,6 +542,10 @@
     {
       "source": "/s/:type/:id/card.jpg",
       "destination": "/api/share-card?type=:type&id=:id"
+    },
+    {
+      "source": "/s/:type/:id/poster.png",
+      "destination": "/api/share-poster?type=:type&id=:id"
     },
     {
       "source": "/:path*/",

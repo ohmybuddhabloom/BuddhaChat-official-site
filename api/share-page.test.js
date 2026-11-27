@@ -264,6 +264,37 @@ describe('佛乐 and 藏经阁 share pages', () => {
   })
 })
 
+describe('posters', () => {
+  it('picks the answer, else the first paragraphs, else the summary, and caps the length', async () => {
+    const { posterExcerpt } = await import('./_lib/sharePoster.js')
+    expect(posterExcerpt({ blocks: [{ type: 'question', text: 'q' }, { type: 'answer', text: '妄念多' }] })).toBe('妄念多')
+    expect(posterExcerpt({ blocks: [{ type: 'quote', text: 'x' }, { type: 'paragraph', text: '一' }, { type: 'paragraph', text: '二' }, { type: 'paragraph', text: '三' }] })).toBe('一 二')
+    expect(posterExcerpt({ blocks: [], summary: '摘要' })).toBe('摘要')
+    expect(posterExcerpt({ blocks: [{ type: 'paragraph', text: '长'.repeat(300) }] })).toHaveLength(140)
+  })
+
+  it('draws a QR code as an SVG of dark modules on the paper colour', async () => {
+    const { qrDataUri } = await import('./_lib/sharePoster.js')
+    const svg = Buffer.from(qrDataUri('https://www.buddhachat.online/s/qa/23?ch=poster').split(',')[1], 'base64').toString()
+    expect(svg).toMatch(/^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 (\d+) \1"/)
+    expect(svg).toContain('fill="#2b2118"')
+  })
+
+  it('answers 404 for a book or missing content without rendering', async () => {
+    const { loadSharePoster } = await import('./share-poster.js')
+    const poster = (q) => new URL(`https://www.buddhachat.online/api/share-poster?${q}`)
+    expect(await loadSharePoster(poster('type=sutra&id=practice-vow'), 'production', async () => json([]))).toEqual({ status: 404 })
+    expect(await loadSharePoster(poster('type=music&id=9'), 'production', async () => json([]))).toEqual({ status: 404 })
+    expect(await loadSharePoster(poster('type=video&id=bad'), 'production', async () => json([]))).toEqual({ status: 404 })
+  })
+
+  it('formats a track’s length in the sharer’s language', async () => {
+    const track = async () => json([{ id: 1, title: '百字明', collection: '梵音与藏音', duration_seconds: 214, audio_url: 'https://music.buddhachat.online/audio/a.mp3' }])
+    expect((await getSharePage(new URL('https://www.buddhachat.online/s/music/1?l=en'), 'production', track)).meta.description).toBe('梵音与藏音 · 4 min')
+    expect((await getSharePage(new URL('https://www.buddhachat.online/s/music/1?l=zh-Hant'), 'production', track)).meta.description).toBe('梵音与藏音 · 4 分鐘')
+  })
+})
+
 describe('share cards', () => {
   it('serves the cover from a stable address', async () => {
     const fetcher = fakeFetch({
