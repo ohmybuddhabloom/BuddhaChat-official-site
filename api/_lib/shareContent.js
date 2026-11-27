@@ -99,10 +99,31 @@ function yuanhuiDataPath(id) {
   return match ? match[1] : null
 }
 
+/** The catalog title the App and the 源慧 site show, read from the article page's own card. */
+async function yuanhuiCatalogTitle(id, env, fetcher) {
+  try {
+    const response = await fetcher(`${env.yuanhuiSite}/articles/${encodeURIComponent(id)}`, {
+      headers: { accept: 'text/html' },
+      redirect: 'error',
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    })
+    if (!response.ok) return null
+    const html = (await response.text()).slice(0, 20_000)
+    const match = /<meta\s+property="og:title"\s+content="([^"]{1,200})"/i.exec(html)
+    const title = match ? plain(match[1].replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'")) : ''
+    return title || null
+  } catch {
+    return null
+  }
+}
+
 async function loadYuanhui(id, env, fetcher) {
   const file = yuanhuiDataPath(id)
   if (!file) return null
-  const body = await getJson(fetcher, `${env.yuanhuiSite}/assets/data/yuanhui/articles/${file}.json`)
+  const [body, catalogTitle] = await Promise.all([
+    getJson(fetcher, `${env.yuanhuiSite}/assets/data/yuanhui/articles/${file}.json`),
+    yuanhuiCatalogTitle(id, env, fetcher),
+  ])
   const raw = body?.['zh-CN']?.[id]
   if (!Array.isArray(raw) || raw.length === 0) return null
   const blocks = raw
@@ -110,13 +131,14 @@ async function loadYuanhui(id, env, fetcher) {
     .map((block) => ({ type: block.type, text: block.text }))
   if (!blocks.length) return null
   const first = blocks.find((block) => block.type === 'quote') ?? blocks[0]
-  const title = plain(first.text).replace(/^问[:：]\s*/, '')
+  const question = plain(first.text).replace(/^问[:：]\s*/, '')
   const firstParagraph = blocks.find((block) => block.type === 'paragraph')
-  // The question already is the page title; repeating it as the first quote reads twice.
-  const articleBlocks = first === blocks[0] && first.type === 'quote' && blocks.length > 1 ? blocks.slice(1) : blocks
+  // With the catalog title the question stays in the body, as in the App; without it the question is
+  // the title, and repeating it as the first quote would read twice.
+  const articleBlocks = !catalogTitle && first === blocks[0] && first.type === 'quote' && blocks.length > 1 ? blocks.slice(1) : blocks
   return {
-    title: summarize(title, 60),
-    summary: summarize(firstParagraph?.text ?? title),
+    title: summarize(catalogTitle ?? question, 60),
+    summary: summarize(firstParagraph?.text ?? question),
     author: '源慧法师',
     imageUrl: `${env.yuanhuiSite}/assets/images/share/yuanhui-card-v2.jpg`,
     blocks: articleBlocks,

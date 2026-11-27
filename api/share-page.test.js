@@ -146,20 +146,30 @@ describe('share page content', () => {
     expect(page.data.state).toBe('unavailable')
   })
 
-  it('titles a 源慧 article with its question and keeps every paragraph for the page', async () => {
+  const YUANHUI_JSON = {
+    'zh-CN': { 'yuanhui-001-q001': [
+      { type: 'quote', text: '问：悟后起修，为何一悟便可与师父心相应？' },
+      { type: 'paragraph', text: '实际上修行真的是需要悟后起修的。' },
+      { type: 'paragraph', text: '第二段' },
+      { type: 'image', text: 'ignored' },
+    ] },
+  }
+
+  it('titles a 源慧 article as the App does and keeps its question in the body', async () => {
     const fetcher = fakeFetch({
-      'https://yuanhui.buddhachat.online/assets/data/yuanhui/articles/001.json': json({
-        'zh-CN': { 'yuanhui-001-q001': [
-          { type: 'quote', text: '问：如何与师父心相应？' },
-          { type: 'paragraph', text: '实际上修行真的是需要悟后起修的。' },
-          { type: 'paragraph', text: '第二段' },
-          { type: 'image', text: 'ignored' },
-        ] },
-      }),
+      'https://yuanhui.buddhachat.online/assets/data/yuanhui/articles/001.json': json(YUANHUI_JSON),
+      'https://yuanhui.buddhachat.online/articles/yuanhui-001-q001': new Response('<html><head><meta property="og:title" content="如何与师父心相应" /></head></html>', { headers: { 'content-type': 'text/html' } }),
     })
     const page = await getSharePage(url('/s/yuanhui/yuanhui-001-q001'), 'production', fetcher)
-    expect(page.meta.title).toBe('如何与师父心相应？｜源慧法师')
+    expect(page.meta.title).toBe('如何与师父心相应｜源慧法师')
     expect(page.meta.description).toBe('实际上修行真的是需要悟后起修的。')
+    expect(page.data.blocks.map((block) => block.type)).toEqual(['quote', 'paragraph', 'paragraph'])
+  })
+
+  it('falls back to the question as title when the article page is unreachable', async () => {
+    const fetcher = fakeFetch({ 'https://yuanhui.buddhachat.online/assets/data/yuanhui/articles/001.json': json(YUANHUI_JSON) })
+    const page = await getSharePage(url('/s/yuanhui/yuanhui-001-q001'), 'production', fetcher)
+    expect(page.meta.title).toBe('悟后起修，为何一悟便可与师父心相应？｜源慧法师')
     // The question is the title, so the page body starts with the answer.
     expect(page.data.blocks.map((block) => block.text)).toEqual(['实际上修行真的是需要悟后起修的。', '第二段'])
   })
