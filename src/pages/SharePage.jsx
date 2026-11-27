@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './SharePage.css'
 import { detectDownloadPlatform, isWeChatBrowser } from '../lib/downloadPlatform.js'
-import { appShareMessage, previewBlockCount, videoGuideDelaySec } from '../lib/sharePage.js'
+import { appShareMessage, previewBlockCount, reportShareEvent, videoGuideDelaySec } from '../lib/sharePage.js'
 
 // 1.4.5 任务8: the page a shared video, question or article opens on. The content itself sits in the
 // middle of the first screen; the App is offered gently (Owner 11-27: no hard wall), and the page can be
@@ -23,6 +23,7 @@ const COPY = {
     question: '提问', answer: '法师回答',
     download: '下载 BuddhaChat', apk: '无法使用 Google Play？下载安卓安装包', apkPrimary: '下载安卓安装包',
     open: '在 App 中打开', share: '分享给朋友', copied: '链接已复制，可以粘贴给朋友',
+    poster: '保存海报', posterHint: '长按图片保存，可以发到朋友圈', close: '关闭',
     readAll: '在 App 读全文，还能听朗读', keepReading: '继续在网页读',
     listenInApp: '在 App 里听整张专辑，可定时、可后台播放',
     watchInApp: '在 App 里接着看，还有更多开示', later: '稍后',
@@ -41,6 +42,7 @@ const COPY = {
     question: '提問', answer: '法師回答',
     download: '下載 BuddhaChat', apk: '無法使用 Google Play？下載 Android 安裝檔', apkPrimary: '下載 Android 安裝檔',
     open: '在 App 中打開', share: '分享給朋友', copied: '連結已複製，可以貼給朋友',
+    poster: '儲存海報', posterHint: '長按圖片儲存，可以發到朋友圈', close: '關閉',
     readAll: '在 App 讀全文，還能聽朗讀', keepReading: '繼續在網頁讀',
     listenInApp: '在 App 裡聽整張專輯，可定時、可背景播放',
     watchInApp: '在 App 裡接著看，還有更多開示', later: '稍後',
@@ -59,6 +61,7 @@ const COPY = {
     question: 'Question', answer: 'The master answers',
     download: 'Download BuddhaChat', apk: 'No Google Play? Download the Android package', apkPrimary: 'Download the Android package',
     open: 'Open in the App', share: 'Share with a friend', copied: 'Link copied. Paste it to a friend.',
+    poster: 'Save the poster', posterHint: 'Press and hold the image to save it, then post it anywhere.', close: 'Close',
     readAll: 'Read it all in the App, with narration', keepReading: 'Keep reading here',
     listenInApp: 'Listen to the whole album in the App, with a sleep timer and background play',
     watchInApp: 'Keep watching in the App, with many more talks', later: 'Later',
@@ -116,6 +119,12 @@ export default function SharePage({
   // In WeChat nothing can download or open the App, so every such tap explains the browser hand-off.
   const [wechatGuide, setWechatGuide] = useState(null)
   const watched = useRef(0)
+  const [posterOpen, setPosterOpen] = useState(false)
+
+  // One open per page view, for the share report.
+  useEffect(() => {
+    if (data?.state === 'ready') reportShareEvent('open', data, inApp)
+  }, [data, inApp])
 
   const blocks = useMemo(() => (Array.isArray(data?.blocks) ? data.blocks : []), [data])
   const isArticle = data?.type === 'yuanhui' || data?.type === 'cangjing'
@@ -131,6 +140,7 @@ export default function SharePage({
       watched.current += 1
       if (watched.current >= limit) {
         setGuide(true)
+        reportShareEvent('video_guide', data, inApp)
         clearInterval(timer)
       }
     }, 1000)
@@ -160,6 +170,7 @@ export default function SharePage({
 
   // iOS has no install referrer: record the page on the tap, the first launch claims it.
   const recordForIos = () => {
+    reportShareEvent('download', data, inApp)
     const body = new Blob([JSON.stringify({ action: 'record', url: links.page })], { type: 'text/plain' })
     if (!navigator.sendBeacon?.(links.deferredLinkUrl, body)) {
       fetch(links.deferredLinkUrl, { method: 'POST', body, keepalive: true, mode: 'no-cors' }).catch(() => {})
@@ -168,6 +179,7 @@ export default function SharePage({
   // Android: the page link goes on the clipboard inside the tap, then the download starts.
   const copyThenGo = (href) => (event) => {
     event.preventDefault()
+    reportShareEvent('download', data, inApp)
     let settled = false
     const leave = () => {
       if (!settled) {
@@ -183,6 +195,7 @@ export default function SharePage({
   }
 
   const reshare = () => {
+    reportShareEvent('reshare', data, inApp)
     if (inApp) {
       appBridge.postMessage(appShareMessage(data.title, links.reshare))
       return
@@ -289,7 +302,7 @@ export default function SharePage({
         {truncated ? (
           <div className="share-guide" data-testid="share-guide">
             <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined}>{copy.readAll}</a>
-            <button type="button" className="share-text" onClick={() => setExpanded(true)} data-testid="share-expand">{copy.keepReading}</button>
+            <button type="button" className="share-text" onClick={() => { reportShareEvent('read_more', data, inApp); setExpanded(true) }} data-testid="share-expand">{copy.keepReading}</button>
           </div>
         ) : null}
         {data.type === 'video' && data.summary && data.summary !== data.title ? <p className="share-summary">{data.summary}</p> : null}
@@ -297,7 +310,10 @@ export default function SharePage({
 
       <section className="share-actions">
         {inApp ? null : downloads}
-        {inWeChat || inApp ? null : <a className="share-open" href={links.appUrl} data-testid="share-open">{copy.open}</a>}
+        {inWeChat || inApp ? null : <a className="share-open" href={links.appUrl} onClick={() => reportShareEvent('open_app', data, inApp)} data-testid="share-open">{copy.open}</a>}
+        {!links.posterUrl ? null : (
+          <button type="button" className="share-reshare" onClick={() => { reportShareEvent('poster', data, inApp); setPosterOpen(true) }} data-testid="share-poster">{copy.poster}</button>
+        )}
         <button type="button" className="share-reshare" onClick={reshare} data-testid="share-reshare">{copy.share}</button>
         {notice ? <p className="share-notice" role="status">{notice}</p> : null}
       </section>
@@ -317,6 +333,14 @@ export default function SharePage({
           <p>{copy.watchInApp}</p>
           <a className="share-cta" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined}>{copy.open}</a>
           <button type="button" className="share-text" onClick={() => setGuideDismissed(true)}>{copy.later}</button>
+        </div>
+      ) : null}
+
+      {posterOpen ? (
+        <div className="share-poster-overlay" role="dialog" data-testid="share-poster-overlay">
+          <img src={links.posterUrl} alt={data.title} />
+          <p>{copy.posterHint}</p>
+          <button type="button" className="share-open" onClick={() => setPosterOpen(false)}>{copy.close}</button>
         </div>
       ) : null}
 

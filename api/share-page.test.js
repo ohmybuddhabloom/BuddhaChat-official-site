@@ -93,6 +93,7 @@ describe('share page content', () => {
     expect(page.data.media).toEqual({ kind: 'video', embedUrl: 'https://www.buddhachat.online/videos/embed/UwWNDUfyxL9', durationSec: 899 })
     expect(page.data.params).toEqual({ ch: 'whatsapp', l: 'en' })
     expect(page.data.links.cardUrl).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9/card.jpg')
+    expect(page.data.links.posterUrl).toBe('https://www.buddhachat.online/s/video/UwWNDUfyxL9/poster.png?ch=whatsapp&l=en&size=story')
   })
 
   it('reads the rewritten path the site router hands over', async () => {

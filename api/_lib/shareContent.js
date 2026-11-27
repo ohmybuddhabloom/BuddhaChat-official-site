@@ -40,6 +40,15 @@ export function safeImageUrl(value) {
 /** The stable card image address for a share page (served by api/share-card.js). */
 export const shareCardUrl = (canonicalUrl) => `${canonicalUrl}/card.jpg`
 
+/** The poster of a share page link (served by api/share-poster.js), keeping who shared it. */
+export function sharePosterUrl(pageUrl, size = 'story') {
+  const page = new URL(pageUrl)
+  const poster = new URL(`${page.origin}${page.pathname}/poster.png`)
+  page.searchParams.forEach((value, key) => poster.searchParams.set(key, value))
+  poster.searchParams.set('size', size)
+  return poster.toString()
+}
+
 const plain = (value) => String(value ?? '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
 
 export function summarize(text, max = 110) {

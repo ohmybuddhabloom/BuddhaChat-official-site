@@ -4,7 +4,7 @@ import process from 'node:process'
 import { SACRED_STORIES_BY_SLUG } from '../src/content/sacredStories.js'
 import { readSharePath, readShareParams, shareEnvironmentNamed, shareLinks } from '../src/lib/sharePage.js'
 import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
-import { loadShareContent, shareCardUrl } from './_lib/shareContent.js'
+import { loadShareContent, shareCardUrl, sharePosterUrl } from './_lib/shareContent.js'
 
 const ORIGIN = 'https://www.buddhachat.online'
 const SITE_NAME = 'BuddhaChat'
@@ -238,6 +238,7 @@ export async function getSharePage(url, environmentName, fetcher = fetch) {
   }
   const links = shareLinks(env, share.type, share.id, params)
   links.cardUrl = shareCardUrl(links.canonical)
+  links.posterUrl = sharePosterUrl(links.page)
   // The scripture reader already owns a share page with its own card; the share values travel along.
   if (share.type === 'sutra') {
     const target = new URL(`${env.site}/sutra/s/${encodeURIComponent(share.id)}`)

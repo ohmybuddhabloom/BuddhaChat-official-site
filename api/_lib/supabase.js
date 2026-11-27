@@ -173,6 +173,17 @@ export async function insertAnalyticsEvent(record) {
   })
 }
 
+/** 1.4.5 任务8: one share page event (public.share_events, service role only). */
+export async function insertShareEvent(record) {
+  await supabaseRequest('share_events', {
+    method: 'POST',
+    body: record,
+    headers: {
+      Prefer: 'return=minimal',
+    },
+  })
+}
+
 export async function insertDonationIntent(record) {
   const insertedRows = await supabaseRequest('donation_intents', {
     method: 'POST',
