@@ -2,6 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "ignoreCommand": "node scripts/vercel-ignore-build.mjs",
   "functions": {
+    "api/share-poster.js": {
+      "maxDuration": 20
+    },
     "api/*.js": {
       "maxDuration": 10
     }
@@ -538,6 +541,10 @@
     {
       "source": "/s/:type/:id/card.jpg",
       "destination": "/api/share-card?type=:type&id=:id"
+    },
+    {
+      "source": "/s/:type/:id/poster.png",
+      "destination": "/api/share-poster?type=:type&id=:id"
     },
     {
       "source": "/:path*/",

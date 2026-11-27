@@ -163,14 +163,16 @@ async function yuanhuiCatalogTitle(id, env, fetcher) {
   }
 }
 
-async function loadYuanhui(id, env, fetcher) {
+async function loadYuanhui(id, env, fetcher, params = {}) {
   const file = yuanhuiDataPath(id)
   if (!file) return null
   const [body, catalogTitle] = await Promise.all([
     getJson(fetcher, `${env.yuanhuiSite}/assets/data/yuanhui/articles/${file}.json`),
     yuanhuiCatalogTitle(id, env, fetcher),
   ])
-  const raw = body?.['zh-CN']?.[id]
+  // A Traditional Chinese sharer's link reads the site's own Traditional text when it has one.
+  const traditional = params.l === 'zh-Hant' ? body?.['zh-TW']?.[id] : null
+  const raw = Array.isArray(traditional) && traditional.length ? traditional : body?.['zh-CN']?.[id]
   if (!Array.isArray(raw) || raw.length === 0) return null
   const blocks = raw
     .filter((block) => typeof block?.text === 'string' && block.text && ['paragraph', 'heading', 'quote'].includes(block.type))
@@ -203,10 +205,15 @@ async function restRows(fetcher, base, anonKey, table, query) {
   return Array.isArray(rows) ? rows : []
 }
 
-const formatMinutes = (seconds) => (Number.isFinite(seconds) && seconds > 0 ? `${Math.max(1, Math.round(seconds / 60))} 分钟` : '')
+const formatMinutes = (seconds, locale) => {
+  if (!Number.isFinite(seconds) || seconds <= 0) return ''
+  const minutes = Math.max(1, Math.round(seconds / 60))
+  if (locale === 'en') return `${minutes} min`
+  return locale === 'zh-Hant' ? `${minutes} 分鐘` : `${minutes} 分钟`
+}
 
 /** A published 佛乐 track: listen on the page, carry on in the App. */
-async function loadMusic(id, env, fetcher) {
+async function loadMusic(id, env, fetcher, params = {}) {
   const rows = await restRows(fetcher, MUSIC_CATALOG.supabase, MUSIC_CATALOG.anonKey, 'music_tracks',
     `select=id,title,collection,duration_seconds,image_url,audio_url&id=eq.${encodeURIComponent(id)}&is_published=eq.true&limit=1`)
   const track = rows[0]
@@ -222,7 +229,7 @@ async function loadMusic(id, env, fetcher) {
   }
   // The catalog is production's, so its artwork is too.
   const image = typeof track.image_url === 'string' && /^\/assets\/[A-Za-z0-9._-]+$/.test(track.image_url) ? `https://www.buddhachat.online/music${track.image_url}` : null
-  const length = formatMinutes(Number(track.duration_seconds))
+  const length = formatMinutes(Number(track.duration_seconds), params.l)
   return {
     title: plain(track.title),
     summary: [plain(track.collection), length].filter(Boolean).join(' · ') || '佛乐',

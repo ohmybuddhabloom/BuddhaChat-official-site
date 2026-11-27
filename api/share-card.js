@@ -30,6 +30,22 @@ async function readCapped(response, limit) {
   return Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)))
 }
 
+/**
+ * A content cover as JPEG bytes: null when there is no allowed cover, false when the host answered
+ * something else (a short cache then retries). Shared by the card and the poster.
+ */
+export async function fetchCoverJpeg(rawUrl, fetcher = fetch) {
+  // The content loader already keeps only allowed hosts; checked again because this is the fetch.
+  const imageUrl = safeImageUrl(rawUrl)
+  if (!imageUrl) return null
+  const response = await fetcher(imageUrl, { redirect: 'error', signal: AbortSignal.timeout(TIMEOUT_MS) })
+  const contentType = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase()
+  // The page declares a JPEG card, so only a JPEG is passed through.
+  if (!response.ok || contentType !== 'image/jpeg') return false
+  const bytes = await readCapped(response, MAX_BYTES)
+  return bytes?.length ? bytes : null
+}
+
 export async function loadShareCard(type, id, environmentName, fetcher = fetch) {
   const env = shareEnvironmentNamed(environmentName)
   const fallback = { redirect: `${env.site}/share/official-card-v1.jpg` }
@@ -37,16 +53,10 @@ export async function loadShareCard(type, id, environmentName, fetcher = fetch) 
   if (!share) return fallback
   try {
     const content = await loadShareContent(share.type, share.id, env, fetcher)
-    // The content loader already keeps only allowed hosts; checked again because this is the fetch.
-    const imageUrl = safeImageUrl(content?.imageUrl)
-    if (!imageUrl) return fallback
-    const response = await fetcher(imageUrl, { redirect: 'error', signal: AbortSignal.timeout(TIMEOUT_MS) })
-    const contentType = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase()
-    // The page declares a JPEG card, so only a JPEG is passed through.
-    if (!response.ok || contentType !== 'image/jpeg') return { ...fallback, cache: 'public, s-maxage=60' }
-    const bytes = await readCapped(response, MAX_BYTES)
-    if (!bytes?.length) return fallback
-    return { bytes, contentType }
+    const bytes = await fetchCoverJpeg(content?.imageUrl, fetcher)
+    if (bytes === null) return fallback
+    if (bytes === false) return { ...fallback, cache: 'public, s-maxage=60' }
+    return { bytes, contentType: 'image/jpeg' }
   } catch {
     return { ...fallback, cache: 'public, s-maxage=60' }
   }
