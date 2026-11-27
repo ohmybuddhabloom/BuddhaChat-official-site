@@ -143,6 +143,18 @@ describe('SharePage', () => {
     expect(screen.getByTestId('share-guide')).toBeTruthy()
   })
 
+  it('reports the open once and offers a poster that keeps who shared it', () => {
+    const sendBeacon = vi.fn(() => true)
+    vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 (iPhone) Safari', platform: 'iPhone', maxTouchPoints: 5, language: 'zh-CN', sendBeacon })
+    render(<SharePage data={{ ...article, links: { ...links, posterUrl: 'https://www.buddhachat.online/s/yuanhui/yuanhui-001-q001/poster.png?r=abc123&size=story' } }} />)
+    expect(sendBeacon).toHaveBeenCalledTimes(1)
+    expect(sendBeacon.mock.calls[0][0]).toBe('/api/share-event')
+    fireEvent.click(screen.getByTestId('share-poster'))
+    expect(screen.getByTestId('share-poster-overlay').querySelector('img').getAttribute('src'))
+      .toBe('https://www.buddhachat.online/s/yuanhui/yuanhui-001-q001/poster.png?r=abc123&size=story')
+    expect(sendBeacon).toHaveBeenCalledTimes(2)
+  })
+
   it('explains a missing item instead of an empty page', () => {
     phone('Mozilla/5.0 (iPhone) Safari')
     render(<SharePage data={{ type: 'video', id: 'x', state: 'missing', links, params: {} }} />)

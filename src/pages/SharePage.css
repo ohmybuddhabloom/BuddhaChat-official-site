@@ -251,3 +251,20 @@
 .share-audio { margin-top: 18px; display: grid; gap: 10px; }
 .share-audio img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; }
 .share-audio audio { width: 100%; }
+
+.share-poster-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 20px;
+  background: rgba(20, 14, 10, .86);
+  color: #fff6e6;
+}
+.share-poster-overlay img { max-width: 100%; max-height: 72dvh; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
+.share-poster-overlay p { margin: 0; font-size: 15px; text-align: center; }
+.share-poster-overlay .share-open { color: #fff6e6; border-color: #fff6e6; min-width: 160px; }

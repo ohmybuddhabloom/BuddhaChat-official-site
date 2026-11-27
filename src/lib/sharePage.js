@@ -172,3 +172,17 @@ export function appShareMessage(title, url) {
   const full = message(caption ? `${caption}\n${url}` : url)
   return full.length <= APP_BRIDGE_LIMIT ? full : JSON.stringify({ version: 1, action: 'share', payload: { url } })
 }
+
+/** Reports one share page event; never blocks or fails the page. */
+export function reportShareEvent(event, data, inApp = false) {
+  try {
+    const params = data?.params ?? {}
+    const body = JSON.stringify({ event, type: data?.type, id: data?.id, r: params.r, ch: params.ch, h: params.h, l: params.l, inApp })
+    const blob = new Blob([body], { type: 'text/plain' })
+    if (!globalThis.navigator?.sendBeacon?.('/api/share-event', blob)) {
+      globalThis.fetch?.('/api/share-event', { method: 'POST', body, keepalive: true, headers: { 'content-type': 'text/plain' } }).catch(() => {})
+    }
+  } catch {
+    // Reporting is best effort.
+  }
+}
