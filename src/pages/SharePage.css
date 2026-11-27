@@ -247,3 +247,7 @@
 }
 
 .share-arrow { position: absolute; top: 14px; right: 22px; font-size: 48px; }
+
+.share-audio { margin-top: 18px; display: grid; gap: 10px; }
+.share-audio img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; }
+.share-audio audio { width: 100%; }

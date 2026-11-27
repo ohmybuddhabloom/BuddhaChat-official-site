@@ -16,7 +16,12 @@ const ENVIRONMENTS = {
     androidPackage: 'com.chriskevin.buddhachat',
     zentubeApi: 'https://zentube.buddhachat.online/api',
     yuanhuiSite: 'https://yuanhui.buddhachat.online',
+    // The project that serves public-question (production keeps forum functions in the main project).
     supabase: 'https://xqibxlpzghveyqemprjr.supabase.co',
+    // The main project and its anon key: public rows only, enforced by row-level security. Anon keys
+    // ship inside every App build, so they are public by design.
+    mainSupabase: 'https://xqibxlpzghveyqemprjr.supabase.co',
+    mainAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxaWJ4bHB6Z2h2ZXlxZW1wcmpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MjcyNzIsImV4cCI6MjA4OTMwMzI3Mn0.BrNRiY0LL-DwLLY4NVX6gXh1tAWcxiSKcDs4nxS9hYI',
   },
   staging: {
     name: 'staging',
@@ -31,7 +36,17 @@ const ENVIRONMENTS = {
     yuanhuiSite: 'https://staging-yuanhui.buddhachat.online',
     // Staging's forum functions (public-question) run on the staging bridge project, not the main one.
     supabase: 'https://lsiycbdglqtltlecvzky.supabase.co',
+    mainSupabase: 'https://bjswjgadnariutxibsfh.supabase.co',
+    mainAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqc3dqZ2FkbmFyaXV0eGlic2ZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0MDAyMjgsImV4cCI6MjEwMDk3NjIyOH0.GpNtyO8yucoJHHc9TLES1_avoQ76hedD655kr-q6oho',
   },
+}
+
+// 佛乐 reads production's catalog in both environments (the App's EXPO_PUBLIC_MUSIC_SUPABASE_URL), and
+// plays from the Tokyo copy of music.buddhachat.online/audio, which Mainland China reaches.
+export const MUSIC_CATALOG = {
+  supabase: 'https://xqibxlpzghveyqemprjr.supabase.co',
+  anonKey: ENVIRONMENTS.production.mainAnonKey,
+  audioOrigin: 'https://buddha-tokyo-1300001083.cos.ap-tokyo.myqcloud.com',
 }
 
 const STAGING_HOSTS = /^(?:staging\.buddhachat\.online|buddha-chat-official-site-env-staging-chenjunyu-1990s-projects\.vercel\.app)$/i
@@ -50,6 +65,10 @@ export const SHARE_ID_PATTERNS = {
   qa: /^[1-9]\d{0,15}$/,
   yuanhui: /^yuanhui-(?:\d{3}-q\d{3}|topic-q\d{3})$/,
   sutra: /^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/,
+  // The music catalog's identifiers (the App's musicTrackId): positive integers or UUIDs.
+  music: /^(?:[1-9]\d{0,18}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i,
+  // cangjing_items ids are 2–96 characters.
+  cangjing: /^[a-z0-9][a-z0-9-]{1,95}$/,
 }
 
 /** `/s/<type>/<id>`, or its card image (`…/card` plus the jpg suffix); anything else is not a share page. */

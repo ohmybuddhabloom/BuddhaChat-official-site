@@ -19,11 +19,12 @@ function pickLocale(preferred, language) {
 
 const COPY = {
   zh: {
-    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示' },
+    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示', music: '佛乐', cangjing: '藏经阁' },
     question: '提问', answer: '法师回答',
     download: '下载 BuddhaChat', apk: '无法使用 Google Play？下载安卓安装包', apkPrimary: '下载安卓安装包',
     open: '在 App 中打开', share: '分享给朋友', copied: '链接已复制，可以粘贴给朋友',
     readAll: '在 App 读全文，还能听朗读', keepReading: '继续在网页读',
+    listenInApp: '在 App 里听整张专辑，可定时、可后台播放',
     watchInApp: '在 App 里接着看，还有更多开示', later: '稍后',
     coverHint: '这段开示需要在 App 里观看',
     wechat: '微信里不能直接下载或打开 App。请点右上角“•••”，选择“在浏览器打开”。',
@@ -36,11 +37,12 @@ const COPY = {
     unavailableTitle: '内容暂时打不开', unavailableBody: '请稍后再试，或在 App 里查看。',
   },
   zhHant: {
-    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示' },
+    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示', music: '佛樂', cangjing: '藏經閣' },
     question: '提問', answer: '法師回答',
     download: '下載 BuddhaChat', apk: '無法使用 Google Play？下載 Android 安裝檔', apkPrimary: '下載 Android 安裝檔',
     open: '在 App 中打開', share: '分享給朋友', copied: '連結已複製，可以貼給朋友',
     readAll: '在 App 讀全文，還能聽朗讀', keepReading: '繼續在網頁讀',
+    listenInApp: '在 App 裡聽整張專輯，可定時、可背景播放',
     watchInApp: '在 App 裡接著看，還有更多開示', later: '稍後',
     coverHint: '這段開示需要在 App 裡觀看',
     wechat: '微信裡不能直接下載或打開 App。請點右上角「•••」，選擇「在瀏覽器開啟」。',
@@ -53,11 +55,12 @@ const COPY = {
     unavailableTitle: '內容暫時打不開', unavailableBody: '請稍後再試，或在 App 裡查看。',
   },
   en: {
-    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui · Teaching' },
+    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui · Teaching', music: 'Buddhist music', cangjing: 'Buddhist culture' },
     question: 'Question', answer: 'The master answers',
     download: 'Download BuddhaChat', apk: 'No Google Play? Download the Android package', apkPrimary: 'Download the Android package',
     open: 'Open in the App', share: 'Share with a friend', copied: 'Link copied. Paste it to a friend.',
     readAll: 'Read it all in the App, with narration', keepReading: 'Keep reading here',
+    listenInApp: 'Listen to the whole album in the App, with a sleep timer and background play',
     watchInApp: 'Keep watching in the App, with many more talks', later: 'Later',
     coverHint: 'This talk plays in the App',
     wechat: 'WeChat cannot download or open the App directly. Tap “•••” in the upper-right corner and choose “Open in Browser”.',
@@ -115,7 +118,7 @@ export default function SharePage({
   const watched = useRef(0)
 
   const blocks = useMemo(() => (Array.isArray(data?.blocks) ? data.blocks : []), [data])
-  const isArticle = data?.type === 'yuanhui'
+  const isArticle = data?.type === 'yuanhui' || data?.type === 'cangjing'
   const shown = isArticle && !expanded && !inApp ? blocks.slice(0, previewBlockCount(blocks.length)) : blocks
   const truncated = shown.length < blocks.length
 
@@ -250,6 +253,16 @@ export default function SharePage({
             <img src={links.cardUrl} alt="" />
             {inApp ? null : <span>{copy.coverHint}</span>}
           </a>
+        ) : null}
+
+        {data.media?.kind === 'audio' ? (
+          <div className="share-audio">
+            {links.cardUrl ? <img src={links.cardUrl} alt="" /> : null}
+            <audio controls preload="none" src={data.media.audioUrl} data-testid="share-audio" />
+            {inApp ? null : (
+              <a className="share-text" href={inWeChat ? links.downloadUrl : links.appUrl} onClick={inWeChat ? toBrowser : undefined}>{copy.listenInApp}</a>
+            )}
+          </div>
         ) : null}
 
         {data.type === 'qa' ? (
