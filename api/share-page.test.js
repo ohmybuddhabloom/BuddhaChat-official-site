@@ -202,6 +202,17 @@ describe('share page content', () => {
   })
 })
 
+describe('源慧 title parsing (local review of #126)', () => {
+  it('reads og:title in any attribute order and quoting, skipping comments', async () => {
+    const { readOgTitle, decodeEntities } = await import('./_lib/shareContent.js')
+    expect(readOgTitle('<head><meta content="如何与师父心相应" property="og:title"></head>')).toBe('如何与师父心相应')
+    expect(readOgTitle("<head><meta property='og:title' data-x='1' content='A &amp;quot; B'></head>")).toBe('A &quot; B')
+    expect(readOgTitle('<head><!-- <meta property="og:title" content="fake"> --><meta property="og:title" content="real"></head>')).toBe('real')
+    expect(readOgTitle('<head></head><body><meta property="og:title" content="body"></body>')).toBeNull()
+    expect(decodeEntities('&lt;a&gt; &#20013;&#x6587;&nbsp;&bogus;')).toBe('<a> 中文 &bogus;')
+  })
+})
+
 describe('share cards', () => {
   it('serves the cover from a stable address', async () => {
     const fetcher = fakeFetch({

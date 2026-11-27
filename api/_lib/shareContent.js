@@ -99,6 +99,50 @@ function yuanhuiDataPath(id) {
   return match ? match[1] : null
 }
 
+/** Reads at most `limit` bytes of a body as text; anything longer is cut off and the read cancelled. */
+async function readTextCapped(response, limit) {
+  if (!response.body?.getReader) return (await response.text()).slice(0, limit)
+  const reader = response.body.getReader()
+  const chunks = []
+  let total = 0
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    chunks.push(value)
+    total += value.length
+    if (total >= limit) {
+      await reader.cancel().catch(() => {})
+      break
+    }
+  }
+  return new TextDecoder().decode(Buffer.concat(chunks.map((chunk) => Buffer.from(chunk))).subarray(0, limit))
+}
+
+const NAMED_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', '#39': "'" }
+
+/** One pass over HTML character references, as a browser decodes an attribute value. */
+export function decodeEntities(value) {
+  return String(value).replace(/&(#x[0-9a-f]{1,6}|#\d{1,7}|[a-z]{2,8}|#39);/gi, (match, name) => {
+    const lower = name.toLowerCase()
+    if (Object.hasOwn(NAMED_ENTITIES, lower)) return NAMED_ENTITIES[lower]
+    const code = lower.startsWith('#x') ? Number.parseInt(lower.slice(2), 16) : lower.startsWith('#') ? Number.parseInt(lower.slice(1), 10) : NaN
+    return Number.isInteger(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : match
+  })
+}
+
+/** og:title from a page's <head>, whatever the attribute order or quotes; comments are skipped. */
+export function readOgTitle(html) {
+  const head = String(html).replace(/<!--[\s\S]*?-->/g, '').split(/<\/head>/i)[0]
+  for (const tag of head.match(/<meta\b[^>]*>/gi) ?? []) {
+    const attributes = {}
+    for (const [, name, , , double, single, bare] of tag.matchAll(/([a-zA-Z_:][-a-zA-Z0-9_:.]*)\s*=\s*(("([^"]*)")|'([^']*)'|([^\s"'>]+))/g)) {
+      attributes[name.toLowerCase()] = double ?? single ?? bare ?? ''
+    }
+    if (attributes.property?.toLowerCase() === 'og:title' && attributes.content) return plain(decodeEntities(attributes.content))
+  }
+  return null
+}
+
 /** The catalog title the App and the 源慧 site show, read from the article page's own card. */
 async function yuanhuiCatalogTitle(id, env, fetcher) {
   try {
@@ -108,10 +152,7 @@ async function yuanhuiCatalogTitle(id, env, fetcher) {
       signal: AbortSignal.timeout(TIMEOUT_MS),
     })
     if (!response.ok) return null
-    const html = (await response.text()).slice(0, 20_000)
-    const match = /<meta\s+property="og:title"\s+content="([^"]{1,200})"/i.exec(html)
-    const title = match ? plain(match[1].replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'")) : ''
-    return title || null
+    return readOgTitle(await readTextCapped(response, 64 * 1024)) || null
   } catch {
     return null
   }
