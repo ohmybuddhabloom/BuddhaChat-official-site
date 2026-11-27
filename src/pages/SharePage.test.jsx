@@ -143,16 +143,21 @@ describe('SharePage', () => {
     expect(screen.getByTestId('share-guide')).toBeTruthy()
   })
 
-  it('reports the open once and offers a poster that keeps who shared it', () => {
+  it('reports the open once and offers a poster that keeps who shared it', async () => {
     const sendBeacon = vi.fn(() => true)
     vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 (iPhone) Safari', platform: 'iPhone', maxTouchPoints: 5, language: 'zh-CN', sendBeacon })
-    render(<SharePage data={{ ...article, links: { ...links, posterUrl: 'https://www.buddhachat.online/s/yuanhui/yuanhui-001-q001/poster.png?r=abc123&size=story' } }} />)
+    render(<SharePage data={{ ...article, params: { r: 'abc123def456', i: 'ABCD2345' }, links: { ...links, posterUrl: 'https://www.buddhachat.online/s/yuanhui/yuanhui-001-q001/poster.png?r=abc123&size=story' } }} />)
     expect(sendBeacon).toHaveBeenCalledTimes(1)
     expect(sendBeacon.mock.calls[0][0]).toBe('/api/share-event')
     fireEvent.click(screen.getByTestId('share-poster'))
     expect(screen.getByTestId('share-poster-overlay').querySelector('img').getAttribute('src'))
       .toBe('https://www.buddhachat.online/s/yuanhui/yuanhui-001-q001/poster.png?r=abc123&size=story')
     expect(sendBeacon).toHaveBeenCalledTimes(2)
+    // Only the open carries the sharer's code, which pays the sharer once on the server.
+    const [opened, poster] = await Promise.all(sendBeacon.mock.calls.map((call) => call[1].text().then(JSON.parse)))
+    expect(opened).toMatchObject({ event: 'open', r: 'abc123def456', i: 'ABCD2345' })
+    expect(poster.event).toBe('poster')
+    expect(poster).not.toHaveProperty('i')
   })
 
   it('explains a missing item instead of an empty page', () => {

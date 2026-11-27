@@ -1,6 +1,7 @@
 // 1.4.5 任务8: what a visitor does on a share page, for the admin backend's share report.
 // Nothing personal is kept: no user, IP or user agent, only the platform and whether it is WeChat.
-import { insertShareEvent } from './_lib/supabase.js'
+// The sharer's invite code on a first open only pays that sharer's merit; it is not stored here.
+import { awardShareOpen, insertShareEvent } from './_lib/supabase.js'
 import { readJsonBody, sendMethodNotAllowed } from './_lib/json.js'
 import { readSharePath, readShareParams } from '../src/lib/sharePage.js'
 
@@ -62,6 +63,17 @@ export function shareEventRecord(body, userAgent = '') {
   }
 }
 
+/**
+ * The sharer to pay for this visit (Owner 2026-11-27: a share earns merit when someone opens it):
+ * only a first open in a browser, of a share with its id and the sharer's code. Opens inside the App
+ * are paid by the App, which knows who opened. The code is used here and never stored.
+ */
+export function shareOpenAward(body, record) {
+  if (!record || record.event !== 'open' || record.in_app || !record.share_id) return null
+  const code = typeof body?.i === 'string' ? readShareParams(`?i=${encodeURIComponent(body.i)}`).i : undefined
+  return code ? { code, shareId: record.share_id } : null
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     sendMethodNotAllowed(res, ['POST'])
@@ -78,7 +90,14 @@ export default async function handler(req, res) {
     // sendBeacon posts text/plain, which Vercel hands over as a string.
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : await readJsonBody(req)
     const record = shareEventRecord(body, String(req.headers?.['user-agent'] ?? ''))
-    if (record) await insertShareEvent(record)
+    if (record) {
+      const award = shareOpenAward(body, record)
+      await Promise.all([
+        insertShareEvent(record),
+        // Before its migration (production today) the function is missing; the visit is still recorded.
+        award ? awardShareOpen(award).catch(() => {}) : null,
+      ])
+    }
   } catch {
     // A report never breaks the page; a missing table (production before migration) is ignored too.
   }

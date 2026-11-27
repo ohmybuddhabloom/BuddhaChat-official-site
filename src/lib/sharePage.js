@@ -177,7 +177,8 @@ export function appShareMessage(title, url) {
 export function reportShareEvent(event, data, inApp = false) {
   try {
     const params = data?.params ?? {}
-    const body = JSON.stringify({ event, type: data?.type, id: data?.id, r: params.r, ch: params.ch, h: params.h, l: params.l, inApp })
+    // The sharer's code goes along only on the first open: the server pays that sharer once per share.
+    const body = JSON.stringify({ event, type: data?.type, id: data?.id, r: params.r, ch: params.ch, h: params.h, l: params.l, i: event === 'open' ? params.i : undefined, inApp })
     const blob = new Blob([body], { type: 'text/plain' })
     if (!globalThis.navigator?.sendBeacon?.('/api/share-event', blob)) {
       globalThis.fetch?.('/api/share-event', { method: 'POST', body, keepalive: true, headers: { 'content-type': 'text/plain' } }).catch(() => {})
