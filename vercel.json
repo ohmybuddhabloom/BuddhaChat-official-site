@@ -547,6 +547,14 @@
       "destination": "/api/share-poster?type=:type&id=:id"
     },
     {
+      "source": "/.well-known/apple-app-site-association",
+      "destination": "/api/well-known?file=aasa"
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "destination": "/api/well-known?file=assetlinks"
+    },
+    {
       "source": "/:path*/",
       "destination": "/api/page-entry?path=:path*"
     },
