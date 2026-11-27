@@ -19,7 +19,7 @@ function pickLocale(preferred, language) {
 
 const COPY = {
   zh: {
-    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示', music: '佛乐', cangjing: '藏经阁' },
+    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示', music: '佛乐', cangjing: '藏经阁', deed: '日行一善' },
     question: '提问', answer: '法师回答',
     download: '下载 BuddhaChat', apk: '无法使用 Google Play？下载安卓安装包', apkPrimary: '下载安卓安装包',
     open: '在 App 中打开', share: '分享给朋友', copied: '链接已复制，可以粘贴给朋友',
@@ -38,7 +38,7 @@ const COPY = {
     unavailableTitle: '内容暂时打不开', unavailableBody: '请稍后再试，或在 App 里查看。',
   },
   zhHant: {
-    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示', music: '佛樂', cangjing: '藏經閣' },
+    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示', music: '佛樂', cangjing: '藏經閣', deed: '日行一善' },
     question: '提問', answer: '法師回答',
     download: '下載 BuddhaChat', apk: '無法使用 Google Play？下載 Android 安裝檔', apkPrimary: '下載 Android 安裝檔',
     open: '在 App 中打開', share: '分享給朋友', copied: '連結已複製，可以貼給朋友',
@@ -57,7 +57,7 @@ const COPY = {
     unavailableTitle: '內容暫時打不開', unavailableBody: '請稍後再試，或在 App 裡查看。',
   },
   en: {
-    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui · Teaching', music: 'Buddhist music', cangjing: 'Buddhist culture' },
+    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui · Teaching', music: 'Buddhist music', cangjing: 'Buddhist culture', deed: 'A good deed a day' },
     question: 'Question', answer: 'The master answers',
     download: 'Download BuddhaChat', apk: 'No Google Play? Download the Android package', apkPrimary: 'Download the Android package',
     open: 'Open in the App', share: 'Share with a friend', copied: 'Link copied. Paste it to a friend.',
@@ -101,11 +101,19 @@ function copyText(text) {
   return Promise.resolve(legacyCopy(text))
 }
 
+const LOCALE_NAMES = { zh: 'zh-Hans', zhHant: 'zh-Hant', en: 'en' }
+
 export default function SharePage({
-  data = globalThis.__BC_SHARE__,
+  data: given = globalThis.__BC_SHARE__,
   language = globalThis.navigator?.language,
 }) {
-  const copy = COPY[pickLocale(data?.params?.l, language)]
+  const locale = pickLocale(given?.params?.l, language)
+  const copy = COPY[locale]
+  // Content that comes in every language (a 日行一善 project) follows the page's language.
+  const data = useMemo(() => {
+    const localized = given?.localized?.[LOCALE_NAMES[locale]]
+    return localized ? { ...given, ...localized } : given
+  }, [given, locale])
   const links = data?.links
   const platform = detectDownloadPlatform()
   // Inside the App's own web view (a 1.4.4 App opening a share link) the App is already here.
@@ -128,7 +136,7 @@ export default function SharePage({
   }, [data, inApp])
 
   const blocks = useMemo(() => (Array.isArray(data?.blocks) ? data.blocks : []), [data])
-  const isArticle = data?.type === 'yuanhui' || data?.type === 'cangjing'
+  const isArticle = data?.type === 'yuanhui' || data?.type === 'cangjing' || data?.type === 'deed'
   const shown = isArticle && !expanded && !inApp ? blocks.slice(0, previewBlockCount(blocks.length)) : blocks
   const truncated = shown.length < blocks.length
 

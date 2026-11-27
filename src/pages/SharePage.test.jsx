@@ -160,6 +160,22 @@ describe('SharePage', () => {
     expect(poster).not.toHaveProperty('i')
   })
 
+  it('shows a 日行一善 project in the page’s own language when the link names none', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    const localized = {
+      'zh-Hans': { title: '经文之子', author: '慈恩学院', blocks: [{ type: 'paragraph', text: '简体正文' }] },
+      'zh-Hant': { title: '經文之子', author: '慈恩學院', blocks: [{ type: 'paragraph', text: '繁體正文' }] },
+      en: { title: 'Children of Scripture', author: "CI'EN ACADEMY", blocks: [{ type: 'paragraph', text: 'English story' }] },
+    }
+    const deed = { ...article, type: 'deed', id: 'cien-academy', ...localized['zh-Hans'], localized, params: {} }
+    const { unmount } = render(<SharePage data={deed} language="en-US" />)
+    expect(screen.getByTestId('share-title').textContent).toBe('Children of Scripture')
+    expect(screen.getByText('English story')).toBeTruthy()
+    unmount()
+    render(<SharePage data={deed} language="zh-TW" />)
+    expect(screen.getByTestId('share-title').textContent).toBe('經文之子')
+  })
+
   it('explains a missing item instead of an empty page', () => {
     phone('Mozilla/5.0 (iPhone) Safari')
     render(<SharePage data={{ type: 'video', id: 'x', state: 'missing', links, params: {} }} />)

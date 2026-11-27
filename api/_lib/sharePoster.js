@@ -13,19 +13,19 @@ export const POSTER_SIZES = {
 
 const COPY = {
   zh: {
-    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示', music: '佛乐', cangjing: '藏经阁' },
+    kind: { video: '法师开示', qa: '法师答疑', yuanhui: '源慧法师 · 开示', music: '佛乐', cangjing: '藏经阁', deed: '日行一善' },
     scan: '长按识别二维码',
     open: '在 BuddhaChat 打开',
     site: '一念连接，万法相伴 · buddhachat.online',
   },
   zhHant: {
-    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示', music: '佛樂', cangjing: '藏經閣' },
+    kind: { video: '法師開示', qa: '法師答疑', yuanhui: '源慧法師 · 開示', music: '佛樂', cangjing: '藏經閣', deed: '日行一善' },
     scan: '長按識別二維碼',
     open: '在 BuddhaChat 打開',
     site: '一念連接，萬法相伴 · buddhachat.online',
   },
   en: {
-    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui', music: 'Buddhist music', cangjing: 'Buddhist culture' },
+    kind: { video: 'Dharma talk', qa: 'A master answers', yuanhui: 'Master Yuanhui', music: 'Buddhist music', cangjing: 'Buddhist culture', deed: 'A good deed a day' },
     scan: 'Scan the code',
     open: 'to open it in BuddhaChat',
     site: 'buddhachat.online',

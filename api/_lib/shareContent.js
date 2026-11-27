@@ -1,3 +1,4 @@
+import { DEED_PROJECTS } from './shareDeed.js'
 import { MUSIC_CATALOG } from '../../src/lib/sharePage.js'
 // Server side of the 1.4.5 share pages: turn /s/<type>/<id> into one normalized piece of content.
 // Each type reads the public source the App itself reads; nothing here needs a signed-in user.
@@ -26,6 +27,8 @@ export function safeImageUrl(value) {
   if (url.protocol !== 'https:' || url.username || url.password || url.port) return null
   // The 佛乐 site's own artwork and the public 藏经阁 bucket are allowed only by path.
   const pathAllowed = (/^www\.buddhachat\.online$/.test(url.hostname) && /^\/music\/assets\/[A-Za-z0-9._-]+\.(?:jpe?g|png|webp)$/i.test(url.pathname))
+    // 日行一善 project photos, served by this site itself.
+    || (/^(?:www|staging)\.buddhachat\.online$/.test(url.hostname) && /^\/share\/deed\/[a-z0-9-]+\.jpg$/.test(url.pathname))
     || (/^(?:xqibxlpzghveyqemprjr|bjswjgadnariutxibsfh)\.supabase\.co$/.test(url.hostname) && /^\/storage\/v1\/object\/public\/cangjing\//.test(url.pathname))
   if (!pathAllowed && !IMAGE_HOSTS.some((host) => host.test(url.hostname))) return null
   if (url.pathname.includes('..')) return null
@@ -276,7 +279,25 @@ async function loadCangjing(id, env, fetcher, params = {}) {
   }
 }
 
-const LOADERS = { video: loadVideo, qa: loadQuestion, yuanhui: loadYuanhui, music: loadMusic, cangjing: loadCangjing }
+/** A 日行一善 project: the App's own words in the page's language; nothing to pay here. */
+async function loadDeed(id, env, _fetcher, params = {}) {
+  if (!Object.hasOwn(DEED_PROJECTS, id)) return null
+  const project = DEED_PROJECTS[id]
+  const copy = project.copy[params.l] ?? project.copy['zh-Hans']
+  return {
+    title: copy.title,
+    summary: copy.summary,
+    author: copy.author,
+    // The main site's photo, even on the backup share domain (the card proxy fetches only from there).
+    imageUrl: safeImageUrl(`${env.mainSite ?? env.site}${project.image}`),
+    blocks: copy.blocks,
+    media: { kind: 'cover' },
+    // Without l= the page picks its language from the browser; it then shows the story in it too.
+    localized: params.l ? undefined : project.copy,
+  }
+}
+
+const LOADERS = { video: loadVideo, qa: loadQuestion, yuanhui: loadYuanhui, music: loadMusic, cangjing: loadCangjing, deed: loadDeed }
 
 export async function loadShareContent(type, id, env, fetcher = fetch, params = {}) {
   if (!Object.hasOwn(LOADERS, type)) return null
