@@ -101,11 +101,19 @@ function copyText(text) {
   return Promise.resolve(legacyCopy(text))
 }
 
+const LOCALE_NAMES = { zh: 'zh-Hans', zhHant: 'zh-Hant', en: 'en' }
+
 export default function SharePage({
-  data = globalThis.__BC_SHARE__,
+  data: given = globalThis.__BC_SHARE__,
   language = globalThis.navigator?.language,
 }) {
-  const copy = COPY[pickLocale(data?.params?.l, language)]
+  const locale = pickLocale(given?.params?.l, language)
+  const copy = COPY[locale]
+  // Content that comes in every language (a 日行一善 project) follows the page's language.
+  const data = useMemo(() => {
+    const localized = given?.localized?.[LOCALE_NAMES[locale]]
+    return localized ? { ...given, ...localized } : given
+  }, [given, locale])
   const links = data?.links
   const platform = detectDownloadPlatform()
   // Inside the App's own web view (a 1.4.4 App opening a share link) the App is already here.

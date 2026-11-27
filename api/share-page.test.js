@@ -305,6 +305,9 @@ describe('佛乐 and 藏经阁 share pages', () => {
     expect(JSON.stringify(page.data)).not.toMatch(/付款|捐款|支付|pay|donat|price|\$|¥/i)
     expect((await getSharePage(url('/s/deed/cien-academy?l=zh-Hant'), 'production', noFetch)).meta.title).toBe('經文之子｜慈恩學院 · 尼泊爾 加德滿都')
     expect((await getSharePage(url('/s/deed/cien-academy?l=en'), 'staging', noFetch)).meta.title).toMatch(/^Children of Scripture｜/)
+    // Without l= every language travels along for the page to pick; with l= only the one asked for.
+    expect(Object.keys(page.data.localized)).toEqual(['zh-Hans', 'zh-Hant', 'en'])
+    expect((await getSharePage(url('/s/deed/cien-academy?l=en'), 'production', noFetch)).data.localized).toBeUndefined()
     expect((await getSharePage(url('/s/deed/unknown-project'), 'production', noFetch)).status).toBe(404)
     expect((await getSharePage(url('/s/deed/constructor'), 'production', noFetch)).status).toBe(404)
     // On the backup share domain the card photo still comes from the main site.

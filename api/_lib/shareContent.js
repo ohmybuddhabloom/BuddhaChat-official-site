@@ -292,6 +292,8 @@ async function loadDeed(id, env, _fetcher, params = {}) {
     imageUrl: safeImageUrl(`${env.mainSite ?? env.site}${project.image}`),
     blocks: copy.blocks,
     media: { kind: 'cover' },
+    // Without l= the page picks its language from the browser; it then shows the story in it too.
+    localized: params.l ? undefined : project.copy,
   }
 }
 
