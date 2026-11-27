@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { shareEventRecord } from './share-event.js'
+import { allowShareEvent, fromSharePage, shareEventRecord } from './share-event.js'
 
 // 1.4.5 任务8: share page events keep only what the share report needs, nothing personal.
 const IPHONE_WECHAT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) MicroMessenger/8.0.50'
@@ -22,5 +22,23 @@ describe('share events', () => {
     expect(shareEventRecord(null, IPHONE_WECHAT)).toBeNull()
     expect(shareEventRecord({ event: 'open', type: 'qa', id: '23', r: '<x>', ch: 'Bad Channel', h: 500, l: 'fr' }, IPHONE_WECHAT))
       .toMatchObject({ share_id: null, channel: null, hop: null, locale: null })
+  })
+
+  it('stores only the App’s share id shape and the known channels, never free text', () => {
+    const record = shareEventRecord({ event: 'open', type: 'qa', id: '23', r: '13800138000', ch: 'zhangsan' }, IPHONE_WECHAT)
+    expect(record).toMatchObject({ share_id: null, channel: null })
+    expect(shareEventRecord({ event: 'open', type: 'qa', id: '23', r: 'a1b2c3d4e5f6', ch: 'line' }, IPHONE_WECHAT)).toMatchObject({ share_id: 'a1b2c3d4e5f6', channel: 'line' })
+  })
+
+  it('takes reports only from our share pages and at most 30 a minute from one address', () => {
+    expect(fromSharePage({ origin: 'https://www.buddhachat.online', 'user-agent': IPHONE_WECHAT })).toBe(true)
+    expect(fromSharePage({ referer: 'https://staging.buddhachat.online/s/qa/14', 'user-agent': IPHONE_WECHAT })).toBe(true)
+    expect(fromSharePage({ origin: 'https://evil.example', 'user-agent': IPHONE_WECHAT })).toBe(false)
+    expect(fromSharePage({ origin: 'https://www.buddhachat.online' })).toBe(false)
+    const now = 1_000_000
+    for (let i = 0; i < 30; i += 1) expect(allowShareEvent('203.0.113.9', now)).toBe(true)
+    expect(allowShareEvent('203.0.113.9', now)).toBe(false)
+    expect(allowShareEvent('203.0.113.10', now)).toBe(true)
+    expect(allowShareEvent('203.0.113.9', now + 61_000)).toBe(true)
   })
 })

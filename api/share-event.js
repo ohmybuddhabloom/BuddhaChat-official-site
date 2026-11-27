@@ -5,6 +5,36 @@ import { readJsonBody, sendMethodNotAllowed } from './_lib/json.js'
 import { readSharePath, readShareParams } from '../src/lib/sharePage.js'
 
 export const SHARE_EVENTS = new Set(['open', 'download', 'open_app', 'reshare', 'poster', 'read_more', 'video_guide'])
+// Only the channels the App and the pages themselves write, and only the App's share id shape, so
+// no free text (a name, a phone number) can ever be stored through these fields.
+export const SHARE_CHANNELS = new Set(['app', 'system', 'copy', 'wechat', 'whatsapp', 'facebook', 'line', 'telegram', 'x', 'poster', 'web'])
+const SHARE_ID = /^[0-9a-z]{12}$/
+const SITE_ORIGINS = /^https:\/\/(?:www|staging)\.buddhachat\.online(?:\/|$)/
+
+// Per instance, at most 30 events a minute from one address; the address is never stored.
+const WINDOW_MS = 60_000
+const LIMIT = 30
+const recent = new Map()
+
+export function allowShareEvent(address, now = Date.now()) {
+  if (recent.size > 5000) {
+    for (const [key, entry] of recent) if (now - entry.start > WINDOW_MS) recent.delete(key)
+  }
+  const key = String(address || 'unknown')
+  const entry = recent.get(key)
+  if (!entry || now - entry.start > WINDOW_MS) {
+    recent.set(key, { start: now, count: 1 })
+    return true
+  }
+  entry.count += 1
+  return entry.count <= LIMIT
+}
+
+/** Only our own share pages report: a request from elsewhere, or without a browser, is dropped. */
+export function fromSharePage(headers = {}) {
+  const origin = String(headers.origin || headers.referer || '')
+  return SITE_ORIGINS.test(origin) && Boolean(String(headers['user-agent'] || '').trim())
+}
 const BOT = /bot|crawl|spider|facebookexternalhit|whatsapp|telegrambot|line-poker|slackbot|twitterbot|preview/i
 
 /** A clean row for public.share_events, or null when anything does not fit. */
@@ -22,8 +52,8 @@ export function shareEventRecord(body, userAgent = '') {
     event,
     content_type: share.type,
     content_id: share.id,
-    share_id: params.r ?? null,
-    channel: params.ch ?? null,
+    share_id: params.r && SHARE_ID.test(params.r) ? params.r : null,
+    channel: params.ch && SHARE_CHANNELS.has(params.ch) ? params.ch : null,
     hop: params.h ?? null,
     locale: params.l ?? null,
     platform,
@@ -35,6 +65,13 @@ export function shareEventRecord(body, userAgent = '') {
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     sendMethodNotAllowed(res, ['POST'])
+    return
+  }
+  const address = String(req.headers?.['x-forwarded-for'] ?? '').split(',')[0].trim()
+  if (!fromSharePage(req.headers) || !allowShareEvent(address)) {
+    res.statusCode = 204
+    res.setHeader('cache-control', 'no-store')
+    res.end()
     return
   }
   try {
