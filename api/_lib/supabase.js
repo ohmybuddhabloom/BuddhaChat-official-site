@@ -184,6 +184,14 @@ export async function insertShareEvent(record) {
   })
 }
 
+/** Pays the sharer for an opened share page (1.4.5); the database refuses repeats and bad values. */
+export async function awardShareOpen({ code, shareId }) {
+  await supabaseRequest('rpc/merit_award_share_open', {
+    method: 'POST',
+    body: { p_code: code, p_share_id: shareId },
+  })
+}
+
 export async function insertDonationIntent(record) {
   const insertedRows = await supabaseRequest('donation_intents', {
     method: 'POST',
