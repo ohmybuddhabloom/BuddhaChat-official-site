@@ -2,12 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "ignoreCommand": "node scripts/vercel-ignore-build.mjs",
   "functions": {
+    "api/share-poster.js": {
+      "maxDuration": 20
+    },
     "api/*.js": {
       "maxDuration": 10
-    },
-    "api/share-poster.js": {
-      "maxDuration": 20,
-      "memory": 1024
     }
   },
   "headers": [

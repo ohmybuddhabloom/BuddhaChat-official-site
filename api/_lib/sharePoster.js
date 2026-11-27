@@ -68,10 +68,38 @@ export function posterExcerpt(content) {
 
 async function googleFont(family, weight, text, fetcher) {
   const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:wght@${weight}&text=${encodeURIComponent(text)}`
-  const css = await (await fetcher(url, { signal: AbortSignal.timeout(TIMEOUT_MS) })).text()
+  const cssResponse = await fetcher(url, { signal: AbortSignal.timeout(TIMEOUT_MS) })
+  if (!cssResponse.ok) throw new Error(`poster font css ${cssResponse.status}`)
+  const css = await cssResponse.text()
   const src = /src: url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\) format\('(?:truetype|opentype|woff)'\)/.exec(css)
   if (!src) throw new Error('poster font unavailable')
-  return (await fetcher(src[1], { signal: AbortSignal.timeout(TIMEOUT_MS) })).arrayBuffer()
+  const fontResponse = await fetcher(src[1], { signal: AbortSignal.timeout(TIMEOUT_MS) })
+  if (!fontResponse.ok) throw new Error(`poster font ${fontResponse.status}`)
+  return fontResponse.arrayBuffer()
+}
+
+/** Width and height from a JPEG's frame header, or null when the bytes are not a readable JPEG. */
+export function jpegSize(bytes) {
+  const data = Buffer.from(bytes)
+  if (data.length < 4 || data[0] !== 0xff || data[1] !== 0xd8) return null
+  let offset = 2
+  while (offset + 9 < data.length) {
+    if (data[offset] !== 0xff) return null
+    const marker = data[offset + 1]
+    const length = data.readUInt16BE(offset + 2)
+    // SOF0-SOF15 except DHT (C4), JPG (C8) and DAC (CC) carry the frame size.
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      return { height: data.readUInt16BE(offset + 5), width: data.readUInt16BE(offset + 7) }
+    }
+    offset += 2 + length
+  }
+  return null
+}
+
+/** A cover the renderer may decode: a JPEG of at most 4096 px on each side. */
+export function posterCoverOk(bytes) {
+  const size = bytes ? jpegSize(bytes) : null
+  return Boolean(size && size.width > 0 && size.height > 0 && size.width <= 4096 && size.height <= 4096)
 }
 
 const node = (type, style, children) => ({ type, props: { style, children } })
@@ -83,6 +111,7 @@ export async function renderPoster({ content, qrUrl, size = 'story', locale, cov
   const kind = `BuddhaChat · ${copy.kind[content.type] ?? ''}`
   const excerpt = posterExcerpt(content)
   const story = size !== 'feed'
+  if (coverBytes && !posterCoverOk(coverBytes)) coverBytes = null
   const coverHeight = coverBytes ? (story ? 600 : 340) : 0
   const inner = width - 160
 

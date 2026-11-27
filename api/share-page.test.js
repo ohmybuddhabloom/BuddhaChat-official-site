@@ -280,6 +280,15 @@ describe('posters', () => {
     expect(svg).toContain('fill="#2b2118"')
   })
 
+  it('reads a JPEG size and refuses covers too large to decode', async () => {
+    const { jpegSize, posterCoverOk } = await import('./_lib/sharePoster.js')
+    const jpeg = (w, h) => Buffer.from([0xff, 0xd8, 0xff, 0xe0, 0x00, 0x04, 0x00, 0x00, 0xff, 0xc0, 0x00, 0x11, 0x08, h >> 8, h & 255, w >> 8, w & 255, 0x03, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    expect(jpegSize(jpeg(1200, 630))).toEqual({ width: 1200, height: 630 })
+    expect(posterCoverOk(jpeg(1200, 630))).toBe(true)
+    expect(posterCoverOk(jpeg(8000, 6000))).toBe(false)
+    expect(posterCoverOk(Buffer.from('<html>'))).toBe(false)
+  })
+
   it('answers 404 for a book or missing content without rendering', async () => {
     const { loadSharePoster } = await import('./share-poster.js')
     const poster = (q) => new URL(`https://www.buddhachat.online/api/share-poster?${q}`)

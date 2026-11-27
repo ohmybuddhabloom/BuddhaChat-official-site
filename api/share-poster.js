@@ -5,6 +5,10 @@ import { renderPoster } from './_lib/sharePoster.js'
 import { fetchCoverJpeg } from './share-card.js'
 import { getPublicOrigin, PUBLIC_ORIGINS } from './_lib/public-origin.js'
 
+// At most two renders at once per instance; more answer 503 and the App retries.
+let rendering = 0
+export const MAX_CONCURRENT_RENDERS = 2
+
 export async function loadSharePoster(url, environmentName, fetcher = fetch) {
   const env = shareEnvironmentNamed(environmentName)
   const type = url.searchParams.get('type')
@@ -16,16 +20,22 @@ export async function loadSharePoster(url, environmentName, fetcher = fetch) {
   if (!content) return { status: 404 }
   // The QR opens the same share page; ch=poster tells which way it travelled, the rest is kept.
   const links = shareLinks(env, share.type, share.id, { ...params, ch: 'poster' })
-  const cover = await fetchCoverJpeg(content.imageUrl, fetcher).catch(() => null)
-  const png = await renderPoster({
-    content,
-    qrUrl: links.page,
-    size: url.searchParams.get('size') === 'feed' ? 'feed' : 'story',
-    locale: params.l,
-    coverBytes: cover || null,
-    fetcher,
-  })
-  return { status: 200, png }
+  if (rendering >= MAX_CONCURRENT_RENDERS) return { status: 503 }
+  rendering += 1
+  try {
+    const cover = await fetchCoverJpeg(content.imageUrl, fetcher).catch(() => null)
+    const png = await renderPoster({
+      content,
+      qrUrl: links.page,
+      size: url.searchParams.get('size') === 'feed' ? 'feed' : 'story',
+      locale: params.l,
+      coverBytes: cover || null,
+      fetcher,
+    })
+    return { status: 200, png }
+  } finally {
+    rendering -= 1
+  }
 }
 
 export default async function handler(req, res) {
@@ -39,7 +49,8 @@ export default async function handler(req, res) {
   }
   if (poster.status !== 200) {
     res.statusCode = poster.status
-    res.setHeader('cache-control', 'public, s-maxage=60')
+    // A missing item may be cached briefly; a busy or failed render is retried, never cached.
+    res.setHeader('cache-control', poster.status === 404 ? 'public, s-maxage=60' : 'no-store')
     res.end()
     return
   }
