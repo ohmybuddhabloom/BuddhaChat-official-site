@@ -129,6 +129,20 @@ describe('SharePage', () => {
     expect(screen.getByTestId('share-download')).toBeTruthy()
   })
 
+  it('plays a shared track in the page', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    render(<SharePage data={{ ...article, type: 'music', blocks: [], media: { kind: 'audio', audioUrl: 'https://buddha-tokyo-1300001083.cos.ap-tokyo.myqcloud.com/audio/a.mp3', durationSec: 214 } }} />)
+    expect(screen.getByTestId('share-audio').getAttribute('src')).toBe('https://buddha-tokyo-1300001083.cos.ap-tokyo.myqcloud.com/audio/a.mp3')
+    expect(screen.getByText('在 App 里听整张专辑，可定时、可后台播放')).toBeTruthy()
+  })
+
+  it('shows a 藏经阁 item like an article', () => {
+    phone('Mozilla/5.0 (iPhone) Safari')
+    render(<SharePage data={{ ...article, type: 'cangjing' }} />)
+    expect(screen.queryByText('第五段')).toBeNull()
+    expect(screen.getByTestId('share-guide')).toBeTruthy()
+  })
+
   it('explains a missing item instead of an empty page', () => {
     phone('Mozilla/5.0 (iPhone) Safari')
     render(<SharePage data={{ type: 'video', id: 'x', state: 'missing', links, params: {} }} />)

@@ -254,7 +254,7 @@ export async function getSharePage(url, environmentName, fetcher = fetch) {
   }
   let content
   try {
-    content = await loadShareContent(share.type, share.id, env, fetcher)
+    content = await loadShareContent(share.type, share.id, env, fetcher, params)
   } catch {
     return { status: 200, cache: 'public, s-maxage=30', meta: fallbackMeta, data: { type: share.type, id: share.id, params, links, state: 'unavailable' } }
   }

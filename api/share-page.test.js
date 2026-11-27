@@ -213,6 +213,56 @@ describe('源慧 title parsing (local review of #126)', () => {
   })
 })
 
+describe('佛乐 and 藏经阁 share pages', () => {
+  const url = (path) => new URL(`https://www.buddhachat.online${path}`)
+
+  it('plays a published track from the Tokyo copy Mainland China reaches', async () => {
+    const seen = []
+    const fetcher = async (u, options) => {
+      seen.push([String(u), options?.headers?.apikey?.slice(0, 3)])
+      return json([{ id: 1, title: '百字明', collection: '梵音与藏音', duration_seconds: 214, image_url: '/assets/scene-chant.jpg', audio_url: 'https://music.buddhachat.online/audio/%E7%99%BE%E5%AD%97%E6%98%8E.mp3' }])
+    }
+    const page = await getSharePage(url('/s/music/1'), 'staging', fetcher)
+    expect(page.status).toBe(200)
+    expect(page.meta.title).toBe('百字明｜梵音与藏音')
+    expect(page.meta.description).toBe('梵音与藏音 · 4 分钟')
+    expect(page.data.media).toEqual({ kind: 'audio', audioUrl: 'https://buddha-tokyo-1300001083.cos.ap-tokyo.myqcloud.com/audio/%E7%99%BE%E5%AD%97%E6%98%8E.mp3', durationSec: 214 })
+    // The catalog is production's in both environments, read with the public anon key.
+    expect(seen[0][0]).toMatch(/^https:\/\/xqibxlpzghveyqemprjr\.supabase\.co\/rest\/v1\/music_tracks\?.*id=eq\.1&is_published=eq\.true/)
+    expect(seen[0][1]).toBe('eyJ')
+  })
+
+  it('answers missing for an unpublished or unknown track, and never plays another host', async () => {
+    expect((await getSharePage(url('/s/music/9'), 'production', async () => json([]))).status).toBe(404)
+    const odd = await getSharePage(url('/s/music/1'), 'production', async () => json([{ id: 1, title: 't', audio_url: 'https://evil.example/a.mp3' }]))
+    expect(odd.data.media).toBeNull()
+    expect((await getSharePage(url('/s/music/abc'), 'production', async () => json([]))).status).toBe(404)
+  })
+
+  it('shows a 藏经阁 item in the sharer’s language from this environment’s database', async () => {
+    const seen = []
+    const fetcher = async (u) => {
+      seen.push(String(u))
+      return json([{ id: 'yungang', cover_url: 'https://bjswjgadnariutxibsfh.supabase.co/storage/v1/object/public/cangjing/yungang.jpg', cangjing_item_translations: [
+        { locale: 'zh-Hans', title: '云冈石窟', summary: '北魏皇家石窟', era_label: '北魏', place_label: '山西大同', body: [{ type: 'paragraph', text: '第一段' }, { type: 'image', url: 'x' }] },
+        { locale: 'zh-Hant', title: '雲岡石窟', summary: '北魏皇家石窟', era_label: '北魏', place_label: '山西大同', body: [{ type: 'paragraph', text: '第一段' }] },
+      ] }])
+    }
+    const page = await getSharePage(url('/s/cangjing/yungang?l=zh-Hant'), 'staging', fetcher)
+    expect(page.meta.title).toBe('雲岡石窟｜北魏 · 山西大同')
+    expect(page.data.blocks).toEqual([{ type: 'paragraph', text: '第一段' }])
+    expect(page.meta.imageUrl).toBe('https://staging.buddhachat.online/s/cangjing/yungang/card.jpg')
+    expect(seen[0]).toMatch(/^https:\/\/bjswjgadnariutxibsfh\.supabase\.co\/rest\/v1\/cangjing_items\?/)
+    const simplified = await getSharePage(url('/s/cangjing/yungang'), 'staging', fetcher)
+    expect(simplified.meta.title).toBe('云冈石窟｜北魏 · 山西大同')
+  })
+
+  it('answers missing for a 藏经阁 item the database does not show', async () => {
+    expect((await getSharePage(url('/s/cangjing/draft-item'), 'production', async () => json([]))).status).toBe(404)
+    expect((await getSharePage(url('/s/cangjing/Bad_Id'), 'production', async () => json([]))).status).toBe(404)
+  })
+})
+
 describe('share cards', () => {
   it('serves the cover from a stable address', async () => {
     const fetcher = fakeFetch({

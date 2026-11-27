@@ -1,3 +1,4 @@
+import { MUSIC_CATALOG } from '../../src/lib/sharePage.js'
 // Server side of the 1.4.5 share pages: turn /s/<type>/<id> into one normalized piece of content.
 // Each type reads the public source the App itself reads; nothing here needs a signed-in user.
 // Returns null when the content does not exist (404) and throws when the source is unavailable.
@@ -12,6 +13,8 @@ const IMAGE_HOSTS = [
   /^imagedelivery\.net$/,
   /^(?:staging-)?yuanhui\.buddhachat\.online$/,
   /^buddha-tokyo-1300001083\.cos\.ap-tokyo\.myqcloud\.com$/,
+  /^(?:www|staging)\.buddhachat\.online$/,
+  /^(?:xqibxlpzghveyqemprjr|bjswjgadnariutxibsfh)\.supabase\.co$/,
 ]
 
 /** A cover we may fetch, sized for a 1200×630 card when the host can crop; anything else is dropped. */
@@ -187,11 +190,75 @@ async function loadYuanhui(id, env, fetcher) {
   }
 }
 
-const LOADERS = { video: loadVideo, qa: loadQuestion, yuanhui: loadYuanhui }
+async function restRows(fetcher, base, anonKey, table, query) {
+  const response = await fetcher(`${base}/rest/v1/${table}?${query}`, {
+    headers: { apikey: anonKey, accept: 'application/json' },
+    redirect: 'error',
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  })
+  if (!response.ok) throw new Error(`share source ${response.status}`)
+  const rows = await response.json()
+  return Array.isArray(rows) ? rows : []
+}
 
-export async function loadShareContent(type, id, env, fetcher = fetch) {
-  const loader = LOADERS[type]
-  if (!loader) return null
-  const content = await loader(id, env, fetcher)
+const formatMinutes = (seconds) => (Number.isFinite(seconds) && seconds > 0 ? `${Math.max(1, Math.round(seconds / 60))} 分钟` : '')
+
+/** A published 佛乐 track: listen on the page, carry on in the App. */
+async function loadMusic(id, env, fetcher) {
+  const rows = await restRows(fetcher, MUSIC_CATALOG.supabase, MUSIC_CATALOG.anonKey, 'music_tracks',
+    `select=id,title,collection,duration_seconds,image_url,audio_url&id=eq.${encodeURIComponent(id)}&is_published=eq.true&limit=1`)
+  const track = rows[0]
+  if (!track || String(track.id) !== id || typeof track.title !== 'string') return null
+  let audioUrl = null
+  try {
+    const published = new URL(track.audio_url)
+    if (published.protocol === 'https:' && published.hostname === 'music.buddhachat.online' && published.pathname.startsWith('/audio/')) {
+      audioUrl = new URL(published.pathname, MUSIC_CATALOG.audioOrigin).toString()
+    }
+  } catch {
+    audioUrl = null
+  }
+  const image = typeof track.image_url === 'string' && track.image_url.startsWith('/') ? `${env.site}/music${track.image_url}` : null
+  const length = formatMinutes(Number(track.duration_seconds))
+  return {
+    title: plain(track.title),
+    summary: [plain(track.collection), length].filter(Boolean).join(' · ') || '佛乐',
+    author: plain(track.collection) || null,
+    imageUrl: safeImageUrl(image),
+    blocks: [],
+    media: audioUrl ? { kind: 'audio', audioUrl, durationSec: Number(track.duration_seconds) || null } : null,
+  }
+}
+
+const CANGJING_LOCALES = { 'zh-Hans': ['zh-Hans', 'zh-Hant', 'en'], 'zh-Hant': ['zh-Hant', 'zh-Hans', 'en'], en: ['en', 'zh-Hans', 'zh-Hant'] }
+
+/** A published 藏经阁 item, in the sharer's language when it has one. Row-level security keeps drafts out. */
+async function loadCangjing(id, env, fetcher, params = {}) {
+  const rows = await restRows(fetcher, env.mainSupabase, env.mainAnonKey, 'cangjing_items',
+    `select=id,cover_url,cangjing_item_translations(locale,title,summary,era_label,place_label,body)&id=eq.${encodeURIComponent(id)}&limit=1`)
+  const item = rows[0]
+  if (!item || item.id !== id) return null
+  const translations = Array.isArray(item.cangjing_item_translations) ? item.cangjing_item_translations : []
+  const order = CANGJING_LOCALES[params.l] ?? CANGJING_LOCALES['zh-Hans']
+  const picked = order.map((locale) => translations.find((t) => t.locale === locale)).find((t) => t?.title) ?? translations.find((t) => t?.title)
+  if (!picked) return null
+  const blocks = (Array.isArray(picked.body) ? picked.body : [])
+    .filter((block) => typeof block?.text === 'string' && block.text && ['paragraph', 'heading', 'quote'].includes(block.type))
+    .map((block) => ({ type: block.type, text: block.text }))
+  return {
+    title: plain(picked.title),
+    summary: summarize(picked.summary || blocks.find((block) => block.type === 'paragraph')?.text || picked.title),
+    author: [plain(picked.era_label), plain(picked.place_label)].filter(Boolean).join(' · ') || null,
+    imageUrl: safeImageUrl(item.cover_url),
+    blocks,
+    media: null,
+  }
+}
+
+const LOADERS = { video: loadVideo, qa: loadQuestion, yuanhui: loadYuanhui, music: loadMusic, cangjing: loadCangjing }
+
+export async function loadShareContent(type, id, env, fetcher = fetch, params = {}) {
+  if (!Object.hasOwn(LOADERS, type)) return null
+  const content = await LOADERS[type](id, env, fetcher, params)
   return content ? { type, id, ...content } : null
 }
