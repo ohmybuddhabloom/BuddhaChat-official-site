@@ -109,6 +109,10 @@ describe('share page content', () => {
       apkUrl: 'https://buddhachat.net/downloads/android/latest.apk',
     })
     expect(backup.data.media.embedUrl).toBe('https://buddhachat.net/videos/embed/UwWNDUfyxL9')
+    // The App is handed the main site's page inside the go link, which is all WeChat sees there.
+    const mainPage = 'https://www.buddhachat.online/s/video/UwWNDUfyxL9?ch=wechat&i=ABCD2345'
+    expect(backup.data.links.link).toBe(`https://go.buddhachat.online/l/page?url=${encodeURIComponent(mainPage)}`)
+    expect(backup.data.links.appUrl).toBe(`buddhachat://l/page?url=${encodeURIComponent(mainPage)}`)
     expect((await at('WWW.BUDDHACHAT.NET')).data.links.page).toMatch(/^https:\/\/www\.buddhachat\.net\//)
     // Any other host, or the other environment's backup, keeps the main site.
     for (const host of ['evil.example', 'staging.buddhachat.net', 'buddhachat.net.evil.example', '', null]) {

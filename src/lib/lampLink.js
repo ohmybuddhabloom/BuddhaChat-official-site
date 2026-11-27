@@ -48,8 +48,15 @@ export function readLampCity(search) {
   return CITY_PATTERN.test(value) ? value : null
 }
 
+// The backup share domain (Owner 2026-11-28) serves this page too: it keeps its environment, and the
+// download links people open stay on it; the invite page handed to the App stays on the main site.
+const STAGING_HOSTS = new Set(['staging.buddhachat.online', 'staging.buddhachat.net'])
+const BACKUP_HOSTS = new Set(['buddhachat.net', 'www.buddhachat.net', 'staging.buddhachat.net'])
+
 export function lampLinks(code, hostname) {
-  const config = hostname === 'staging.buddhachat.online' ? ENVIRONMENTS.staging : ENVIRONMENTS.production
+  const host = String(hostname ?? '').toLowerCase()
+  const config = STAGING_HOSTS.has(host) ? ENVIRONMENTS.staging : ENVIRONMENTS.production
+  const visible = BACKUP_HOSTS.has(host) ? `https://${host}` : config.site
   // The App's referral parser reads exactly this page: the site's front page carrying invite=<code>.
   const target = `${config.site}/?invite=${encodeURIComponent(code)}`
   const link = `https://${config.linkHost}/l/page?url=${encodeURIComponent(target)}`
@@ -65,8 +72,8 @@ export function lampLinks(code, hostname) {
     appUrl,
     appStoreUrl: config.appStoreUrl,
     googlePlayUrl,
-    apkUrl: `${config.site}/downloads/android/latest.apk`,
-    downloadUrl: `${config.site}/download`,
+    apkUrl: `${visible}/downloads/android/latest.apk`,
+    downloadUrl: `${visible}/download`,
     deferredLinkUrl: config.deferredLinkUrl,
   }
 }

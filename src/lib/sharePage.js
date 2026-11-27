@@ -68,12 +68,22 @@ const BACKUP_SHARE_HOSTS = {
   staging: new Set(['staging.buddhachat.net']),
 }
 
-/** The environment as seen from the visitor's host; any host but this environment's backup is ignored. */
-export function shareEnvironmentFor(name, shareHost) {
-  const env = shareEnvironmentNamed(name)
+/** The visitor's host when it is this environment's backup share domain, else null. */
+export function backupShareHost(name, shareHost) {
   const host = String(shareHost ?? '').trim().toLowerCase()
   const backups = name === 'staging' ? BACKUP_SHARE_HOSTS.staging : BACKUP_SHARE_HOSTS.production
-  return backups.has(host) ? { ...env, site: `https://${host}` } : env
+  return backups.has(host) ? host : null
+}
+
+/**
+ * The environment as seen from the visitor's host; any host but this environment's backup is ignored.
+ * Links people see and open move to the backup host; mainSite stays for the page handed to the App,
+ * which travels inside the go link (the only host WeChat sees there) and which the App validates.
+ */
+export function shareEnvironmentFor(name, shareHost) {
+  const env = shareEnvironmentNamed(name)
+  const host = backupShareHost(name, shareHost)
+  return host ? { ...env, site: `https://${host}`, mainSite: env.site } : env
 }
 
 /** The content each share page can show, and the exact id shape it accepts. */
@@ -145,8 +155,10 @@ export function shareCanonicalUrl(env, type, id) {
 export function shareLinks(env, type, id, params = {}) {
   const canonical = shareCanonicalUrl(env, type, id)
   const page = withParams(canonical, params)
-  const link = `https://${env.linkHost}/l/page?url=${encodeURIComponent(page)}`
-  const appUrl = `${env.scheme}://l/page?url=${encodeURIComponent(page)}`
+  // The App is handed the main site's page (see shareEnvironmentFor).
+  const appPage = env.mainSite ? withParams(shareCanonicalUrl({ ...env, site: env.mainSite }, type, id), params) : page
+  const link = `https://${env.linkHost}/l/page?url=${encodeURIComponent(appPage)}`
+  const appUrl = `${env.scheme}://l/page?url=${encodeURIComponent(appPage)}`
   const googlePlayUrl = env.androidPackage
     ? `https://play.google.com/store/apps/details?id=${env.androidPackage}&referrer=${encodeURIComponent(
       `utm_source=h5_share&deep_link=${encodeURIComponent(link)}`,

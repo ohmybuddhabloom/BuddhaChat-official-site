@@ -1,3 +1,5 @@
+import { backupShareHost, SHARE_HOST_HEADER } from '../src/lib/sharePage.js'
+
 const APK_HOST = 'www.buddhachat.online'
 // Staging serves its own package; anything else, including a spoofed host, gets the official one.
 const STAGING_HOST = 'staging.buddhachat.online'
@@ -22,7 +24,10 @@ export default function handler(req, res) {
   }
 
   const host = String(req?.headers?.host ?? '').toLowerCase()
-  const apkUrl = `https://${host === STAGING_HOST ? STAGING_HOST : APK_HOST}/downloads/android/latest.apk`
+  const environmentName = host === STAGING_HOST ? 'staging' : 'production'
+  // Asked for on the backup share domain (through the Tokyo relay): the package link stays on it.
+  const backup = backupShareHost(environmentName, req?.headers?.[SHARE_HOST_HEADER])
+  const apkUrl = `https://${backup ?? (host === STAGING_HOST ? STAGING_HOST : APK_HOST)}/downloads/android/latest.apk`
   res.setHeader('Cache-Control', 'no-store, max-age=0')
   return res.status(200).json({
     platform: 'android',

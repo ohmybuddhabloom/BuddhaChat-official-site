@@ -45,6 +45,16 @@ describe('android release endpoint', () => {
     expect(apkUrl('staging.buddhachat.online')).toBe('https://staging.buddhachat.online/downloads/android/latest.apk')
     expect(apkUrl('www.buddhachat.online')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
     expect(apkUrl('evil.example')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
+    // Through the backup share domain the package link stays on it; only this environment's backup counts.
+    const viaBackup = (host, shareHost) => {
+      const res = response()
+      handler({ headers: { host, 'x-buddhachat-share-host': shareHost } }, res)
+      return res.payload.apkUrl
+    }
+    expect(viaBackup('www.buddhachat.online', 'buddhachat.net')).toBe('https://buddhachat.net/downloads/android/latest.apk')
+    expect(viaBackup('staging.buddhachat.online', 'staging.buddhachat.net')).toBe('https://staging.buddhachat.net/downloads/android/latest.apk')
+    expect(viaBackup('www.buddhachat.online', 'staging.buddhachat.net')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
+    expect(viaBackup('www.buddhachat.online', 'evil.example')).toBe('https://www.buddhachat.online/downloads/android/latest.apk')
   })
 
   it('does not expose a partially configured APK release', () => {

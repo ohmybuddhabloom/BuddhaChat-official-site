@@ -35,6 +35,15 @@ describe('LampInvitePage', () => {
     expect(staging.target).toBe('https://staging.buddhachat.online/?invite=ABCDEFGH')
     expect(staging.appUrl.startsWith('buddhachat-staging://l/page?url=')).toBe(true)
     expect(staging.googlePlayUrl).toBeNull()
+    // On the backup share domain: same environment, downloads stay on it, the App still gets the main site.
+    const backup = lampLinks('ABCDEFGH', 'buddhachat.net')
+    expect(backup.target).toBe('https://www.buddhachat.online/?invite=ABCDEFGH')
+    expect(backup.apkUrl).toBe('https://buddhachat.net/downloads/android/latest.apk')
+    expect(backup.downloadUrl).toBe('https://buddhachat.net/download')
+    const stagingBackup = lampLinks('ABCDEFGH', 'staging.buddhachat.net')
+    expect(stagingBackup.target).toBe('https://staging.buddhachat.online/?invite=ABCDEFGH')
+    expect(stagingBackup.appUrl.startsWith('buddhachat-staging://')).toBe(true)
+    expect(stagingBackup.downloadUrl).toBe('https://staging.buddhachat.net/download')
   })
 
   it('names only the city, quotes one teaching, and records the page before the App Store on iPhone', () => {
